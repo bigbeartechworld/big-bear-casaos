@@ -1,0 +1,83 @@
+<!--
+  - * @LastEditors: zhanghengxin ezreal.zhang@icewhale.org
+  - * @LastEditTime: 2023/2/10 下午3:14
+  - * @FilePath: /CasaOS-UI/src/assets/img/app/default.svg
+  - * @Description:
+  - *
+  - * Copyright (c) 2023 by IceWhale, All Rights Reserved.
+  -->
+
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<rect width="64" height="64" rx="12" fill="url(#paint0_linear_913_2028)"/>
+	<g filter="url(#filter0_i_913_2028)">
+		<path d="M32 50.1882C31.5747 50.1882 31.1494 50.0782 30.7683 49.8582L17.2317 42.0428C16.4695 41.6028 16 40.7896 16 39.9095V24.2787C16 23.8407 16.1163 23.4192 16.3271 23.0521L32 32.0941V50.1882Z"
+			  fill="url(#paint1_linear_913_2028)"/>
+	</g>
+	<g filter="url(#filter1_i_913_2028)">
+		<path d="M47.6729 23.0521C47.8837 23.4192 48 23.8407 48 24.2787V39.9095C48 40.7896 47.5305 41.6028 46.7683 42.0428L33.2317 49.8582C32.8506 50.0782 32.4253 50.1882 32 50.1882V32.0941L47.6729 23.0521Z"
+			  fill="url(#paint2_linear_913_2028)"/>
+	</g>
+	<g filter="url(#filter2_i_913_2028)">
+		<path d="M47.6729 23.0521C47.4601 22.6816 47.1511 22.3664 46.7683 22.1454L33.2317 14.33C32.4695 13.89 31.5305 13.89 30.7683 14.33L17.2317 22.1454C16.8489 22.3664 16.5399 22.6816 16.3271 23.0521L32 32.0941L47.6729 23.0521Z"
+			  fill="url(#paint3_linear_913_2028)"/>
+	</g>
+	<path d="M30 8.1547C31.2376 7.44017 32.7624 7.44017 34 8.1547L51.6506 18.3453C52.8882 19.0598 53.6506 20.3803 53.6506 21.8094V42.1906C53.6506 43.6197 52.8882 44.9402 51.6506 45.6547L34 55.8453C32.7624 56.5598 31.2376 56.5598 30 55.8453L12.3494 45.6547C11.1118 44.9402 10.3494 43.6197 10.3494 42.1906V21.8094C10.3494 20.3803 11.1118 19.0598 12.3494 18.3453L30 8.1547Z"
+		  stroke="#389FFA" stroke-width="1.5"/>
+	<defs>
+		<filter id="filter0_i_913_2028" x="16" y="22.0521" width="17" height="28.1362" filterUnits="userSpaceOnUse"
+				color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+						   result="hardAlpha"/>
+			<feOffset dx="1" dy="-1"/>
+			<feGaussianBlur stdDeviation="1"/>
+			<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0"/>
+			<feBlend mode="normal" in2="shape" result="effect1_innerShadow_913_2028"/>
+		</filter>
+		<filter id="filter1_i_913_2028" x="31" y="22.0521" width="17" height="28.1362" filterUnits="userSpaceOnUse"
+				color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+						   result="hardAlpha"/>
+			<feOffset dx="-1" dy="-1"/>
+			<feGaussianBlur stdDeviation="1"/>
+			<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0"/>
+			<feBlend mode="normal" in2="shape" result="effect1_innerShadow_913_2028"/>
+		</filter>
+		<filter id="filter2_i_913_2028" x="16.3271" y="14" width="31.3457" height="19.0941" filterUnits="userSpaceOnUse"
+				color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+						   result="hardAlpha"/>
+			<feOffset dy="1"/>
+			<feGaussianBlur stdDeviation="1"/>
+			<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0"/>
+			<feBlend mode="normal" in2="shape" result="effect1_innerShadow_913_2028"/>
+		</filter>
+		<linearGradient id="paint0_linear_913_2028" x1="32" y1="4.65656e-09" x2="32" y2="64"
+						gradientUnits="userSpaceOnUse">
+			<stop stop-color="#F7FAFC"/>
+			<stop offset="0.885386" stop-color="#E7ECF2"/>
+			<stop offset="1" stop-color="#DADFE6"/>
+		</linearGradient>
+		<linearGradient id="paint1_linear_913_2028" x1="24" y1="27" x2="23" y2="44" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#299BFF"/>
+			<stop offset="1" stop-color="#1A94FF"/>
+		</linearGradient>
+		<linearGradient id="paint2_linear_913_2028" x1="39" y1="27.5" x2="41" y2="45.5" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#2486F9"/>
+			<stop offset="1" stop-color="#047FF1"/>
+		</linearGradient>
+		<linearGradient id="paint3_linear_913_2028" x1="32" y1="14" x2="31.4225" y2="31.9814"
+						gradientUnits="userSpaceOnUse">
+			<stop stop-color="#80CAFF"/>
+			<stop offset="1" stop-color="#3DABFF"/>
+		</linearGradient>
+	</defs>
+</svg>
