@@ -1,0 +1,38 @@
+version: '3.6'
+
+services:
+  app:
+    image: pawelmalak/flame
+    restart: unless-stopped
+    ports:
+      - target: 5005
+        published: 5005
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data/
+        target: /app/data
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    environment:
+      - PASSWORD=${APP_PASSWORD}
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Flame is self-hosted startpage for your server. Its design is inspired (heavily) by SUI. Flame is very easy to setup and use. With built-in editors, it allows you to setup your very own application hub in no time - no file editing necessary.
+  tagline:
+    en_us: Network-wide ads & trackers blocking DNS server
+  developer: "pawelmalak"
+  author: BigBearCommunity
+  icon: https://i.imgur.com/TzyTrX0.png
+  thumbnail: https://github.com/pawelmalak/flame/blob/master/.github/themes.png
+  title:
+    en_us: Flame
+  category: Dashboard
+  port_map: "5005"
