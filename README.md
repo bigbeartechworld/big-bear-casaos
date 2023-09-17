@@ -2,6 +2,12 @@
 
 This repository contains the Big Bear CasaOS App Store. This app store is a community app store that is not maintained by the CasaOS team. It is maintained by BigBearTechWorld and the BigBearCommunity.
 
+## App Store URL
+
+```text
+https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zip
+```
+
 ## Apps
 
 | App Name     | Version  |
