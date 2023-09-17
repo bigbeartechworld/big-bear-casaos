@@ -8,6 +8,10 @@ This repository contains the Big Bear CasaOS App Store. This app store is a comm
 https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zip
 ```
 
+## App Store Suggestions
+
+If you have a suggestion for an app, please post in our suggestion discord on the [BigBearCommunity](https://discord.gg/ykwA7wsnP8) repository.
+
 ## Apps
 
 | App Name                 | Version      |
