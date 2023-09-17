@@ -18,6 +18,7 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 | Python Matter Server     | stable     |
 | Pingvin                  | latest     |
 | Mumble Server            | v1.4.230-6 |
+| Code Server              | latest     |
 
 ## UI How to
 

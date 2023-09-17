@@ -1,0 +1,32 @@
+name: code-server
+services:
+  app:
+    image: codercom/code-server:latest # Use the latest code-server image
+    container_name: code-server
+    environment:
+      - PASSWORD=my_password # Set your desired password here
+      - PUID=1000 # User ID for code-server (change if necessary)
+      - PGID=1000 # Group ID for code-server (change if necessary)
+    volumes:
+      - /DATA/AppData/$AppID/project:/home/coder/project # Replace with your code directory
+    ports:
+      - "8080:8080" # Map host port 8080 to code-server's port
+    restart: always # Restart the container if it stops
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Run VS Code on any machine anywhere and access it in the browser.
+  tagline:
+    en_us: Code Server
+  developer: ""
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code-server.png
+  thumbnail: ""
+  title:
+    en_us: Code Server
+  category: BigBearCasaOS
+  port_map: "8080"
