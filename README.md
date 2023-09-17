@@ -21,6 +21,7 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 | Code Server              | latest       |
 | Node-RED                 | 3.1.0        |
 | Glances                  | 3.4.0.3-full |
+| Baserow                  | 1.20.0       |
 
 ## UI How to
 

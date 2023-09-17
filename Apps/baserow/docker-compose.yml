@@ -1,0 +1,46 @@
+# Configuration for baserow setup
+name: baserow
+
+# Service definitions for the baserow application
+services:
+  # Service name: app
+  app:
+    # Set the name of the Docker container.
+    container_name: baserow
+
+    # Use the specified Docker image for Baserow and specify its version.
+    image: baserow/baserow:1.20.0
+
+    # Set environment variables for Baserow.
+    environment:
+      # Set the your CASA OS IP for Baserow to use.
+      BASEROW_PUBLIC_URL: "http://[YOUR_CASAOS_IP]:7350"
+
+    # Map ports from the host machine to the Baserow container.
+    ports:
+      - "7350:80" # Map port 7300 on the host to port 80 in the container.
+      - "7351:443" # Map port 7301 on the host to port 443 in the container.
+
+    # Define volumes to persist data between container restarts.
+    volumes:
+      - /DATA/AppData/$AppID/data:/baserow/data
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser. # Description in English
+  tagline:
+    en_us: Baserow # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/baserow.png # Icon for the application
+  thumbnail: "https://github.com/bram2w/baserow/raw/master/docs/assets/screenshot.png" # Thumbnail image (currently empty)
+  title:
+    en_us: Baserow # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "7350" # Port mapping information
