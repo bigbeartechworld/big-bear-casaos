@@ -39,3 +39,7 @@ How to add the App Store:
 - Wait for the installation to finish. Done!
 
 > **NOTE: Custom Appstore is only supported on CasaOS version [0.4.4](https://blog.casaos.io/blog/32.html)**
+
+## Credit
+
+Props to WisdomSky for giving me the template to build this app store. Check his app store out to: [https://github.com/WisdomSky/CasaOS-Coolstore](https://github.com/WisdomSky/CasaOS-Coolstore)
