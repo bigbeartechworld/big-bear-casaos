@@ -1,0 +1,34 @@
+name: python-matter-server
+version: "3.8"
+services:
+  app:
+    image: ghcr.io/home-assistant-libs/python-matter-server:stable
+    container_name: matter-server
+    restart: unless-stopped
+    # Required for mDNS to work correctly
+    network_mode: host
+    security_opt:
+      # Needed for Bluetooth via dbus
+      - apparmor:unconfined
+    volumes:
+      # Create an .env file that sets the USERDIR environment variable.
+      - /DATA/AppData/$AppID/data:/data/
+      - /run/dbus:/run/dbus:ro
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: This project implements a Matter Controller Server over WebSockets using the official Matter (formerly CHIP) SDK as a base and provides both a server and client implementation. The goal of this project is primary to have Matter support in Home Assistant but its universal approach makes it suitable to be used in other projects too.
+  tagline:
+    en_us: Python Matter Server
+  developer: ""
+  author: BigBearTechWorld
+  icon: https://i.imgur.com/eeUGveF.png
+  thumbnail: ""
+  title:
+    en_us: Python Matter Server
+  category: BigBearCasaOS
+  port_map: "5080"

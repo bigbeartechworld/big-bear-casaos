@@ -15,6 +15,7 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 | Flame                    | latest  |
 | Ntfy.sh                  | latest  |
 | TP-Link Omada Controller | 5.9     |
+| Python Matter Server     | stable  |
 
 ## UI How to
 
