@@ -1,0 +1,28 @@
+name: mumble-server
+services:
+  app:
+    image: mumblevoip/mumble-server:v1.4.230-6
+    container_name: mumble-server
+    hostname: mumble-server
+    restart: on-failure
+    ports:
+      - 64738:64738
+      - 64738:64738/udp
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Mumble is a free, open source, low latency, high quality voice chat application.
+  tagline:
+    en_us: Mumble Server
+  developer: ""
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mumble.png
+  thumbnail: ""
+  title:
+    en_us: Mumble Server
+  category: BigBearCasaOS
+  port_map: "64738"
