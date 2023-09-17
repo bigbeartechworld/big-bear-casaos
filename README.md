@@ -10,7 +10,7 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 
 ## App Store Suggestions
 
-If you have a suggestion for an app, please post in our suggestion discord on the [BigBearCommunity](https://discord.gg/ykwA7wsnP8) repository.
+If you have a suggestion for an app, please post in our suggestion discord on the [BigBearCommunity](https://discord.gg/ykwA7wsnP8) server.
 
 ## Apps
 
