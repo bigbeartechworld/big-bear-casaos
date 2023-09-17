@@ -1,6 +1,6 @@
 name: node-red
 services:
-  node-red:
+  app:
     image: nodered/node-red:3.1.0
     deploy:
       resources:
@@ -16,63 +16,22 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/data
         target: /data
-    x-casaos:
-      ports:
-        - container: "1880"
-          description:
-            en_us: ""
-
-      volumes:
-        - container: /data
-          description:
-            en_us: ""
     container_name: node-red
 x-casaos:
   architectures:
     - amd64
-    - arm64
-    - s390x
     - arm
-  main: node-red
-  author: CasaOS Team
-  category: Developer
+    - arm64
+  main: app
   description:
     en_us: Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.  It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.
-    zh_cn: Node-RED是一种编程工具，可将硬件设备，API和在线服务以新颖的方式连接在一起。它提供了一个基于浏览器的编辑器，可以轻松地将流连接在一起，使用调色板中的各种节点，可以在单击中将其部署到其运行时。
-    ar_sa: Node-RED هو أداة برمجة لتوصيل أجهزة الكمبيوتر والواجهات البرمجية والخدمات عبر الإنترنت بطرق جديدة ومثيرة للاهتمام. يوفر محرراً مستنداً إلى المتصفح يسهل على المستخدم توصيل التدفقات باستخدام مجموعة واسعة من العقد المتوفرة في لوحة الأدوات التي يمكن توزيعها على تشغيلها في زر واحد.
-    de_de: Node-RED ist ein Programmierwerkzeug zum Verbinden von Hardwaregeräten, APIs und Online-Diensten auf neue und interessante Weise. Es bietet einen Browser-basierten Editor, mit dem es einfach ist, Flows mithilfe der breiten Palette von Knoten zu verbinden, die mit einem einzigen Klick auf die Laufzeit verteilt werden können.
-    es_es: Node-RED es una herramienta de programación para conectar dispositivos de hardware, APIs y servicios en línea de nuevas y interesantes formas. Proporciona un editor basado en el navegador que facilita la conexión de flujos utilizando la amplia gama de nodos en la paleta que se pueden implementar en su tiempo de ejecución con un solo clic.
-    fr_fr: Node-RED est un outil de programmation pour connecter des appareils matériels, des API et des services en ligne de nouvelles et intéressantes manières. Il fournit un éditeur basé sur un navigateur qui facilite la connexion de flux en utilisant la large gamme de nœuds dans la palette qui peuvent être déployés sur son exécution en un clic.
-    hu_hu: A Node-RED egy programozási eszköz, amely új és érdekes módon összeköti a hardveres eszközöket, az API-kat és az online szolgáltatásokat. Egy böngésző alapú szerkesztőt biztosít, amely lehetővé teszi a folyamok összekötését a palettán található széles körű csomópontok használatával, amelyeket egy kattintással lehet telepíteni.
-    it_it: Node-RED è un strumento di programmazione per collegare dispositivi hardware, API e servizi online in nuovi e interessanti modi. Fornisce un editor basato su un browser che facilita la connessione di flussi utilizzando la vasta gamma di nodi nella palette che possono essere distribuiti sul suo runtime con un solo clic.
-    ru_ru: Node-RED - это инструмент программирования для соединения аппаратных устройств, API и онлайн-служб новыми и интересными способами. Он предоставляет веб-базированный редактор, который позволяет легко соединять потоки с помощью широкого диапазона узлов в палитре, которые можно развернуть в его среде выполнения с одним кликом.
-    pl_pl: Node-RED to narzędzie programistyczne do łączenia urządzeń sprzętowych, interfejsów API i usług online w nowy i ciekawy sposób. Dostarcza edytor oparty na przeglądarce, który ułatwia połączenie przepływów za pomocą szerokiej gamy węzłów w paletce, które można wdrożyć w jego środowisku uruchomieniowym w jednym kliknięciu.
-    pt_br: O Node-RED é uma ferramenta de programação para conectar dispositivos de hardware, APIs e serviços online de maneiras novas e interessantes. Ele fornece um editor baseado em navegador que facilita a conexão de fluxos usando uma ampla gama de nós na paleta que podem ser implantados em seu tempo de execução com um único clique.
-    sv_se: Node-RED är ett programmeringsverktyg för att ansluta hårdvaruenheter, API er och online-tjänster på nya och intressanta sätt. Det ger en webbaserad redigerare som gör det enkelt att ansluta flöden med hjälp av den breda paletten av noder i paletten som kan distribueras till dess körning med ett klick.
-    uk_ua: Node-RED - це інструмент програмування для з'єднання апаратних пристроїв, API та онлайн-служб новими і цікавими способами. Він надає веб-базований редактор, який дозволяє легко з'єднувати потоки за допомогою широкого діапазону вузлів у палітрі, які можна розгорнути в його середовищі виконання за один клік.
-  developer: Node-RED
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/icon.png
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-3.png
   tagline:
     en_us: Low-code programming for event-driven applications
-    zh_cn: 用于事件驱动应用程序的低代码编程
-    ar_sa: برمجة منخفضة الكود لتطبيقات محركة بالأحداث
-    de_de: Low-Code-Programmierung für ereignisgetriebene Anwendungen
-    es_es: Programación de bajo código para aplicaciones basadas en eventos
-    fr_fr: Programmation de bas code pour les applications événementielles
-    hu_hu: Low-code programozás eseményvezérelt alkalmazásokhoz
-    it_it: Programmazione a basso codice per applicazioni a eventi
-    ru_ru: Программирование с низким кодом для приложений с событийной архитектурой
-    pl_pl: Programowanie niskiego kodu dla aplikacji sterowanych zdarzeniami
-    pt_br: Programação de baixo código para aplicativos baseados em eventos
-    sv_se: Lågkodningsprogrammering för händelsestyra applikationer
-    uk_ua: Програмування з низьким кодом для застосунків з подійною архітектурою
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/thumbnail.png
-  tips: {}
+  developer: ""
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/node-red.png
+  thumbnail: ""
   title:
     en_us: Node-RED
-  index: /
+  category: BigBearCasaOS
   port_map: "1880"
