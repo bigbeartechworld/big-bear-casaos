@@ -1,4 +1,5 @@
-name: Flame
+version: "3"
+
 services:
   flame-dashboard:
     cpu_shares: 90
@@ -11,7 +12,7 @@ services:
       PASSWORD: casaos
     image: pawelmalak/flame
     labels:
-      icon: https://i.imgur.com/TzyTrX0.png
+      icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png
     ports:
       - target: 5005
         published: "5005"
@@ -19,7 +20,7 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /DATA/AppData/flame/data/
+        source: /DATA/AppData/$AppID/data
         target: /app/data
       - type: bind
         source: /var/run/docker.sock
@@ -30,7 +31,7 @@ services:
     privileged: false
     x-casaos:
       volumes:
-        - container: /app/data
+        - container: /DATA/AppData/$AppID/data
           description:
             en_us: Flame Data
       ports:
@@ -60,7 +61,7 @@ x-casaos:
   scheme: http
   store_app_id: flame-dashboard
   tagline:
-    en_us: Network-wide ads & trackers blocking DNS server
+    en_us: Self hosted startpage
   thumbnail: https://github.com/pawelmalak/flame/blob/master/.github/themes.png
   title:
     custom: ""
