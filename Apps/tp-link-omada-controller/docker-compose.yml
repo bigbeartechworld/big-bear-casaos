@@ -1,0 +1,51 @@
+name: omada-controller
+services:
+  app:
+    container_name: omada-controller
+    image: mbentley/omada-controller:5.9
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 4096 # Soft limit for open file descriptors.
+        hard: 8192 # Hard limit for open file descriptors.
+    stop_grace_period: 60s
+    network_mode: host
+    environment:
+      - PUID=508 # User ID.
+      - PGID=508 # Group ID.
+      - MANAGE_HTTP_PORT=8088 # Management portal HTTP port.
+      - MANAGE_HTTPS_PORT=8043 # Management portal HTTPS port.
+      - PORTAL_HTTP_PORT=8088 # User portal HTTP port.
+      - PORTAL_HTTPS_PORT=8843 # User portal HTTPS port.
+      - PORT_APP_DISCOVERY=27001 # App discovery port.
+      - PORT_ADOPT_V1=29812 # Adopt protocol version 1 port.
+      - PORT_UPGRADE_V1=29813 # Upgrade protocol version 1 port.
+      - PORT_MANAGER_V1=29811 # Manager protocol version 1 port.
+      - PORT_MANAGER_V2=29814 # Manager protocol version 2 port.
+      - PORT_DISCOVERY=29810 # Device discovery port.
+      - SHOW_SERVER_LOGS=true # Whether or not to show server logs.
+      - SHOW_MONGODB_LOGS=false # Whether or not to show MongoDB logs.
+      - SSL_CERT_NAME=tls.crt # Name of the SSL certificate.
+      - SSL_KEY_NAME=tls.key # Name of the SSL key.
+      - TZ=Etc/UTC # Timezone.
+    volumes:
+      - /DATA/AppData/tp-link-omada-controller/data:/opt/tplink/EAPController/data # Volume for data.
+      - /DATA/AppData/tp-link-omada-controller/logs:/opt/tplink/EAPController/logs # Volume for logs.
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware
+  tagline:
+    en_us: TP-Link Omada Controller
+  developer: ""
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/omada.png
+  thumbnail: ""
+  title:
+    en_us: TP-Link Omada Controller
+  category: BigBearCasaOS
+  port_map: "8088"
