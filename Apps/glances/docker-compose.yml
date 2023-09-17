@@ -1,0 +1,51 @@
+# Configuration for glances setup
+name: glances
+
+# Service definitions for the glances application
+services:
+  # Service name: app
+  app:
+    # Name of the container
+    container_name: glances
+
+    # Docker image to use
+    image: nicolargo/glances:3.4.0.3-full
+
+    # Port mapping between host and container
+    ports:
+      - 61208:61208
+
+    # Environment variables
+    environment:
+      - TZ=UTC # Timezone
+      - GLANCES_OPT=-w # Glances option to run as a web server
+
+    # Use the host's PID namespace
+    pid: host
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to mount into the container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket for monitoring
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc. It also allows monitoring of running processes, logged in users, temperatures, voltages, fan speeds etc. It also supports container monitoring, it supports different container management systems such as Docker, LXC. The information is presented in an easy to read dashboard and can also be used for remote monitoring of systems via a web interface or command line interface. It is easy to install and use and can be customized to show only the information that you are interested in. # Description in English
+  tagline:
+    en_us: Glances # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/glances.png # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: Glances # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "61208" # Port mapping information

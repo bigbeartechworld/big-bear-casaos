@@ -10,16 +10,17 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 
 ## Apps
 
-| App Name                 | Version    |
-| ------------------------ | ---------- |
-| Flame                    | latest     |
-| Ntfy.sh                  | latest     |
-| TP-Link Omada Controller | 5.9        |
-| Python Matter Server     | stable     |
-| Pingvin                  | latest     |
-| Mumble Server            | v1.4.230-6 |
-| Code Server              | latest     |
-| Node-RED                 | 3.1.0      |
+| App Name                 | Version      |
+| ------------------------ | ------------ |
+| Flame                    | latest       |
+| Ntfy.sh                  | latest       |
+| TP-Link Omada Controller | 5.9          |
+| Python Matter Server     | stable       |
+| Pingvin                  | latest       |
+| Mumble Server            | v1.4.230-6   |
+| Code Server              | latest       |
+| Node-RED                 | 3.1.0        |
+| Glances                  | 3.4.0.3-full |
 
 ## UI How to
 
