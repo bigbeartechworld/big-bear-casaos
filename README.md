@@ -10,15 +10,10 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 
 ## Apps
 
-| App Name     | Version  |
-| ------------ | -------- |
-| Adguard Home | 0.107.35 |
-| Chromium     | 0.0.1    |
-| Cloudflared  | 0.0.1    |
-| Ghost        | 5.55.2   |
-| Homepage     | 0.6.23   |
-| Uptime Kuma  | 1.22.1   |
-| Flame        | latest   |
+| App Name | Version |
+| -------- | ------- |
+| Flame    | latest  |
+| Ntfy.sh  | latest  |
 
 ## UI How to
 
