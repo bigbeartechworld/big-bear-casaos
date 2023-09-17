@@ -1,10 +1,9 @@
 name: ntfy
 services:
-  ntfy:
+  app:
     image: binwiederhier/ntfy
     command:
       - serve
-    container_name: ntfy
     environment:
       - TZ=UTC
     ports:
@@ -28,12 +27,12 @@ x-casaos:
   description:
     en_us: ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
   tagline:
-    en_us: Flame is self-hosted startpage for your server. Easily manage your apps and bookmarks with built-in editors.
+    en_us: A simple HTTP-based pub-sub notification service
   developer: ""
   author: BigBearTechWorld
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ntfy.png
   thumbnail: https://ntfy.sh/_next/static/media/screenshot-web-3.de6f19af.png
   title:
-    en_us: Flame
+    en_us: Ntfy.sh
   category: BigBearCasaOS
   port_map: "7200"
