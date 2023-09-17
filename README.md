@@ -4,14 +4,15 @@ This repository contains the Big Bear CasaOS App Store. This app store is a comm
 
 ## Apps
 
-| App Name     | Added          | Last Updated   | Updated By       | Version  |
-| ------------ | -------------- | -------------- | ---------------- | -------- |
-| Adguard Home | July 29th 2023 | July 29th 2023 | BigBearTechWorld | 0.107.35 |
-| Chromium     | July 29th 2023 | July 29th 2023 | BigBearTechWorld | 0.0.1    |
-| Cloudflared  | July 29th 2023 | July 29th 2023 | BigBearTechWorld | 0.0.1    |
-| Ghost        | July 29th 2023 | July 29th 2023 | BigBearTechWorld | 5.55.2   |
-| Homepage     | July 29th 2023 | July 29th 2023 | BigBearTechWorld | 0.6.23   |
-| Uptime Kuma  | July 29th 2023 | July 29th 2023 | BigBearTechWorld | 1.22.1   |
+| App Name     | Version  |
+| ------------ | -------- |
+| Adguard Home | 0.107.35 |
+| Chromium     | 0.0.1    |
+| Cloudflared  | 0.0.1    |
+| Ghost        | 5.55.2   |
+| Homepage     | 0.6.23   |
+| Uptime Kuma  | 1.22.1   |
+| Flame        | latest   |
 
 ## UI How to
 
@@ -25,7 +26,7 @@ How to add the App Store:
 
   ![Step 2](https://raw.githubusercontent.com/WisdomSky/CasaOS-LinuxServer-AppStore/main/tip-2.jpg)
 
-- Paste the appstore link `https://casaos-appstore.paodayag.dev/linuxserver.zip` and then click `Add` to submit.
+- Paste the appstore link `https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zip` and then click `Add` to submit.
 
   ![Step 3](https://raw.githubusercontent.com/WisdomSky/CasaOS-LinuxServer-AppStore/main/tip-3.jpg)
 
