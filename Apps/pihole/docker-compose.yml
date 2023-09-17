@@ -1,0 +1,51 @@
+name: pihole
+services:
+  app:
+    # Name of the container instance
+    container_name: pihole
+
+    # Image to use for this container
+    # Use the specified version of the pihole image
+    image: pihole/pihole:2023.05.2
+
+    # Expose and map ports (host:container)
+    ports:
+      - "53:53/tcp" # DNS (TCP)
+      - "53:53/udp" # DNS (UDP)
+      - "7300:80/tcp" # Web UI HTTP
+
+    # Environment variables
+    environment:
+      TZ: "UTC" # Time Zone; Update this to your time zone
+      WEBPASSWORD: "password" # Admin password for web UI; Change this to your desired admin password
+
+    # Mount volumes for persistent data
+    volumes:
+      - "/DATA/AppData/$AppID/data/pihole:/etc/pihole" # Pi-hole data
+      - "/DATA/AppData/$AppID/data/dnsmasq:/etc/dnsmasq.d" # dnsmasq data
+
+    # Restart policy for the container when it exits
+    restart: unless-stopped
+
+    # DNS servers for this container to use
+    dns:
+      - 127.0.0.1 # Localhost for internal resolution
+      - 1.1.1.1 # Cloudflare DNS for external resolution
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.
+  tagline:
+    en_us: Network-wide Ad Blocking
+  developer: ""
+  author: BigBearTechWorld
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/pi-hole.png?raw=true
+  thumbnail: ""
+  title:
+    en_us: PI-hole
+  category: BigBearCasaOS
+  port_map: "5080"
