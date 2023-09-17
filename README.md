@@ -19,6 +19,7 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 | Pingvin                  | latest     |
 | Mumble Server            | v1.4.230-6 |
 | Code Server              | latest     |
+| Node-RED                 | 3.1.0      |
 
 ## UI How to
 
