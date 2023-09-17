@@ -29,15 +29,11 @@ x-casaos:
       editors, it allows you to setup your very own application hub in no time -
       no file editing necessary.
   tagline:
-    en_us:
-      Flame is self-hosted startpage for your server. Its design is inspired
-      (heavily) by SUI. Flame is very easy to setup and use. With built-in
-      editors, it allows you to setup your very own application hub in no time -
-      no file editing necessary.
+    en_us: Flame is self-hosted startpage for your server. Easily manage your apps and bookmarks with built-in editors.
   developer: ""
   author: BigBearCommunity
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png
-  thumbnail: https://github.com/pawelmalak/flame/blob/master/.github/themes.png
+  thumbnail: https://github.com/pawelmalak/flame/raw/master/.github/home.png
   title:
     en_us: Flame
   category: BigBearCasaOS
