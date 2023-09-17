@@ -1,0 +1,43 @@
+name: pingvin-share
+services:
+  # Defines a set of services to be run together
+
+  app:
+    # Name of the service
+
+    image: stonith404/pingvin-share
+    # Image to be used for this service
+
+    restart: unless-stopped
+    # Service will always restart unless it's manually stopped
+
+    ports:
+      # Port mapping between host and container
+
+      - 3000:3000
+      # Maps port 3000 on the host to port 3000 in the container
+
+    volumes:
+      # Defines volume mounts for the service
+      - "/DATA/AppData/pingvin-share/data:/opt/app/backend/data"
+      # Maps data directory from host to container's backend data directory
+      - "/DATA/AppData/pingvin-share/images:/opt/app/frontend/public/img"
+      # Maps images directory from host to container's frontend public img directory
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.
+  tagline:
+    en_us: Pingvin Share
+  developer: "stonith404"
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pingvin.png
+  thumbnail: "https://user-images.githubusercontent.com/58886915/225038319-b2ef742c-3a74-4eb6-9689-4207a36842a4.png"
+  title:
+    en_us: Pingvin Share
+  category: BigBearCasaOS
+  port_map: "3000"
