@@ -41,4 +41,4 @@ x-casaos:
   title:
     en_us: Flame
   category: BigBearCasaOS
-  port_map: "7200"
+  port_map: "5005"
