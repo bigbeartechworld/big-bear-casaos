@@ -1,23 +1,14 @@
-version: "3"
-
+name: flame
 services:
-  flame-dashboard:
-    cpu_shares: 90
-    command: []
-    deploy:
-      resources:
-        limits:
-          memory: 300M
+  app:
+    image: pawelmalak/flame
     environment:
       PASSWORD: casaos
-    image: pawelmalak/flame
-    labels:
-      icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png
+    restart: unless-stopped
     ports:
       - target: 5005
         published: "5005"
         protocol: tcp
-    restart: unless-stopped
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/data
@@ -25,44 +16,29 @@ services:
       - type: bind
         source: /var/run/docker.sock
         target: /var/run/docker.sock
-    devices: []
-    cap_add: []
-    network_mode: bridge
-    privileged: false
-    x-casaos:
-      volumes:
-        - container: /DATA/AppData/$AppID/data
-          description:
-            en_us: Flame Data
-      ports:
-        - container: "5005"
-          description:
-            en_us: Flame HTTP Port
-    container_name: flame-dashboard
 x-casaos:
   architectures:
     - amd64
     - arm
     - arm64
-  author: BigBearCommunity
-  category: Dashboard
+  main: app
   description:
     en_us:
       Flame is self-hosted startpage for your server. Its design is inspired
       (heavily) by SUI. Flame is very easy to setup and use. With built-in
       editors, it allows you to setup your very own application hub in no time -
       no file editing necessary.
-  developer: pawelmalak
-  hostname: ""
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png
-  index: /
-  main: flame-dashboard
-  port_map: "5005"
-  scheme: http
-  store_app_id: flame-dashboard
   tagline:
-    en_us: Self hosted startpage
+    en_us:
+      Flame is self-hosted startpage for your server. Its design is inspired
+      (heavily) by SUI. Flame is very easy to setup and use. With built-in
+      editors, it allows you to setup your very own application hub in no time -
+      no file editing necessary.
+  developer: ""
+  author: BigBearCommunity
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png
   thumbnail: https://github.com/pawelmalak/flame/blob/master/.github/themes.png
   title:
-    custom: ""
     en_us: Flame
+  category: BigBearCasaOS
+  port_map: "7200"
