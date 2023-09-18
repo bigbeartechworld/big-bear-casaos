@@ -1,0 +1,49 @@
+name: plesk
+services:
+  # Defines a set of services to be run together
+  app:
+    image: plesk/plesk
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/plesk.png
+    ports:
+      - target: 8880
+        published: "8878"
+        protocol: tcp
+      - target: 80
+        published: "8087"
+        protocol: tcp
+      - target: 8443
+        published: "8443"
+        protocol: tcp
+      - target: 21
+        published: "21"
+        protocol: tcp
+      - target: 443
+        published: "443"
+        protocol: tcp
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /mnt/Storage1/plesk
+        target: /usr/local/sbin:/usr/local/bin:/usr/sbin
+    network_mode: bridge
+    container_name: "plesk"
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: The server management platform built with you in mind. Now fully integrated with dynamic monitoring dashboards.
+  tagline:
+    en_us: Plesk
+  developer: "plesk"
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/plesk.png
+  thumbnail: ""
+  title:
+    en_us: Plesk
+  category: BigBearCasaOS
+  port_map: "8878"
