@@ -26,6 +26,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Node-RED                 | 3.1.0        |
 | Glances                  | 3.4.0.3-full |
 | Baserow                  | 1.20.0       |
+| Guacamole                | latest       |
 
 ## UI How to
 
