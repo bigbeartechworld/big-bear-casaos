@@ -12,6 +12,10 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 
 If you have a suggestion for an app, please post in our suggestion discord on the [BigBearCommunity](https://discord.gg/ykwA7wsnP8) server.
 
+## Support Development
+
+❤️ Consider supporting our mission: https://ko-fi.com/bigbeartechworld
+
 ## Apps
 
 | App Name                 | Version      |
