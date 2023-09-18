@@ -32,7 +32,6 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Baserow                  | 1.20.0       |
 | Guacamole                | latest       |
 | cAdvisor                 | latest       |
-| Plesk                    | latest       |
 
 ## UI How to
 
