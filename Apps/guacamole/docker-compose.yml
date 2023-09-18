@@ -1,0 +1,51 @@
+name: guacamole
+
+services:
+  guacd:
+    image: guacamole/guacd
+    restart: always
+
+  app:
+    image: guacamole/guacamole
+    restart: always
+    links:
+      - guacd
+    environment:
+      - GUACD_HOSTNAME=guacd
+      - MYSQL_HOSTNAME=mysql
+      - MYSQL_DATABASE=guacamole_db
+      - MYSQL_USER=guacamole_user
+      - MYSQL_PASSWORD=some_password
+    ports:
+      - 8090:8080
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=guacamole_db
+      - MYSQL_USER=guacamole_user
+      - MYSQL_PASSWORD=some_password
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation. # Description in English
+  tagline:
+    en_us: Guacamole # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: Guacamole # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "8090" # Port mapping information
