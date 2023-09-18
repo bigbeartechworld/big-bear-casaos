@@ -1,34 +1,73 @@
+# python-matter-server Configuration
 name: python-matter-server
+
+# Specifying the version for this configuration
 version: "3.8"
+
+# Defining the services for this configuration
 services:
   app:
+    # Docker image used for the service
     image: ghcr.io/home-assistant-libs/python-matter-server:stable
+
+    # Container name for the service
     container_name: matter-server
+
+    # Restart policy for the container
     restart: unless-stopped
-    # Required for mDNS to work correctly
+
+    # Required to make mDNS work correctly
     network_mode: host
+
     security_opt:
-      # Needed for Bluetooth via dbus
+      # Necessary for accessing Bluetooth via dbus
       - apparmor:unconfined
+
     volumes:
-      # Create an .env file that sets the USERDIR environment variable.
+      # Map the data directory from the host to the container
+      # Make sure to create an .env file that sets the USERDIR environment variable
       - /DATA/AppData/$AppID/data:/data/
+
+      # Map the dbus directory from the host to the container in read-only mode
       - /run/dbus:/run/dbus:ro
+
+# CasaOS specific configuration
 x-casaos:
+  # Architectures supported by this service
   architectures:
     - amd64
     - arm
     - arm64
+
+  # Main service for this configuration
   main: app
+
+  # Description of the project in English
   description:
     en_us: This project implements a Matter Controller Server over WebSockets using the official Matter (formerly CHIP) SDK as a base and provides both a server and client implementation. The goal of this project is primary to have Matter support in Home Assistant but its universal approach makes it suitable to be used in other projects too.
+
+  # Short tagline for the project
   tagline:
     en_us: Python Matter Server
+
+  # Developer information (currently empty)
   developer: ""
+
+  # Author information
   author: BigBearTechWorld
+
+  # Icon URL for the project
   icon: https://i.imgur.com/eeUGveF.png
+
+  # Thumbnail for the project (currently empty)
   thumbnail: ""
+
+  # Title for the project in English
   title:
     en_us: Python Matter Server
+
+  # Category information for the project
   category: BigBearCasaOS
+
+  # Port mapping for the service
   port_map: "5080"

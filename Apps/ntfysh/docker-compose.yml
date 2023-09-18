@@ -1,16 +1,31 @@
+# ntfy application configuration
 name: ntfy
+
+# Services associated with the ntfy application
 services:
+  # Main application service configuration
   app:
+    # Docker image to be used for the service
     image: binwiederhier/ntfy
+
+    # Command to run inside the container
     command:
       - serve
+
+    # Environment variables for the service
     environment:
       - TZ=UTC
+
+    # Port configurations for the service
     ports:
-      - target: 80
-        published: "7200"
-        protocol: tcp
+      - target: 80 # Container port
+        published: "7200" # Host port
+        protocol: tcp # Protocol type
+
+    # Restart policy for the service
     restart: unless-stopped
+
+    # Volumes to be mounted inside the container
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/cache
@@ -18,21 +33,44 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/config
         target: /etc/ntfy
+
+# CasaOS specific configuration
 x-casaos:
+  # Supported architectures for the service
   architectures:
     - amd64
     - arm
     - arm64
+
+  # Main service name for CasaOS
   main: app
+
+  # Description of the application in English
   description:
     en_us: ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
+
+  # Short tagline or slogan of the application in English
   tagline:
     en_us: A simple HTTP-based pub-sub notification service
+
+  # Developer of the application (currently empty)
   developer: ""
+
+  # Author name
   author: BigBearTechWorld
+
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ntfy.png
+
+  # Thumbnail or screenshot URL for the application
   thumbnail: https://ntfy.sh/_next/static/media/screenshot-web-3.de6f19af.png
+
+  # Title of the application in English
   title:
     en_us: Ntfy.sh
+
+  # Category of the application
   category: BigBearCasaOS
+
+  # Default port mapping for CasaOS
   port_map: "7200"

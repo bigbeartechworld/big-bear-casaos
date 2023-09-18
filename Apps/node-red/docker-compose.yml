@@ -1,37 +1,70 @@
+# Name of the service configuration
 name: node-red-updated
+
+# Define the services for this configuration
 services:
   app:
+    # Docker image for the service
     image: nodered/node-red:3.1.0
-    deploy:
-      resources:
-        reservations:
-          memory: 64M
+
+    # Use the host's network stack
     network_mode: host
+
+    # Port mapping configurations
     ports:
-      - target: 1880
-        published: "1880"
-        protocol: tcp
+      - target: 1880 # Container's port
+        published: "1880" # Host's port
+        protocol: tcp # Communication protocol
+
+    # Restart policy for the service
     restart: always
+
+    # Volume configurations for persistent storage
     volumes:
-      - type: bind
-        source: /DATA/AppData/$AppID/data
-        target: /data
+      - type: bind # Bind type volume
+        source: /DATA/AppData/$AppID/data # Source path on the host
+        target: /data # Path inside the container
+
+    # Name of the container
     container_name: node-red-updated
+
+# Custom configurations specific to casaos
 x-casaos:
+  # Supported architectures
   architectures:
     - amd64
     - arm
     - arm64
+
+  # Main service for this configuration
   main: app
+
+  # Description for the service
   description:
     en_us: Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.  It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.
+
+  # Short description or slogan
   tagline:
     en_us: Low-code programming for event-driven applications
+
+  # Developer of the service (if applicable)
   developer: ""
+
+  # Author of the configuration
   author: BigBearTechWorld
+
+  # Icon for the service
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/node-red.png
+
+  # Thumbnail for the service (if applicable)
   thumbnail: ""
+
+  # Display title for the service
   title:
     en_us: Node-RED Updated
+
+  # Category for organization
   category: BigBearCasaOS
+
+  # Port map for quick reference
   port_map: "1880"

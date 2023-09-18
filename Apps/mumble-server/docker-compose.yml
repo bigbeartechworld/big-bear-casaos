@@ -1,28 +1,50 @@
+# Name of the service
 name: mumble-server
+
+# Service configurations
 services:
+  # Main application service
   app:
+    # Docker image to use
     image: mumblevoip/mumble-server:v1.4.230-6
+    # Name of the container
     container_name: mumble-server
+    # Hostname for the container
     hostname: mumble-server
+    # Restart policy
     restart: on-failure
+    # Ports configuration
     ports:
-      - 64738:64738
-      - 64738:64738/udp
+      - 64738:64738 # TCP port mapping
+      - 64738:64738/udp # UDP port mapping
+
+# Additional metadata for CasaOS
 x-casaos:
+  # Supported architectures
   architectures:
     - amd64
     - arm
     - arm64
+  # Main service for CasaOS
   main: app
+  # Description in English
   description:
     en_us: Mumble is a free, open source, low latency, high quality voice chat application.
+  # Tagline for the application
   tagline:
     en_us: Mumble Server
+  # Developer's name (empty in this case)
   developer: ""
+  # Author's name
   author: BigBearTechWorld
+  # Icon URL
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mumble.png
+  # Thumbnail (empty in this case)
   thumbnail: ""
+  # Title in English
   title:
     en_us: Mumble Server
+  # Category for CasaOS
   category: BigBearCasaOS
+  # Port mapping information
   port_map: "64738"

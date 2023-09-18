@@ -1,51 +1,74 @@
+# Name of the configuration: guacamole
 name: guacamole
 
+# Define the services required for the application
 services:
+  # guacd service configuration
   guacd:
+    # Docker image to use for this service
     image: guacamole/guacd
+    # Restart policy for the container
     restart: always
 
+  # app service configuration
   app:
     image: guacamole/guacamole
     restart: always
+    # Link this service to the guacd service
     links:
       - guacd
+    # Environment variables for the app service
     environment:
       - GUACD_HOSTNAME=guacd
       - MYSQL_HOSTNAME=mysql
       - MYSQL_DATABASE=guacamole_db
       - MYSQL_USER=guacamole_user
       - MYSQL_PASSWORD=some_password
+    # Map port 8090 on the host to port 8080 on the container
     ports:
       - 8090:8080
 
+  # mysql service configuration
   mysql:
     image: mysql:5.7
     restart: always
+    # Environment variables for the MySQL service
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
       - MYSQL_DATABASE=guacamole_db
       - MYSQL_USER=guacamole_user
       - MYSQL_PASSWORD=some_password
+    # Volume mapping for persistent storage
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
 
 # CasaOS specific configuration
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for the application
+  architectures:
     - amd64
     - arm
     - arm64
-  main: app # Main service of the application
+  # Main service of the application
+  main: app
+  # Application description in English
   description:
-    en_us: Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation. # Description in English
+    en_us: Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.
+  # Short description or tagline in English
   tagline:
-    en_us: Guacamole # Short description or tagline in English
-  developer: "" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png # Icon for the application
-  thumbnail: "" # Thumbnail image (currently empty)
+    en_us: Guacamole
+  # Developer's name or identifier (currently empty)
+  developer: ""
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
   title:
-    en_us: Guacamole # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "8090" # Port mapping information
+    en_us: Guacamole
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8090"

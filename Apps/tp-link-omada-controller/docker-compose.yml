@@ -1,51 +1,104 @@
-name: omada-controller
+# Docker-compose configuration for Omada Controller.
+
+name: omada-controller # Name of the configuration.
+
+# Define the services that run in the Docker environment.
 services:
+  # The name of the service being configured.
   app:
-    container_name: omada-controller
+    container_name: omada-controller # The name of the container.
+
+    # The Docker image used for the service.
     image: mbentley/omada-controller:5.9
+
+    # Restart policy for the container. "unless-stopped" means the container will always restart unless manually stopped.
     restart: unless-stopped
+
+    # Set limits on system-level resources for the container.
     ulimits:
+      # Set limits on the number of open file descriptors for the container.
       nofile:
-        soft: 4096 # Soft limit for open file descriptors.
-        hard: 8192 # Hard limit for open file descriptors.
+        soft: 4096 # Suggested maximum number of open file descriptors.
+        hard: 8192 # Absolute maximum number of open file descriptors.
+
+    # Time for a graceful shutdown before the container is forcefully stopped.
     stop_grace_period: 60s
+
+    # Sets the network mode for the container. "host" means the container shares the host's network stack.
     network_mode: host
+
+    # Environment variables for the container.
     environment:
-      - PUID=508 # User ID.
-      - PGID=508 # Group ID.
-      - MANAGE_HTTP_PORT=8088 # Management portal HTTP port.
-      - MANAGE_HTTPS_PORT=8043 # Management portal HTTPS port.
-      - PORTAL_HTTP_PORT=8088 # User portal HTTP port.
-      - PORTAL_HTTPS_PORT=8843 # User portal HTTPS port.
-      - PORT_APP_DISCOVERY=27001 # App discovery port.
-      - PORT_ADOPT_V1=29812 # Adopt protocol version 1 port.
-      - PORT_UPGRADE_V1=29813 # Upgrade protocol version 1 port.
-      - PORT_MANAGER_V1=29811 # Manager protocol version 1 port.
-      - PORT_MANAGER_V2=29814 # Manager protocol version 2 port.
-      - PORT_DISCOVERY=29810 # Device discovery port.
-      - SHOW_SERVER_LOGS=true # Whether or not to show server logs.
-      - SHOW_MONGODB_LOGS=false # Whether or not to show MongoDB logs.
-      - SSL_CERT_NAME=tls.crt # Name of the SSL certificate.
-      - SSL_KEY_NAME=tls.key # Name of the SSL key.
-      - TZ=Etc/UTC # Timezone.
+      # Various ports and configurations for the Omada Controller.
+
+      # User and Group IDs for running the container.
+      - PUID=508
+      - PGID=508
+
+      # Define ports for management and user portal access.
+      - MANAGE_HTTP_PORT=8088
+      - MANAGE_HTTPS_PORT=8043
+      - PORTAL_HTTP_PORT=8088
+      - PORTAL_HTTPS_PORT=8843
+
+      # Ports for app and device discovery, as well as different versions of protocols.
+      - PORT_APP_DISCOVERY=27001
+      - PORT_ADOPT_V1=29812
+      - PORT_UPGRADE_V1=29813
+      - PORT_MANAGER_V1=29811
+      - PORT_MANAGER_V2=29814
+      - PORT_DISCOVERY=29810
+
+      # Configuration for displaying logs.
+      - SHOW_SERVER_LOGS=true
+      - SHOW_MONGODB_LOGS=false
+
+      # SSL certificate and key names for secure connections.
+      - SSL_CERT_NAME=tls.crt
+      - SSL_KEY_NAME=tls.key
+
+      # Timezone for the container.
+      - TZ=Etc/UTC
+
+    # Define volume mappings between the host and the container.
     volumes:
-      - /DATA/AppData/tp-link-omada-controller/data:/opt/tplink/EAPController/data # Volume for data.
-      - /DATA/AppData/tp-link-omada-controller/logs:/opt/tplink/EAPController/logs # Volume for logs.
+      # Mapping for data storage.
+      - /DATA/AppData/tp-link-omada-controller/data:/opt/tplink/EAPController/data
+
+      # Mapping for log storage.
+      - /DATA/AppData/tp-link-omada-controller/logs:/opt/tplink/EAPController/logs
+
+# Additional metadata for CasaOS integration.
 x-casaos:
+  # Architectures supported by the container image.
   architectures:
     - amd64
     - arm
     - arm64
+
+  # Main service for CasaOS.
   main: app
+
+  # Descriptions and display texts for CasaOS dashboard.
   description:
     en_us: Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware
   tagline:
     en_us: TP-Link Omada Controller
+
+  # Developer and author details.
   developer: ""
   author: BigBearTechWorld
+
+  # Icons and thumbnails for CasaOS dashboard.
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/omada.png
   thumbnail: ""
+
+  # Title for the CasaOS dashboard.
   title:
     en_us: TP-Link Omada Controller
+
+  # Category for the CasaOS dashboard.
   category: BigBearCasaOS
+
+  # Port mapping information for CasaOS.
   port_map: "8088"
