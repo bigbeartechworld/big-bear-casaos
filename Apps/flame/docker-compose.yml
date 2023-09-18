@@ -1,80 +1,80 @@
 # Name of the application
 name: flame
 
-# Services that this application uses
+# List of services that this application uses
 services:
-  # Main service for the application
+  # Main service for the Flame application
   app:
-    # The Docker image for the Flame application
+    # The Docker image to be used for the Flame application
     image: pawelmalak/flame
 
-    # Environment variables for the application
+    # Environment variables that configure the application
     environment:
-      # Set the password for the application
+      # Specifies the password to be used by the Flame application
       PASSWORD: casaos
 
-    # Restart policy for the container
+    # Policy to determine how the service should be restarted if it stops
     restart: unless-stopped
 
-    # Ports that the application exposes
+    # Specifies the ports that the application should expose
     ports:
+      # Maps the container's port (target) to the host's port (published)
       - target: 5005
         published: "5005"
         protocol: tcp
 
-    # Volumes that the application uses
+    # Specifies the storage volumes that the application should use
     volumes:
-      # Mount the application data from the host
+      # Mounts the application data directory from the host system to the container
       - type: bind
         source: /DATA/AppData/$AppID/data
         target: /app/data
 
-      # Mount the Docker socket from the host
+      # Mounts the Docker socket from the host system to the container
       - type: bind
         source: /var/run/docker.sock
         target: /var/run/docker.sock
 
-# CasaOS specific configuration
+# CasaOS specific configuration for the application
 x-casaos:
-  # Supported architectures for the application
+  # List of architectures that this application supports
   architectures:
     - amd64
     - arm
     - arm64
 
-  # The main service for this application
+  # Indicates the main service for this application within the services list
   main: app
 
-  # Description of the application
+  # Provides a detailed description of the application
   description:
     en_us:
-      Flame is self-hosted startpage for your server. Its design is inspired
-      (heavily) by SUI. Flame is very easy to setup and use. With built-in
-      editors, it allows you to setup your very own application hub in no time -
-      no file editing necessary.
+      Flame is a self-hosted startpage for your server. Its design is heavily inspired
+      by SUI. Flame is user-friendly and easy to set up. With its built-in
+      editors, users can quickly establish their own application hub without any file editing.
 
-  # A brief tagline for the application
+  # Provides a short and catchy tagline for the application
   tagline:
-    en_us: Flame is self-hosted startpage for your server. Easily manage your apps and bookmarks with built-in editors.
+    en_us: Flame is a self-hosted startpage for your server. Manage your apps and bookmarks effortlessly with built-in editors.
 
-  # Developer of the application (empty in this case)
+  # Name of the developer or organization that developed the application
   developer: ""
 
-  # Author of the configuration
+  # Indicates the person or organization responsible for creating this configuration
   author: BigBearCommunity
 
-  # Icon URL for the application
+  # URL pointing to the icon for the application
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png
 
-  # Thumbnail URL for the application
+  # URL pointing to a thumbnail image representing the application
   thumbnail: https://github.com/pawelmalak/flame/raw/master/.github/home.png
 
-  # Title of the application
+  # Provides a title for the application
   title:
     en_us: Flame
 
-  # Category for the application
+  # Specifies the category under which the application falls
   category: BigBearCasaOS
 
-  # Port mapping for the application
+  # Specifies the port on which the application is accessible
   port_map: "5005"
