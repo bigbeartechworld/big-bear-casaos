@@ -27,6 +27,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Glances                  | 3.4.0.3-full |
 | Baserow                  | 1.20.0       |
 | Guacamole                | latest       |
+| cAdvisor                 | latest       |
 
 ## UI How to
 

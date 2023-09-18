@@ -1,0 +1,59 @@
+# Configuration for cadvisor setup
+name: cadvisor
+
+# Service definitions for the cadvisor application
+services:
+  # Service for cAdvisor, a tool to monitor container performance
+  app:
+    # Docker image to be used for cAdvisor
+    image: gcr.io/cadvisor/cadvisor:latest
+    # Name of the container instance
+    container_name: monitoring_cadvisor
+    # Restart policy - Restart the container unless it's stopped manually
+    restart: unless-stopped
+    # List of device mappings between host and container
+    devices:
+      # Map the host's kernel message log to the container
+      - "/dev/kmsg:/dev/kmsg"
+    # Volumes to be mounted to the container
+    volumes:
+      # Mount the root directory of the host in a read-only mode
+      - /:/rootfs:ro
+      # Mount the var run directory of the host in a read-write mode
+      - /var/run:/var/run:rw
+      # Mount Docker socket to allow cAdvisor to monitor other containers
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      # Mount system directory of the host in a read-only mode for system metrics
+      - /sys:/sys:ro
+      # Mount Docker library directory in a read-only mode
+      - /var/lib/docker/:/var/lib/docker:ro
+      # Mount the disk directory of the host in a read-only mode for disk metrics
+      - /dev/disk/:/dev/disk:ro
+    # Ports to be exposed from the container
+    expose:
+      # Expose port 8080 from the container
+      - 8080
+    # Port mappings between host and container
+    ports:
+      # Map port 8085 of the host to port 8080 of the container
+      - 8085:8080
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers. It is a running daemon that collects, aggregates, processes, and exports information about running containers. Specifically, for each container it keeps resource isolation parameters, historical resource usage, histograms of complete historical resource usage and network statistics. This data is exported by container and machine-wide. # Description in English
+  tagline:
+    en_us: cAdvisor # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cadvisor.png # Icon for the application
+  thumbnail: "" # Thumbnail image
+  title:
+    en_us: cAdvisor # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "8085" # Port mapping information
