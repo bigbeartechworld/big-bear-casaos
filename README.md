@@ -32,6 +32,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Baserow                  | 1.20.0       |
 | Guacamole                | latest       |
 | cAdvisor                 | latest       |
+| Gotify                   | 2.4.0        |
 
 ## UI How to
 

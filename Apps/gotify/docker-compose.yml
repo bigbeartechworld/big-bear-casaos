@@ -1,0 +1,36 @@
+# Configuration for gotify setup
+name: gotify
+
+# Service definitions for the gotify application
+services:
+  # Service name: app
+  app:
+    image: gotify/server:2.4.0 # Docker image for the service
+    ports:
+      - 8091:80 # Port mapping (host:container)
+    environment: # Environment variables for the service
+      - GOTIFY_DEFAULTUSER_NAME=admin
+      - GOTIFY_DEFAULTUSER_PASS=custom
+    volumes: # Volume mapping (host:container)
+      - "/DATA/AppData/$AppID/data:/app/data"
+    network_mode: bridge # Network mode
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: app # Main service of the application
+  description: # Description in different languages
+    en_us: a simple server for sending and receiving messages # Description in English
+  tagline: # Tagline in different languages
+    en_us: Gotify # Short description or tagline in English
+  developer: "gotify" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gotify.png # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title: # Title in different languages
+    en_us: Gotify # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "8091" # Port mapping information
