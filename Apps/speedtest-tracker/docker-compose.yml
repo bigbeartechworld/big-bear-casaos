@@ -6,51 +6,39 @@ name: speedtest-tracker
 # Service definitions for the speedtest-tracker application
 services:
   # Service name: app
-  app:
-    # Container name to be used for the 'speedtest-tracker' service
+  speedtest-tracker:
     container_name: speedtest-tracker
-
-    # Docker image to be used for this service
-    image: henrywhitaker3/speedtest-tracker
-
-    # Port mappings - Mapping host port 8765 to container port 80
     ports:
-      - 8765:80
-
-    # Volumes - Mapping host directory to container directory
-    # Host directory: /DATA/AppData/Speedtest-Tracker/config
-    # Container directory: /config
-    volumes:
-      - /DATA/AppData/$AppID/config:/config
-
-    # Environment variables for the service
+      - "8080:80"
+      - "8443:443"
     environment:
-      # Timezone setting for the service
-      - TZ=UTC
-
-      # Group ID - left empty but you can specify a value
-      - PGID=
-
-      # User ID - left empty but you can specify a value
-      - PUID=
-
-      # Acknowledge Ookla's EULA and GDPR, set to true to agree
-      - OOKLA_EULA_GDPR=true
-
-    # Logging configuration for the service
-    logging:
-      # Use json-file as the logging driver
-      driver: "json-file"
-
-      # Logging options:
-      # - Maximum number of log files: 10
-      # - Maximum size of each log file: 200 kilobytes
-      options:
-        max-file: "10"
-        max-size: "200k"
-
-    # Restart policy for the service: restart unless manually stopped
+      - PUID=1000
+      - PGID=1000
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=speedtest_tracker
+      - DB_USERNAME=casaos
+      - DB_PASSWORD=casaos
+      - TZ=America/Chicago
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/DATA/AppData/$AppID/config:/config"
+      - "/DATA/AppData/$AppID/web:/etc/ssl/web"
+    image: "ghcr.io/alexjustesen/speedtest-tracker:latest"
     restart: unless-stopped
+    depends_on:
+      - db
+  db:
+    image: mariadb:10
+    restart: always
+    environment:
+      - MARIADB_DATABASE=speedtest_tracker
+      - MARIADB_USER=casaos
+      - MARIADB_PASSWORD=casaos
+      - MARIADB_RANDOM_ROOT_PASSWORD=true
+    volumes:
+      - "/DATA/AppData/$AppID/mysql:/var/lib/mysql"
 
 # CasaOS specific configuration
 x-casaos:
@@ -60,19 +48,19 @@ x-casaos:
     - arm
     - arm64
   # Main service of the application
-  main: app
+  main: speedtest-tracker
   description:
     # Description in English
-    en_us: This program runs a speedtest check every hour and graphs the results. The back-end is written in Laravel and the front-end uses React. It uses the Ookla's speedtest cli package to get the data and uses Chart.js to plot the results.
+    en_us: A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.
   tagline:
     # Short description or tagline in English
     en_us: Speedtest Tracker
   # Developer's name or identifier
-  developer: "henrywhitaker3"
+  developer: "alexjustesen"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/speedtest-tracker.png
+  icon: https://github.com/alexjustesen/speedtest-tracker/blob/main/public/img/speedtest-tracker-icon.png?raw=true
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
@@ -81,4 +69,4 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Port mapping information
-  port_map: "8765"
+  port_map: "8080"
