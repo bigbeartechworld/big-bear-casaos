@@ -1,0 +1,143 @@
+# Configuration for immich setup
+name: immich
+
+# Service definitions for the immich application
+services:
+  # Main Immich Server service configuration
+  immich-server:
+    container_name: immich_server # Name of the running container
+    image: ghcr.io/immich-app/immich-server:v1.78.1 # Image to be used
+    command: ["start.sh", "immich"] # Command to be executed upon container start
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/$AppID/upload:/usr/src/app/upload
+    environment: # Setting environment variables
+      TYPESENSE_API_KEY: casaos_typesense_api_key
+      DB_HOSTNAME: immich_postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: immich
+      DB_PORT: 5432
+      REDIS_HOSTNAME: immich_redis
+      IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
+    depends_on: # Dependencies to ensure the order of service startup
+      - redis
+      - database
+      - typesense
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for the Immich Microservices
+  immich-microservices:
+    container_name: immich_microservices # Name of the running container
+    image: ghcr.io/immich-app/immich-server:v1.78.1 # Image to be used
+    # extends:  # Feature to use configuration from another service (currently commented out)
+    #   file: hwaccel.yml
+    #   service: hwaccel
+    command: ["start.sh", "microservices"] # Command to be executed upon container start
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/$AppID/upload:/usr/src/app/upload
+    environment: # Setting environment variables
+      TYPESENSE_API_KEY: casaos_typesense_api_key
+      DB_HOSTNAME: immich_postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: immich
+      DB_PORT: 5432
+      REDIS_HOSTNAME: immich_redis
+    depends_on: # Dependencies to ensure the order of service startup
+      - redis
+      - database
+      - typesense
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for Immich Machine Learning service
+  immich-machine-learning:
+    container_name: immich_machine_learning # Name of the running container
+    image: ghcr.io/immich-app/immich-machine-learning:v1.78.1 # Image to be used
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/$AppID/model-cache:/cache
+    environment: # Setting environment variables
+      DB_HOSTNAME: immich_postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: casaos
+      DB_PORT: 5432
+      REDIS_HOSTNAME: immich_redis
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for the Immich Web service
+  immich-web:
+    container_name: immich_web # Name of the running container
+    image: ghcr.io/immich-app/immich-web:v1.78.1 # Image to be used
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for Typesense service
+  typesense:
+    container_name: immich_typesense # Name of the running container
+    image: typesense/typesense:0.24.1@sha256:9bcff2b829f12074426ca044b56160ca9d777a0c488303469143dd9f8259d4dd # Image to be used
+    environment: # Setting environment variables
+      - TYPESENSE_API_KEY=casaos_typesense_api_key
+      - TYPESENSE_DATA_DIR=/data
+      # remove this to get debug messages
+      - GLOG_minloglevel=1
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/$AppID/tsdata:/data
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for Redis service
+  redis:
+    container_name: immich_redis # Name of the running container
+    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for Database service
+  database:
+    container_name: immich_postgres # Name of the running container
+    image: postgres:14-alpine@sha256:28407a9961e76f2d285dc6991e8e48893503cc3836a4755bbc2d40bcc272a441 # Image to be used
+    environment: # Setting environment variables
+      POSTGRES_PASSWORD: casaos
+      POSTGRES_USER: casaos
+      POSTGRES_DB: immich
+      PG_DATA: /var/lib/postgresql/data
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for Immich Proxy service
+  immich-proxy:
+    container_name: immich_proxy # Name of the running container
+    image: ghcr.io/immich-app/immich-proxy:v1.78.1 # Image to be used
+    environment: # Setting environment variables
+      # Make sure these values get passed through from the env file
+      IMMICH_SERVER_URL: http://immich-server:3001
+      IMMICH_WEB_URL: http://immich-web:3000
+      IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
+    ports: # Mapping ports from the host OS to the container
+      - 2283:8080
+    depends_on: # Dependencies to ensure the order of service startup
+      - immich-server
+      - immich-web
+    restart: always # Policy to always restart the container if it stops
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: immich-proxy # Main service of the application
+  description: # Description in different languages
+    en_us: Self-hosted photo and video storage.
+  tagline: # Short description or tagline in different languages
+    en_us: Immich
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Immich
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "2283"
