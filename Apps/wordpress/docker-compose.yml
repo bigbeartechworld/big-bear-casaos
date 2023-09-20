@@ -1,7 +1,7 @@
-# Configuration for wordpress setup
+# Configuration for big-bear-wordpress setup
 
-# Name of the wordpress application
-name: wordpress
+# Name of the big-bear-wordpress application
+name: big-bear-wordpress
 
 # Service definitions for the wordpress application
 services:

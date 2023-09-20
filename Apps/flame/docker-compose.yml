@@ -1,5 +1,5 @@
 # Name of the application
-name: flame
+name: big-bear-flame
 
 # List of services that this application uses
 services:

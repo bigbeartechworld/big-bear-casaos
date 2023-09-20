@@ -1,6 +1,6 @@
-# Configuration for code-server setup
-name: code-server
-# Service definitions for the code-server application
+# Configuration for big-bear-code-server setup
+name: big-bear-code-server
+# Service definitions for the big-bear-code-server application
 services:
   # Service name: app
   app:

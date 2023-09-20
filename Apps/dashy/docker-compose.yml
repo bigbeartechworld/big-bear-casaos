@@ -1,7 +1,7 @@
-# Configuration for dashy setup
+# Configuration for big-bear-dashy setup
 
-# Name of the dashy application
-name: dashy
+# Name of the big-bear-dashy application
+name: big-bear-dashy
 
 # Service definitions for the dashy application
 services:

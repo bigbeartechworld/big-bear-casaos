@@ -1,5 +1,5 @@
-# Name of the configuration: guacamole
-name: guacamole
+# Name of the configuration: big-bear-guacamole
+name: big-bear-guacamole
 
 # Define the services required for the application
 services:

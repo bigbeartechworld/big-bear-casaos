@@ -1,9 +1,9 @@
 # Configuration for speedtest-tracker setup
 
-# Name of the speedtest-tracker application
-name: speedtest-tracker
+# Name of the big-bear-speedtest-tracker application
+name: big-bear-speedtest-tracker
 
-# Service definitions for the speedtest-tracker application
+# Service definitions for the big-bear-speedtest-tracker application
 services:
   # Service name: app
   speedtest-tracker:
@@ -25,7 +25,7 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
       - "/DATA/AppData/$AppID/config:/config"
       - "/DATA/AppData/$AppID/web:/etc/ssl/web"
-    image: "ghcr.io/alexjustesen/speedtest-tracker:latest"
+    image: "ghcr.io/alexjustesen/speedtest-tracker:v0.12.1"
     restart: unless-stopped
     depends_on:
       - db

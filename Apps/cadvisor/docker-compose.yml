@@ -1,7 +1,7 @@
-# Configuration for cadvisor setup
-name: cadvisor
+# Configuration for big-bear-cadvisor setup
+name: big-bear-cadvisor
 
-# Service definitions for the cadvisor application
+# Service definitions for the big-bear-cadvisor application
 services:
   # Service for cAdvisor, a tool to monitor container performance
   app:

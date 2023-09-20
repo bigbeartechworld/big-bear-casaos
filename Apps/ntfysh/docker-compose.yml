@@ -1,7 +1,7 @@
-# ntfy application configuration
-name: ntfy
+# big-bear-ntfy application configuration
+name: big-bear-ntfy
 
-# Services associated with the ntfy application
+# Services associated with the big-bear-ntfy application
 services:
   # Main application service configuration
   app:

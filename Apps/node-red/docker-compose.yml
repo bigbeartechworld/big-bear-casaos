@@ -1,5 +1,5 @@
 # Name of the service configuration
-name: node-red-updated
+name: big-bear-node-red
 
 # Define the services for this configuration
 services:
@@ -61,7 +61,7 @@ x-casaos:
 
   # Display title for the service
   title:
-    en_us: Node-RED Updated
+    en_us: Node-RED
 
   # Category for organization
   category: BigBearCasaOS

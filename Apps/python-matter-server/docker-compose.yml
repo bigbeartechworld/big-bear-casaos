@@ -1,8 +1,5 @@
-# python-matter-server Configuration
-name: python-matter-server
-
-# Specifying the version for this configuration
-version: "3.8"
+# big-bear-python-matter-server Configuration
+name: big-bear-python-matter-server
 
 # Defining the services for this configuration
 services:
