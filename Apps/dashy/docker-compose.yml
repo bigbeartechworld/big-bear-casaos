@@ -1,0 +1,64 @@
+# Configuration for dashy setup
+
+# Name of the dashy application
+name: dashy
+
+# Service definitions for the dashy application
+services:
+  # Service name: app
+  app:
+    # Image to be used for the app service
+    image: lissy93/dashy:2.1.1
+    # Name of the container
+    container_name: Dashy
+    # Network mode for the container
+    network_mode: bridge
+    # Uncomment below if you want to mount volumes
+    # volumes:
+    #   - /DATA/AppData/$AppID/public/conf.yml:/app/public/conf.yml
+    # Ports mapping
+    ports:
+      - 4000:80
+    # Set any environmental variables
+    environment:
+      - NODE_ENV=production
+    # Restart policy for the container
+    restart: unless-stopped
+    # Configure healthchecks for the service
+    healthcheck:
+      test: ["CMD", "node", "/app/services/healthcheck"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Dashy helps you organize your self-hosted services by making them accessible from a single place
+  tagline:
+    # Short description or tagline in English
+    en_us: Dashy
+  # Developer's name or identifier
+  developer: "Lissy93"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashy.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Dashy
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "4000"

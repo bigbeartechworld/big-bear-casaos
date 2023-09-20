@@ -34,6 +34,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | cAdvisor                 | latest       |
 | Gotify                   | 2.4.0        |
 | Immich                   | v1.78.1      |
+| Dashy                    | 2.1.1        |
 
 ## UI How to
 
