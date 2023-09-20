@@ -1,0 +1,62 @@
+# Configuration for wordpress setup
+
+# Name of the wordpress application
+name: wordpress
+
+# Service definitions for the wordpress application
+services:
+  # Service name: app
+  app:
+    image: wordpress:latest
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: casaos
+      WORDPRESS_DB_PASSWORD: casaos
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - /DATA/AppData/$AppID/html:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web (as of my last training data in 2022).
+  tagline:
+    # Short description or tagline in English
+    en_us: WordPress
+  # Developer's name or identifier
+  developer: "Automattic"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wordpress.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: WordPress
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
