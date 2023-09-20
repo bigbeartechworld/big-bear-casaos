@@ -36,6 +36,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Immich                   | v1.78.1      |
 | Dashy                    | 2.1.1        |
 | WordPress                | latest       |
+| Speedtest Tracker        | latest       |
 
 ## UI How to
 

@@ -1,0 +1,84 @@
+# Configuration for speedtest-tracker setup
+
+# Name of the speedtest-tracker application
+name: speedtest-tracker
+
+# Service definitions for the speedtest-tracker application
+services:
+  # Service name: app
+  app:
+    # Container name to be used for the 'speedtest-tracker' service
+    container_name: speedtest-tracker
+
+    # Docker image to be used for this service
+    image: henrywhitaker3/speedtest-tracker
+
+    # Port mappings - Mapping host port 8765 to container port 80
+    ports:
+      - 8765:80
+
+    # Volumes - Mapping host directory to container directory
+    # Host directory: /DATA/AppData/Speedtest-Tracker/config
+    # Container directory: /config
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+
+    # Environment variables for the service
+    environment:
+      # Timezone setting for the service
+      - TZ=UTC
+
+      # Group ID - left empty but you can specify a value
+      - PGID=
+
+      # User ID - left empty but you can specify a value
+      - PUID=
+
+      # Acknowledge Ookla's EULA and GDPR, set to true to agree
+      - OOKLA_EULA_GDPR=true
+
+    # Logging configuration for the service
+    logging:
+      # Use json-file as the logging driver
+      driver: "json-file"
+
+      # Logging options:
+      # - Maximum number of log files: 10
+      # - Maximum size of each log file: 200 kilobytes
+      options:
+        max-file: "10"
+        max-size: "200k"
+
+    # Restart policy for the service: restart unless manually stopped
+    restart: unless-stopped
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: This program runs a speedtest check every hour and graphs the results. The back-end is written in Laravel and the front-end uses React. It uses the Ookla's speedtest cli package to get the data and uses Chart.js to plot the results.
+  tagline:
+    # Short description or tagline in English
+    en_us: Speedtest Tracker
+  # Developer's name or identifier
+  developer: "henrywhitaker3"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/speedtest-tracker.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Speedtest Tracker
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8765"
