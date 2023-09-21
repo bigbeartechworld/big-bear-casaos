@@ -66,6 +66,10 @@ x-casaos:
   title:
     # Title in English
     en_us: Speedtest Tracker
+  tips:
+    before_install:
+      en_us: |
+        Default Credentials - Username: admin@example.com and Password: password
   # Application category
   category: BigBearCasaOS
   # Port mapping information
