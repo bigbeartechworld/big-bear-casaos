@@ -24,7 +24,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Ntfy.sh                  | latest       |
 | TP-Link Omada Controller | 5.9          |
 | Python Matter Server     | stable       |
-| Pingvin                  | latest       |
+| Pingvin Share            | latest       |
 | Mumble Server            | v1.4.230-6   |
 | Code Server              | latest       |
 | Node-RED                 | 3.1.0        |
