@@ -37,6 +37,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Dashy                    | 2.1.1        |
 | WordPress                | latest       |
 | Speedtest Tracker        | latest       |
+| Scrypted                 | latest       |
 
 ## UI How to
 

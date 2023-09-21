@@ -1,0 +1,74 @@
+# big-bear-scrypted configuration
+name: big-bear-scrypted
+
+# Services section that specifies how the different services should be run
+services:
+  # This is the main app service for Scrypted
+  scrypted:
+    container_name: scrypted
+    image: koush/scrypted # Docker image for Scrypted
+    network_mode: host # Use host networking mode
+    environment:
+      # These environment variables are for Scrypted webhook configuration
+      - SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT
+      - SCRYPTED_WEBHOOK_UPDATE=http://localhost:10444/v1/update
+    volumes:
+      # Mounting data directory from host to the container
+      - /DATA/AppData/$AppID/data:/server/volume
+    restart: unless-stopped # Restart policy
+    logging:
+      # JSON logging configuration
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+    labels:
+      # Watchtower label for Scrypted
+      - "com.centurylinklabs.watchtower.scope=scrypted"
+
+  # This service manages automatic updates for Scrypted using Watchtower
+  watchtower:
+    environment:
+      # Watchtower configuration environment variables
+      - WATCHTOWER_HTTP_API_TOKEN=SET_THIS_TO_SOME_RANDOM_TEXT
+      - WATCHTOWER_HTTP_API_UPDATE=true
+      - WATCHTOWER_SCOPE=scrypted
+      # Allows periodic auto-updates, can be removed if not desired
+      - WATCHTOWER_HTTP_API_PERIODIC_POLLS=true
+    image: containrrr/watchtower # Docker image for Watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      # Mounting Docker socket for Watchtower to interact with Docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "com.centurylinklabs.watchtower.scope=scrypted"
+    ports:
+      # Mapping the auto-update port; it should match the one in the URL above
+      - 10444:8080
+    command: --interval 3600 --cleanup --scope scrypted # Command to run watchtower with specified options
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: scrypted # Main service of the application
+  description: # Description in different languages
+    en_us: Scrypted is an open source video integration platform. Using various Plugins, Scrypted can receive streams from a range of cameras and send them to other platforms (HomeKit, Google Home, Alexa, Home Assistant).
+  tagline: # Short description or tagline in different languages
+    en_us: Scrypted
+  developer: "koush" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/scrypted.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Scrypted
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "10443"
+  scheme: https
