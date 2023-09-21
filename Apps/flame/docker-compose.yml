@@ -6,7 +6,7 @@ services:
   # Main service for the Flame application
   app:
     # The Docker image to be used for the Flame application
-    image: pawelmalak/flame
+    image: pawelmalak/flame:multiarch2.3.1
 
     # Environment variables that configure the application
     environment:

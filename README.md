@@ -18,26 +18,26 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 
 ## Apps
 
-| App Name                 | Version      |
-| ------------------------ | ------------ |
-| Flame                    | latest       |
-| Ntfy.sh                  | latest       |
-| TP-Link Omada Controller | 5.9          |
-| Python Matter Server     | stable       |
-| Pingvin Share            | latest       |
-| Mumble Server            | v1.4.230-6   |
-| Code Server              | latest       |
-| Node-RED                 | 3.1.0        |
-| Glances                  | 3.4.0.3-full |
-| Baserow                  | 1.20.0       |
-| Guacamole                | latest       |
-| cAdvisor                 | latest       |
-| Gotify                   | 2.4.0        |
-| Immich                   | v1.78.1      |
-| Dashy                    | 2.1.1        |
-| WordPress                | latest       |
-| Speedtest Tracker        | latest       |
-| Scrypted                 | latest       |
+| App Name                 | Version        |
+| ------------------------ | -------------- |
+| Flame                    | multiarch2.3.1 |
+| Ntfy.sh                  | latest         |
+| TP-Link Omada Controller | 5.9            |
+| Python Matter Server     | stable         |
+| Pingvin Share            | latest         |
+| Mumble Server            | v1.4.230-6     |
+| Code Server              | latest         |
+| Node-RED                 | 3.1.0          |
+| Glances                  | 3.4.0.3-full   |
+| Baserow                  | 1.20.0         |
+| Guacamole                | latest         |
+| cAdvisor                 | latest         |
+| Gotify                   | 2.4.0          |
+| Immich                   | v1.78.1        |
+| Dashy                    | 2.1.1          |
+| WordPress                | latest         |
+| Speedtest Tracker        | latest         |
+| Scrypted                 | latest         |
 
 ## UI How to
 

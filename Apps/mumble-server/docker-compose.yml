@@ -23,8 +23,6 @@ x-casaos:
   # Supported architectures
   architectures:
     - amd64
-    - arm
-    - arm64
   # Main service for CasaOS
   main: app
   # Description in English

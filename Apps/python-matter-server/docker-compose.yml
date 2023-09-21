@@ -33,7 +33,6 @@ x-casaos:
   # Architectures supported by this service
   architectures:
     - amd64
-    - arm
     - arm64
 
   # Main service for this configuration

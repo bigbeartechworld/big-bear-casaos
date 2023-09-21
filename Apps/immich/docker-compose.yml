@@ -122,7 +122,6 @@ services:
 x-casaos:
   architectures: # Supported CPU architectures
     - amd64
-    - arm
     - arm64
   main: immich-proxy # Main service of the application
   description: # Description in different languages
