@@ -1,0 +1,36 @@
+# Configuration for big-bear-onlyoffice setup
+name: big-bear-onlyoffice
+
+# Service definitions for the big-bear-onlyoffice application
+services:
+  app:
+    image: onlyoffice/documentserver
+    container_name: documentserver
+    ports:
+      - "7400:80"
+    volumes:
+      - /DATA/AppData/$AppID/onlyoffice/logs:/var/log/onlyoffice
+      - /DATA/AppData/$AppID/onlyoffice/data:/var/www/onlyoffice/Data
+      - /DATA/AppData/$AppID/onlyoffice/lib:/var/lib/onlyoffice
+      - /DATA/AppData/$AppID/onlyoffice/rabbitmq:/var/lib/rabbitmq
+      - /DATA/AppData/$AppID/onlyoffice/redis:/var/lib/redis
+      - /DATA/AppData/$AppID/onlyoffice/db:/var/lib/postgresql
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: Feature-rich web-based office suite with a vast range of collaborative capabilities # Description in English
+  tagline:
+    en_us: OnlyOffice # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/onlyoffice.png # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: OnlyOffice # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "7400" # Port mapping information
