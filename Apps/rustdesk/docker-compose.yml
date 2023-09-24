@@ -4,11 +4,11 @@ name: big-bear-rustdesk
 services:
   hbbs:
     container_name: hbbs
-    ports:
-      - 21115:21115
-      - 21116:21116
-      - 21116:21116/udp
-      - 21118:21118
+    # ports:
+    #   - 21115:21115
+    #   - 21116:21116
+    #   - 21116:21116/udp
+    #   - 21118:21118
     image: rustdesk/rustdesk-server:latest
     command: hbbs -r hbbr:21117
     volumes:
@@ -16,17 +16,19 @@ services:
     depends_on:
       - hbbr
     restart: unless-stopped
+    network_mode: host
 
   hbbr:
     container_name: hbbr
-    ports:
-      - 21117:21117
-      - 21119:21119
+    # ports:
+    #   - 21117:21117
+    #   - 21119:21119
     image: rustdesk/rustdesk-server:latest
     command: hbbr
     volumes:
       - /DATA/AppData/$AppID/hbbr:/root
     restart: unless-stopped
+    network_mode: host
 
 # CasaOS specific configuration
 x-casaos:
