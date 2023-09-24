@@ -13,8 +13,6 @@ services:
     command: hbbs -r hbbr:21117
     volumes:
       - /DATA/AppData/$AppID/hbbs:/root
-    networks:
-      - rustdesk-net
     depends_on:
       - hbbr
     restart: unless-stopped
@@ -28,8 +26,6 @@ services:
     command: hbbr
     volumes:
       - /DATA/AppData/$AppID/hbbr:/root
-    networks:
-      - rustdesk-net
     restart: unless-stopped
 
 # CasaOS specific configuration
