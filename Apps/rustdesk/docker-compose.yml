@@ -37,7 +37,7 @@ x-casaos:
   architectures: # Supported CPU architectures
     - amd64
     - arm64
-  main: app # Main service of the application
+  main: hbbr # Main service of the application
   description:
     en_us: Self-host your own RustDesk server, it is free and open source. # Description in English
   tagline:
