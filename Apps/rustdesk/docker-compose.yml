@@ -1,0 +1,52 @@
+# Configuration for big-bear-rustdesk setup
+name: big-bear-rustdesk
+
+services:
+  hbbs:
+    container_name: hbbs
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs -r hbbr:21117
+    volumes:
+      - /DATA/AppData/$AppID/hbbs:/root
+    networks:
+      - rustdesk-net
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    ports:
+      - 21117:21117
+      - 21119:21119
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - /DATA/AppData/$AppID/hbbr:/root
+    networks:
+      - rustdesk-net
+    restart: unless-stopped
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: Self-host your own RustDesk server, it is free and open source. # Description in English
+  tagline:
+    en_us: Rustdesk # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://github.com/rustdesk/rustdesk/blob/master/res/128x128@2x.png?raw=true # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: Rustdesk # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "21117" # Port mapping information
