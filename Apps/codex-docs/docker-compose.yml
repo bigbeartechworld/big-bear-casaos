@@ -1,0 +1,32 @@
+# Configuration for big-bear-baserow setup
+name: big-bear-codex-docs
+
+# Service definitions for the big-bear-baserow application
+services:
+  app:
+    image: ghcr.io/codex-team/codex.docs:v2.1
+    ports:
+      - "3000:3000"
+    volumes:
+      - /DATA/AppData/$AppID/uploads:/usr/src/app/uploads
+      - /DATA/AppData/$AppID/db:/usr/src/app/db
+      - /DATA/AppData/$AppID/codex-docs-config.local.yaml:/usr/src/app/docs-config.yaml
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content. # Description in English
+  tagline:
+    en_us: CodeX Docs # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://camo.githubusercontent.com/e4be3f6ff9cc8e5df4e3b8c0cceb77534f10fcbc254e5b15d86d3d36d1c468b9/68747470733a2f2f636f6465782e736f2f7075626c69632f6170702f696d672f636f6465782d6c6f676f2e737667 # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: CodeX Docs # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "3000" # Port mapping information
