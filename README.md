@@ -40,6 +40,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Scrypted                 | latest         |
 | OnlyOffice               | latest         |
 | CodeX Docs               | v2.1           |
+| Actual Server            | latest         |
 
 ## UI How to
 
