@@ -1,0 +1,32 @@
+# Configuration for big-bear-actual-server setup
+name: big-bear-actual-server
+# Service definitions for the big-bear-actual-server application
+services:
+  # Service name: app
+  app:
+    image: actualbudget/actual-server:latest # The Docker image to use (latest version of actual-server)
+    container_name: actual-server # Name of the container instance
+    volumes:
+      - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
+    ports:
+      - "5006:5006" # Expose actual-server's port 5006 on the host's port 5006
+    restart: unless-stopped # Policy to restart the container if it stops unexpectedly
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: Actual Budget is a super fast and privacy-focused app for managing your finances. At its heart is the well proven and much loved Envelope Budgeting methodology. You own your data and can do whatever you want with it. Featuring multi-device sync, optional end-to-end encryption and so much more. # Description in English
+  tagline:
+    en_us: Actual Server # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearCommunity # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/actual.png # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: Actual Server # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "5006" # Port mapping information
