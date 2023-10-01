@@ -1,6 +1,6 @@
 ## Big Bear CasaOS App Store
 
-This repository contains the Big Bear CasaOS App Store. This app store is a community app store that is not maintained by the CasaOS team. It is maintained by BigBearTechWorld and the BigBearCommunity.
+This repository contains the BigBearCasaOS App Store. This app store is a community app store that is not maintained by the CasaOS team. It is maintained by BigBearTechWorld and the BigBearCommunity.
 
 ## App Store URL
 
@@ -12,35 +12,35 @@ https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zi
 
 If you have a suggestion for an app, please post in our suggestion discord on the [BigBearCommunity](https://discord.gg/ykwA7wsnP8) server.
 
-## Support Development
+# Support The Project
 
-❤️ Consider supporting our mission: https://ko-fi.com/bigbeartechworld
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E5NDK3I)
 
 ## Apps
 
-| App Name                 | Version        |
-| ------------------------ | -------------- |
-| Flame                    | multiarch2.3.1 |
-| Ntfy.sh                  | latest         |
-| TP-Link Omada Controller | 5.9            |
-| Python Matter Server     | stable         |
-| Pingvin Share            | latest         |
-| Mumble Server            | v1.4.230-6     |
-| Code Server              | latest         |
-| Node-RED                 | 3.1.0          |
-| Glances                  | 3.4.0.3-full   |
-| Baserow                  | 1.20.0         |
-| Guacamole                | latest         |
-| cAdvisor                 | latest         |
-| Gotify                   | 2.4.0          |
-| Immich                   | v1.78.1        |
-| Dashy                    | 2.1.1          |
-| WordPress                | latest         |
-| Speedtest Tracker        | latest         |
-| Scrypted                 | latest         |
-| OnlyOffice               | latest         |
-| CodeX Docs               | v2.1           |
-| Actual Server            | latest         |
+| App Name                 | Version        | Video                                         |
+| ------------------------ | -------------- | --------------------------------------------- |
+| Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |
+| Ntfy.sh                  | latest         |                                               |
+| TP-Link Omada Controller | 5.9            |                                               |
+| Python Matter Server     | stable         |                                               |
+| Pingvin Share            | latest         |                                               |
+| Mumble Server            | v1.4.230-6     |                                               |
+| Code Server              | latest         |                                               |
+| Node-RED                 | 3.1.0          |                                               |
+| Glances                  | 3.4.0.3-full   |                                               |
+| Baserow                  | 1.20.0         |                                               |
+| Guacamole                | latest         |                                               |
+| cAdvisor                 | latest         |                                               |
+| Gotify                   | 2.4.0          |                                               |
+| Immich                   | v1.78.1        |                                               |
+| Dashy                    | 2.1.1          |                                               |
+| WordPress                | latest         |                                               |
+| Speedtest Tracker        | latest         |                                               |
+| Scrypted                 | latest         |                                               |
+| OnlyOffice               | latest         |                                               |
+| CodeX Docs               | v2.1           |                                               |
+| Actual Server            | latest         |                                               |
 
 ## UI How to
 
