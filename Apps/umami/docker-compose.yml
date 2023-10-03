@@ -1,0 +1,74 @@
+# Name of the application
+name: big-bear-umami
+
+# List of services that this application uses
+services:
+  # Main service for the Umami application
+  app:
+    image: ghcr.io/umami-software/umami:postgresql-latest # Docker image for the Umami app
+    ports:
+      - "3000:3000" # Port mapping: host:container
+    environment: # Environment variables for the service
+      DATABASE_URL: postgresql://umami:umami@db:5432/umami
+      DATABASE_TYPE: postgresql
+      APP_SECRET: replace-me-with-a-random-string
+    depends_on: # Dependency of this service
+      db:
+        condition: service_healthy
+    restart: always # Restart policy
+
+  # Database service for the Umami application
+  db:
+    image: postgres:15-alpine # Docker image for the PostgreSQL database
+    environment: # Environment variables for the service
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: umami
+    volumes: # Volumes for data persistence
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: always # Restart policy
+    healthcheck: # Health check configuration
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+# CasaOS specific configuration for the application
+x-casaos:
+  # List of architectures that this application supports
+  architectures:
+    - amd64
+    - arm64
+
+  # Indicates the main service for this application within the services list
+  main: app
+
+  # Provides a detailed description of the application
+  description:
+    en_us: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
+
+  # Provides a short and catchy tagline for the application
+  tagline:
+    en_us: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
+
+  # Name of the developer or organization that developed the application
+  developer: "umami-software"
+
+  # Indicates the person or organization responsible for creating this configuration
+  author: BigBearTechWorld
+
+  # URL pointing to the icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/umami.png
+
+  # URL pointing to a thumbnail image representing the application
+  thumbnail: ""
+
+  # Provides a title for the application
+  title:
+    en_us: Umami
+
+  # Specifies the category under which the application falls
+  category: BigBearCasaOS
+
+  # Specifies the port on which the application is accessible
+  port_map: "3000"
