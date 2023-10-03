@@ -44,6 +44,8 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 
 ## UI How to
 
+[![Video](https://img.youtube.com/vi/rqFUeDDb5uA/0.jpg)](https://youtu.be/rqFUeDDb5uA)
+
 How to add the App Store:
 
 - Go to your CasaOS dashboard.
