@@ -42,6 +42,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | CodeX Docs               | v2.1           |                                               |
 | Actual Server            | latest         |                                               |
 | Umami                    | latest         |                                               |
+| MIND                     | latest         |                                               |
 
 ## UI How to
 
