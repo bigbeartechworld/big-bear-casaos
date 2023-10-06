@@ -30,7 +30,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Node-RED                 | 3.1.0          |                                               |
 | Glances                  | 3.4.0.3-full   |                                               |
 | Baserow                  | 1.20.0         |                                               |
-| Guacamole                | latest         |                                               |
+| Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
 | cAdvisor                 | latest         |                                               |
 | Gotify                   | 2.4.0          |                                               |
 | Immich                   | v1.78.1        |                                               |
