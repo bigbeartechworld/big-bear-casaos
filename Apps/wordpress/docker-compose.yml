@@ -5,28 +5,37 @@ name: big-bear-wordpress
 
 # Service definitions for the wordpress application
 services:
-  # Service name: app
+  # Service definition for the main application
   app:
+    # Docker image to use for the application
     image: wordpress:latest
+    # Port mapping for the application
     ports:
       - 8080:80
+    # Environment variables for the application
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: casaos
       WORDPRESS_DB_PASSWORD: casaos
       WORDPRESS_DB_NAME: wordpress
+    # Volume mapping for the application
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
+    # Service dependencies for the application
     depends_on:
       - db
 
+  # Service definition for the database
   db:
+    # Docker image to use for the database
     image: mysql:5.7
+    # Environment variables for the database
     environment:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: casaos
       MYSQL_PASSWORD: casaos
       MYSQL_ROOT_PASSWORD: casaos
+    # Volume mapping for the database
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
 
@@ -38,24 +47,24 @@ x-casaos:
     - arm
   # Main service of the application
   main: app
+  # Detailed description of the application
   description:
-    # Description in English
     en_us: Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web (as of my last training data in 2022).
+  # Short description or tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: WordPress
-  # Developer's name or identifier
+  # Developer's name or identifier for the application
   developer: "Automattic"
   # Author of this configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wordpress.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image URL for the application (currently empty)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: WordPress
   # Application category
   category: BigBearCasaOS
-  # Port mapping information
+  # Port mapping information for the application
   port_map: "8080"
