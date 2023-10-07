@@ -43,6 +43,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Actual Server            | latest         |                                               |
 | Umami                    | latest         |                                               |
 | MIND                     | latest         |                                               |
+| Mailpit                  | v1.7           |                                               |
 
 ## UI How to
 
