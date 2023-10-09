@@ -44,6 +44,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Umami                    | latest         |                                               |
 | MIND                     | latest         |                                               |
 | Mailpit                  | v1.7           |                                               |
+| What's Up Docker         | latest         |                                               |
 
 ## UI How to
 

@@ -1,0 +1,46 @@
+# Configuration for big-bear-wud setup
+
+# Name of the big-bear-wud application
+name: big-bear-wud
+
+# Service definitions for the big-bear-wud application
+services:
+  # Service definition for the main application
+  app:
+    image: fmartinou/whats-up-docker
+    container_name: wud
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3000:3000
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  # Main service of the application
+  main: app
+  # Detailed description of the application
+  description:
+    en_us: Gets you notified when new versions of your Docker containers are available and lets you react the way you want.
+  # Short description or tagline for the application
+  tagline:
+    en_us: What's Up Docker
+  # Developer's name or identifier for the application
+  developer: "fmartinou"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whats-up-docker.png
+  # Thumbnail image URL for the application (currently empty)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: What's Up Docker
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information for the application
+  port_map: "3000"
