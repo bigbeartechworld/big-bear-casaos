@@ -33,7 +33,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
 | cAdvisor                 | latest         |                                               |
 | Gotify                   | 2.4.0          |                                               |
-| Immich                   | v1.78.1        |                                               |
+| Immich                   | v1.81.1        |                                               |
 | Dashy                    | 2.1.1          |                                               |
 | WordPress                | latest         |                                               |
 | Speedtest Tracker        | latest         |                                               |
