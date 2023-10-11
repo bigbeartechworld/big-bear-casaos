@@ -36,7 +36,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Immich                   | v1.81.1        |                                               |
 | Dashy                    | 2.1.1          |                                               |
 | WordPress                | latest         |                                               |
-| Speedtest Tracker        | latest         |                                               |
+| Speedtest Tracker        | v0.13.1        |                                               |
 | Scrypted                 | latest         |                                               |
 | OnlyOffice               | latest         |                                               |
 | CodeX Docs               | v2.1           |                                               |
