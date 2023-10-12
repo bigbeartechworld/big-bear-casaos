@@ -1,0 +1,64 @@
+# Configuration for homer setup
+
+# Name of the big-bear-homer application
+name: big-bear-homer
+
+# Service definitions for the big-bear-homer application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Specifies the Docker image to be used for the service
+    image: b4bz/homer
+
+    # Assigns a name to the container created from this service definition
+    container_name: homer
+
+    # Binds the container's volumes to host directories or named volumes
+    # In this case, bind-mounts `/DATA/AppData/$AppID/assets` from the host to `/www/assets` inside the container
+    volumes:
+      - /DATA/AppData/$AppID/assets:/www/assets
+
+    # Maps the container's ports to the host's ports
+    # In this case, it maps port 8080 inside the container to port 8080 on the host
+    ports:
+      - 8080:8080
+
+    # Specifies the user and group ID under which the container will run
+    # The default is user ID 1000 and group ID 1000
+    user: 1000:1000 # default
+
+    # Sets environment variables for the container
+    # In this case, the `INIT_ASSETS` variable is set to 1 (which is the default value)
+    environment:
+      - INIT_ASSETS=1 # default
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.
+  tagline:
+    # Short description or tagline in English
+    en_us: Homer
+  # Developer's name or identifier
+  developer: "bastienwirtz"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/homer.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Homer
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
