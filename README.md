@@ -45,6 +45,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | MIND                     | latest         |                                               |
 | Mailpit                  | v1.7           |                                               |
 | What's Up Docker         | latest         |                                               |
+| Traccar                  | latest         |                                               |
 
 ## UI How to
 
