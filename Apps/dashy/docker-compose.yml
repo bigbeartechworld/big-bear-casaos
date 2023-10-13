@@ -14,8 +14,8 @@ services:
     # Network mode for the container
     network_mode: bridge
     # Uncomment below if you want to mount volumes
-    # volumes:
-    #   - /DATA/AppData/$AppID/public/conf.yml:/app/public/conf.yml
+    volumes:
+      - /DATA/AppData/$AppID/public:/app/public
     # Ports mapping
     ports:
       - 4000:80
@@ -31,6 +31,20 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: NODE_ENV
+          description:
+            en_us: Node environment
+      volumes:
+        - container: /app/public
+          description:
+            en_us: "Container Path: /app/public"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
 
 # CasaOS specific configuration
 x-casaos:
