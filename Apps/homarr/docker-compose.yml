@@ -20,10 +20,10 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local homarr/configs directory to /app/data/configs inside the container
-      - ./homarr/configs:/app/data/configs
+      - /DATA/AppData/$AppID/configs:/app/data/configs
 
       # Mounting the local homarr/icons directory to /app/public/icons inside the container
-      - ./homarr/icons:/app/public/icons
+      - /DATA/AppData/$AppID/icons:/app/public/icons
 
     # Ports mapping between host and container
     ports:
