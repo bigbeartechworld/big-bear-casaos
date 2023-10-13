@@ -47,6 +47,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | What's Up Docker         | latest         |                                               |
 | Traccar                  | latest         |                                               |
 | Homer                    | latest         |                                               |
+| Homarr                   | latest         |                                               |
 
 ## UI How to
 
