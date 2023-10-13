@@ -48,6 +48,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Traccar                  | latest         |                                               |
 | Homer                    | latest         |                                               |
 | Homarr                   | latest         |                                               |
+| Homepage                 | latest         |                                               |
 
 ## UI How to
 

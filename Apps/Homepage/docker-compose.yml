@@ -1,0 +1,59 @@
+# Configuration for homepage setup
+
+# Name of the big-bear-homepage application
+name: big-bear-homepage
+
+# Service definitions for the big-bear-homepage application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Image to be used for the container
+    image: ghcr.io/gethomepage/homepage:latest
+
+    # Name of the container instance
+    container_name: homepage
+
+    # Port mapping between host and container
+    ports:
+      - 3000:3000 # Maps port 3000 of the host to port 3000 of the container
+
+    # Mount points for volumes (persistent storage)
+    volumes:
+      # Maps local config directory to the config directory inside the container
+      # Ensure the local config directory is created before starting the container
+      - /DATA/AppData/$AppID/config:/app/config
+
+      # Maps the Docker socket from the host to the container
+      # This allows the container to communicate with the Docker daemon on the host
+      - /var/run/docker.sock:/var/run/docker.sock
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.
+  tagline:
+    # Short description or tagline in English
+    en_us: Homepage
+  # Developer's name or identifier
+  developer: "ajnart"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://gethomepage.dev/v0.7.3/assets/light_squircle@2x.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Homepage
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
