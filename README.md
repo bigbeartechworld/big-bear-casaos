@@ -49,6 +49,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Homer                    | latest         |                                               |
 | Homarr                   | latest         |                                               |
 | Homepage                 | latest         |                                               |
+| Portainer Agent          | 2.19.1         |                                               |
 
 ## UI How to
 
