@@ -1,0 +1,53 @@
+# Configuration for big-bear-portainer-agent setup
+name: big-bear-portainer-agent
+
+# Service definitions for the big-bear-portainer-agent application
+services:
+  # Main Portainer Agent Server service configuration
+  app:
+    container_name: portainer-agent # Name of the running container
+    image: portainer/agent:2.19.1 # Image to be used
+    network_mode: bridge # Network mode to be used
+    ports: # Port mapping between host and container
+      - 9001:9001
+      # Maps port 9001 on the host to port 9001 in the container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Bind mount for Docker socket
+      - /var/lib/docker/volumes:/var/lib/docker/volumes # Bind mount for Docker volumes
+    x-casaos:
+      ports:
+        - container: "9001"
+          description:
+            en_us: "The Portainer Agent Port" # Description for the port
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: Access to Docker socket # Description for Docker socket volume
+        - container: /var/lib/docker/volumes
+          description:
+            en_us: Access to Docker volumes # Description for Docker volumes volume
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description: # Description in different languages
+    en_us: Portainer uses the Portainer Agent container to communicate with the Portainer Server instance and provide access to the node's resources. This document will outline how to install the Portainer Agent on your node and how to connect to it from your Portainer Server instance. If you do not have a working Portainer Server instance yet, please refer to the Portainer Server installation guide first.
+  tagline: # Short description or tagline in different languages
+    en_us: Portainer Agent
+  developer: "portainer" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/portainer-alt.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Portainer Agent
+  # Application category
+  category: BigBearCasaOS
+  tips:
+    before_install:
+      en_us: |
+        The Portainer Agent is reachable on port 9001. You will need Portainer Server running to connect to the Portainer Agent.
