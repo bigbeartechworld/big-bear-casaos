@@ -1,0 +1,83 @@
+# big-bear-pterodactyl-panel configuration
+name: big-bear-pterodactyl-panel
+
+# Services section that specifies how the different services should be run
+services:
+  # This is the main app service for Scrypted
+  app:
+    container_name: pterodactyl-panel
+    image: ghcr.io/pterodactyl/panel:v1.11.5
+    restart: always
+    ports:
+      - "1180:80"
+      - "11443:443"
+    links:
+      - database
+      - cache
+    volumes:
+      - "/DATA/AppData/$AppID/var/:/app/var/"
+      - "/DATA/AppData/$AppID/nginx/:/etc/nginx/http.d/"
+      - "/DATA/AppData/$AppID/certs/:/etc/letsencrypt/"
+      - "/DATA/AppData/$AppID/logs/:/app/storage/logs"
+    environment:
+      APP_URL: "http://example.com"
+      # A list of valid timezones can be found here: http://php.net/manual/en/timezones.php
+      APP_TIMEZONE: "UTC"
+      APP_SERVICE_AUTHOR: "noreply@example.com"
+      # Uncomment the line below and set to a non-empty value if you want to use Let's Encrypt
+      # to generate an SSL certificate for the Panel.
+      # LE_EMAIL: ""
+      MAIL_FROM: "noreply@example.com"
+      MAIL_DRIVER: "smtp"
+      MAIL_HOST: "mail"
+      MAIL_PORT: "1025"
+      MAIL_USERNAME: ""
+      MAIL_PASSWORD: ""
+      MAIL_ENCRYPTION: "true"
+      APP_ENV: "production"
+      APP_ENVIRONMENT_ONLY: "false"
+      CACHE_DRIVER: "redis"
+      SESSION_DRIVER: "redis"
+      QUEUE_DRIVER: "redis"
+      REDIS_HOST: "cache"
+      DB_HOST: "database"
+      DB_PASSWORD: casaos
+      DB_PORT: "3306"
+  database:
+    image: mariadb:10.5
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "/DATA/AppData/$AppID/database:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE: "panel"
+      MYSQL_USER: "pterodactyl"
+      MYSQL_PASSWORD: "casaos"
+      MYSQL_ROOT_PASSWORD: "casaos"
+  cache:
+    image: redis:alpine
+    restart: always
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description: # Description in different languages
+    en_us: Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.
+  tagline: # Short description or tagline in different languages
+    en_us: Pterodactyl Panel
+  developer: "pterodactyl" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pterodactyl.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Pterodactyl Panel
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "1180"
+  scheme: http
