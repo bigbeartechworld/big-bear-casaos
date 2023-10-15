@@ -74,7 +74,7 @@ x-casaos:
   description: # Description in different languages
     en_us: Lightweight swiss-knife-like VPN client to multiple VPN service providers
   tagline: # Short description or tagline in different languages
-    en_us: Glutun
+    en_us: Gluetun
   developer: "portainer" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
   icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/gluetun.png?raw=true
@@ -82,7 +82,7 @@ x-casaos:
   thumbnail: ""
   # Title of the application in English
   title:
-    en_us: Glutun
+    en_us: Gluetun
   # Application category
   category: BigBearCasaOS
   tips:
