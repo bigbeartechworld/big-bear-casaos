@@ -81,8 +81,6 @@ How to add the App Store:
 
 We warmly welcome and deeply appreciate all contributions, no matter how big or small they may be! Thank you from the bottom of our hearts ❤️
 
-![Alt](https://repobeats.axiom.co/api/embed/4c738f8c62b624b1dc38fc198b5d0276f3d95cb9.svg "Repobeats analytics image")
-
 ## Credit
 
 Props to WisdomSky for giving me the template to build this app store. Check his app store out to: [https://github.com/WisdomSky/CasaOS-Coolstore](https://github.com/WisdomSky/CasaOS-Coolstore)
