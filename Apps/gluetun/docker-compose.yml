@@ -1,0 +1,91 @@
+# Configuration for big-bear-glutun setup
+name: big-bear-glutun
+
+# Service definitions for the big-bear-glutun application
+services:
+  # Main Portainer Agent Server service configuration
+  gluetun:
+    # This configuration is for the 'qmcgaw/gluetun' Docker image, a versatile VPN client in a Docker container.
+    image: qmcgaw/gluetun
+
+    # Assign a name to this container instance.
+    container_name: gluetun
+
+    # Uncomment the following line if you want to allow external containers to connect to this one.
+    # For more details, refer to the provided link.
+    # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md#external-container-to-gluetun
+
+    # Grant the container specific capabilities, allowing it to perform actions typically restricted.
+    cap_add:
+      - NET_ADMIN # This allows the container to perform network operations.
+
+    # Map devices from the host to the container.
+    devices:
+      - /dev/net/tun:/dev/net/tun # Map the TUN device, required for VPNs.
+
+    # Expose and map specific ports from the container to the host.
+    ports:
+      - 8888:8888/tcp # HTTP proxy port mapping.
+      - 8388:8388/tcp # Shadowsocks TCP port mapping.
+      - 8388:8388/udp # Shadowsocks UDP port mapping.
+
+    # Map volumes from the host to the container.
+    volumes:
+      - /DATA/AppData/$AppID/data:/gluetun # Map the data directory.
+
+    # Define environment variables for the container.
+    environment:
+      # Specify the VPN service provider.
+      - VPN_SERVICE_PROVIDER=custom
+      # Specify the type of VPN.
+      - VPN_TYPE=openvpn
+      # For OpenVPN:
+      - OPENVPN_USER= # Username for OpenVPN.
+      - OPENVPN_PASSWORD= # Password for OpenVPN.
+      # For Wireguard (these are commented out, but can be used if Wireguard is the chosen VPN type):
+      # - WIREGUARD_PRIVATE_KEY=wOEI9rqqbDwnN8/Bpp22sVz48T71vJ4fYmFWujulwUU=
+      # - WIREGUARD_ADDRESSES=10.64.222.21/32
+      # Specify the timezone for accurate log timestamps.
+      - TZ=
+      # Define how often the VPN servers list should be updated.
+      # For more details, refer to the provided link.
+      # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/servers.md#update-the-vpn-servers-list
+      - UPDATER_PERIOD=
+
+    x-casaos:
+      ports:
+        - container: "8888"
+          description:
+            en_us: "HTTP Proxy" # Description for the port
+        - container: "8388"
+          description:
+            en_us: "Shadowsocks" # Description for the port
+      volumes:
+        - container: /dev/net/tun
+          description:
+            en_us: Tun # Description for Tun volume
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: gluetun # Main service of the application
+  description: # Description in different languages
+    en_us: Lightweight swiss-knife-like VPN client to multiple VPN service providers
+  tagline: # Short description or tagline in different languages
+    en_us: Glutun
+  developer: "portainer" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/gluetun.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Glutun
+  # Application category
+  category: BigBearCasaOS
+  tips:
+    before_install:
+      en_us: |
+        You will need to configure the providers in the environment variables. See: [Gluetun Wiki](https://github.com/qdm12/gluetun-wiki)
