@@ -51,6 +51,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Homepage                 | latest         |                                               |
 | Portainer Agent          | 2.19.1         |                                               |
 | Pterodactyl Panel        | v1.11.5        |                                               |
+| Pterodactyl Wings        | v1.11.8        |                                               |
 
 ## UI How to
 

@@ -1,0 +1,140 @@
+# big-bear-pterodactyl-wings configuration
+name: big-bear-pterodactyl-wings
+
+# Services section that specifies how the different services should be run
+services:
+  # This is the main app service for Pterodactyl Wings
+  app:
+    # Name of the container
+    container_name: pterodactyl-wings
+
+    # Docker image to use for the container
+    image: ghcr.io/pterodactyl/wings:v1.11.8
+
+    # Determines the restart policy. In this case, the container will always restart if it stops.
+    restart: always
+
+    # Maps the host's port 2022 to the container's port 2022
+    ports:
+      - "2022:2022"
+
+    # Allocate a pseudo-TTY, making it act like a terminal
+    tty: true
+
+    # Set environment variables for the container
+    environment:
+      # Set the timezone to UTC
+      TZ: "UTC"
+
+      # Set the User ID for the Wings process
+      WINGS_UID: 988
+
+      # Set the Group ID for the Wings process
+      WINGS_GID: 988
+
+      # Set the username for the Wings process
+      WINGS_USERNAME: pterodactyl
+
+    # Mount paths from the host into the container
+    volumes:
+      # Mount the Docker socket, allowing the container to communicate with the host's Docker daemon
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+      # Mount the Docker containers directory
+      - "/var/lib/docker/containers/:/var/lib/docker/containers/"
+
+      # Mount the SSL certificates in read-only mode
+      - "/etc/ssl/certs:/etc/ssl/certs:ro"
+
+      # Mount a temporary directory for Pterodactyl
+      - "/DATA/AppData/$AppID/tmp:/tmp/pterodactyl/"
+
+      # Mount the configuration directory for Pterodactyl
+      - "/DATA/AppData/$AppID/etc:/etc/pterodactyl/"
+
+      # Mount the logs directory for Pterodactyl
+      - "/DATA/AppData/$AppID/logs:/var/log/pterodactyl/"
+
+      # Mount the library directory for Pterodactyl
+      - "/DATA/AppData/$AppID/lib:/var/lib/pterodactyl/"
+
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+        - container: WINGS_UID
+          description:
+            en_us: User ID for the Wings process
+        - container: WINGS_GID
+          description:
+            en_us: Group ID for the Wings process
+        - container: WINGS_USERNAME
+          description:
+            en_us: Username for the Wings process
+
+      ports:
+        - container: "2022"
+          description:
+            en_us: "The Portainer Agent Port" # Description for the port
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: Access to Docker socket # Description for Docker socket volume
+        - container: /var/lib/docker/containers/
+          description:
+            en_us: Access the Docker containers # Description for Docker volumes volume
+        - container: /etc/ssl/certs
+          description:
+            en_us: Access to SSL certificates # Description for Docker volumes volume
+        - container: /tmp/pterodactyl/
+          description:
+            en_us: Access to temporary directory # Description for Docker volumes volume
+        - container: /etc/pterodactyl/
+          description:
+            en_us: Access to configuration directory # Description for Docker volumes volume
+        - container: /var/log/pterodactyl/
+          description:
+            en_us: Access to logs directory # Description for Docker volumes volume
+        - container: /var/lib/pterodactyl/
+          description:
+            en_us: Access to library directory # Description for Docker volumes volume
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description: # Description in different languages
+    en_us: Wings is Pterodactyl's server control plane, built for the rapidly changing gaming industry and designed to be highly performant and secure. Wings provides an HTTP API allowing you to interface directly with running server instances, fetch server logs, generate backups, and control all aspects of the server lifecycle.
+  tagline: # Short description or tagline in different languages
+    en_us: Pterodactyl Wings
+  developer: "pterodactyl" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pterodactyl.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Pterodactyl Wings
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "2022"
+  tips:
+    before_install:
+      en_us: |
+        Before setting up Pterodactyl Wings in your container, you need to ensure that the node is properly configured in the Pterodactyl panel. Follow these steps:
+
+        Create the Node in the Pterodactyl Panel: If you haven't already, initiate and configure the node within the Pterodactyl panel.
+
+        Copy the Configuration: After creating the node, the panel will provide a configuration file. You need to copy the content of this configuration and place it in:
+
+        ```
+        /DATA/AppData/big-bear-pterodactyl-wings/etc/config.yml
+        ```
+
+        Tip: Use the CasaOS files app for an easy file management experience.
+
+        Restart the Container: Once the configuration is in place, ensure you restart the container for the changes to take effect.

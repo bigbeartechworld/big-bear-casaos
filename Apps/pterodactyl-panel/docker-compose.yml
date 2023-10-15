@@ -3,7 +3,7 @@ name: big-bear-pterodactyl-panel
 
 # Services section that specifies how the different services should be run
 services:
-  # This is the main app service for Scrypted
+  # This is the main app service for Pterodactyl Panel
   app:
     container_name: pterodactyl-panel
     image: ghcr.io/pterodactyl/panel:v1.11.5
