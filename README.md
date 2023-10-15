@@ -53,6 +53,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Pterodactyl Panel        | v1.11.5        |                                               |
 | Pterodactyl Wings        | v1.11.8        |                                               |
 | Gluetun                  | latest         |                                               |
+| Ghost                    | 5.69.0-alpine  |                                               |
 
 ## UI How to
 

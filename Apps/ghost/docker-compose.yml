@@ -1,0 +1,130 @@
+# Configuration for ghost setup
+
+# Application Name
+name: big-bear-ghost
+
+# Services used in the application
+services:
+  # The `app` service for the Ghost application
+  app:
+    # Docker image to be used
+    image: ghost:5.69.0-alpine
+    # Restart policy for the service
+    restart: on-failure
+    environment:
+      # Database configuration for Ghost (see Ghost documentation for more details)
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: ghost
+      database__connection__password: casaos
+      database__connection__database: ghost
+      # Base URL for the Ghost application
+      url: "http://localhost:2368"
+      # Note on NODE_ENV default value for this image
+      #NODE_ENV: development
+    # Volume mappings for persistent storage
+    volumes:
+      - /DATA/AppData/$AppID/content:/var/lib/ghost/content
+    # Port mappings for the service
+    ports:
+      - 2368:2368
+    # Dependencies for the service
+    depends_on:
+      - db
+    # CasaOS specific configuration for the app service
+    x-casaos:
+      envs:
+        - container: database__client
+          description:
+            en_us: Database client
+        - container: database__connection__host
+          description:
+            en_us: Database host
+        - container: database__connection__user
+          description:
+            en_us: Database user
+        - container: database__connection__password
+          description:
+            en_us: Database password
+        - container: database__connection__database
+          description:
+            en_us: Database name
+        - container: url
+          description:
+            en_us: Ghost URL
+      volumes:
+        - container: /var/lib/ghost/content
+          description:
+            en_us: "Container Path: /var/lib/ghost/content"
+      ports:
+        - container: "2368"
+          description:
+            en_us: "Container Port: 2368"
+
+  # The `db` service for database (MySQL in this case)
+  db:
+    # Docker image to be used
+    image: mysql:8.0
+    # Restart policy for the service
+    restart: on-failure
+    # Volume mappings for persistent storage
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    # MySQL environment variables
+    environment:
+      MYSQL_USER: "ghost"
+      MYSQL_DATABASE: "ghost"
+      MYSQL_PASSWORD: "casaos"
+      MYSQL_ROOT_PASSWORD: "casaos"
+    # CasaOS specific configuration for the db service
+    x-casaos:
+      envs:
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: MySQL root password
+        - container: MYSQL_USER
+          description:
+            en_us: MySQL user
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: MySQL password
+        - container: MYSQL_DATABASE
+          description:
+            en_us: MySQL database
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+
+# CasaOS global application configuration
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
+  # Brief tagline for the application
+  tagline:
+    en_us: Ghost
+  # Developer's information
+  developer: "ghost"
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/ghost.png?raw=true
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Ghost
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "2368"
+  before_install:
+    en_us: |
+      Update the url environment variable to reflect your CasaOS IP address.
