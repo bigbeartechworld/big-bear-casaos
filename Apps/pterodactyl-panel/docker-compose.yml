@@ -81,3 +81,9 @@ x-casaos:
   # Port mapping information
   port_map: "1180"
   scheme: http
+  tips:
+    before_install:
+      en_us: |
+        Before you can use Pterodactyl Panel, you need to read the installation guide.
+
+        [Install Guide Link](https://github.com/bigbeartechworld/big-bear-casaos/tree/master/Apps/pterodactyl-panel)
