@@ -5,57 +5,155 @@ name: big-bear-pterodactyl-panel
 services:
   # This is the main app service for Pterodactyl Panel
   app:
+    # Container configuration for the Pterodactyl Panel
     container_name: pterodactyl-panel
+    # Image to use for the panel
     image: ghcr.io/pterodactyl/panel:v1.11.5
+    # Restart the container automatically if it stops
     restart: always
+    # Ports mapping: [HOST:CONTAINER]
     ports:
-      - "1180:80"
-      - "11443:443"
+      - "1180:80" # Map host port 1180 to container port 80
+      - "11443:443" # Map host port 11443 to container port 443
+    # Link this container with the 'database' and 'cache' containers
     links:
       - database
       - cache
+    # Volumes mapping: [HOST:CONTAINER]
     volumes:
-      - "/DATA/AppData/$AppID/var/:/app/var/"
-      - "/DATA/AppData/$AppID/nginx/:/etc/nginx/http.d/"
-      - "/DATA/AppData/$AppID/certs/:/etc/letsencrypt/"
-      - "/DATA/AppData/$AppID/logs/:/app/storage/logs"
+      - "/DATA/AppData/$AppID/var/:/app/var/" # Map app data
+      - "/DATA/AppData/$AppID/nginx/:/etc/nginx/http.d/" # Map nginx config
+      - "/DATA/AppData/$AppID/certs/:/etc/letsencrypt/" # Map SSL certificates
+      - "/DATA/AppData/$AppID/logs/:/app/storage/logs" # Map logs
+    # Environment variables for the container
     environment:
-      APP_URL: "http://example.com"
-      # A list of valid timezones can be found here: http://php.net/manual/en/timezones.php
-      APP_TIMEZONE: "UTC"
-      APP_SERVICE_AUTHOR: "noreply@example.com"
-      # Uncomment the line below and set to a non-empty value if you want to use Let's Encrypt
-      # to generate an SSL certificate for the Panel.
+      APP_URL: "http://example.com" # App URL
+      APP_TIMEZONE: "UTC" # App timezone
+      APP_SERVICE_AUTHOR: "noreply@example.com" # Service author email
+      # Uncomment to use Let's Encrypt for SSL certificate
       # LE_EMAIL: ""
-      MAIL_FROM: "noreply@example.com"
-      MAIL_DRIVER: "smtp"
-      MAIL_HOST: "mail"
-      MAIL_PORT: "1025"
-      MAIL_USERNAME: ""
-      MAIL_PASSWORD: ""
-      MAIL_ENCRYPTION: "true"
-      APP_ENV: "production"
-      APP_ENVIRONMENT_ONLY: "false"
-      CACHE_DRIVER: "redis"
-      SESSION_DRIVER: "redis"
-      QUEUE_DRIVER: "redis"
-      REDIS_HOST: "cache"
-      DB_HOST: "database"
-      DB_PASSWORD: casaos
-      DB_PORT: "3306"
+      MAIL_FROM: "noreply@example.com" # Email sender
+      MAIL_DRIVER: "smtp" # Email driver
+      MAIL_HOST: "mail" # Email host
+      MAIL_PORT: "1025" # Email port
+      MAIL_USERNAME: "" # Email username
+      MAIL_PASSWORD: "" # Email password
+      MAIL_ENCRYPTION: "true" # Use email encryption
+      APP_ENV: "production" # App environment
+      APP_ENVIRONMENT_ONLY: "false" # Environment setting
+      CACHE_DRIVER: "redis" # Cache driver
+      SESSION_DRIVER: "redis" # Session driver
+      QUEUE_DRIVER: "redis" # Queue driver
+      REDIS_HOST: "cache" # Redis host
+      DB_HOST: "database" # Database host
+      DB_PASSWORD: casaos # Database password
+      DB_PORT: "3306" # Database port
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: APP_URL
+          description:
+            en_us: App URL
+        - container: APP_TIMEZONE
+          description:
+            en_us: App timezone
+        - container: APP_SERVICE_AUTHOR
+          description:
+            en_us: Service author email
+        - container: LE_EMAIL
+          description:
+            en_us: Let's Encrypt email
+        - container: MAIL_FROM
+          description:
+            en_us: Email sender
+        - container: MAIL_DRIVER
+          description:
+            en_us: Email driver
+        - container: MAIL_HOST
+          description:
+            en_us: Email host
+        - container: MAIL_PORT
+          description:
+            en_us: Email port
+        - container: MAIL_USERNAME
+          description:
+            en_us: Email username
+        - container: MAIL_PASSWORD
+          description:
+            en_us: Email password
+        - container: MAIL_ENCRYPTION
+          description:
+            en_us: Use email encryption
+        - container: APP_ENV
+          description:
+            en_us: App environment
+        - container: APP_ENVIRONMENT_ONLY
+          description:
+            en_us: Environment setting
+        - container: CACHE_DRIVER
+          description:
+            en_us: Cache driver
+        - container: SESSION_DRIVER
+          description:
+            en_us: Session driver
+        - container: QUEUE_DRIVER
+          description:
+            en_us: Queue driver
+        - container: REDIS_HOST
+          description:
+            en_us: Redis host
+        - container: DB_HOST
+          description:
+            en_us: Database host
+        - container: DB_PASSWORD
+          description:
+            en_us: Database password
+        - container: DB_PORT
+          description:
+            en_us: Database port
+      volumes:
+        - container: /app/var/
+          description:
+            en_us: "Container Path: /app/var/"
+        - container: /etc/nginx/http.d/
+          description:
+            en_us: "Container Path: /etc/nginx/http.d/"
+        - container: /etc/letsencrypt/
+          description:
+            en_us: "Container Path: /etc/letsencrypt/"
+        - container: /app/storage/logs
+          description:
+            en_us: "Container Path: /app/storage/logs"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_us: "Container Port: 443"
+
+    # Container configuration for the database
   database:
+    # Image to use for the database
     image: mariadb:10.5
+    # Restart the container automatically if it stops
     restart: always
+    # Command to run on container start
     command: --default-authentication-plugin=mysql_native_password
+    # Volumes mapping: [HOST:CONTAINER]
     volumes:
-      - "/DATA/AppData/$AppID/database:/var/lib/mysql"
+      - "/DATA/AppData/$AppID/database:/var/lib/mysql" # Map database data
+    # Environment variables for the container
     environment:
-      MYSQL_DATABASE: "panel"
-      MYSQL_USER: "pterodactyl"
-      MYSQL_PASSWORD: "casaos"
-      MYSQL_ROOT_PASSWORD: "casaos"
+      MYSQL_DATABASE: "panel" # Database name
+      MYSQL_USER: "pterodactyl" # Database user
+      MYSQL_PASSWORD: "casaos" # Database user password
+      MYSQL_ROOT_PASSWORD: "casaos" # Database root password
+
+    # Container configuration for the cache
   cache:
+    # Image to use for the cache
     image: redis:alpine
+    # Restart the container automatically if it stops
     restart: always
 
 # CasaOS specific configuration
