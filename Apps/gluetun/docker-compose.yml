@@ -1,7 +1,7 @@
-# Configuration for big-bear-glutun setup
-name: big-bear-glutun
+# Configuration for big-bear-gluetun setup
+name: big-bear-gluetun
 
-# Service definitions for the big-bear-glutun application
+# Service definitions for the big-bear-gluetun application
 services:
   # Main Portainer Agent Server service configuration
   gluetun:
