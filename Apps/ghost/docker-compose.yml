@@ -109,7 +109,7 @@ x-casaos:
     en_us: Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
   # Brief tagline for the application
   tagline:
-    en_us: Ghost
+    en_us: Ghost is a free and open source blogging platform
   # Developer's information
   developer: "ghost"
   # Author of this particular configuration
