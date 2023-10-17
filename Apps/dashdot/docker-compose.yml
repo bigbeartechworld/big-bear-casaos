@@ -1,0 +1,45 @@
+# Configuration for big-bear-dashdot setup
+
+# Name of the big-bear-dashdot application
+name: big-bear-dashdot
+
+# Service definitions for the dashdot application
+services:
+  # Service definition for the main application
+  app:
+    image: mauricenino/dashdot # Image to be used for this service
+    ports:
+      - "3001:3001" # Port 3001 on the host is mapped to port 3001 in the container
+    volumes:
+      - /:/mnt/host:ro # Mounts the root directory of the host as read-only at /mnt/host in the container
+    privileged: true # Runs the container in privileged mode, allowing it access to host devices
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm
+  # Main service of the application
+  main: app
+  # Detailed description of the application
+  description:
+    en_us: About A simple, modern server dashboard, primarily used by smaller private servers.
+  # Short description or tagline for the application
+  tagline:
+    en_us: dash. - a modern server dashboard
+  # Developer's name or identifier for the application
+  developer: "mauricenino"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png
+  # Thumbnail image URL for the application (currently empty)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Dashdot
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information for the application
+  port_map: "3001"
