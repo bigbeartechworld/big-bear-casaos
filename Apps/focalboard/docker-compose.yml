@@ -1,0 +1,66 @@
+# Configuration for focalboard setup
+
+# Application Name
+name: big-bear-focalboard
+
+# Services used in the application
+services:
+  # The `app` service for the Focalboard application
+  app:
+    # Name of the container
+    container_name: big-bear-focalboard
+    # Docker image to be used
+    image: mattermost/focalboard:7.11.4
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
+    ports:
+      - "8000:8000"
+    # Network mode for the service
+    network_mode: bridge
+    # Volumes for the service HOST -> CONTAINER
+    volumes:
+      - /DATA/AppData/$AppID/data:/opt/focalboard/data
+    # CasaOS specific configuration for the app service
+    x-casaos:
+      volumes:
+        - container: /opt/focalboard/data
+          description:
+            en_us: "Container Path: /opt/focalboard/data"
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+
+# CasaOS global application configuration
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+  # Brief tagline for the application
+  tagline:
+    en_us: Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
+  # Developer's information
+  developer: "mattermost"
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/focalboard.png?raw=true
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Focalboard
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8000"
+  # This is shown before installing
+  before_install:
+    en_us: |
+      You will need to create a new account.

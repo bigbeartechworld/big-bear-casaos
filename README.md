@@ -55,6 +55,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Gluetun                  | latest         |                                               |
 | Ghost                    | 5.69.0-alpine  |                                               |
 | Dashdot                  | latest         |                                               |
+| Focalboard               | 7.11.4         |                                               |
 
 ## UI How to
 
