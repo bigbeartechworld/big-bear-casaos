@@ -21,7 +21,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | App Name                 | Version        | Video                                         |
 | ------------------------ | -------------- | --------------------------------------------- |
 | 2fauth                   | 4.2.3          |                                               |
-| Actual Server            | latest         |                                               |
+| Actual Budget            | 23.10.0        |                                               |
 | Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
 | Baserow                  | 1.20.0         |                                               |
 | cAdvisor                 | latest         |                                               |

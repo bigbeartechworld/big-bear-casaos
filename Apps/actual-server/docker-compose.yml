@@ -4,7 +4,7 @@ name: big-bear-actual-server
 services:
   # Service name: app
   app:
-    image: actualbudget/actual-server:latest # The Docker image to use (latest version of actual-server)
+    image: actualbudget/actual-server:23.10.0 # The Docker image to use (latest version of actual-server)
     container_name: actual-server # Name of the container instance
     volumes:
       - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
@@ -21,12 +21,12 @@ x-casaos:
   description:
     en_us: Actual Budget is a super fast and privacy-focused app for managing your finances. At its heart is the well proven and much loved Envelope Budgeting methodology. You own your data and can do whatever you want with it. Featuring multi-device sync, optional end-to-end encryption and so much more. # Description in English
   tagline:
-    en_us: Actual Server # Short description or tagline in English
+    en_us: Local-first OpenSource Budget tool # Short description or tagline in English
   developer: "" # Developer's name or identifier
   author: BigBearCommunity # Author of this configuration
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/actual.png # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
-    en_us: Actual Server # Title in English
+    en_us: Actual Budget # Title in English
   category: BigBearCasaOS # Application category
   port_map: "5006" # Port mapping information
