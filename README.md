@@ -56,6 +56,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Ghost                    | 5.69.0-alpine  |                                               |
 | Dashdot                  | latest         |                                               |
 | Focalboard               | 7.11.4         |                                               |
+| 2fauth                   | 4.2.3          |                                               |
 
 ## UI How to
 

@@ -1,0 +1,63 @@
+# Configuration for 2fauth setup
+
+# Application Name
+name: big-bear-2fauth
+
+# Services used in the application
+services:
+  # The `app` service for the 2fauth application
+  app:
+    # Name of the container
+    container_name: big-bear-2fauth
+    # Docker image to be used
+    image: 2fauth/2fauth:4.2.3
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
+    ports:
+      - "8000:8000"
+    # Network mode for the service
+    network_mode: bridge
+    # Volumes for the service HOST -> CONTAINER
+    volumes:
+      - /DATA/AppData/$AppID/data:/2fauth
+    # CasaOS specific configuration for the app service
+    x-casaos:
+      volumes:
+        - container: /2fauth
+          description:
+            en_us: "Container Path: /2fauth"
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+
+# CasaOS global application configuration
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
+  # Brief tagline for the application
+  tagline:
+    en_us: A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
+  # Developer's information
+  developer: "bubka"
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://user-images.githubusercontent.com/1289128/276442834-bdb528d0-78fa-4155-ba15-7165d88b9836.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Focalboard
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8000"
