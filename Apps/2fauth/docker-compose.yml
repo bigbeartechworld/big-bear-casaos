@@ -56,7 +56,7 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Focalboard
+    en_us: 2Fauth
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
