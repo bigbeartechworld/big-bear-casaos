@@ -38,7 +38,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Homer                    | latest         |                                               |
 | Homarr                   | latest         |                                               |
 | Homepage                 | latest         |                                               |
-| Immich                   | v1.81.1        |                                               |
+| Immich                   | v1.82.1        |                                               |
 | Mailpit                  | v1.7           |                                               |
 | MIND                     | latest         |                                               |
 | Mumble Server            | v1.4.230-6     |                                               |
