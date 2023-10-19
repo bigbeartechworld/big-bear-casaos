@@ -20,43 +20,43 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 
 | App Name                 | Version        | Video                                         |
 | ------------------------ | -------------- | --------------------------------------------- |
-| Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |
-| Ntfy.sh                  | latest         |                                               |
-| TP-Link Omada Controller | 5.9            |                                               |
-| Python Matter Server     | stable         |                                               |
-| Pingvin Share            | latest         |                                               |
-| Mumble Server            | v1.4.230-6     |                                               |
-| Code Server              | latest         |                                               |
-| Node-RED                 | 3.1.0          |                                               |
-| Glances                  | 3.4.0.3-full   |                                               |
-| Baserow                  | 1.20.0         |                                               |
-| Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
-| cAdvisor                 | latest         |                                               |
-| Gotify                   | 2.4.0          |                                               |
-| Immich                   | v1.81.1        |                                               |
-| Dashy                    | 2.1.1          |                                               |
-| WordPress                | latest         |                                               |
-| Speedtest Tracker        | v0.13.1        |                                               |
-| Scrypted                 | latest         |                                               |
-| OnlyOffice               | latest         |                                               |
-| CodeX Docs               | v2.1           |                                               |
+| 2fauth                   | 4.2.3          |                                               |
 | Actual Server            | latest         |                                               |
-| Umami                    | latest         |                                               |
-| MIND                     | latest         |                                               |
-| Mailpit                  | v1.7           |                                               |
-| What's Up Docker         | latest         |                                               |
-| Traccar                  | latest         |                                               |
+| Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
+| Baserow                  | 1.20.0         |                                               |
+| cAdvisor                 | latest         |                                               |
+| Code Server              | latest         |                                               |
+| CodeX Docs               | v2.1           |                                               |
+| Dashdot                  | latest         |                                               |
+| Dashy                    | 2.1.1          |                                               |
+| Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |
+| Focalboard               | 7.11.4         |                                               |
+| Ghost                    | 5.69.0-alpine  |                                               |
+| Glances                  | 3.4.0.3-full   |                                               |
+| Gluetun                  | latest         |                                               |
+| Gotify                   | 2.4.0          |                                               |
 | Homer                    | latest         |                                               |
 | Homarr                   | latest         |                                               |
 | Homepage                 | latest         |                                               |
+| Immich                   | v1.81.1        |                                               |
+| Mailpit                  | v1.7           |                                               |
+| MIND                     | latest         |                                               |
+| Mumble Server            | v1.4.230-6     |                                               |
+| Node-RED                 | 3.1.0          |                                               |
+| Ntfy.sh                  | latest         |                                               |
+| OnlyOffice               | latest         |                                               |
+| Pingvin Share            | latest         |                                               |
 | Portainer Agent          | 2.19.1         |                                               |
 | Pterodactyl Panel        | v1.11.5        |                                               |
 | Pterodactyl Wings        | v1.11.8        |                                               |
-| Gluetun                  | latest         |                                               |
-| Ghost                    | 5.69.0-alpine  |                                               |
-| Dashdot                  | latest         |                                               |
-| Focalboard               | 7.11.4         |                                               |
-| 2fauth                   | 4.2.3          |                                               |
+| Python Matter Server     | stable         |                                               |
+| Scrypted                 | latest         |                                               |
+| Speedtest Tracker        | v0.13.1        |                                               |
+| TP-Link Omada Controller | 5.9            |                                               |
+| Traccar                  | latest         |                                               |
+| Umami                    | latest         |                                               |
+| What's Up Docker         | latest         |                                               |
+| WordPress                | latest         |                                               |
 
 ## UI How to
 
