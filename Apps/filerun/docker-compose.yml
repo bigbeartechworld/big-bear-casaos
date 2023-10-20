@@ -45,20 +45,27 @@ services:
           description:
             en_us: Database port
         - container: FR_DB_NAME
-          description: Database name
+          description:
+            en_us: Database name
         - container: FR_DB_USER
-          description: Database user
+          description:
+            en_us: Database user
         - container: FR_DB_PASS
-          description: Database password
+          description:
+            en_us: Database password
         # Apache configurations
         - container: APACHE_RUN_USER
-          description: Apache user
+          description:
+            en_us: Apache user
         - container: APACHE_RUN_USER_ID
-          description: Apache user ID
+          description:
+            en_us: Apache user ID
         - container: APACHE_RUN_GROUP
-          description: Apache group
+          description:
+            en_us: Apache group
         - container: APACHE_RUN_GROUP_ID
-          description: Apache group ID
+          description:
+            en_us: Apache group ID
       # Volume descriptions
       volumes:
         - container: /var/www/html
