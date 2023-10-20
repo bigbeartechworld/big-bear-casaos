@@ -21,6 +21,22 @@ services:
       - "/DATA/AppData/traccar/logs:/opt/traccar/logs:rw" # Mounts the logs directory from the host to the container with read and write permissions
       - "/DATA/AppData/traccar/traccar.xml:/opt/traccar/conf/traccar.xml:ro" # Mounts the traccar.xml config file from the host to the container with read-only permissions
 
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /opt/traccar/logs
+          description:
+            en_us: "Container Path: /opt/traccar/logs"
+        - container: /opt/traccar/conf/traccar.xml
+          description:
+            en_us: "Container Path: /opt/traccar/conf/traccar.xml"
+      ports:
+        - container: "8082"
+          description:
+            en_us: "Container Port: 8082"
+        - container: "5000-5150"
+          description:
+            en_us: "Container Port: 5000-5150"
+
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application

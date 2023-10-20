@@ -34,6 +34,23 @@ services:
         source: /DATA/AppData/$AppID/config
         target: /etc/ntfy
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+      volumes:
+        - container: /var/cache/ntfy
+          description:
+            en_us: "Container Path: /var/cache/ntfy"
+        - container: /etc/ntfy
+          description:
+            en_us: "Container Path: /etc/ntfy"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
 # CasaOS specific configuration
 x-casaos:
   # Supported architectures for the service

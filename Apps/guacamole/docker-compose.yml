@@ -28,6 +28,28 @@ services:
     ports:
       - 8090:8080
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: GUACD_HOSTNAME
+          description:
+            en_us: Guacd hostname
+        - container: MYSQL_HOSTNAME
+          description:
+            en_us: MySQL hostname
+        - container: MYSQL_DATABASE
+          description:
+            en_us: MySQL database
+        - container: MYSQL_USER
+          description:
+            en_us: MySQL user
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: MySQL password
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
   # mysql service configuration
   mysql:
     image: mysql:5.7
@@ -41,6 +63,28 @@ services:
     # Volume mapping for persistent storage
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: MySQL root password
+        - container: MYSQL_DATABASE
+          description:
+            en_us: MySQL database
+        - container: MYSQL_USER
+          description:
+            en_us: MySQL user
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: MySQL password
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
 
 # CasaOS specific configuration
 x-casaos:

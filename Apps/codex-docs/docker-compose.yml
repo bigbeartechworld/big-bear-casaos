@@ -11,6 +11,21 @@ services:
       - /DATA/AppData/$AppID/uploads:/usr/src/app/uploads
       - /DATA/AppData/$AppID/db:/usr/src/app/db
       - /DATA/AppData/$AppID/codex-docs-config.local.yaml:/usr/src/app/docs-config.yaml
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /usr/src/app/uploads
+          description:
+            en_us: "Container Path: /usr/src/app/uploads"
+        - container: /usr/src/app/db
+          description:
+            en_us: "Container Path: /usr/src/app/db"
+        - container: /usr/src/app/docs-config.yaml
+          description:
+            en_us: "Container Path: /usr/src/app/docs-config.yaml"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
 
 # CasaOS specific configuration
 x-casaos:

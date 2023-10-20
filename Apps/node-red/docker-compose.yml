@@ -28,6 +28,16 @@ services:
     # Name of the container
     container_name: node-red-updated
 
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "1880"
+          description:
+            en_us: "Container Port: 1880"
+
 # Custom configurations specific to casaos
 x-casaos:
   # Supported architectures

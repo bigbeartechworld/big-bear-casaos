@@ -25,6 +25,23 @@ services:
     volumes:
       - /DATA/AppData/$AppID/data:/baserow/data
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: BASEROW_PUBLIC_URL
+          description:
+            en_us: Baserow Public URL
+      volumes:
+        - container: /baserow/data
+          description:
+            en_us: "Container Path: /baserow/data"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_us: "Container Port: 443"
+
 # CasaOS specific configuration
 x-casaos:
   architectures: # Supported CPU architectures

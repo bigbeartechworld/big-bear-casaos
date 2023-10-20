@@ -16,6 +16,21 @@ services:
       db:
         condition: service_healthy
     restart: always # Restart policy
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DATABASE_URL
+          description:
+            en_us: Database URL
+        - container: DATABASE_TYPE
+          description:
+            en_us: Database type
+        - container: APP_SECRET
+          description:
+            en_us: Application secret
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
 
   # Database service for the Umami application
   db:
@@ -32,6 +47,21 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_us: Database name
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
 
 # CasaOS specific configuration for the application
 x-casaos:

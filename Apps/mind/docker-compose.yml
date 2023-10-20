@@ -12,6 +12,19 @@ services:
       - "/DATA/AppData/$AppID/db:/app/db"
     ports:
       - "8080:8080"
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+      volumes:
+        - container: /app/db
+          description:
+            en_us: "Container Path: /app/db"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
 
 # CasaOS specific configuration
 x-casaos:

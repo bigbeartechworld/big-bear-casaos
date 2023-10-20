@@ -29,6 +29,53 @@ services:
     restart: unless-stopped
     depends_on:
       - db
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PUID
+          description:
+            en_us: Process UID
+        - container: PGID
+          description:
+            en_us: Process GID
+        - container: DB_CONNECTION
+          description:
+            en_us: Database connection
+        - container: DB_HOST
+          description:
+            en_us: Database host
+        - container: DB_PORT
+          description:
+            en_us: Database port
+        - container: DB_DATABASE
+          description:
+            en_us: Database name
+        - container: DB_USERNAME
+          description:
+            en_us: Database user
+        - container: DB_PASSWORD
+          description:
+            en_us: Database password
+        - container: TZ
+          description:
+            en_us: Timezone
+      volumes:
+        - container: /etc/localtime
+          description:
+            en_us: "Container Path: /etc/localtime"
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /etc/ssl/web
+          description:
+            en_us: "Container Path: /etc/ssl/web"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_us: "Container Port: 443"
+
   db:
     image: mariadb:10
     restart: always
@@ -39,6 +86,24 @@ services:
       - MARIADB_RANDOM_ROOT_PASSWORD=true
     volumes:
       - "/DATA/AppData/$AppID/mysql:/var/lib/mysql"
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: MARIADB_DATABASE
+          description:
+            en_us: Database name
+        - container: MARIADB_USER
+          description:
+            en_us: Database user
+        - container: MARIADB_PASSWORD
+          description:
+            en_us: Database password
+        - container: MARIADB_RANDOM_ROOT_PASSWORD
+          description:
+            en_us: Database root password
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
 
 # CasaOS specific configuration
 x-casaos:

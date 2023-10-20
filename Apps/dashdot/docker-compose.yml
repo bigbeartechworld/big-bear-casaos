@@ -13,6 +13,15 @@ services:
     volumes:
       - /:/mnt/host:ro # Mounts the root directory of the host as read-only at /mnt/host in the container
     privileged: true # Runs the container in privileged mode, allowing it access to host devices
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /mnt/host
+          description:
+            en_us: "Container Path: /mnt/host"
+      ports:
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
 
 # CasaOS specific configuration
 x-casaos:

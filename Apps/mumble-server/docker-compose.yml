@@ -17,6 +17,11 @@ services:
     ports:
       - 64738:64738 # TCP port mapping
       - 64738:64738/udp # UDP port mapping
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "64738"
+          description:
+            en_us: "Container Port: 64738"
 
 # Additional metadata for CasaOS
 x-casaos:

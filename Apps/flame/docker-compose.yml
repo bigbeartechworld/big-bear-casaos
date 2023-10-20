@@ -35,6 +35,24 @@ services:
         source: /var/run/docker.sock
         target: /var/run/docker.sock
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PASSWORD
+          description:
+            en_us: "Specifies the password to be used by the Flame application"
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+      ports:
+        - container: "5005"
+          description:
+            en_us: "Container Port: 5005"
+
 # CasaOS specific configuration for the application
 x-casaos:
   # List of architectures that this application supports

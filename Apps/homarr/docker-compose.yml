@@ -33,6 +33,19 @@ services:
       # Mapping port 7575 of the host to port 7575 of the container
       - "7575:7575"
 
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /app/data/configs
+          description:
+            en_us: "Container Path: /app/data/configs"
+        - container: /app/public/icons
+          description:
+            en_us: "Container Path: /app/public/icons"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application

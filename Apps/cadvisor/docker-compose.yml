@@ -37,6 +37,30 @@ services:
     ports:
       # Map port 8085 of the host to port 8080 of the container
       - 8085:8080
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /rootfs
+          description:
+            en_us: "Container Path: /rootfs"
+        - container: /var/run
+          description:
+            en_us: "Container Path: /var/run"
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+        - container: /sys
+          description:
+            en_us: "Container Path: /sys"
+        - container: /var/lib/docker
+          description:
+            en_us: "Container Path: /var/lib/docker"
+        - container: /dev/disk
+          description:
+            en_us: "Container Path: /dev/disk"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
 
 # CasaOS specific configuration
 x-casaos:

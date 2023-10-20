@@ -15,6 +15,30 @@ services:
       - /DATA/AppData/$AppID/onlyoffice/rabbitmq:/var/lib/rabbitmq
       - /DATA/AppData/$AppID/onlyoffice/redis:/var/lib/redis
       - /DATA/AppData/$AppID/onlyoffice/db:/var/lib/postgresql
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/log/onlyoffice
+          description:
+            en_us: "Container Path: /var/log/onlyoffice"
+        - container: /var/www/onlyoffice/Data
+          description:
+            en_us: "Container Path: /var/www/onlyoffice/Data"
+        - container: /var/lib/onlyoffice
+          description:
+            en_us: "Container Path: /var/lib/onlyoffice"
+        - container: /var/lib/rabbitmq
+          description:
+            en_us: "Container Path: /var/lib/rabbitmq"
+        - container: /var/lib/redis
+          description:
+            en_us: "Container Path: /var/lib/redis"
+        - container: /var/lib/postgresql
+          description:
+            en_us: "Container Path: /var/lib/postgresql"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
 
 # CasaOS specific configuration
 x-casaos:

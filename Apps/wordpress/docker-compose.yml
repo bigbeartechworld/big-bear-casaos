@@ -24,6 +24,28 @@ services:
     # Service dependencies for the application
     depends_on:
       - db
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: WORDPRESS_DB_HOST
+          description:
+            en_us: Database host
+        - container: WORDPRESS_DB_USER
+          description:
+            en_us: Database user
+        - container: WORDPRESS_DB_PASSWORD
+          description:
+            en_us: Database password
+        - container: WORDPRESS_DB_NAME
+          description:
+            en_us: Database name
+      volumes:
+        - container: /var/www/html
+          description:
+            en_us: "Container Path: /var/www/html"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
 
   # Service definition for the database
   db:
@@ -38,6 +60,28 @@ services:
     # Volume mapping for the database
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: MYSQL_DATABASE
+          description:
+            en_us: Database name
+        - container: MYSQL_USER
+          description:
+            en_us: Database user
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: Database password
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: Database root password
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
 
 # CasaOS specific configuration
 x-casaos:

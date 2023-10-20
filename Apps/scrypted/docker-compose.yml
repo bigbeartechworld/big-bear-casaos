@@ -25,6 +25,18 @@ services:
     labels:
       # Watchtower label for Scrypted
       - "com.centurylinklabs.watchtower.scope=scrypted"
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION
+          description:
+            en_us: Scrypted webhook update authorization
+        - container: SCRYPTED_WEBHOOK_UPDATE
+          description:
+            en_us: Scrypted webhook update URL
+      volumes:
+        - container: /server/volume
+          description:
+            en_us: "Container Path: /server/volume"
 
   # This service manages automatic updates for Scrypted using Watchtower
   watchtower:
@@ -47,6 +59,29 @@ services:
       # Mapping the auto-update port; it should match the one in the URL above
       - 10444:8080
     command: --interval 3600 --cleanup --scope scrypted # Command to run watchtower with specified options
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: WATCHTOWER_HTTP_API_TOKEN
+          description:
+            en_us: Watchtower HTTP API token
+        - container: WATCHTOWER_HTTP_API_UPDATE
+          description:
+            en_us: Watchtower HTTP API update
+        - container: WATCHTOWER_SCOPE
+          description:
+            en_us: Watchtower HTTP API scope
+        - container: WATCHTOWER_HTTP_API_PERIODIC_POLLS
+          description:
+            en_us: Watchtower HTTP API periodic polls
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
 
 # CasaOS specific configuration
 x-casaos:

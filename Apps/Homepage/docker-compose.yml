@@ -27,6 +27,18 @@ services:
       # Maps the Docker socket from the host to the container
       # This allows the container to communicate with the Docker daemon on the host
       - /var/run/docker.sock:/var/run/docker.sock
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /app/config
+          description:
+            en_us: "Container Path: /app/config"
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
 
 # CasaOS specific configuration
 x-casaos:

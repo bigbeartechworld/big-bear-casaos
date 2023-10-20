@@ -30,6 +30,23 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket for monitoring
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+        - container: GLANCES_OPT
+          description:
+            en_us: Glances option to run as a web server
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+      ports:
+        - container: "61208"
+          description:
+            en_us: "Container Port: 61208"
+
 # CasaOS specific configuration
 x-casaos:
   architectures: # Supported CPU architectures

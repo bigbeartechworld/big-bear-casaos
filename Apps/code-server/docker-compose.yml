@@ -15,6 +15,25 @@ services:
     ports:
       - "8080:8080" # Expose code-server's port 8080 on the host's port 8080
     restart: always # Policy to restart the container if it stops unexpectedly
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PASSWORD
+          description:
+            en_us: "Password to access code-server"
+        - container: PUID
+          description:
+            en_us: "User ID under which code-server will run"
+        - container: PGID
+          description:
+            en_us: "Group ID under which code-server will run"
+      volumes:
+        - container: /home/coder/project
+          description:
+            en_us: "Container Path: /home/coder/project"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
 
 # CasaOS specific configuration
 x-casaos:

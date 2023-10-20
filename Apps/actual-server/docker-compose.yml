@@ -11,6 +11,15 @@ services:
     ports:
       - "5006:5006" # Expose actual-server's port 5006 on the host's port 5006
     restart: unless-stopped # Policy to restart the container if it stops unexpectedly
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "5006"
+          description:
+            en_us: "Container Port: 5006"
 
 # CasaOS specific configuration
 x-casaos:

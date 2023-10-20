@@ -32,6 +32,19 @@ services:
     # In this case, the `INIT_ASSETS` variable is set to 1 (which is the default value)
     environment:
       - INIT_ASSETS=1 # default
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: INIT_ASSETS
+          description:
+            en_us: "Initialize assets"
+      volumes:
+        - container: /www/assets
+          description:
+            en_us: "Container Path: /www/assets"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
 
 # CasaOS specific configuration
 x-casaos:

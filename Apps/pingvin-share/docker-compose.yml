@@ -23,6 +23,19 @@ services:
       # Maps data directory from host to container's backend data directory
       - "/DATA/AppData/pingvin-share/images:/opt/app/frontend/public/img"
       # Maps images directory from host to container's frontend public img directory
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /opt/app/backend/data
+          description:
+            en_us: "Container Path: /opt/app/backend/data"
+        - container: /opt/app/frontend/public/img
+          description:
+            en_us: "Container Path: /opt/app/frontend/public/img"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
 x-casaos:
   architectures:
     - amd64

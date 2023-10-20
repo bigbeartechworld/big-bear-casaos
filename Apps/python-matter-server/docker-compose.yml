@@ -28,6 +28,15 @@ services:
       # Map the dbus directory from the host to the container in read-only mode
       - /run/dbus:/run/dbus:ro
 
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+        - container: /run/dbus
+          description:
+            en_us: "Container Path: /run/dbus"
+
 # CasaOS specific configuration
 x-casaos:
   # Architectures supported by this service

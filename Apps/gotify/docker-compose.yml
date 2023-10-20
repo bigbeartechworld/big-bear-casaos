@@ -15,6 +15,23 @@ services:
       - "/DATA/AppData/$AppID/data:/app/data"
     network_mode: bridge # Network mode
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: GOTIFY_DEFAULTUSER_NAME
+          description:
+            en_us: Gotify default user name
+        - container: GOTIFY_DEFAULTUSER_PASS
+          description:
+            en_us: Gotify default user password
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
 # CasaOS specific configuration
 x-casaos:
   architectures: # Supported CPU architectures
