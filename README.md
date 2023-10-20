@@ -63,22 +63,6 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 
 [![Video](https://img.youtube.com/vi/rqFUeDDb5uA/0.jpg)](https://youtu.be/rqFUeDDb5uA)
 
-How to add the App Store:
-
-- Go to your CasaOS dashboard.
-
-  ![Step 1](https://raw.githubusercontent.com/WisdomSky/CasaOS-LinuxServer-AppStore/main/tip-1.jpg)
-
-- Open the appstore and click `Add Source` button located on the right just above the apps list.
-
-  ![Step 2](https://raw.githubusercontent.com/WisdomSky/CasaOS-LinuxServer-AppStore/main/tip-2.jpg)
-
-- Paste the appstore link `https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zip` and then click `Add` to submit.
-
-  ![Step 3](https://raw.githubusercontent.com/WisdomSky/CasaOS-LinuxServer-AppStore/main/tip-3.jpg)
-
-- Wait for the installation to finish. Done!
-
 > **NOTE: Custom Appstore is only supported on CasaOS version [0.4.4](https://blog.casaos.io/blog/32.html)**
 
 ## Contributions
