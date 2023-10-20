@@ -61,6 +61,7 @@ x-casaos:
   # Default port mapping for the application
   port_map: "8000"
   # This is shown before installing
-  before_install:
-    en_us: |
-      You will need to create a new account.
+  tips:
+    before_install:
+      en_us: |
+        You will need to create a new account.

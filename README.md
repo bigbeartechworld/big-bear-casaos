@@ -22,6 +22,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | ------------------------ | -------------- | --------------------------------------------- |
 | 2fauth                   | 4.2.3          |                                               |
 | Actual Budget            | 23.10.0        |                                               |
+| AdGuard Home             | v0.107.39      |                                               |
 | Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
 | Baserow                  | 1.20.0         |                                               |
 | cAdvisor                 | latest         |                                               |

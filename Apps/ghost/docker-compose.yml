@@ -125,6 +125,7 @@ x-casaos:
   category: BigBearCasaOS
   # Default port mapping for the application
   port_map: "2368"
-  before_install:
-    en_us: |
-      Update the url environment variable to reflect your CasaOS IP address.
+  tips:
+    before_install:
+      en_us: |
+        Update the url environment variable to reflect your CasaOS IP address.
