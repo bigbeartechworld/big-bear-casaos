@@ -1,0 +1,139 @@
+# Configuration for big-bear-filerun setup
+
+# Name of the big-bear-filerun application
+name: big-bear-filerun
+
+# Service definitions for the filerun application
+services:
+  # Service for the main application
+  app:
+    image: filerun/filerun:8.1
+    environment:
+      # Database configurations
+      FR_DB_HOST: db
+      FR_DB_PORT: 3306
+      FR_DB_NAME: filerun
+      FR_DB_USER: casaos
+      FR_DB_PASS: casaos
+      # Apache configurations
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_USER_ID: 33
+      APACHE_RUN_GROUP: www-data
+      APACHE_RUN_GROUP_ID: 33
+    # Service dependencies
+    depends_on:
+      - db
+    links:
+      - db:db
+    # Port mappings
+    ports:
+      - "8080:80"
+    # Volume mappings
+    volumes:
+      - /DATA/AppData/$AppID/html:/var/www/html
+      - /DATA/AppData/$AppID/user-files:/user-files
+
+    # CasaOS specific configuration for the app service
+    x-casaos:
+      envs:
+        # Environment variable descriptions
+        # Database configurations
+        - container: FR_DB_HOST
+          description:
+            en_us: Database host
+        - container: FR_DB_PORT
+          description:
+            en_us: Database port
+        - container: FR_DB_NAME
+          description: Database name
+        - container: FR_DB_USER
+          description: Database user
+        - container: FR_DB_PASS
+          description: Database password
+        # Apache configurations
+        - container: APACHE_RUN_USER
+          description: Apache user
+        - container: APACHE_RUN_USER_ID
+          description: Apache user ID
+        - container: APACHE_RUN_GROUP
+          description: Apache group
+        - container: APACHE_RUN_GROUP_ID
+          description: Apache group ID
+      # Volume descriptions
+      volumes:
+        - container: /var/www/html
+          description:
+            en_us: "Container Path: /var/www/html"
+        - container: /user-files
+          description:
+            en_us: "Container Path: /user-files"
+      # Port descriptions
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+  # Service for the database
+  db:
+    image: mariadb:10.1
+    environment:
+      # MySQL configurations
+      MYSQL_ROOT_PASSWORD: casaos
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
+      MYSQL_DATABASE: filerun
+    # Volume mappings
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+
+    # CasaOS specific configuration for the db service
+    x-casaos:
+      envs:
+        # Environment variable descriptions
+        # MySQL configurations
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: MySQL root password
+        - container: MYSQL_USER
+          description:
+            en_us: MySQL user
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: MySQL password
+        - container: MYSQL_DATABASE
+          description:
+            en_us: MySQL database
+      # Volume descriptions
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+
+# General CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Official FileRun (https://filerun.com) image. FileRun is a self-hosted Google Drive alternative.
+  tagline:
+    # Short description or tagline in English
+    en_us: FileRun is a self-hosted File Sync and Share web-based application.
+  # Developer's name or identifier
+  developer: "filerun"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filerun.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: FileRun
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"

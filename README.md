@@ -30,6 +30,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | CodeX Docs               | v2.1           |                                               |
 | Dashdot                  | latest         |                                               |
 | Dashy                    | 2.1.1          |                                               |
+| FileRun                  | 8.1            |                                               |
 | Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |
 | Focalboard               | 7.11.4         |                                               |
 | Ghost                    | 5.69.0-alpine  |                                               |
