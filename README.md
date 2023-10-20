@@ -44,7 +44,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | MIND                     | latest         |                                               |
 | Mumble Server            | v1.4.230-6     |                                               |
 | Node-RED                 | 3.1.0          |                                               |
-| Ntfy.sh                  | latest         |                                               |
+| Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8] |
 | OnlyOffice               | latest         |                                               |
 | Pingvin Share            | latest         |                                               |
 | Portainer Agent          | 2.19.1         |                                               |
@@ -55,7 +55,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Speedtest Tracker        | v0.13.1        |                                               |
 | TP-Link Omada Controller | 5.9            |                                               |
 | Traccar                  | latest         |                                               |
-| Umami                    | latest         |                                               |
+| Umami                    | latest         | [YouTube Video](https://youtu.be/4DEF5fNf8hU] |
 | What's Up Docker         | latest         |                                               |
 | WordPress                | latest         |                                               |
 
