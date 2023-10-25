@@ -27,7 +27,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Baserow                  | 1.20.0         |                                               |
 | cAdvisor                 | latest         |                                               |
 | Code Server              | latest         |                                               |
-| CodeX Docs               | v2.1           |                                               |
+| CodeX Docs               | v2.1           | [YouTube Video](https://youtu.be/dKm2VJwam24) |
 | Dashdot                  | latest         |                                               |
 | Dashy                    | 2.1.1          |                                               |
 | Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |
@@ -46,7 +46,7 @@ If you have a suggestion for an app, please post in our suggestion discord on th
 | Node-RED                 | 3.1.0          |                                               |
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |
 | OnlyOffice               | latest         |                                               |
-| Pingvin Share            | latest         |                                               |
+| Pingvin Share            | latest         | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |
 | Portainer Agent          | 2.19.1         |                                               |
 | Pterodactyl Panel        | v1.11.5        |                                               |
 | Pterodactyl Wings        | v1.11.8        |                                               |
