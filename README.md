@@ -24,6 +24,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Actual Budget            | 23.10.0        |                                               |
 | AdGuard Home             | v0.107.39      |                                               |
 | Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
+| Appsmith                 | v1.9.42        |                                               |
 | Baserow                  | 1.20.0         |                                               |
 | cAdvisor                 | latest         |                                               |
 | Code Server              | latest         |                                               |
@@ -37,7 +38,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Gluetun                  | latest         |                                               |
 | Gotify                   | 2.4.0          |                                               |
 | Homer                    | latest         |                                               |
-| Homarr                   | latest         |                                               |
+| Homarr                   | latest         | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |
 | Homepage                 | latest         |                                               |
 | Immich                   | v1.82.1        |                                               |
 | Mailpit                  | v1.7           |                                               |

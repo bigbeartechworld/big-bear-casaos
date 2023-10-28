@@ -1,0 +1,60 @@
+# Configuration for appsmith setup
+
+# Name of the big-bear-appsmith application
+name: big-bear-appsmith
+
+# Service definitions for the big-bear-appsmith application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    image: appsmith/appsmith-ee:v1.9.42 # Docker image to use
+    container_name: appsmith # Name of the container
+    ports:
+      - "1080:80" # Port mapping host:container for HTTP
+      - "10443:443" # Port mapping host:container for HTTPS
+    volumes:
+      - /DATA/AppData/$AppID/stacks:/appsmith-stacks # Mount volume for app data
+    restart: unless-stopped # Container restart policy
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /appsmith-stacks
+          description:
+            en_us: "Container Path: /appsmith-stacks" # Description of the volume
+      ports:
+        - container: "1080"
+          description:
+            en_us: "Container Port: 1080" # Description of the HTTP port
+        - container: "10443"
+          description:
+            en_us: "Container Port: 10443" # Description of the HTTPS port
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.
+  tagline:
+    # Short description or tagline in English
+    en_us: Appsmith
+  # Developer's name or identifier
+  developer: "appsmithorg"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/appsmithorg/appsmith/blob/release/static/logo.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Appsmith
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "1080"
