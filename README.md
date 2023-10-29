@@ -40,7 +40,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homer                    | latest         |                                               |
 | Homarr                   | latest         | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |
 | Homepage                 | latest         |                                               |
-| Immich                   | v1.82.1        |                                               |
+| Immich                   | v1.83.0        |                                               |
 | Mailpit                  | v1.7           |                                               |
 | MIND                     | latest         |                                               |
 | Mumble Server            | v1.4.230-6     |                                               |
