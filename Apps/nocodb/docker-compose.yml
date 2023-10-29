@@ -1,0 +1,65 @@
+# Configuration for nocodb setup
+
+# Name of the big-bear-nocodb application
+name: big-bear-nocodb
+
+# Service definitions for the big-bear-nocodb application
+services:
+  # Service name: app
+  # This section configures the NocoDB application itself
+  app:
+    image: nocodb/nocodb:latest # Specifies the Docker image to use
+    container_name: nocodb # Name of the container
+    restart: unless-stopped # Container restart policy
+    environment: # Environment variables for NocoDB
+      POSTGRES_USER: nocodb
+      POSTGRES_PASSWORD: nocodb
+      POSTGRES_DB: nocodb
+    ports:
+      - "8080:8080" # Port mapping between host and container
+    volumes:
+      - /DATA/AppData/$AppID/data:/usr/src/app/data # Volume mapping for persistent data
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /usr/src/app/data
+          description:
+            en_us: "Container Path: /usr/src/app/data"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+  # Database service configuration
+  db:
+    image: postgres:13 # Specifies the PostgreSQL Docker image to use
+    restart: always # Always restart the container if it stops
+    environment: # Environment variables for the PostgreSQL database
+      POSTGRES_USER: nocodb
+      POSTGRES_PASSWORD: nocodb
+      POSTGRES_DB: nocodb
+    volumes:
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Volume mapping for database persistence
+    x-casaos: # CasaOS specific configuration for database
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures for the application
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description: # Description in English
+    en_us: NocoDB allows building no-code database solutions with ease of spreadsheets. Bring your own database or choose ours! Millions of rows? Not a problem. Your Data. Your rules. You are in control.
+  tagline: # Short description or tagline in English
+    en_us: 🔥 🔥 🔥 Open Source Airtable Alternative
+  developer: "nocodb" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/nocodb.png?raw=true # Icon for the application
+  thumbnail: "https://user-images.githubusercontent.com/86527202/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif" # Thumbnail image (currently empty)
+  title:
+    en_us: NocoDB # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "8080" # Port mapping information

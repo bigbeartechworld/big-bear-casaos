@@ -18,11 +18,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## Apps
 
-| App Name                 | Version        | Video                                         |
+| Application              | Version        | YouTube Video                                 |
 | ------------------------ | -------------- | --------------------------------------------- |
 | 2fauth                   | 4.2.3          |                                               |
 | Actual Budget            | 23.10.0        |                                               |
-| AdGuard Home             | v0.107.39      |                                               |
+| AdGuard Home             | v0.107.39      | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
 | Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
 | Appsmith                 | v1.9.42        |                                               |
 | Baserow                  | 1.20.0         |                                               |
@@ -46,6 +46,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Mumble Server            | v1.4.230-6     |                                               |
 | Node-RED                 | 3.1.0          |                                               |
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |
+| NocoDB                   | latest         |                                               |
 | OnlyOffice               | latest         |                                               |
 | Pingvin Share            | latest         | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |
 | Portainer Agent          | 2.19.1         |                                               |
