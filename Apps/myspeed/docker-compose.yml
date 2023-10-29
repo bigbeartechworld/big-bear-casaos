@@ -1,0 +1,55 @@
+# Configuration for myspeed setup
+
+# Name of the big-bear-myspeed application
+name: big-bear-myspeed
+
+# Service definitions for the big-bear-myspeed application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    image: germannewsmaker/myspeed
+    ports:
+      - "5216:5216"
+    volumes:
+      - /DATA/AppData/$AppID/data:/myspeed/data
+    restart: unless-stopped
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /myspeed/data
+          description:
+            en_us: "Container Path: /myspeed/data"
+      ports:
+        - container: "5216"
+          description:
+            en_us: "Container Port: 5216"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: MySpeed is a speed test analysis software that records your internet speed for up to 30 days.
+  tagline:
+    # Short description or tagline in English
+    en_us: A speed test analysis software that shows your internet speed for up to 30 days
+  # Developer's name or identifier
+  developer: "gnmyt"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://camo.githubusercontent.com/2eaf15c1730632a33a7389cbbea8f7d100fd7c163b6b945f730a6a2e9e893fdb/68747470733a2f2f692e696d6775722e636f6d2f61436d413672482e706e67
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: MySpeed
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "5216"
