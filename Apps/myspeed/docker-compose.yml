@@ -8,21 +8,21 @@ services:
   # Service name: app
   # The `app` service definition
   app:
-    image: germannewsmaker/myspeed
+    image: germannewsmaker/myspeed # Docker image to be used for the service
     ports:
-      - "5216:5216"
+      - "5216:5216" # Port mapping from host to container
     volumes:
-      - /DATA/AppData/$AppID/data:/myspeed/data
-    restart: unless-stopped
+      - /DATA/AppData/$AppID/data:/myspeed/data # Mount host directory to container directory
+    restart: unless-stopped # Restart policy for the service
     x-casaos: # CasaOS specific configuration
       volumes:
         - container: /myspeed/data
           description:
-            en_us: "Container Path: /myspeed/data"
+            en_us: "Container Path: /myspeed/data" # Description of the volume
       ports:
         - container: "5216"
           description:
-            en_us: "Container Port: 5216"
+            en_us: "Container Port: 5216" # Description of the port
 
 # CasaOS specific configuration
 x-casaos:
