@@ -4,7 +4,7 @@ name: big-bear-code-server
 services:
   # Service name: app
   app:
-    image: codercom/code-server:latest # The Docker image to use (latest version of code-server)
+    image: lscr.io/linuxserver/code-server:latest # The Docker image to use (latest version of code-server)
     container_name: code-server # Name of the container instance
     environment:
       - PASSWORD=my_password # Password to access code-server
@@ -13,7 +13,7 @@ services:
     volumes:
       - /DATA/AppData/$AppID/project:/home/coder/project # Mounting the project directory inside the container
     ports:
-      - "8080:8080" # Expose code-server's port 8080 on the host's port 8080
+      - "8080:8443" # Expose code-server's port 8080 on the host's port 8080
     restart: always # Policy to restart the container if it stops unexpectedly
     x-casaos: # CasaOS specific configuration
       envs:
