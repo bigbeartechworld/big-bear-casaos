@@ -18,49 +18,49 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## Apps
 
-| Application              | Version        | YouTube Video                                 |
-| ------------------------ | -------------- | --------------------------------------------- |
-| 2fauth                   | 4.2.3          |                                               |
-| Actual Budget            | 23.10.0        |                                               |
-| AdGuard Home             | v0.107.39      | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
-| Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |
-| Appsmith                 | v1.9.42        |                                               |
-| Baserow                  | 1.20.0         |                                               |
-| cAdvisor                 | latest         |                                               |
-| Code Server              | latest         |                                               |
-| CodeX Docs               | v2.1           | [YouTube Video](https://youtu.be/dKm2VJwam24) |
-| Dashdot                  | latest         |                                               |
-| Dashy                    | 2.1.1          |                                               |
-| Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |
-| Focalboard               | 7.11.4         |                                               |
-| Ghost                    | 5.69.0-alpine  |                                               |
-| Glances                  | 3.4.0.3-full   |                                               |
-| Gluetun                  | latest         |                                               |
-| Gotify                   | 2.4.0          |                                               |
-| Homer                    | latest         |                                               |
-| Homarr                   | latest         | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |
-| Homepage                 | latest         |                                               |
-| Immich                   | v1.83.0        |                                               |
-| Mailpit                  | v1.7           |                                               |
-| MIND                     | latest         |                                               |
-| Mumble Server            | v1.4.230-6     |                                               |
-| MySpeed                  | latest         |                                               |
-| Node-RED                 | 3.1.0          |                                               |
-| Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |
-| NocoDB                   | latest         |                                               |
-| OnlyOffice               | latest         |                                               |
-| Pingvin Share            | latest         | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |
-| Portainer Agent          | 2.19.1         |                                               |
-| Pterodactyl Panel        | v1.11.5        |                                               |
-| Pterodactyl Wings        | v1.11.8        |                                               |
-| Python Matter Server     | stable         |                                               |
-| Scrypted                 | latest         |                                               |
-| Speedtest Tracker        | v0.13.1        |                                               |
-| TP-Link Omada Controller | 5.9            |                                               |
-| Traccar                  | latest         |                                               |
-| Umami                    | latest         | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |
-| What's Up Docker         | latest         |                                               |
-| WordPress                | latest         |                                               |
+| Application              | Version        | YouTube Video                                                                                                       |
+| ------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 2fauth                   | 4.2.3          |                                                                                                                     |
+| Actual Budget            | 23.10.0        |                                                                                                                     |
+| AdGuard Home             | v0.107.39      | [YouTube Video](https://youtu.be/6cu0kfP50Jg)                                                                       |
+| Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg)                                                                       |
+| Appsmith                 | v1.9.42        |                                                                                                                     |
+| Baserow                  | 1.20.0         |                                                                                                                     |
+| cAdvisor                 | latest         |                                                                                                                     |
+| Code Server              | latest         |                                                                                                                     |
+| CodeX Docs               | v2.1           | [YouTube Video](https://youtu.be/dKm2VJwam24)                                                                       |
+| Dashdot                  | latest         |                                                                                                                     |
+| Dashy                    | 2.1.1          |                                                                                                                     |
+| Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8)                                                                       |
+| Focalboard               | 7.11.4         |                                                                                                                     |
+| Ghost                    | 5.69.0-alpine  |                                                                                                                     |
+| Glances                  | 3.4.0.3-full   |                                                                                                                     |
+| Gluetun                  | latest         |                                                                                                                     |
+| Gotify                   | 2.4.0          |                                                                                                                     |
+| Homer                    | latest         |                                                                                                                     |
+| Homarr                   | latest         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
+| Homepage                 | latest         |                                                                                                                     |
+| Immich                   | v1.83.0        |                                                                                                                     |
+| Mailpit                  | v1.7           |                                                                                                                     |
+| MIND                     | latest         |                                                                                                                     |
+| Mumble Server            | v1.4.230-6     |                                                                                                                     |
+| MySpeed                  | latest         |                                                                                                                     |
+| Node-RED                 | 3.1.0          |                                                                                                                     |
+| Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8)                                                                       |
+| NocoDB                   | latest         |                                                                                                                     |
+| OnlyOffice               | latest         |                                                                                                                     |
+| Pingvin Share            | latest         | [YouTube Video](https://youtu.be/SRJUS7h1vhU)                                                                       |
+| Portainer Agent          | 2.19.1         |                                                                                                                     |
+| Pterodactyl Panel        | v1.11.5        |                                                                                                                     |
+| Pterodactyl Wings        | v1.11.8        |                                                                                                                     |
+| Python Matter Server     | stable         |                                                                                                                     |
+| Scrypted                 | latest         | [YouTube Video](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
+| Speedtest Tracker        | v0.13.1        |                                                                                                                     |
+| TP-Link Omada Controller | 5.9            |                                                                                                                     |
+| Traccar                  | latest         |                                                                                                                     |
+| Umami                    | latest         | [YouTube Video](https://youtu.be/4DEF5fNf8hU)                                                                       |
+| What's Up Docker         | latest         |                                                                                                                     |
+| WordPress                | latest         |                                                                                                                     |
 
 ## UI How to
 
