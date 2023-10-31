@@ -2,6 +2,10 @@
 
 This repository contains the BigBearCasaOS App Store. This app store is a community app store that is not maintained by the CasaOS team. It is maintained by BigBearTechWorld and the BigBearCommunity.
 
+## Stay Updated
+
+All app changes are posted in the [BigBearCommunity](https://community.bigbeartechworld.com/c/bigbearyoutube/bigbearcasaos/10).
+
 ## App Store URL
 
 ```text
