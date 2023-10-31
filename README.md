@@ -45,6 +45,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | MIND                     | latest         |                                                                                                                     |
 | Mumble Server            | v1.4.230-6     |                                                                                                                     |
 | MySpeed                  | latest         |                                                                                                                     |
+| n8n                      | 1.14.2         |                                                                                                                     |
 | Node-RED                 | 3.1.0          |                                                                                                                     |
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8)                                                                       |
 | NocoDB                   | latest         |                                                                                                                     |
