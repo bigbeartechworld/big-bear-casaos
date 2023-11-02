@@ -22,8 +22,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## Apps
 
-| Application              | Version        | YouTube Video                                                                                                       |
-| ------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Application              | Version        | YouTube Video                                                                                                       | Docs                                                                                  |
+| ------------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | 2fauth                   | 4.2.3          |                                                                                                                     |
 | Actual Budget            | 23.10.0        |                                                                                                                     |
 | AdGuard Home             | v0.107.39      | [YouTube Video](https://youtu.be/6cu0kfP50Jg)                                                                       |
@@ -39,7 +39,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Focalboard               | 7.11.4         |                                                                                                                     |
 | Ghost                    | 5.69.0-alpine  |                                                                                                                     |
 | Glances                  | 3.4.0.3-full   |                                                                                                                     |
-| Gluetun                  | latest         |                                                                                                                     |
+| Gluetun                  | latest         |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | Gotify                   | 2.4.0          |                                                                                                                     |
 | Homer                    | latest         |                                                                                                                     |
 | Homarr                   | latest         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
