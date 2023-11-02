@@ -1,0 +1,62 @@
+# Configuration for uptime-kuma setup
+
+# Name of the big-bear-uptime-kuma application
+name: big-bear-uptime-kuma
+
+# Service definitions for the big-bear-uptime-kuma application
+services:
+  # Service name: app
+  # The `app` service definition includes the docker image, container name, volume mappings, port configurations, restart policy, and CasaOS specific settings.
+  app:
+    # Docker image to use for the app service
+    image: louislam/uptime-kuma:1
+    # Custom container name for identification
+    container_name: uptime-kuma
+    # Volume mappings: Maps host directory to container directory for persistent storage
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+    # Port mapping: Maps a port on the host to a port on the container
+    ports:
+      - "3001:3001" # <Host Port>:<Container Port>
+    # Restart policy: Always restart the container if it stops
+    restart: always
+    # CasaOS specific configuration for better integration
+    x-casaos:
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+      ports:
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
+
+# CasaOS specific configuration to enhance application management within CasaOS
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Identifying the main service of the application
+  main: app
+  # Descriptive text for the application, providing insights into its functionality
+  description:
+    en_us: A fancy self-hosted monitoring tool
+  # A concise tagline describing the application
+  tagline:
+    en_us: A fancy self-hosted monitoring tool
+  # Developer's name or identifier for credit and reference
+  developer: "louislam"
+  # Author of this configuration file for tracking and support
+  author: BigBearTechWorld
+  # Icon URL for the application, used for visual identification in UIs
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/uptime-kuma.png?raw=true
+  # Placeholder for thumbnail image (can be updated later)
+  thumbnail: ""
+  # Application title in English, used for display purposes
+  title:
+    en_us: Uptime Kuma
+  # Application category to classify the app within CasaOS
+  category: BigBearCasaOS
+  # Port mapping information, useful for network configuration and access
+  port_map: "3001"

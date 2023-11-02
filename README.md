@@ -65,6 +65,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | TP-Link Omada Controller | 5.9            |                                                                                                                     |
 | Traccar                  | latest         |                                                                                                                     |
 | Umami                    | latest         | [YouTube Video](https://youtu.be/4DEF5fNf8hU)                                                                       |
+| Uptime Kuma              | 1              |                                                                                                                     |
 | What's Up Docker         | latest         |                                                                                                                     |
 | WordPress                | latest         |                                                                                                                     |
 
