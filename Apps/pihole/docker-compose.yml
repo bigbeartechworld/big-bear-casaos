@@ -1,0 +1,93 @@
+# Configuration for pihole setup
+
+# Name of the big-bear-pihole application
+name: big-bear-pihole
+
+# Service definitions for the big-bear-pihole application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-pihole
+
+    # Image to be used for the container
+    image: pihole/pihole:2023.10.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      TZ: "UTC"
+      WEBPASSWORD: "your_password"
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/etc directory to /etc/pihole/ inside the container
+      - /DATA/AppData/$AppID/etc:/etc/pihole/
+
+      # Mounting the local /DATA/AppData/$AppID/dnsmasq.d directory to /etc/dnsmasq.d inside the container
+      - /DATA/AppData/$AppID/dnsmasq.d:/etc/dnsmasq.d/
+
+    # Ports mapping between host and container
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "8080:80/tcp"
+      - "10443:443/tcp"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /etc/pihole
+          description:
+            en_us: "Container Path: /etc/pihole"
+        - container: /etc/dnsmasq.d
+          description:
+            en_us: "Container Path: /etc/dnsmasq.d"
+      ports:
+        - container: "53"
+          description:
+            en_us: "Container Port: 53"
+        - container: "67"
+          description:
+            en_us: "Container Port: 67"
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_us: "Container Port: 443"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.
+  tagline:
+    # Short description or tagline in English
+    en_us: A black hole for Internet advertisements
+  # Developer's name or identifier
+  developer: "pi-hole.net"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/pi-hole.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Pi-hole
+  # Go to /admin to access the application
+  index: /admin
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"

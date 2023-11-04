@@ -54,6 +54,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8)                                                                       |
 | NocoDB                   | latest         |                                                                                                                     |
 | OnlyOffice               | latest         |                                                                                                                     |
+| Pihole                   | 2023.10.0      |                                                                                                                     |                                                                                                |
 | Pihole and Unbound       | 2023.10.0      |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | Pingvin Share            | latest         | [YouTube Video](https://youtu.be/SRJUS7h1vhU)                                                                       |
 | Portainer Agent          | 2.19.1         |                                                                                                                     |
