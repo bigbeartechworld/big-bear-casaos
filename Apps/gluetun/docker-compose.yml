@@ -88,4 +88,4 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        You will need to configure the providers in the environment variables. See: [Gluetun Wiki](https://github.com/qdm12/gluetun-wiki)
+        You will need to configure the providers in the environment variables. See: [BigBearCasaOS Gluetun Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)
