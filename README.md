@@ -37,7 +37,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Dashy                    | 2.1.1          |                                                                                                                     |
 | Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8)                                                                       |
 | Focalboard               | 7.11.4         |                                                                                                                     |
-| Ghost                    | 5.69.0-alpine  |                                                                                                                     |
+| Ghost                    | 5.69.0-alpine  | [YouTube Video](https://youtu.be/oJZK9vH4W4Y)                                                                       |
 | Glances                  | 3.4.0.3-full   |                                                                                                                     |
 | Gluetun                  | latest         |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)          |
 | Gotify                   | 2.4.0          |                                                                                                                     |
