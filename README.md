@@ -53,7 +53,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | n8n                      | 1.14.2         |                                                                                                                     |
 | Node-RED                 | 3.1.0          |                                                                                                                     |
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8)                                                                       |
-| NocoDB                   | latest         |                                                                                                                     |
+| NocoDB                   | 0.202.5        |                                                                                                                     |
 | OnlyOffice               | latest         |                                                                                                                     |
 | Pihole                   | 2023.10.0      |                                                                                                                     |                                                                                                |
 | Pihole and Unbound       | 2023.10.0      |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
