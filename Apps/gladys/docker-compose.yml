@@ -16,7 +16,7 @@ services:
       SQLITE_FILE_PATH: /var/lib/gladysassistant/gladys-production.db # Path to the SQLite database
     volumes: # Mount points from the host to the container
       - /var/run/docker.sock:/var/run/docker.sock # Docker socket file for Docker within Docker
-      - /var/lib/gladysassistant:/var/lib/gladysassistant # Persistent storage for Gladys data
+      - /DATA/AppData/$AppID/data:/var/lib/gladysassistant # Persistent storage for Gladys data
       - /dev:/dev # Access to host devices
     ports: # Port mappings from the host to the container
       - "1080:80" # Maps port 80 in the container to port 1080 on the host
