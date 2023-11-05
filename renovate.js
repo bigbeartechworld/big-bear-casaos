@@ -22,8 +22,8 @@ module.exports = {
 
   packageRules: [
     {
-      managers: ["docker-compose", "dockerfile"], // Applying rules to specific package managers
-      packagePatterns: [
+      matchManagers: ["docker-compose", "dockerfile"], // Applying rules to specific package managers
+      matchPackagePatterns: [
         "^([^\\/]+\\/)?(mysql|mariadb|mongodb|mongo|postgres|redis)(:|$)",
       ], // Defining package patterns using regular expressions
       enabled: false, // Disabling this rule
