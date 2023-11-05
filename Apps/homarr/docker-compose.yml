@@ -12,7 +12,7 @@ services:
     container_name: homarr
 
     # Image to be used for the container
-    image: ghcr.io/ajnart/homarr:latest
+    image: ghcr.io/ajnart/homarr:0.13.4
 
     # Container restart policy
     restart: unless-stopped
@@ -27,7 +27,7 @@ services:
 
       # Mounting docker.sock to allow docker management via Homarr
       - /var/run/docker.sock:/var/run/docker.sock
-      
+
     # Ports mapping between host and container
     ports:
       # Mapping port 7575 of the host to port 7575 of the container

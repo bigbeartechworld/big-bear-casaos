@@ -30,8 +30,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Apache Guacamole         | latest         | [YouTube Video](https://youtu.be/6cu0kfP50Jg)                                                                       |
 | Appsmith                 | v1.9.42        |                                                                                                                     |
 | Baserow                  | 1.20.0         |                                                                                                                     |
-| cAdvisor                 | latest         |                                                                                                                     |
-| Code Server              | latest         |                                                                                                                     |
+| cAdvisor                 | v0.47.2        |                                                                                                                     |
+| Code Server              | 4.18.0         |                                                                                                                     |
 | CodeX Docs               | v2.1           | [YouTube Video](https://youtu.be/dKm2VJwam24)                                                                       |
 | Dashdot                  | latest         |                                                                                                                     |
 | Dashy                    | 2.1.1          |                                                                                                                     |
@@ -42,14 +42,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Glances                  | 3.4.0.3-full   |                                                                                                                     |
 | Gluetun                  | latest         |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)          |
 | Gotify                   | 2.4.0          |                                                                                                                     |
-| Homer                    | latest         |                                                                                                                     |
-| Homarr                   | latest         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
-| Homepage                 | latest         |                                                                                                                     |
+| Homer                    | v23.10.1       |                                                                                                                     |
+| Homarr                   | 0.13.4         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
+| Homepage                 | v0.7.4         |                                                                                                                     |
 | Immich                   | v1.84.0        |                                                                                                                     |
 | Mailpit                  | v1.7           |                                                                                                                     |
 | MIND                     | latest         |                                                                                                                     |
 | Mumble Server            | v1.4.230-6     |                                                                                                                     |
-| MySpeed                  | latest         |                                                                                                                     |
+| MySpeed                  | 1.0.8          |                                                                                                                     |
 | n8n                      | 1.14.2         |                                                                                                                     |
 | Node-RED                 | 3.1.0          |                                                                                                                     |
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8)                                                                       |

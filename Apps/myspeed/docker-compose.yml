@@ -8,7 +8,7 @@ services:
   # Service name: app
   # The `app` service definition
   app:
-    image: germannewsmaker/myspeed # Docker image to be used for the service
+    image: germannewsmaker/myspeed:1.0.8 # Docker image to be used for the service
     ports:
       - "5216:5216" # Port mapping from host to container
     volumes:
