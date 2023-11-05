@@ -1,0 +1,36 @@
+name: Renovate # Name of the GitHub Actions workflow
+
+on:
+  workflow_dispatch: # This workflow can be manually triggered by a user
+    inputs: # Define inputs for the workflow
+      log-level: # Input named 'log-level'
+        type: choice # Input type: a choice (user can select from options)
+        description: Select log level for Renovate # Description for the input
+        options: # Available options for the input
+          - trace
+          - debug
+          - info
+          - warn
+          - error
+        default: into # Default value if the user doesn't specify
+        required: false # It's not required to provide this input
+
+  schedule: # This workflow can also run on a schedule
+    - cron: "0/30 * * * *" # Defines a schedule using a cron expression (every 30 minutes)
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest # This job runs on an Ubuntu environment
+
+    steps:
+      - name: Checkout # Name of the step, which checks out the code
+        uses: actions/checkout@v2.0.0 # GitHub Actions action for checking out the code
+
+      - name: Self-hosted Renovate # Name of the step for running Renovate
+        uses: renovatebot/github-action@v36.0.4 # Using a specific version of Renovate action
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }} # Providing a secret token as an input to Renovate
+          configFile: renovate.js # Configuration file for Renovate
+        env: # Setting environment variables for the Renovate step
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }} # DockerHub username
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }} # DockerHub token for authentication
