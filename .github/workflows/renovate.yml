@@ -30,7 +30,7 @@ jobs:
         uses: renovatebot/github-action@v36.0.4 # Using a specific version of Renovate action
         with:
           token: ${{ secrets.RENOVATE_TOKEN }} # Providing a secret token as an input to Renovate
-          configFile: renovate.js # Configuration file for Renovate
+          configurationFile: renovate.js # Configuration file for Renovate
         env: # Setting environment variables for the Renovate step
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }} # DockerHub username
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }} # DockerHub token for authentication
