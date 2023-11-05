@@ -1,0 +1,87 @@
+# Configuration for gladys setup
+
+# Name of the big-bear-gladys application
+name: big-bear-gladys
+
+# Service definitions for the big-bear-gladys application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    image: gladysassistant/gladys:v4 # Docker image to use for the 'app' service
+    restart: always # Container should always restart
+    privileged: true # Grants additional privileges to this container
+    environment: # Environment variables for the container
+      NODE_ENV: production # Sets the environment to production
+      SQLITE_FILE_PATH: /var/lib/gladysassistant/gladys-production.db # Path to the SQLite database
+    volumes: # Mount points from the host to the container
+      - /var/run/docker.sock:/var/run/docker.sock # Docker socket file for Docker within Docker
+      - /var/lib/gladysassistant:/var/lib/gladysassistant # Persistent storage for Gladys data
+      - /dev:/dev # Access to host devices
+    ports: # Port mappings from the host to the container
+      - "1080:80" # Maps port 80 in the container to port 1080 on the host
+      - "10443:443" # Maps port 443 in the container to port 10443 on the host
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - name: NODE_ENV
+          description:
+            en_us: "Node environment"
+        - name: SQLITE_FILE_PATH
+          description:
+            en_us: "Path to SQLite database file"
+      volumes:
+        - container: "/var/run/docker.sock"
+          description:
+            en_us: "Docker socket"
+        - container: "/var/lib/gladysassistant"
+          description:
+            en_us: "Gladysassistant data"
+        - container: "/dev"
+          description:
+            en_us: "Device access"
+      ports:
+        - container: "80"
+          description:
+            en_us: "HTTP port"
+        - container: "443"
+          description:
+            en_us: "HTTPS port"
+
+  # Watchtower service to automatically update containers
+  watchtower:
+    image: containrrr/watchtower # Docker image to use for the watchtower service
+    restart: always # Container should always restart
+    command: --cleanup --include-restarting big-bear-gladys_app_1 # Command for watchtower to clean up old images, restart containers, and monitor only 'app' service
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Docker socket file to allow Watchtower to interact with Docker
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: "Gladys Assistant is a program that runs on any Linux machine: a PC running Ubuntu, a Raspberry Pi, a NAS, a VPS, a server..."
+  tagline:
+    # Short description or tagline in English
+    en_us: A privacy-first, open-source home assistant
+  # Developer's name or identifier
+  developer: "GladysAssistant"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/gladys-assistant.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: "https://gladysassistant.com/img/home/main_screenshot/main_screenshot_en_j5czyj_c_scale,w_2800.png"
+  title:
+    # Title in English
+    en_us: Gladys Assistant
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "1080"
