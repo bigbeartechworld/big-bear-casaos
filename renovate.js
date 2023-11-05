@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["config:base"], // Extending a base configuration named "config:base"
+  extends: ["config:recommended"], // Extending a base configuration named "config:base"
   onboarding: false, // Disabling onboarding process
   requireConfig: false, // Not requiring a specific configuration
   rebaseWhen: "conflicted", // Rebase when there are conflicts
