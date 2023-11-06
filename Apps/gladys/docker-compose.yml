@@ -73,7 +73,7 @@ x-casaos:
     en_us: "A privacy-first, open-source home assistant."
     fr_fr: "Le logiciel de domotique open-source qui respecte votre vie privée."
   # Developer's name or identifier
-  developer: "Gladys Assistant"
+  developer: "GladysAssistant"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
@@ -86,6 +86,6 @@ x-casaos:
     # Title in English
     en_us: "Gladys Assistant"
   # Application category
-  category: "Home Automation"
+  category: BigBearCasaOS
   # Port mapping information
   port_map: "1080"
