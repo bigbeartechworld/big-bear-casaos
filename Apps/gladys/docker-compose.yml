@@ -24,7 +24,7 @@ services:
       - /DATA/AppData/$AppID/data:/var/lib/gladysassistant # Persistent storage for Gladys data
       - /dev:/dev # Access to host devices
       - /run/udev:/run/udev # Access to host devices
-  x-casaos: # CasaOS specific configuration
+    x-casaos: # CasaOS specific configuration
       envs:
         - name: NODE_ENV
           description:
