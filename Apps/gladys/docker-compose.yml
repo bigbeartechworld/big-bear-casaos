@@ -73,17 +73,19 @@ x-casaos:
     en_us: "A privacy-first, open-source home assistant."
     fr_fr: "Le logiciel de domotique open-source qui respecte votre vie privée."
   # Developer's name or identifier
-  developer: "Pierre-Gilles Leymarie"
+  developer: "Gladys Assistant"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
   icon: https://gladysassistant.com/img/external/github-gladys-logo.png
   # Thumbnail image (currently empty)
-  thumbnail: "https://gladysassistant.com/img/home/main_screenshot/main_screenshot_en_j5czyj_c_scale,w_2800.png"
+  thumbnail: https://gladysassistant.com/img/home/main_screenshot/main_screenshot_en_j5czyj_c_scale,w_2526.png
+  screenshot_link:
+    - https://gladysassistant.com/img/home/main_screenshot/main_screenshot_en_j5czyj_c_scale,w_2526.png
   title:
     # Title in English
-    en_us: Gladys Assistant
+    en_us: "Gladys Assistant"
   # Application category
-  category: BigBearCasaOS
+  category: "Home Automation"
   # Port mapping information
   port_map: "1080"
