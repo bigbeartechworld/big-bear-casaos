@@ -21,9 +21,40 @@ services:
       SERVER_PORT: "1080" # Server port for UI
     volumes: # Mount points from the host to the container
       - /var/run/docker.sock:/var/run/docker.sock # Docker socket file for Docker within Docker
-      - /var/lib/gladysassistant:/var/lib/gladysassistant # Persistent storage for Gladys data
+      - /DATA/AppData/$AppID/data:/var/lib/gladysassistant # Persistent storage for Gladys data
       - /dev:/dev # Access to host devices
       - /run/udev:/run/udev # Access to host devices
+  x-casaos: # CasaOS specific configuration
+      envs:
+        - name: NODE_ENV
+          description:
+            en_us: "Node environment"
+        - name: SQLITE_FILE_PATH
+          description:
+            en_us: "Path to SQLite database file"
+        - name: TZ
+          description:
+            en_us: "Timezone"
+        - name: SERVER_PORT
+          description:
+            en_us: "Exposed port for the server"
+      volumes:
+        - container: "/var/run/docker.sock"
+          description:
+            en_us: "Docker socket"
+        - container: "/var/lib/gladysassistant"
+          description:
+            en_us: "Gladys Assistant data"
+        - container: "/dev"
+          description:
+            en_us: "Device access"
+        - container: "/run/udev"
+          description:
+            en_us: "Device access"
+      ports:
+        - container: "1080"
+          description:
+            en_us: "HTTP port"
 
 # CasaOS specific configuration
 x-casaos:
