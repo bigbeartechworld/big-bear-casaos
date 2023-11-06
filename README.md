@@ -64,6 +64,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Pterodactyl Wings        | v1.11.8        |                                                                                                                     |
 | Python Matter Server     | stable         |                                                                                                                     |
 | Rocket.Chat              | 6.4.2          |                                                                                                                     |
+| RomM                     | dev-latest     |                                                                                                                     |
 | Scrypted                 | latest         | [YouTube Video](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | Speedtest Tracker        | v0.13.1        |                                                                                                                     |
 | TP-Link Omada Controller | 5.9            |                                                                                                                     |
