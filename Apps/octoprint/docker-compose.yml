@@ -1,0 +1,76 @@
+# Configuration for octoprint setup
+
+# Name of the big-bear-octoprint application
+name: big-bear-octoprint
+
+# Service definitions for the big-bear-octoprint application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: octoprint
+
+    # Image to be used for the container
+    image: octoprint/octoprint:1.9.3
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # devices:
+    # use `python -m serial.tools.miniterm` to see what the name is of the printer, this requires pyserial
+    #  - /dev/ttyACM0:/dev/ttyACM0
+    #  - /dev/video0:/dev/video0
+
+    volumes:
+      - /DATA/AppData/$AppID/octoprint:/octoprint
+
+    # uncomment the lines below to ensure camera streaming is enabled when
+    # you add a video device
+    #environment:
+    #  - ENABLE_MJPG_STREAMER=true
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 7575 of the host to port 7575 of the container
+      - "1080:80"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /octoprint
+          description:
+            en_us: "Container Path: /octoprint"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: OctoPrint is the snappy web interface for your 3D printer!
+  tagline:
+    # Short description or tagline in English
+    en_us: OctoPrint
+  # Developer's name or identifier
+  developer: "octoprint"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/octoprint.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: OctoPrint
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "1080"

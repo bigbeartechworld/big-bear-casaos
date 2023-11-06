@@ -54,6 +54,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Node-RED                 | 3.1.0          |                                                                                                                     |
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8)                                                                       |
 | Obisidian Livesync       | 3.1.2          |                                                                                                                     |
+| OctoPrint                | 1.9.3          |                                                                                                                     |
 | NocoDB                   | 0.202.5        |                                                                                                                     |
 | OnlyOffice               | latest         |                                                                                                                     |
 | Pihole                   | 2023.10.0      |                                                                                                                     |                                                                                                |
