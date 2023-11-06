@@ -1,0 +1,75 @@
+# Configuration for obsidian-livesync setup
+
+# Name of the big-bear-obsidian-livesync application
+name: big-bear-obsidian-livesync
+
+# Service definitions for the big-bear-obsidian-livesync application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: obsidian-livesync
+
+    # Image to be used for the container
+    image: couchdb:3.1.2
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data/couchdb:/opt/couchdb/data
+      - /DATA/AppData/$AppID/data/local.ini:/opt/couchdb/etc/local.ini
+
+    environment:
+      - COUCHDB_USER=casaos
+      - COUCHDB_PASSWORD=casaos
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5984 of the host to port 5984 of the container
+      - "5984:5984"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /opt/couchdb/data
+          description:
+            en_us: "Container Path: /opt/couchdb/data"
+        - container: /opt/couchdb/etc/local.ini
+          description:
+            en_us: "Container Path: /opt/couchdb/etc/local.ini"
+      ports:
+        - container: "5984"
+          description:
+            en_us: "Container Port: 5984"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Self-hosted database for synchronizing Obsidian vaults.
+  tagline:
+    # Short description or tagline in English
+    en_us: Self-hosted database for synchronizing Obsidian vaults.
+  # Developer's name or identifier
+  developer: ""
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/obsidian.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Obsidian Livesync
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "5984"
