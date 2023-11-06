@@ -73,3 +73,14 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "5984"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Run this script before installing the big-bear-obsidian-livesync application:
+
+        ```
+        bash -c "$(wget -qLO - https://raw.githubusercontent.com/bigbeartechworld/big-bear-scripts/master/generate-obsidian-livesync-local-ini/run.sh)"
+        ```
+
+        After running this script, you need to restart the container.
