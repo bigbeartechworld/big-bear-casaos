@@ -1,0 +1,32 @@
+name: rtsp-to-web
+services:
+    rtsp-to-web:
+        cpu_shares: 90
+        command: []
+        container_name: RTSPtoWeb
+        deploy:
+            resources:
+        image: cmer/rtsp-to-web
+        labels:
+            icon: https://static.vecteezy.com/system/resources/previews/009/882/145/original/video-surveillance-icon-cctv-camera-free-vector.jpg
+        network_mode: bridge
+        ports:
+            - target: 8083
+              published: "8083"
+              protocol: tcp
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /DATA/AppData/rtsp-to-web
+              target: /tmp
+x-casaos:
+    author: self
+    category: self
+    hostname: ""
+    icon: https://static.vecteezy.com/system/resources/previews/009/882/145/original/video-surveillance-icon-cctv-camera-free-vector.jpg
+    index: /
+    port_map: "8083"
+    scheme: http
+    store_app_id: RTSPtoWeb
+    title:
+        custom: RTSPtoWeb
