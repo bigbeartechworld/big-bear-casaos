@@ -16,6 +16,7 @@ services:
 
     # Maps the host's port 2022 to the container's port 2022
     ports:
+      - "8080:8080"
       - "2022:2022"
 
     # Allocate a pseudo-TTY, making it act like a terminal
@@ -74,6 +75,9 @@ services:
             en_us: Username for the Wings process
 
       ports:
+        - container: "8080"
+          description:
+            en_us: "The HTTP API Port" # Description for the port
         - container: "2022"
           description:
             en_us: "The Portainer Agent Port" # Description for the port
