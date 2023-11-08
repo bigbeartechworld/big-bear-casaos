@@ -31,7 +31,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Appsmith                 | v1.9.42        |                                                                                                                     |
 | Baserow                  | 1.20.0         |                                                                                                                     |
 | cAdvisor                 | v0.47.2        |                                                                                                                     |
-| Code Server              | 4.18.0         |                                                                                                                     |
+| Code Server              | 4.18.0         | [YouTube Video](https://youtu.be/aiYcwXDfgE8)                                                                       |
 | CodeX Docs               | v2.1           | [YouTube Video](https://youtu.be/dKm2VJwam24)                                                                       |
 | Dashdot                  | latest         |                                                                                                                     |
 | Dashy                    | 2.1.1          |                                                                                                                     |
