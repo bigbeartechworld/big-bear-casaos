@@ -45,7 +45,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Focalboard               | 7.11.4         |                                                                                                                     |
 | Ghost                    | 5.69.0-alpine  | [YouTube Video](https://youtu.be/oJZK9vH4W4Y)                                                                       |
 | Gladys Assistant         | v4             |                                                                                                                     |
-| Glances                  | 3.4.0.3-full   |                                                                                                                     |
+| Glances                  | 3.4.0.3-full   | [YouTube Video](https://youtu.be/nwsVJ0QB0sM)                                                                       |
 | Gluetun                  | latest         |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)          |
 | Gotify                   | 2.4.0          |                                                                                                                     |
 | Homer                    | v23.10.1       |                                                                                                                     |
