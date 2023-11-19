@@ -1,0 +1,20 @@
+name: playitgg
+services:
+  playitgg:
+    image: dysta/playitgg
+    restart: unless-stopped
+    privileged: false
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+  author: Dysta
+  category: Games
+  hostname: playit.gg
+  icon: https://media.forgecdn.net/avatars/848/399/638248438568793075.png
+  index: /
+  port_map: ""
+  scheme: https
+  title:
+    custom: Playitgg
+  thumbnail: ""
