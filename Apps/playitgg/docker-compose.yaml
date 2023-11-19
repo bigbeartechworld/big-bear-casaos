@@ -1,0 +1,25 @@
+name: playitgg
+services:
+  playitgg:
+    image: dysta/playitgg
+    restart: unless-stopped
+    privileged: false
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/secrets
+      target: /secrets
+      bind:
+        create_host_path: true
+x-casaos:
+  architectures:
+    - amd64
+  author: Dysta
+  category: Games
+  hostname: playit.gg
+  icon: https://media.forgecdn.net/avatars/848/399/638248438568793075.png
+  index: /
+  port_map: ""
+  scheme: https
+  title:
+    custom: Playitgg
+  thumbnail: ""
