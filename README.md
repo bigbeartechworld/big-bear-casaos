@@ -52,6 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homarr                   | 0.13.4         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
 | Homepage                 | v0.7.4         |                                                                                                                     |
 | Immich                   | v1.87.0        |                                                                                                                     |
+| Jellyseerr               | 1.7.0          |                                                                                                                     |
 | Mailpit                  | v1.7           |                                                                                                                     |
 | MIND                     | latest         |                                                                                                                     |
 | Mumble Server            | v1.4.230-6     |                                                                                                                     |
