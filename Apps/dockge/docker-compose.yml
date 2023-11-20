@@ -1,0 +1,79 @@
+# Configuration for dockge setup
+
+# Name of the big-bear-dockge application
+name: big-bear-dockge
+
+# Service definitions for the big-bear-dockge application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-dockge
+
+    # Image to be used for the container
+    image: louislam/dockge:1
+
+    # Environment variables
+    environment:
+      # Tell Dockge where is your stacks directory
+      DOCKGE_STACKS_DIR: "/DATA/AppData/big-bear-dockge/stacks"
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /DATA/AppData/$AppID/data:/app/data
+      - /DATA/AppData/$AppID/stacks:/DATA/AppData/big-bear-dockge/stacks
+
+    # Ports mapping between host and container
+    ports:
+      - 5001:5001
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+        - container: /DATA/AppData/big-bear-dockge/stacks
+          description:
+            en_us: "Container Path: /DATA/AppData/big-bear-dockge/stacks"
+      ports:
+        - container: "5001"
+          description:
+            en_us: "Container Port: 5001"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager
+  tagline:
+    # Short description or tagline in English
+    en_us: Dockge
+  # Developer's name or identifier
+  developer: "louislam"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/louislam/dockge/raw/master/frontend/public/icon.svg
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Dockge
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "5001"

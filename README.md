@@ -41,6 +41,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | CodeX Docs               | v2.1           | [YouTube Video](https://youtu.be/dKm2VJwam24)                                                                       |
 | Dashdot                  | latest         |                                                                                                                     |
 | Dashy                    | 2.1.1          |                                                                                                                     |
+| Dockge                   | 1              |                                                                                                                     |
+| Dozzle                   | latest         |                                                                                                                     |
 | Flame                    | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8)                                                                       |
 | Focalboard               | 7.11.4         |                                                                                                                     |
 | Ghost                    | 5.69.0-alpine  | [YouTube Video](https://youtu.be/oJZK9vH4W4Y)                                                                       |
@@ -53,6 +55,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage                 | v0.7.4         |                                                                                                                     |
 | Immich                   | v1.87.0        |                                                                                                                     |
 | Jellyseerr               | 1.7.0          |                                                                                                                     |
+| Lan Cache                | latest         |                                                                                                                     |
 | Mailpit                  | v1.7           |                                                                                                                     |
 | MIND                     | latest         |                                                                                                                     |
 | Mumble Server            | v1.4.230-6     |                                                                                                                     |
