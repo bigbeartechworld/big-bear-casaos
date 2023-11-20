@@ -1,25 +1,62 @@
+# Configuration for playitgg setup
+
+# Name of the big-bear-playitgg application
 name: big-bear-playitgg
+
+# Service definitions for the big-bear-playitgg application
 services:
-  playitgg:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: playitgg
+
+    # Image to be used for the container
     image: dysta/playitgg
+
+    # Container restart policy
     restart: unless-stopped
-    privileged: false
+
+    # Volumes to be mounted to the container
     volumes:
-    - type: bind
-      source: /DATA/AppData/$AppID/secrets
-      target: /secrets
-      bind:
-        create_host_path: true
+      # Mounting the local playitgg directory to /secrets inside the container
+      - /DATA/AppData/$AppID/secrets:/secrets
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /secrets
+          description:
+            en_us: "Container Path: /secrets"
+
+# CasaOS specific configuration
 x-casaos:
+  # Supported CPU architectures for the application
   architectures:
     - amd64
-  author: Dysta
-  category: Games
-  hostname: playit.gg
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
+  tagline:
+    # Short description or tagline in English
+    en_us: playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
+  # Developer's name or identifier
+  developer: "Dysta"
+  # Author of this configuration
+  author: BigBearCommunity
+  # Icon for the application
   icon: https://media.forgecdn.net/avatars/848/399/638248438568793075.png
-  index: /
-  port_map: ""
-  scheme: https
-  title:
-    custom: Playitgg
+  # Thumbnail image (currently empty)
   thumbnail: ""
+  title:
+    # Title in English
+    en_us: playit.gg
+  # Application category
+  category: BigBearCasaOS
+  # Scheme used (https)
+  scheme: https
+  # Index path for the service
+  index: /
+  # Port mapping information (empty in this case)
+  port_map: ""
