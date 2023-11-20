@@ -1,47 +1,60 @@
-name: big-bear-jellyseerr
+name: big-bear-jellyseerr # Name of the compose project
+
 services:
-  jellyseerr:
-    cpu_shares: 50
-    deploy:
-      resources:
-        limits:
-          memory: 256M
-    environment:
-      - LOG_LEVEL=debug
-      - TZ=$TZ
-    image: fallenbagel/jellyseerr:1.7.0
+  app:
+    image: fallenbagel/jellyseerr:1.7.0 # Image to use for the jellyseerr service
     ports:
-      - mode: ingress
-        target: 5055
-        published: "5055"
-        protocol: tcp
-    restart: unless-stopped
+      - "5055:5055" # Maps port 5055 on the host to port 5055 on the container
     volumes:
-      - type: bind
-        source: /DATA/AppData/$AppID/config
-        target: /app/config
-        bind:
-          create_host_path: true
-    devices: []
-    cap_add: []
-    network_mode: bridge
-    privileged: false
+      - /DATA/AppData/$AppID/config:/app/config # Binds a volume from host to container for configuration
+    environment:
+      - LOG_LEVEL=debug # Sets the log level to debug
+      - TZ=$TZ # Sets the timezone, using host's timezone variable
+    restart: unless-stopped # Service will restart unless it is explicitly stopped
+    network_mode: bridge # Uses bridge network mode
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: LOG_LEVEL
+          description:
+            en_us: Log level
+        - container: TZ
+          description:
+            en_us: Timezone
+      volumes:
+        - container: /app/config
+          description:
+            en_us: "Container Path: /app/config"
+      ports:
+        - container: "5055"
+          description:
+            en_us: "Container Port: 5055"
+
+# CasaOS specific configuration
 x-casaos:
-  scheme: http
-  title:
-    en_us: Jellyseerr
+  # Supported CPU architectures for the application
   architectures:
     - amd64
     - arm64
-  main: jellyseerr
-  author: "Fallenbagel"
-  category: Media
+  # Main service of the application
+  main: app
   description:
-    en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
-  developer: Fallenbagel
-  icon: https://static-00.iconduck.com/assets.00/jellyseerr-icon-512x492-iwuo1nft.png
+    # Description in English
+    en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
   tagline:
-    en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg
-  tips: {}
+    # Short description or tagline in English
+    en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
+  # Developer's name or identifier
+  developer: "Fallenbagel"
+  # Author of this configuration
+  author: BigBearCommunity
+  # Icon for the application
+  icon: https://static-00.iconduck.com/assets.00/jellyseerr-icon-512x492-iwuo1nft.png
+  # Thumbnail image
+  thumbnail: "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg"
+  title:
+    # Title in English
+    en_us: Jellyseerr
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
   port_map: "5055"
