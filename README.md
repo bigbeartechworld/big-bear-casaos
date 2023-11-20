@@ -39,7 +39,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | cAdvisor                 | v0.47.2        |                                                                                                                     |
 | Code Server              | 4.18.0         | [YouTube Video](https://youtu.be/aiYcwXDfgE8)                                                                       |
 | CodeX Docs               | v2.1           | [YouTube Video](https://youtu.be/dKm2VJwam24)                                                                       |
-| Dashdot                  | latest         |                                                                                                                     |
+| Dashdot                  | latest         | [YouTube Video](https://youtu.be/if_fyuX_5fU)                                                                       |
 | Dashy                    | 2.1.1          |                                                                                                                     |
 | Dockge                   | 1              |                                                                                                                     |
 | Dozzle                   | latest         |                                                                                                                     |
@@ -56,18 +56,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Immich                   | v1.87.0        |                                                                                                                     |
 | Jellyseerr               | 1.7.0          |                                                                                                                     |
 | Lan Cache                | latest         |                                                                                                                     |
-| Mailpit                  | v1.7           |                                                                                                                     |
+| Mailpit                  | v1.7           | [YouTube Video](https://youtu.be/2MY3S6csrVw)                                                                       |
 | MIND                     | latest         |                                                                                                                     |
 | Mumble Server            | v1.4.230-6     |                                                                                                                     |
-| MySpeed                  | 1.0.8          |                                                                                                                     |
+| MySpeed                  | 1.0.8          | [YouTube Video](https://youtu.be/7roj87Fytz0)                                                                       |
 | n8n                      | 1.14.2         |                                                                                                                     |
 | Node-RED                 | 3.1.0          |                                                                                                                     |
 | Ntfy.sh                  | latest         | [YouTube Video](https://youtu.be/wSWhtSNwTd8)                                                                       |
 | Obisidian Livesync       | 3.1.2          |                                                                                                                     |
 | OctoPrint                | 1.9.3          |                                                                                                                     |
-| NocoDB                   | 0.202.5        |                                                                                                                     |
+| NocoDB                   | 0.202.5        | [YouTube Video](https://youtu.be/mO2YzWpBu4o)                                                                       | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177]           |
 | OnlyOffice               | latest         |                                                                                                                     |
-| Pihole                   | 2023.10.0      |                                                                                                                     |                                                                                                |
+| Pihole                   | 2023.10.0      | [YouTube Video](https://youtu.be/FcMF1sYacqk)                                                                       |                                                                                                |
 | Pihole and Unbound       | 2023.10.0      |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | Pingvin Share            | latest         | [YouTube Video](https://youtu.be/SRJUS7h1vhU)                                                                       |
 | Portainer Agent          | 2.19.1         |                                                                                                                     |
