@@ -1,4 +1,4 @@
-name: jellyseerr
+name: big-bear-jellyseerr
 services:
   jellyseerr:
     cpu_shares: 50
