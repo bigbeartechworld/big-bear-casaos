@@ -1,0 +1,122 @@
+# Configuration for lancache setup
+
+# Name of the big-bear-lancache application
+name: big-bear-lancache
+
+# Service definitions for the big-bear-lancache application
+services:
+  # Service name: app
+  app:
+    image: lancachenet/monolithic:latest # Docker image for the caching service
+    environment:
+      # Toggle for load balancer usage or separate IPs for each service
+      - USE_GENERIC_CACHE=true
+
+      # IPs for lancache monolithic instance; affects DNS resolution
+      - LANCACHE_IP=10.0.39.1
+
+      # Host IP for the DNS server binding
+      - DNS_BIND_IP=10.0.39.1
+
+      # Upstream DNS for forwarded lookups
+      - UPSTREAM_DNS=8.8.8.8
+
+      # Local storage path for cache data
+      - CACHE_ROOT=./lancache
+
+      # Customizable disk cache size
+      - CACHE_DISK_SIZE=2000g
+
+      # Memory allocation for nginx cache indexing
+      - CACHE_INDEX_SIZE=500m
+
+      # Maximum age for cached content
+      - CACHE_MAX_AGE=3650d
+
+      # Container timezone setting for log timestamps
+      - TZ=UTC
+    restart: unless-stopped
+    ports:
+      - 8080:80
+      - 10443:443
+    volumes:
+      # Mount points for cache and logs
+      - /DATA/AppData/$AppID/cache:/data/cache
+      - /DATA/AppData/$AppID/logs:/data/logs
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        # CasaOS volume descriptions
+        - container: /data/cache
+          description:
+            en_us: "Container Path: /data/cache"
+        - container: /data/logs
+          description:
+            en_us: "Container Path: /data/logs"
+      ports:
+        # CasaOS port descriptions
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_us: "Container Port: 443"
+
+  # DNS service configuration
+  dns:
+    image: lancachenet/lancache-dns:latest # Docker image for DNS service
+    environment:
+      # Toggle for load balancer usage or separate IPs for each service
+      - USE_GENERIC_CACHE=true
+
+      # IPs for lancache monolithic instance; affects DNS resolution
+      - LANCACHE_IP=10.0.39.1
+
+      # Host IP for the DNS server binding
+      - DNS_BIND_IP=10.0.39.1
+
+      # Upstream DNS for forwarded lookups
+      - UPSTREAM_DNS=8.8.8.8
+
+      # Local storage path for cache data
+      - CACHE_ROOT=./lancache
+
+      # Customizable disk cache size
+      - CACHE_DISK_SIZE=2000g
+
+      # Memory allocation for nginx cache indexing
+      - CACHE_INDEX_SIZE=500m
+
+      # Maximum age for cached content
+      - CACHE_MAX_AGE=3650d
+
+      # Container timezone setting for log timestamps
+      - TZ=UTC
+    restart: unless-stopped
+    ports:
+      - 53:53/udp
+      - 53:53/tcp
+
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "53"
+          description:
+            en_us: "Container Port: 53"
+
+# CasaOS specific application-level configuration
+x-casaos:
+  architectures:
+    - amd64 # Supported CPU architectures
+  main: app # Main service identifier
+  description:
+    en_us: Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.
+  tagline:
+    en_us: LAN Party game caching made easy
+  developer: "lancachenet" # Developer name
+  author: BigBearTechWorld # Configuration author
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/lancache.png?raw=true # Application icon
+  thumbnail: "" # Thumbnail image (empty)
+  title:
+    en_us: LAN Cache # Application title
+  category: BigBearCasaOS # Application category
+  port_map: "8080" # Port mapping information
