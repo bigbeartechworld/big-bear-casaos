@@ -24,8 +24,8 @@ services:
 
     # Ports mapping between host and container
     ports:
-      # Mapping port 8080 of the host to port 8080 of the container
-      - "8080:8080"
+      # Mapping port 8888 of the host to port 8080 of the container
+      - "8888:8080"
 
     x-casaos: # CasaOS specific configuration
       volumes:
@@ -65,4 +65,4 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Port mapping information
-  port_map: "8080"
+  port_map: "8888"
