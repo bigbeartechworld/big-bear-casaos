@@ -1,13 +1,18 @@
-name: playitgg
+name: big-bear-playitgg
 services:
   playitgg:
     image: dysta/playitgg
     restart: unless-stopped
     privileged: false
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/secrets
+      target: /secrets
+      bind:
+        create_host_path: true
 x-casaos:
   architectures:
     - amd64
-    - arm
   author: Dysta
   category: Games
   hostname: playit.gg
