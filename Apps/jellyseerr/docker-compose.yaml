@@ -1,0 +1,47 @@
+name: jellyseerr
+services:
+  jellyseerr:
+    cpu_shares: 50
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=$TZ
+    image: fallenbagel/jellyseerr:1.7.0
+    ports:
+      - mode: ingress
+        target: 5055
+        published: "5055"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /app/config
+        bind:
+          create_host_path: true
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  scheme: http
+  title:
+    en_us: Jellyseerr
+  architectures:
+    - amd64
+    - arm64
+  main: jellyseerr
+  author: "Fallenbagel"
+  category: Media
+  description:
+    en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
+  developer: Fallenbagel
+  icon: https://static-00.iconduck.com/assets.00/jellyseerr-icon-512x492-iwuo1nft.png
+  tagline:
+    en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg
+  tips: {}
+  port_map: "5055"
