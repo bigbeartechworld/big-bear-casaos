@@ -53,7 +53,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homer                    | v23.10.1       |                                                                                                                     |
 | Homarr                   | 0.13.4         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
 | Homepage                 | v0.7.4         |                                                                                                                     |
-| Immich                   | v1.87.0        |                                                                                                                     |
+| Immich                   | v1.88.1        |                                                                                                                     |
 | Jellyseerr               | 1.7.0          |                                                                                                                     |
 | Lan Cache                | latest         |                                                                                                                     |
 | Mailpit                  | v1.7           | [YouTube Video](https://youtu.be/2MY3S6csrVw)                                                                       |
