@@ -27,6 +27,41 @@ services:
       - typesense
     restart: always # Policy to always restart the container if it stops
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TYPESENSE_API_KEY
+          description:
+            en_us: "Typesense API Key"
+        - container: DB_HOSTNAME
+          description:
+            en_us: "Database Hostname"
+        - container: DB_USERNAME
+          description:
+            en_us: "Database Username"
+        - container: DB_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: DB_DATABASE_NAME
+          description:
+            en_us: "Database Name"
+        - container: DB_PORT
+          description:
+            en_us: "Database Port"
+        - container: REDIS_HOSTNAME
+          description:
+            en_us: "Redis Hostname"
+        - container: IMMICH_MACHINE_LEARNING_URL
+          description:
+            en_us: "Immich Machine Learning URL"
+      volumes:
+        - container: /usr/src/app/upload
+          description:
+            en_us: "Container Path: /usr/src/app/upload"
+      ports:
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
+
   # Configuration for the Immich Microservices
   immich-microservices:
     container_name: immich-microservices # Name of the running container
@@ -51,6 +86,34 @@ services:
       - typesense
     restart: always # Policy to always restart the container if it stops
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TYPESENSE_API_KEY
+          description:
+            en_us: "Typesense API Key"
+        - container: DB_HOSTNAME
+          description:
+            en_us: "Database Hostname"
+        - container: DB_USERNAME
+          description:
+            en_us: "Database Username"
+        - container: DB_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: DB_DATABASE_NAME
+          description:
+            en_us: "Database Name"
+        - container: DB_PORT
+          description:
+            en_us: "Database Port"
+        - container: REDIS_HOSTNAME
+          description:
+            en_us: "Redis Hostname"
+      volumes:
+        - container: /usr/src/app/upload
+          description:
+            en_us: "Container Path: /usr/src/app/upload"
+
   # Configuration for Immich Machine Learning service
   immich-machine-learning:
     container_name: immich-machine-learning # Name of the running container
@@ -66,6 +129,31 @@ services:
       REDIS_HOSTNAME: immich-redis
     restart: always # Policy to always restart the container if it stops
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DB_HOSTNAME
+          description:
+            en_us: "Database Hostname"
+        - container: DB_USERNAME
+          description:
+            en_us: "Database Username"
+        - container: DB_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: DB_DATABASE_NAME
+          description:
+            en_us: "Database Name"
+        - container: DB_PORT
+          description:
+            en_us: "Database Port"
+        - container: REDIS_HOSTNAME
+          description:
+            en_us: "Redis Hostname"
+      volumes:
+        - container: /cache
+          description:
+            en_us: "Container Path: /cache"
+
   # Configuration for Typesense service
   typesense:
     container_name: immich-typesense # Name of the running container
@@ -78,6 +166,23 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/tsdata:/data
     restart: always # Policy to always restart the container if it stops
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TYPESENSE_API_KEY
+          description:
+            en_us: "Typesense API Key"
+        - container: TYPESENSE_DATA_DIR
+          description:
+            en_us: "Container Path: /data"
+        - container: GLOG_minloglevel
+          description:
+            en_us: "GLOG_minloglevel=1"
+
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
 
   # Configuration for Redis service
   redis:
@@ -97,6 +202,25 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
     restart: always # Policy to always restart the container if it stops
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: POSTGRES_USER
+          description:
+            en_us: "Database Username"
+        - container: POSTGRES_DB
+          description:
+            en_us: "Database Name"
+        - container: PG_DATA
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
 
 # CasaOS specific configuration
 x-casaos:
