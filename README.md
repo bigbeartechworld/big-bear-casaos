@@ -78,7 +78,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Rocket.Chat              | 6.4.2          |                                                                                                                     |
 | RomM                     | dev-latest     |                                                                                                                     |
 | Scrypted                 | latest         | [YouTube Video](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
-| Speedtest Tracker        | v0.13.1        |                                                                                                                     |
+| Speedtest Tracker        | v0.13.1        | [YouTube Video](https://youtu.be/TLjS8xNNwis)                                                                       | [Docs]                                                                                         |
 | TP-Link Omada Controller | 5.9            |                                                                                                                     |
 | Traccar                  | latest         |                                                                                                                     |
 | Umami                    | latest         | [YouTube Video](https://youtu.be/4DEF5fNf8hU)                                                                       |
