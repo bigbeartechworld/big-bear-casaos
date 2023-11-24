@@ -51,7 +51,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Gluetun                  | latest         |                                                                                                                     | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)          |
 | Gotify                   | 2.4.0          |                                                                                                                     |
 | Homer                    | v23.10.1       |                                                                                                                     |
-| Homarr                   | 0.13.4         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
+| Homarr                   | 0.14.2         | [YouTube Video](https://youtu.be/H4rzZNO47Uk)                                                                       |
 | Homepage                 | v0.7.4         |                                                                                                                     |
 | Immich                   | v1.88.1        |                                                                                                                     |
 | Jellyseerr               | 1.7.0          |                                                                                                                     |
