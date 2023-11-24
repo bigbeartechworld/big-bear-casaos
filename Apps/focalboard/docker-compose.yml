@@ -64,4 +64,4 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        You will need to create a new account.
+        Before you can use the application, you will need to create a new account when going to the Focalboard UI.
