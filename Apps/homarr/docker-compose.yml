@@ -26,7 +26,7 @@ services:
       - /DATA/AppData/$AppID/icons:/app/public/icons
 
       # Mounting the local homarr/dat directory to /data inside the container
-      - /homarr/data:/data
+      - /DATA/AppData/$AppID/data:/data
 
       # Mounting docker.sock to allow docker management via Homarr
       - /var/run/docker.sock:/var/run/docker.sock
