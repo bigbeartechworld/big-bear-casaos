@@ -12,7 +12,7 @@ services:
     container_name: homarr
 
     # Image to be used for the container
-    image: ghcr.io/ajnart/homarr:0.13.4
+    image: ghcr.io/ajnart/homarr:0.14.2
 
     # Container restart policy
     restart: unless-stopped
@@ -24,6 +24,9 @@ services:
 
       # Mounting the local homarr/icons directory to /app/public/icons inside the container
       - /DATA/AppData/$AppID/icons:/app/public/icons
+
+      # Mounting the local homarr/dat directory to /data inside the container
+      - /DATA/AppData/$AppID/data:/data
 
       # Mounting docker.sock to allow docker management via Homarr
       - /var/run/docker.sock:/var/run/docker.sock
@@ -41,6 +44,9 @@ services:
         - container: /app/public/icons
           description:
             en_us: "Container Path: /app/public/icons"
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
       ports:
         - container: "7575"
           description:
