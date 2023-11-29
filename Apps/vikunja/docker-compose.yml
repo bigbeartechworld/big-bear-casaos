@@ -1,0 +1,159 @@
+# Configuration for big-bear-vikunja setup
+
+# Name of the big-bear-vikunja application
+name: big-bear-vikunja
+
+# Service definitions for the big-bear-vikunja application
+services:
+  frontend:
+    image: vikunja/frontend
+    container_name: vikunja-frontend
+    ports:
+      - 8081:80
+    environment:
+      # Set the Vikunja API URL, replace [CHANGE_TO_YOUR_CASAOS_IP] with the actual IP
+      VIKUNJA_API_URL: http://[CHANGE_TO_YOUR_CASAOS_IP]:3456/api/v1
+    restart: unless-stopped
+    depends_on:
+      - db
+      - api
+
+    networks:
+      - vikunja-network
+
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+  api:
+    image: vikunja/api
+    container_name: vikunja-api
+    environment:
+      # Vikunja API environment variables
+      VIKUNJA_DATABASE_HOST: vikunja-db
+      VIKUNJA_DATABASE_PASSWORD: secret
+      VIKUNJA_DATABASE_TYPE: mysql
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_DATABASE: vikunja
+      VIKUNJA_SERVICE_JWTSECRET: 4c2ad520-f177-425f-ab7f-64c5e2b1c2c8
+      # Set the Vikunja frontend URL, replace <your public frontend url with slash> with the actual URL
+      VIKUNJA_SERVICE_FRONTENDURL: http://<your public frontend url with slash>/
+    ports:
+      - 3456:3456
+    volumes:
+      # Map container path to host path for files
+      - /DATA/AppData/$AppID/files:/app/vikunja/files
+    depends_on:
+      - db
+    restart: unless-stopped
+
+    networks:
+      - vikunja-network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: VIKUNJA_DATABASE_HOST
+          description:
+            en_us: Database host
+        - container: VIKUNJA_DATABASE_PASSWORD
+          description:
+            en_us: Database password
+        - container: VIKUNJA_DATABASE_TYPE
+          description:
+            en_us: Database type
+        - container: VIKUNJA_DATABASE_USER
+          description:
+            en_us: Database user
+        - container: VIKUNJA_DATABASE_DATABASE
+          description:
+            en_us: Database name
+        - container: VIKUNJA_SERVICE_JWTSECRET
+          description:
+            en_us: JWT secret
+        - container: VIKUNJA_SERVICE_FRONTENDURL
+          description:
+            en_us: Frontend URL
+      ports:
+        - container: "3456"
+          description:
+            en_us: "Container Port: 3456"
+      volumes:
+        - container: /app/vikunja/files
+          description:
+            en_us: "Container Path: /app/vikunja/files"
+
+  db:
+    image: mariadb:10
+    container_name: vikunja-db
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      # MariaDB environment variables
+      MYSQL_ROOT_PASSWORD: supersecret
+      MYSQL_USER: vikunja
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: vikunja
+    volumes:
+      # Map container path to host path for MariaDB data
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    restart: unless-stopped
+
+    networks:
+      - vikunja-network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: "MySQL root password: supersecret"
+        - container: MYSQL_USER
+          description:
+            en_us: "MySQL user: vikunja"
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: "MySQL password: secret"
+        - container: MYSQL_DATABASE
+          description:
+            en_us: "MySQL database: vikunja"
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+
+networks:
+  vikunja-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: frontend
+  description:
+    # Description in English
+    en_us: The open-source, self-hostable to-do app. Organize everything, on all platforms.
+  tagline:
+    # Short description or tagline in English
+    en_us: Vikunja
+  # Developer's name or identifier
+  developer: "kolaente"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/vikunja.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Vikunja
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8081"
+  scheme: http

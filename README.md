@@ -83,6 +83,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Traccar                  | latest         |                                                                                                                     |
 | Umami                    | latest         | [YouTube Video](https://youtu.be/4DEF5fNf8hU)                                                                       |
 | Uptime Kuma              | 1              |                                                                                                                     |
+| Vikunja                  | latest         |                                                                                                                     |
 | What's Up Docker         | latest         |                                                                                                                     |
 | WordPress                | latest         |                                                                                                                     |
 
