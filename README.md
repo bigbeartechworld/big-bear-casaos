@@ -80,7 +80,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Scrypted                 | latest         | [YouTube Video](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | Speedtest Tracker        | v0.13.1        | [YouTube Video](https://youtu.be/TLjS8xNNwis)                                                                       |                                                                                                |
 | TP-Link Omada Controller | 5.9            |                                                                                                                     |
-| Traccar                  | latest         |                                                                                                                     |
+| Traccar                  | latest         | [YouTube Video](https://youtu.be/zn_tu9r6g-w)                                                                       |
 | Umami                    | latest         | [YouTube Video](https://youtu.be/4DEF5fNf8hU)                                                                       |
 | Uptime Kuma              | 1              |                                                                                                                     |
 | Vikunja                  | latest         |                                                                                                                     |
