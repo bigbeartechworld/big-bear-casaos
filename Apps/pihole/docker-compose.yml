@@ -38,6 +38,11 @@ services:
       - "8080:80/tcp"
       - "10443:443/tcp"
 
+    # Define the networks section
+    networks:
+      # Define the pihole-network
+      - pihole-network
+
     x-casaos: # CasaOS specific configuration
       volumes:
         - container: /etc/pihole
@@ -59,6 +64,13 @@ services:
         - container: "443"
           description:
             en_us: "Container Port: 443"
+
+# Define the networks section
+networks:
+  # Define the pihole-network
+  pihole-network:
+    # Set the driver to bridge
+    driver: bridge
 
 # CasaOS specific configuration
 x-casaos:
