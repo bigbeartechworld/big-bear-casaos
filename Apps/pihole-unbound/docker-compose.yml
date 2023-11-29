@@ -40,6 +40,10 @@ services:
       - "8080:80/tcp"
       - "10443:443/tcp"
 
+    networks:
+      # Define the network for pihole-unbound
+      - pihole-unbound-network # Name of the network used by pihole-unbound
+
     x-casaos: # CasaOS specific configuration
       volumes:
         - container: /etc/pihole
@@ -61,6 +65,13 @@ services:
         - container: "443"
           description:
             en_us: "Container Port: 443"
+
+# Define the networks section
+networks:
+  # Define the pihole-unbound-network
+  pihole-unbound-network:
+    # Set the network driver to bridge
+    driver: bridge
 
 # CasaOS specific configuration
 x-casaos:
