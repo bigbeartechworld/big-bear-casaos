@@ -12,7 +12,7 @@ on:
           - info
           - warn
           - error
-        default: into # Default value if the user doesn't specify
+        default: debug # Default value if the user doesn't specify
         required: false # It's not required to provide this input
 
   schedule: # This workflow can also run on a schedule
