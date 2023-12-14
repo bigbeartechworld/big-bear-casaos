@@ -9,6 +9,11 @@
       "assignees": ["@dragonfire1119"]
     },
     {
+      "matchDatasources": ["docker"],
+      "matchHosts": ["ghcr.io"],
+      "groupName": "ghcr.io docker images"
+    },
+    {
       "matchDatasources": "docker",
       "matchPackagePatterns": ["^guacamole/"],
       "groupName": "guacamole docker images"
