@@ -11,6 +11,13 @@
       "matchDatasources": "docker",
       "matchPackagePatterns": ["^vikunja/"],
       "groupName": "vikunja docker images"
+    },
+    {
+      "matchDatasources": "docker",
+      "matchPackagePatterns": [
+        "^([^\\/]+\\/)?(mysql|mariadb|mongodb|mongo|postgres|redis)(:|$)"
+      ],
+      "enabled": false
     }
   ],
   "regexManagers": [
