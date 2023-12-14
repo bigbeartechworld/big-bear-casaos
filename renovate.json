@@ -10,7 +10,7 @@
     },
     {
       "matchDatasources": ["docker"],
-      "matchHosts": ["ghcr.io"],
+      "matchPackagePatterns": ["^ghcr\\.io/"],
       "groupName": "ghcr.io docker images"
     },
     {
