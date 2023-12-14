@@ -9,7 +9,7 @@
       "assignees": ["@dragonfire1119"]
     },
     {
-      "matchDatasources": ["docker"],
+      "matchDatasources": "docker",
       "matchPackagePatterns": ["^ghcr\\.io/"],
       "groupName": "ghcr.io docker images"
     },
