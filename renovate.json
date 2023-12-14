@@ -15,7 +15,7 @@
     },
     {
       "matchDatasources": "docker",
-      "matchPackagePatterns": ["^immich-app/"],
+      "matchPackagePatterns": ["^ghcr\\.io/immich-app/"],
       "groupName": "immich docker images"
     },
     {
