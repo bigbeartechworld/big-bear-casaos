@@ -71,7 +71,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Pihole and Unbound       | 2023.11.0      | [YouTube Video](https://youtu.be/ByFSgnnUuBI)                                                                       | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | Pingvin Share            | latest         | [YouTube Video](https://youtu.be/SRJUS7h1vhU)                                                                       |
 | Playitgg                 | latest         |                                                                                                                     |
-| Portainer Agent          | 2.19.1         |                                                                                                                     |
+| Portainer Agent          | 2.19.4         |                                                                                                                     |
 | Pterodactyl Panel        | v1.11.5        |                                                                                                                     |
 | Pterodactyl Wings        | v1.11.8        |                                                                                                                     |
 | Python Matter Server     | stable         |                                                                                                                     |

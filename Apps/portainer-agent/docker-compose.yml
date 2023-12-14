@@ -6,7 +6,7 @@ services:
   # Main Portainer Agent Server service configuration
   app:
     container_name: portainer-agent # Name of the running container
-    image: portainer/agent:2.19.1 # Image to be used
+    image: portainer/agent:2.19.4 # Image to be used
     network_mode: bridge # Network mode to be used
     ports: # Port mapping between host and container
       - 9001:9001
