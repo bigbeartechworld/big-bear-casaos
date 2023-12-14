@@ -193,7 +193,7 @@ services:
   # Configuration for Database service
   database:
     container_name: immich-postgres # Name of the running container
-    image: postgres:14-alpine@sha256:28407a9961e76f2d285dc6991e8e48893503cc3836a4755bbc2d40bcc272a441 # Image to be used
+    image: postgres:14-alpine@sha256:29bd529f430019713aa3161fce18f5b3eabf7cf69f225ecc3d8d2875d479298f # Image to be used
     environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
