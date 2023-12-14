@@ -7,10 +7,15 @@ name: big-bear-ghost
 services:
   # The `app` service for the Ghost application
   app:
+    # Name of the container
+    container_name: big-bear-ghost
     # Docker image to be used
     image: ghost:5.69.0-alpine
     # Restart policy for the service
     restart: on-failure
+    # Networks used by the service
+    networks:
+      - ghost-network
     environment:
       # Database configuration for Ghost (see Ghost documentation for more details)
       database__client: mysql
@@ -63,6 +68,8 @@ services:
 
   # The `db` service for database (MySQL in this case)
   db:
+    # Container name
+    container_name: big-bear-ghost-db
     # Docker image to be used
     image: mysql:8.0
     # Restart policy for the service
@@ -76,6 +83,9 @@ services:
       MYSQL_DATABASE: "ghost"
       MYSQL_PASSWORD: "casaos"
       MYSQL_ROOT_PASSWORD: "casaos"
+    # Networks used by the service
+    networks:
+      - ghost-network
     # CasaOS specific configuration for the db service
     x-casaos:
       envs:
@@ -95,6 +105,12 @@ services:
         - container: /var/lib/mysql
           description:
             en_us: "Container Path: /var/lib/mysql"
+
+# Networks used by the application
+networks:
+  # Define the network for AdGuard Home
+  ghost-network:
+    driver: bridge
 
 # CasaOS global application configuration
 x-casaos:
