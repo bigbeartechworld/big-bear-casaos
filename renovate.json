@@ -15,6 +15,11 @@
     },
     {
       "matchDatasources": "docker",
+      "matchPackagePatterns": ["^immich-app/"],
+      "groupName": "immich docker images"
+    },
+    {
+      "matchDatasources": "docker",
       "matchPackagePatterns": [
         "^([^\\/]+\\/)?(mysql|mariadb|mongodb|mongo|postgres|redis)(:|$)"
       ],
