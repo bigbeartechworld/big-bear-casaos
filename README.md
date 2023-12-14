@@ -64,7 +64,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | NocoDB | nocodb/nocodb | 0.202.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | Node-RED | nodered/node-red | 3.1.0 | |
 | Ntfy.sh | binwiederhier/ntfy | latest | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |
-| Obisidian Livesync | couchdb | 3.1.2 | |
+| Obisidian Livesync | couchdb | 3.3.3 | |
 | OctoPrint | octoprint/octoprint | 1.9.3 | |
 | OnlyOffice | onlyoffice/documentserver | latest | |
 | Pihole | pihole/pihole | 2023.11.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) | |
