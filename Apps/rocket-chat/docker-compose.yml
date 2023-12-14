@@ -59,7 +59,7 @@ services:
   # Service: db
   # This service runs the MongoDB database used by Rocket.Chat.
   db:
-    image: mongo:5.0.22
+    image: mongo:5.0.23
     container_name: db
     volumes:
       # Persistent storage for MongoDB
