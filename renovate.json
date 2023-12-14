@@ -17,7 +17,7 @@
     {
       "fileMatch": ["^README\\.md$"],
       "matchStrings": [
-        "\\|\\s+(?<depName>[^\\s]+)\\s+\\|\\s+(?<currentValue>[^\\s|]+)\\s+\\|"
+        "^\\|\\s+[^\\s]+\\s+\\|\\s+(?<depName>[^\\s]+)\\s+\\|\\s+(?<currentValue>[^\\s|]+)\\s+\\|"
       ],
       "datasourceTemplate": "docker"
     }
