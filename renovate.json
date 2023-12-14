@@ -3,13 +3,13 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "datasource": "docker",
-      "packagePatterns": ["^guacamole/"],
+      "matchDatasources": "docker",
+      "matchPackagePatterns": ["^guacamole/"],
       "groupName": "guacamole docker images"
     },
     {
-      "datasource": "docker",
-      "packagePatterns": ["^vikunja/"],
+      "matchDatasources": "docker",
+      "matchPackagePatterns": ["^vikunja/"],
       "groupName": "vikunja docker images"
     }
   ],
