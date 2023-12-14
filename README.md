@@ -62,7 +62,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | MySpeed | germannewsmaker/myspeed | 1.0.8 | [YouTube Video](https://youtu.be/7roj87Fytz0) |
 | n8n | n8nio/n8n | 1.14.2 | |
 | NocoDB | nocodb/nocodb | 0.202.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
-| Node-RED | nodered/node-red | 3.1.0 | |
+| Node-RED | nodered/node-red | 3.1.3 | |
 | Ntfy.sh | binwiederhier/ntfy | latest | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |
 | Obisidian Livesync | couchdb | 3.1.2 | |
 | OctoPrint | octoprint/octoprint | 1.9.3 | |
