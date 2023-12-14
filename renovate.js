@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ["config:recommended"], // Extending a base configuration named "config:base"
-  onboarding: false, // Disabling onboarding process
+  extends: ["config:recommended", ":dependencyDashboard"], // Extending a base configuration named "config:base"
+  onboarding: true, // Disabling onboarding process
   rebaseWhen: "conflicted", // Rebase when there are conflicts
   gitIgnoredAuthors: ["githubaction@githubaction.com"], // Ignoring commits from a specific author
   dependencyDashboard: true, // Enabling the dependency dashboard
