@@ -12,7 +12,7 @@ services:
     container_name: playitgg
 
     # Image to be used for the container
-    image: dysta/playitgg
+    image: dysta/playitgg:latest
 
     # Container restart policy
     restart: unless-stopped
