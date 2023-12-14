@@ -1,7 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
+  "stabilityDays": 3,
   "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "reviewers": ["@dragonfire1119"],
+      "assignees": ["@dragonfire1119"]
+    },
     {
       "matchDatasources": "docker",
       "matchPackagePatterns": ["^guacamole/"],
