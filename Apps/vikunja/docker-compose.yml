@@ -6,7 +6,7 @@ name: big-bear-vikunja
 # Service definitions for the big-bear-vikunja application
 services:
   frontend:
-    image: vikunja/frontend
+    image: vikunja/frontend:latest
     container_name: vikunja-frontend
     ports:
       - 8081:80
