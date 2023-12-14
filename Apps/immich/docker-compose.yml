@@ -187,7 +187,7 @@ services:
   # Configuration for Redis service
   redis:
     container_name: immich-redis # Name of the running container
-    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
+    image: redis:6.2-alpine@sha256:b6124ab2e45cc332e16398022a411d7e37181f21ff7874835e0180f56a09e82a # Image to be used
     restart: always # Policy to always restart the container if it stops
 
   # Configuration for Database service
