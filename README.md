@@ -31,7 +31,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 4.2.3 | [YouTube Video](https://youtu.be/yCnjxSryD_U) | |
-| Actual Budget | actualbudget/actual-server | 23.10.0 | | |
+| Actual Budget | actualbudget/actual-server | 23.12.1 | | |
 | AdGuard Home | adguard/adguardhome | v0.107.39 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) | |
 | Apache Guacamole | guacamole/guacamole | latest | [YouTube Video](https://youtu.be/6cu0kfP50Jg) | |
 | Appsmith | appsmith/appsmith-ee | v1.9.42 | | |
