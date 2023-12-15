@@ -79,7 +79,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | RomM | zurdi15/romm | dev-latest | |
 | Scrypted | koush/scrypted | latest | [YouTube Video](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | Speedtest Tracker | ghcr.io/alexjustesen/speedtest-tracker | v0.14.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) | |
-| TP-Link Omada Controller | mbentley/omada-controller | 5.9 | |
+| TP-Link Omada Controller | mbentley/omada-controller | 5.13 | |
 | Traccar | traccar/traccar | latest | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |
 | Umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |
 | Uptime Kuma | louislam/uptime-kuma | 1 | |
