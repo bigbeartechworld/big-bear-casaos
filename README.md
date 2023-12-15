@@ -56,7 +56,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Immich | ghcr.io/immich-app/immich-server | v1.90.2 | |
 | Jellyseerr | fallenbagel/jellyseerr | 1.7.0 | |
 | Lan Cache | lancachenet/monolithic | latest | |
-| Mailpit | axllent/mailpit | v1.7 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |
+| Mailpit | axllent/mailpit | v1.11 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |
 | MIND | mrcas/mind | latest | |
 | Mumble Server | mumblevoip/mumble-server | v1.4.230-6 | |
 | MySpeed | germannewsmaker/myspeed | 1.0.8 | [YouTube Video](https://youtu.be/7roj87Fytz0) |
