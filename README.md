@@ -52,7 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Gotify | gotify/server | 2.4.0 | |
 | Homarr | ghcr.io/ajnart/homarr | 0.14.2 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |
 | Homer | b4bz/homer | v23.10.1 | |
-| Homepage | ghcr.io/gethomepage/homepage | v0.7.4 | |
+| Homepage | ghcr.io/gethomepage/homepage | v0.8.3 | |
 | Immich | ghcr.io/immich-app/immich-server | v1.90.2 | |
 | Jellyseerr | fallenbagel/jellyseerr | 1.7.0 | |
 | Lan Cache | lancachenet/monolithic | latest | |
