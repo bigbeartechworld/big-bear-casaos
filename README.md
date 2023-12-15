@@ -34,7 +34,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Actual Budget | actualbudget/actual-server | 23.10.0 | | |
 | AdGuard Home | adguard/adguardhome | v0.107.39 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) | |
 | Apache Guacamole | guacamole/guacamole | latest | [YouTube Video](https://youtu.be/6cu0kfP50Jg) | |
-| Appsmith | appsmith/appsmith-ee | v1.9.42 | | |
+| Appsmith | appsmith/appsmith-ee | v1.9.56 | | |
 | Baserow | baserow/baserow | 1.20.0 | | |
 | cAdvisor | gcr.io/cadvisor/cadvisor | v0.47.2 | | |
 | Code Server | linuxserver/code-server | 4.18.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) | |
