@@ -1,0 +1,81 @@
+# Configuration for phpmyadmin setup
+
+# Name of the big-bear-phpmyadmin application
+name: big-bear-phpmyadmin
+
+# Service definitions for the big-bear-phpmyadmin application
+services:
+  # Service name: phpmyadmin
+  phpmyadmin:
+    # Docker image to be used for this service
+    image: phpmyadmin/phpmyadmin
+
+    # Name of the container once it's up and running
+    container_name: big-bear-phpmyadmin
+
+    # Environment variables passed to the service
+    environment:
+      # Host of the database server
+      PMA_HOST: "[YOUR-CASAOS-IP]"
+
+      # Port of the database server
+      PMA_PORT: "3306"
+
+      # Username to connect to the database
+      PMA_USER: "bigbear"
+
+      # Password to connect to the database
+      PMA_PASSWORD: "password"
+
+    # Port mapping: map host's port 8080 to container's port 80
+    ports:
+      - "8080:80"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PMA_HOST
+          description:
+            en_us: "Host of the database server"
+        - container: PMA_PORT
+          description:
+            en_us: "Port of the database server"
+        - container: PMA_USER
+          description:
+            en_us: "Username to connect to the database"
+        - container: PMA_PASSWORD
+          description:
+            en_us: "Password to connect to the database"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: phpMyAdmin - A web interface for MySQL and MariaDB.
+  tagline:
+    # Short description or tagline in English
+    en_us: phpMyAdmin
+  # Developer's name or identifier
+  developer: "phpMyAdmin"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/phpmyadmin.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: phpMyAdmin
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
