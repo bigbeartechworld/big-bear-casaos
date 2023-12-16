@@ -157,7 +157,7 @@ services:
   # Configuration for Typesense service
   typesense:
     container_name: immich-typesense # Name of the running container
-    image: typesense/typesense:0.24.1@sha256:9bcff2b829f12074426ca044b56160ca9d777a0c488303469143dd9f8259d4dd # Image to be used
+    image: typesense/typesense:0.25.1@sha256:035ccfbc3fd8fb9085ea205fdcb62de63eaefdbebd710e88e57f978a30f2090d # Image to be used
     environment: # Setting environment variables
       - TYPESENSE_API_KEY=casaos_typesense_api_key
       - TYPESENSE_DATA_DIR=/data
