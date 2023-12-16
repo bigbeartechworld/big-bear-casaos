@@ -8,10 +8,6 @@ Please post in the [BigBearCommunity](https://community.bigbeartechworld.com/c/b
 
 If you have a feature request please post in the [BigBearCommunity](https://community.bigbeartechworld.com/c/big-bear-casaos/bigbearcasaos-suggestions/40).
 
-## Stay Updated
-
-All app changes are posted in the [BigBearCommunity](https://community.bigbeartechworld.com/c/bigbearyoutube/bigbearcasaos/10).
-
 ## App Store URL
 
 ```text
