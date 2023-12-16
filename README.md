@@ -45,7 +45,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Dozzle | amir20/dozzle | latest | |
 | Flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) | |
 | Focalboard | mattermost/focalboard | 7.11.4 | | |
-| Ghost | ghost | 5.75.1-alpine  | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) | |
+| Ghost | ghost | 5.75.2-alpine  | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) | |
 | Gladys Assistant | gladysassistant/gladys | v4 | |
 | Glances | nicolargo/glances | 3.4.0.3-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |
 | Gluetun | qmcgaw/gluetun | latest | | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)          |
