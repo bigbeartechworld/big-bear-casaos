@@ -50,7 +50,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homer                    | b4bz/homer                                       | v23.10.1          |                                                                                                                     |
 | Homepage                 | ghcr.io/gethomepage/homepage                     | v0.8.3            |                                                                                                                     |
 | Immich                   | ghcr.io/immich-app/immich-server                 | v1.90.2           |                                                                                                                     |
-| IT Tools                 | corentinth/it-tools                              | 2023.11.2-7d94e11 |                                                                                                                     |
+| IT Tools                 | corentinth/it-tools                              | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug)                                                                       | [Docs]                                                                                         |
 | Jellyseerr               | fallenbagel/jellyseerr                           | 1.7.0             |                                                                                                                     |
 | Lan Cache                | lancachenet/monolithic                           | latest            |                                                                                                                     |
 | Mailpit                  | axllent/mailpit                                  | v1.11             | [YouTube Video](https://youtu.be/2MY3S6csrVw)                                                                       |
@@ -83,7 +83,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Uptime Kuma              | louislam/uptime-kuma                             | 1                 | [YouTube Video](https://youtu.be/Why5NU_Wafw)                                                                       |                                                                                                |
 | Vikunja                  | vikunja/frontend                                 | latest            |                                                                                                                     |
 | What's Up Docker         | fmartinou/whats-up-docker                        | latest            |                                                                                                                     |
-| WordPress                | wordpress                                        | latest            |                                                                                                                     |
+| WordPress                | wordpress                                        | latest            | [YouTube Video](https://youtu.be/j5M4qlRCbYs)                                                                       | [Docs]                                                                                         |
 
 ## UI How to
 
