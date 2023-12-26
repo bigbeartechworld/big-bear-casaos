@@ -6,14 +6,13 @@ services:
   # Main Immich Server service configuration
   immich-server:
     container_name: immich-server # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v1.90.2 # Image to be used
+    image: ghcr.io/immich-app/immich-server:v1.91.4 # Image to be used
     command: ["start.sh", "immich"] # Command to be executed upon container start
     ports: # Mapping ports from the host OS to the container
       - 2283:3001
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/upload:/usr/src/app/upload
     environment: # Setting environment variables
-      TYPESENSE_API_KEY: casaos_typesense_api_key
       DB_HOSTNAME: immich-postgres
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
@@ -24,14 +23,10 @@ services:
     depends_on: # Dependencies to ensure the order of service startup
       - redis
       - database
-      - typesense
     restart: always # Policy to always restart the container if it stops
 
     x-casaos: # CasaOS specific configuration
       envs:
-        - container: TYPESENSE_API_KEY
-          description:
-            en_us: "Typesense API Key"
         - container: DB_HOSTNAME
           description:
             en_us: "Database Hostname"
@@ -65,7 +60,7 @@ services:
   # Configuration for the Immich Microservices
   immich-microservices:
     container_name: immich-microservices # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v1.90.2 # Image to be used
+    image: ghcr.io/immich-app/immich-server:v1.91.4 # Image to be used
     # extends:  # Feature to use configuration from another service (currently commented out)
     #   file: hwaccel.yml
     #   service: hwaccel
@@ -73,7 +68,6 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/upload:/usr/src/app/upload
     environment: # Setting environment variables
-      TYPESENSE_API_KEY: casaos_typesense_api_key
       DB_HOSTNAME: immich-postgres
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
@@ -83,14 +77,10 @@ services:
     depends_on: # Dependencies to ensure the order of service startup
       - redis
       - database
-      - typesense
     restart: always # Policy to always restart the container if it stops
 
     x-casaos: # CasaOS specific configuration
       envs:
-        - container: TYPESENSE_API_KEY
-          description:
-            en_us: "Typesense API Key"
         - container: DB_HOSTNAME
           description:
             en_us: "Database Hostname"
@@ -117,7 +107,7 @@ services:
   # Configuration for Immich Machine Learning service
   immich-machine-learning:
     container_name: immich-machine-learning # Name of the running container
-    image: ghcr.io/immich-app/immich-machine-learning:v1.90.2 # Image to be used
+    image: ghcr.io/immich-app/immich-machine-learning:v1.91.4 # Image to be used
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/model-cache:/cache
     environment: # Setting environment variables
@@ -154,36 +144,6 @@ services:
           description:
             en_us: "Container Path: /cache"
 
-  # Configuration for Typesense service
-  typesense:
-    container_name: immich-typesense # Name of the running container
-    image: typesense/typesense:0.24.1@sha256:9bcff2b829f12074426ca044b56160ca9d777a0c488303469143dd9f8259d4dd # Image to be used
-    environment: # Setting environment variables
-      - TYPESENSE_API_KEY=casaos_typesense_api_key
-      - TYPESENSE_DATA_DIR=/data
-      # remove this to get debug messages
-      - GLOG_minloglevel=1
-    volumes: # Mounting directories for persistent data storage
-      - /DATA/AppData/$AppID/tsdata:/data
-    restart: always # Policy to always restart the container if it stops
-
-    x-casaos: # CasaOS specific configuration
-      envs:
-        - container: TYPESENSE_API_KEY
-          description:
-            en_us: "Typesense API Key"
-        - container: TYPESENSE_DATA_DIR
-          description:
-            en_us: "Container Path: /data"
-        - container: GLOG_minloglevel
-          description:
-            en_us: "GLOG_minloglevel=1"
-
-      volumes:
-        - container: /data
-          description:
-            en_us: "Container Path: /data"
-
   # Configuration for Redis service
   redis:
     container_name: immich-redis # Name of the running container
@@ -193,7 +153,7 @@ services:
   # Configuration for Database service
   database:
     container_name: immich-postgres # Name of the running container
-    image: postgres:14-alpine@sha256:28407a9961e76f2d285dc6991e8e48893503cc3836a4755bbc2d40bcc272a441 # Image to be used
+    image: tensorchord/pgvecto-rs:pg14-v0.1.11 # Image to be used
     environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
