@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-2fauth
     # Docker image to be used
-    image: 2fauth/2fauth:5.0.1
+    image: 2fauth/2fauth:5.0.2
     # Restart policy for the service
     restart: unless-stopped
     # Port mappings for the service
