@@ -9,7 +9,7 @@ services:
   # The `app` service definition
   app:
     # Name of the container
-    container_name: kasm
+    container_name: big-bear-kasm
 
     # Image to be used for the container
     image: lscr.io/linuxserver/kasm:latest
