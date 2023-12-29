@@ -1,0 +1,101 @@
+# Configuration for kasm setup
+
+# Name of the big-bear-kasm application
+name: big-bear-kasm
+
+# Service definitions for the big-bear-kasm application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: kasm
+
+    # Image to be used for the container
+    image: lscr.io/linuxserver/kasm:latest
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Privilege of the container
+    privileged: true
+
+    # Uses bridge network mode
+    network_mode: bridge
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local kasm/opt directory to /opt inside the container
+      - /DATA/AppData/kasm/opt:/opt
+
+      # Mounting the local kasm/profiles directory to /profiles inside the container
+      - /DATA/AppData/kasm/profiles:/profiles
+
+      # Mounting the local /dev/input directory to /dev/input inside the container
+      - /dev/input:/dev/input
+
+      # Mounting the local /run/udev/data directory to /run/udev/data inside the container
+      - /run/udev/data:/run/udev/data
+    
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 3000 of the host to port 3000 of the container
+      - 3000:3000/tcp
+
+      # Mapping port 443 of the host to port 443 of the container
+      - 443:443/tcp
+
+    # Environment variables
+    environment:
+      # Tell Kasm where the port number
+      - KASM_PORT=443
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    # - arm64
+  
+  # Main service of the application
+  main: app
+  
+  description:
+    # Description in English
+    en_us: The Container Streaming Platform - Streaming containerized apps and desktops to end-users. The Workspaces platform provides enterprise-class orchestration, data loss prevention, and web streaming technology to enable the delivery of containerized workloads to your browser.
+  
+  tagline:
+    # Short description or tagline in English
+    en_us: Kasm
+  
+  # Developer's name or identifier
+  developer: "Kasm"
+  
+  # Author of this configuration
+  author: BigBearTechWorld
+  
+  # Icon for the application
+  icon: https://avatars.githubusercontent.com/u/44181855?s=280&v=4
+  
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+
+  tips:
+    before_install:
+      en_us: |
+        Admin default address: admin@kasm.local
+        User default address: user@kasm.local
+  
+  # Application Title
+  title:
+    # Title in English
+    en_us: Kasm
+
+  # Application category
+  category: BigBearCasaOS
+  
+  # Port mapping information
+  port_map: "3000"
+  
+  # Application scheme
+  scheme: https
