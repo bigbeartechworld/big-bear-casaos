@@ -26,10 +26,10 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local kasm/opt directory to /opt inside the container
-      - /DATA/AppData/kasm/opt:/opt
+      - /DATA/AppData/$AppID/opt:/opt
 
       # Mounting the local kasm/profiles directory to /profiles inside the container
-      - /DATA/AppData/kasm/profiles:/profiles
+      - /DATA/AppData/$AppID/profiles:/profiles
 
       # Mounting the local /dev/input directory to /dev/input inside the container
       - /dev/input:/dev/input
