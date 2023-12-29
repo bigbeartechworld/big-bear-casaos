@@ -1,0 +1,74 @@
+# Configuration for home-assistant setup
+
+# Name of the big-bear-home-assistant application
+name: big-bear-home-assistant
+
+# Service definitions for the big-bear-home-assistant application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-home-assistant
+
+    # Image to be used for the container
+    image: ghcr.io/home-assistant/home-assistant:2023.12.4
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/config directory to /config inside the container
+      - /DATA/AppData/$AppID/config:/config
+
+      # Mounting the local /etc/localtime to /etc/localtime inside the container
+      - /etc/localtime:/etc/localtime:ro
+
+      # Mounting the local /run/dbus to /run/dbus inside the container
+      - /run/dbus:/run/dbus:ro
+
+    # Network mode for the container
+    network_mode: host
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /etc/localtime
+          description:
+            en_us: "Container Path: /etc/localtime"
+        - container: /run/dbus
+          description:
+            en_us: "Container Path: /run/dbus"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
+  tagline:
+    # Short description or tagline in English
+    en_us: Home Automation
+  # Developer's name or identifier
+  developer: "home-assistant"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/home-assistant.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Home Assistant
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8123"
