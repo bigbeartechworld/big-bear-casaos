@@ -12,7 +12,7 @@ services:
     container_name: big-bear-kasm
 
     # Image to be used for the container
-    image: lscr.io/linuxserver/kasm:latest
+    image: linuxserver/kasm:1.14.0
 
     # Container restart policy
     restart: unless-stopped
@@ -36,7 +36,7 @@ services:
 
       # Mounting the local /run/udev/data directory to /run/udev/data inside the container
       - /run/udev/data:/run/udev/data
-    
+
     # Ports mapping between host and container
     ports:
       # Mapping port 3000 of the host to port 3000 of the container
@@ -56,27 +56,27 @@ x-casaos:
   architectures:
     - amd64
     # - arm64
-  
+
   # Main service of the application
   main: app
-  
+
   description:
     # Description in English
     en_us: The Container Streaming Platform - Streaming containerized apps and desktops to end-users. The Workspaces platform provides enterprise-class orchestration, data loss prevention, and web streaming technology to enable the delivery of containerized workloads to your browser.
-  
+
   tagline:
     # Short description or tagline in English
     en_us: Kasm
-  
+
   # Developer's name or identifier
   developer: "Kasm"
-  
+
   # Author of this configuration
   author: BigBearCommunity
-  
+
   # Icon for the application
   icon: https://avatars.githubusercontent.com/u/44181855?s=280&v=4
-  
+
   # Thumbnail image (currently empty)
   thumbnail: ""
 
@@ -85,7 +85,7 @@ x-casaos:
       en_us: |
         Admin default address: admin@kasm.local
         User default address: user@kasm.local
-  
+
   # Application Title
   title:
     # Title in English
@@ -93,9 +93,9 @@ x-casaos:
 
   # Application category
   category: BigBearCasaOS
-  
+
   # Port mapping information
   port_map: "3000"
-  
+
   # Application scheme
   scheme: https
