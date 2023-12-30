@@ -9,7 +9,7 @@ services:
   # The `app` service definition
   nextcloud:
     container_name: nextcloud
-    image: nextcloud:26.0.10-apache
+    image: nextcloud:28.0.1-apache
     restart: unless-stopped
     ports:
       - 7580:80
@@ -24,7 +24,6 @@ services:
       - NEXTCLOUD_ADMIN_USER=casaos
       - NEXTCLOUD_ADMIN_PASSWORD=casaos
       - TRUSTED_PROXIES=172.16.0.0/12
-      - NEXTCLOUD_TRUSTED_DOMAINS=0.0.0.0
       - OVERWRITEPROTOCOL=http
       - PHP_UPLOAD_LIMIT=1024G
     depends_on:
@@ -57,7 +56,7 @@ services:
       - nextcloud_network
 
   cron:
-    image: nextcloud:25.0.13-apache
+    image: nextcloud:28.0.1-apache
     restart: on-failure
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
