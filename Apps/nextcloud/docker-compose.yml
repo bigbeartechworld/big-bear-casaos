@@ -1,0 +1,111 @@
+# Configuration for nextcloud setup
+
+# Name of the big-bear-nextcloud application
+name: big-bear-nextcloud
+
+# Service definitions for the big-bear-nextcloud application
+services:
+  # Service name: app
+  # The `app` service definition
+  nextcloud:
+    container_name: nextcloud
+    image: nextcloud:26.0.10-apache
+    restart: unless-stopped
+    ports:
+      - 7580:80
+    volumes:
+      - /DATA/AppData/$AppID/html:/var/www/html
+    environment:
+      - POSTGRES_HOST=db-nextcloud
+      - REDIS_HOST=redis-nextcloud
+      - POSTGRES_PASSWORD=tipi
+      - POSTGRES_USER=tipi
+      - POSTGRES_DB=nextcloud
+      - NEXTCLOUD_ADMIN_USER=casaos
+      - NEXTCLOUD_ADMIN_PASSWORD=casaos
+      - TRUSTED_PROXIES=172.16.0.0/12
+      - NEXTCLOUD_TRUSTED_DOMAINS=0.0.0.0
+      - OVERWRITEPROTOCOL=http
+      - PHP_UPLOAD_LIMIT=1024G
+    depends_on:
+      - db-nextcloud
+      - redis-nextcloud
+    networks:
+      - nextcloud_network
+
+  db-nextcloud:
+    container_name: db-nextcloud
+    image: postgres:14.2
+    restart: on-failure
+    volumes:
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=tipi
+      - POSTGRES_USER=tipi
+      - POSTGRES_DB=nextcloud
+    networks:
+      - nextcloud_network
+
+  redis-nextcloud:
+    container_name: redis-nextcloud
+    user: "1000:1000"
+    image: redis:6.2.6
+    restart: on-failure
+    volumes:
+      - "/DATA/AppData/$AppID/redis:/data"
+    networks:
+      - nextcloud_network
+
+  cron:
+    image: nextcloud:25.0.13-apache
+    restart: on-failure
+    volumes:
+      - /DATA/AppData/$AppID/html:/var/www/html
+    entrypoint: /cron.sh
+    depends_on:
+      - db-nextcloud
+      - redis-nextcloud
+    networks:
+      - nextcloud_network
+
+# Network definition for the big-bear-homarr application
+networks:
+  nextcloud_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: nextcloud
+  description:
+    # Description in English
+    en_us: Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
+  tagline:
+    en_us: The productivity platform that keeps you in control
+  # Developer's name or identifier
+  developer: "nextcloud"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/nextcloud.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/thumbnail.jpg
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-3.png
+  title:
+    # Title in English
+    en_us: Nextcloud
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "7580"
+  tips:
+    before_install:
+      en_us: |
+        Read the [Nextcloud installation guide](https://community.bigbeartechworld.com/t/added-nextcloud-to-bigbearcasaos/455?u=dragonfire1119)
