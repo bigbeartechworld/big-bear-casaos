@@ -18,8 +18,8 @@ services:
     environment:
       - POSTGRES_HOST=db-nextcloud
       - REDIS_HOST=redis-nextcloud
-      - POSTGRES_PASSWORD=tipi
-      - POSTGRES_USER=tipi
+      - POSTGRES_PASSWORD=casaos
+      - POSTGRES_USER=casaos
       - POSTGRES_DB=nextcloud
       - NEXTCLOUD_ADMIN_USER=casaos
       - NEXTCLOUD_ADMIN_PASSWORD=casaos
@@ -32,6 +32,47 @@ services:
     networks:
       - nextcloud_network
 
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/www/html
+          description:
+            en_us: "Container Path: /var/www/html"
+      envs:
+        - container: POSTGRES_HOST
+          description:
+            en_us: Database host
+        - container: REDIS_HOST
+          description:
+            en_us: Redis host
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_DB
+          description:
+            en_us: Database type
+        - container: NEXTCLOUD_ADMIN_USER
+          description:
+            en_us: Nextcloud admin user
+        - container: NEXTCLOUD_ADMIN_PASSWORD
+          description:
+            en_us: Nextcloud admin password
+        - container: TRUSTED_PROXIES
+          description:
+            en_us: Trusted proxies
+        - container: OVERWRITEPROTOCOL
+          description:
+            en_us: Overwrite protocol
+        - container: PHP_UPLOAD_LIMIT
+          description:
+            en_us: PHP upload limit
+      ports:
+        - container: "7580"
+          description:
+            en_us: "Container Port: 7580"
+
   db-nextcloud:
     container_name: db-nextcloud
     image: postgres:14.2
@@ -39,11 +80,27 @@ services:
     volumes:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=tipi
-      - POSTGRES_USER=tipi
+      - POSTGRES_PASSWORD=casaos
+      - POSTGRES_USER=casaos
       - POSTGRES_DB=nextcloud
     networks:
       - nextcloud_network
+
+    x-casaos:
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      envs:
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_DB
+          description:
+            en_us: Database type
 
   redis-nextcloud:
     container_name: redis-nextcloud
