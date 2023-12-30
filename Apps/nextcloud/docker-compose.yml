@@ -8,13 +8,19 @@ services:
   # Service name: app
   # The `app` service definition
   nextcloud:
+    # Define the container name
     container_name: nextcloud
+    # Use the nextcloud:28.0.1-apache image
     image: nextcloud:28.0.1-apache
+    # Restart the container unless stopped
     restart: unless-stopped
+    # Map port 7580 on the host to port 80 on the container
     ports:
       - 7580:80
+    # Mount the /DATA/AppData/$AppID/html directory on the host to /var/www/html in the container
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
+    # Set environment variables
     environment:
       - POSTGRES_HOST=db-nextcloud
       - REDIS_HOST=redis-nextcloud
@@ -23,12 +29,15 @@ services:
       - POSTGRES_DB=nextcloud
       - NEXTCLOUD_ADMIN_USER=casaos
       - NEXTCLOUD_ADMIN_PASSWORD=casaos
-      - TRUSTED_PROXIES=172.16.0.0/12
+      - TRUSTED_PROXIES=
       - OVERWRITEPROTOCOL=http
       - PHP_UPLOAD_LIMIT=1024G
+    # Specify the dependencies
     depends_on:
       - db-nextcloud
       - redis-nextcloud
+
+    # Define the network
     networks:
       - nextcloud_network
 
@@ -73,18 +82,19 @@ services:
           description:
             en_us: "Container Port: 7580"
 
+  # Define the database container for Nextcloud
   db-nextcloud:
     container_name: db-nextcloud
     image: postgres:14.2
     restart: on-failure
     volumes:
-      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Mount the PostgreSQL data directory
     environment:
-      - POSTGRES_PASSWORD=casaos
-      - POSTGRES_USER=casaos
-      - POSTGRES_DB=nextcloud
+      - POSTGRES_PASSWORD=casaos # Set the PostgreSQL password
+      - POSTGRES_USER=casaos # Set the PostgreSQL username
+      - POSTGRES_DB=nextcloud # Set the name of the Nextcloud database
     networks:
-      - nextcloud_network
+      - nextcloud_network # Connect to the Nextcloud network
 
     x-casaos:
       volumes:
@@ -102,15 +112,27 @@ services:
           description:
             en_us: Database type
 
+  # Redis configuration for Nextcloud
+
   redis-nextcloud:
     container_name: redis-nextcloud
     user: "1000:1000"
     image: redis:6.2.6
     restart: on-failure
     volumes:
-      - "/DATA/AppData/$AppID/redis:/data"
+      - "/DATA/AppData/$AppID/redis:/data" # Mount the Redis data directory
     networks:
-      - nextcloud_network
+      - nextcloud_network # Connect to the Nextcloud network
+
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "6379"
+          description:
+            en_us: "Container Port: 6379"
 
   cron:
     image: nextcloud:28.0.1-apache
@@ -123,6 +145,12 @@ services:
       - redis-nextcloud
     networks:
       - nextcloud_network
+
+    x-casaos:
+      volumes:
+        - container: /var/www/html
+          description:
+            en_us: "Container Path: /var/www/html"
 
 # Network definition for the big-bear-homarr application
 networks:
