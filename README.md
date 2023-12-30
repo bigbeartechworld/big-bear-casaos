@@ -86,7 +86,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Umami                    | ghcr.io/umami-software/umami                     | postgresql-latest        | [YouTube Video](https://youtu.be/4DEF5fNf8hU)                                                                       |
 | Uptime Kuma              | louislam/uptime-kuma                             | 1                        | [YouTube Video](https://youtu.be/Why5NU_Wafw)                                                                       |                                                                                                |
 | Vikunja                  | vikunja/frontend                                 | 0.22.0                   |                                                                                                                     |
-| What's Up Docker         | fmartinou/whats-up-docker                        | latest                   |                                                                                                                     |
+| What's Up Docker         | fmartinou/whats-up-docker                        | 6.3.0                    |                                                                                                                     |
 | WordPress                | wordpress                                        | latest                   | [YouTube Video](https://youtu.be/j5M4qlRCbYs)                                                                       | [Docs]                                                                                         |
 
 ## UI How to
