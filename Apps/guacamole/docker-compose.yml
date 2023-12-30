@@ -6,13 +6,13 @@ services:
   # guacd service configuration
   guacd:
     # Docker image to use for this service
-    image: guacamole/guacd:latest
+    image: guacamole/guacd:1.5.4
     # Restart policy for the container
     restart: always
 
   # app service configuration
   app:
-    image: guacamole/guacamole:latest
+    image: guacamole/guacamole:1.5.4
     restart: always
     # Link this service to the guacd service
     links:
