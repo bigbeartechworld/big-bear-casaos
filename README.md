@@ -87,7 +87,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Uptime Kuma              | louislam/uptime-kuma                             | 1                        | [YouTube Video](https://youtu.be/Why5NU_Wafw)                                                                       |                                                                                                |
 | Vikunja                  | vikunja/frontend                                 | 0.22.0                   |                                                                                                                     |
 | What's Up Docker         | fmartinou/whats-up-docker                        | 6.3.0                    |                                                                                                                     |
-| WordPress                | wordpress                                        | latest                   | [YouTube Video](https://youtu.be/j5M4qlRCbYs)                                                                       | [Docs]                                                                                         |
+| WordPress                | wordpress                                        | 6.4.2                    | [YouTube Video](https://youtu.be/j5M4qlRCbYs)                                                                       | [Docs]                                                                                         |
 
 ## UI How to
 
