@@ -5,7 +5,7 @@ name: big-bear-mailpit
 services:
   # Service name: app
   app:
-    image: axllent/mailpit:v1.11 # Image for the app service
+    image: axllent/mailpit:v1.12 # Image for the app service
     container_name: mailpit # Container name for the app service
     restart: unless-stopped # Restart policy for the container
     volumes: # Volumes to mount for the app service
