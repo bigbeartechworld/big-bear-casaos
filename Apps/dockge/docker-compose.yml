@@ -12,7 +12,7 @@ services:
     container_name: big-bear-dockge
 
     # Image to be used for the container
-    image: louislam/dockge:1.3.5
+    image: louislam/dockge:1.4.1
 
     # Environment variables
     environment:
