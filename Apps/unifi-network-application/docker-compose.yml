@@ -174,3 +174,7 @@ x-casaos:
   port_map: "8443"
   # Application scheme
   scheme: https # Scheme for the service
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-unifi-network-application-to-bigbearcasaos/487
