@@ -1,0 +1,176 @@
+# Configuration for unifi-network-application setup
+
+# Name of the big-bear-unifi-network-application application
+name: big-bear-unifi-network-application
+
+# Service definitions for the big-bear-homarr application
+services:
+  # MongoDB database for the application
+  unifi-db:
+    image: mongo:6.0.11
+    container_name: big-bear-unifi-db
+    volumes:
+      - /DATA/AppData/$AppID/db/data:/data/db # MongoDB data persistence
+      - /DATA/AppData/$AppID/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+      - 27017:27017 # MongoDB default port
+    networks: # Networks to join
+      - unifi-nework-application-network
+    restart: unless-stopped # Restart policy
+
+    x-casaos:
+      volumes:
+        - container: /data/db
+          description:
+            en_us: "Container Path: /data/db"
+        - container: /docker-entrypoint-initdb.d/init-mongo.js
+          description:
+            en_us: "Container Path: /docker-entrypoint-initdb.d/init-mongo.js"
+      ports:
+        - container: "27017"
+          description:
+            en_us: "Container Port: 27017"
+
+  # Main application service
+  app: # Name of the service
+    image: linuxserver/unifi-network-application:latest # Docker image to use
+    container_name: big-bear-unifi-network-application # Name for the created container
+    environment: # Environmental variables for the container
+      - PUID=1000 # User ID
+      - PGID=1000 # Group ID
+      - TZ=Etc/UTC # Timezone
+      - MONGO_HOST=big-bear-unifi-db # MongoDB host
+      - MONGO_USER=unifi # MongoDB username
+      - MONGO_PASS=unifi_password # MongoDB password
+      - MONGO_PORT=27017 # MongoDB port
+      - MONGO_DBNAME=unifi # MongoDB database name
+      - MEM_LIMIT=1024 #optional  # Memory limit for the container
+      - MEM_STARTUP=1024 #optional  # Memory to allocate on container startup
+      - MONGO_TLS= #optional  # MongoDB TLS setting
+      - MONGO_AUTHSOURCE= #optional  # MongoDB authentication source
+    volumes: # Volumes to mount in the container
+      - /DATA/AppData/$AppID/config:/config # Map host directory to container directory
+    ports: # Ports to expose and forward
+      - 8443:8443 # HTTPS portal
+      - 3478:3478/udp # STUN service
+      - 10001:10001/udp # UniFi AP discovery
+      - 8080:8080 # HTTP portal
+      - 1900:1900/udp #optional  # For DLNA
+      - 8843:8843 #optional  # HTTPS guest portal
+      - 8880:8880 #optional  # HTTP guest portal
+      - 6789:6789 #optional  # Mobile speed test port
+      - 5514:5514/udp #optional  # Remote syslog port
+    restart: unless-stopped # Restart policy for the container
+    networks: # Networks to join
+      - unifi-nework-application-network
+    depends_on:
+      - unifi-db
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PUID
+          description:
+            en_us: "User ID"
+        - container: PGID
+          description:
+            en_us: "Group ID"
+        - container: TZ
+          description:
+            en_us: "Timezone"
+        - container: MONGO_HOST
+          description:
+            en_us: "MongoDB host"
+        - container: MONGO_USER
+          description:
+            en_us: "MongoDB username"
+        - container: MONGO_PASS
+          description:
+            en_us: "MongoDB password"
+        - container: MONGO_PORT
+          description:
+            en_us: "MongoDB port"
+        - container: MONGO_DBNAME
+          description:
+            en_us: "MongoDB database name"
+        - container: MEM_LIMIT
+          description:
+            en_us: "Memory limit for the container"
+        - container: MEM_STARTUP
+          description:
+            en_us: "Memory to allocate on container startup"
+        - container: MONGO_TLS
+          description:
+            en_us: "MongoDB TLS setting"
+        - container: MONGO_AUTHSOURCE
+          description:
+            en_us: "MongoDB authentication source"
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+      ports:
+        - container: "8443"
+          description:
+            en_us: "Container Port: 8443"
+        - container: "3478/udp"
+          description:
+            en_us: "Container Port: 3478/udp"
+        - container: "10001/udp"
+          description:
+            en_us: "Container Port: 10001/udp"
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+        - container: "1900/udp"
+          description:
+            en_us: "Container Port: 1900/udp"
+        - container: "8843"
+          description:
+            en_us: "Container Port: 8843"
+        - container: "8880"
+          description:
+            en_us: "Container Port: 8880"
+        - container: "6789"
+          description:
+            en_us: "Container Port: 6789"
+        - container: "5514/udp"
+          description:
+            en_us: "Container Port: 5514/udp"
+
+# Networks used by the application
+networks:
+  # Define the network for AdGuard Home
+  unifi-nework-application-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.
+  tagline:
+    # Short description or tagline in English
+    en_us: The Unifi-network-application
+  # Developer's name or identifier
+  developer: "Ubiquiti"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/unifi.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Unifi Network Application
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8443"
+  # Application scheme
+  scheme: https # Scheme for the service
