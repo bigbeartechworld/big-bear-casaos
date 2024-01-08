@@ -6,7 +6,7 @@ services:
   # Main Immich Server service configuration
   immich-server:
     container_name: immich-server # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v1.91.4 # Image to be used
+    image: ghcr.io/immich-app/immich-server:v1.92.1 # Image to be used
     command: ["start.sh", "immich"] # Command to be executed upon container start
     ports: # Mapping ports from the host OS to the container
       - 2283:3001
@@ -60,7 +60,7 @@ services:
   # Configuration for the Immich Microservices
   immich-microservices:
     container_name: immich-microservices # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v1.91.4 # Image to be used
+    image: ghcr.io/immich-app/immich-server:v1.92.1 # Image to be used
     # extends:  # Feature to use configuration from another service (currently commented out)
     #   file: hwaccel.yml
     #   service: hwaccel
@@ -107,7 +107,7 @@ services:
   # Configuration for Immich Machine Learning service
   immich-machine-learning:
     container_name: immich-machine-learning # Name of the running container
-    image: ghcr.io/immich-app/immich-machine-learning:v1.91.4 # Image to be used
+    image: ghcr.io/immich-app/immich-machine-learning:v1.92.1 # Image to be used
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/model-cache:/cache
     environment: # Setting environment variables
