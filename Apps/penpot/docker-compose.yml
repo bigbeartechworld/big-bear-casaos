@@ -1,0 +1,175 @@
+# Configuration for penpot setup
+
+# Name of the big-bear-penpot application
+name: big-bear-penpot
+
+# Service definitions for the big-bear-penpot application
+services:
+  # Service name: app
+  # The `app` service definition
+  penpot-frontend:
+    # Name of the container
+    container_name: big-bear-penpot-frontend
+
+    # Image to be used for the container
+    image: penpotapp/frontend:1.19.3
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/assets directory to /opt/data/assets inside the container
+      - /DATA/AppData/$AppID/assets:/opt/data/assets
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 9001 of the host to port 80 of the container
+      - "9001:80"
+
+    # Other services that this service depends on
+    depends_on:
+      - penpot-backend
+      - penpot-exporter
+
+    # Networks to be attached to the container
+    networks:
+      - big-bear-penpot-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /opt/data/assets
+          description:
+            en_us: "Local Assets directory"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+  # Definition for penpot-backend service
+  penpot-backend:
+    # Docker image for the service
+    image: penpotapp/backend:1.19.3
+
+    # Name of the container
+    container_name: big-bear-penpot-backend
+
+    # Restart policy for the container
+    restart: unless-stopped
+
+    # Volumes to mount to the container
+    volumes:
+      - /DATA/AppData/$AppID/assets:/opt/data/assets
+
+    # Dependencies for the service
+    depends_on:
+      - penpot-postgres
+      - penpot-redis
+
+    # Networks to connect the container to
+    networks:
+      - big-bear-penpot-network
+
+    # Environment variables for the service
+    environment:
+      - PENPOT_FLAGS=enable-registration enable-login-with-password disable-email-verification disable-secure-session-cookies
+      - PENPOT_SECRET_KEY=big-bear-penpot-secret-key
+      - PENPOT_PUBLIC_URI=http://big-bear-penpot-frontend:8080
+      - PENPOT_DATABASE_URI=postgresql://big-bear-penpot-postgres/penpot
+      - PENPOT_DATABASE_USERNAME=bigbear
+      - PENPOT_DATABASE_PASSWORD=casaos
+      - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
+      - PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
+      - PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
+      - PENPOT_TELEMETRY_ENABLED=false
+
+  # Define the penpot-exporter service
+  penpot-exporter:
+    # Use the penpotapp/exporter:1.19.3 Docker image
+    image: penpotapp/exporter:1.19.3
+    # Set the container name to big-bear-penpot-exporter
+    container_name: big-bear-penpot-exporter
+    # Automatically restart the container unless stopped
+    restart: unless-stopped
+    # Connect the container to the big-bear-penpot-network network
+    networks:
+      - big-bear-penpot-network
+    # Set environment variables for the container
+    environment:
+      # Set the PENPOT_PUBLIC_URI environment variable
+      - PENPOT_PUBLIC_URI=http://big-bear-penpot-frontend:8080
+      # Set the PENPOT_REDIS_URI environment variable
+      - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
+
+  # Define the PostgreSQL service for Penpot
+  penpot-postgres:
+    image: postgres:14
+    restart: unless-stopped
+    container_name: big-bear-penpot-postgres
+    stop_signal: SIGINT
+    volumes:
+      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+    networks:
+      - big-bear-penpot-network
+    environment:
+      # Initialize the database with data checksums
+      - POSTGRES_INITDB_ARGS=--data-checksums
+      - POSTGRES_DB=penpot # Set the name of the database
+      - POSTGRES_USER=bigbear # Set the username for the database
+      - POSTGRES_PASSWORD=casaos # Set the password for the database
+
+  # Define the Redis service for Penpot
+  penpot-redis:
+    image: redis:7
+    container_name: big-bear-penpot-redis
+    restart: unless-stopped
+    networks:
+      - big-bear-penpot-network
+
+  # Define the penpot-mailcatch service
+  penpot-mailcatch:
+    image: sj26/mailcatcher:latest
+    restart: always
+    expose:
+      - "1025" # Expose port 1025 for SMTP
+    ports:
+      - "1080:1080" # Map port 1080 for the web interface
+    networks:
+      - big-bear-penpot-network # Connect to the big-bear-penpot-network
+
+# Define the networks section
+networks:
+  # Define the penpot-network
+  big-bear-penpot-network:
+    # Set the driver to bridge
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: penpot-frontend
+  description:
+    # Description in English
+    en_us: Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.
+  tagline:
+    # Short description or tagline in English
+    en_us: Bring Design Freedom to your Product Team
+  # Developer's name or identifier
+  developer: "penpotapp"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: ""
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Penpot
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "9001"
