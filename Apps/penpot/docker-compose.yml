@@ -83,6 +83,44 @@ services:
       - PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
       - PENPOT_TELEMETRY_ENABLED=false
 
+    # Set casaos specific configuration
+    x-casaos:
+      envs:
+        - container: PENPOT_FLAGS
+          description:
+            en_us: "Flags"
+        - container: PENPOT_SECRET_KEY
+          description:
+            en_us: "Secret Key"
+        - container: PENPOT_PUBLIC_URI
+          description:
+            en_us: "Public URI"
+        - container: PENPOT_DATABASE_URI
+          description:
+            en_us: "Database URI"
+        - container: PENPOT_DATABASE_USERNAME
+          description:
+            en_us: "Database Username"
+        - container: PENPOT_DATABASE_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: PENPOT_REDIS_URI
+          description:
+            en_us: "Redis URI"
+        - container: PENPOT_ASSETS_STORAGE_BACKEND
+          description:
+            en_us: "Assets Storage Backend"
+        - container: PENPOT_STORAGE_ASSETS_FS_DIRECTORY
+          description:
+            en_us: "Assets Storage Directory"
+        - container: PENPOT_TELEMETRY_ENABLED
+          description:
+            en_us: "Telemetry"
+      volumes:
+        - container: /opt/data/assets
+          description:
+            en_us: "Local Assets directory"
+
   # Define the penpot-exporter service
   penpot-exporter:
     # Use the penpotapp/exporter:1.19.3 Docker image
@@ -101,6 +139,15 @@ services:
       # Set the PENPOT_REDIS_URI environment variable
       - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
 
+    x-casaos:
+      envs:
+        - container: PENPOT_PUBLIC_URI
+          description:
+            en_us: "Public URI"
+        - container: PENPOT_REDIS_URI
+          description:
+            en_us: "Redis URI"
+
   # Define the PostgreSQL service for Penpot
   penpot-postgres:
     image: postgres:14
@@ -117,6 +164,21 @@ services:
       - POSTGRES_DB=penpot # Set the name of the database
       - POSTGRES_USER=bigbear # Set the username for the database
       - POSTGRES_PASSWORD=casaos # Set the password for the database
+
+    x-casaos:
+      envs:
+        - container: POSTGRES_INITDB_ARGS
+          description:
+            en_us: "Initialize Database"
+        - container: POSTGRES_DB
+          description:
+            en_us: "Database Name"
+        - container: POSTGRES_USER
+          description:
+            en_us: "Database Username"
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Database Password"
 
   # Define the Redis service for Penpot
   penpot-redis:
