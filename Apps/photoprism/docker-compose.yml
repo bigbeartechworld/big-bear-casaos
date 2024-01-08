@@ -12,7 +12,7 @@ services:
     container_name: big-bear-photoprism
 
     # Image to be used for the container
-    image: photoprism/photoprism:231021
+    image: photoprism/photoprism:231128
 
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: casaos
