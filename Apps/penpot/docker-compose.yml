@@ -163,7 +163,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: ""
+  icon: "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/penpot/logo.jpg?raw=true"
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
