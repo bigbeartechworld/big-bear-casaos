@@ -6,7 +6,7 @@ name: big-bear-penpot
 # Service definitions for the big-bear-penpot application
 services:
   # Service name: app
-  # The `app` service definition
+  # The `penpot-frontend` service definition
   penpot-frontend:
     # Name of the container
     container_name: big-bear-penpot-frontend
@@ -155,7 +155,7 @@ services:
     container_name: big-bear-penpot-postgres
     stop_signal: SIGINT
     volumes:
-      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
     networks:
       - big-bear-penpot-network
     environment:
