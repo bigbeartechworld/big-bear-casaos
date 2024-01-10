@@ -39,7 +39,7 @@ x-casaos:
     en_us: CodeX Docs # Short description or tagline in English
   developer: "" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://camo.githubusercontent.com/e4be3f6ff9cc8e5df4e3b8c0cceb77534f10fcbc254e5b15d86d3d36d1c468b9/68747470733a2f2f636f6465782e736f2f7075626c69632f6170702f696d672f636f6465782d6c6f676f2e737667 # Icon for the application
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/codex-docs/logo.jpg?raw=true # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
     en_us: CodeX Docs # Title in English
