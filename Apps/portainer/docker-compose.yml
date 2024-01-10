@@ -1,0 +1,60 @@
+# Configuration for big-bear-portainer setup
+name: big-bear-portainer
+
+# Service definitions for the big-bear-portainer application
+services:
+  # Main Portainer service configuration
+  app:
+    container_name: big-bear-portainer # Name of the running container
+    image: portainer/portainer-ce:2.19.4-alpine # Image to be used
+    network_mode: bridge # Network mode to be used
+    ports: # Port mapping between host and container
+      - 8000:8000
+      - 9000:9000
+      - 9443:9443
+    volumes:
+      - /DATA/AppData/$AppID/data:/data # Bind mount for Docker volumes
+      - /var/run/docker.sock:/var/run/docker.sock # Bind mount for Docker socket
+    x-casaos:
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container: 8000" # Description for the port
+        - container: "9000"
+          description:
+            en_us: "Container: 9000" # Description for the port
+        - container: "9443"
+          description:
+            en_us: "Container: 9443" # Description for the port
+      volumes:
+        - container: /data
+          description:
+            en_us: Access to Portainer data # Description for Portainer data volume
+        - container: /var/run/docker.sock
+          description:
+            en_us: Access to Docker socket # Description for Docker socket volume
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: app # Main service of the application
+  description: # Description in different languages
+    en_us: Irrespective of your industry, orchestration platform, or computing device, Portainer is the most versatile container management software that simplifies your secure adoption of containers with remarkable speed.
+  tagline: # Short description or tagline in different languages
+    en_us: Portainer
+  developer: "portainer" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/portainer.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Portainer
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping for the application
+  port_map: 9443
+  # URL scheme for the application
+  scheme: https
