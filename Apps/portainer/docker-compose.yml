@@ -55,6 +55,6 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Port mapping for the application
-  port_map: 9443
+  port_map: "9443"
   # URL scheme for the application
   scheme: https
