@@ -8,7 +8,7 @@ services:
   # Service name: app
   # This section configures the NocoDB application itself
   app:
-    image: nocodb/nocodb:0.203.2 # Specifies the Docker image to use
+    image: nocodb/nocodb:0.204.0 # Specifies the Docker image to use
     container_name: nocodb # Name of the container
     restart: unless-stopped # Container restart policy
     environment: # Environment variables for NocoDB
