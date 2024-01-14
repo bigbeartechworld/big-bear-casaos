@@ -1,0 +1,173 @@
+# Configuration for reactive resume setup
+
+# Name of the big-bear-reactive-resume application
+name: big-bear-reactive-resume
+
+# Service definitions for the big-bear-reactive-resume application
+services:
+  # Main application
+  app:
+    container_name: big-bear-reactive-resume
+    image: amruthpillai/reactive-resume:v4.0.3
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+      - minio
+      - redis
+      - chrome
+    networks:
+      - reactive-resume-network
+    environment:
+      # -- Environment Variables --
+      PORT: "3000"
+      NODE_ENV: "production"
+
+      # -- URLs --
+      PUBLIC_URL: "http://[CASAOS_IP]:3000"
+      STORAGE_URL: "http://minio:9000"
+
+      # -- Printer (Chrome) --
+      CHROME_TOKEN: "chrome_token"
+      CHROME_URL: "ws://chrome:3000"
+
+      # -- Database (Postgres) --
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/postgres"
+
+      # -- Auth --
+      ACCESS_TOKEN_SECRET: "access_token_secret"
+      REFRESH_TOKEN_SECRET: "refresh_token_secret"
+
+      # -- Emails --
+      MAIL_FROM: "noreply@localhost"
+      # SMTP_URL: smtp://user:pass@smtp:587 # Optional
+
+      # -- Storage (Minio) --
+      STORAGE_ENDPOINT: "minio"
+      STORAGE_PORT: "9000"
+      STORAGE_REGION: "us-east-1" # Optional
+      STORAGE_BUCKET: "default"
+      STORAGE_ACCESS_KEY: "minioadmin"
+      STORAGE_SECRET_KEY: "minioadmin"
+      STORAGE_USE_SSL: "false"
+
+      # -- Cache (Redis) --
+      REDIS_URL: "redis://default:password@redis:6379"
+
+      # -- Sentry --
+      # VITE_SENTRY_DSN: https://id.sentry.io # Optional
+
+      # -- Crowdin (Optional) --
+      # CROWDIN_PROJECT_ID:
+      # CROWDIN_PERSONAL_TOKEN:
+
+      # -- Email (Optional) --
+      # DISABLE_EMAIL_AUTH: true
+      # VITE_DISABLE_SIGNUPS: true
+
+      # -- GitHub (Optional) --
+      # GITHUB_CLIENT_ID: "github_client_id"
+      # GITHUB_CLIENT_SECRET: "github_client_secret"
+      # GITHUB_CALLBACK_URL: "http://[CASAOS_IP]:3000/api/auth/github/callback"
+
+      # -- Google (Optional) --
+      # GOOGLE_CLIENT_ID: "google_client_id"
+      # GOOGLE_CLIENT_SECRET: "google_client_secret"
+      # GOOGLE_CALLBACK_URL: "http://[CASAOS_IP]:3000/api/auth/google/callback"
+
+  # Database (Postgres)
+  postgres:
+    container_name: big-bear-reactive-resume-postgres
+    image: postgres:15-alpine
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - reactive-resume-network
+
+  # Storage (for image uploads)
+  minio:
+    container_name: big-bear-reactive-resume-minio
+    image: minio/minio
+    command: ["server", "/data"]
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+    volumes:
+      - /DATA/AppData/$AppID/minio_data:/data
+    environment:
+      MINIO_ROOT_USER: "minioadmin"
+      MINIO_ROOT_PASSWORD: "minioadmin"
+    networks:
+      - reactive-resume-network
+
+  # Chrome Browser (for printing and previews)
+  chrome:
+    container_name: big-bear-reactive-resume-chrome
+    image: browserless/chrome:1.61.0-puppeteer-21.4.1
+    restart: unless-stopped
+    environment:
+      TOKEN: "chrome_token"
+      EXIT_ON_HEALTH_FAILURE: "true"
+      PRE_REQUEST_HEALTH_CHECK: "true"
+    networks:
+      - reactive-resume-network
+
+  # Redis (for cache & server session management)
+  redis:
+    container_name: big-bear-reactive-resume-redis
+    image: redis:alpine
+    restart: unless-stopped
+    command: ["redis-server", "--requirepass", "password"]
+    networks:
+      - reactive-resume-network
+
+# Networks used by the application
+networks:
+  # Define the network for AdGuard Home
+  reactive-resume-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
+  tagline:
+    # Short description or tagline in English
+    en_us: "A free and open-source resume builder"
+  # Developer's name or identifier
+  developer: "AmruthPillai"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: "https://camo.githubusercontent.com/8d3c0f58d0ee6e8b4a2b8cc8b17c873a298d8368e3be5b2cdadc874cdb8b7b41/68747470733a2f2f692e696d6775722e636f6d2f464663346e795a2e6a7067"
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: "Reactive Resume"
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
+  tips:
+    before_install:
+      en_us: |
+        Change [CASAOS_IP] to your CasaOS IP address. In the environment variables.
