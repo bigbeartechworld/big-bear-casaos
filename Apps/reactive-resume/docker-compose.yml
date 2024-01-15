@@ -26,7 +26,7 @@ services:
 
       # -- URLs --
       PUBLIC_URL: "http://[CASAOS_IP]:3000"
-      STORAGE_URL: "http://[CASAOS_IP]:9000"
+      STORAGE_URL: "http://[CASAOS_IP]:9000/default"
 
       # -- Printer (Chrome) --
       CHROME_TOKEN: "chrome_token"
