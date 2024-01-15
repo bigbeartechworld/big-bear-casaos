@@ -44,7 +44,7 @@ services:
       # SMTP_URL: smtp://user:pass@smtp:587 # Optional
 
       # -- Storage (Minio) --
-      STORAGE_ENDPOINT: "minio"
+      STORAGE_ENDPOINT: "[CASAOS_IP]"
       STORAGE_PORT: "9000"
       STORAGE_REGION: "us-east-1" # Optional
       STORAGE_BUCKET: "default"
