@@ -1,0 +1,83 @@
+# Configuration for docker-cron-restart-notifier setup
+
+# Name of the big-bear-docker-cron-restart-notifier application
+name: big-bear-docker-cron-restart-notifier
+
+# Service definitions for the big-bear-docker-cron-restart-notifier application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-docker-cron-restart-notifier
+
+    # Image to be used for the container
+    image: deduard/tools:restart-notifier-latest
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      DISCORD_WEBHOOK_URL: ""
+      RESTART_CONTAINERS: "app_1,app_2"
+      RUN_ON_STARTUP: "false"
+      CRON_SCHEDULE: "0 4 * * FRI" # Every Friday at 4:00 AM
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting docker.sock to allow docker management via Homarr
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DISCORD_WEBHOOK_URL
+          description:
+            en_us: "Discord Webhook URL"
+        - container: RESTART_CONTAINERS
+          description:
+            en_us: "Restart Containers"
+        - container: RUN_ON_STARTUP
+          description:
+            en_us: "Run on Startup"
+        - container: CRON_SCHEDULE
+          description:
+            en_us: "Cron Schedule"
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: This Docker image is designed to automatically restart specified Docker containers and send notifications to a Discord channel upon each restart. It's particularly useful for maintaining long-running services, ensuring they're periodically refreshed and stakeholders are informed of these actions.
+  tagline:
+    # Short description or tagline in English
+    en_us: Automatically restart specified Docker containers and send notifications to a Discord channel
+  # Developer's name or identifier
+  developer: "activecs"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/assets/1289128/51c96fa8-b7fa-440e-9105-b145e2aa0171
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Docker Cron Restart Notifier
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: ""
+  # This is shown before installing
+  tips:
+    before_install:
+      en_us: |
+        You must add a Discord webhook URL to the `DISCORD_WEBHOOK_URL` environment variable.
