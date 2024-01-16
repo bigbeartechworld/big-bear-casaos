@@ -1,0 +1,72 @@
+# Configuration for trilium setup
+
+# Name of the big-bear-trilium application
+name: big-bear-trilium
+
+# Service definitions for the big-bear-trilium application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-trilium
+
+    # Image to be used for the container
+    image: zadam/trilium:63.1-latest
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - TRILIUM_DATA_DIR=/home/node/trilium-data
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/data directory to /home/node/trilium-data inside the container
+      - /DATA/AppData/$AppID/data:/home/node/trilium-data
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /home/node/trilium-data
+          description:
+            en_us: "Container Path: /home/node/trilium-data"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Exposed port for the server"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Build your personal knowledge base with Trilium Notes
+  tagline:
+    # Short description or tagline in English
+    en_us: Build your personal knowledge base with Trilium Notes
+  # Developer's name or identifier
+  developer: "zadam"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/trilium.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Trilium
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
