@@ -5,7 +5,7 @@ name: big-bear-python-matter-server
 services:
   app:
     # Docker image used for the service
-    image: ghcr.io/home-assistant-libs/python-matter-server:5.1.4
+    image: ghcr.io/home-assistant-libs/python-matter-server:5.2.1
 
     # Container name for the service
     container_name: matter-server
