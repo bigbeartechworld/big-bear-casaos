@@ -1,0 +1,63 @@
+# Name of the configuration: big-bear-flcontainers-guacamole
+name: big-bear-flcontainers-guacamole
+
+# Define the services required for the application
+services:
+  # app service configuration
+  app:
+    # Docker image to use for this service
+    image: flcontainers/guacamole:1.5.4
+    # Container name
+    container_name: big-bear-flcontainers-guacamole
+    # Restart policy for the container
+    restart: always
+    # Environment variables for the app service
+    environment:
+      tz: "UTC"
+      EXTENSIONS: "auth-totp,auth-ldap"
+    # Map port 8080 on the host to port 8080 on the container
+    ports:
+      - 8080:8080
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: User Timezone
+        - container: EXTENSIONS
+          description:
+            en_us: Extensions to be enabled
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  # Application description in English
+  description:
+    en_us: A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.
+  # Short description or tagline in English
+  tagline:
+    en_us: Fully packaged Multi-Arch Guacamole.
+  # Developer's name or identifier (currently empty)
+  developer: ""
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: FlContainers Guacamole
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
