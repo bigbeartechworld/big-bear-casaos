@@ -20,7 +20,6 @@ services:
     # Mount the /DATA/AppData/$AppID/html directory on the host to /var/www/html in the container
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
-      - /DATA/AppData/$AppID/apache2:/etc/apache2
     # Set environment variables
     environment:
       - POSTGRES_HOST=db-nextcloud
