@@ -286,3 +286,9 @@ x-casaos:
   port_map: "8443"
   # Web UI scheme
   scheme: https
+  # Tips
+  # Tips in English
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-financial-freedom-to-bigbearcasaos/542
