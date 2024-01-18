@@ -1,0 +1,288 @@
+# Configuration for financial-freedom setup
+
+# Name of the big-bear-financial-freedom application
+name: big-bear-financial-freedom
+
+# Service definitions for the big-bear-financial-freedom application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-financial-freedom
+
+    # Image to be used for the container
+    image: serversideup/financial-freedom:v0.2.0-alpha1
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # financial-freedom-network networks
+    networks:
+      - financial-freedom-network
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/logs:/var/www/html/storage/logs
+      - /DATA/AppData/$AppID/sessions:/var/www/html/storage/framework/sessions
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - 8080:80
+      # Mapping port 8443 of the host to port 443 of the container
+      - 8443:443
+
+    environment:
+      # App Settings
+      - APP_NAME="Financial Freedom"
+      - APP_ENV=production # Change to "local" for development
+      - APP_DEBUG=false # Change to "true" for development
+      - APP_URL=http://[CASAOS_IP]:8080
+      - APP_KEY=base64:1234567890abcdefghijklmnopqrstuvwxyz # Run `php artisan key:generate`
+
+      # Database Settings
+      - DB_ROOT_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+      - DB_HOST=mariadb # You generally don't need to change this
+      - DB_DATABASE=financialfreedom
+      - DB_USERNAME=bigbear
+      - DB_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+
+      # Mail Settings
+      - MAIL_MAILER=smtp
+      - MAIL_HOST=mailpit
+      - MAIL_PORT=1025
+      - MAIL_USERNAME=null
+      - MAIL_PASSWORD=null
+      - MAIL_ENCRYPTION=null
+      - MAIL_FROM_ADDRESS=noreply@financialfreedom.dev.test
+      - MAIL_FROM_NAME="${APP_NAME}"
+
+      # serversideup/php settings
+      - SSL_MODE=mixed
+      - AUTORUN_ENABLED=true
+      - AUTORUN_LARAVEL_EVENT_CACHE=false
+      - AUTORUN_LARAVEL_ROUTE_CACHE=false
+      - AUTORUN_LARAVEL_STORAGE_LINK=false
+      - AUTORUN_LARAVEL_VIEW_CACHE=false
+
+      # Financial Freedom Settings
+      - FINANCIAL_FREEDOM_ALLOW_REGISTRATION=false
+
+      ############################################
+      # Development Settings (don't change these)
+      ############################################
+      - LOG_CHANNEL=stack
+
+      - BROADCAST_DRIVER=log
+      - CACHE_DRIVER=file
+      - QUEUE_CONNECTION=sync
+      - SESSION_LIFETIME=120
+
+      - SESSION_DRIVER=cookie
+
+      - MYSQL_ROOT_PASSWORD="cd876479-f30b-43f2-8714-e52e040c657a"
+      - MYSQL_DATABASE="financialfreedom"
+      - MYSQL_USER="bigbear"
+      - MYSQL_PASSWORD="cd876479-f30b-43f2-8714-e52e040c657a"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: APP_NAME
+          description:
+            en_us: App Name
+        - container: APP_ENV
+          description:
+            en_us: App Environment
+        - container: APP_DEBUG
+          description:
+            en_us: App Debug
+        - container: APP_URL
+          description:
+            en_us: App URL
+        - container: APP_KEY
+          description:
+            en_us: App Key
+        - container: DB_ROOT_PASSWORD
+          description:
+            en_us: Database Root Password
+        - container: DB_DATABASE
+          description:
+            en_us: Database Name
+        - container: DB_USERNAME
+          description:
+            en_us: Database Username
+        - container: DB_PASSWORD
+          description:
+            en_us: Database Password
+        - container: MAIL_MAILER
+          description:
+            en_us: Mail Mailer
+        - container: MAIL_HOST
+          description:
+            en_us: Mail Host
+        - container: MAIL_PORT
+          description:
+            en_us: Mail Port
+        - container: MAIL_USERNAME
+          description:
+            en_us: Mail Username
+        - container: MAIL_PASSWORD
+          description:
+            en_us: Mail Password
+        - container: MAIL_ENCRYPTION
+          description:
+            en_us: Mail Encryption
+        - container: MAIL_FROM_ADDRESS
+          description:
+            en_us: Mail From Address
+        - container: MAIL_FROM_NAME
+          description:
+            en_us: Mail From Name
+        - container: SSL_MODE
+          description:
+            en_us: SSL Mode
+        - container: AUTORUN_ENABLED
+          description:
+            en_us: Autorun Enabled
+        - container: FINANCIAL_FREEDOM_ALLOW_REGISTRATION
+          description:
+            en_us: Financial Freedom Allow Registration
+        - container: LOG_CHANNEL
+          description:
+            en_us: Log Channel
+        - container: BROADCAST_DRIVER
+          description:
+            en_us: Broadcast Driver
+        - container: CACHE_DRIVER
+          description:
+            en_us: Cache Driver
+        - container: QUEUE_CONNECTION
+          description:
+            en_us: Queue Connection
+        - container: SESSION_LIFETIME
+          description:
+            en_us: Session Lifetime
+        - container: SESSION_DRIVER
+          description:
+            en_us: Session Driver
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: MySQL Root Password
+        - container: MYSQL_DATABASE
+          description:
+            en_us: MySQL Database
+        - container: MYSQL_USER
+          description:
+            en_us: MySQL User
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: MySQL Password
+
+      volumes:
+        - container:
+          description:
+            en_us: "Container Path: /app/data/configs"
+        - container: /app/public/icons
+          description:
+            en_us: "Container Path: /app/public/icons"
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+  mariadb:
+    image: mariadb:10.11
+    volumes:
+      - /DATA/AppData/$AppID/mariadb:/var/lib/mysql
+    # financial-freedom-network is defined in networks section
+    networks:
+      - financial-freedom-network
+    # The 'environment' key is used to set environment variables inside the container.
+    environment:
+      # PUID & PGID are used to set user/group IDs.
+      - PUID=1000
+      - PGID=1000
+      # TZ sets the timezone for the container.
+      - TZ=Etc/UTC
+      # MYSQL_ROOT_PASSWORD sets the root password for MariaDB.
+      - MYSQL_ROOT_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+      # MYSQL_DATABASE sets the name of a database to be created on image startup (optional).
+      - MYSQL_DATABASE=financialfreedom
+      # MYSQL_USER & MYSQL_PASSWORD are used to create a new user (optional).
+      - MYSQL_USER=bigbear
+      - MYSQL_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+      # REMOTE_SQL allows linking to a remote SQL server (optional).
+      - REMOTE_SQL=
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PUID
+          description:
+            en_us: User ID
+        - container: PGID
+          description:
+            en_us: Group ID
+        - container: TZ
+          description:
+            en_us: Time Zone
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: MySQL Root Password
+        - container: MYSQL_DATABASE
+          description:
+            en_us: MySQL Database
+        - container: MYSQL_USER
+          description:
+            en_us: MySQL User
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: MySQL Password
+        - container: REMOTE_SQL
+          description:
+            en_us: Remote SQL
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+
+# Networks used by the application
+networks:
+  # Define the network for AdGuard Home
+  financial-freedom-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Keep investors and their buyers out of your financial data. Own 100% of your data and start building financial wealth.
+  tagline:
+    # Short description or tagline in English
+    en_us: Financial Freedom
+  # Developer's name or identifier
+  developer: "serversideup"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/financial-freedom/logo.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Financial Freedom
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8443"
+  # Web UI scheme
+  scheme: https
