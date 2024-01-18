@@ -6,7 +6,7 @@ name: big-bear-omada-controller # Name of the configuration.
 services:
   # The name of the service being configured.
   app:
-    container_name: omada-controller # The name of the container.
+    container_name: big-bear-omada-controller # The name of the container.
 
     # The Docker image used for the service.
     image: mbentley/omada-controller:5.13
@@ -63,10 +63,10 @@ services:
     # Define volume mappings between the host and the container.
     volumes:
       # Mapping for data storage.
-      - /DATA/AppData/tp-link-omada-controller/data:/opt/tplink/EAPController/data
+      - /DATA/AppData/$AppID/data:/opt/tplink/EAPController/data
 
       # Mapping for log storage.
-      - /DATA/AppData/tp-link-omada-controller/logs:/opt/tplink/EAPController/logs
+      - /DATA/AppData/$AppID/logs:/opt/tplink/EAPController/logs
 
     x-casaos: # CasaOS specific configuration
       envs:
