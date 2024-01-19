@@ -29,6 +29,7 @@ x-casaos:
   architectures:
     - amd64
     - arm
+    - arm64
   # Main service of the application
   main: app
   # Detailed description of the application
