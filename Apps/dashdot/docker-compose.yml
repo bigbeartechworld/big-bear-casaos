@@ -7,7 +7,7 @@ name: big-bear-dashdot
 services:
   # Service definition for the main application
   app:
-    image: mauricenino/dashdot:5.5.2 # Image to be used for this service
+    image: mauricenino/dashdot:5.8.2 # Image to be used for this service
     ports:
       - "3001:3001" # Port 3001 on the host is mapped to port 3001 in the container
     volumes:
