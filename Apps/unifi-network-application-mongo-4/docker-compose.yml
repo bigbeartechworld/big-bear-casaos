@@ -11,7 +11,7 @@ services:
     container_name: big-bear-unifi-db
     volumes:
       - /DATA/AppData/$AppID/db/data:/data/db # MongoDB data persistence
-      - /DATA/AppData/$AppID/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - /DATA/AppData/big-bear-unifi-network-application/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     ports:
       - 27017:27017 # MongoDB default port
     networks: # Networks to join
