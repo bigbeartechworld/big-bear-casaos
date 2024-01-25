@@ -12,7 +12,7 @@ services:
     container_name: big-bear-mealie
 
     # Image to be used for the container
-    image: hkotel/mealie:v0.5.6
+    image: hkotel/mealie:v1.0.0
 
     # Container restart policy
     restart: unless-stopped
@@ -24,8 +24,8 @@ services:
 
     # Ports mapping between host and container
     ports:
-      # Mapping port 7575 of the host to port 80 of the container
-      - "7575:80"
+      # Mapping port 7575 of the host to port 9000 of the container
+      - "9925:9000"
 
     x-casaos: # CasaOS specific configuration
       volumes:
@@ -33,9 +33,9 @@ services:
           description:
             en_us: "Container Path: /app/data"
       ports:
-        - container: "7575"
+        - container: "9000"
           description:
-            en_us: "Container Port: 7575"
+            en_us: "Container Port: 9000"
 
 # CasaOS specific configuration
 x-casaos:
@@ -65,4 +65,9 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Port mapping information
-  port_map: "7575"
+  port_map: "9925"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Read this: https://community.bigbeartechworld.com/t/added-mealie-to-bigbearcasaos/587
