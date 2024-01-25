@@ -1,0 +1,68 @@
+# Configuration for mealie setup
+
+# Name of the big-bear-mealie application
+name: big-bear-mealie
+
+# Service definitions for the big-bear-mealie application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-mealie
+
+    # Image to be used for the container
+    image: hkotel/mealie:v0.5.6
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /app/data directory to /DATA/AppData/$AppID/data inside the container
+      - /DATA/AppData/$AppID/data:/app/data
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 7575 of the host to port 80 of the container
+      - "7575:80"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: app
+  description:
+    # Description in English
+    en_us: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family. Easily add recipes into your database by providing the url and mealie will automatically import the relevant data or add a family recipe with the UI editor
+  tagline:
+    # Short description or tagline in English
+    en_us: Mealie
+  # Developer's name or identifier
+  developer: "mealie-recipes"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/mealie.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Mealie
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "7575"
