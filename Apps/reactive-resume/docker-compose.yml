@@ -114,7 +114,7 @@ services:
   # Chrome Browser (for printing and previews)
   chrome:
     container_name: big-bear-reactive-resume-chrome
-    image: browserless/chrome:1.61.0-puppeteer-21.4.1
+    image: browserless/chrome:1.61.1-puppeteer-21.4.1
     restart: unless-stopped
     environment:
       TOKEN: "chrome_token"
