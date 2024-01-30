@@ -4,7 +4,7 @@ name: big-bear-onlyoffice
 # Service definitions for the big-bear-onlyoffice application
 services:
   app:
-    image: onlyoffice/documentserver:7.5.1
+    image: onlyoffice/documentserver:8.0.0
     container_name: documentserver
     ports:
       - "7400:80"
