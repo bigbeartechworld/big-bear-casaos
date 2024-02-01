@@ -62,10 +62,26 @@ services:
       - POSTGRES_DB=big-bear-linkwarden
     # Volumes to be mounted
     volumes:
-      - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+      - /DATA/AppData/$AppID/data/postgres:/var/lib/postgresql/data
     # Networks to be attached
     networks:
       - linkwarden_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: POSTGRES_DB
+          description:
+            en_us: Database type
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
 
 # Networks to be created
 networks:
