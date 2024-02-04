@@ -1,0 +1,210 @@
+# Configuration for peppermint setup
+
+# Name of the big-bear-peppermint application
+name: big-bear-peppermint
+
+# Service definitions for the big-bear-peppermint application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-peppermint
+
+    # This section specifies that the `app` service depends on another service named `db`.
+    depends_on:
+      # The service `app` depends on `db`.
+      db:
+        # Specifies the condition for the dependency. Here, it's set to `service_started`, which means
+        # the `app` service will wait for the `db` service to be in a "started" state before starting itself.
+        condition: service_started
+        # Specifies that the `app` service requires the `db` service to be available.
+        required: true
+
+    # Image to be used for the container
+    image: pepperlabs/peppermint:latest
+
+    # Container restart policy
+    restart: always
+
+    # Privilege of the container
+    privileged: false
+
+    # Uses default network mode
+    networks:
+      - default
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 3000 of the host to port 3000 of the container
+      - 3000:3000/tcp
+
+      # Mapping port 5003 of the host to port 5003 of the container
+      - 5003:5003/tcp
+
+    # Environment variables
+    environment:
+      # Sets the API URL environment variable to 'http://local.host:5003'
+      - API_URL=http://local.host:5003
+
+      # Specifies the DB_HOST environment variable, likely used to indicate the host for the database
+      - DB_HOST=db
+
+      # Sets the DB_PASSWORD environment variable to 'casaos', presumably the password for the database
+      - DB_PASSWORD=casaos
+
+      # Specifies the DB_USERNAME environment variable, probably used as the username for the database
+      - DB_USERNAME=casaos
+      
+      # Sets the SECRET environment variable to 'peppermint4life', potentially used as a secret key or value
+      - SECRET=peppermint4life
+
+  # Service name: db
+  # The `db` service definition
+  db:
+    # Name of the container
+    container_name: db
+
+    # Image to be used for the container
+    image: postgres:15.5
+
+    # Container restart policy
+    restart: always
+
+    # Environment variables for a PostgreSQL service or container
+    environment:
+      # Sets the PGID (PostgreSQL Group ID) to '1000'. It might define the group ID for PostgreSQL processes
+      - PGID=1000
+
+      # Specifies the name of the PostgreSQL database as 'casaos'
+      - POSTGRES_DB=casaos
+
+      # Sets the password for the PostgreSQL database user 'casaos' to 'casaos'
+      - POSTGRES_PASSWORD=casaos
+
+      # Specifies the PostgreSQL database username as 'casaos'
+      - POSTGRES_USER=casaos
+
+      # Sets the PUID (PostgreSQL User ID) to '1000'. It might define the user ID for PostgreSQL processes
+      - PUID=1000
+
+      # Specifies the timezone for the PostgreSQL container or service as 'Etc/UTC'
+      - TZ=Etc/UTC
+    
+    ports:
+      # Mapping port 5432 of the host to port 5432 of the container
+      - 5432:5432/tcp
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local peppermint/postgres/data directory to /var/lib/postgresql/data inside the container
+      - /DATA/AppData/$AppID/postgres/data:/var/lib/postgresql/data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+
+        - container: PGID
+          description:
+            en_us: for GroupID
+
+        - container: TZ
+          description:
+            en_us: specify a timezone to use, see this list.
+
+        - container: POSTGRES_DB
+          description:
+            en_us: Specify the name of a database to be created on image startup.
+
+        - container: POSTGRES_USER
+          description:
+            en_us: Postgres server username
+
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Postgres server password
+
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: Directory where Postgres database data is stored
+    
+    # Uses default network mode
+    networks:
+      - default
+    
+    # Privilege of the container
+    privileged: false
+
+networks:
+  default:
+    name: peppermint_default
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    # - arm64
+  
+  # Main service of the application
+  main: app
+  
+  description:
+    # Description in English
+    en_us: Peppermint is a central hub for your help desk. A powerfully easy system
+      for tracking, prioritising, and solving customer support tickets.
+  
+  tagline:
+    # Short description or tagline in English
+    en_us: peppermint
+  
+  # Developer's name or identifier
+  developer: "Pepperlabs"
+  
+  # Author of this configuration
+  author: BigBearCommunity
+  
+  # Icon for the application
+  icon: https://raw.githubusercontent.com/Peppermint-Lab/peppermint/5fd53aae2525b6a316609d3149543a99b82ca49d/static/logo.svg
+
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+
+  store_app_id: peppermint
+
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: >
+        ### Additional Instructions:
+
+        After finished installing, open the `app settings` and update the `API_URL` to point it to your Home Server's IP Address.
+
+        e.g:
+
+        ```
+        http://192.168.31.31:5003
+
+        ```
+
+        ### Default credentials:
+
+        Username: `admin@admin.com`
+        Password: `1234`
+  
+  # Application Title
+  title:
+    custom: ""
+    # Title in English
+    en_us: Peppermint
+
+  # Application category
+  category: BigBearCasaOS
+  
+  # Port mapping information
+  port_map: "3000"
+  
+  # Application scheme
+  scheme: http
