@@ -75,7 +75,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | OctoPrint                           | octoprint/octoprint                              | 1.9.3                    |                                                                                                                     |
 | OnlyOffice                          | onlyoffice/documentserver                        | 7.5.1                    |                                                                                                                     |
 | Penpot                              | penpotapp/frontend                               | 1.19.3                   |                                                                                                                     |
-| Peppermint                         | peppermint/postgres                               | latest                   |                                                                                                                     |
+| Peppermint                          | peppermint/postgres                              | latest                   |                                                                                                                     |
 | Photoprism                          | photoprism/photoprism                            | 231128                   |                                                                                                                     |
 | PHPMyAdmin                          | phpmyadmin/phpmyadmin                            | 5.2.1-fpm-alpine         |                                                                                                                     |
 | Pihole                              | pihole/pihole                                    | 2024.01.0                | [YouTube Video](https://youtu.be/FcMF1sYacqk)                                                                       |                                                                                                |
@@ -102,6 +102,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Vikunja                             | vikunja/frontend                                 | 0.22.0                   | [YouTube Video](https://youtu.be/vZzic6DsC2w)                                                                       |
 | What's Up Docker                    | fmartinou/whats-up-docker                        | 6.3.0                    |                                                                                                                     |
 | WordPress                           | wordpress                                        | 6.4.3                    | [YouTube Video](https://youtu.be/j5M4qlRCbYs)                                                                       |                                                                                                |
+| Zipline                             | ghcr.io/diced/zipline                            | 3.7.8                    |                                                                                                                     |                                                                                                |
 
 ## UI How to
 
