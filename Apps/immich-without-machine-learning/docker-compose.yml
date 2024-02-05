@@ -1,0 +1,162 @@
+# Configuration for big-bear-immich-without-machine-learning setup
+name: big-bear-immich-without-machine-learning
+
+# Service definitions for the big-bear-immich-without-machine-learning application
+services:
+  # Main Immich Server service configuration
+  immich-server:
+    container_name: immich-server # Name of the running container
+    image: ghcr.io/immich-app/immich-server:v1.94.1 # Image to be used
+    command: ["start.sh", "immich"] # Command to be executed upon container start
+    ports: # Mapping ports from the host OS to the container
+      - 2283:3001
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/big-bear-immich/upload:/usr/src/app/upload
+    environment: # Setting environment variables
+      DB_HOSTNAME: immich-postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: immich
+      DB_PORT: "5432"
+      REDIS_HOSTNAME: immich-redis
+    depends_on: # Dependencies to ensure the order of service startup
+      - redis
+      - database
+    restart: always # Policy to always restart the container if it stops
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DB_HOSTNAME
+          description:
+            en_us: "Database Hostname"
+        - container: DB_USERNAME
+          description:
+            en_us: "Database Username"
+        - container: DB_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: DB_DATABASE_NAME
+          description:
+            en_us: "Database Name"
+        - container: DB_PORT
+          description:
+            en_us: "Database Port"
+        - container: REDIS_HOSTNAME
+          description:
+            en_us: "Redis Hostname"
+      volumes:
+        - container: /usr/src/app/upload
+          description:
+            en_us: "Container Path: /usr/src/app/upload"
+      ports:
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
+
+  # Configuration for the Immich Microservices
+  immich-microservices:
+    container_name: immich-microservices # Name of the running container
+    image: ghcr.io/immich-app/immich-server:v1.94.1 # Image to be used
+    # extends:  # Feature to use configuration from another service (currently commented out)
+    #   file: hwaccel.yml
+    #   service: hwaccel
+    command: ["start.sh", "microservices"] # Command to be executed upon container start
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/big-bear-immich/upload:/usr/src/app/upload
+    environment: # Setting environment variables
+      DB_HOSTNAME: immich-postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: immich
+      DB_PORT: "5432"
+      REDIS_HOSTNAME: immich-redis
+    depends_on: # Dependencies to ensure the order of service startup
+      - redis
+      - database
+    restart: always # Policy to always restart the container if it stops
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DB_HOSTNAME
+          description:
+            en_us: "Database Hostname"
+        - container: DB_USERNAME
+          description:
+            en_us: "Database Username"
+        - container: DB_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: DB_DATABASE_NAME
+          description:
+            en_us: "Database Name"
+        - container: DB_PORT
+          description:
+            en_us: "Database Port"
+        - container: REDIS_HOSTNAME
+          description:
+            en_us: "Redis Hostname"
+      volumes:
+        - container: /usr/src/app/upload
+          description:
+            en_us: "Container Path: /usr/src/app/upload"
+
+  # Configuration for Redis service
+  redis:
+    container_name: immich-redis # Name of the running container
+    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
+    restart: always # Policy to always restart the container if it stops
+
+  # Configuration for Database service
+  database:
+    container_name: immich-postgres # Name of the running container
+    image: tensorchord/pgvecto-rs:pg14-v0.1.11 # Image to be used
+    environment: # Setting environment variables
+      POSTGRES_PASSWORD: casaos
+      POSTGRES_USER: casaos
+      POSTGRES_DB: immich
+      PG_DATA: /var/lib/postgresql/data
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/big-bear-immich/pgdata:/var/lib/postgresql/data
+    restart: always # Policy to always restart the container if it stops
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: POSTGRES_USER
+          description:
+            en_us: "Database Username"
+        - container: POSTGRES_DB
+          description:
+            en_us: "Database Name"
+        - container: PG_DATA
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: immich-server # Main service of the application
+  description: # Description in different languages
+    en_us: Self-hosted photo and video storage. This does not include the machine learning part.
+  tagline: # Short description or tagline in different languages
+    en_us: Immich without machine learning
+  developer: "immich" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Immich without machine learning
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "2283"
