@@ -1,0 +1,150 @@
+# Configuration for pd3f setup
+
+# Name of the big-bear-pd3f application
+name: big-bear-pd3f
+
+# Service definitions for the big-bear-pd3f application
+services:
+  # Service name: web
+  # The `web` service definition
+  web:
+    # Name of the container
+    container_name: big-bear-pd3f
+
+    # Image to be used for the container
+    image: pd3f/pd3f:latest
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/uploads directory to /uploads/ inside the container
+      - /DATA/AppData/$AppID/uploads:/uploads/
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 1616 of the host to port 5000 of the container
+      - "1616:5000"
+
+    command: ["gunicorn", "app:app", "--bind=0.0.0.0:5000"]
+
+    # Other services that this service depends on
+    depends_on:
+      - redis
+      - parsr
+      - worker
+      - ocr_worker
+
+    networks:
+      - big-bear-pd3f-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /uploads/
+          description:
+            en_us: "Container Path: /uploads/"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+  # Service name: parsr
+  parsr:
+    image: axarev/parsr:v1.2.2
+    networks:
+      - big-bear-pd3f-network
+    expose:
+      - 3001
+
+  # Service name: redis
+  redis:
+    image: redis:6-alpine
+    networks:
+      - big-bear-pd3f-network
+    expose:
+      - 6379
+
+  # Service name: worker
+  worker:
+    image: pd3f/pd3f:latest
+    depends_on:
+      - parsr
+      - redis
+    networks:
+      - big-bear-pd3f-network
+    volumes:
+      - /DATA/AppData/$AppID/cache:/root/.cache/
+      - /DATA/AppData/$AppID/to-ocr:/to-ocr/
+      - /DATA/AppData/$AppID/uploads:/uploads/
+
+    # delete results / files after one day
+    environment:
+      - KEEP_RESULTS_HOURS=24
+    command:
+      ["rq", "worker", "-u", "redis://redis:6379", "--results-ttl", "86400"]
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: KEEP_RESULTS_HOURS
+          description:
+            en_us: "Container Path: KEEP_RESULTS_HOURS"
+      volumes:
+        - container: /root/.cache/
+          description:
+            en_us: "Container Path: /root/.cache/"
+        - container: /to-ocr/
+          description:
+            en_us: "Container Path: /to-ocr/"
+        - container: /uploads/
+          description:
+            en_us: "Container Path: /uploads/"
+
+  # Service name: ocr_worker
+  ocr_worker:
+    image: pd3f/pd3f-ocr:latest
+    networks:
+      - big-bear-pd3f-network
+    volumes:
+      - /DATA/AppData/$AppID/to-ocr:/to-ocr/
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /to-ocr/
+          description:
+            en_us: "Container Path: /to-ocr/"
+
+# Network definitions
+networks:
+  big-bear-pd3f-network:
+    name: big-bear-pd3f-network
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: web
+  description:
+    # Description in English
+    en_us: pd3f is a PDF text extraction pipeline that is self-hosted, local-first and Docker-based. It reconstructs the original continuous text with the help of machine learning.
+  tagline:
+    # Short description or tagline in English
+    en_us: PD3F
+  # Developer's name or identifier
+  developer: "pd3f"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/pd3f/pd3f/blob/master/imgs/logo.jpg?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: PD3F
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "1616"
