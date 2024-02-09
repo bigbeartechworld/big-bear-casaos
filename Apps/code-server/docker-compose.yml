@@ -4,7 +4,7 @@ name: big-bear-code-server
 services:
   # Service name: app
   app:
-    image: linuxserver/code-server:4.20.1 # The Docker image to be used for the service
+    image: linuxserver/code-server:4.21.0 # The Docker image to be used for the service
     container_name: code-server # Name of the container instance
     environment:
       - PASSWORD=my_password # Password to access code-server
