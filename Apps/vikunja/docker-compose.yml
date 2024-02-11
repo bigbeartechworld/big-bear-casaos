@@ -5,32 +5,17 @@ name: big-bear-vikunja
 
 # Service definitions for the big-bear-vikunja application
 services:
-  frontend:
-    image: vikunja/frontend:0.22.1
-    container_name: vikunja-frontend
+  vikunja:
+    image: vikunja/vikunja:0.23.0
+    container_name: big-bear-vikunja
     ports:
-      - 8081:80
+      - 8081:3456
+    volumes:
+      # Map container path to host path for files
+      - /DATA/AppData/$AppID/files:/app/vikunja/files
     environment:
-      # Set the Vikunja API URL, replace [CHANGE_TO_YOUR_CASAOS_IP] with the actual IP
-      VIKUNJA_API_URL: http://[CHANGE_TO_YOUR_CASAOS_IP]:3456/api/v1
-    restart: unless-stopped
-    depends_on:
-      - db
-      - api
-
-    networks:
-      - vikunja-network
-
-    x-casaos: # CasaOS specific configuration
-      ports:
-        - container: "80"
-          description:
-            en_us: "Container Port: 80"
-
-  api:
-    image: vikunja/api:0.22.1
-    container_name: vikunja-api
-    environment:
+      # Set the Vikunja frontend URL, replace <your public frontend url with slash> with the actual URL
+      VIKUNJA_SERVICE_PUBLICURL: http://<your public frontend url with slash>/
       # Vikunja API environment variables
       VIKUNJA_DATABASE_HOST: vikunja-db
       VIKUNJA_DATABASE_PASSWORD: secret
@@ -38,20 +23,11 @@ services:
       VIKUNJA_DATABASE_USER: vikunja
       VIKUNJA_DATABASE_DATABASE: vikunja
       VIKUNJA_SERVICE_JWTSECRET: 4c2ad520-f177-425f-ab7f-64c5e2b1c2c8
-      # Set the Vikunja frontend URL, replace <your public frontend url with slash> with the actual URL
-      VIKUNJA_SERVICE_FRONTENDURL: http://<your public frontend url with slash>/
-    ports:
-      - 3456:3456
-    volumes:
-      # Map container path to host path for files
-      - /DATA/AppData/$AppID/files:/app/vikunja/files
-    depends_on:
-      - db
     restart: unless-stopped
-
+    depends_on:
+      - vikunja-db
     networks:
       - vikunja-network
-
     x-casaos: # CasaOS specific configuration
       envs:
         - container: VIKUNJA_DATABASE_HOST
@@ -84,7 +60,7 @@ services:
           description:
             en_us: "Container Path: /app/vikunja/files"
 
-  db:
+  vikunja-db:
     image: mariadb:10
     container_name: vikunja-db
     command:
@@ -134,7 +110,7 @@ x-casaos:
     - amd64
     - arm64
   # Main service of the application
-  main: frontend
+  main: vikunja
   description:
     # Description in English
     en_us: The open-source, self-hostable to-do app. Organize everything, on all platforms.
