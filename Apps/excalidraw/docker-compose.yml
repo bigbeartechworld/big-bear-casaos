@@ -1,0 +1,53 @@
+# Configuration for excalidraw setup
+
+# Application Name
+name: big-bear-excalidraw
+
+# Services used in the application
+services:
+  # The `app` service for the excalidraw application
+  app:
+    # Name of the container
+    container_name: big-bear-excalidraw
+    # Docker image to be used
+    image: excalidraw/excalidraw
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
+    ports:
+      - "8000:80"
+    # CasaOS specific configuration for the app service
+    x-casaos:
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+
+# CasaOS global application configuration
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: Virtual whiteboard for sketching hand-drawn like diagrams
+  # Brief tagline for the application
+  tagline:
+    en_us: Virtual whiteboard for sketching hand-drawn like diagrams
+  # Developer's information
+  developer: "excalidraw"
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/excalidraw.png?raw=true
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Excalidraw
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8000"
