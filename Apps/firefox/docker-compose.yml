@@ -3,7 +3,7 @@ name: big-bear-firefox # Name of the CasaOS application
 services:
   firefox:
     container_name: big-bear-firefox # Name of the Docker container
-    image: kasmweb/firefox:1.14.0-rolling # Docker image for the Firefox browser
+    image: kasmweb/firefox:1.15.0-rolling # Docker image for the Firefox browser
     ports:
       - "6902:6901" # Expose port 6901 for VNC access
     environment:
