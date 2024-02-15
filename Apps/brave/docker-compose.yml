@@ -3,7 +3,7 @@ name: big-bear-brave # Name of the CasaOS application
 services:
   brave:
     container_name: big-bear-brave # Name of the Docker container
-    image: kasmweb/brave:1.14.0-rolling # Docker image for the Brave browser
+    image: kasmweb/brave:1.15.0-rolling # Docker image for the Brave browser
     ports:
       - "6901:6901" # Expose port 6901 for VNC access
     environment:
