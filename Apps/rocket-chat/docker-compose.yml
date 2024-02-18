@@ -12,11 +12,11 @@ services:
   app:
     # Container name
     # This names the Docker container for easy reference.
-    container_name: rocket-chat
+    container_name: big-bear-rocket-chat
 
     # Docker Image
     # Specifies the Docker image to use for Rocket.Chat.
-    image: rocket.chat:6.6.0
+    image: rocket.chat:6.5.3
 
     # Restart Policy
     # Determines how the container should be handled if it stops.
@@ -59,8 +59,8 @@ services:
   # Service: db
   # This service runs the MongoDB database used by Rocket.Chat.
   db:
-    image: mongo:5.0.22
-    container_name: db
+    image: mongo:4.4.28
+    container_name: big-bear-rocketchat-db
     volumes:
       # Persistent storage for MongoDB
       - /DATA/AppData/$AppID/db:/data/db
