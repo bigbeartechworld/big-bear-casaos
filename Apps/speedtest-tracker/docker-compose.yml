@@ -25,7 +25,7 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
       - "/DATA/AppData/$AppID/config:/config"
       - "/DATA/AppData/$AppID/web:/etc/ssl/web"
-    image: "ghcr.io/alexjustesen/speedtest-tracker:v0.15.2"
+    image: "ghcr.io/alexjustesen/speedtest-tracker:v0.15.4"
     restart: unless-stopped
     depends_on:
       - db
