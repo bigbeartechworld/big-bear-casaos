@@ -8,7 +8,7 @@ services:
   # Service name: app
   # The `app` service definition
   app:
-    image: gladysassistant/gladys:v4.36.0 # Docker image to use for the 'app' service
+    image: gladysassistant/gladys:v4.37.0 # Docker image to use for the 'app' service
     restart: always # Container should always restart
     privileged: true # Grants additional privileges to this container
     network_mode: host
