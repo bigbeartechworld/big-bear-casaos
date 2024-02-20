@@ -1,0 +1,59 @@
+# Configuration for whoogle setup
+
+# Name of the big-bear-whoogle application
+name: big-bear-whoogle
+
+# Service definitions for the big-bear-whoogle application
+services:
+  # Service name: big-bear-whoogle
+  # The `big-bear-whoogle` service definition
+  big-bear-whoogle:
+    # Name of the container
+    container_name: big-bear-whoogle
+
+    # Image to be used for the container
+    image: benbusby/whoogle-search:0.8.4
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5000 of the host to port 5000 of the container
+      - "5000:5000"
+
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "5000"
+          description:
+            en_us: "Container Port: 5000"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-whoogle
+  description:
+    # Description in English
+    en_us: Get Google search results, but without any ads, JavaScript, AMP links, cookies, or IP address tracking.
+  tagline:
+    # Short description or tagline in English
+    en_us: A self-hosted, ad-free, privacy-respecting metasearch engine.
+  # Developer's name or identifier
+  developer: "benbusby"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/whoogle.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Whoogle
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "5000"
