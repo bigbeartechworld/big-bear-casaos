@@ -1,0 +1,172 @@
+# Configuration for Ghostfolio setup using Docker Compose
+
+# Name of the Ghostfolio application stack
+name: big-bear-ghostfolio
+
+# Definitions of services within the Ghostfolio application stack
+services:
+  # Service definition for the Ghostfolio application
+  big-bear-ghostfolio:
+    container_name: big-bear-ghostfolio # Unique name for the container instance
+    image: ghostfolio/ghostfolio:2.54.0 # Docker image to use
+    restart: unless-stopped # Policy to restart the container unless manually stopped
+    environment: # Environment variables for configuration
+      NODE_ENV: production # Node environment setting (production, development, etc.)
+      HOST: "0.0.0.0" # Host interface the app binds to (0.0.0.0 for all interfaces)
+      PORT: "3333" # The port on which the app listens
+      # Security and database settings:
+      ACCESS_TOKEN_SALT: 5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4
+      DATABASE_URL: postgresql://ghostfolio:casaospassword@big-bear-ghostfolio-db:5432/ghostfolio?sslmode=prefer
+      JWT_SECRET_KEY: 534e820d-da30-4dd3-baf9-0511847c478a
+      POSTGRES_DB: ghostfolio
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: casaospassword
+      REDIS_HOST: ghostfolio-redis
+      REDIS_PASSWORD: casaosredispassword
+      REDIS_PORT: "6379"
+
+    ports:
+      - "3333:3333" # Maps port 3333 on the host to port 3333 on the container
+
+    depends_on: # Dependency definitions ensuring database and Redis are ready
+      big-bear-ghostfolio-db:
+        condition: service_healthy
+      big-bear-ghostfolio-redis:
+        condition: service_healthy
+
+    networks:
+      - big_bear_ghostfolio_network # Connects the service to the defined network
+
+    x-casaos: # CasaOS-specific configuration for easier management
+      envs:
+        - container: NODE_ENV
+          description:
+            en_us: "Environment: production"
+        - container: HOST
+          description:
+            en_us: "Container Interface: 0.0.0.0"
+        - container: PORT
+          description:
+            en_us: "Container Port: 3333"
+        - container: ACCESS_TOKEN_SALT
+          description:
+            en_us: "Access Token Salt: 5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4"
+        - container: DATABASE_URL
+          description:
+            en_us: "Database URL: postgresql://ghostfolio:casaospassword@big-bear-ghostfolio-db:5432/ghostfolio?sslmode=prefer"
+        - container: JWT_SECRET_KEY
+          description:
+            en_us: "JWT Secret Key: 534e820d-da30-4dd3-baf9-0511847c478a"
+        - container: POSTGRES_DB
+          description:
+            en_us: "Database Type: ghostfolio"
+        - container: POSTGRES_USER
+          description:
+            en_us: "Database User: ghostfolio"
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Database Password: casaospassword"
+        - container: REDIS_HOST
+          description:
+            en_us: "Redis Host: ghostfolio-redis"
+        - container: REDIS_PASSWORD
+          description:
+            en_us: "Redis Password: casaosredispassword"
+        - container: REDIS_PORT
+          description:
+            en_us: "Redis Port: 6379"
+      ports:
+        - container: "3333"
+          description:
+            en_us: "Container Port: 3333"
+
+  # PostgreSQL database service for Ghostfolio
+  big-bear-ghostfolio-db:
+    container_name: big-bear-ghostfolio-db
+    image: postgres:15.4-alpine # Using PostgreSQL 15.4 on Alpine Linux
+    restart: unless-stopped
+    environment: # Database configuration settings
+      POSTGRES_DB: ghostfolio
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: casaospassword
+      PGDATA: /var/lib/postgresql/data # Data directory inside the container
+    healthcheck: # Health check to ensure database service is ready
+      test: ["CMD-SHELL", "pg_isready -d ghostfolio -U ghostfolio"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes: # Persistent volume mapping for database data
+      - /DATA/AppData/$AppID/data/db:/var/lib/postgresql/data
+    networks:
+      - big_bear_ghostfolio_network # Connects the service to the defined network
+
+    x-casaos: # CasaOS-specific configurations for database service
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_us: Database type
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: PGDATA
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+  # Redis service for Ghostfolio, used for caching and session storage
+  big-bear-ghostfolio-redis:
+    container_name: big-bear-ghostfolio-redis
+    image: redis:7-alpine # Using Redis 7 on Alpine Linux
+    restart: unless-stopped
+    command: >
+      --requirepass casaosredispassword
+    healthcheck: # Health check to ensure Redis service is ready
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    volumes: # Persistent volume mapping for Redis data
+      - ${APP_DATA_DIR}/data/redis:/data
+    networks:
+      - big_bear_ghostfolio_network # Connects the service to the defined network
+
+    x-casaos: # CasaOS-specific configurations for Redis service
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "6379"
+          description:
+            en_us: "Container Port: 6379"
+
+# Network definition for inter-service communication
+networks:
+  big_bear_ghostfolio_network:
+    driver: bridge # Uses a bridge network for container communication
+
+# CasaOS specific global configuration for the application
+x-casaos:
+  architectures:
+    - amd64
+    - arm64 # Supported CPU architectures
+  main: big-bear-ghostfolio # Specifies the main service within the application
+  description:
+    en_us: Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript 🤍
+  tagline:
+    en_us: Ghostfolio # Short description or tagline
+  developer: "ghostfolio" # Developer name or identifier
+  author: BigBearTechWorld # Configuration author
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/ghostfolio.png?raw=true # Application icon URL
+  thumbnail: "" # Thumbnail image URL (empty if not available)
+  title:
+    en_us: Ghostfolio # Application title in English
+  category: BigBearCasaOS # Application category for organization
+  port_map: "3333" # Port mapping information for external access
