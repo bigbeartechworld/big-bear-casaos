@@ -153,7 +153,7 @@ services:
   # Configuration for Database service
   database:
     container_name: immich-postgres # Name of the running container
-    image: tensorchord/pgvecto-rs:pg14-v0.1.11 # Image to be used
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0 # Image to be used
     environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
