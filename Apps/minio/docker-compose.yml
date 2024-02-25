@@ -9,11 +9,18 @@ services:
     volumes:
       - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
     ports:
-      - "9002:9000" # Expose minio's port 9000 on the host's port 9002
+      - "9010:9000" # Expose minio's port 9000 on the host's port 9010
+      - "9011:9001" # Expose minio web console's port 9001 on the host's port 9011
     environment:
       MINIO_ACCESS_KEY: ''
       MINIO_SECRET_KEY: ''
     restart: unless-stopped # Policy to restart the container if it stops unexpectedly
+    command: server --console-address ":9001" /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     x-casaos: # CasaOS specific configuration
       envs:
         - container: MINIO_ACCESS_KEY
@@ -49,4 +56,5 @@ x-casaos:
   title:
     en_us: Minio # Title in English
   category: BigBearCasaOS # Application category
-  port_map: "9002" # Port mapping information
+  port_map: "9011" # Port mapping information
+  scheme: https # URL scheme for the application
