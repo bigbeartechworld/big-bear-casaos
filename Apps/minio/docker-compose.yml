@@ -1,0 +1,52 @@
+# Configuration for big-bear-minio setup
+name: big-bear-minio
+# Service definitions for the big-bear-minio application
+services:
+  # Service name: app
+  app:
+    image: minio/minio # The Docker image to use (latest version of minio)
+    container_name: minio # Name of the container instance
+    volumes:
+      - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
+    ports:
+      - "9002:9000" # Expose minio's port 9000 on the host's port 9002
+    environment:
+      MINIO_ACCESS_KEY: ''
+      MINIO_SECRET_KEY: ''
+    restart: unless-stopped # Policy to restart the container if it stops unexpectedly
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: MINIO_ACCESS_KEY
+          description:
+            en_us: ''
+        - container: MINIO_SECRET_KEY
+          description:
+            en_us: ''
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "9002"
+          description:
+            en_us: "Container Port: 9002"
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: A distributed object storage server built for cloud applications and devops # Description in English
+  tagline:
+    en_us: An open-source S3 alternative # Short description or tagline in English
+  developer: "" # Developer's name or identifier
+  author: BigBearCommunity # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/minio.png # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: Minio # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "9002" # Port mapping information
