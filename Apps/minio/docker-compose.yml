@@ -4,7 +4,7 @@ name: big-bear-minio
 services:
   # Service name: app
   app:
-    image: minio/minio # The Docker image to use (latest version of minio)
+    image: minio/minio:RELEASE.2024-02-24T17-11-14Z # The Docker image to use (latest version of minio)
     container_name: minio # Name of the container instance
     volumes:
       - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
@@ -44,7 +44,7 @@ x-casaos:
     en_us: A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.  # Description in English
   tagline:
     en_us: An open-source S3 alternative # Short description or tagline in English
-  developer: "" # Developer's name or identifier
+  developer: "minio" # Developer's name or identifier
   author: BigBearCommunity # Author of this configuration
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/minio.png # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
