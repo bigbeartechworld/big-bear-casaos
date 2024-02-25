@@ -12,8 +12,8 @@ services:
       - "9010:9000" # Expose minio's port 9000 on the host's port 9010
       - "9011:9001" # Expose minio web console's port 9001 on the host's port 9011
     environment:
-      MINIO_ACCESS_KEY: ''
-      MINIO_SECRET_KEY: ''
+      MINIO_ROOT_USER: ''
+      MINIO_ROOT_PASSWORD: ''
     restart: unless-stopped # Policy to restart the container if it stops unexpectedly
     command: server --console-address ":9001" /data
     healthcheck:
@@ -23,10 +23,10 @@ services:
       retries: 3
     x-casaos: # CasaOS specific configuration
       envs:
-        - container: MINIO_ACCESS_KEY
+        - container: MINIO_ROOT_USER
           description:
             en_us: ''
-        - container: MINIO_SECRET_KEY
+        - container: MINIO_ROOT_PASSWORD
           description:
             en_us: ''
       volumes:
@@ -46,7 +46,7 @@ x-casaos:
     - arm64
   main: app # Main service of the application
   description:
-    en_us: A distributed object storage server built for cloud applications and devops # Description in English
+    en_us: A distributed object storage server built for cloud applications and devops. default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.  # Description in English
   tagline:
     en_us: An open-source S3 alternative # Short description or tagline in English
   developer: "" # Developer's name or identifier
@@ -57,4 +57,4 @@ x-casaos:
     en_us: Minio # Title in English
   category: BigBearCasaOS # Application category
   port_map: "9011" # Port mapping information
-  scheme: https # URL scheme for the application
+  scheme: http # URL scheme for the application
