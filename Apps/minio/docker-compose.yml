@@ -1,0 +1,55 @@
+# Configuration for big-bear-minio setup
+name: big-bear-minio
+# Service definitions for the big-bear-minio application
+services:
+  # Service name: app
+  app:
+    image: minio/minio:RELEASE.2024-02-24T17-11-14Z # The Docker image to use (latest version of minio)
+    container_name: minio # Name of the container instance
+    volumes:
+      - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
+    ports:
+      - "9010:9000" # Expose minio's port 9000 on the host's port 9010
+      - "9011:9001" # Expose minio web console's port 9001 on the host's port 9011
+    environment:
+      MINIO_ROOT_PASSWORD: 'minioadmin'
+      MINIO_ROOT_USER: 'minioadmin'
+    restart: unless-stopped # Policy to restart the container if it stops unexpectedly
+    command: server --console-address ":9001" /data
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: MINIO_ROOT_USER
+          description:
+            en_us: 'Minio Console User'
+        - container: MINIO_ROOT_PASSWORD
+          description:
+            en_us: 'Minio Console Password'
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "9002"
+          description:
+            en_us: "Container Port: 9002"
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm
+    - arm64
+  main: app # Main service of the application
+  description:
+    en_us: A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.  # Description in English
+  tagline:
+    en_us: An open-source S3 alternative # Short description or tagline in English
+  developer: "minio" # Developer's name or identifier
+  author: BigBearCommunity # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/minio.png # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: Minio # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "9011" # Port mapping information
+  scheme: http # URL scheme for the application
