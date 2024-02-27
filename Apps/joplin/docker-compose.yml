@@ -136,6 +136,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "22300"
+  # Tips in English
   tips:
     before_install:
-      en_us: "Default credentials: admin@localhost / admin"
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-joplin-server-to-bigbearcasaos/800?u=dragonfire1119
