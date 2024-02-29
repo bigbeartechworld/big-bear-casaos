@@ -22,7 +22,7 @@ services:
     depends_on: # Dependencies to ensure the order of service startup
       - redis
       - database
-    restart: always # Policy to always restart the container if it stops
+    restart: unless-stopped # Policy to restart unless stopped
 
     x-casaos: # CasaOS specific configuration
       envs:
@@ -73,7 +73,7 @@ services:
     depends_on: # Dependencies to ensure the order of service startup
       - redis
       - database
-    restart: always # Policy to always restart the container if it stops
+    restart: unless-stopped # Policy to restart unless stopped
 
     x-casaos: # CasaOS specific configuration
       envs:
