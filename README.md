@@ -110,7 +110,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Vikunja                             | vikunja/vikunja                                  | 0.23.0                       | [YouTube Video](https://youtu.be/vZzic6DsC2w)                                                                       |
 | What's Up Docker                    | fmartinou/whats-up-docker                        | 6.3.0                        |                                                                                                                     |
 | WordPress                           | wordpress                                        | 6.4.3                        | [YouTube Video](https://youtu.be/j5M4qlRCbYs)                                                                       |                                                                                                |
-| Zipline                             | ghcr.io/diced/zipline                            | 3.7.8                        |                                                                                                                     |                                                                                                |
+| Zipline                             | ghcr.io/diced/zipline                            | 3.7.9                        |                                                                                                                     |                                                                                                |
 
 ## UI How to
 
