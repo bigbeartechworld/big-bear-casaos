@@ -1,0 +1,79 @@
+# Configuration for audiobookshelf setup
+
+# Name of the big-bear-audiobookshelf application
+name: big-bear-audiobookshelf
+
+# Service definitions for the big-bear-audiobookshelf application
+services:
+  # Service name: big-bear-audiobookshelf
+  # The `app` service definition
+  big-bear-audiobookshelf:
+    # Name of the container
+    container_name: big-bear-audiobookshelf
+
+    # Image to be used for the container
+    image: ghcr.io/advplyr/audiobookshelf:2.8.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/media/data/books/spoken:/audiobooks
+      - /DATA/AppData/$AppID/media/data/podcasts:/podcasts
+      - /DATA/AppData/$AppID/data/config:/config
+      - /DATA/AppData/$AppID/data/metadata:/metadata
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: "audiobooks"
+          description:
+            en_us: "Audiobooks"
+        - container: "podcasts"
+          description:
+            en_us: "Podcasts"
+        - container: "config"
+          description:
+            en_us: "Configuration"
+        - container: "metadata"
+          description:
+            en_us: "Metadata"
+      ports:
+        - description:
+            en_us: "Web Interface"
+          port: 80
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-audiobookshelf
+  description:
+    # Description in English
+    en_us: Audiobookshelf is a self-hosted audiobook server for managing and playing your audiobooks. Audiobookshelf has a clean, accessible design that's loaded with features but not overly complicated.
+  tagline:
+    # Short description or tagline in English
+    en_us: Audiobookshelf is a self-hosted audiobook and podcast server.
+  # Developer's name or identifier
+  developer: "ajnart"
+  # Author of this configuration
+  author: advplyr
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/audiobookshelf.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Audiobookshelf
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
