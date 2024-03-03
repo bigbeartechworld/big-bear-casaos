@@ -133,7 +133,7 @@ services:
       retries: 5
       start_period: 30s
     volumes: # Persistent volume mapping for Redis data
-      - ${APP_DATA_DIR}/data/redis:/data
+      - /DATA/AppData/$AppID/data/redis:/data
     networks:
       - big_bear_ghostfolio_network # Connects the service to the defined network
 
