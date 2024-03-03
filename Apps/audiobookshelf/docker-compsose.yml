@@ -6,7 +6,7 @@ name: big-bear-audiobookshelf
 # Service definitions for the big-bear-audiobookshelf application
 services:
   # Service name: big-bear-audiobookshelf
-  # The `app` service definition
+  # The `big-bear-audiobookshelf` service definition
   big-bear-audiobookshelf:
     # Name of the container
     container_name: big-bear-audiobookshelf
