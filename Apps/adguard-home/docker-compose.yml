@@ -21,7 +21,6 @@ services:
       - "/DATA/AppData/$AppID/data/work:/opt/adguardhome/work" # Map data work directory
       - "/DATA/AppData/$AppID/data/conf:/opt/adguardhome/conf" # Map configuration directory
     restart: unless-stopped
-    network_mode: bridge
     ports:
       - 53:53/tcp # Map TCP port 53
       - 53:53/udp # Map UDP port 53
