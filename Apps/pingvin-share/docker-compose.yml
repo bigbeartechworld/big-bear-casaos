@@ -5,7 +5,7 @@ services:
   app:
     # Name of the service
 
-    image: stonith404/pingvin-share:v0.22.1
+    image: stonith404/pingvin-share:v0.22.2
     # Image to be used for this service
 
     restart: unless-stopped
