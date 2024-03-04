@@ -1,0 +1,83 @@
+# Configuration for libretranslate setup
+
+# Name of the big-bear-libretranslate application
+name: big-bear-libretranslate
+
+# Service definitions for the big-bear-libretranslate application
+services:
+  # Service name: big-bear-libretranslate
+  # The `big-bear-libretranslate` service definition
+  big-bear-libretranslate:
+    # Name of the container
+    container_name: big-bear-libretranslate
+
+    # Image to be used for the container
+    image: libretranslate/libretranslate:v1.5.5
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      - LT_API_KEYS=true # Enables API key authentication for the LibreTranslate service.
+      - LT_API_KEYS_DB_PATH=/app/db/api_keys.db # Specifies the path within the container where API keys are stored.
+      - LT_UPDATE_MODELS=true # Allows the LibreTranslate service to update its translation models on startup.
+      - LT_LOAD_ONLY=en,fr,es,de,it,pt,ru,ja,zh # Restricts the languages loaded by LibreTranslate to these language codes.
+
+    volumes:
+      - /DATA/AppData/$AppID/db:/app/db # Mounts a volume at /app/db within the container for persistent API key storage.
+      - /DATA/AppData/$AppID/.local:/home/libretranslate/.local:rw # Mounts a volume for storing and updating translation models.
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5000 of the host to port 5000 of the container
+      - "5000:5000"
+
+    tty: true # Allocates a pseudo-TTY, which can be useful for interactive applications and logging.
+
+    healthcheck: # Defines a health check for the container to ensure it's running correctly.
+      # This command is run within the container to check its health.
+      # If the command exits with a 0 status, the service is considered healthy. Any other exit status indicates an unhealthy service.
+      test: ["CMD-SHELL", "./venv/bin/python scripts/healthcheck.py"]
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: "/app/db"
+          description:
+            en_us: "Persistent API key storage"
+        - container: "/home/libretranslate/.local"
+          description:
+            en_us: "Translation models storage and updates"
+      ports:
+        - description:
+            en_us: "LibreTranslate API"
+          port: "5000"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-libretranslate
+  description:
+    # Description in English
+    en_us: Free and Open Source Machine Translation API, entirely self-hosted. Unlike other APIs, it doesn't rely on proprietary providers such as Google or Azure to perform translations. Instead, its translation engine is powered by the open source Argos Translate library.
+  tagline:
+    # Short description or tagline in English
+    en_us: Free and Open Source Machine Translation API. 100% self-hosted, offline capable and easy to setup.
+  # Developer's name or identifier
+  developer: "LibreTranslate"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/none.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: LibreTranslate
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "5000"
