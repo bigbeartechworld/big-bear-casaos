@@ -5,21 +5,23 @@ name: big-bear-nocodb
 
 # Service definitions for the big-bear-nocodb application
 services:
-  # Service name: app
+  # Service name: big-bear-nocodb
   # This section configures the NocoDB application itself
-  app:
-    image: nocodb/nocodb:0.204.4 # Specifies the Docker image to use
-    container_name: nocodb # Name of the container
-    restart: unless-stopped # Container restart policy
-    environment: # Environment variables for NocoDB
-      POSTGRES_USER: nocodb
-      POSTGRES_PASSWORD: nocodb
-      POSTGRES_DB: nocodb
+  big-bear-nocodb:
+    image: nocodb/nocodb:0.204.4 # Specifies the Docker image to use for NocoDB
+    container_name: big-bear-nocodb # Sets a custom name for the container
+    restart: unless-stopped # Container restart policy to ensure availability
+    environment: # Environment variables for configuring NocoDB
+      - DATABASE_URL=postgres://nocodb:nocodb@big-bear-nocodb-db:5432/nocodb # Connection string for the PostgreSQL database
+      - NC_AUTH_JWT_SECRET=899499fc-36a0-4131-b077-7bb9f051ac9b # JWT secret for authentication
+      - NC_REDIS_URL=redis://default:casaos@big-bear-nocodb-redis:6379 # Connection string for Redis
     ports:
-      - "8080:8080" # Port mapping between host and container
+      - "8080:8080" # Maps port 8080 from the container to the host
     volumes:
-      - /DATA/AppData/$AppID/data:/usr/src/app/data # Volume mapping for persistent data
-    x-casaos: # CasaOS specific configuration
+      - /DATA/AppData/$AppID/data:/usr/src/app/data # Maps persistent data storage for NocoDB
+    networks:
+      - big-bear-nocodb-network # Connects to the custom network
+    x-casaos: # CasaOS specific configuration for better integration
       volumes:
         - container: /usr/src/app/data
           description:
@@ -30,30 +32,61 @@ services:
             en_us: "Container Port: 8080"
 
   # Database service configuration
-  db:
+  big-bear-nocodb-db:
+    container_name: big-bear-nocodb-db
     image: postgres:13 # Specifies the PostgreSQL Docker image to use
-    restart: always # Always restart the container if it stops
-    environment: # Environment variables for the PostgreSQL database
-      POSTGRES_USER: nocodb
-      POSTGRES_PASSWORD: nocodb
-      POSTGRES_DB: nocodb
+    restart: always # Ensures the database container is always running
+    environment: # Database credentials and configurations
+      POSTGRES_DB: nocodb # Database name
+      POSTGRES_USER: nocodb # Database user
+      POSTGRES_PASSWORD: nocodb # Database password
     volumes:
-      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Volume mapping for database persistence
-    x-casaos: # CasaOS specific configuration for database
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Persistent storage for the database
+    networks:
+      - big-bear-nocodb-network # Connects to the custom network
+
+    x-casaos: # CasaOS specific configuration for the database
       volumes:
         - container: /var/lib/postgresql/data
           description:
             en_us: "Container Path: /var/lib/postgresql/data"
 
-# CasaOS specific configuration
+  # Redis service configuration
+  big-bear-nocodb-redis:
+    image: redis:alpine # Specifies the Redis Docker image to use
+    container_name: big-bear-nocodb-redis
+    restart: unless-stopped # Ensures Redis container is available unless manually stopped
+    command: ["redis-server", "--requirepass", "casaos"] # Starts Redis with a password
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data # Persistent storage for Redis data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"] # Health check command for Redis
+      interval: 1s # Interval between health checks
+      timeout: 3s # Timeout for each health check
+      retries: 30 # Number of retries before considering the service unhealthy
+    networks:
+      - big-bear-nocodb-network # Connects to the custom network
+
+    x-casaos: # CasaOS specific configuration for Redis
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+
+# Network configuration
+networks:
+  big-bear-nocodb-network:
+    driver: bridge # Uses a bridge network for inter-container communication
+
+# CasaOS specific configuration for application metadata
 x-casaos:
-  architectures: # Supported CPU architectures for the application
+  architectures: # Supported CPU architectures
     - amd64
     - arm64
-  main: app # Main service of the application
-  description: # Description in English
+  main: big-bear-nocodb # Main service of the application
+  description: # Detailed application description
     en_us: NocoDB allows building no-code database solutions with ease of spreadsheets. Bring your own database or choose ours! Millions of rows? Not a problem. Your Data. Your rules. You are in control.
-  tagline: # Short description or tagline in English
+  tagline: # Short description or tagline
     en_us: 🔥 🔥 🔥 Open Source Airtable Alternative
   developer: "nocodb" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
