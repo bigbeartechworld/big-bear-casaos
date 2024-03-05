@@ -1,0 +1,115 @@
+# Configuration for tandoor setup
+
+# Name of the big-bear-tandoor application
+name: big-bear-tandoor
+
+# Service definitions for the big-bear-tandoor application
+services:
+  # Service name: big-bear-tandoor
+  # The `big-bear-tandoor` service definition
+  big-bear-tandoor:
+    # Name of the container
+    container_name: big-bear-tandoor
+
+    # Image to be used for the container
+    image: ghcr.io/tandoorrecipes/recipes:1.5.14
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/staticfiles:/opt/recipes/staticfiles
+      - /DATA/AppData/$AppID/mediafiles:/opt/recipes/mediafiles
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+
+    # Environment variables to be passed to the container
+    environment:
+      - SECRET_KEY=6496f725-e4a4-4fa5-9f7b-db0114bc1568
+      - DB_ENGINE=django.db.backends.postgresql
+      - POSTGRES_HOST=big-bear-tandoor-db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d
+      - POSTGRES_DB=tandoordb
+
+    # Network to be used by the container
+    networks:
+      - big_bear_tandoor_network
+
+    # Healthcheck configuration for the container
+    depends_on:
+      big-bear-tandoor-db:
+        condition: service_healthy
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: "/opt/recipes/staticfiles"
+          description:
+            en_us: "Container Path: /opt/recipes/staticfiles"
+        - container: "/opt/recipes/mediafiles"
+          description:
+            en_us: "Container Path: /opt/recipes/mediafiles"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+  big-bear-tandoor-db:
+    image: postgres:15-alpine
+    container_name: big-bear-tandoor-db
+    volumes:
+      - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=tandoor
+      - POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d
+      - POSTGRES_DB=tandoordb
+    restart: unless-stopped
+    networks:
+      - big_bear_tandoor_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "tandoor"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+# Network definitions for the big-bear-tandoor application
+networks:
+  big_bear_tandoor_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-tandoor
+  description:
+    # Description in English
+    en_us: Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!
+  tagline:
+    # Short description or tagline in English
+    en_us: Recipe collection manager.
+  # Developer's name or identifier
+  developer: "tandoorrecipes"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/tandoor.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Tandoor
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
