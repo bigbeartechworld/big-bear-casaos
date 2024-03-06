@@ -115,7 +115,7 @@ x-casaos:
     # Short description or tagline in English
     en_us: Self-hosted Git Server with Kanban and CI/CD
   # Developer's name or identifier
-  developer: "1dev"
+  developer: "theonedev"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
