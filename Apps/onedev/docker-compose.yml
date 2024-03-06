@@ -1,0 +1,131 @@
+# Configuration for onedev setup
+
+# Name of the big-bear-onedev application
+name: big-bear-onedev
+
+# Service definitions for the big-bear-onedev application
+services:
+  # Service name: big-bear-onedev
+  # The `big-bear-onedev` service definition
+  big-bear-onedev:
+    # Name of the container
+    container_name: big-bear-onedev
+
+    # Image to be used for the container
+    image: 1dev/server:10.3.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/big-bear-onedev/data directory to /opt/onedev inside the container
+      - /DATA/AppData/$AppID/data:/opt/onedev
+
+      # Mounting docker.sock to allow docker management via OneDev
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    environment: # Environment variables for configuration
+      - hibernate_dialect=io.onedev.server.persistence.PostgreSQLDialect # Specify the Hibernate dialect for PostgreSQL
+      - hibernate_connection_driver_class=org.postgresql.Driver # JDBC driver class for PostgreSQL
+      - hibernate_connection_url=jdbc:postgresql://big-bear-onedev-db:5432/onedev # JDBC connection URL, pointing to the PostgreSQL service
+      - hibernate_connection_username=bigbear # Username for the database connection
+      - hibernate_connection_password=eea2dad6-2203-45eb-8908-e8ba4d1e7f92 # Password for the database connection
+      - initial_user=bigbear # Initial admin username for OneDev
+      - initial_password=password # Initial admin password for OneDev
+      - initial_email=admin@example.com # Initial admin email for OneDev
+      - initial_server_url=http://localhost:6610 # URL where OneDev will be accessible
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 6610 of the host to port 6610 of the container
+      - "6610:6610"
+      # Mapping port 6611 of the host to port 6611 of the container
+      - "6611:6611"
+
+    depends_on: # Ensure the database service starts before this service
+      - big-bear-onedev-db
+
+    networks: # Connect to the network
+      - big_bear_ondedev_network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: "/opt/onedev"
+          description:
+            en_us: "Data directory for OneDev"
+        - container: "/var/run/docker.sock"
+          description:
+            en_us: "Docker socket for OneDev"
+      ports:
+        - port: "6610"
+          description:
+            en_us: "OneDev web interface"
+        - port: "6611"
+          description:
+            en_us: "OneDev SSH interface"
+
+  # Define the service for the PostgreSQL database
+  big-bear-onedev-db:
+    container_name: big-bear-onedev-db # Container name for easy reference
+    image: postgres:14 # Use the specified PostgreSQL image
+    restart: unless-stopped # Policy to restart the container unless stopped manually
+    environment: # Environment variables for PostgreSQL configuration
+      - POSTGRES_USER=bigbear # Default username for PostgreSQL
+      - POSTGRES_PASSWORD=eea2dad6-2203-45eb-8908-e8ba4d1e7f92 # Password for the default user
+      - POSTGRES_DB=onedev # Default database created upon startup
+    volumes: # Mount point for database persistence
+      - /DATA/AppData/$AppID/postgres_data:/var/lib/postgresql/data
+    networks: # Connect to the network
+      - big_bear_ondedev_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - name: "POSTGRES_USER"
+          description:
+            en_us: "Default username for PostgreSQL"
+        - name: "POSTGRES_PASSWORD"
+          description:
+            en_us: "Password for the default user"
+        - name: "POSTGRES_DB"
+          description:
+            en_us: "Default database created upon startup"
+      volumes:
+        - container: "/var/lib/postgresql/data"
+          description:
+            en_us: "Database directory for OneDev"
+
+# Define the network for the big-bear-onedev application
+networks:
+  big_bear_ondedev_network: # Network name
+    driver: bridge # Network driver
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-onedev
+  description:
+    # Description in English
+    en_us: Self-hosted Git Server with Kanban and CI/CD
+  tagline:
+    # Short description or tagline in English
+    en_us: Self-hosted Git Server with Kanban and CI/CD
+  # Developer's name or identifier
+  developer: "1dev"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/onedev.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: OneDev
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "6610"
