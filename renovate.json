@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "stabilityDays": 3,
+  "automerge": true,
   "packageRules": [
     {
       "matchDatasources": "docker",
@@ -24,6 +25,18 @@
         "^([^\\/]+\\/)?(mysql|mariadb|mongodb|mongo|postgres|redis)(:|$)"
       ],
       "enabled": false
+    },
+    {
+      "matchPackageNames": ["rocket.chat"],
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false
     }
   ],
   "regexManagers": [
