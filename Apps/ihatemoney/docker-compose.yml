@@ -33,6 +33,22 @@ services:
       - big_bear_ihatemoney_network # Connects the service to a network.
 
     x-casaos: # CasaOS specific configuration
+      envs:
+        - name: "SECRET_KEY"
+          description:
+            en_us: "Sets the secret key environment variable for the application."
+        - name: "SQLALCHEMY_DATABASE_URI"
+          description:
+            en_us: "Database connection string."
+        - name: "ACTIVATE_ADMIN_DASHBOARD"
+          description:
+            en_us: "Enables the admin dashboard."
+        - name: "ADMIN_PASSWORD"
+          description:
+            en_us: "Sets the admin password. On the host run: docker run -it --rm --entrypoint ihatemoney ihatemoney/ihatemoney generate_password_hash"
+        - name: "SESSION_COOKIE_SECURE"
+          description:
+            en_us: "Disables secure session cookies for development."
       ports:
         - container: "8000"
           description:
