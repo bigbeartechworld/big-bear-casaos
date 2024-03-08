@@ -1,0 +1,108 @@
+# Configuration for ihatemoney setup
+
+# Name of the big-bear-ihatemoney application
+name: big-bear-ihatemoney
+
+# Service definitions for the big-bear-ihatemoney application
+services:
+  # Service name: big-bear-ihatemoney
+  # The `big-bear-ihatemoney` service definition
+  big-bear-ihatemoney:
+    # Name of the container
+    container_name: big-bear-ihatemoney
+
+    # Image to be used for the container
+    image: ihatemoney/ihatemoney:6.1.4
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      SECRET_KEY: "1d58bc34-e7ff-4f6d-a1e4-f319262ed9b8" # Sets the secret key environment variable for the application.
+      SQLALCHEMY_DATABASE_URI: "mysql+pymysql://bigbear:password@big-bear-ihatemoney-db/ihatemoney" # Database connection string.
+      ACTIVATE_ADMIN_DASHBOARD: "True" # Enables the admin dashboard.
+      ADMIN_PASSWORD: "" # Sets the admin password. On the host run: docker run -it --rm --entrypoint ihatemoney ihatemoney/ihatemoney generate_password_hash
+      SESSION_COOKIE_SECURE: "False" # Disables secure session cookies for development.
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8001 of the host to port 8000 of the container
+      - "8001:8000"
+
+    networks:
+      - big_bear_ihatemoney_network # Connects the service to a network.
+
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+
+  # Define a service named 'big-bear-ihatemoney-db' for the database.
+  big-bear-ihatemoney-db:
+    image: mariadb:10 # Use MariaDB version 10 Docker image.
+    container_name: big-bear-ihatemoney-db # Custom container name.
+    environment:
+      MYSQL_ROOT_PASSWORD: password # Root password for MariaDB.
+      MYSQL_DATABASE: ihatemoney # Default database name.
+      MYSQL_USER: bigbear # Username for MariaDB.
+      MYSQL_PASSWORD: password # Password for the MariaDB user.
+    ports:
+      - "3306:3306" # Maps MySQL port 3306 inside the container to port 3306 on the host.
+    volumes:
+      - big_bear_mysql_data:/var/lib/mysql # Maps a volume for data persistence.
+    networks:
+      - big_bear_ihatemoney_network # Connects the MySQL service to the network.
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - name: "MYSQL_ROOT_PASSWORD"
+          description:
+            en_us: "Root password for MariaDB."
+        - name: "MYSQL_DATABASE"
+          description:
+            en_us: "Default database name."
+        - name: "MYSQL_USER"
+          description:
+            en_us: "Username for MariaDB."
+        - name: "MYSQL_PASSWORD"
+          description:
+            en_us: "Password for the MariaDB user."
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
+
+networks:
+  big_bear_ihatemoney_network: # Define a network named 'big_bear_ihatemoney_network'.
+    driver: bridge # Use the bridge network driver.
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-ihatemoney
+  description:
+    # Description in English
+    en_us: I hate money is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills.
+  tagline:
+    # Short description or tagline in English
+    en_us: A simple shared budget manager web application
+  # Developer's name or identifier
+  developer: "spiral-project"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/ihatemoney.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: I Hate Money
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8001"
