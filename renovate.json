@@ -27,7 +27,11 @@
       "enabled": false
     },
     {
-      "matchPackageNames": ["rocket.chat"],
+      "matchPackageNames": [
+        "rocket.chat",
+        "ghcr.io/immich-app/immich-machine-learning",
+        "ghcr.io/immich-app/immich-server"
+      ],
       "automerge": false
     },
     {
