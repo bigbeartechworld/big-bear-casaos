@@ -66,7 +66,7 @@ services:
     ports:
       - "3306:3306" # Maps MySQL port 3306 inside the container to port 3306 on the host.
     volumes:
-      - big_bear_mysql_data:/var/lib/mysql # Maps a volume for data persistence.
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Maps a volume for data persistence.
     networks:
       - big_bear_ihatemoney_network # Connects the MySQL service to the network.
 
