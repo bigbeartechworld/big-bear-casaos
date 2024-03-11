@@ -12,7 +12,7 @@ services:
     container_name: big-bear-mealie
 
     # Image to be used for the container
-    image: hkotel/mealie:v1.3.1
+    image: hkotel/mealie:v1.3.2
 
     # Container restart policy
     restart: unless-stopped
