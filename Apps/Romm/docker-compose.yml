@@ -8,7 +8,7 @@ services:
   # Service name: app
   # The `app` service definition
   app:
-    image: zurdi15/romm:2.3.1
+    image: zurdi15/romm:3.0.1
     container_name: romm
     environment:
       - ROMM_DB_DRIVER=mariadb # Database driver can be mariadb or sqlite (default: sqlite)
