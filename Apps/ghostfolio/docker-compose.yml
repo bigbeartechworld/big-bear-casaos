@@ -21,7 +21,7 @@ services:
       POSTGRES_DB: ghostfolio
       POSTGRES_USER: ghostfolio
       POSTGRES_PASSWORD: casaospassword
-      REDIS_HOST: ghostfolio-redis
+      REDIS_HOST: big-bear-ghostfolio-redis
       REDIS_PASSWORD: casaosredispassword
       REDIS_PORT: "6379"
 
@@ -68,7 +68,7 @@ services:
             en_us: "Database Password: casaospassword"
         - container: REDIS_HOST
           description:
-            en_us: "Redis Host: ghostfolio-redis"
+            en_us: "Redis Host: big-bear-ghostfolio-redis"
         - container: REDIS_PASSWORD
           description:
             en_us: "Redis Password: casaosredispassword"
