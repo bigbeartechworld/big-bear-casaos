@@ -16,7 +16,7 @@ services:
 
     # Docker Image
     # Specifies the Docker image to use for Rocket.Chat.
-    image: rocket.chat:6.5.3
+    image: rocket.chat:6.6.3
 
     # Restart Policy
     # Determines how the container should be handled if it stops.
