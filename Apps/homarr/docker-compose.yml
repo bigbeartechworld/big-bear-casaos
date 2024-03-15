@@ -12,7 +12,7 @@ services:
     container_name: homarr
 
     # Image to be used for the container
-    image: ghcr.io/ajnart/homarr:0.15.0
+    image: ghcr.io/ajnart/homarr:0.15.1
 
     # Container restart policy
     restart: unless-stopped
