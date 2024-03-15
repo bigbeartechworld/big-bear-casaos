@@ -41,7 +41,7 @@ services:
     ports:
       - 1080:8080 # Map host port 1080 to container port 8080
     depends_on:
-      - rommdb # Make sure the romm_db service is started before the app service
+      - big-bear-rommdb # Make sure the romm_db service is started before the app service
     restart: "unless-stopped"
     networks:
       - big-bear-romm-network # Use the big-bear-romm-network network
