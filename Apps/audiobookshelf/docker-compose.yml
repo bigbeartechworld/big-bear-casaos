@@ -12,7 +12,7 @@ services:
     container_name: big-bear-audiobookshelf
 
     # Image to be used for the container
-    image: ghcr.io/advplyr/audiobookshelf:2.8.0
+    image: ghcr.io/advplyr/audiobookshelf:2.8.1
 
     # Container restart policy
     restart: unless-stopped
