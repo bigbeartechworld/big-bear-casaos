@@ -152,3 +152,9 @@ x-casaos:
     en_us: Planka
   category: BigBearCasaOS
   port_map: "3000"
+  # Tips
+  # Tips in English
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924#documentation-5
