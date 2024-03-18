@@ -1,0 +1,154 @@
+# Configuration for planka setup
+
+# Name of the big-bear-planka application
+name: big-bear-planka
+
+# Service definitions for the big-bear-planka application
+services:
+  # Service name: big-bear-planka
+  # The `big-bear-planka` service definition
+  big-bear-planka:
+    # Name of the container
+    container_name: big-bear-planka
+
+    # Image to be used for the container specifies the Planka version and source
+    image: ghcr.io/plankanban/planka:1.15.7
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container for persistent storage
+    volumes:
+      - /DATA/AppData/$AppID/user-avatars:/app/public/user-avatars
+      - /DATA/AppData/$AppID/project-background-images:/app/public/project-background-images
+      - /DATA/AppData/$AppID/attachments:/app/private/attachments
+
+    # Ports mapping between host and container for network access
+    ports:
+      # Mapping port 3000 of the host to port 1337 of the container
+      - "3000:1337"
+
+    # Environment variables to be set in the container for application configuration
+    environment:
+      - BASE_URL=http://[YOUR_CASAOS_LAN_IP]:3000
+      - DATABASE_URL=postgresql://postgres@big-bear-planka-postgres/planka
+      - SECRET_KEY=notsecretkey
+      # - TRUST_PROXY=0
+      # - TOKEN_EXPIRES_IN=365 # Token expiration in days
+
+      # Additional environment variables for database and security configurations
+      # - PGSSLMODE=<value> # For PostgreSQL SSL mode configuration
+
+      # Configure knex to accept SSL certificates
+      # - KNEX_REJECT_UNAUTHORIZED_SSL_CERTIFICATE=false
+
+      # Default admin account settings (use for initial setup)
+      - DEFAULT_ADMIN_EMAIL=demo@demo.demo
+      - DEFAULT_ADMIN_PASSWORD=demo
+      - DEFAULT_ADMIN_NAME=Demo Demo
+      - DEFAULT_ADMIN_USERNAME=demo
+
+      # OpenID Connect (OIDC) configuration for authentication
+      # - OIDC_ISSUER=
+      # - OIDC_CLIENT_ID=
+      # - OIDC_CLIENT_SECRET=
+      # - OIDC_SCOPES=openid email profile
+      # - OIDC_ADMIN_ROLES=admin
+      # - OIDC_EMAIL_ATTRIBUTE=email
+      # - OIDC_NAME_ATTRIBUTE=name
+      # - OIDC_USERNAME_ATTRIBUTE=preferred_username
+      # - OIDC_ROLES_ATTRIBUTE=groups
+      # - OIDC_IGNORE_USERNAME=true
+      # - OIDC_IGNORE_ROLES=true
+      # - OIDC_ENFORCED=true
+
+    networks:
+      - big-bear-planka-network
+
+    # Dependency on another service, ensuring it is healthy before starting
+    depends_on:
+      big-bear-planka-postgres:
+        condition: service_healthy
+
+    # CasaOS specific configuration for volume and port descriptions
+    x-casaos:
+      volumes:
+        - container: /app/public/user-avatars
+          description:
+            en_us: "Container Path: /app/public/user-avatars"
+        - container: /app/public/project-background-images
+          description:
+            en_us: "Container Path: /app/public/project-background-images"
+        - container: /app/private/attachments
+          description:
+            en_us: "Container Path: /app/private/attachments"
+      ports:
+        - container: "1337"
+          description:
+            en_us: "Container Port: 1337"
+
+  # Service definition for the PostgreSQL database used by big-bear-planka
+  big-bear-planka-postgres:
+    # Specifies the Docker image to use for the PostgreSQL database
+    # Using version 14 of PostgreSQL, based on the lightweight Alpine Linux distribution
+    image: postgres:14-alpine
+
+    # Specifies the container restart policy
+    # The container will restart if it fails during runtime
+    restart: on-failure
+
+    # Volumes to be mounted to the container for data persistence
+    # Maps a host directory to the container's data directory
+    # Ensures that the database data persists across container restarts and deployments
+    volumes:
+      - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+
+    # Environment variables passed to the PostgreSQL container for configuration
+    environment:
+      # Sets the default database that is created when the container starts
+      - POSTGRES_DB=planka
+      # Configures the authentication method for connections from the host
+      # Setting to 'trust' allows connections without a password
+      # Note: This setting is not recommended for production environments due to security concerns
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+    networks:
+      - big-bear-planka-network
+
+    # Healthcheck configuration to ensure the database service is running properly
+    # Runs a command inside the container at specified intervals to check the health of the service
+    healthcheck:
+      # Command to check if PostgreSQL is ready to accept connections
+      # Uses `pg_isready` tool with the default 'postgres' user and the 'planka' database
+      test: ["CMD-SHELL", "pg_isready -U postgres -d planka"]
+      # The interval between running the healthcheck command
+      # Here, it's set to run every 10 seconds
+      interval: 10s
+      # The timeout duration for the healthcheck command
+      # If the command does not complete within 5 seconds, the healthcheck is considered failed
+      timeout: 5s
+      # Number of consecutive failures needed to consider the service as unhealthy
+      retries: 5
+
+networks:
+  big-bear-planka-network:
+    driver: bridge
+
+# CasaOS specific application metadata and configurations
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-planka
+  description:
+    en_us: The realtime kanban board for workgroups built with React and Redux.
+  tagline:
+    en_us: Free open source kanban board for workgroups.
+  developer: "plankanban"
+  author: BigBearTechWorld
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/planka.png?raw=true
+  thumbnail: ""
+  title:
+    en_us: Planka
+  category: BigBearCasaOS
+  port_map: "3000"
