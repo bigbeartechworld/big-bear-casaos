@@ -40,10 +40,10 @@ services:
     # Ports mapping between host and container
     ports:
       # Mapping port 3000 of the host to port 3000 of the container
-      - 3000:3000/tcp
+      - "3000:3000"
 
       # Mapping port 443 of the host to port 443 of the container
-      - 443:443/tcp
+      - "443:443"
 
     # Environment variables
     environment:
