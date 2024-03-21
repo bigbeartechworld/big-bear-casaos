@@ -12,7 +12,7 @@ services:
     container_name: big-bear-ihatemoney
 
     # Image to be used for the container
-    image: ihatemoney/ihatemoney:6.1.4
+    image: ihatemoney/ihatemoney:6.1.5
 
     # Container restart policy
     restart: unless-stopped
