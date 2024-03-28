@@ -9,7 +9,7 @@ services:
     container_name: glances
 
     # Docker image to use
-    image: nicolargo/glances:3.4.0.3-full
+    image: nicolargo/glances:3.4.0.5-full
 
     # Port mapping between host and container
     ports:
