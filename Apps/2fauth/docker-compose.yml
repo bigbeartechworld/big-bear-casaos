@@ -21,8 +21,15 @@ services:
     # Volumes for the service HOST -> CONTAINER
     volumes:
       - /DATA/AppData/$AppID/data:/2fauth
+    # Environment variables for the service
+    environment:
+      - APP_URL=http://[CHANGE_TO_LAN_IP]:8000
     # CasaOS specific configuration for the app service
     x-casaos:
+      envs:
+        - name: APP_URL
+          description:
+            en_us: "Application URL"
       volumes:
         - container: /2fauth
           description:
