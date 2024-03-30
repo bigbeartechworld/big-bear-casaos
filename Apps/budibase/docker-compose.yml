@@ -1,0 +1,67 @@
+# Configuration for budibase setup
+
+# Name of the big-bear-budibase application
+name: big-bear-budibase
+
+# Service definitions for the big-bear-budibase application
+services:
+  # Service name: big-bear-budibase
+  # The `big-bear-budibase` service definition
+  big-bear-budibase:
+    # Name of the container
+    container_name: big-bear-budibase
+
+    # Image to be used for the container
+    image: budibase/budibase:2.22.13
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local directory /DATA/AppData/$AppID/data to /data in the container
+      - /DATA/AppData/$AppID/data:/data
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 80 of the container to port 8080 of the host
+      - "8080:80"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-budibase
+  description:
+    # Description in English
+    en_us: Low code platform for creating internal tools, workflows, and admin panels in minutes. Supports PostgreSQL, MySQL, MSSQL, MongoDB, Rest API, Docker, K8s, and more 🚀. Budibase, the low code platform you'll enjoy using ⚡
+  tagline:
+    # Short description or tagline in English
+    en_us: Internal tools made easy.
+  # Developer's name or identifier
+  developer: "Budibase"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/budibase.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Budibase
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
