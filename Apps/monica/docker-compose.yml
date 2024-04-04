@@ -56,10 +56,32 @@ services:
       - MARIADB_USER=usermonica
       - MARIADB_PASSWORD=passwordmonica
     volumes:
-      - ${APP_DATA_DIR}/mysql:/var/lib/mysql
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     restart: unless-stopped
     networks:
       - big_bear_monica_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+        - container: MARIADB_RANDOM_ROOT_PASSWORD
+          description:
+            en_us: MariaDB random root password
+        - container: MARIADB_DATABASE
+          description:
+            en_us: MariaDB database
+        - container: MARIADB_USER
+          description:
+            en_us: MariaDB user
+        - container: MARIADB_PASSWORD
+          description:
+            en_us: MariaDB password
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
 
 # Networks used by the application
 networks:
