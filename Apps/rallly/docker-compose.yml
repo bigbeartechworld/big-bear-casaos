@@ -23,8 +23,8 @@ services:
       - NEXT_PUBLIC_BASE_URL=http://[YOUR_CASAOS_IP]:3000
       - NOREPLY_EMAIL=noreply@example.com
       - SUPPORT_EMAIL=support@example.com
-      - SMTP_HOST=
-      - SMTP_PORT=
+      - SMTP_HOST=[YOUR_CASAOS_IP]
+      - SMTP_PORT=1025
       - SMTP_SECURE=
       - SMTP_USER=
       - SMTP_PWD=
