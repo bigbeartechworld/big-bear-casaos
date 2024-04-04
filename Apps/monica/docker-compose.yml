@@ -1,0 +1,97 @@
+# Configuration for monica setup
+
+# Name of the big-bear-monica application
+name: big-bear-monica
+
+# Service definitions for the big-bear-monica application
+services:
+  # Service name: big-bear-monica
+  # The `big-bear-monica` service definition
+  big-bear-monica:
+    # Name of the container
+    container_name: big-bear-monica
+
+    # Image to be used for the container
+    image: monica:4.0.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      - APP_KEY=80356f7073c4f7834187b25a9d32cd2a
+      - DB_HOST=big-bear-monica-db
+      - DB_USERNAME=usermonica
+      - DB_PASSWORD=passwordmonica
+
+    volumes:
+      - /DATA/AppData/$AppID/storage:/var/www/html/storage
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+    # Networks to be attached to the container
+    networks:
+      - big_bear_monica_network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/www/html/storage
+          description:
+            en_us: "Container Path: /var/www/html/storage"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+  # Database service for monica
+  big-bear-monica-db:
+    image: mariadb:10.6.11
+    container_name: big-bear-monica-db
+    environment:
+      - TZ=UTC
+      - MARIADB_RANDOM_ROOT_PASSWORD=true
+      - MARIADB_DATABASE=monica
+      - MARIADB_USER=usermonica
+      - MARIADB_PASSWORD=passwordmonica
+    volumes:
+      - ${APP_DATA_DIR}/mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - big_bear_monica_network
+
+# Networks used by the application
+networks:
+  big_bear_monica_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-monica
+  description:
+    # Description in English
+    en_us: Monica is an open-source web application to organize and record your interactions with your loved ones. We call it a PRM, or Personal Relationship Management. Think of it as a CRM (a popular tool used by sales teams in the corporate world) for your friends or family.
+  tagline:
+    # Short description or tagline in English
+    en_us: A Personal Relationship Management tool to help you document your social life.
+  # Developer's name or identifier
+  developer: "monica"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/monica.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Monica
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
