@@ -1,0 +1,129 @@
+# Configuration for seafile setup
+
+# Name of the big-bear-seafile application
+name: big-bear-seafile
+
+# Service definitions for the big-bear-seafile application
+services:
+  # Service name: big-bear-seafile
+  # The `big-bear-seafile` service definition
+  big-bear-seafile:
+    # Name of the container
+    container_name: big-bear-seafile
+
+    # Image to be used for the container
+    image: seafileltd/seafile-mc:11.0.6
+
+    # Container restart policy
+    restart: unless-stopped
+
+    volumes:
+      - /DATA/AppData/$AppID/shared:/shared
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+      # - "443:443"  # If https is enabled, cancel the comment.
+
+    environment:
+      - DB_HOST=big-bear-seafile-db # Specifies MySQL service host name.
+      - DB_ROOT_PASSWD=seafilepassword # Requested, the value should be root's password of MySQL service.
+      - TIME_ZONE=Etc/UTC # Optional, default is UTC. Should be uncomment and set to your local time zone.
+      - SEAFILE_ADMIN_EMAIL=admin@example.com # Specifies Seafile admin user, default is 'me@example.com'.
+      - SEAFILE_ADMIN_PASSWORD=asecret # Specifies Seafile admin password, default is 'asecret'.
+      - SEAFILE_SERVER_LETSENCRYPT=false # Whether to use https or not.
+      - SEAFILE_SERVER_HOSTNAME=docs.seafile.com # Specifies your host name if https is enabled.
+
+    # Networks to be attached to the container
+    networks:
+      - big_bear_seafile_network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/www/html/storage
+          description:
+            en_us: "Container Path: /var/www/html/storage"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+  # Database service for seafile
+  big-bear-seafile-db:
+    image: mariadb:10.11
+    container_name: big-bear-seafile-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=seafilepassword # Requested, set the root's password of MySQL service.
+      - MYSQL_LOG_CONSOLE=true
+      - MARIADB_AUTO_UPGRADE=1
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - big_bear_seafile_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+        - container: MARIADB_RANDOM_ROOT_PASSWORD
+          description:
+            en_us: MariaDB random root password
+        - container: MARIADB_DATABASE
+          description:
+            en_us: MariaDB database
+        - container: MARIADB_USER
+          description:
+            en_us: MariaDB user
+        - container: MARIADB_PASSWORD
+          description:
+            en_us: MariaDB password
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+
+  # Memcached service for seafile
+  big-bear-seafile-memcached:
+    container_name: big-bear-seafile-memcached
+    image: memcached:1.6.18
+    entrypoint: memcached -m 256
+    networks:
+      - big_bear_seafile_network
+
+# Networks used by the application
+networks:
+  big_bear_seafile_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-seafile
+  description:
+    # Description in English
+    en_us: Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.
+  tagline:
+    # Short description or tagline in English
+    en_us: Seafile is an open source file sync and share platform, focusing on reliability and performance.
+  # Developer's name or identifier
+  developer: "seafile"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/seafile.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: seafile
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
