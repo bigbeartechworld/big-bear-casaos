@@ -127,3 +127,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-seafile-to-bigbearcasaos/1011#instructions-3
