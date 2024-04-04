@@ -134,3 +134,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "3000"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3
