@@ -101,3 +101,8 @@ x-casaos:
   port_map: "8443"
   # Scheme used (https)
   scheme: https
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Before you install Crafty Controller, you need to read the https://community.bigbeartechworld.com/t/added-crafty-controller-to-bigbearcasaos/1013#instructions-3.
