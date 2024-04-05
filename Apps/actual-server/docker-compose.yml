@@ -4,7 +4,7 @@ name: big-bear-actual-server
 services:
   # Service name: app
   app:
-    image: actualbudget/actual-server:24.3.0 # The Docker image to use (latest version of actual-server)
+    image: actualbudget/actual-server:24.4.0 # The Docker image to use (latest version of actual-server)
     container_name: actual-server # Name of the container instance
     volumes:
       - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
