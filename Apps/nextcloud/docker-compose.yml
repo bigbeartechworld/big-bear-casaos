@@ -11,7 +11,7 @@ services:
     # Define the container name
     container_name: nextcloud
     # Use the nextcloud:28.0.1-apache image
-    image: nextcloud:28.0.3-apache
+    image: nextcloud:28.0.4-apache
     # Restart the container unless stopped
     restart: unless-stopped
     # Map port 7580 on the host to port 80 on the container
@@ -135,7 +135,7 @@ services:
             en_us: "Container Port: 6379"
 
   cron:
-    image: nextcloud:28.0.3-apache
+    image: nextcloud:28.0.4-apache
     restart: on-failure
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
