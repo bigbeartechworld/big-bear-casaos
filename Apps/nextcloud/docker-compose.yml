@@ -156,9 +156,12 @@ services:
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
     entrypoint: /cron.sh
+    # Specify the dependencies
     depends_on:
-      - db-nextcloud
-      - redis-nextcloud
+      db-nextcloud:
+        condition: service_healthy
+      redis-nextcloud:
+        condition: service_healthy
     networks:
       - nextcloud_network
 
