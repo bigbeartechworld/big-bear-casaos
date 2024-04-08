@@ -34,8 +34,10 @@ services:
       - PHP_UPLOAD_LIMIT=1024G
     # Specify the dependencies
     depends_on:
-      - db-nextcloud
-      - redis-nextcloud
+      db-nextcloud:
+        condition: service_healthy
+      redis-nextcloud:
+        condition: service_healthy
 
     # Define the network
     networks:
@@ -96,6 +98,13 @@ services:
     networks:
       - nextcloud_network # Connect to the Nextcloud network
 
+    # Healthcheck configuration for the database service
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U casaos"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
     x-casaos:
       volumes:
         - container: /var/lib/postgresql/data
@@ -123,6 +132,13 @@ services:
       - "/DATA/AppData/$AppID/redis:/data" # Mount the Redis data directory
     networks:
       - nextcloud_network # Connect to the Nextcloud network
+
+    # Healthcheck configuration for the Redis service
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
     x-casaos:
       volumes:
