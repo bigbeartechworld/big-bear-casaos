@@ -88,7 +88,7 @@ services:
   db-nextcloud:
     container_name: db-nextcloud
     image: postgres:14.2
-    restart: on-failure
+    restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Mount the PostgreSQL data directory
     environment:
