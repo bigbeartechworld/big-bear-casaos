@@ -11,9 +11,9 @@ services:
     image: lukevella/rallly:3.7.0 # Docker image to be used for creating the container
     restart: unless-stopped # Policy to restart the container unless manually stopped
     environment: # Environment variables passed to the container for configuration
-      # Database connection URL
+      # Database connection URL (DATABASE_URL=postgres://username:password@host/database)
       - DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly
-      - SECRET_PASSWORD=0f6f292d-c78c-4709-920d-e3b6361eb5b5 # Secret password for application security
+      - SECRET_PASSWORD=0f6f292d-c78c-4709-920d-e3b6361eb5b5 # Secret password for application security UUID V4
       # URL for the frontend to use, replace [YOUR_CASAOS_IP] with your actual CasaOS IP
       - NEXT_PUBLIC_BASE_URL=http://[YOUR_CASAOS_IP]:3000
       - NOREPLY_EMAIL=noreply@example.com # Email used for sending no-reply messages
