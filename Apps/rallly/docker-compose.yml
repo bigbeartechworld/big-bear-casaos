@@ -44,7 +44,39 @@ services:
         - container: DATABASE_URL
           description:
             en_us: "Database URL: postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly"
-        # Additional environment variable descriptions...
+        - container: SECRET_PASSWORD
+          description:
+            en_us: "Secret password for application security"
+        - container: NEXT_PUBLIC_BASE_URL
+          description:
+            en_us: "Frontend URL: http"
+        - container: NOREPLY_EMAIL
+          description:
+            en_us: "Email used for sending no-reply messages"
+        - container: SUPPORT_EMAIL
+          description:
+            en_us: "Support contact email"
+        - container: SMTP_HOST
+          description:
+            en_us: "SMTP server host"
+        - container: SMTP_PORT
+          description:
+            en_us: "SMTP server port"
+        - container: SMTP_SECURE
+          description:
+            en_us: "SMTP server security"
+        - container: SMTP_USER
+          description:
+            en_us: "SMTP server username"
+        - container: SMTP_PWD
+          description:
+            en_us: "SMTP server password"
+        - container: SMTP_TLS_ENABLED
+          description:
+            en_us: "SMTP server TLS enabled"
+        - container: ALLOWED_EMAILS
+          description:
+            en_us: "Allowed emails for the application"
 
   # Database service for the application
   big-bear-rallly-db:
@@ -64,6 +96,19 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    # CasaOS specific configurations for user interface
+    x-casaos:
+      envs:
+        # Detailed descriptions for environment variables to display in CasaOS UI
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Database password"
+        - container: POSTGRES_DB
+          description:
+            en_us: "Database name"
+        - container: POSTGRES_USER
+          description:
+            en_us: "Database user"
 
 # Network definitions for the application
 networks:
