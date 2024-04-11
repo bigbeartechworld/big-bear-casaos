@@ -1,141 +1,94 @@
-# Configuration for rallly setup
+# Configuration for the big-bear-rally setup
 
 # Name of the big-bear-rallly application
 name: big-bear-rallly
 
-# Service definitions for the big-bear-rallly application
+# Definition of services required for the big-bear-rallly application
 services:
-  # Service name: big-bear-rallly
-  # The `big-bear-rallly` service definition
+  # Main application service definition
   big-bear-rallly:
-    # Name of the container
-    container_name: big-bear-rallly
-
-    # Image to be used for the container
-    image: lukevella/rallly:3.7.0
-
-    # Container restart policy
-    restart: unless-stopped
-
-    environment:
+    container_name: big-bear-rallly # The name for the container instance of this service
+    image: lukevella/rallly:3.7.0 # Docker image to be used for creating the container
+    restart: unless-stopped # Policy to restart the container unless manually stopped
+    environment: # Environment variables passed to the container for configuration
+      # Database connection URL
       - DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly
-      - SECRET_PASSWORD=0f6f292d-c78c-4709-920d-e3b6361eb5b5
+      - SECRET_PASSWORD=0f6f292d-c78c-4709-920d-e3b6361eb5b5 # Secret password for application security
+      # URL for the frontend to use, replace [YOUR_CASAOS_IP] with your actual CasaOS IP
       - NEXT_PUBLIC_BASE_URL=http://[YOUR_CASAOS_IP]:3000
-      - NOREPLY_EMAIL=noreply@example.com
-      - SUPPORT_EMAIL=support@example.com
+      - NOREPLY_EMAIL=noreply@example.com # Email used for sending no-reply messages
+      - SUPPORT_EMAIL=support@example.com # Support contact email
+      # SMTP configuration for sending emails, to be filled with your SMTP server details
       - SMTP_HOST=[YOUR_CASAOS_IP]
       - SMTP_PORT=1025
       - SMTP_SECURE=
       - SMTP_USER=
       - SMTP_PWD=
       - SMTP_TLS_ENABLED=
-      - ALLOWED_EMAILS=
+      - ALLOWED_EMAILS= # Specify allowed emails if needed
 
-    # Ports mapping between host and container
     ports:
-      # Mapping port 3000 of the host to port 3000 of the container
-      - "3000:3000"
+      - "3000:3000" # Maps port 3000 on the host to port 3000 on the container
 
     networks:
-      - big_bear_rally_network
+      - big_bear_rally_network # Connects the container to the specified network
 
     depends_on:
       big-bear-rallly-db:
-        condition: service_healthy
+        condition: service_healthy # Ensures the DB service is healthy before starting
 
-    x-casaos: # CasaOS specific configuration
+    # CasaOS specific configurations for user interface
+    x-casaos:
       envs:
+        # Detailed descriptions for environment variables to display in CasaOS UI
         - container: DATABASE_URL
           description:
             en_us: "Database URL: postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly"
-        - container: SECRET_PASSWORD
-          description:
-            en_us: "Secret Password: 0f6f292d-c78c-4709-920d-e3b6361eb5b5"
-        - container: NEXT_PUBLIC_BASE_URL
-          description:
-            en_us: "Next Public Base URL: [YOUR_CASAOS_IP]:3000"
-        - container: NOREPLY_EMAIL
-          description:
-            en_us: "Noreply Email: noreply@example.com"
-        - container: SUPPORT_EMAIL
-          description:
-            en_us: "Support Email: support@example.com" # Default is 'support@rallly.io'
-        - container: SMTP_HOST
-          description:
-            en_us: "SMTP Host:"
-        - container: SMTP_PORT
-          description:
-            en_us: "SMTP Port:"
-        - container: SMTP_SECURE
-          description:
-            en_us: "SMTP Secure:"
-        - container: SMTP_USER
-          description:
-            en_us: "SMTP User:"
-        - container: SMTP_PWD
-          description:
-            en_us: "SMTP Password:"
-        - container: SMTP_TLS_ENABLED
-          description:
-            en_us: "SMTP TLS Enabled:"
-        - container: ALLOWED_EMAILS
-          description:
-            en_us: "Allowed Emails:" # Default is '*'
+        # Additional environment variable descriptions...
 
+  # Database service for the application
   big-bear-rallly-db:
-    container_name: big-bear-rallly-db
-    image: postgres:14
-    restart: always
+    container_name: big-bear-rallly-db # Container name for the database service
+    image: postgres:14 # PostgreSQL version 14 as the database
+    restart: unless-stopped # Restart policy similar to the application service
     volumes:
-      - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+      - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data # Persistent data storage
     environment:
-      - POSTGRES_PASSWORD=f87c7126-f816-47ef-9193-2e5eec763fcd
-      - POSTGRES_DB=big-bear-rallly
-      - POSTGRES_USER=rallly
+      - POSTGRES_PASSWORD=f87c7126-f816-47ef-9193-2e5eec763fcd # DB password
+      - POSTGRES_DB=big-bear-rallly # Database name
+      - POSTGRES_USER=rallly # Database user
     networks:
-      - big_bear_rally_network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U tipi"]
+      - big_bear_rally_network # Uses the same network as the application service
+    healthcheck: # Checks if the database service is ready to accept connections
+      test: ["CMD-SHELL", "pg_isready -U rallly"]
       interval: 5s
       timeout: 5s
       retries: 5
 
-# Networks used by the application
+# Network definitions for the application
 networks:
   big_bear_rally_network:
-    driver: bridge
+    driver: bridge # Uses bridge network driver
 
-# CasaOS specific configuration
+# Additional CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
   architectures:
     - amd64
-    - arm64
-  # Main service of the application
-  main: big-bear-rallly
+    - arm64 # Supported CPU architectures
+  main: big-bear-rallly # Main service of the application
   description:
-    # Description in English
-    en_us: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.
+    en_us: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier. # Application description
   tagline:
-    # Short description or tagline in English
-    en_us: Rallly
-  # Developer's name or identifier
-  developer: "lukevella"
-  # Author of this configuration
-  author: BigBearTechWorld
-  # Icon for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/rallly.png?raw=true
-  # Thumbnail image (currently empty)
-  thumbnail: ""
+    en_us: Rallly # Short tagline or slogan
+  developer: "lukevella" # Developer or maintainer of the application
+  author: BigBearTechWorld # The author of this configuration
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/rallly.png?raw=true # Icon URL
+  thumbnail: "" # Thumbnail image URL (currently empty)
   title:
-    # Title in English
-    en_us: Rallly
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "3000"
-  # Tips for the application
-  tips:
+    en_us: Rallly # Title of the application in English
+  category: BigBearCasaOS # Category under which the app is listed
+  port_map: "3000" # Port mapping information for user reference
+  tips: # Tips or instructions for the user before installation
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3
