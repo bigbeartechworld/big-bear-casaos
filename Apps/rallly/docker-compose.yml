@@ -92,10 +92,10 @@ services:
     networks:
       - big_bear_rally_network # Uses the same network as the application service
     healthcheck: # Checks if the database service is ready to accept connections
-      test: ["CMD-SHELL", "pg_isready -U rallly"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
+      test: ["CMD-SHELL", "pg_isready -U rallly"] # This is a utility provided by PostgreSQL, used to check if a PostgreSQL server is ready to accept connections. The -U rallly option specifies the username to connect as.
+      interval: 5s # This specifies how often the health check command should be run. In your configuration, it’s set to every 5 seconds (5s). This means Docker will execute the pg_isready command every 5 seconds to check if the database server is up and ready to accept connections.
+      timeout: 5s # This is the maximum time allowed for the health check command to run. If the command takes longer than this time to complete, it is considered a failure. Here, the timeout is also set to 5 seconds.
+      retries: 5 # This specifies the number of consecutive failures required to consider the container as unhealthy. In your case, the pg_isready command must fail 5 consecutive times before Docker marks the container as unhealthy.
     # CasaOS specific configurations for user interface
     x-casaos:
       envs:
