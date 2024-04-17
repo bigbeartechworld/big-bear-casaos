@@ -12,7 +12,7 @@ services:
     container_name: big-bear-dozzle
 
     # Image to be used for the container
-    image: amir20/dozzle:v6.4.6
+    image: amir20/dozzle:v6.5.1
 
     # Container restart policy
     restart: unless-stopped
