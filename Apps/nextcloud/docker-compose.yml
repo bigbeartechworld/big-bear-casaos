@@ -100,7 +100,7 @@ services:
 
     # Healthcheck configuration for the database service
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U casaos"]
+      test: ["CMD-SHELL", "pg_isready -U casaos -d nextcloud"]
       interval: 10s
       timeout: 5s
       retries: 5
