@@ -5,20 +5,18 @@ name: big-bear-dashy
 
 # Service definitions for the dashy application
 services:
-  # Service name: app
-  app:
+  # Service name: big-bear-dashy
+  big-bear-dashy:
     # Image to be used for the app service
-    image: lissy93/dashy:2.1.2
+    image: lissy93/dashy:3.0.0
     # Name of the container
-    container_name: Dashy
-    # Network mode for the container
-    network_mode: bridge
+    container_name: big-bear-dashy
     # Uncomment below if you want to mount volumes
     volumes:
       - /DATA/AppData/$AppID/public:/app/public
     # Ports mapping
     ports:
-      - 4000:80
+      - 4000:8080
     # Set any environmental variables
     environment:
       - NODE_ENV=production
@@ -42,9 +40,9 @@ services:
           description:
             en_us: "Container Path: /app/public"
       ports:
-        - container: "80"
+        - container: "8080"
           description:
-            en_us: "Container Port: 80"
+            en_us: "Container Port: 8080"
 
 # CasaOS specific configuration
 x-casaos:
@@ -54,7 +52,7 @@ x-casaos:
     - arm
     - arm64
   # Main service of the application
-  main: app
+  main: big-bear-dashy
   description:
     # Description in English
     en_us: Dashy helps you organize your self-hosted services by making them accessible from a single place
