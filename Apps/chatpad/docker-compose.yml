@@ -47,7 +47,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/chatpad.png?raw=true
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/chatpad/logo.jpeg?raw=true
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
