@@ -129,3 +129,7 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8069"
+  tips:
+    before_install:
+      en_us: |
+        Documentation: https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119
