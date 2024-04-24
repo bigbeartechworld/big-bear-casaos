@@ -107,3 +107,7 @@ x-casaos:
     en_us: Piwigo # Title in English
   category: BigBearCasaOS # Application category
   port_map: "8080" # Port mapping information
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-piwigo-to-bigbearcasaos/1133#documentation-3
