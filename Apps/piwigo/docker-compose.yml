@@ -85,6 +85,7 @@ services:
           description:
             en_us: "Container Port: 3306"
 
+# Network definition for the big-bear-piwigo application
 networks:
   big_bear_piwigo_network:
     driver: bridge # Defines the network driver to be used (bridge)
