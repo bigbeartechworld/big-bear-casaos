@@ -1,0 +1,109 @@
+# Configuration for piwigo setup
+
+# Name of the big-bear-piwigo application
+name: big-bear-piwigo
+
+# Service definitions for the big-bear-piwigo application
+services:
+  # Service name: big-bear-piwigo
+  # The `big-bear-piwigo` service definition
+  big-bear-piwigo:
+    # Name of the container
+    container_name: big-bear-piwigo
+
+    # Image to be used for the container
+    image: linuxserver/piwigo:14.4.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - PUID=1000 # User ID for the container
+      - PGID=1000 # Group ID for the container
+      - TZ=UTC # Timezone setting for the container
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/config # Configuration files
+      - /DATA/AppData/$AppID/gallery:/gallery # Gallery files
+
+    # Ports mapping between host and container
+    ports:
+      - "8080:80" # Mapping port 8080 of the host to port 80 of the container
+
+    networks:
+      - big_bear_piwigo_network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /gallery
+          description:
+            en_us: "Container Path: /gallery"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+  big-bear-piwigo-db:
+    image: mariadb:10.6
+    container_name: big-bear-piwigo-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=3cf3f2c4-3415-4efe-b478-db7b6f0b9934 # Root password for MySQL
+      - MYSQL_DATABASE=piwigo # Database name
+      - MYSQL_USER=big_bear_piwigo # Database user
+      - MYSQL_PASSWORD=358fac48-4beb-4027-9c11-840464aca400 # Database user password
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Persist database data
+    restart: unless-stopped
+    networks:
+      - big_bear_piwigo_network
+
+    x-casaos:
+      envs:
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: "MySQL root password: 3cf3f2c4-3415-4efe-b478-db7b6f0b9934"
+        - container: MYSQL_DATABASE
+          description:
+            en_us: "MySQL database: piwigo"
+        - container: MYSQL_USER
+          description:
+            en_us: "MySQL user: big_bear_piwigo"
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: "MySQL password: 358fac48-4beb-4027-9c11-840464aca400"
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
+
+networks:
+  big_bear_piwigo_network:
+    driver: bridge # Defines the network driver to be used (bridge)
+
+# CasaOS specific configuration
+x-casaos:
+  architectures:
+    - amd64 # Supported CPU architecture: AMD64
+    - arm64 # Supported CPU architecture: ARM64
+  main: big-bear-piwigo # Main service of the application
+  description:
+    en_us: Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.
+  tagline:
+    en_us: Piwigo # Short description or tagline in English
+  developer: "piwigo" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/piwigo.png?raw=true # Icon for the application
+  thumbnail: "" # Thumbnail image (currently empty)
+  title:
+    en_us: Piwigo # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "8080" # Port mapping information
