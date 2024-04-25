@@ -25,6 +25,10 @@ services:
       - database
     restart: unless-stopped # Policy to restart unless stopped
 
+    # Networks to be attached to the container
+    networks:
+      - big_bear_immich_network
+
     x-casaos: # CasaOS specific configuration
       envs:
         - container: DB_HOSTNAME
@@ -79,6 +83,10 @@ services:
       - database
     restart: unless-stopped # Policy to restart unless stopped
 
+    # Networks to be attached to the container
+    networks:
+      - big_bear_immich_network # Connects the container to a defined network
+
     x-casaos: # CasaOS specific configuration
       envs:
         - container: DB_HOSTNAME
@@ -119,6 +127,10 @@ services:
       REDIS_HOSTNAME: immich-redis
     restart: unless-stopped # Policy to restart unless stopped
 
+    # Networks to be attached to the container
+    networks:
+      - big_bear_immich_network # Connects the container to a defined network
+
     x-casaos: # CasaOS specific configuration
       envs:
         - container: DB_HOSTNAME
@@ -149,6 +161,8 @@ services:
     container_name: immich-redis # Name of the running container
     image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
     restart: always # Policy to always restart the container if it stops
+    networks:
+      - big_bear_immich_network # Connects the container to a defined network
 
   # Configuration for Database service
   database:
@@ -162,6 +176,10 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
     restart: unless-stopped # Policy to always restart the container if it stops
+
+    # CasaOS specific configuration for the database service
+    networks:
+      - big_bear_immich_network # Connects the container to a defined network
 
     x-casaos: # CasaOS specific configuration
       envs:
@@ -181,6 +199,10 @@ services:
         - container: /var/lib/postgresql/data
           description:
             en_us: "Container Path: /var/lib/postgresql/data"
+
+networks: # Defines network configurations for the services
+  big_bear_immich_network:
+    driver: bridge # Uses bridge network driver
 
 # CasaOS specific configuration
 x-casaos:
