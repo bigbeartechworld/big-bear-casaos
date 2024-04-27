@@ -15,15 +15,45 @@ jobs:
         run: |
           echo "last_commit_message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
 
-  ci:
-    needs:
-      - get-last-commit-message
-    if: contains(${{ needs.get-last-commit-message.outputs.last_commit_message }}, '[ready]')
+  update-config:
+    needs: get-last-commit-message
+    if: "!contains(${{ needs.get-last-commit-message.outputs.last_commit_message }}, '[ready]')"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.4
 
+      - name: Get changed files
+        uses: jitterbit/get-changed-files@v1
+        id: files
+
+      - name: Apply config update
+        run: |
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            echo "Changed file: $changed_file" # example: apps/jackett/docker-compose.yml
+            if [[ $changed_file == *"docker-compose.yml"* ]]; then
+              app_name=$(echo $changed_file | cut -d'/' -f 2)
+              echo "App name: $app_name"
+              ./.github/workflows/renovate-app-version.sh $app_name
+            fi
+          done
+
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Big Bear CI
+          author_email: ci@bigbeartechworld.com
+          message: "Update app version [ready]"
+          commit: --no-verify
+          push: origin HEAD:${{ github.head_ref }}
+
+  ci:
+    needs:
+      - update-config
+      - get-last-commit-message
+    if: contains(${{ needs.get-last-commit-message.outputs.last_commit_message }}, '[ready]')
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v4.1.4
 

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-excalidraw
     # Docker image to be used
-    image: excalidraw/excalidraw
+    image: excalidraw/excalidraw:latest
     # Restart policy for the service
     restart: unless-stopped
     # Port mappings for the service

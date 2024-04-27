@@ -11,16 +11,6 @@ services:
     # Name of the container
     container_name: big-bear-peppermint
 
-    # This section specifies that the `app` service depends on another service named `db`.
-    depends_on:
-      # The service `app` depends on `db`.
-      db:
-        # Specifies the condition for the dependency. Here, it's set to `service_started`, which means
-        # the `app` service will wait for the `db` service to be in a "started" state before starting itself.
-        condition: service_started
-        # Specifies that the `app` service requires the `db` service to be available.
-        required: true
-
     # Image to be used for the container
     image: pepperlabs/peppermint:latest
 
@@ -58,6 +48,16 @@ services:
 
       # Sets the SECRET environment variable to 'peppermint4life', potentially used as a secret key or value
       - SECRET=peppermint4life
+
+    # This section specifies that the `app` service depends on another service named `db`.
+    depends_on:
+      # The service `app` depends on `db`.
+      db:
+        # Specifies the condition for the dependency. Here, it's set to `service_started`, which means
+        # the `app` service will wait for the `db` service to be in a "started" state before starting itself.
+        condition: service_started
+        # Specifies that the `app` service requires the `db` service to be available.
+        required: true
 
   # Service name: db
   # The `db` service definition

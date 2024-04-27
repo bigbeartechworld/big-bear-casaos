@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "",
-  "scripts": {},
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "eslint ./apps --ext .json",
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bigbeartechworld/big-bear-casaos.git"
@@ -32,6 +36,7 @@
     "prettier": "^3.2.5",
     "semver": "^7.6.0",
     "ts-jest": "^28.0.7",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "glob": "^10.3.12"
   }
 }
