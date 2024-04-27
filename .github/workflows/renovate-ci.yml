@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.3
 
-        - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4.1.3
 
       - name: Install Node.js
