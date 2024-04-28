@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.4
+        with:
+          fetch-depth: 0  # Fetch all history
 
       - name: Get changed files
         uses: jitterbit/get-changed-files@v1
@@ -37,6 +39,9 @@ jobs:
               ./.github/workflows/renovate-app-version.sh $app_name
             fi
           done
+
+      - name: Pull changes
+        run: git pull --rebase
 
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
