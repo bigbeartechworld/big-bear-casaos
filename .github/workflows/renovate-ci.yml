@@ -103,8 +103,11 @@ jobs:
             const modifiedFiles = data.map(file => file.filename);
             const filesInAppsFolder = modifiedFiles.filter(file => file.includes('Apps/'))
 
-            if (filesInAppsFolder.length < modifiedFiles.length) {
-              console.log('Not all files are in apps folder, skipping automerge')
+            // Exclude README.md from major bump or blocking automerge
+            const significantChanges = modifiedFiles.filter(file => !file.includes('README.md'));
+
+            if (filesInAppsFolder.length < significantChanges.length) {
+              console.log('Not all significant files are in apps folder, skipping automerge')
               core.setOutput('major_bump', 'true')
               return
             }
