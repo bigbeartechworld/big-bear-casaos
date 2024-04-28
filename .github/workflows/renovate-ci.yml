@@ -40,15 +40,6 @@ jobs:
             fi
           done
 
-      - name: Stash changes
-        run: git stash
-
-      - name: Pull changes
-        run: git pull --rebase
-
-      - name: Pop stash
-        run: git stash pop
-
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v9
         with:
