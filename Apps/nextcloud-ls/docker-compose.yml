@@ -1,0 +1,84 @@
+# Configuration for nextcloud-ls setup
+
+# Name of the big-bear-nextcloud-ls application
+name: big-bear-nextcloud-ls
+
+# Service definitions for the big-bear-nextcloud-ls application
+services:
+  # Service name: big-bear-nextcloud-ls
+  # The `big-bear-nextcloud-ls` service definition
+  big-bear-nextcloud-ls:
+    # Define the container name
+    container_name: big-bear-nextcloud-ls
+    # Use the nextcloud:28.0.1-apache image
+    image: linuxserver/nextcloud:29.0.0
+    # Restart the container unless stopped
+    restart: unless-stopped
+    # Map port 7580 on the host to port 80 on the container
+    ports:
+      - 10443:443
+    # Mount the /DATA/AppData/$AppID/html directory on the host to /var/www/html in the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/data:/data
+    # Set environment variables
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "443"
+          description:
+            en_us: "Container Port: 443"
+      envs:
+        - container: PUID
+          description:
+            en_us: Process UID
+        - container: PGID
+          description:
+            en_us: Process GID
+        - container: TZ
+          description:
+            en_us: Timezone
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-nextcloud-ls
+  description:
+    # Description in English
+    en_us: Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
+  tagline:
+    en_us: LinuxServer - The productivity platform that keeps you in control
+  # Developer's name or identifier
+  developer: "nextcloud"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/nextcloud.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/thumbnail.jpg
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-3.png
+  title:
+    # Title in English
+    en_us: Nextcloud LS
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "10443"
