@@ -101,7 +101,7 @@ jobs:
             });
 
             const modifiedFiles = data.map(file => file.filename);
-            const filesInAppsFolder = modifiedFiles.filter(file => file.includes('apps/'))
+            const filesInAppsFolder = modifiedFiles.filter(file => file.includes('Apps/'))
 
             if (filesInAppsFolder.length < modifiedFiles.length) {
               console.log('Not all files are in apps folder, skipping automerge')
