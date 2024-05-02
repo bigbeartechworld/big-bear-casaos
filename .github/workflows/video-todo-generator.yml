@@ -15,8 +15,8 @@ jobs:
       - name: Install Bun
         uses: oven-sh/setup-bun@v1
 
-      - name: Generate new README.md file
-        run: bun .github/scripts/readme-generator.ts
+      - name: Generate new VIDEO.md file
+        run: bun .github/scripts/video-todo-generator.ts
 
       - name: Create Pull Request
         id: create-pr
@@ -24,12 +24,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: |
-            docs: regenerate readme app list
+            docs: regenerate video app list
           committer: GitHub <noreply@github.com>
           author: GitHub <noreply@github.com>
-          branch: bot/readme-update
+          branch: bot/video-todo-update
           title: |
-            readme-generator: update readme
+            video-todo-generator: update video list
           labels: bot
 
       - name: Label this PR as "automerge"
