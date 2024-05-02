@@ -3,5 +3,6 @@
   "version": "2.9.0",
   "image": "ghcr.io/advplyr/audiobookshelf",
   "youtube": "",
-  "docs_link": ""
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
 }

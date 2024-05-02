@@ -3,5 +3,6 @@
   "version": "v1.103.1",
   "image": "ghcr.io/immich-app/immich-server",
   "youtube": "https://youtu.be/ZIx2jDHYjjE",
-  "docs_link": ""
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
 }

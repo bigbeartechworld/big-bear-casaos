@@ -3,5 +3,6 @@
   "version": "2.20.1-alpine",
   "image": "portainer/portainer-ce",
   "youtube": "https://youtu.be/GW4_OALLI_s",
-  "docs_link": ""
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
 }
