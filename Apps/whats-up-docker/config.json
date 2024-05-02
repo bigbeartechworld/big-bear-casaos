@@ -1,4 +1,7 @@
 {
-    "id": "whats-up-docker",
-    "version": "6.3.0"
+  "id": "whats-up-docker",
+  "version": "6.3.0",
+  "image": "fmartinou/whats-up-docker",
+  "youtube": "",
+  "docs_link": ""
 }

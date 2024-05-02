@@ -1,4 +1,7 @@
 {
-    "id": "crafty",
-    "version": "4.3.2"
+  "id": "crafty",
+  "version": "4.3.2",
+  "image": "registry.gitlab.com/crafty-controller/crafty-4",
+  "youtube": "",
+  "docs_link": ""
 }

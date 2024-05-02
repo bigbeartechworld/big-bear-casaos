@@ -1,4 +1,7 @@
 {
-    "id": "odoo",
-    "version": "17"
+  "id": "odoo",
+  "version": "17",
+  "image": "odoo",
+  "youtube": "https://youtu.be/H4rzZNO47Uk",
+  "docs_link": "https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119"
 }

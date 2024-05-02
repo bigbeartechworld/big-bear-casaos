@@ -1,4 +1,7 @@
 {
-    "id": "guacamole",
-    "version": "1.5.5"
+  "id": "guacamole",
+  "version": "1.5.5",
+  "image": "guacamole/guacamole",
+  "youtube": "https://youtu.be/6cu0kfP50Jg",
+  "docs_link": ""
 }

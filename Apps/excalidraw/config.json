@@ -1,4 +1,7 @@
 {
-    "id": "excalidraw",
-    "version": "latest"
+  "id": "excalidraw",
+  "version": "latest",
+  "image": "excalidraw/excalidraw",
+  "youtube": "https://youtu.be/T4K6RDhieIA",
+  "docs_link": ""
 }

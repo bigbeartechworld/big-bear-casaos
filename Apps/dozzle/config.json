@@ -1,4 +1,7 @@
 {
   "id": "dozzle",
-  "version": "6.5.2"
+  "version": "6.5.2",
+  "image": "amir20/dozzle",
+  "youtube": "https://youtu.be/lLLNDcHNOuM",
+  "docs_link": ""
 }

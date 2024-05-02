@@ -1,4 +1,7 @@
 {
   "id": "peppermint",
-  "version": "latest"
+  "version": "latest",
+  "image": "pepperlabs/peppermint",
+  "youtube": "",
+  "docs_link": ""
 }

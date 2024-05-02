@@ -1,4 +1,7 @@
 {
-    "id": "flcontainers-guacamole",
-    "version": "1.5.4"
+  "id": "flcontainers-guacamole",
+  "version": "1.5.4",
+  "image": "flcontainers/guacamole",
+  "youtube": "",
+  "docs_link": ""
 }

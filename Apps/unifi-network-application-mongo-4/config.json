@@ -1,4 +1,7 @@
 {
-    "id": "unifi-network-application-mongo-4",
-    "version": "4.4.28"
+  "id": "unifi-network-application-mongo-4",
+  "version": "4.4.28",
+  "image": "linuxserver/unifi-network-application",
+  "youtube": "https://youtu.be/JCe-r_SHCe8",
+  "docs_link": ""
 }

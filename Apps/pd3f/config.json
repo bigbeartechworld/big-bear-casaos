@@ -1,4 +1,7 @@
 {
-    "id": "pd3f",
-    "version": "latest"
+  "id": "pd3f",
+  "version": "latest",
+  "image": "pd3f/pd3f",
+  "youtube": "",
+  "docs_link": ""
 }

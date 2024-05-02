@@ -1,4 +1,7 @@
 {
-    "id": "chatpad",
-    "version": "f45cd53bc410412610c1ba1cbd84cd137d8e167d"
+  "id": "chatpad",
+  "version": "f45cd53bc410412610c1ba1cbd84cd137d8e167d",
+  "image": "ghcr.io/deiucanta/chatpad",
+  "youtube": "",
+  "docs_link": ""
 }

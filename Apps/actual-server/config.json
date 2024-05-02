@@ -1,4 +1,7 @@
 {
-    "id": "actual-server",
-    "version": "24.4.0"
+  "id": "actual-server",
+  "version": "24.4.0",
+  "image": "actualbudget/actual-server",
+  "youtube": "https://youtu.be/fa8j7ZfkYaM",
+  "docs_link": ""
 }

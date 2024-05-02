@@ -1,4 +1,7 @@
 {
-    "id": "focalboard",
-    "version": "7.11.4"
+  "id": "focalboard",
+  "version": "7.11.4",
+  "image": "mattermost/focalboard",
+  "youtube": "https://youtu.be/fBDpqpN8sks",
+  "docs_link": ""
 }

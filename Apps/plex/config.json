@@ -1,4 +1,7 @@
 {
-    "id": "plex",
-    "version": "1.40.2"
+  "id": "plex",
+  "version": "1.40.2",
+  "image": "linuxserver/plex",
+  "youtube": "",
+  "docs_link": ""
 }

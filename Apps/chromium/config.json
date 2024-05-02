@@ -1,4 +1,7 @@
 {
-    "id": "chromium",
-    "version": "1.15.0-rolling"
+  "id": "chromium",
+  "version": "1.15.0-rolling",
+  "image": "kasmweb/chromium",
+  "youtube": "https://youtu.be/ziy4c4n7KnU",
+  "docs_link": ""
 }

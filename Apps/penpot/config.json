@@ -1,4 +1,7 @@
 {
-    "id": "penpot",
-    "version": "2.0.1"
+  "id": "penpot",
+  "version": "2.0.1",
+  "image": "penpotapp/frontend",
+  "youtube": "",
+  "docs_link": ""
 }

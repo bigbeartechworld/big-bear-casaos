@@ -1,4 +1,7 @@
 {
-    "id": "gotify",
-    "version": "2.4.0"
+  "id": "gotify",
+  "version": "2.4.0",
+  "image": "gotify/server",
+  "youtube": "",
+  "docs_link": ""
 }

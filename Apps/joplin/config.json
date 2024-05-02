@@ -1,4 +1,7 @@
 {
-    "id": "joplin",
-    "version": "2.14.2"
+  "id": "joplin",
+  "version": "2.14.2",
+  "image": "florider89/joplin-server",
+  "youtube": "https://youtu.be/FjVyg0X-_zc",
+  "docs_link": ""
 }

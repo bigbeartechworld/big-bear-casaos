@@ -1,4 +1,7 @@
 {
-    "id": "docker-cron-restart-notifier",
-    "version": "restart-notifier-latest"
+  "id": "docker-cron-restart-notifier",
+  "version": "restart-notifier-latest",
+  "image": "deduard/tools",
+  "youtube": "",
+  "docs_link": ""
 }

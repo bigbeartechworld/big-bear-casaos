@@ -1,4 +1,7 @@
 {
   "id": "playitgg",
-  "version": "1.1.0"
+  "version": "1.1.0",
+  "image": "dysta/playitgg",
+  "youtube": "",
+  "docs_link": ""
 }

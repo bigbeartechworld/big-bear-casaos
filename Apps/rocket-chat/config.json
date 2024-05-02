@@ -1,4 +1,7 @@
 {
-    "id": "rocket-chat",
-    "version": "6.7.0"
+  "id": "rocket-chat",
+  "version": "6.7.0",
+  "image": "rocket.chat",
+  "youtube": "",
+  "docs_link": ""
 }

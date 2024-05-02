@@ -1,4 +1,7 @@
 {
-    "id": "homarr",
-    "version": "0.15.2"
+  "id": "homarr",
+  "version": "0.15.2",
+  "image": "ghcr.io/ajnart/homarr",
+  "youtube": "https://youtu.be/H4rzZNO47Uk",
+  "docs_link": ""
 }

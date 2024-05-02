@@ -1,4 +1,7 @@
 {
-    "id": "lancache",
-    "version": "latest"
+  "id": "lancache",
+  "version": "latest",
+  "image": "lancachenet/monolithic",
+  "youtube": "",
+  "docs_link": ""
 }

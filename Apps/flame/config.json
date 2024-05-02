@@ -1,4 +1,7 @@
 {
-    "id": "flame",
-    "version": "multiarch2.3.1"
+  "id": "flame",
+  "version": "multiarch2.3.1",
+  "image": "pawelmalak/flame",
+  "youtube": "https://youtu.be/p_P_jKmJRz8",
+  "docs_link": ""
 }

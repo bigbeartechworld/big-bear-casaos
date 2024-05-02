@@ -1,4 +1,7 @@
 {
-    "id": "photoprism",
-    "version": "231128"
+  "id": "photoprism",
+  "version": "231128",
+  "image": "photoprism/photoprism",
+  "youtube": "",
+  "docs_link": ""
 }

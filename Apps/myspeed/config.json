@@ -1,4 +1,7 @@
 {
-    "id": "myspeed",
-    "version": "1.0.8"
+  "id": "myspeed",
+  "version": "1.0.8",
+  "image": "germannewsmaker/myspeed",
+  "youtube": "https://youtu.be/7roj87Fytz0",
+  "docs_link": ""
 }

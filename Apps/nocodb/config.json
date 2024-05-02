@@ -1,4 +1,7 @@
 {
-    "id": "nocodb",
-    "version": "0.205.1"
+  "id": "nocodb",
+  "version": "0.205.1",
+  "image": "nocodb/nocodb",
+  "youtube": "https://youtu.be/mO2YzWpBu4o",
+  "docs_link": "https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177"
 }

@@ -1,4 +1,7 @@
 {
-    "id": "Romm",
-    "version": "3.1.0"
+  "id": "Romm",
+  "version": "3.1.0",
+  "image": "zurdi15/romm",
+  "youtube": "",
+  "docs_link": ""
 }

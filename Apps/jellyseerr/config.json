@@ -1,4 +1,7 @@
 {
   "id": "jellyseerr",
-  "version": "1.8.1"
+  "version": "1.8.1",
+  "image": "fallenbagel/jellyseerr",
+  "youtube": "",
+  "docs_link": ""
 }

@@ -1,4 +1,7 @@
 {
   "id": "octoprint",
-  "version": "1.10.0"
+  "version": "1.10.0",
+  "image": "octoprint/octoprint",
+  "youtube": "https://youtu.be/gQ0J9y8w2wE",
+  "docs_link": ""
 }

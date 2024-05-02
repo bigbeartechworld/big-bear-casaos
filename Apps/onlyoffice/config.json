@@ -1,4 +1,7 @@
 {
-    "id": "onlyoffice",
-    "version": "8.0.1"
+  "id": "onlyoffice",
+  "version": "8.0.1",
+  "image": "onlyoffice/documentserver",
+  "youtube": "",
+  "docs_link": ""
 }

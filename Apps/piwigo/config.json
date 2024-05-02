@@ -1,4 +1,7 @@
 {
-    "id": "piwigo",
-    "version": "14.4.0"
+  "id": "piwigo",
+  "version": "14.4.0",
+  "image": "linuxserver/piwigo",
+  "youtube": "",
+  "docs_link": ""
 }

@@ -1,4 +1,7 @@
 {
-    "id": "it-tools",
-    "version": "2023.11.2-7d94e11"
+  "id": "it-tools",
+  "version": "2023.11.2-7d94e11",
+  "image": "corentinth/it-tools",
+  "youtube": "https://youtu.be/MlGypCrUJug",
+  "docs_link": ""
 }

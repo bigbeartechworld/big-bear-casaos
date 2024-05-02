@@ -1,4 +1,7 @@
 {
-    "id": "libretranslate",
-    "version": "v1.5.7"
+  "id": "libretranslate",
+  "version": "v1.5.7",
+  "image": "libretranslate/libretranslate",
+  "youtube": "https://youtu.be/VJ5DrsuJ3oA",
+  "docs_link": ""
 }

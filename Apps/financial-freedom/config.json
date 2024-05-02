@@ -1,4 +1,7 @@
 {
-    "id": "financial-freedom",
-    "version": "v0.2.0-alpha1"
+  "id": "financial-freedom",
+  "version": "v0.2.0-alpha1",
+  "image": "serversideup/financial-freedom",
+  "youtube": "",
+  "docs_link": ""
 }

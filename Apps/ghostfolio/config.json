@@ -1,4 +1,7 @@
 {
   "id": "ghostfolio",
-  "version": "2.77.1"
+  "version": "2.77.1",
+  "image": "ghostfolio/ghostfolio",
+  "youtube": "",
+  "docs_link": ""
 }

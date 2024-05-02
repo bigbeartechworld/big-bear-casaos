@@ -1,4 +1,7 @@
 {
-    "id": "gladys",
-    "version": "v4.39.0"
+  "id": "gladys",
+  "version": "v4.39.0",
+  "image": "gladysassistant/gladys",
+  "youtube": "https://youtu.be/l4GPomJMIT0",
+  "docs_link": ""
 }

@@ -1,4 +1,7 @@
 {
-    "id": "monica",
-    "version": "4.0.0"
+  "id": "monica",
+  "version": "4.0.0",
+  "image": "monica",
+  "youtube": "",
+  "docs_link": ""
 }

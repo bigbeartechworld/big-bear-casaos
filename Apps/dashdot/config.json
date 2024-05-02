@@ -1,4 +1,7 @@
 {
-    "id": "dashdot",
-    "version": "5.8.3"
+  "id": "dashdot",
+  "version": "5.8.3",
+  "image": "mauricenino/dashdot",
+  "youtube": "https://youtu.be/if_fyuX_5fU",
+  "docs_link": ""
 }

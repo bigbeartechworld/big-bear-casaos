@@ -1,4 +1,7 @@
 {
-    "id": "2fauth",
-    "version": "5.1.1"
+  "id": "2fauth",
+  "version": "5.1.1",
+  "image": "2fauth/2fauth",
+  "youtube": "https://youtu.be/yCnjxSryD_U",
+  "docs_link": ""
 }

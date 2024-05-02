@@ -1,4 +1,7 @@
 {
   "id": "n8n",
-  "version": "1.39.1"
+  "version": "1.39.1",
+  "image": "n8nio/n8n",
+  "youtube": "",
+  "docs_link": ""
 }

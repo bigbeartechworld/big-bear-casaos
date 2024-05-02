@@ -1,4 +1,7 @@
 {
-    "id": "obsidian-livesync",
-    "version": "3.3.3"
+  "id": "obsidian-livesync",
+  "version": "3.3.3",
+  "image": "couchdb",
+  "youtube": "",
+  "docs_link": ""
 }

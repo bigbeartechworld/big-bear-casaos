@@ -1,4 +1,7 @@
 {
-    "id": "trilium",
-    "version": "0.63.5"
+  "id": "trilium",
+  "version": "0.63.5",
+  "image": "zadam/trilium",
+  "youtube": "https://youtu.be/h5ISPmUuBHs",
+  "docs_link": ""
 }

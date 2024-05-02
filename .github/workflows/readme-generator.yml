@@ -1,0 +1,32 @@
+name: Readme Generator
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
+
+jobs:
+  generate-readme-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.3
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Generate new README.md file
+        run: bun .github/scripts/readme-generator.ts
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            docs: regenerate readme app list
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
+          branch: bot/readme-update
+          title: |
+            readme-generator: update readme
+          labels: bot

@@ -1,4 +1,7 @@
 {
-    "id": "umami",
-    "version": "postgresql-latest"
+  "id": "umami",
+  "version": "postgresql-latest",
+  "image": "ghcr.io/umami-software/umami",
+  "youtube": "https://youtu.be/4DEF5fNf8hU",
+  "docs_link": ""
 }

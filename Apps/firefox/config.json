@@ -1,4 +1,7 @@
 {
-    "id": "firefox",
-    "version": "1.15.0-rolling"
+  "id": "firefox",
+  "version": "1.15.0-rolling",
+  "image": "kasmweb/firefox",
+  "youtube": "https://youtu.be/RPBshN5hGWQ",
+  "docs_link": ""
 }

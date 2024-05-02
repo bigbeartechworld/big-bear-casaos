@@ -1,4 +1,7 @@
 {
   "id": "codex-docs",
-  "version": "2.2"
+  "version": "2.2",
+  "image": "ghcr.io/codex-team/codex.docs",
+  "youtube": "https://youtu.be/dKm2VJwam24",
+  "docs_link": ""
 }

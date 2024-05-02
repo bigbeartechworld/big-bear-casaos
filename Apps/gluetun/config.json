@@ -1,4 +1,7 @@
 {
-    "id": "gluetun",
-    "version": "v3.38.0"
+  "id": "gluetun",
+  "version": "v3.38.0",
+  "image": "qmcgaw/gluetun",
+  "youtube": "",
+  "docs_link": "https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175"
 }

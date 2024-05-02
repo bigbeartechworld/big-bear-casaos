@@ -1,4 +1,7 @@
 {
-    "id": "pingvin-share",
-    "version": "v0.23.1"
+  "id": "pingvin-share",
+  "version": "v0.23.1",
+  "image": "stonith404/pingvin-share",
+  "youtube": "https://youtu.be/SRJUS7h1vhU",
+  "docs_link": ""
 }
