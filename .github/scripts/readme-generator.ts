@@ -10,21 +10,31 @@ type App = {
 
 const getAppsList = async () => {
   const apps: Record<string, App> = {};
-  // fetch apps from app store repo
   const res = await fetch(
     "https://api.github.com/repos/bigbeartechworld/big-bear-runtipi/contents/apps"
   );
+
+  if (!res.ok) {
+    console.error(`Failed to fetch app list, status: ${res.status}`);
+    return { apps };
+  }
 
   const data = await res.json();
   const appNames = data.map((app) => app.name);
 
   for (const app of appNames) {
-    const config = await fetch(
-      `https://raw.githubusercontent.com/bigbeartechworld/big-bear-runtipi/master/apps/${app}/config.json`
-    );
-    const appConfig = await config.json();
+    const configUrl = `https://raw.githubusercontent.com/bigbeartechworld/big-bear-runtipi/master/apps/${app}/config.json`;
+    const configRes = await fetch(configUrl);
 
-    if (!appConfig.deprecated) {
+    if (!configRes.ok) {
+      console.error(
+        `Failed to fetch config for ${app}, status: ${configRes.status}`
+      );
+      continue;
+    }
+
+    try {
+      const appConfig = await configRes.json();
       apps[app] = {
         name: appConfig.id || "N/A",
         dockerImage: appConfig.image || "N/A",
@@ -32,17 +42,19 @@ const getAppsList = async () => {
         youtubeVideo: appConfig.youtube || "",
         docs: appConfig.docs_link || "",
       };
+    } catch (e) {
+      console.error(`Error parsing config for ${app}: ${e.message}`);
     }
   }
 
   return { apps };
 };
 
-const appToMarkdownTable = (apps) => {
+const appToMarkdownTable = (apps: Record<string, App>) => {
   let table = `| Application | Docker Image | Version | YouTube Video | Docs |\n`;
   table += `| --- | --- | --- | --- | --- |\n`;
 
-  Object.values(apps).forEach((app: any) => {
+  Object.values(apps).forEach((app) => {
     table += `| ${app.name} | ${app.dockerImage} | ${app.version} | [YouTube Video](${app.youtubeVideo}) | [Docs](${app.docs}) |\n`;
   });
 
