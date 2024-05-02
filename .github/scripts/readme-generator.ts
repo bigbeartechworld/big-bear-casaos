@@ -57,7 +57,12 @@ const appToMarkdownTable = (apps: Record<string, App>) => {
   table += `| --- | --- | --- | --- | --- |\n`;
 
   Object.values(apps).forEach((app) => {
-    table += `| ${app.name} | ${app.dockerImage} | ${app.version} | [YouTube Video](${app.youtubeVideo}) | [Docs](${app.docs}) |\n`;
+    const youtubeLink = app.youtubeVideo
+      ? `[YouTube Video](${app.youtubeVideo})`
+      : "";
+    const docsLink = app.docs ? `[Docs](${app.docs})` : "";
+
+    table += `| ${app.name} | ${app.dockerImage} | ${app.version} | ${youtubeLink} | ${docsLink} |\n`;
   });
 
   return table;
