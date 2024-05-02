@@ -11,7 +11,7 @@ type App = {
 const getAppsList = async () => {
   const apps: Record<string, App> = {};
   const res = await fetch(
-    "https://api.github.com/repos/bigbeartechworld/big-bear-runtipi/contents/apps"
+    "https://api.github.com/repos/bigbeartechworld/big-bear-casaos/contents/Apps"
   );
 
   if (!res.ok) {
@@ -23,7 +23,9 @@ const getAppsList = async () => {
   const appNames = data.map((app) => app.name);
 
   for (const app of appNames) {
-    const configUrl = `https://raw.githubusercontent.com/bigbeartechworld/big-bear-runtipi/master/apps/${app}/config.json`;
+    if (app === "__tests__") continue;
+
+    const configUrl = `https://raw.githubusercontent.com/bigbeartechworld/big-bear-casaos/master/Apps/${app}/config.json`;
     const configRes = await fetch(configUrl);
 
     if (!configRes.ok) {
