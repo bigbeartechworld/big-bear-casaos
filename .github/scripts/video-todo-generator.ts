@@ -70,11 +70,11 @@ const appToMarkdownTable = (apps: Record<string, App>) => {
 
 const writeToReadme = (appsTable) => {
   const baseReadme = fs.readFileSync(
-    __dirname + "/../../templates/README.md",
+    __dirname + "/../../templates/VIDEO.md",
     "utf8"
   );
   const finalReadme = baseReadme.replace("<!appsList>", appsTable);
-  fs.writeFileSync(__dirname + "/../../README.md", finalReadme);
+  fs.writeFileSync(__dirname + "/../../VIDEO.md", finalReadme);
 };
 
 const main = async () => {
