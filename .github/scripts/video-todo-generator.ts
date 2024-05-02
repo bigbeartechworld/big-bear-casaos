@@ -60,7 +60,7 @@ const appToMarkdownTable = (apps: Record<string, App>) => {
     const youtubeLink = app.youtubeVideo
       ? `[YouTube Video](${app.youtubeVideo})`
       : "";
-    if (youtubeLink !== "") {
+    if (youtubeLink === "") {
       table += `| ${app.name} | ${youtubeLink} |\n`;
     }
   });
