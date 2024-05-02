@@ -96,7 +96,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.0.1 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
-| photoprism | photoprism/photoprism | 231128 |  |  |
+| photoprism | photoprism/photoprism | 20220121 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.03.2 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole | pihole/pihole | 2024.03.2 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
