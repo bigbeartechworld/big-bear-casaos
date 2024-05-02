@@ -71,7 +71,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) | [Docs]() |
 | jellyseerr | fallenbagel/jellyseerr | 1.8.1 | [YouTube Video]() | [Docs]() |
 | joplin | florider89/joplin-server | 2.14.2 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) | [Docs]() |
-| kasm | linuxserver/kasm | 1.15.0 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) | [Docs]() |
+| kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) | [Docs]() |
 | lancache | lancachenet/monolithic | latest | [YouTube Video]() | [Docs]() |
 | libretranslate | libretranslate/libretranslate | v1.5.7 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) | [Docs]() |
 | linkwarden | ghcr.io/linkwarden/linkwarden | v2.5.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) | [Docs]() |
