@@ -1,0 +1,50 @@
+name: Video Todo Generator
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
+
+jobs:
+  generate-readme-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.3
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Generate new README.md file
+        run: bun .github/scripts/readme-generator.ts
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            docs: regenerate readme app list
+          committer: GitHub <noreply@github.com>
+          author: GitHub <noreply@github.com>
+          branch: bot/readme-update
+          title: |
+            readme-generator: update readme
+          labels: bot
+
+      - name: Label this PR as "automerge"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PERSONAL_TOKEN }}
+          script: |
+            const pullNumber = ${{ steps.create-pr.outputs.pull-request-number }};
+            if (pullNumber) {
+              github.rest.issues.addLabels({
+                issue_number: pullNumber,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ["automerge"]
+              });
+            } else {
+              console.log("No pull request number found.");
+            }
