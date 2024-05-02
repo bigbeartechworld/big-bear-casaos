@@ -35,7 +35,7 @@ jobs:
       - name: Label this PR as "automerge"
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.PERSONAL_TOKEN }}
           script: |
             const pullNumber = ${{ steps.create-pr.outputs.pull-request-number }};
             if (pullNumber) {
