@@ -1,0 +1,165 @@
+# Configuration for big-bear-immich-aio-alpine setup
+name: big-bear-immich-aio-alpine
+
+# Service definitions for the big-bear-immich-aio-alpine application
+services:
+  # Main Immich Server service configuration
+  big-bear-immich-aio-alpine:
+    container_name: big-bear-immich-aio-alpine # Name of the running container
+    image: ghcr.io/imagegenius/immich:1.103.1-alpine # Image to be used
+    ports: # Mapping ports from the host OS to the container
+      - 2283:8080
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/photos:/usr/src/app/photos
+      # - path_to_imports:/import:ro #optional
+    environment: # Setting environment variables
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DB_HOSTNAME=big-bear-immich-db
+      - DB_USERNAME=casaos
+      - DB_PASSWORD=casaos
+      - DB_DATABASE_NAME=immich
+      - REDIS_HOSTNAME=big-bear-immich-redis
+      - DB_PORT=5432 #optional
+      - REDIS_PORT=6379 #optional
+      - REDIS_PASSWORD= #optional
+      - MACHINE_LEARNING_GPU_ACCELERATION= #optional
+      - MACHINE_LEARNING_WORKERS=1 #optional
+      - MACHINE_LEARNING_WORKER_TIMEOUT=120 #optional
+    depends_on: # Dependencies to ensure the order of service startup
+      - big-bear-immich-redis
+      - big-bear-immich-db
+    restart: unless-stopped # Policy to restart unless stopped
+
+    # Networks to be attached to the container
+    networks:
+      - big_bear_immich_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PUID
+          description:
+            en_us: "Process UID"
+        - container: PGID
+          description:
+            en_us: "Process GID"
+        - container: TZ
+          description:
+            en_us: "Timezone"
+        - container: DB_HOSTNAME
+          description:
+            en_us: "Database Hostname"
+        - container: DB_USERNAME
+          description:
+            en_us: "Database Username"
+        - container: DB_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: DB_DATABASE_NAME
+          description:
+            en_us: "Database Name"
+        - container: DB_PORT
+          description:
+            en_us: "Database Port"
+        - container: REDIS_HOSTNAME
+          description:
+            en_us: "Redis Hostname"
+        - container: REDIS_PORT
+          description:
+            en_us: "Redis Port"
+        - container: REDIS_PASSWORD
+          description:
+            en_us: "Redis Password"
+        - container: MACHINE_LEARNING_GPU_ACCELERATION
+          description:
+            en_us: "Machine Learning GPU Acceleration"
+        - container: MACHINE_LEARNING_WORKERS
+          description:
+            en_us: "Machine Learning Workers"
+        - container: MACHINE_LEARNING_WORKER_TIMEOUT
+          description:
+            en_us: "Machine Learning Worker Timeout"
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /photos
+          description:
+            en_us: "Container Path: /photos"
+      ports:
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
+
+  # Configuration for Redis service
+  big-bear-immich-redis:
+    container_name: big-bear-immich-redis # Name of the running container
+    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
+    restart: always # Policy to always restart the container if it stops
+    networks:
+      - big_bear_immich_network # Connects the container to a defined network
+
+  # Configuration for Database service
+  big-bear-immich-db:
+    container_name: big-bear-immich-db # Name of the running container
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0 # Image to be used
+    environment: # Setting environment variables
+      POSTGRES_PASSWORD: casaos
+      POSTGRES_USER: casaos
+      POSTGRES_DB: immich
+      PG_DATA: /var/lib/postgresql/data
+    volumes: # Mounting directories for persistent data storage
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: unless-stopped # Policy to always restart the container if it stops
+
+    # CasaOS specific configuration for the database service
+    networks:
+      - big_bear_immich_network # Connects the container to a defined network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Database Password"
+        - container: POSTGRES_USER
+          description:
+            en_us: "Database Username"
+        - container: POSTGRES_DB
+          description:
+            en_us: "Database Name"
+        - container: PG_DATA
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+networks: # Defines network configurations for the services
+  big_bear_immich_network:
+    driver: bridge # Uses bridge network driver
+
+# CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: big-bear-immich-aio-alpine # Main service of the application
+  description: # Description in different languages
+    en_us: AIO Alpine. Self-hosted photo and video storage.
+  tagline: # Short description or tagline in different languages
+    en_us: Immich All In One Alpine
+  developer: "imagegenius" # Developer's name or identifier
+  author: BigBearTechWorld # Author of this configuration
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  # Title of the application in English
+  title:
+    en_us: Immich AIO Alpine
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "2283"
