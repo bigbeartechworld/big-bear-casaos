@@ -1,6 +1,6 @@
 {
   "id": "home-assistant",
-  "version": "2024.4.4",
+  "version": "2024.5.0",
   "image": "ghcr.io/home-assistant/home-assistant",
   "youtube": "https://youtu.be/YnCpj5sND_A",
   "docs_link": ""
