@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.1 |  |  |
-| portainer | portainer/portainer-ce | 2.20.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer | portainer/portainer-ce | 2.20.2-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.11.5 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.11.11 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 5.10.0 |  |  |
