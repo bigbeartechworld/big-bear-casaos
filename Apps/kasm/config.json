@@ -1,6 +1,6 @@
 {
   "id": "kasm",
-  "version": "1.15.0",
+  "version": "1.120.20221218",
   "image": "linuxserver/kasm",
   "youtube": "https://youtu.be/Fq7PlvRSvT4",
   "docs_link": ""
