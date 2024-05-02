@@ -29,4 +29,4 @@ jobs:
           branch: bot/readme-update
           title: |
             readme-generator: update readme
-          labels: bot
+          labels: automerge
