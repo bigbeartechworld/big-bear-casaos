@@ -1,9 +1,12 @@
 name: Video Todo Generator
 
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: "0 0 * * *"
+
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
+  pull_request:
 
 jobs:
   generate-readme-file:
