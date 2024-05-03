@@ -37,7 +37,7 @@ jobs:
         with:
           github-token: ${{ secrets.PERSONAL_TOKEN }}
           script: |
-            const pullNumber = ${{ steps.create-pr.outputs.pull-request-number }};
+            const pullNumber = ${{ steps.create-pr.outputs.pull-request-number }} || null;
             if (pullNumber) {
               github.rest.issues.addLabels({
                 issue_number: pullNumber,
