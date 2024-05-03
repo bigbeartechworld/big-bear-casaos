@@ -102,7 +102,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole | pihole/pihole | 2024.03.2 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | v0.23.1 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.17.1 |  |  |
+| planka | ghcr.io/plankanban/planka | 1.17.2 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.1 |  |  |
