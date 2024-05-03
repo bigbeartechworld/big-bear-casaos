@@ -34,12 +34,12 @@ jobs:
 
       - name: Label this PR as "automerge"
         uses: actions/github-script@v7
+        env:
+          PULL_NUMBER: ${{ steps.create-pr.outputs.pull-request-number }}
         with:
           github-token: ${{ secrets.PERSONAL_TOKEN }}
           script: |
-            const output = steps.create-pr.outputs.pull-request-number;
-            const pullNumber = output ? parseInt(output) : null;
-
+            const pullNumber = process.env.PULL_NUMBER ? parseInt(process.env.PULL_NUMBER) : null;
             if (pullNumber) {
               github.rest.issues.addLabels({
                 issue_number: pullNumber,
