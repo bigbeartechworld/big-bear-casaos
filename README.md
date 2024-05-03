@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | planka | ghcr.io/plankanban/planka | 1.17.2 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
-| portainer-agent | portainer/agent | 2.20.1 |  |  |
+| portainer-agent | portainer/agent | 2.20.2 |  |  |
 | portainer | portainer/portainer-ce | 2.20.2-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.6 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.12 |  |  |
