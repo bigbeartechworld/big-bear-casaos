@@ -63,7 +63,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gotify | gotify/server | 2.4.0 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.2 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.0 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homer | b4bz/homer | v24.04.1 |  |  |
 | ihatemoney | N/A | 6.1.5 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v1.103.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
