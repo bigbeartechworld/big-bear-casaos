@@ -1,5 +1,5 @@
 {
-  "id": "immich-alpine-aio",
+  "id": "immich-aio-alpine",
   "version": "1.103.1-alpine",
   "image": "ghcr.io/imagegenius/immich",
   "youtube": "",
