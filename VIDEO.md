@@ -17,10 +17,10 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | docker-cron-restart-notifier |  |
 | financial-freedom |  |
 | flcontainers-guacamole |  |
-| ghostfolio |  |
 | gluetun |  |
 | gotify |  |
 | homer |  |
+| immich-aio-alpine |  |
 | jellyseerr |  |
 | lancache |  |
 | mind |  |
@@ -39,14 +39,12 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | photoprism |  |
 | phpmyadmin |  |
 | piwigo |  |
-| planka |  |
 | playitgg |  |
 | plex |  |
 | portainer-agent |  |
 | pterodactyl-panel |  |
 | pterodactyl-wings |  |
 | python-matter-server |  |
-| rallly |  |
 | reactive-resume |  |
 | rocket-chat |  |
 | seafile |  |
