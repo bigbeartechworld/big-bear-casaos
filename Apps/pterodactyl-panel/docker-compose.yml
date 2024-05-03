@@ -8,7 +8,7 @@ services:
     # Container configuration for the Pterodactyl Panel
     container_name: pterodactyl-panel
     # Image to use for the panel
-    image: ghcr.io/pterodactyl/panel:v1.11.5
+    image: ghcr.io/pterodactyl/panel:v1.11.6
     # Restart the container automatically if it stops
     restart: always
     # Ports mapping: [HOST:CONTAINER]
