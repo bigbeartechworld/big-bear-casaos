@@ -22,11 +22,11 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
           commit-message: |
             docs: regenerate readme app list
-          committer: GitHub <noreply@github.com>
-          author: GitHub <noreply@github.com>
+          # committer: GitHub <noreply@github.com>
+          # author: GitHub <noreply@github.com>
           branch: bot/readme-update
           title: |
             readme-generator: update readme
