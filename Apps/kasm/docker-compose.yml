@@ -12,7 +12,7 @@ services:
     container_name: big-bear-kasm
 
     # Image to be used for the container
-    image: linuxserver/kasm:1.120.20221218
+    image: linuxserver/kasm:1.15.0
 
     # Container restart policy
     restart: unless-stopped
