@@ -1,0 +1,117 @@
+# Configuration for semaphore setup
+
+# Name of the big-bear-semaphore application
+name: big-bear-semaphore
+
+# Service definitions for the big-bear-semaphore application
+services:
+  # Service name: big-bear-semaphore
+  # The `big-bear-semaphore` service definition
+  big-bear-semaphore:
+    # Name of the container
+    container_name: big-bear-semaphore
+
+    # Image to be used for the container
+    image: semaphoreui/semaphore:v2.9.75
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for configuration
+    environment:
+      SEMAPHORE_DB_USER: semaphore
+      SEMAPHORE_DB_PASS: semaphore
+      SEMAPHORE_DB_HOST: big-bear-semaphore-db
+      SEMAPHORE_DB_PORT: "3306"
+      SEMAPHORE_DB_DIALECT: mysql
+      SEMAPHORE_DB: semaphore
+      SEMAPHORE_ADMIN_PASSWORD: password
+      SEMAPHORE_ADMIN_NAME: admin
+      SEMAPHORE_ADMIN_EMAIL: admin@example.com
+      SEMAPHORE_ADMIN: admin
+      TZ: UTC
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/home:/etc/semaphore # Configuration files for Semaphore
+      - /DATA/AppData/$AppID/lib:/var/lib/semaphore # Local storage for Semaphore data (not needed if using an external database)
+
+    # Ports mapping between host and container
+    ports:
+      - "3000:3000" # Expose port 3000 for web access
+
+    networks:
+      - big-bear-semaphore-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /etc/semaphore
+          description:
+            en_us: "Container Path: /etc/semaphore"
+        - container: /var/lib/semaphore
+          description:
+            en_us: "Container Path: /var/lib/semaphore"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
+
+  # MySQL database service for semaphore
+  big-bear-semaphore-db:
+    container_name: big-bear-semaphore-db
+    image: mysql:8.0
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Data directory for MySQL
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes" # Generate a random root password
+      MYSQL_DATABASE: "semaphore" # Database name to create
+      MYSQL_USER: "semaphore" # Database user
+      MYSQL_PASSWORD: "semaphore" # Database password
+
+    networks:
+      - big-bear-semaphore-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
+
+networks:
+  big-bear-semaphore-network:
+    driver: bridge # Specifies network driver type
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-semaphore
+  description:
+    # Description in English
+    en_us: Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.
+  tagline:
+    # Short description or tagline in English
+    en_us: Ansible Semaphore
+  # Developer's name or identifier
+  developer: "semaphore"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/semaphore.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Ansible Semaphore
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
