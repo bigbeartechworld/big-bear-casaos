@@ -1,12 +1,9 @@
 name: Video Todo Generator
 
-# on:
-#   workflow_dispatch:
-#   schedule:
-#     - cron: "0 0 * * *"
-
 on:
-  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   generate-readme-file:
@@ -14,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.1.4
+        with:
+          fetch-depth: 0 # Fetch all history
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v1
