@@ -27,7 +27,7 @@
     "@types/node": "^20.12.7",
     "@types/semver": "^7.5.8",
     "commitizen": "^4.3.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-json-schema-validator": "^5.1.0",
     "eslint-plugin-jsonc": "^2.15.1",
     "husky": "^9.0.11",
