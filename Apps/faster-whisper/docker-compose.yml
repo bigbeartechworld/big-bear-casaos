@@ -1,0 +1,76 @@
+# Configuration for faster-whisper setup
+
+# Name of the big-bear-faster-whisper application
+name: big-bear-faster-whisper
+
+# Service definitions for the big-bear-faster-whisper application
+services:
+  # Service name: big-bear-faster-whisper
+  # The `big-bear-faster-whisper` service definition
+  big-bear-faster-whisper:
+    # Name of the container
+    container_name: big-bear-faster-whisper
+
+    # Image to be used for the container
+    image: linuxserver/faster-whisper:2.0.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - WHISPER_MODEL=tiny-int8
+      - WHISPER_BEAM=1 #optional
+      - WHISPER_LANG=en #optional
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/config directory to /config inside the container
+      - /DATA/AppData/$AppID/config:/config
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 10300 of the host to port 10300 of the container
+      - "10300:10300"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+      ports:
+        - container: "10300"
+          description:
+            en_us: "Container Port: 10300"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+  # Main service of the application
+  main: big-bear-faster-whisper
+  description:
+    # Description in English
+    en_us: Faster-whisper is a reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast inference engine for Transformer models. This container provides a Wyoming protocol server for faster-whisper.
+  tagline:
+    # Short description or tagline in English
+    en_us: Faster-whisper
+  # Developer's name or identifier
+  developer: "systran"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/faster-whisper.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Faster-whisper
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "7575"
