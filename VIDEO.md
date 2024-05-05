@@ -15,6 +15,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | crafty |  |
 | dashy |  |
 | docker-cron-restart-notifier |  |
+| faster-whisper |  |
 | financial-freedom |  |
 | flcontainers-guacamole |  |
 | gluetun |  |
@@ -48,6 +49,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | reactive-resume |  |
 | rocket-chat |  |
 | seafile |  |
+| semaphore |  |
 | whats-up-docker |  |
 | zipline |  |
 
