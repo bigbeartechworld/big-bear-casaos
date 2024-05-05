@@ -77,7 +77,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | lancache | lancachenet/monolithic | latest |  |  |
 | libretranslate | libretranslate/libretranslate | v1.5.7 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | v2.5.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| mailpit | axllent/mailpit | v1.17 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
+| mailpit | axllent/mailpit | v1.18 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | v1.5.1 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | mind | mrcas/mind | v1.4.0 |  |  |
 | minio | minio/minio | RELEASE.2024-02-24T17-11-14Z |  |  |
