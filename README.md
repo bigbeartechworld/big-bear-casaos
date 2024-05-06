@@ -27,7 +27,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 5.1.1 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
-| Homepage | ghcr.io/gethomepage/homepage | v0.8.12 |  |  |
+| Homepage | ghcr.io/gethomepage/homepage | v0.8.13 |  |  |
 | Romm | zurdi15/romm | 3.1.0 |  |  |
 | actual-server | actualbudget/actual-server | 24.4.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home | adguard/adguardhome | v0.107.48 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
