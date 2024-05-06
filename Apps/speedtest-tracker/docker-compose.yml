@@ -6,8 +6,8 @@ name: big-bear-speedtest-tracker
 # Service definitions for the big-bear-speedtest-tracker application
 services:
   # Service name: app
-  speedtest-tracker:
-    container_name: speedtest-tracker
+  big-bear-speedtest-tracker:
+    container_name: big-bear-speedtest-tracker
     ports:
       - "8080:80"
       - "8443:443"
@@ -15,7 +15,7 @@ services:
       - PUID=1000
       - PGID=1000
       - DB_CONNECTION=mysql
-      - DB_HOST=db
+      - DB_HOST=big-bear-speedtest-tracker-db
       - DB_PORT=3306
       - DB_DATABASE=speedtest_tracker
       - DB_USERNAME=casaos
@@ -25,10 +25,12 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
       - "/DATA/AppData/$AppID/config:/config"
       - "/DATA/AppData/$AppID/web:/etc/ssl/web"
-    image: "ghcr.io/alexjustesen/speedtest-tracker:v0.19.0"
+    image: "linuxserver/speedtest-tracker:0.19.0"
     restart: unless-stopped
     depends_on:
-      - db
+      - big-bear-speedtest-tracker-db
+    networks:
+      - big_bear_speedtest_tracker_network
     x-casaos: # CasaOS specific configuration
       envs:
         - container: PUID
@@ -76,8 +78,9 @@ services:
           description:
             en_us: "Container Port: 443"
 
-  db:
+  big-bear-speedtest-tracker-db:
     image: mariadb:10
+    container_name: big-bear-speedtest-tracker-db
     restart: always
     environment:
       - MARIADB_DATABASE=speedtest_tracker
@@ -86,6 +89,8 @@ services:
       - MARIADB_RANDOM_ROOT_PASSWORD=true
     volumes:
       - "/DATA/AppData/$AppID/mysql:/var/lib/mysql"
+    networks:
+      - big_bear_speedtest_tracker_network
     x-casaos: # CasaOS specific configuration
       envs:
         - container: MARIADB_DATABASE
@@ -105,6 +110,11 @@ services:
           description:
             en_us: "Container Path: /var/lib/mysql"
 
+# Network definition for the big-bear-speedtest-tracker application
+networks:
+  big_bear_speedtest_tracker_network:
+    driver: bridge
+
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application
@@ -113,7 +123,7 @@ x-casaos:
     - arm
     - arm64
   # Main service of the application
-  main: speedtest-tracker
+  main: big-bear-speedtest-tracker
   description:
     # Description in English
     en_us: A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.
