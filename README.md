@@ -125,8 +125,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | traccar | traccar/traccar | 6.1-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.5 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
-| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 8.1.113 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| unifi-network-application | linuxserver/unifi-network-application | 8.1.113 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.23.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.3.0 |  |  |
