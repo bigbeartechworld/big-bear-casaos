@@ -110,7 +110,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.2 |  |  |
 | portainer | portainer/portainer-ce | 2.20.2-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
-| pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.6 |  |  |
+| pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.7 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.12 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 5.10.0 |  |  |
 | rallly | lukevella/rallly | 3.7.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
