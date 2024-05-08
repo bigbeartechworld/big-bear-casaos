@@ -103,7 +103,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.03.2 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole | pihole/pihole | 2024.03.2 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
-| pingvin-share | stonith404/pingvin-share | v0.24.1 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
+| pingvin-share | stonith404/pingvin-share | 0.24.1 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.17.2 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
@@ -125,8 +125,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | traccar | traccar/traccar | 6.1-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.5 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
-| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 8.1.127 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| unifi-network-application | linuxserver/unifi-network-application | 8.1.127 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.23.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.3.0 |  |  |
