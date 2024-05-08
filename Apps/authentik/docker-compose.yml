@@ -188,3 +188,8 @@ x-casaos:
   port_map: "9443"
   # Scheme used (https)
   scheme: https
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-authentik-to-bigbearcasaos/1196#instructions-3
