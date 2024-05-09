@@ -82,7 +82,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mealie | hkotel/mealie | v1.6.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | mind | mrcas/mind | v1.4.0 |  |  |
 | minio | minio/minio | RELEASE.2024-02-24T17-11-14Z |  |  |
-| monica | monica | 4.0.0 |  |  |
+| monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.8 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | n8n | n8nio/n8n | 1.41.0 |  |  |
