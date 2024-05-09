@@ -89,7 +89,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | n8n | n8nio/n8n | 1.41.0 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 29.0.0 |  |  |
 | nextcloud | nextcloud | 29.0.0-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
-| nocodb | nocodb/nocodb | 0.205.1 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nocodb | nocodb/nocodb | 0.207.0 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 3.1.9 |  |  |
 | ntfysh | binwiederhier/ntfy | v2.10.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
