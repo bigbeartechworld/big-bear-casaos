@@ -64,7 +64,7 @@ jobs:
         with:
           node-version: 18
 
-      - uses: pnpm/action-setup@v3.0.0
+      - uses: pnpm/action-setup@v4.0.0
         name: Install pnpm
         id: pnpm-install
         with:
