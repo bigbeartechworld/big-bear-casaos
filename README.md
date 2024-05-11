@@ -32,7 +32,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | actual-server | actualbudget/actual-server | 24.5.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home | adguard/adguardhome | v0.107.48 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
-| appsmith | appsmith/appsmith-ee | v1.22.1 |  |  |
+| appsmith | appsmith/appsmith-ee | v1.24.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.9.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.4.2 |  |  |
 | baserow | baserow/baserow | 1.24.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
