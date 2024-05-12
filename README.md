@@ -44,7 +44,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | code-server | linuxserver/code-server | 4.23.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
-| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.3.2 |  |  |
+| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.0 |  |  |
 | dashdot | mauricenino/dashdot | 5.8.3 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.0.1 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
