@@ -8,13 +8,13 @@ version: '1.0'
 services:
   # Service name: app
   # The `app` service definition
-  app:
+  big-bear-openvpn-as:
 
      # Name of the container
-    container_name: OpenVPN
+    container_name: big-bear-openvpn-as
 
      # Image to be used for the container
-    image: openvpn/openvpn-as:latest
+    image: openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22
 
     # Container restart policy
     restart: unless-stopped
@@ -107,7 +107,7 @@ x-casaos:
     #- arm64
 
   # Author of this configuration
-  author: BigBearTechWorld
+  author: BigBearCommunity
 
   # Application category
   category:  BigBearCasaOS
@@ -132,7 +132,7 @@ x-casaos:
   is_uncontrolled: false
 
   # Main service of the application
-  main: app
+  main: big-bear-openvpn-as
 
   # Port mapping information
   port_map: "943"
