@@ -68,7 +68,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homer | b4bz/homer | v24.04.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
-| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.103.1-alpine |  |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.104.0-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v1.104.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | v1.104.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
