@@ -1,6 +1,6 @@
 {
   "id": "appsmith",
-  "version": "v1.22.1",
+  "version": "1.24.1",
   "image": "appsmith/appsmith-ee",
   "youtube": "",
   "docs_link": "",

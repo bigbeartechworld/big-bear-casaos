@@ -1,0 +1,82 @@
+# Configuration for netalertx setup
+
+# Name of the big-bear-netalertx application
+name: big-bear-netalertx
+
+# Service definitions for the big-bear-netalertx application
+services:
+  # Service name: big-bear-netalertx
+  # The `big-bear-netalertx` service definition
+  big-bear-netalertx:
+    # Name of the container
+    container_name: big-bear-netalertx
+
+    # Image to be used for the container
+    image: jokobsk/netalertx:24.5.9
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Make the container privileged
+    privileged: true
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/config directory to /app/config inside the container
+      - /DATA/AppData/$AppID/config:/app/config
+
+      # Mounting the local /DATA/AppData/$AppID/db directory to /app/db inside the container
+      - /DATA/AppData/$AppID/db:/app/db
+
+    # Environment variables
+    environment:
+      - TZ=UTC
+      - PORT=8080
+      # ❗ DANGER ZONE BELOW - Setting ALWAYS_FRESH_INSTALL=true will delete the content of the /db & /config folders
+      - ALWAYS_FRESH_INSTALL=false
+
+    # Network mode for the container
+    network_mode: host
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /app/config
+          description:
+            en_us: "Container Path: /app/config"
+        - container: /app/db
+          description:
+            en_us: "Container Path: /app/db"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-netalertx
+  description:
+    # Description in English
+    en_us: WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found.
+  tagline:
+    # Short description or tagline in English
+    en_us: NetAlertX
+  # Developer's name or identifier
+  developer: "jokobsk"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/pi-alert.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: NetAlertX
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
