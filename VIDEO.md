@@ -31,11 +31,13 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | monica |  |
 | mumble-server |  |
 | n8n |  |
+| netalertx |  |
 | nextcloud-ls |  |
 | node-red |  |
 | obsidian-livesync |  |
 | odoo |  |
 | onlyoffice |  |
+| openvpn-as |  |
 | pd3f |  |
 | penpot |  |
 | peppermint |  |
