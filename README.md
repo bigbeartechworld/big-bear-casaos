@@ -42,7 +42,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
-| code-server | linuxserver/code-server | 4.89.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.89.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.0 |  |  |
 | dashdot | mauricenino/dashdot | 5.8.3 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
