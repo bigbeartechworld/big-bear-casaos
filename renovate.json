@@ -43,13 +43,5 @@
       "automerge": false
     }
   ],
-  "regexManagers": [
-    {
-      "fileMatch": ["^README\\.md$"],
-      "matchStrings": [
-        "\\n\\|[^|]+\\|\\s+(?<depName>[a-zA-Z0-9][a-zA-Z0-9/._-]*)\\s+\\|\\s+(?<currentValue>[^\\s|]+)\\s+\\|"
-      ],
-      "datasourceTemplate": "docker"
-    }
-  ]
+  "regexManagers": []
 }
