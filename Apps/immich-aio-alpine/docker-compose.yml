@@ -6,7 +6,7 @@ services:
   # Main Immich Server service configuration
   big-bear-immich-aio-alpine:
     container_name: big-bear-immich-aio-alpine # Name of the running container
-    image: ghcr.io/imagegenius/immich:1.105.0-alpine # Image to be used
+    image: ghcr.io/imagegenius/immich:1.105.1-alpine # Image to be used
     ports: # Mapping ports from the host OS to the container
       - 2283:8080
     volumes: # Mounting directories for persistent data storage
