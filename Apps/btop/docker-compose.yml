@@ -71,3 +71,8 @@ x-casaos:
     en_us: btop
   category: BigBearCasaOS
   port_map: "7681"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-btop-to-bigbearcasaos/1240?u=dragonfire1119
