@@ -74,12 +74,12 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/jgyates/genmon/blob/master/Diagrams/genmon.jpg?raw=true
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/genmon/logo.jpeg?raw=true
   # Thumbnail image
-  thumbnail: "https://raw.githubusercontent.com/jgyates/genmon/master/Diagrams/Web_UI_Status.png"
+  thumbnail: "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/genmon/screenshot1.png?raw=true"
   title:
     # Title in English
-    en_us: genmon
+    en_us: Genmon
   # Application category
   category: BigBearCasaOS
   # Port mapping information
