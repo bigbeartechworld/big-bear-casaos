@@ -12,7 +12,7 @@ services:
     container_name: big-bear-genmon
 
     # Image to be used for the container
-    image: bigbeartechworld/big-bear-genmon:0.0.3
+    image: bigbeartechworld/big-bear-genmon:0.0.6
 
     # Environment variables to set inside the container
     environment:
@@ -29,7 +29,7 @@ services:
 
     # Mount host paths or named volumes into the container
     volumes:
-      - /DATA/AppData/$AppID/git_genmon:/git/genmon # Mount a named volume 'big_bear_genmon_data' to store data persistently at /git/genmon in the container
+      - /DATA/AppData/$AppID/git_genmon:/git/genmon # Mount a named volume 'big_bear_genmon_data' to store data persistently at /git/genmon in the container (this is the default location)
       - /DATA/AppData/$AppID/etc_genmon:/etc/genmon # Mount a named volume 'big_bear_genmon_config' to store configuration files persistently at /etc/genmon in the container
       - /DATA/AppData/$AppID/var_log:/var/log # Mount a named volume 'big_bear_genmon_logs' to store logs persistently at /var/log in the container
 
