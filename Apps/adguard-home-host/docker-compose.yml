@@ -60,7 +60,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-3.png
   # Brief tagline for the application
   tagline:
-    en_us: Network-wide ads & trackers blocking DNS server.
+    en_us: Network Mode is host. Network-wide ads & trackers blocking DNS server.
   # Developer's information
   developer: "AdGuardTeam"
   # Author of this particular configuration
@@ -71,7 +71,7 @@ x-casaos:
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/thumbnail.png
   # Title for the application
   title:
-    en_us: AdGuard Home
+    en_us: AdGuard Home (HOST)
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
