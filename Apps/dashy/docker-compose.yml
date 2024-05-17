@@ -8,7 +8,7 @@ services:
   # Service name: big-bear-dashy
   big-bear-dashy:
     # Image to be used for the app service
-    image: lissy93/dashy:3.0.1
+    image: lissy93/dashy:3.1.0
     # Name of the container
     container_name: big-bear-dashy
     # Uncomment below if you want to mount volumes
