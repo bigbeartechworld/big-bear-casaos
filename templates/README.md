@@ -28,7 +28,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## UI How to
 
-[![Video](https://img.youtube.com/vi/rqFUeDDb5uA/0.jpg)](https://youtu.be/rqFUeDDb5uA)
+[![Video](https://img.youtube.com/vi/iN-Zh9ul578/0.jpg)](https://youtu.be/iN-Zh9ul578)
 
 > **NOTE: Custom Appstore is only supported on CasaOS version [0.4.4](https://blog.casaos.io/blog/32.html) and above**
 
