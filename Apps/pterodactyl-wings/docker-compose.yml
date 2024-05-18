@@ -59,6 +59,9 @@ services:
       # Mount the library directory for Pterodactyl
       - "/DATA/AppData/$AppID/lib:/var/lib/pterodactyl/"
 
+      # Mount the library directory for Pterodactyl
+      - "/var/lib/pterodactyl:/var/lib/pterodactyl/"
+
     x-casaos:
       envs:
         - container: TZ
