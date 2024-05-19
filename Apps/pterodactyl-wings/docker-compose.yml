@@ -50,6 +50,9 @@ services:
       # Mount a temporary directory for Pterodactyl
       - "/DATA/AppData/$AppID/tmp:/tmp/pterodactyl/"
 
+      # Mount a temporary directory for Pterodactyl
+      - "/tmp/pterodactyl:/tmp/pterodactyl/"
+
       # Mount the configuration directory for Pterodactyl
       - "/DATA/AppData/$AppID/etc:/etc/pterodactyl/"
 
