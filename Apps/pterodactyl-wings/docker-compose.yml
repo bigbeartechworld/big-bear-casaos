@@ -56,8 +56,14 @@ services:
       # Mount the configuration directory for Pterodactyl
       - "/DATA/AppData/$AppID/etc:/etc/pterodactyl/"
 
+      # Mount the configuration directory for Pterodactyl
+      - "/etc/pterodactyl:/etc/pterodactyl/"
+
       # Mount the logs directory for Pterodactyl
       - "/DATA/AppData/$AppID/logs:/var/log/pterodactyl/"
+
+      # Mount the logs directory for Pterodactyl
+      - "/var/log/pterodactyl:/var/log/pterodactyl/"
 
       # Mount the library directory for Pterodactyl
       - "/DATA/AppData/$AppID/lib:/var/lib/pterodactyl/"
