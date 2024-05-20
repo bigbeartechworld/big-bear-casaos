@@ -1,0 +1,81 @@
+# Configuration for ollama-nvidia setup
+
+# Name of the big-bear-ollama-nvidia application
+name: big-bear-ollama-nvidia
+
+# Service definitions for the big-bear-ollama-nvidia application
+services:
+  # Service name: big-bear-ollama-nvidia
+  # The `big-bear-ollama-nvidia` service definition
+  big-bear-ollama-nvidia:
+    # Name of the container
+    container_name: big-bear-ollama-nvidia
+
+    # Image to be used for the container
+    image: ollama/ollama:0.1.37
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/.ollama:/root/.ollama
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "11434:11434"
+
+    # Define the deployment settings
+    deploy:
+      # Specify resource reservations
+      resources:
+        reservations:
+          devices:
+            # Specify the device driver as NVIDIA
+            - driver: nvidia
+              # Allocate all available GPUs
+              count: all
+              capabilities:
+                # Define the required capabilities (gpu for GPU resources)
+                - gpu
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /root/.ollama
+          description:
+            en_us: "Container Path: /root/.ollama"
+      ports:
+        - container: "11434"
+          description:
+            en_us: "Container Port: 11434"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-ollama-nvidia
+  description:
+    # Description in English
+    en_us: Get up and running with Llama 3, Mistral, Gemma, and other large language models.
+  tagline:
+    # Short description or tagline in English
+    en_us: LLMs inference server with OpenAI compatible API
+  # Developer's name or identifier
+  developer: "ollama"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/ollama-nvidia.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Ollama - NVIDIA
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "11434"
