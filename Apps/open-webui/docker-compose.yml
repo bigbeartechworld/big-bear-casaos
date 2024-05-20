@@ -1,0 +1,72 @@
+# Configuration for open-webui setup
+
+# Name of the big-bear-open-webui application
+name: big-bear-open-webui
+
+# Service definitions for the big-bear-open-webui application
+services:
+  # Service name: big-bear-open-webui
+  # The `big-bear-open-webui` service definition
+  big-bear-open-webui:
+    # Name of the container
+    container_name: big-bear-open-webui
+
+    # Image to be used for the container
+    image: ghcr.io/open-webui/open-webui:git-90503be
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/backend/data
+
+    # Environment variables
+    environment:
+      - OLLAMA_BASE_URL=
+      - OPENAI_API_KEY=
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /app/backend/data
+          description:
+            en_us: "Container Path: /app/backend/data"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-open-webui
+  description:
+    # Description in English
+    en_us: Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline.
+  tagline:
+    # Short description or tagline in English
+    en_us: User-friendly WebUI for LLMs
+  # Developer's name or identifier
+  developer: "open-webui"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/open-webui.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Open WebUI
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
