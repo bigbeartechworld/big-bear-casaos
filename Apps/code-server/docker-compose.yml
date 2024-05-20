@@ -31,9 +31,12 @@ services:
           description:
             en_us: "Group ID under which code-server will run"
       volumes:
-        - container: /home/coder/project
+        - container: /config
           description:
-            en_us: "Container Path: /home/coder/project"
+            en_us: "config dir"
+        - container: /projects
+          description:
+            en_us: "project dir"
       ports:
         - container: "8080"
           description:
