@@ -2,18 +2,18 @@
 
 # Name of the OpenVPN-AS application
 name: big-bear-openvpn-as
-version: '1.0'
+version: "1.0"
 
 # Service definitions for the OpenVPN application
 services:
   # Service name: app
   # The `app` service definition
   big-bear-openvpn-as:
+    # Name of the container
+    container_name:
+      big-bear-openvpn-as
 
-     # Name of the container
-    container_name: big-bear-openvpn-as
-
-     # Image to be used for the container
+      # Image to be used for the container
     image: openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22
 
     # Container restart policy
@@ -25,32 +25,16 @@ services:
     # Capabilities to be added to the container
     cap_add:
       - NET_ADMIN
-    
-    # CPU and memory limits for the container
-    cpu_shares: 90
 
-    # Command to be executed inside the container
-    command: []
-
-    # Resources to be allocated to the container
-    deploy:
-
-      # Resources to be allocated to the container
-      resources:
-        limits:
-          # CPU limit for the container
-          memory: 15775M
-    
     # Environment variables for the container
     environment:
-
       - PGID=1000
 
       - PUID=1000
 
       # Timezone for the container
       - TZ=Europe/Rome
-    
+
     # Hostname for the container
     hostname: OpenVPN
 
@@ -73,7 +57,7 @@ services:
     volumes:
       # Mounting the local OpenVPN/data directory to /openvpn inside the container
       - /DATA/AppData/$AppID/data:/openvpn
-    
+
     # CasaOS specific configuration
     x-casaos:
       ports:
@@ -88,14 +72,11 @@ services:
         - container: "1194"
           description:
             en_us: "Container Port: 1194"
-      
-      
+
       volumes:
         - container: /openvpn
           description:
             en_us: "Container Path: /openvpn"
-
-    devices: []
 
     network_mode: bridge
 
@@ -110,7 +91,7 @@ x-casaos:
   author: BigBearCommunity
 
   # Application category
-  category:  BigBearCasaOS
+  category: BigBearCasaOS
 
   description:
     # Description in English
@@ -137,24 +118,23 @@ x-casaos:
   # Port mapping information
   port_map: "943"
 
-  
   scheme: https
 
-  store_app_id: openvpn
-  
+  store_app_id: big-bear-openvpn-as
+
   tagline:
     # Short description or tagline in English
     en_us: OpenVPN is an open-source commercial software that implements virtual
       private network (VPN).
-  
+
   # Thumbnail image (currently empty)
   thumbnail: ""
-  
+
   tips:
     custom: |-
       Username: `openvpn`
       Password: `You can find you first time password in the log of the container`
-  
+
   title:
     # Title in English
     custom: ""
