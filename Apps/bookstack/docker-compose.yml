@@ -1,0 +1,110 @@
+# Configuration for bookstack setup
+
+# Name of the big-bear-bookstack application
+name: big-bear-bookstack
+
+# Service definitions for the big-bear-bookstack application
+services:
+  # Service name: big-bear-bookstack
+  # The `big-bear-bookstack` service definition
+  big-bear-bookstack:
+    # Name of the container
+    container_name: big-bear-bookstack
+
+    # Image to be used for the container
+    image: linuxserver/bookstack:24.02.20240304
+
+    # Container restart policy
+    restart: unless-stopped
+
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+
+    # Environment variables
+    environment:
+      - APP_URL=http://[change to your IP]:8080
+      - DB_HOST=big-bear-bookstack-db
+      - DB_USERNAME=bigbear
+      - DB_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6
+      - DB_DATABASE=bookstackapp
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+    depends_on:
+      - big-bear-bookstack-db
+
+    networks:
+      - big_bear_bookstack_network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+  # Service definition for the database (MariaDB)
+  big-bear-bookstack-db:
+    image: linuxserver/mariadb:10.11.6 # The Docker image for MariaDB
+    container_name: big-bear-bookstack-db # Name of the container
+    environment: # Environment variables for the MariaDB service
+      - MYSQL_ROOT_PASSWORD=793e92b7-58d2-47b9-aae5-b8c7d58bd699 # Root password for MariaDB
+      - MYSQL_DATABASE=bookstackapp # Database name
+      - MYSQL_USER=bigbear # Database user
+      - MYSQL_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6 # Database password
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Mount the volume for MariaDB data
+    restart: unless-stopped # Restart policy
+    networks:
+      - big_bear_bookstack_network # Connect to the bookstack-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
+
+# Network definition for the bookstack application
+networks:
+  big_bear_bookstack_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-bookstack
+  description:
+    # Description in English
+    en_us: BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login admin@admin.com password password
+  tagline:
+    # Short description or tagline in English
+    en_us: BookStack
+  # Developer's name or identifier
+  developer: "Dan Brown"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/bookstack.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: bookstack
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
