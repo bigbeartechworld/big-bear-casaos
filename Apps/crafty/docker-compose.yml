@@ -21,13 +21,14 @@ services:
     environment:
       - TZ=UTC
 
-    # Ports mapping between host and container
+    # Ports mapping between host and container HOST:CONTAINER
     ports:
       - 8443:8443 # Web UI
       - 8123:8123
       - 19132:19132/udp
       - 25500-25600:25500-25600
 
+    # Volumes mapping between host and container
     volumes:
       - /DATA/AppData/$AppID/data/backups:/crafty/backups
       - /DATA/AppData/$AppID/data/logs:/crafty/logs
