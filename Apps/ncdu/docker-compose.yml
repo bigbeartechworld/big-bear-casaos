@@ -35,6 +35,10 @@ services:
     ports:
       - "7681:7681"
 
+    # Environment variables to be set in the container for application configuration
+    environment:
+      - NCDU_PATH=/
+
     # CasaOS specific configuration for volume and port descriptions
     x-casaos:
       volumes:
