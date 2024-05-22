@@ -39,7 +39,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | baserow | baserow/baserow | 1.24.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
-| btop | bigbeartechworld/big-bear-btop | 0.0.1 |  |  |
+| btop | bigbeartechworld/big-bear-btop | 0.0.2 |  |  |
 | budibase | budibase/budibase | 2.26.4 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
@@ -116,7 +116,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole | pihole/pihole | 2024.05.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 0.24.1 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.17.3 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
+| planka | ghcr.io/plankanban/planka | 1.17.4 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.2 |  |  |
@@ -134,7 +134,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.13 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.1-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
-| trilium | zadam/trilium | 0.63.5 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
+| trilium | zadam/trilium | 0.63.6 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
