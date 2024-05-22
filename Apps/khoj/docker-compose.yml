@@ -1,0 +1,188 @@
+# Configuration for khoj setup
+
+# Name of the big-bear-khoj application
+name: big-bear-khoj
+
+# Service definitions for the big-bear-khoj application
+services:
+  # Service name: big-bear-khoj
+  # The `big-bear-khoj` service definition
+  big-bear-khoj:
+    # Name of the container
+    container_name: big-bear-khoj
+
+    # Image to be used for the container specifies the khoj version and source
+    image: ghcr.io/khoj-ai/khoj:1.11.2
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container for persistent storage
+    volumes:
+      - /DATA/AppData/$AppID/config:/root/.khoj/
+      - /DATA/AppData/$AppID/models:/root/.cache/torch/sentence_transformers
+
+    # Ports mapping between host and container for network access
+    ports:
+      # Mapping port 42110 of the host to port 42110 of the container
+      - "42110:42110"
+
+    # Environment variables to be set in the container for application configuration
+    environment:
+      - POSTGRES_DB=khoj
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=big-bear-khoj-postgres
+      - POSTGRES_PORT=5432
+      - KHOJ_DJANGO_SECRET_KEY=secret
+      - KHOJ_DEBUG=False
+      - KHOJ_ADMIN_EMAIL=user@example.com
+      - KHOJ_ADMIN_PASSWORD=password
+
+    # Working directory for the container
+    working_dir: /app
+
+    # Command to run on container start
+    command: --host="0.0.0.0" --port=42110 -vv --anonymous-mode
+
+    networks:
+      - big-bear-khoj-network
+
+    # Dependency on another service, ensuring it is healthy before starting
+    depends_on:
+      big-bear-khoj-postgres:
+        condition: service_healthy
+
+    # CasaOS specific configuration for volume and port descriptions
+    x-casaos:
+      envs:
+        - container: KHOJ_DJANGO_SECRET_KEY
+          description:
+            en_us: Django secret key
+        - container: KHOJ_DEBUG
+          description:
+            en_us: Debug mode
+        - container: KHOJ_ADMIN_EMAIL
+          description:
+            en_us: Admin email
+        - container: KHOJ_ADMIN_PASSWORD
+          description:
+            en_us: Admin password
+        - container: POSTGRES_USER
+          description:
+            en_us: PostgreSQL user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: PostgreSQL password
+        - container: POSTGRES_HOST
+          description:
+            en_us: PostgreSQL host
+        - container: POSTGRES_PORT
+          description:
+            en_us: PostgreSQL port
+      volumes:
+        - container: /root/.khoj
+          description:
+            en_us: "Container Path: /root/.khoj"
+        - container: /root/.cache/torch/sentence_transformers
+          description:
+            en_us: "Container Path: /root/.cache/torch/sentence_transformers"
+      ports:
+        - container: "42110"
+          description:
+            en_us: "Container Port: 42110"
+
+  # Service definition for the PostgreSQL database used by big-bear-khoj
+  big-bear-khoj-postgres:
+    # Image to use for the database
+    image: ankane/pgvector:v0.5.1
+
+    # Port mapping for the database
+    ports:
+      - "5432:5432"
+
+    # Environment variables for the database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: khoj
+
+    # Specifies the container restart policy
+    # The container will restart if it fails during runtime
+    restart: on-failure
+
+    # Volumes to be mounted to the container for data persistence
+    # Maps a host directory to the container's data directory
+    # Ensures that the database data persists across container restarts and deployments
+    volumes:
+      - /DATA/AppData/$AppID/db:/var/lib/postgresql/data/
+
+    networks:
+      - big-bear-khoj-network
+
+    # Healthcheck configuration to ensure the database service is running properly
+    # Runs a command inside the container at specified intervals to check the health of the service
+    healthcheck:
+      # Command to check if PostgreSQL is ready to accept connections
+      # Uses `pg_isready` tool with the default 'postgres' user and the 'khoj' database
+      test: ["CMD-SHELL", "pg_isready -U bigbear"]
+      # The interval between running the healthcheck command
+      # Here, it's set to run every 10 seconds
+      interval: 10s
+      # The timeout duration for the healthcheck command
+      # If the command does not complete within 5 seconds, the healthcheck is considered failed
+      timeout: 5s
+      # Number of consecutive failures needed to consider the service as unhealthy
+      retries: 5
+
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_us: PostgreSQL user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: PostgreSQL password
+        - container: POSTGRES_HOST
+          description:
+            en_us: PostgreSQL host
+        - container: POSTGRES_PORT
+          description:
+            en_us: PostgreSQL port
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      ports:
+        - container: "5432"
+          description:
+            en_us: "Container Port: 5432"
+
+networks:
+  big-bear-khoj-network:
+    driver: bridge
+
+# CasaOS specific application metadata and configurations
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-khoj
+  description:
+    en_us: Your AI second brain. A copilot to get answers to your questions, whether they be from your own notes or from the internet. Use powerful, online (e.g gpt4) or private, local (e.g mistral) LLMs. Self-host locally or use our web app. Access from Obsidian, Emacs, Desktop app, Web or Whatsapp.
+  tagline:
+    en_us: Your AI second brain.
+  developer: "khoj-ai"
+  author: BigBearTechWorld
+  icon: https://avatars.githubusercontent.com/u/134046886?s=200&v=4
+  thumbnail: ""
+  title:
+    en_us: khoj
+  category: BigBearCasaOS
+  port_map: "42110"
+  # Tips
+  # Tips in English
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-khoj-to-bigbearcasaos/924#documentation-5
