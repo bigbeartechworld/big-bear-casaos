@@ -1,0 +1,76 @@
+# Configuration for glance setup
+
+# Name of the big-bear-glance application
+name: big-bear-glance
+
+# Service definitions for the big-bear-glance application
+services:
+  # Service name: big-bear-glance
+  # The `big-bear-glance` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-glance
+
+    # Image to be used for the container
+    image: ghcr.io/ajnart/glance:0.15.3
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/glance.yml:/app/glance.yml
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        # Volume for mounting the glance.yml configuration file
+        - container: "/app/glance.yml"
+          description:
+            en_us: "Configuration file for glance"
+        - container: "/etc/timezone"
+          description:
+            en_us: "Timezone configuration file"
+        - container: "/etc/localtime"
+          description:
+            en_us: "Local time configuration file"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-glance
+  description:
+    # Description in English
+    en_us: A self-hosted dashboard that puts all your feeds in one place
+  tagline:
+    # Short description or tagline in English
+    en_us: glance
+  # Developer's name or identifier
+  developer: "ajnart"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/glance.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Glance
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
