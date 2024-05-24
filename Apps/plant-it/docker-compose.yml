@@ -1,0 +1,143 @@
+# Configuration for plant-it setup
+
+# Name of the big-bear-plant-it application
+name: big-bear-plant-it
+
+# Service definitions for the big-bear-plant-it application
+services:
+  # Service name: big-bear-plant-it
+  # The `big-bear-plant-it` service definition
+  big-bear-plant-it:
+    # Name of the container
+    container_name: big-bear-plant-it
+
+    # Image to be used for the container
+    image: msdeluise/plant-it-server:0.6.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      - MYSQL_HOST=big-bear-plant-it-db
+      - MYSQL_PORT=3306
+      - MYSQL_USERNAME=root
+      - MYSQL_PSW=9c75c563-b549-40e6-a0d2-360cf9a962ea
+      - MYSQL_DATABASE=plantit
+      - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
+      - JWT_SECRET=putTheSecretHere
+      - JWT_EXP=1
+      - USERS_LIMIT=-1
+      - UPLOAD_DIR=/upload-dir
+      - API_PORT=8080
+      - TREFLE_KEY=
+      - LOG_LEVEL=DEBUG
+      - ALLOWED_ORIGINS=*
+      - CACHE_TTL=86400
+      - CACHE_HOST=big-bear-plant-it-cache
+      - CACHE_PORT=6379
+      - SSL_ENABLED=false
+      - CERTIFICATE_PATH=/certificates/
+
+    # Volumes to be mounted to the container
+    volumes:
+      - "/DATA/AppData/$AppID/upload-dir:/upload-dir"
+      - "/DATA/AppData/$AppID/certificates:/certificates"
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+      # Mapping port 3000 of the host to port 3000 of the container
+      - "3000:3000"
+
+    networks:
+      - big_bear_plant_it_network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /upload-dir
+          description:
+            en_us: "Container Path: /upload-dir"
+        - container: /certificates
+          description:
+            en_us: "Container Path: /certificates"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
+
+  big-bear-plant-it-db:
+    container_name: big-bear-plant-it-db
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=plantit
+      - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
+    ports:
+      - "3306:3306"
+    volumes:
+      - "/DATA/AppData/$AppID/mysql:/var/lib/mysql"
+    networks:
+      - big_bear_plant_it_network
+    x-casaos:
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
+
+  big-bear-plant-it-cache:
+    container_name: big-bear-plant-it-cache
+    image: redis:7.2.1
+    restart: always
+    networks:
+      - big_bear_plant_it_network
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "6379"
+          description:
+            en_us: "Container Port: 6379"
+
+networks:
+  big_bear_plant_it_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-plant-it
+  description:
+    # Description in English
+    en_us: Plant-it is a self-hosted gardening companion app. Useful for keeping track of plant care, receiving notifications about when to water plants, uploading plant images, and more.
+  tagline:
+    # Short description or tagline in English
+    en_us: Self-hosted, open source gardening companion app
+  # Developer's name or identifier
+  developer: "msdeluise"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/plant-it.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Plant-it
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
