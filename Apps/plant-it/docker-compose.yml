@@ -18,29 +18,50 @@ services:
     restart: unless-stopped
 
     environment:
+      # MySQL database host
       - MYSQL_HOST=big-bear-plant-it-db
+      # MySQL database port
       - MYSQL_PORT=3306
+      # MySQL database username
       - MYSQL_USERNAME=root
+      # MySQL database password
       - MYSQL_PSW=9c75c563-b549-40e6-a0d2-360cf9a962ea
+      # MySQL database name
       - MYSQL_DATABASE=plantit
+      # MySQL root password
       - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
+      # JWT secret for authentication
       - JWT_SECRET=putTheSecretHere
+      # JWT expiration time
       - JWT_EXP=1
+      # Users limit (-1 means no limit)
       - USERS_LIMIT=-1
+      # Directory for file uploads
       - UPLOAD_DIR=/upload-dir
+      # API port
       - API_PORT=8080
+      # Trefle API key (currently empty)
       - TREFLE_KEY=
+      # Log level
       - LOG_LEVEL=DEBUG
+      # Allowed origins for CORS
       - ALLOWED_ORIGINS=*
+      # Cache time-to-live (TTL) in seconds
       - CACHE_TTL=86400
+      # Cache host
       - CACHE_HOST=big-bear-plant-it-cache
+      # Cache port
       - CACHE_PORT=6379
+      # SSL enabled flag
       - SSL_ENABLED=false
+      # Path to SSL certificates
       - CERTIFICATE_PATH=/certificates/
 
     # Volumes to be mounted to the container
     volumes:
+      # Volume for uploads
       - "/DATA/AppData/$AppID/upload-dir:/upload-dir"
+      # Volume for SSL certificates
       - "/DATA/AppData/$AppID/certificates:/certificates"
 
     # Ports mapping between host and container
@@ -51,64 +72,89 @@ services:
       - "3000:3000"
 
     networks:
+      # Network definition
       - big_bear_plant_it_network
 
     x-casaos: # CasaOS specific configuration
       volumes:
+        # Description for the upload directory volume
         - container: /upload-dir
           description:
             en_us: "Container Path: /upload-dir"
+        # Description for the certificates volume
         - container: /certificates
           description:
             en_us: "Container Path: /certificates"
       ports:
+        # Description for port 8080
         - container: "8080"
           description:
             en_us: "Container Port: 8080"
+        # Description for port 3000
         - container: "3000"
           description:
             en_us: "Container Port: 3000"
 
+  # Service definition for the database
   big-bear-plant-it-db:
+    # Name of the database container
     container_name: big-bear-plant-it-db
+    # Image for the database
     image: mysql:8.0
+    # Restart policy for the database container
     restart: always
     environment:
+      # MySQL database name
       - MYSQL_DATABASE=plantit
+      # MySQL root password
       - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
     ports:
+      # Mapping port 3306 of the host to port 3306 of the container
       - "3306:3306"
     volumes:
+      # Volume for MySQL data
       - "/DATA/AppData/$AppID/mysql:/var/lib/mysql"
     networks:
+      # Network definition
       - big_bear_plant_it_network
     x-casaos:
       volumes:
+        # Description for the MySQL data volume
         - container: /var/lib/mysql
           description:
             en_us: "Container Path: /var/lib/mysql"
       ports:
+        # Description for port 3306
         - container: "3306"
           description:
             en_us: "Container Port: 3306"
 
+  # Service definition for the cache
   big-bear-plant-it-cache:
+    # Name of the cache container
     container_name: big-bear-plant-it-cache
+    # Image for the cache
     image: redis:7.2.1
+    # Restart policy for the cache container
     restart: always
     networks:
+      # Network definition
       - big_bear_plant_it_network
     x-casaos:
       volumes:
+        # Description for the Redis data volume
         - container: /data
           description:
             en_us: "Container Path: /data"
       ports:
+        # Description for port 6379
         - container: "6379"
           description:
             en_us: "Container Port: 6379"
 
+# Network configuration
 networks:
+  # Network definition
   big_bear_plant_it_network:
     driver: bridge
 
@@ -131,7 +177,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/plant-it.png?raw=true
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/plant-it/logo.png?raw=true
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
@@ -141,3 +187,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "3000"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Before installing read this: https://community.bigbeartechworld.com/t/added-plant-it-to-bigbearcasaos/1297#documentation-3
