@@ -30,8 +30,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage | ghcr.io/gethomepage/homepage | 0.8.13 |  |  |
 | Romm | zurdi15/romm | 3.1.0 |  |  |
 | actual-server | actualbudget/actual-server | 24.5.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
-| adguard-home-host | adguard/adguardhome | v0.107.48 |  |  |
-| adguard-home | adguard/adguardhome | v0.107.48 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
+| adguard-home-host | adguard/adguardhome | 0.107.50 |  |  |
+| adguard-home | adguard/adguardhome | 0.107.50 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.24.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.9.0 |  |  |
@@ -39,7 +39,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | baserow | baserow/baserow | 1.24.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
-| btop | bigbeartechworld/big-bear-btop | 0.0.2 |  |  |
+| btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
 | budibase | budibase/budibase | 2.27.3 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
@@ -69,7 +69,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gotify | gotify/server | 2.4.0 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.3 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.4 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.5.5 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | v24.04.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -90,7 +90,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | minio | minio/minio | RELEASE.2024-02-24T17-11-14Z |  |  |
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
-| myspeed | germannewsmaker/myspeed | 1.0.8 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
+| myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | n8n | n8nio/n8n | 1.43.0 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.1 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
@@ -103,9 +103,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
 | octoprint | octoprint/octoprint | 1.10.1 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 17 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.1.38-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.1.38 |  |  |
-| ollama-nvidia | ollama/ollama | 0.1.38 |  |  |
+| ollama-amd | ollama/ollama | 0.1.39-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.1.39 |  |  |
+| ollama-nvidia | ollama/ollama | 0.1.39 |  |  |
 | onedev | 1dev/server | 10.7.3 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.0.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
@@ -120,6 +120,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pingvin-share | stonith404/pingvin-share | 0.24.2 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.17.4 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
+| plant-it | msdeluise/plant-it-server | 0.6.0 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.3 |  |  |
