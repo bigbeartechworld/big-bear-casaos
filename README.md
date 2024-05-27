@@ -34,7 +34,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.50 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.24.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.9.0 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.10.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.4.2 |  |  |
 | baserow | baserow/baserow | 1.24.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
@@ -120,14 +120,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pingvin-share | stonith404/pingvin-share | 0.24.2 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.17.4 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
-| plant-it | msdeluise/plant-it-server | 0.6.0 |  |  |
+| plant-it | msdeluise/plant-it-server | 0.7.0 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.3 |  |  |
 | portainer | portainer/portainer-ce | 2.20.3-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.7 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
-| python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 5.10.0 |  |  |
+| python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 6.0.1 |  |  |
 | rallly | lukevella/rallly | 3.7.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | reactive-resume | amruthpillai/reactive-resume | 4.1.4 |  |  |
 | rocket-chat | rocket.chat | 6.7.0 |  |  |
