@@ -37,7 +37,7 @@ devDependencies:
     version: 5.1.0(eslint@9.3.0)
   eslint-plugin-jsonc:
     specifier: ^2.15.1
-    version: 2.15.1(eslint@9.3.0)
+    version: 2.16.0(eslint@9.3.0)
   glob:
     specifier: ^10.3.12
     version: 10.4.0
@@ -2010,8 +2010,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jsonc@2.15.1(eslint@9.3.0):
-    resolution: {integrity: sha512-PVFrqIJa8BbM/e828RSn0SwB/Z5ye+2LDuy2XqG6AymNgPsfApRRcznsbxP7VrjdLEU4Nb+g9n/d6opyp0jp9A==}
+  /eslint-plugin-jsonc@2.16.0(eslint@9.3.0):
+    resolution: {integrity: sha512-Af/ZL5mgfb8FFNleH6KlO4/VdmDuTqmM+SPnWcdoWywTetv7kq+vQe99UyQb9XO3b0OWLVuTH7H0d/PXYCMdSg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
