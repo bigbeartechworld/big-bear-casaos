@@ -7,7 +7,7 @@ name: big-bear-wud
 services:
   # Service definition for the main application
   app:
-    image: fmartinou/whats-up-docker:6.3.0
+    image: fmartinou/whats-up-docker:6.4.0
     container_name: wud
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
