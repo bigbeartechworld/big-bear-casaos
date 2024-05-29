@@ -40,7 +40,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
-| budibase | budibase/budibase | 2.27.3 |  |  |
+| budibase | budibase/budibase | 2.27.4 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
