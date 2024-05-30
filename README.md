@@ -52,7 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| dozzle | amir20/dozzle | 6.6.3 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 7.0.0 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
@@ -61,7 +61,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.4 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 |  |  |
-| ghost | ghost | 5.82.11-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 5.82.12-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.82.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.42.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 3.4.0.5-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -129,11 +129,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 6.0.1 |  |  |
 | rallly | lukevella/rallly | 3.7.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | 4.1.4 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | 4.1.6 |  |  |
 | rocket-chat | rocket.chat | 6.7.0 |  |  |
 | scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.8 |  |  |
-| semaphore | semaphoreui/semaphore | v2.9.75 |  |  |
+| semaphore | semaphoreui/semaphore | 2.9.109 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.19.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.13 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
@@ -144,7 +144,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.23.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
-| whats-up-docker | fmartinou/whats-up-docker | 6.3.0 |  |  |
+| whats-up-docker | fmartinou/whats-up-docker | 6.4.0 |  |  |
 | wordpress | wordpress | 6.5.3 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | zipline | ghcr.io/diced/zipline | 3.7.9 |  |  |
 
