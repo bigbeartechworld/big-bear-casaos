@@ -9,7 +9,7 @@ services:
     container_name: baserow
 
     # Use the specified Docker image for Baserow and specify its version.
-    image: baserow/baserow:1.25.0
+    image: baserow/baserow:1.25.1
 
     # Set environment variables for Baserow.
     environment:
