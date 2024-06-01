@@ -52,7 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| dozzle | amir20/dozzle | 7.0.0 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 7.0.3 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
@@ -95,7 +95,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.1 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.5.9 |  |  |
-| nextcloud-ls | linuxserver/nextcloud | 29.0.0 |  |  |
+| nextcloud-ls | linuxserver/nextcloud | 29.0.1 |  |  |
 | nextcloud | nextcloud | 29.0.0-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nocodb | nocodb/nocodb | 0.207.2 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 3.1.9 |  |  |
@@ -103,10 +103,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
 | octoprint | octoprint/octoprint | 1.10.1 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 17 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.1.39-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.1.39 |  |  |
-| ollama-nvidia | ollama/ollama | 0.1.39 |  |  |
-| onedev | 1dev/server | 10.7.5 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| ollama-amd | ollama/ollama | 0.1.40-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.1.40 |  |  |
+| ollama-nvidia | ollama/ollama | 0.1.40 |  |  |
+| onedev | 1dev/server | 10.7.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.0.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
