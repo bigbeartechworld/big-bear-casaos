@@ -26,7 +26,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
-| 2fauth | 2fauth/2fauth | 5.1.1 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
+| 2fauth | 2fauth/2fauth | 5.2.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | Homepage | ghcr.io/gethomepage/homepage | 0.8.13 |  |  |
 | Romm | zurdi15/romm | 3.1.0 |  |  |
 | actual-server | actualbudget/actual-server | 24.5.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
@@ -36,7 +36,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | appsmith | appsmith/appsmith-ee | 1.24.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.10.1 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.4.2 |  |  |
-| baserow | baserow/baserow | 1.24.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
+| baserow | baserow/baserow | 1.25.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
@@ -62,7 +62,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 |  |  |
 | ghost | ghost | 5.82.12-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.83.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.84.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.42.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 3.4.0.5-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.38.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -97,7 +97,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | netalertx | jokobsk/netalertx | 24.5.9 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 29.0.1 |  |  |
 | nextcloud | nextcloud | 29.0.0-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
-| nocodb | nocodb/nocodb | 0.207.2 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nocodb | nocodb/nocodb | 0.207.3 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 3.1.9 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
@@ -120,7 +120,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pingvin-share | stonith404/pingvin-share | 0.24.2 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.17.4 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
-| plant-it | msdeluise/plant-it-server | 0.7.0 |  |  |
+| plant-it | msdeluise/plant-it-server | 0.7.1 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.3 |  |  |
