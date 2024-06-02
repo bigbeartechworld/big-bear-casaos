@@ -77,3 +77,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-zigbee2mqtt-to-bigbearcasaos/1337#documentation-3
