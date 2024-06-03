@@ -103,9 +103,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
 | octoprint | octoprint/octoprint | 1.10.1 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 17 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.1.40-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.1.40 |  |  |
-| ollama-nvidia | ollama/ollama | 0.1.40 |  |  |
+| ollama-amd | ollama/ollama | 0.1.41-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.1.41 |  |  |
+| ollama-nvidia | ollama/ollama | 0.1.41 |  |  |
 | onedev | 1dev/server | 10.7.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.0.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
@@ -119,7 +119,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole | pihole/pihole | 2024.05.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 0.24.2 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.17.4 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
+| planka | ghcr.io/plankanban/planka | 1.17.5 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.7.1 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
@@ -146,6 +146,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | vikunja | vikunja/vikunja | 0.23.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.4.0 |  |  |
 | wordpress | wordpress | 6.5.3 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
+| zigbee2mqtt | koenkk/zigbee2mqtt | 1.38.0 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.9 |  |  |
 
 
