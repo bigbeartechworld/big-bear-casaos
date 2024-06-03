@@ -67,5 +67,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | seafile |  |
 | semaphore |  |
 | whats-up-docker |  |
+| zigbee2mqtt |  |
 | zipline |  |
 
