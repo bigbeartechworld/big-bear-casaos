@@ -27,9 +27,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 5.2.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
-| Homepage | ghcr.io/gethomepage/homepage | 0.8.13 |  |  |
+| Homepage | ghcr.io/gethomepage/homepage | 0.9.0 |  |  |
 | Romm | zurdi15/romm | 3.1.0 |  |  |
-| actual-server | actualbudget/actual-server | 24.5.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
+| actual-server | actualbudget/actual-server | 24.6.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.50 |  |  |
 | adguard-home | adguard/adguardhome | 0.107.50 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
@@ -40,7 +40,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
-| budibase | budibase/budibase | 2.27.5 |  |  |
+| budibase | budibase/budibase | 2.27.6 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -52,7 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| dozzle | amir20/dozzle | 7.0.3 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 7.0.4 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
@@ -63,7 +63,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 |  |  |
 | ghost | ghost | 5.82.12-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.84.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
-| gladys | gladysassistant/gladys | 4.42.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
+| gladys | gladysassistant/gladys | 4.42.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 3.4.0.5-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.38.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | gotify | gotify/server | 2.4.0 |  |  |
@@ -91,7 +91,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.44.0 |  |  |
+| n8n | n8nio/n8n | 1.44.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.1 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.5.9 |  |  |
@@ -132,7 +132,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | reactive-resume | amruthpillai/reactive-resume | 4.1.6 |  |  |
 | rocket-chat | rocket.chat | 6.7.0 |  |  |
 | scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
-| seafile | seafileltd/seafile-mc | 11.0.8 |  |  |
+| seafile | seafileltd/seafile-mc | 11.0.9 |  |  |
 | semaphore | semaphoreui/semaphore | 2.9.112 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.19.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
