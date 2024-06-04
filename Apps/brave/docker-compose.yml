@@ -46,3 +46,4 @@ x-casaos:
     before_install:
       en_us: |
         Username: kasm_user
+        Password: casaos
