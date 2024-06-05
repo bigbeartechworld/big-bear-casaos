@@ -12,7 +12,7 @@ services:
     container_name: big-bear-budibase
 
     # Image to be used for the container
-    image: budibase/budibase:2.27.6
+    image: budibase/budibase:2.28.0
 
     # Container restart policy
     restart: unless-stopped
