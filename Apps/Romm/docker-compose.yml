@@ -8,7 +8,7 @@ services:
   # Service name: big-bear-romm
   # The `big-bear-romm` service definition
   big-bear-romm:
-    image: zurdi15/romm:3.2.0 # Docker image for the application
+    image: rommapp/romm:3.2.0 # Docker image for the application
     container_name: big-bear-romm
     environment:
       - DB_HOST=big-bear-rommdb # Hostname of the MariaDB container
