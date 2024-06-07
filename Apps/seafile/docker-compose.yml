@@ -88,7 +88,7 @@ services:
   # Memcached service for seafile
   big-bear-seafile-memcached:
     container_name: big-bear-seafile-memcached
-    image: memcached:1.6.27
+    image: memcached:1.6.28
     entrypoint: memcached -m 256
     networks:
       - big_bear_seafile_network
