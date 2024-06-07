@@ -30,8 +30,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage | ghcr.io/gethomepage/homepage | 0.9.0 |  |  |
 | Romm | zurdi15/romm | 3.2.0 |  |  |
 | actual-server | actualbudget/actual-server | 24.6.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
-| adguard-home-host | adguard/adguardhome | 0.107.50 |  |  |
-| adguard-home | adguard/adguardhome | 0.107.50 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
+| adguard-home-host | adguard/adguardhome | 0.107.51 |  |  |
+| adguard-home | adguard/adguardhome | 0.107.51 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.24.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.10.1 |  |  |
@@ -40,7 +40,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
-| budibase | budibase/budibase | 2.28.1 |  |  |
+| budibase | budibase/budibase | 2.28.3 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -52,7 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| dozzle | amir20/dozzle | 7.0.4 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 7.0.5 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
@@ -95,7 +95,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.1 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.5.9 |  |  |
-| nextcloud-ls | linuxserver/nextcloud | 29.0.1 |  |  |
+| nextcloud-ls | linuxserver/nextcloud | 29.0.2 |  |  |
 | nextcloud | nextcloud | 29.0.0-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nocodb | nocodb/nocodb | 0.207.3 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 3.1.9 |  |  |
@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.1.41-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.1.41 |  |  |
 | ollama-nvidia | ollama/ollama | 0.1.41 |  |  |
-| onedev | 1dev/server | 10.7.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 10.8.0 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.0.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
@@ -145,7 +145,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.23.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.4.0 |  |  |
-| wordpress | wordpress | 6.5.3 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
+| wordpress | wordpress | 6.5.4 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 1.38.0 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.9 |  |  |
 
