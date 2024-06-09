@@ -12,7 +12,7 @@ services:
     container_name: big-bear-penpot-frontend
 
     # Image to be used for the container
-    image: penpotapp/frontend:2.0.1
+    image: penpotapp/frontend:2.0.3
 
     # Container restart policy
     restart: unless-stopped
