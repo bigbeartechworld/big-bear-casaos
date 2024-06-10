@@ -111,7 +111,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
-| penpot | penpotapp/frontend | 2.0.1 |  |  |
+| penpot | penpotapp/frontend | 2.0.3 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 231128 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
@@ -134,7 +134,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.9 |  |  |
 | semaphore | semaphoreui/semaphore | 2.9.112 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 0.19.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 0.20.4 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.13 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.2-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
