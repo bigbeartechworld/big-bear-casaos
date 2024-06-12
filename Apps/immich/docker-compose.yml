@@ -7,7 +7,9 @@ services:
   immich-server:
     container_name: immich-server # Name of the running container
     image: ghcr.io/immich-app/immich-server:v1.106.2 # Image to be used
-    command: ["start.sh", "immich"] # Command to be executed upon container start
+    # extends:
+    #   file: hwaccel.transcoding.yml
+    #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
     ports: # Mapping ports from the host OS to the container
       - 2283:3001
     volumes: # Mounting directories for persistent data storage
@@ -60,57 +62,6 @@ services:
         - container: "3001"
           description:
             en_us: "Container Port: 3001"
-
-  # Configuration for the Immich Microservices
-  immich-microservices:
-    container_name: immich-microservices # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v1.106.2 # Image to be used
-    # extends:  # Feature to use configuration from another service (currently commented out)
-    #   file: hwaccel.yml
-    #   service: hwaccel
-    command: ["start.sh", "microservices"] # Command to be executed upon container start
-    volumes: # Mounting directories for persistent data storage
-      - /DATA/AppData/$AppID/upload:/usr/src/app/upload
-    environment: # Setting environment variables
-      DB_HOSTNAME: immich-postgres
-      DB_USERNAME: casaos
-      DB_PASSWORD: casaos
-      DB_DATABASE_NAME: immich
-      DB_PORT: 5432
-      REDIS_HOSTNAME: immich-redis
-    depends_on: # Dependencies to ensure the order of service startup
-      - redis
-      - database
-    restart: unless-stopped # Policy to restart unless stopped
-
-    # Networks to be attached to the container
-    networks:
-      - big_bear_immich_network # Connects the container to a defined network
-
-    x-casaos: # CasaOS specific configuration
-      envs:
-        - container: DB_HOSTNAME
-          description:
-            en_us: "Database Hostname"
-        - container: DB_USERNAME
-          description:
-            en_us: "Database Username"
-        - container: DB_PASSWORD
-          description:
-            en_us: "Database Password"
-        - container: DB_DATABASE_NAME
-          description:
-            en_us: "Database Name"
-        - container: DB_PORT
-          description:
-            en_us: "Database Port"
-        - container: REDIS_HOSTNAME
-          description:
-            en_us: "Redis Hostname"
-      volumes:
-        - container: /usr/src/app/upload
-          description:
-            en_us: "Container Path: /usr/src/app/upload"
 
   # Configuration for Immich Machine Learning service
   immich-machine-learning:
