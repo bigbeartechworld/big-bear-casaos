@@ -2,7 +2,7 @@ name: big-bear-jellyseerr # Name of the compose project
 
 services:
   app:
-    image: fallenbagel/jellyseerr:1.9.0 # Image to use for the jellyseerr service
+    image: fallenbagel/jellyseerr:1.9.1 # Image to use for the jellyseerr service
     ports:
       - "5055:5055" # Maps port 5055 on the host to port 5055 on the container
     volumes:
