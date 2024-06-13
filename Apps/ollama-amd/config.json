@@ -1,6 +1,6 @@
 {
   "id": "ollama-amd",
-  "version": "0.1.43-rocm",
+  "version": "0.1.44-rocm",
   "image": "ollama/ollama",
   "youtube": "",
   "docs_link": "",
