@@ -163,3 +163,9 @@ x-casaos:
 
   # Port mapping information
   port_map: "1337"
+
+  # Tips for the user
+  tips:
+    before_install:
+      en_us: |
+        https://community.bigbeartechworld.com/t/added-nightscout-to-bigbearcasaos/1403#documentation-3
