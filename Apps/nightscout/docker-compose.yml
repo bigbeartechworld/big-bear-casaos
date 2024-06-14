@@ -1,0 +1,165 @@
+# Configuration for nightscout setup
+
+# Name of the big-bear-nightscout application
+name: big-bear-nightscout
+
+# Service definitions for the big-bear-nightscout application
+services:
+  big-bear-nightscout:
+    # Name of the container
+    container_name: nightscout
+
+    # Image to be used for the container
+    image: nightscout/cgm-remote-monitor:15.0.2
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Port mappings for the container
+    ports:
+      - "1337:1337"
+
+    # Environment variables for the container
+    environment:
+      ### Variables for the container
+      NODE_ENV: production
+
+      # TZ - Timezone for the container
+      TZ: Etc/UTC
+
+      ### Overridden variables for Docker Compose setup
+      # The `nightscout` service can use HTTP, because we use `traefik` to serve the HTTPS
+      # and manage TLS certificates
+      INSECURE_USE_HTTP: "true"
+
+      # For all other settings, please refer to the Environment section of the README
+      ### Required variables
+      # MONGO_CONNECTION - The connection string for your Mongo database.
+      # Something like mongodb://sally:sallypass@ds099999.mongolab.com:99999/nightscout
+      # The default connects to the `mongo` included in this docker-compose file.
+      # If you change it, you probably also want to comment out the entire `mongo` service block
+      # and `depends_on` block above.
+      MONGO_CONNECTION: mongodb://big-bear-nightscout-mongo:27017/nightscout
+
+      # API_SECRET - A secret passphrase that must be at least 12 characters long.
+      API_SECRET: 48f875fa-0e03-416f-b9d6-19c9afc4e194 # change_me
+
+      ### Features
+      # ENABLE - Used to enable optional features, expects a space delimited list, such as: careportal rawbg iob
+      # See https://github.com/nightscout/cgm-remote-monitor#plugins for details
+      ENABLE: careportal rawbg iob
+
+      # AUTH_DEFAULT_ROLES (readable) - possible values readable, denied, or any valid role name.
+      # When readable, anyone can view Nightscout without a token. Setting it to denied will require
+      # a token from every visit, using status-only will enable api-secret based login.
+      AUTH_DEFAULT_ROLES: denied
+
+      # For all other settings, please refer to the Environment section of the README
+      # https://github.com/nightscout/cgm-remote-monitor#environment
+
+    # Service dependencies
+    depends_on:
+      - big-bear-nightscout-mongo
+
+    # Labels for Traefik configuration
+    labels:
+      - "traefik.enable=true"
+      # Change the below Host from `localhost` to be the web address where Nightscout is running.
+      # Also change the email address in the `traefik` service below.
+      - "traefik.http.routers.nightscout.rule=Host(`localhost`)"
+      - "traefik.http.routers.nightscout.entrypoints=websecure"
+      - "traefik.http.routers.nightscout.tls.certresolver=le"
+
+    # Networks for the container
+    networks:
+      - big-bear-nightscout-network
+
+    # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_us: "NODE_ENV"
+        - container: TZ
+          description:
+            en_us: "TZ"
+        - container: MONGO_CONNECTION
+          description:
+            en_us: "MONGO_CONNECTION"
+        - container: API_SECRET
+          description:
+            en_us: "API_SECRET"
+        - container: ENABLE
+          description:
+            en_us: "ENABLE"
+        - container: AUTH_DEFAULT_ROLES
+          description:
+            en_us: "AUTH_DEFAULT_ROLES"
+
+  big-bear-nightscout-mongo:
+    # Name of the MongoDB container
+    container_name: big-bear-nightscout-mongo
+
+    # Image to be used for the MongoDB container
+    image: mongo:4.4
+
+    # Networks for the MongoDB container
+    networks:
+      - big-bear-nightscout-network
+
+    # Volume mappings for the MongoDB container
+    volumes:
+      - /DATA/AppData/$AppID/mongo-data:/data/db:cached
+
+    # CasaOS specific configuration
+    x-casaos:
+      volumes:
+        - container: /data/db
+          description:
+            en_us: "Container Path: /data/db"
+
+# Network definitions
+networks:
+  big-bear-nightscout-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+
+  # Main service of the application
+  main: big-bear-nightscout
+
+  # Description of the application
+  description:
+    # Description in English
+    en_us: This acts as a web-based CGM (Continuous Glucose Monitor) to allow multiple caregivers to remotely view a patient's glucose data in real time. The server reads a MongoDB which is intended to be data from a physical CGM, where it sends new SGV (sensor glucose values) as the data becomes available. The data is then displayed graphically and blood glucose values are predicted 0.5 hours ahead using an autoregressive second order model. Alarms are generated for high and low values, which can be cleared by any watcher of the data.
+
+  # Short description or tagline of the application
+  tagline:
+    en_us: Nightscout
+
+  # Developer's name or identifier
+  developer: "nightscout"
+
+  # Author of this configuration
+  author: BigBearTechWorld
+
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/nightscout.png?raw=true
+
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+
+  # Title of the application
+  title:
+    en_us: nightscout
+
+  # Application category
+  category: BigBearCasaOS
+
+  # Port mapping information
+  port_map: "1337"
