@@ -45,7 +45,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
-| code-server | linuxserver/code-server | 4.90.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.90.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.0 |  |  |
 | dashdot | mauricenino/dashdot | 5.8.3 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
@@ -73,11 +73,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.05.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
-| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.106.3-alpine |  |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.106.4-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.106.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.106.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
-| jellyseerr | fallenbagel/jellyseerr | 1.9.1 |  |  |
+| jellyseerr | fallenbagel/jellyseerr | 1.9.2 |  |  |
 | joplin | florider89/joplin-server | 2.14.2 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
 | kasm | linuxserver/kasm | 1.15.0 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
@@ -97,15 +97,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | netalertx | jokobsk/netalertx | 24.6.8 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 29.0.2 |  |  |
 | nextcloud | nextcloud | 29.0.1-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
-| nocodb | nocodb/nocodb | 0.207.3 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nocodb | nocodb/nocodb | 0.250.1 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 3.1.9 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
 | octoprint | octoprint/octoprint | 1.10.1 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 17 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.1.43-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.1.43 |  |  |
-| ollama-nvidia | ollama/ollama | 0.1.43 |  |  |
+| ollama-amd | ollama/ollama | 0.1.44-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.1.44 |  |  |
+| ollama-nvidia | ollama/ollama | 0.1.44 |  |  |
 | onedev | 1dev/server | 10.8.0 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.0.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
@@ -120,7 +120,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pingvin-share | stonith404/pingvin-share | 0.25.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.18.1 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
-| plant-it | msdeluise/plant-it-server | 0.7.2 |  |  |
+| plant-it | msdeluise/plant-it-server | 0.7.3 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.40.2 |  |  |
 | portainer-agent | portainer/agent | 2.20.3 |  |  |
@@ -129,12 +129,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 6.1.2 |  |  |
 | rallly | lukevella/rallly | 3.7.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | 4.1.7 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | 4.1.8 |  |  |
 | rocket-chat | rocket.chat | 6.7.0 |  |  |
 | scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.9 |  |  |
-| semaphore | semaphoreui/semaphore | 2.9.112 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 0.20.5 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| semaphore | semaphoreui/semaphore | 2.10.2 |  |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 0.20.6 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.13 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.2-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
