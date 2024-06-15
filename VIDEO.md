@@ -16,13 +16,11 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | budibase |  |
 | cadvisor |  |
 | chatpad |  |
-| crafty |  |
 | dashy |  |
 | docker-cron-restart-notifier |  |
 | faster-whisper |  |
 | financial-freedom |  |
 | flcontainers-guacamole |  |
-| genmon |  |
 | gluetun |  |
 | gotify |  |
 | homebridge |  |
@@ -40,6 +38,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | neko-firefox |  |
 | netalertx |  |
 | nextcloud-ls |  |
+| nightscout |  |
 | node-red |  |
 | obsidian-livesync |  |
 | odoo |  |
