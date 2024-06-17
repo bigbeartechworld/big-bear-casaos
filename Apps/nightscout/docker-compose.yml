@@ -7,7 +7,7 @@ name: big-bear-nightscout
 services:
   big-bear-nightscout:
     # Name of the container
-    container_name: nightscout
+    container_name: big-bear-nightscout
 
     # Image to be used for the container
     image: nightscout/cgm-remote-monitor:15.0.2
@@ -60,15 +60,6 @@ services:
     # Service dependencies
     depends_on:
       - big-bear-nightscout-mongo
-
-    # Labels for Traefik configuration
-    labels:
-      - "traefik.enable=true"
-      # Change the below Host from `localhost` to be the web address where Nightscout is running.
-      # Also change the email address in the `traefik` service below.
-      - "traefik.http.routers.nightscout.rule=Host(`localhost`)"
-      - "traefik.http.routers.nightscout.entrypoints=websecure"
-      - "traefik.http.routers.nightscout.tls.certresolver=le"
 
     # Networks for the container
     networks:
