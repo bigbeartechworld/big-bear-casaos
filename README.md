@@ -117,13 +117,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | photoprism | photoprism/photoprism | 231128 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.05.0 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
-| pihole | pihole/pihole | 2024.05.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
+| pihole | pihole/pihole | 2024.06.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 0.25.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.19.0 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.7.3 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
-| plex | linuxserver/plex | 1.40.2 |  |  |
+| plex | linuxserver/plex | 1.40.3 |  |  |
 | portainer-agent | portainer/agent | 2.20.3 |  |  |
 | portainer | portainer/portainer-ce | 2.20.3-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.7 |  |  |
