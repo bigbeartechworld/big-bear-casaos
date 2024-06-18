@@ -12,7 +12,7 @@ services:
     container_name: octoprint
 
     # Image to be used for the container
-    image: octoprint/octoprint:1.10.1
+    image: octoprint/octoprint:1.10.2
 
     # Container restart policy
     restart: unless-stopped
