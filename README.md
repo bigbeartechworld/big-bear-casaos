@@ -74,8 +74,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homer | b4bz/homer | 24.05.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.106.4-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.106.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | 1.106.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.106.4 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | 1.106.4 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 1.9.2 |  |  |
 | joplin | florider89/joplin-server | 2.14.2 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
@@ -134,7 +134,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | rocket-chat | rocket.chat | 6.7.0 |  |  |
 | scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.9 |  |  |
-| semaphore | semaphoreui/semaphore | 2.10.2 |  |  |
+| semaphore | semaphoreui/semaphore | 2.10.7 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.20.6 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.17 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.13 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
