@@ -1,0 +1,68 @@
+# Configuration for dbgate setup
+
+# Name of the big-bear-dbgate application
+name: big-bear-dbgate
+
+# Service definitions for the big-bear-dbgate application
+services:
+  # Service name: big-bear-dbgate
+  # The `big-bear-dbgate` service definition
+  big-bear-dbgate:
+    # Name of the container
+    container_name: big-bear-dbgate
+
+    # Image to be used for the container
+    image: dbgate/dbgate:5.3.0-alpine
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local homarr/configs directory to /app/data/configs inside the container
+      - /DATA/AppData/$AppID/config:/root/.dbgate
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 3000 of the host to port 3000 of the container
+      - "3000:3000"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /root/.dbgate
+          description:
+            en_us: "Container Path: /root/.dbgate"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-dbgate
+  description:
+    # Description in English
+    en_us: Web based UI for managing and exploring SQL database data
+  tagline:
+    # Short description or tagline in English
+    en_us: DBGate
+  # Developer's name or identifier
+  developer: "dbgate"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/dbgate.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: DBGate
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
