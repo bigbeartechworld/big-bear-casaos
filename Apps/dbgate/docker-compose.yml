@@ -56,7 +56,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/dbgate.png?raw=true
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/dbgate/logo.png?raw=true
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
