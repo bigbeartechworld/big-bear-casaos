@@ -1,6 +1,6 @@
 {
   "id": "code-server",
-  "version": "4.90.2",
+  "version": "4.90.3",
   "image": "linuxserver/code-server",
   "youtube": "https://youtu.be/aiYcwXDfgE8",
   "docs_link": "",
