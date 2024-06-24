@@ -108,7 +108,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.1.46-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.1.46 |  |  |
 | ollama-nvidia | ollama/ollama | 0.1.46 |  |  |
-| onedev | 1dev/server | 10.9.0 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 10.9.1 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
@@ -132,7 +132,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 6.1.2 |  |  |
 | rallly | lukevella/rallly | 3.8.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | reactive-resume | amruthpillai/reactive-resume | 4.1.8 |  |  |
-| rocket-chat | rocket.chat | 6.7.0 |  |  |
+| rocket-chat | rocket.chat | 6.9.2 |  |  |
 | scrypted | koush/scrypted | 18-jammy-full.s6-v0.72.0 | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.9 |  |  |
 | semaphore | semaphoreui/semaphore | 2.10.7 |  |  |
