@@ -5,7 +5,7 @@ name: big-bear-gotify
 services:
   # Service name: app
   app:
-    image: gotify/server:2.4.0 # Docker image for the service
+    image: gotify/server:2.5.0 # Docker image for the service
     ports:
       - 8091:80 # Port mapping (host:container)
     environment: # Environment variables for the service
