@@ -8,7 +8,7 @@ services:
   # Service definition for the main application
   app:
     # Docker image to use for the application
-    image: wordpress:6.5.4
+    image: wordpress:6.5.5
     # Port mapping for the application
     ports:
       - 8080:80
