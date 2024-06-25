@@ -8,7 +8,7 @@ services:
   # Main application service definition
   big-bear-rallly:
     container_name: big-bear-rallly # The name for the container instance of this service
-    image: lukevella/rallly:3.8.0 # Docker image to be used for creating the container
+    image: lukevella/rallly:3.8.1 # Docker image to be used for creating the container
     restart: unless-stopped # Policy to restart the container unless manually stopped
     environment: # Environment variables passed to the container for configuration
       # Database connection URL (DATABASE_URL=postgres://username:password@host/database)
