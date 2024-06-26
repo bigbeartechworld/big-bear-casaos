@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0 # Fetch all history
 
       - name: Install Bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
 
       - name: Generate new VIDEO.md file
         run: bun .github/scripts/video-todo-generator.ts
