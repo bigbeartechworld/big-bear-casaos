@@ -1,0 +1,59 @@
+# Configuration for cyberchef setup
+
+# Name of the big-bear-cyberchef application
+name: big-bear-cyberchef
+
+# Service definitions for the big-bear-cyberchef application
+services:
+  # Service name: big-bear-cyberchef
+  # The `big-bear-cyberchef` service definition
+  big-bear-cyberchef:
+    # Name of the container
+    container_name: big-bear-cyberchef
+
+    # Image to be used for the container
+    image: ghcr.io/gchq/cyberchef:10.19.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-cyberchef
+  description:
+    # Description in English
+    en_us: CyberChef is a simple, intuitive web app for carrying out all manner of "cyber" operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, IPv6 and X.509 parsing, changing character encodings, and much more.
+  tagline:
+    # Short description or tagline in English
+    en_us: The Cyber Swiss Army Knife
+  # Developer's name or identifier
+  developer: "gchq"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/cyberchef.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: CyberChef
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
