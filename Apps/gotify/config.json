@@ -1,6 +1,6 @@
 {
   "id": "gotify",
-  "version": "2.5.0",
+  "version": "2.2.2",
   "image": "gotify/server",
   "youtube": "",
   "docs_link": "",
