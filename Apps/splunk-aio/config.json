@@ -1,0 +1,8 @@
+{
+  "id": "splunk-aio",
+  "version": "9.1",
+  "image": "splunk/splunk",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

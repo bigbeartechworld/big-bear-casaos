@@ -1,0 +1,123 @@
+# Configuration for splunk setup
+
+# Name of the big-bear-splunk application
+name: big-bear-splunk
+
+# Service definitions for the big-bear-splunk application
+services:
+  # Service name: big-bear-splunk
+  # The `big-bear-splunk` service definition
+  big-bear-splunk:
+    # Name of the container
+    container_name: big-bear-splunk
+
+    # Image to be used for the container
+    image: splunk/splunk:9.1
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5000 of the host to port 5000 of the container
+      - "8000:8000" # Splunk Web interface
+      - "9997:9997" # Receiving data from Universal Forwarder
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/splunk:/opt/splunk/var
+
+    # Environment variables for the container
+    environment:
+      - SPLUNK_PASSWORD=StrongPassword123
+      - SPLUNK_START_ARGS=--accept-license
+
+    # Networks to be attached to the container
+    networks:
+      - splunk-network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: SPLUNK_PASSWORD
+          description:
+            en_us: "Splunk password: StrongPassword123"
+        - container: SPLUNK_START_ARGS
+          description:
+            en_us: "Splunk start arguments: --accept-license"
+      volumes:
+        - container: /opt/splunk/var
+          description:
+            en_us: "Container Path: /opt/splunk/var"
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+        - container: "9997"
+          description:
+            en_us: "Container Port: 9997"
+
+  # Service name: big-bear-splunk-uf
+  big-bear-splunk-uf:
+    image: splunk/universalforwarder:9.1
+    container_name: big-bear-splunk-uf
+    depends_on:
+      - big-bear-splunk
+    environment:
+      - SPLUNK_PASSWORD=StrongPassword123
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_STANDALONE_URL=tcp://big-bear-splunk:9997
+    volumes:
+      - /DATA/AppData/$AppID/splunkuf:/opt/splunkforwarder/var
+    # Networks to be attached to the container
+    networks:
+      - splunk-network
+    restart: always
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: SPLUNK_PASSWORD
+          description:
+            en_us: "Splunk password: StrongPassword123"
+        - container: SPLUNK_START_ARGS
+          description:
+            en_us: "Splunk start arguments: --accept-license"
+        - container: SPLUNK_STANDALONE_URL
+          description:
+            en_us: "Splunk standalone URL: tcp://big-bear-splunk:9997"
+      volumes:
+        - container: /opt/splunkforwarder/var
+          description:
+            en_us: "Container Path: /opt/splunkforwarder/var"
+
+networks:
+  splunk-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+  # Main service of the application
+  main: big-bear-splunk
+  description:
+    # Description in English
+    en_us: Splunk Enterprise is a platform for operational intelligence. Our software lets you collect, analyze, and act upon the untapped value of big data that your technology infrastructure, security systems, and business applications generate. It gives you insights to drive operational performance and business results.
+  tagline:
+    # Short description or tagline in English
+    en_us: Splunk Enterprise AIO
+  # Developer's name or identifier
+  developer: "splunk"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/splunk.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Splunk Enterprise AIO
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8000"
