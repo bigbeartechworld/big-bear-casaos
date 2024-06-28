@@ -42,12 +42,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
 | budibase | budibase/budibase | 2.29.3 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.45.24 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | code-server | linuxserver/code-server | 4.90.3 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.0 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
+| cyberchef | ghcr.io/gchq/cyberchef | 10.19.0 |  |  |
 | dashdot | mauricenino/dashdot | 5.8.3 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | dbgate | dbgate/dbgate | 5.3.0-alpine |  |  |
@@ -92,7 +94,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.47.1 |  |  |
+| n8n | n8nio/n8n | 1.48.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.1 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.6.8 |  |  |
@@ -105,9 +107,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
 | octoprint | octoprint/octoprint | 1.10.2 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 17 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.1.46-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.1.46 |  |  |
-| ollama-nvidia | ollama/ollama | 0.1.46 |  |  |
+| ollama-amd | ollama/ollama | 0.1.47-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.1.47 |  |  |
+| ollama-nvidia | ollama/ollama | 0.1.47 |  |  |
 | onedev | 1dev/server | 10.9.1 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
