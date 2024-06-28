@@ -15,7 +15,9 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | btop |  |
 | budibase |  |
 | cadvisor |  |
+| changedetection |  |
 | chatpad |  |
+| cyberchef |  |
 | dashy |  |
 | dbgate |  |
 | docker-cron-restart-notifier |  |
