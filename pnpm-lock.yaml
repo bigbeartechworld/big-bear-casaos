@@ -13,7 +13,7 @@ devDependencies:
     version: 19.2.2
   '@commitlint/cz-commitlint':
     specifier: ^19.2.0
-    version: 19.2.0(@types/node@20.14.9)(commitizen@4.3.0)(inquirer@9.3.1)(typescript@5.5.2)
+    version: 19.2.0(@types/node@20.14.9)(commitizen@4.3.0)(inquirer@9.3.2)(typescript@5.5.2)
   '@types/jest':
     specifier: ^29.0.0
     version: 29.5.12
@@ -31,13 +31,13 @@ devDependencies:
     version: 4.3.0(@types/node@20.14.9)(typescript@5.5.2)
   eslint:
     specifier: ^9.0.0
-    version: 9.5.0
+    version: 9.6.0
   eslint-plugin-json-schema-validator:
     specifier: ^5.1.0
-    version: 5.1.2(eslint@9.5.0)
+    version: 5.1.2(eslint@9.6.0)
   eslint-plugin-jsonc:
     specifier: ^2.15.1
-    version: 2.16.0(eslint@9.5.0)
+    version: 2.16.0(eslint@9.6.0)
   glob:
     specifier: ^10.3.12
     version: 10.4.2
@@ -607,7 +607,7 @@ packages:
       ajv: 8.16.0
     dev: true
 
-  /@commitlint/cz-commitlint@19.2.0(@types/node@20.14.9)(commitizen@4.3.0)(inquirer@9.3.1)(typescript@5.5.2):
+  /@commitlint/cz-commitlint@19.2.0(@types/node@20.14.9)(commitizen@4.3.0)(inquirer@9.3.2)(typescript@5.5.2):
     resolution: {integrity: sha512-kudzHMY9/GxflGyAWMiisiBq2UkyQL1D1eWjGKoC66qQ+5jxRYeDaiVwTdPxYMnmehftNcpksZATDYKqdPP0Wg==}
     engines: {node: '>=v18'}
     peerDependencies:
@@ -619,7 +619,7 @@ packages:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       commitizen: 4.3.0(@types/node@20.14.9)(typescript@5.5.2)
-      inquirer: 9.3.1
+      inquirer: 9.3.2
       lodash.isplainobject: 4.0.6
       word-wrap: 1.2.5
     transitivePeerDependencies:
@@ -757,23 +757,23 @@ packages:
       chalk: 5.3.0
     dev: true
 
-  /@eslint-community/eslint-utils@4.4.0(eslint@9.5.0):
+  /@eslint-community/eslint-utils@4.4.0(eslint@9.6.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
-      eslint: 9.5.0
+      eslint: 9.6.0
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@eslint-community/regexpp@4.10.1:
-    resolution: {integrity: sha512-Zm2NGpWELsQAD1xsJzGQpYfvICSsFkEpU0jxBjfdC6uNEWXcHnfs9hScFWtXVDVl+rBQJGrl4g1vcKIejpH9dA==}
+  /@eslint-community/regexpp@4.11.0:
+    resolution: {integrity: sha512-G/M/tIiMrTAxEWRfLfQJMmGNX28IxBg4PBz8XqQhqUHLFI6TL2htpIB1iQCj144V5ee/JaKyT9/WZ0MGZWfA7A==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
-  /@eslint/config-array@0.16.0:
-    resolution: {integrity: sha512-/jmuSd74i4Czf1XXn7wGRWZCuyaUZ330NH1Bek0Pplatt4Sy1S5haN21SCLLdbeKslQ+S0wEJ+++v5YibSi+Lg==}
+  /@eslint/config-array@0.17.0:
+    resolution: {integrity: sha512-A68TBu6/1mHHuc5YJL0U0VVeGNiklLAL6rRmhTCP2B5XjWLMnrX+HkO+IAXyHvks5cyyY1jjK5ITPQ1HGS2EVA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dependencies:
       '@eslint/object-schema': 2.1.4
@@ -800,8 +800,8 @@ packages:
       - supports-color
     dev: true
 
-  /@eslint/js@9.5.0:
-    resolution: {integrity: sha512-A7+AOT2ICkodvtsWnxZP4Xxk3NbZ3VMHd8oihydLRGrJgqqdEz1qSeEgXYyT/Cu8h1TWWsQRejIx48mtjZ5y1w==}
+  /@eslint/js@9.6.0:
+    resolution: {integrity: sha512-D9B0/3vNg44ZeWbYMpBoXqNP4j6eQD5vNwIlGAuFRRzK/WtT/jvDQW3Bi9kkf3PMDMlM7Yi+73VLUsn5bJcl8A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
@@ -1954,37 +1954,37 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-compat-utils@0.5.0(eslint@9.5.0):
+  /eslint-compat-utils@0.5.0(eslint@9.6.0):
     resolution: {integrity: sha512-dc6Y8tzEcSYZMHa+CMPLi/hyo1FzNeonbhJL7Ol0ccuKQkwopJcJBA9YL/xmMTLU1eKigXo9vj9nALElWYSowg==}
     engines: {node: '>=12'}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      eslint: 9.5.0
+      eslint: 9.6.0
       semver: 7.6.2
     dev: true
 
-  /eslint-compat-utils@0.5.1(eslint@9.5.0):
+  /eslint-compat-utils@0.5.1(eslint@9.6.0):
     resolution: {integrity: sha512-3z3vFexKIEnjHE3zCMRo6fn/e44U7T1khUjg+Hp0ZQMCigh28rALD0nPFBcGZuiLC5rLZa2ubQHDRln09JfU2Q==}
     engines: {node: '>=12'}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      eslint: 9.5.0
+      eslint: 9.6.0
       semver: 7.6.2
     dev: true
 
-  /eslint-plugin-json-schema-validator@5.1.2(eslint@9.5.0):
+  /eslint-plugin-json-schema-validator@5.1.2(eslint@9.6.0):
     resolution: {integrity: sha512-NVMZ53vOk1d6HFwLkrevWFXavQPLvBZjC06L4YnxBTa+tHw2lTMkFUZRuKu5RR1JELI8Jgm/Xtoks7vaf74mtQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.5.0)
+      '@eslint-community/eslint-utils': 4.4.0(eslint@9.6.0)
       ajv: 8.16.0
       debug: 4.3.5
-      eslint: 9.5.0
-      eslint-compat-utils: 0.5.1(eslint@9.5.0)
+      eslint: 9.6.0
+      eslint-compat-utils: 0.5.1(eslint@9.6.0)
       json-schema-migrate: 2.0.0
       jsonc-eslint-parser: 2.4.0
       minimatch: 8.0.4
@@ -1996,15 +1996,15 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jsonc@2.16.0(eslint@9.5.0):
+  /eslint-plugin-jsonc@2.16.0(eslint@9.6.0):
     resolution: {integrity: sha512-Af/ZL5mgfb8FFNleH6KlO4/VdmDuTqmM+SPnWcdoWywTetv7kq+vQe99UyQb9XO3b0OWLVuTH7H0d/PXYCMdSg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.5.0)
-      eslint: 9.5.0
-      eslint-compat-utils: 0.5.0(eslint@9.5.0)
+      '@eslint-community/eslint-utils': 4.4.0(eslint@9.6.0)
+      eslint: 9.6.0
+      eslint-compat-utils: 0.5.0(eslint@9.6.0)
       espree: 9.6.1
       graphemer: 1.4.0
       jsonc-eslint-parser: 2.4.0
@@ -2030,16 +2030,16 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
-  /eslint@9.5.0:
-    resolution: {integrity: sha512-+NAOZFrW/jFTS3dASCGBxX1pkFD0/fsO+hfAkJ4TyYKwgsXZbqzrw+seCYFCcPCYXvnD67tAnglU7GQTz6kcVw==}
+  /eslint@9.6.0:
+    resolution: {integrity: sha512-ElQkdLMEEqQNM9Njff+2Y4q2afHk7JpkPvrd7Xh7xefwgQynqPxwf55J7di9+MEibWUGdNjFF9ITG9Pck5M84w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     hasBin: true
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.5.0)
-      '@eslint-community/regexpp': 4.10.1
-      '@eslint/config-array': 0.16.0
+      '@eslint-community/eslint-utils': 4.4.0(eslint@9.6.0)
+      '@eslint-community/regexpp': 4.11.0
+      '@eslint/config-array': 0.17.0
       '@eslint/eslintrc': 3.1.0
-      '@eslint/js': 9.5.0
+      '@eslint/js': 9.6.0
       '@humanwhocodes/module-importer': 1.0.1
       '@humanwhocodes/retry': 0.3.0
       '@nodelib/fs.walk': 1.2.8
@@ -2563,8 +2563,8 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@9.3.1:
-    resolution: {integrity: sha512-A5IdVr1I04XqPlwrGgTJMKmzRg5ropqNpSeqo0vj1ZmluSCNSFaPZz4eazdPrhVcZfej7fCEYvD2NYa1KjkTJA==}
+  /inquirer@9.3.2:
+    resolution: {integrity: sha512-+ynEbhWKhyomnaX0n2aLIMSkgSlGB5RrWbNXnEqj6mdaIydu6y40MdBjL38SAB0JcdmOaIaMua1azdjLEr3sdw==}
     engines: {node: '>=18'}
     dependencies:
       '@inquirer/figures': 1.0.3
@@ -2573,12 +2573,12 @@ packages:
       external-editor: 3.1.0
       mute-stream: 1.0.0
       ora: 5.4.1
-      picocolors: 1.0.1
       run-async: 3.0.0
       rxjs: 7.8.1
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 6.2.0
+      yoctocolors-cjs: 2.1.1
     dev: true
 
   /is-arrayish@0.2.1:
@@ -3647,10 +3647,6 @@ packages:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
     dev: true
 
-  /picocolors@1.0.1:
-    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
-    dev: true
-
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -4296,4 +4292,9 @@ packages:
   /yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
+    dev: true
+
+  /yoctocolors-cjs@2.1.1:
+    resolution: {integrity: sha512-c6T13b6qYcJZvck7QbEFXrFX/Mu2KOjvAGiKHmYMUg96jxNpfP6i+psGW72BOPxOIDUJrORG+Kyu7quMX9CQBQ==}
+    engines: {node: '>=18'}
     dev: true
