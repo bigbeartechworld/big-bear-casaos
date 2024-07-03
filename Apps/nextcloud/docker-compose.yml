@@ -10,7 +10,7 @@ services:
   nextcloud:
     # Define the container name
     container_name: nextcloud
-    # Use the nextcloud:28.0.1-apache image
+    # Use the nextcloud image from the official Docker Hub
     image: nextcloud:29.0.3-apache
     # Restart the container unless stopped
     restart: unless-stopped
@@ -20,7 +20,7 @@ services:
     # Mount the /DATA/AppData/$AppID/html directory on the host to /var/www/html in the container
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
-    # Set environment variables
+    # Set environment variables for the container
     environment:
       - POSTGRES_HOST=db-nextcloud
       - REDIS_HOST=redis-nextcloud
@@ -163,7 +163,7 @@ services:
       redis-nextcloud:
         condition: service_healthy
     networks:
-      - nextcloud_network
+      - nextcloud_network # Connect to the Nextcloud network
 
     x-casaos:
       volumes:
