@@ -171,7 +171,7 @@ services:
           description:
             en_us: "Container Path: /var/www/html"
 
-# Network definition for the big-bear-homarr application
+# Network definition for the big-bear-nextcloud application
 networks:
   nextcloud_network:
     driver: bridge
