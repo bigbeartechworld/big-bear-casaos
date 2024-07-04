@@ -1,6 +1,6 @@
 {
   "id": "immich-without-machine-learning",
-  "version": "1.106.4",
+  "version": "1.107.2",
   "image": "ghcr.io/immich-app/immich-server",
   "youtube": "https://youtu.be/ZIx2jDHYjjE",
   "docs_link": "",
