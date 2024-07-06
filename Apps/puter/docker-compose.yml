@@ -1,0 +1,98 @@
+# Configuration for puter setup
+
+# Name of the big-bear-puter application
+name: big-bear-puter
+
+# Service definitions for the big-bear-puter application
+services:
+  # Service name: big-bear-puter
+  # The `big-bear-puter` service definition
+  big-bear-puter:
+    # Name of the container
+    container_name: big-bear-puter
+
+    # Image to be used for the container
+    image: ghcr.io/heyputer/puter:sha-d3969b0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      TZ: "UTC"
+      CONFIG_PATH: "/etc/puter"
+      PUID: "1000"
+      PGID: "1000"
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/etc/puter
+      - /DATA/AppData/$AppID/data:/var/puter
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 4100 of the host to port 4100 of the container
+      - "4100:4100"
+
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://puter.localhost:4100/test || exit 1
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 30s
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+        - container: PUID
+          description:
+            en_us: Process UID
+        - container: PGID
+          description:
+            en_us: Process GID
+        - container: CONFIG_PATH
+          description:
+            en_us: Configuration path
+      volumes:
+        - container: /etc/puter
+          description:
+            en_us: Configuration directory
+        - container: /var/puter
+          description:
+            en_us: Data directory
+      ports:
+        - container: "4100"
+          description:
+            en_us: "Container Port: 4100"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-puter
+  description:
+    # Description in English
+    en_us: Puter is an advanced, open-source internet operating system designed to be feature-rich, exceptionally fast, and highly extensible. It can be used to build remote desktop environments or serve as an interface for cloud storage services, remote servers, web hosting platforms, and more.
+  tagline:
+    # Short description or tagline in English
+    en_us: 🌐 The Web OS! Free, Open-Source, and Self-Hostable.
+  # Developer's name or identifier
+  developer: "heyputer"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/puter.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: "https://camo.githubusercontent.com/3069986234ddeb463c411dc613d2d62d64cf7f485d2b76c15946ab02607c174c/68747470733a2f2f6173736574732e70757465722e736974652f70757465722e636f6d2d73637265656e73686f742d322e77656270"
+  title:
+    # Title in English
+    en_us: Puter
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "4100"
