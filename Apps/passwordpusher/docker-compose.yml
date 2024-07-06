@@ -1,0 +1,125 @@
+# Configuration for pwpush setup
+
+# Name of the big-bear-pwpush application
+name: big-bear-pwpush
+
+# Service definitions for the big-bear-homarr application
+services:
+  # Service name: big-bear-pwpush
+  # The `big-bear-pwpush` service definition
+  big-bear-pwpush:
+    # Name of the container
+    container_name: big-bear-pwpush
+
+    # Image to be used for the container
+    image: pglombardo/pwpush:1.41.13
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      DATABASE_URL: "mysql2://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-db:3306/passwordpusher_db"
+      PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT: "1"
+      PWP__PW__EXPIRE_AFTER_VIEWS_MIN: "1"
+      PWP__PW__RETRIEVAL_STEP_DEFAULT: "true"
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/storage:/opt/PasswordPusher/storage:rw
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5100 of the host to port 5100 of the container
+      - "5100:5100"
+
+    networks:
+      - big_bear_pwpush_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT
+          description:
+            en_us: "Password Expire After Days Default"
+        - container: PWP__PW__EXPIRE_AFTER_VIEWS_MIN
+          description:
+            en_us: "Password Expire After Views Min"
+        - container: PWP__PW__RETRIEVAL_STEP_DEFAULT
+          description:
+            en_us: "Password Retrieval Step Default"
+      volumes:
+        - container: /opt/PasswordPusher/storage
+          description:
+            en_us: "Container Path: /opt/PasswordPusher/storage"
+      ports:
+        - container: "5100"
+          description:
+            en_us: "Container Port: 5100"
+
+  big-bear-pwpush-db:
+    container_name: big-bear-pwpush-db
+    image: mariadb:10.6.5
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_USER: "pwpusher"
+      MARIADB_PASSWORD: "6280144a-56af-486f-9088-ac7301399328"
+      MARIADB_DATABASE: "passwordpusher_db"
+      MARIADB_RANDOM_ROOT_PASSWORD: "yes"
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    networks:
+      - big_bear_pwpush_network
+
+    x-casaos:
+      envs:
+        - container: MARIADB_USER
+          description:
+            en_us: Database user
+        - container: MARIADB_PASSWORD
+          description:
+            en_us: Database password
+        - container: MARIADB_DATABASE
+          description:
+            en_us: Database name
+        - container: MARIADB_RANDOM_ROOT_PASSWORD
+          description:
+            en_us: Database root password
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+
+networks:
+  big_bear_pwpush_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-pwpush
+  description:
+    # Description in English
+    en_us: Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.
+  tagline:
+    # Short description or tagline in English
+    en_us: Give your users the tools to be secure by default.
+  # Developer's name or identifier
+  developer: "pglombardo"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/passwordpusher.png?raw=true
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Password Pusher
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "5100"
