@@ -1,6 +1,6 @@
 {
   "id": "glances",
-  "version": "3.4.0.5-full",
+  "version": "4.1.2.1-full",
   "image": "nicolargo/glances",
   "youtube": "https://youtu.be/nwsVJ0QB0sM",
   "docs_link": "",
