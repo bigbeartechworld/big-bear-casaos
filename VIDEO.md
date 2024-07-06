@@ -20,6 +20,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | cyberchef |  |
 | dashy |  |
 | dbgate |  |
+| diun |  |
 | docker-cron-restart-notifier |  |
 | faster-whisper |  |
 | financial-freedom |  |
