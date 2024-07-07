@@ -142,8 +142,8 @@ x-casaos:
   # Icon for the application
   icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/nightscout.png?raw=true
 
-  # Thumbnail image (currently empty)
-  thumbnail: ""
+  # Thumbnail image
+  thumbnail: "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/nightscout/screenshot.png?raw=true"
 
   # Title of the application
   title:
