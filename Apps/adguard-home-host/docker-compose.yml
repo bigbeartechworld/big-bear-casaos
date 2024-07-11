@@ -66,7 +66,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/adguard-home.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png
   # Thumbnail image for the application (if any)
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/thumbnail.png
   # Title for the application

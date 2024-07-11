@@ -117,7 +117,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/seafile.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/seafile.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

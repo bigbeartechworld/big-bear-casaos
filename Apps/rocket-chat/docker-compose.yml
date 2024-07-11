@@ -102,7 +102,7 @@ x-casaos:
     en_us: The communications platform that puts data protection first.
   developer: "rocket.chat"
   author: BigBearTechWorld
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/rocketchat.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/rocketchat.png
   thumbnail: ""
   title:
     en_us: Rocket.Chat

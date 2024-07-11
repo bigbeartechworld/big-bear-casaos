@@ -68,7 +68,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/nextcloud.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nextcloud.png
   # Thumbnail image (currently empty)
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/thumbnail.jpg
   screenshot_link:

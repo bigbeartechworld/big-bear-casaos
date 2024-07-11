@@ -146,7 +146,7 @@ x-casaos:
     en_us: Free open source kanban board for workgroups.
   developer: "plankanban"
   author: BigBearTechWorld
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/planka.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/planka.png
   thumbnail: ""
   title:
     en_us: Planka

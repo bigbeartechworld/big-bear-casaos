@@ -102,7 +102,7 @@ x-casaos:
     en_us: Piwigo # Short description or tagline in English
   developer: "piwigo" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/piwigo.png?raw=true # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/piwigo.png # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
     en_us: Piwigo # Title in English
