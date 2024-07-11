@@ -157,7 +157,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/reactive-resume/logo.png?raw=true"
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/reactive-resume/logo.png?raw=true"
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

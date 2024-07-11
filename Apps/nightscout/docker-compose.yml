@@ -143,7 +143,7 @@ x-casaos:
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nightscout.png?raw=true
 
   # Thumbnail image
-  thumbnail: "https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/nightscout/screenshot.png?raw=true"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/nightscout/screenshot.png?raw=true"
 
   # Title of the application
   title:
