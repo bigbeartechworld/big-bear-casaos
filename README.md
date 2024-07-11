@@ -40,13 +40,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
-| budibase | budibase/budibase | 2.29.15 |  |  |
+| budibase | budibase/budibase | 2.29.16 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.45.25 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
-| code-server | linuxserver/code-server | 4.90.3 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.91.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.0 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.19.0 |  |  |
@@ -73,11 +73,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gotify | gotify/server | 2.5.0 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.3 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.7.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.7.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.05.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
-| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.107.2-alpine |  |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.108.0-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.107.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.107.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
@@ -95,7 +95,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.49.0 |  |  |
+| n8n | n8nio/n8n | 1.50.0 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.1 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.6.8 |  |  |
@@ -128,7 +128,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | planka | ghcr.io/plankanban/planka | 1.19.1 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.7.4 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
-| plex | linuxserver/plex | 1.40.3 |  |  |
+| plex | linuxserver/plex | 1.40.4 |  |  |
 | portainer-agent | portainer/agent | 2.20.3 |  |  |
 | portainer | portainer/portainer-ce | 2.20.3-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
