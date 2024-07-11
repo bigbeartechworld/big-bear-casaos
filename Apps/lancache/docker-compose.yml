@@ -114,7 +114,7 @@ x-casaos:
     en_us: LAN Party game caching made easy
   developer: "lancachenet" # Developer name
   author: BigBearTechWorld # Configuration author
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/lancache.png?raw=true # Application icon
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lancache.png?raw=true # Application icon
   thumbnail: "" # Thumbnail image (empty)
   title:
     en_us: LAN Cache # Application title

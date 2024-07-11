@@ -90,7 +90,7 @@ x-casaos:
     en_us: 🔥 🔥 🔥 Open Source Airtable Alternative
   developer: "nocodb" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/nocodb.png?raw=true # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nocodb.png?raw=true # Icon for the application
   thumbnail: "https://user-images.githubusercontent.com/86527202/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif" # Thumbnail image (currently empty)
   title:
     en_us: NocoDB # Title in English

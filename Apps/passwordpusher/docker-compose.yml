@@ -113,7 +113,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/passwordpusher.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/passwordpusher.png?raw=true
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

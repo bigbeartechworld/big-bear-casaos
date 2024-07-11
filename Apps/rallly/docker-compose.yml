@@ -127,7 +127,7 @@ x-casaos:
     en_us: Rallly # Short tagline or slogan
   developer: "lukevella" # Developer or maintainer of the application
   author: BigBearTechWorld # The author of this configuration
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/rallly.png?raw=true # Icon URL
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/rallly.png?raw=true # Icon URL
   thumbnail: "" # Thumbnail image URL (currently empty)
   title:
     en_us: Rallly # Title of the application in English

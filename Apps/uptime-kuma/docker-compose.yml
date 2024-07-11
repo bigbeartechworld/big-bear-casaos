@@ -50,7 +50,7 @@ x-casaos:
   # Author of this configuration file for tracking and support
   author: BigBearTechWorld
   # Icon URL for the application, used for visual identification in UIs
-  icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/uptime-kuma.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/uptime-kuma.png?raw=true
   # Placeholder for thumbnail image (can be updated later)
   thumbnail: ""
   # Application title in English, used for display purposes
