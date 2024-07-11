@@ -39,7 +39,7 @@ x-casaos:
     en_us: CodeX Docs # Short description or tagline in English
   developer: "" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://github.com/bigbeartechworld/big-bear-casaos/blob/master/Apps/codex-docs/logo.jpg?raw=true # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/codex-docs/logo.jpg # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
     en_us: CodeX Docs # Title in English

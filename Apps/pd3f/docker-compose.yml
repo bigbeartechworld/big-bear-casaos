@@ -138,7 +138,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/pd3f/pd3f/blob/master/imgs/logo.jpg?raw=true
+  icon: https://cdn.jsdelivr.net/gh/pd3f/pd3f/imgs/logo.jpg
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

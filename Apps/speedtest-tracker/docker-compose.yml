@@ -135,7 +135,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/alexjustesen/speedtest-tracker/blob/main/public/img/speedtest-tracker-icon.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/alexjustesen/speedtest-tracker/public/img/speedtest-tracker-icon.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

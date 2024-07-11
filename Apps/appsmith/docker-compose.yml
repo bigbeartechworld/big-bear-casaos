@@ -48,7 +48,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://github.com/appsmithorg/appsmith/blob/release/static/logo.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/appsmithorg/appsmith/static/logo.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
