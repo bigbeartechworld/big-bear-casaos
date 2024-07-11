@@ -62,7 +62,7 @@ x-casaos:
   author: BigBearTechWorld
 
   # Icon URL for the project
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/python-matter-server/logo.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/python-matter-server/logo.png
 
   # Thumbnail for the project (currently empty)
   thumbnail: ""

@@ -168,7 +168,7 @@ x-casaos:
   author: BigBearCommunity
 
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/peppermint/logo.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/peppermint/logo.png
 
   # Thumbnail image (currently empty)
   thumbnail: ""

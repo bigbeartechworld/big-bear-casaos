@@ -67,7 +67,7 @@ x-casaos:
   # Author of this configuration
   author: advplyr
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/audiobookshelf.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/audiobookshelf.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

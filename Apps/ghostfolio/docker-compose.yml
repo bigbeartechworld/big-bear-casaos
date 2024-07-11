@@ -164,7 +164,7 @@ x-casaos:
     en_us: Ghostfolio # Short description or tagline
   developer: "ghostfolio" # Developer name or identifier
   author: BigBearTechWorld # Configuration author
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ghostfolio.png?raw=true # Application icon URL
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ghostfolio.png # Application icon URL
   thumbnail: "" # Thumbnail image URL (empty if not available)
   title:
     en_us: Ghostfolio # Application title in English

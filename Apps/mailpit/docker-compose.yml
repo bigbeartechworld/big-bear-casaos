@@ -40,8 +40,8 @@ x-casaos:
     en_us: Mailpit # Tagline in English
   developer: "axllent" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/mailpit/logo.png?raw=true # Icon for the application
-  thumbnail: "https://github.com/axllent/mailpit/blob/develop/docs/screenshot.png?raw=true" # Thumbnail image for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/mailpit/logo.png # Icon for the application
+  thumbnail: "https://github.com/axllent/mailpit/blob/develop/docs/screenshot.png" # Thumbnail image for the application
   title: # Title of the application in various languages
     en_us: Mailpit # Title in English
   category: BigBearCasaOS # Application category

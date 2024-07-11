@@ -46,7 +46,7 @@ x-casaos:
     en_us: Portainer
   developer: "portainer" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer-alt.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer-alt.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   # Title of the application in English

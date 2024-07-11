@@ -55,7 +55,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg?raw=true
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

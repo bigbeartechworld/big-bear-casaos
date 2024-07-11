@@ -41,7 +41,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/excalidraw/logo.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/excalidraw/logo.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application

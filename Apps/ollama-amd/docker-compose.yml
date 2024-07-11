@@ -64,7 +64,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama-amd.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ollama-amd.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

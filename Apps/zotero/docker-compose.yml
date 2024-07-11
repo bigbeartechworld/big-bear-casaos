@@ -71,7 +71,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/zotero/logo.png?raw=true
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/zotero/logo.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
