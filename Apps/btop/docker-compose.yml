@@ -65,7 +65,7 @@ x-casaos:
     en_us: A monitor of resources
   developer: "bigbeartechworld"
   author: BigBearTechWorld
-  icon: https://github.com/aristocratos/btop/raw/main/Img/logo.png
+  icon: https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png
   thumbnail: ""
   title:
     en_us: btop
