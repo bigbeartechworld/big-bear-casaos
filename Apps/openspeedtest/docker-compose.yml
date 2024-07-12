@@ -1,0 +1,64 @@
+# Configuration for openspeedtest setup
+
+# Name of the big-bear-openspeedtest application
+name: big-bear-openspeedtest
+
+# Service definitions for the big-bear-openspeedtest application
+services:
+  # Service name: big-bear-openspeedtest
+  # The `big-bear-openspeedtest` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-openspeedtest
+
+    # Image to be used for the container
+    image: openspeedtest/latest:v2.0.5
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 3000 of the host to port 3000 of the container (http)
+      - "3000:3000"
+      # Mapping port 3001 of the host to port 3001 of the container (https)
+      - "3001:3001"
+
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-openspeedtest
+  description:
+    # Description in English
+    en_us: SpeedTest by OpenSpeedTest™ - Free & Open-Source HTML5 Network Performance Estimation Tool.
+  tagline:
+    # Short description or tagline in English
+    en_us: SpeedTest by OpenSpeedTest™
+  # Developer's name or identifier
+  developer: "openspeedtest"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openspeedtest.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: OpenSpeedTest
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
