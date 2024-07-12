@@ -35,14 +35,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.24.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.11.0 |  |  |
-| authentik | ghcr.io/goauthentik/server | 2024.6.0 |  |  |
-| baserow | baserow/baserow | 1.25.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
+| authentik | ghcr.io/goauthentik/server | 2024.6.1 |  |  |
+| baserow | baserow/baserow | 1.26.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
-| budibase | budibase/budibase | 2.29.16 |  |  |
+| budibase | budibase/budibase | 2.29.18 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.45.25 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.45.26 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -115,15 +115,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | onlyoffice | onlyoffice/documentserver | 8.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.41.14 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.41.15 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
-| penpot | penpotapp/frontend | 2.0.3 |  |  |
+| penpot | penpotapp/frontend | 2.1.0 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 231128 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.05.0 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole | pihole/pihole | 2024.07.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
-| pingvin-share | stonith404/pingvin-share | 0.26.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
+| pingvin-share | stonith404/pingvin-share | 0.27.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.19.1 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.7.4 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
