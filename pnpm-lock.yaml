@@ -40,7 +40,7 @@ devDependencies:
     version: 2.16.0(eslint@9.6.0)
   glob:
     specifier: ^10.3.12
-    version: 10.4.4
+    version: 10.4.5
   husky:
     specifier: ^9.0.11
     version: 9.0.11
@@ -2362,9 +2362,8 @@ packages:
       is-glob: 4.0.3
     dev: true
 
-  /glob@10.4.4:
-    resolution: {integrity: sha512-XsOKvHsu38Xe19ZQupE6N/HENeHQBA05o3hV8labZZT2zYDg1+emxWHnc/Bm9AcCMPXfD6jt+QC7zC5JSFyumw==}
-    engines: {node: 14 >=14.21 || 16 >=16.20 || 18 || 20 || >=22}
+  /glob@10.4.5:
+    resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
     hasBin: true
     dependencies:
       foreground-child: 3.2.1
