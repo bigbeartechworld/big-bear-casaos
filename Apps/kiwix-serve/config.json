@@ -1,0 +1,8 @@
+{
+  "id": "kiwix-serve",
+  "version": "3.7.0-2",
+  "image": "ghcr.io/kiwix/kiwix-serve",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}
