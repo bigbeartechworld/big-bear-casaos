@@ -7,7 +7,7 @@ name: big-bear-openspeedtest
 services:
   # Service name: big-bear-openspeedtest
   # The `big-bear-openspeedtest` service definition
-  app:
+  big-bear-openspeedtest:
     # Name of the container
     container_name: big-bear-openspeedtest
 
@@ -43,16 +43,16 @@ x-casaos:
   main: big-bear-openspeedtest
   description:
     # Description in English
-    en_us: SpeedTest by OpenSpeedTest™ - Free & Open-Source HTML5 Network Performance Estimation Tool.
+    en_us: "SpeedTest by OpenSpeedTest - Free & Open-Source HTML5 Network Performance Estimation Tool."
   tagline:
     # Short description or tagline in English
-    en_us: SpeedTest by OpenSpeedTest™
+    en_us: "SpeedTest by OpenSpeedTest"
   # Developer's name or identifier
   developer: "openspeedtest"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openspeedtest.png
+  icon: "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openspeedtest.png"
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
