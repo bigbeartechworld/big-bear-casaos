@@ -1,6 +1,6 @@
 {
   "id": "tp-link-omada-controller",
-  "version": "5.13",
+  "version": "5.14",
   "image": "mbentley/omada-controller",
   "youtube": "https://youtu.be/aECteVrkt6s",
   "docs_link": "",
