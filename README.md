@@ -109,10 +109,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
 | octoprint | octoprint/octoprint | 1.10.2 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 17 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.2.4-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.2.4 |  |  |
-| ollama-nvidia | ollama/ollama | 0.2.4 |  |  |
-| onedev | 1dev/server | 10.9.6 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| ollama-amd | ollama/ollama | 0.2.5-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.2.5 |  |  |
+| ollama-nvidia | ollama/ollama | 0.2.5 |  |  |
+| onedev | 1dev/server | 10.9.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
