@@ -35,10 +35,10 @@ jobs:
 
             # Get the pull requests associated with the branch
             prs=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-              "https://api.github.com/repos/$REPO/pulls?head=$REPO:$branch&state=all" | jq -r '.[] | select(.head.ref == "'"$branch"'") | .state')
+              "https://api.github.com/repos/$REPO/pulls?head=$REPO:$branch&state=all" | jq -r '.[] | .state')
 
             # Check if there are no pull requests or if all are closed
-            if [ -z "$prs" ] || [ "$prs" == "closed" ]; then
+            if [ -z "$prs" ] || ! echo "$prs" | grep -q 'open'; then
               echo "Deleting branch $branch"
               git push origin --delete $branch
             else
