@@ -1,0 +1,47 @@
+name: Delete Renovate Branches
+
+on:
+  workflow_dispatch: # Allows manual triggering from the GitHub Actions tab
+  schedule:
+    - cron: "0 0 * * 0" # Runs weekly on Sunday at midnight (UTC)
+
+jobs:
+  delete-renovate-branches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Delete Renovate Branches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Install jq for JSON processing
+          sudo apt-get install jq -y
+
+          # Fetch all branches
+          git fetch --all
+
+          # List all remote branches and filter those starting with 'renovate/'
+          branches=$(git branch -r | grep 'origin/renovate/' | sed 's/origin\///')
+
+          # GitHub repository info
+          REPO=${{ github.repository }}
+
+          # Check and delete each renovate branch
+          for branch in $branches; do
+            echo "Checking branch $branch"
+
+            # Get the pull requests associated with the branch
+            prs=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+              "https://api.github.com/repos/$REPO/pulls?head=$REPO:$branch&state=all" | jq -r '.[] | select(.head.ref == "'"$branch"'") | .state')
+
+            # Check if there are no pull requests or if all are closed
+            if [ -z "$prs" ] || [ "$prs" == "closed" ]; then
+              echo "Deleting branch $branch"
+              git push origin --delete $branch
+            else
+              echo "Branch $branch has an open pull request, skipping."
+            fi
+          done
