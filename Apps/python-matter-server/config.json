@@ -1,6 +1,6 @@
 {
   "id": "python-matter-server",
-  "version": "6.2.2",
+  "version": "6.3.0",
   "image": "ghcr.io/home-assistant-libs/python-matter-server",
   "youtube": "",
   "docs_link": "",
