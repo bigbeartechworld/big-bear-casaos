@@ -6,7 +6,7 @@ services:
   # Main Immich Server service configuration
   immich-server:
     container_name: immich-server # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v1.109.1 # Image to be used
+    image: ghcr.io/immich-app/immich-server:v1.109.2 # Image to be used
     # extends:
     #   file: hwaccel.transcoding.yml
     #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
@@ -66,7 +66,7 @@ services:
   # Configuration for Immich Machine Learning service
   immich-machine-learning:
     container_name: immich-machine-learning # Name of the running container
-    image: ghcr.io/immich-app/immich-machine-learning:v1.109.1 # Image to be used
+    image: ghcr.io/immich-app/immich-machine-learning:v1.109.2 # Image to be used
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/model-cache:/cache
     environment: # Setting environment variables
