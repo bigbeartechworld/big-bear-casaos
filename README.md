@@ -27,7 +27,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 5.2.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
-| Homepage | ghcr.io/gethomepage/homepage | 0.9.4 |  |  |
+| Homepage | ghcr.io/gethomepage/homepage | 0.9.5 |  |  |
 | Romm | zurdi15/romm | 3.2.0 |  |  |
 | actual-server | actualbudget/actual-server | 24.7.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.52 |  |  |
@@ -39,10 +39,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | baserow | baserow/baserow | 1.26.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
-| btop | bigbeartechworld/big-bear-btop | 0.0.3 |  |  |
+| btop | bigbeartechworld/big-bear-btop | 0.0.3 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 2.29.20 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.49.1 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.45.26 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.46.00 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -77,9 +77,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.05.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
-| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.108.0-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | v1.108.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | v1.108.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.109.2-alpine |  |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.109.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | 1.109.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 1.9.2 |  |  |
 | joplin | florider89/joplin-server | 2.14.2 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
@@ -125,7 +125,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.05.0 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole | pihole/pihole | 2024.07.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 0.27.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
-| piwigo | linuxserver/piwigo | 14.4.0 |  |  |
+| piwigo | linuxserver/piwigo | 14.5.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.20.0 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.7.4 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
