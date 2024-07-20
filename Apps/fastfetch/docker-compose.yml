@@ -1,0 +1,78 @@
+# Configuration for fastfetch setup
+
+# Name of the big-bear-fastfetch application
+name: big-bear-fastfetch
+
+# Service definitions for the big-bear-fastfetch application
+services:
+  # Service name: big-bear-fastfetch
+  # The `big-bear-fastfetch` service definition
+  big-bear-fastfetch:
+    # Name of the container
+    container_name: big-bear-fastfetch
+
+    # Image to be used for the container specifies the fastfetch version and source
+    image: bigbeartechworld/big-bear-fastfetch:0.0.2
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Run the container in privileged mode to allow access to system metrics
+    privileged: true
+
+    # Mount necessary volumes for accessing system information
+    volumes:
+      # Mount the host's /proc directory to the container's /proc directory
+      - /proc:/proc
+      # Mount the host's /sys directory to the container's /sys directory
+      - /sys:/sys
+      # Mount the host's /dev directory to the container's /dev directory
+      - /dev:/dev
+      # Mount the host's /etc/localtime file to the container's /etc/localtime file (read-only)
+      - /etc/localtime:/etc/localtime:ro
+
+    # Map port 7681 on the host to port 7681 on the container
+    ports:
+      - "7681:7681"
+
+    # CasaOS specific configuration for volume and port descriptions
+    x-casaos:
+      volumes:
+        - container: /proc
+          description:
+            en_us: "Container Path: /proc"
+        - container: /sys
+          description:
+            en_us: "Container Path: /sys"
+        - container: /dev
+          description:
+            en_us: "Container Path: /dev"
+        - container: /etc/localtime
+          description:
+            en_us: "Container Path: /etc/localtime"
+      ports:
+        - container: "7681"
+
+# CasaOS specific application metadata and configurations
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-fastfetch
+  description:
+    en_us: Fastfetch is a neofetch-like tool for fetching system information and displaying it prettily. It is written mainly in C, with performance and customizability in mind. Currently, Linux, Android, FreeBSD, macOS, SunOS and Windows 7+ are supported. https://github.com/fastfetch-cli/fastfetch
+  tagline:
+    en_us: Fastfetch is a neofetch-like tool.
+  developer: "bigbeartechworld"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/fastfetch/logo.png"
+  thumbnail: ""
+  title:
+    en_us: Fastfetch
+  category: BigBearCasaOS
+  port_map: "7681"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing:
