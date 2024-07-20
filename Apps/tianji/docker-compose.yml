@@ -19,7 +19,7 @@ services:
 
     # Environment variables for the container
     environment:
-      DATABASE_URL: postgresql://tianji:tianji@postgres:5432/tianji
+      DATABASE_URL: postgresql://tianji-user:227453b7-1286-48cc-b471-1c269495c5fc@big-bear-tianji-db:5432/tianji
       JWT_SECRET: replace-me-with-a-random-string
       ALLOW_REGISTER: "false"
       ALLOW_OPENAPI: "true"
@@ -53,7 +53,7 @@ services:
     image: postgres:15.4-alpine
     environment:
       POSTGRES_DB: tianji
-      POSTGRES_USER: tianji
+      POSTGRES_USER: tianji-user
       POSTGRES_PASSWORD: 227453b7-1286-48cc-b471-1c269495c5fc
     volumes:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
