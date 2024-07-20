@@ -29,6 +29,9 @@ services:
       # Mapping port 12345 of the host to port 12345 of the container
       - "12345:12345"
 
+    networks:
+      - big_bear_tianji_network
+
     depends_on:
       - big-bear-tianji-db
 
@@ -50,6 +53,7 @@ services:
 
   # Postgres database
   big-bear-tianji-db:
+    container_name: big-bear-tianji-db
     image: postgres:15.4-alpine
     environment:
       POSTGRES_DB: tianji
@@ -63,6 +67,27 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - big_bear_tianji_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_us: Database name
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+networks:
+  big_bear_tianji_network:
+    driver: bridge
 
 # CasaOS specific configuration
 x-casaos:
@@ -88,7 +113,7 @@ x-casaos:
   thumbnail: ""
   title:
     # Title in English
-    en_us: "Tianji: Insight into everything"
+    en_us: "Tianji"
   # Application category
   category: BigBearCasaOS
   # Port mapping information
