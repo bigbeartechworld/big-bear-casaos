@@ -33,7 +33,7 @@ services:
 
   # Main application service
   app: # Name of the service
-    image: linuxserver/unifi-network-application:8.2.93 # Docker image to use
+    image: linuxserver/unifi-network-application:8.3.32 # Docker image to use
     container_name: big-bear-unifi-network-application # Name for the created container
     environment: # Environmental variables for the container
       - PUID=1000 # User ID
