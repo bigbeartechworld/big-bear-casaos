@@ -1,0 +1,95 @@
+# Configuration for tianji setup
+
+# Name of the big-bear-tianji application
+name: big-bear-tianji
+
+# Service definitions for the big-bear-tianji application
+services:
+  # Service name: big-bear-tianji
+  # The `big-bear-tianji` service definition
+  big-bear-tianji:
+    # Name of the container
+    container_name: big-bear-tianji
+
+    # Image to be used for the container
+    image: moonrailgun/tianji:1.11.4
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      DATABASE_URL: postgresql://tianji:tianji@postgres:5432/tianji
+      JWT_SECRET: replace-me-with-a-random-string
+      ALLOW_REGISTER: "false"
+      ALLOW_OPENAPI: "true"
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 12345 of the host to port 12345 of the container
+      - "12345:12345"
+
+    depends_on:
+      - big-bear-tianji-db
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /app/data/configs
+          description:
+            en_us: "Container Path: /app/data/configs"
+        - container: /app/public/icons
+          description:
+            en_us: "Container Path: /app/public/icons"
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+  # Postgres database
+  big-bear-tianji-db:
+    image: postgres:15.4-alpine
+    environment:
+      POSTGRES_DB: tianji
+      POSTGRES_USER: tianji
+      POSTGRES_PASSWORD: 227453b7-1286-48cc-b471-1c269495c5fc
+    volumes:
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-tianji
+  description:
+    # Description in English
+    en_us: During our observations of the website. We often need to use multiple applications together. For example, we need analysis tools such as GA/umami to check pv/uv and the number of visits to each page, we need an uptime monitor to check the network quality and connectivity of the server, and we need to use prometheus to obtain the status reported by the server to check the quality of the server. In addition, if we develop an application that allows open source deployment, we often need a telemetry system to help us collect the simplest information about other people's deployment situations. I think these tools should serve the same purpose, so is there an application that can integrate these common needs in a lightweight way? After all, most of the time we don't need very professional and in-depth functions. But in order to achieve comprehensive monitoring, I need to install so many services. It's good to specialize in one thing, if we are experts in related abilities we need such specialized tools. But for most users who only have lightweight needs, an All-in-One application will be more convenient and easier to use.
+  tagline:
+    # Short description or tagline in English
+    en_us: "Tianji: Insight into everything, Website Analytics + Uptime Monitor + Server Status. not only another GA alternatives"
+  # Developer's name or identifier
+  developer: "moonrailgun"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tianji/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: "Tianji: Insight into everything"
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "12345"
