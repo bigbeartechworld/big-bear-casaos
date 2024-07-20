@@ -51,7 +51,9 @@ services:
           description:
             en_us: "Container Path: /etc/localtime"
       ports:
-        - container: "7681"
+        - container: "7681" # Expose port 7681 for the container
+          description:
+            en_us: "Container Port: 7681"
 
 # CasaOS specific application metadata and configurations
 x-casaos:
