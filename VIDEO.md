@@ -22,6 +22,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | diun |  |
 | docker-cron-restart-notifier |  |
 | faster-whisper |  |
+| fastfetch |  |
 | financial-freedom |  |
 | flcontainers-guacamole |  |
 | gluetun |  |
@@ -70,6 +71,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | rocket-chat |  |
 | seafile |  |
 | semaphore |  |
+| tianji |  |
 | whats-up-docker |  |
 | zigbee2mqtt |  |
 | zipline |  |
