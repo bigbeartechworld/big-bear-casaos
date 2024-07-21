@@ -6,7 +6,7 @@ name: big-bear-vikunja
 # Service definitions for the big-bear-vikunja application
 services:
   vikunja:
-    image: vikunja/vikunja:0.24.0
+    image: vikunja/vikunja:0.24.1
     container_name: big-bear-vikunja
     ports:
       - 8081:3456
