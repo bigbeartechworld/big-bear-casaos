@@ -40,7 +40,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.4 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 2.29.24 |  |  |
+| budibase | budibase/budibase | 2.29.25 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.46.01 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
@@ -110,14 +110,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian-livesync | couchdb | 3.3.3 |  |  |
 | octoprint | octoprint/octoprint | 1.10.2 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 17 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.2.8-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.2.8 |  |  |
-| ollama-nvidia | ollama/ollama | 0.2.8 |  |  |
+| ollama-amd | ollama/ollama | 0.3.0-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.3.0 |  |  |
+| ollama-nvidia | ollama/ollama | 0.3.0 |  |  |
 | onedev | 1dev/server | 10.9.8 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.1.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.42.2 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.43.0 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.1.0 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
@@ -145,7 +145,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | semaphore | semaphoreui/semaphore | 2.19.10 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.20.7 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.18 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.11.4 |  |  |
+| tianji | moonrailgun/tianji | 1.12.0 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.2-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
