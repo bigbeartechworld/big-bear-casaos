@@ -1,6 +1,6 @@
 {
   "id": "nextcloud-ls",
-  "version": "29.0.3",
+  "version": "29.0.4",
   "image": "linuxserver/nextcloud",
   "youtube": "",
   "docs_link": "",
