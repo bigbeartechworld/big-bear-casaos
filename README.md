@@ -59,7 +59,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dozzle | amir20/dozzle | 8.1.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
-| fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.2 |  |  |
+| fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.2 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
@@ -119,7 +119,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.43.0 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
-| penpot | penpotapp/frontend | 2.1.0 |  |  |
+| penpot | penpotapp/frontend | 2.1.1 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 231128 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.1-fpm-alpine |  |  |
@@ -155,7 +155,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.1 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.4.1 |  |  |
-| wordpress | wordpress | 6.6.0 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
+| wordpress | wordpress | 6.6.1 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 1.39.0 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.9 |  |  |
 | zotero | linuxserver/zotero | 6.0.35 |  |  |
