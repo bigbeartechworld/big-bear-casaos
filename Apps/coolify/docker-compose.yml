@@ -19,62 +19,62 @@ services:
 
     # Environment variables for the container
     environment:
-      - PHP_MEMORY_LIMIT=512M
-      - APP_ID=coolify
-      - APP_ENV=production
-      - APP_DEBUG=false
-      - APP_NAME=Coolify
-      - APP_KEY=base64:5a6e6b5e-b0a0-4c0e-a1c5-d0c2d3e4f5g6
-      - APP_URL=http://[CASAOS_IP]:8080
-      - DB_CONNECTION=pgsql
-      - DB_HOST=big-bear-coolify-db
-      - DB_PORT=5432
-      - DB_DATABASE=coolify
-      - DB_USERNAME=coolify
-      - DB_PASSWORD=f1986213-9d72-4c36-bbd4-adca2f414fa1
-      - QUEUE_CONNECTION=redis
-      - REDIS_HOST=big-bear-coolify-redis
-      - REDIS_PASSWORD=9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4
-      - HORIZON_BALANCE=100
-      - HORIZON_MAX_PROCESSES=10
-      - HORIZON_BALANCE_MAX_SHIFT=10
-      - HORIZON_BALANCE_COOLDOWN=10
-      - SSL_MODE=off
-      - PHP_PM_CONTROL=dynamic
-      - PHP_PM_START_SERVERS=1
-      - PHP_PM_MIN_SPARE_SERVERS=1
-      - PHP_PM_MAX_SPARE_SERVERS=10
-      - PUSHER_HOST=big-bear-coolify-soketi
-      - PUSHER_BACKEND_HOST=big-bear-coolify-soketi
-      - PUSHER_PORT=6001
-      - PUSHER_BACKEND_PORT=6001
-      - PUSHER_SCHEME=http
-      - PUSHER_APP_ID=coolify
+      - PHP_MEMORY_LIMIT="512M"
+      - APP_ID="coolify"
+      - APP_ENV="production"
+      - APP_DEBUG="false"
+      - APP_NAME="Coolify"
+      - APP_KEY="base64:5a6e6b5e-b0a0-4c0e-a1c5-d0c2d3e4f5g6"
+      - APP_URL="http://[CASAOS_IP]:8080"
+      - DB_CONNECTION="pgsql"
+      - DB_HOST="big-bear-coolify-db"
+      - DB_PORT="5432"
+      - DB_DATABASE="coolify"
+      - DB_USERNAME="coolify"
+      - DB_PASSWORD="f1986213-9d72-4c36-bbd4-adca2f414fa1"
+      - QUEUE_CONNECTION="redis"
+      - REDIS_HOST="big-bear-coolify-redis"
+      - REDIS_PASSWORD="9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
+      - HORIZON_BALANCE="100"
+      - HORIZON_MAX_PROCESSES="10"
+      - HORIZON_BALANCE_MAX_SHIFT="10"
+      - HORIZON_BALANCE_COOLDOWN="10"
+      - SSL_MODE="off"
+      - PHP_PM_CONTROL="dynamic"
+      - PHP_PM_START_SERVERS="1"
+      - PHP_PM_MIN_SPARE_SERVERS="1"
+      - PHP_PM_MAX_SPARE_SERVERS="10"
+      - PUSHER_HOST="big-bear-coolify-soketi"
+      - PUSHER_BACKEND_HOST="big-bear-coolify-soketi"
+      - PUSHER_PORT="6001"
+      - PUSHER_BACKEND_PORT="6001"
+      - PUSHER_SCHEME="http"
+      - PUSHER_APP_ID="coolify"
       - PUSHER_APP_KEY=
-      - PUSHER_APP_SECRET
+      - PUSHER_APP_SECRET=
       - AUTOUPDATE=true
       - SELF_HOSTED=true
-      - SSH_MUX_PERSIST_TIME
-      - FEEDBACK_DISCORD_WEBHOOK
-      - WAITLIST
-      - SUBSCRIPTION_PROVIDER
-      - STRIPE_API_KEY
-      - STRIPE_WEBHOOK_SECRET
-      - STRIPE_PRICE_ID_BASIC_MONTHLY
-      - STRIPE_PRICE_ID_BASIC_YEARLY
-      - STRIPE_PRICE_ID_PRO_MONTHLY
-      - STRIPE_PRICE_ID_PRO_YEARLY
-      - STRIPE_PRICE_ID_ULTIMATE_MONTHLY
-      - STRIPE_PRICE_ID_ULTIMATE_YEARLY
-      - STRIPE_PRICE_ID_DYNAMIC_MONTHLY
-      - STRIPE_PRICE_ID_DYNAMIC_YEARLY
-      - STRIPE_PRICE_ID_BASIC_MONTHLY_OLD
-      - STRIPE_PRICE_ID_BASIC_YEARLY_OLD
-      - STRIPE_PRICE_ID_PRO_MONTHLY_OLD
-      - STRIPE_PRICE_ID_PRO_YEARLY_OLD
-      - STRIPE_PRICE_ID_ULTIMATE_MONTHLY_OLD
-      - STRIPE_PRICE_ID_ULTIMATE_YEARLY_OLD
-      - STRIPE_EXCLUDED_PLANS
+      - SSH_MUX_PERSIST_TIME=
+      - FEEDBACK_DISCORD_WEBHOOK=
+      - WAITLIST=
+      - SUBSCRIPTION_PROVIDER=
+      - STRIPE_API_KEY=
+      - STRIPE_WEBHOOK_SECRET=
+      - STRIPE_PRICE_ID_BASIC_MONTHLY=
+      - STRIPE_PRICE_ID_BASIC_YEARLY=
+      - STRIPE_PRICE_ID_PRO_MONTHLY=
+      - STRIPE_PRICE_ID_PRO_YEARLY=
+      - STRIPE_PRICE_ID_ULTIMATE_MONTHLY=
+      - STRIPE_PRICE_ID_ULTIMATE_YEARLY=
+      - STRIPE_PRICE_ID_DYNAMIC_MONTHLY=
+      - STRIPE_PRICE_ID_DYNAMIC_YEARLY=
+      - STRIPE_PRICE_ID_BASIC_MONTHLY_OLD=
+      - STRIPE_PRICE_ID_BASIC_YEARLY_OLD=
+      - STRIPE_PRICE_ID_PRO_MONTHLY_OLD=
+      - STRIPE_PRICE_ID_PRO_YEARLY_OLD=
+      - STRIPE_PRICE_ID_ULTIMATE_MONTHLY_OLD=
+      - STRIPE_PRICE_ID_ULTIMATE_YEARLY_OLD=
+      - STRIPE_EXCLUDED_PLANS=
 
     # Mount necessary volumes for accessing system information
     volumes:
@@ -89,14 +89,12 @@ services:
     ports:
       - "8080:80"
 
-    expose:
-      - "${APP_PORT:-8000}"
-
     healthcheck:
       test: curl --fail http://127.0.0.1:80/api/health || exit 1
       interval: 5s
-      retries: 10
+      retries: "10"
       timeout: 2s
+
     depends_on:
       big-bear-coolify-db:
         condition: service_healthy
@@ -303,7 +301,7 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U coolify", "-d", "coolify"]
       interval: 5s
-      retries: 10
+      retries: "10"
       timeout: 2s
 
   big-bear-coolify-redis:
@@ -317,7 +315,7 @@ services:
     healthcheck:
       test: redis-cli ping
       interval: 5s
-      retries: 10
+      retries: "10"
       timeout: 2s
     x-casaos:
       envs:
@@ -342,7 +340,7 @@ services:
     healthcheck:
       test: wget -qO- http://127.0.0.1:6001/ready || exit 1
       interval: 5s
-      retries: 10
+      retries: "10"
       timeout: 2s
     x-casaos:
       envs:
