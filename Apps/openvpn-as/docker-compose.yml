@@ -2,7 +2,6 @@
 
 # Name of the OpenVPN-AS application
 name: big-bear-openvpn-as
-version: "1.0"
 
 # Service definitions for the OpenVPN application
 services:
