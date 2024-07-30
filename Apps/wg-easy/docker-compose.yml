@@ -1,0 +1,88 @@
+# Configuration for wg-easy setup
+
+# Name of the big-bear-wg-easy application
+name: big-bear-wg-easy
+
+# Service definitions for the big-bear-wg-easy application
+services:
+  # Service name: big-bear-wg-easy
+  # The `big-bear-wg-easy` service definition
+  big-bear-wg-easy:
+    # Name of the container
+    container_name: big-bear-wg-easy
+
+    # Image to be used for the container
+    image: ghcr.io/wg-easy/wg-easy:13
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      WG_HOST: "[YOUR_PUBLIC_IP]"
+      PASSWORD: "adc1e1b1-7360-4971-8195-b397d526dde0"
+      WG_DEFAULT_DNS: "1.1.1.1"
+      WG_ALLOWED_IPS: 0.0.0.0/0, ::/0
+
+    # capabilities to be added to the container
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+
+    # sysctls to be added to the container
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.ip_forward=1
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/data directory to /etc/wireguard inside the container
+      - /DATA/AppData/$AppID/data:/etc/wireguard
+
+    # Ports mapping between host and container
+    ports:
+      - 51820:51820/udp
+      - 51821:51821/tcp # UI port
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /etc/wireguard
+          description:
+            en_us: "Container Path: /etc/wireguard"
+      ports:
+        - container: "51820"
+          description:
+            en_us: "Container Port: 51820"
+        - container: "51821"
+          description:
+            en_us: "Container Port: 51821"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-wg-easy
+  description:
+    # Description in English
+    en_us: Access your homeserver from anywhere even on your mobile device. Wireguard-easy is a simple tool to configure and manage Wireguard VPN servers. It is written in Go and uses the official Wireguard client. You have to open and redirect port 51820 to your homeserver in order to connect.
+  tagline:
+    # Short description or tagline in English
+    en_us: VPN server for your homeserver
+  # Developer's name or identifier
+  developer: "WeeJeWel"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wg-easy/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Wireguard Easy
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "51821"
