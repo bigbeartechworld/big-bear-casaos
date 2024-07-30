@@ -78,6 +78,8 @@ services:
 
     # Mount necessary volumes for accessing system information
     volumes:
+      # /DATA/AppData/big-bear-coolify/ssh-data/id.root@host.docker.internal
+      - /DATA/AppData/$AppID/ssh-data:/data/coolify/ssh/keys
       - /DATA/AppData/$AppID/ssh:/var/www/html/storage/app/ssh
       - /DATA/AppData/$AppID/applications:/var/www/html/storage/app/applications
       - /DATA/AppData/$AppID/databases:/var/www/html/storage/app/databases
@@ -100,6 +102,9 @@ services:
         condition: service_healthy
       big-bear-coolify-redis:
         condition: service_healthy
+
+    networks:
+      - big_bear_coolify_network
 
     # CasaOS specific configuration for volume and port descriptions
     x-casaos:
@@ -303,11 +308,38 @@ services:
       interval: 5s
       retries: "10"
       timeout: 2s
+    networks:
+      - big_bear_coolify_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: POSTGRES_DB
+          description:
+            en_us: Database name
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
 
   big-bear-coolify-redis:
     container_name: big-bear-coolify-redis
     image: redis:alpine
-    command: redis-server --save 20 1 --loglevel warning --requirepass 9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4
+    command:
+      [
+        "redis-server",
+        "--save",
+        "20",
+        "1",
+        "--loglevel",
+        "warning",
+        "--requirepass",
+        "9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4",
+      ]
     environment:
       REDIS_PASSWORD: "9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
     volumes:
@@ -317,6 +349,8 @@ services:
       interval: 5s
       retries: "10"
       timeout: 2s
+    networks:
+      - big_bear_coolify_network
     x-casaos:
       envs:
         - container: REDIS_PASSWORD
@@ -342,6 +376,8 @@ services:
       interval: 5s
       retries: "10"
       timeout: 2s
+    networks:
+      - big_bear_coolify_network
     x-casaos:
       envs:
         - container: SOKETI_DEBUG
@@ -360,6 +396,10 @@ services:
         - container: /data
           description:
             en_us: "Container Path: /data"
+
+networks:
+  big_bear_coolify_network:
+    driver: bridge
 
 # CasaOS specific application metadata and configurations
 x-casaos:
