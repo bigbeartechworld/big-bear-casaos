@@ -6,7 +6,7 @@ services:
   # app service configuration
   app:
     # Docker image to use for this service
-    image: flcontainers/guacamole:1.5.4
+    image: flcontainers/guacamole:1.5.5
     # Container name
     container_name: big-bear-flcontainers-guacamole
     # Restart policy for the container
