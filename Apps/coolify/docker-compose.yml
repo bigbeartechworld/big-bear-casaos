@@ -27,13 +27,13 @@ services:
       - APP_KEY="base64:5a6e6b5e-b0a0-4c0e-a1c5-d0c2d3e4f5g6"
       - APP_URL="http://[CASAOS_IP]:8080"
       - DB_CONNECTION="pgsql"
-      - DB_HOST="big-bear-coolify-db"
+      - DB_HOST="postgres"
       - DB_PORT="5432"
       - DB_DATABASE="coolify"
       - DB_USERNAME="coolify"
       - DB_PASSWORD="f1986213-9d72-4c36-bbd4-adca2f414fa1"
       - QUEUE_CONNECTION="redis"
-      - REDIS_HOST="big-bear-coolify-redis"
+      - REDIS_HOST="coolify-redis"
       - REDIS_PASSWORD="9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
       - HORIZON_BALANCE="100"
       - HORIZON_MAX_PROCESSES="10"
@@ -78,8 +78,7 @@ services:
 
     # Mount necessary volumes for accessing system information
     volumes:
-      # /DATA/AppData/big-bear-coolify/ssh-data/id.root@host.docker.internal
-      - /DATA/AppData/$AppID/ssh-data:/data/coolify/ssh/keys
+      # ssh-keygen -f /DATA/AppData/big-bear-coolify/ssh/keys/id.root@host.docker.internal -t ed25519 -N '' -C root@coolify
       - /DATA/AppData/$AppID/ssh:/var/www/html/storage/app/ssh
       - /DATA/AppData/$AppID/applications:/var/www/html/storage/app/applications
       - /DATA/AppData/$AppID/databases:/var/www/html/storage/app/databases
@@ -98,9 +97,9 @@ services:
       timeout: 2s
 
     depends_on:
-      big-bear-coolify-db:
+      postgres:
         condition: service_healthy
-      big-bear-coolify-redis:
+      coolify-redis:
         condition: service_healthy
 
     networks:
@@ -294,8 +293,8 @@ services:
           description:
             en_us: Container path /var/www/html/storage/app/webhooks-during-maintenance
 
-  big-bear-coolify-db:
-    container_name: big-bear-coolify-db
+  postgres:
+    container_name: postgres
     image: postgres:15-alpine
     volumes:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
@@ -326,8 +325,8 @@ services:
           description:
             en_us: "Container Path: /var/lib/postgresql/data"
 
-  big-bear-coolify-redis:
-    container_name: big-bear-coolify-redis
+  coolify-redis: # Redis service configuration
+    container_name: coolify-redis # Name of the running container
     image: redis:alpine
     command:
       [
