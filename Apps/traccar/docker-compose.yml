@@ -7,7 +7,7 @@ name: big-bear-traccar
 services:
   # Service name: app
   app:
-    image: traccar/traccar:6.2-ubuntu # Specifies the docker image to use for this service. Using the latest version of the traccar image.
+    image: traccar/traccar:6.3-ubuntu # Specifies the docker image to use for this service. Using the latest version of the traccar image.
     container_name: traccar # Name of the container that will be created
     hostname: traccar # Hostname of the container
     restart: unless-stopped # Restart policy. The container will restart unless it's explicitly stopped.
