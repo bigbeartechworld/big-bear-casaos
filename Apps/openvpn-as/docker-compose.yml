@@ -134,6 +134,9 @@ x-casaos:
       Username: `openvpn`
       Password: `You can find you first time password in the log of the container`
 
+      If you have problems with the Docker container auto-restart after a reboot or an incorrect shutdown.
+      You can find a simple script with a temporary solution here: https://github.com/Piero24/DockerRestartScript/
+
   title:
     # Title in English
     custom: ""
