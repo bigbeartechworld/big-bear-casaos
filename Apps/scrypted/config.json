@@ -1,6 +1,6 @@
 {
   "id": "scrypted",
-  "version": "0.115.3-jammy-full",
+  "version": "0.115.4-jammy-full",
   "image": "koush/scrypted",
   "youtube": "https://youtu.be/5uH0LaSyKTY",
   "docs_link": "https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155",
