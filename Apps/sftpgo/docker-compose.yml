@@ -1,0 +1,91 @@
+# Configuration for sftpgo setup
+
+# Name of the big-bear-sftpgo application
+name: big-bear-sftpgo
+
+# Service definitions for the big-bear-sftpgo application
+services:
+  # Service name: app
+  # The `app` service definition
+  big-bear-sftpgo:
+    # Name of the container
+    container_name: big-bear-sftpgo
+
+    # Image to be used for the container
+    image: drakkan/sftpgo:v2.6
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/srv:/srv/sftpgo
+      - /DATA/AppData/$AppID/data:/var/lib/sftpgo
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 7575 of the host to port 7575 of the container
+      - "8080:8080"
+      - "2022:2022"
+      - "2121:2121"
+      - "10080:10080"
+
+    environment:
+      - SFTPGO_HTTPD_BINDINGS_0_PORT=8080
+      - SFTPGO_HTTPD_BINDINGS_0_ADDRESS=0.0.0.0
+      - SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN=true
+      - SFTPGO_WEBDAVD_BINDINGS_0_PORT=10080
+      - SFTPGO_FTPD_BINDINGS_0_PORT=2121
+      - SFTPGO_FTPD_BINDINGS_0_FORCE_PASSIVE_IP='127.0.0.1:8080'
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /DATA/AppData/$AppID/srv
+          description:
+            en_us: "Container Path: /DATA/AppData/$AppID/srv"
+        - container: /DATA/AppData/$AppID/data
+          description:
+            en_us: "Container Path: /DATA/AppData/$AppID/data"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+        - container: "2022"
+          description:
+            en_us: "Container Port: 2022"
+        - container: "2121"
+          description:
+            en_us: "Container Port: 2121"
+        - container: "10080"
+          description:
+            en_us: "Container Port: 10080"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-sftpgo
+  description:
+    # Description in English
+    en_us: Full-featured and highly configurable SFTP, HTTP/S, FTP/S and WebDAV server - S3, Google Cloud Storage, Azure Blob
+  tagline:
+    # Short description or tagline in English
+    en_us: SFTPGO
+  # Developer's name or identifier
+  developer: "drakkan"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/sftpgo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: SFTPGO
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
