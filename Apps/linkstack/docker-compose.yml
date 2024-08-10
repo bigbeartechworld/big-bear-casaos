@@ -1,0 +1,90 @@
+# Configuration for LinkStack setup with CasaOS specifics
+
+# Name of the LinkStack application
+name: big-bear-linkstack
+
+# Service definitions for the LinkStack application
+services:
+  # Service name: big-bear-linkstack
+  # The `big-bear-linkstack` service definition
+  big-bear-linkstack:
+    # Image to be used for the container
+    image: linkstackorg/linkstack:V4
+    # Name of the container
+    container_name: big-bear-linkstack
+    # Hostname for the container
+    hostname: big-bear-linkstack
+    # Environment variables for the container
+    environment:
+      - HTTP_SERVER_NAME=www.example.xyz
+      - HTTPS_SERVER_NAME=www.example.xyz
+      - SERVER_ADMIN=admin@example.xyz
+      - TZ=Europe/Berlin
+      - PHP_MEMORY_LIMIT=512M
+      - UPLOAD_MAX_FILESIZE=8M
+    # Ports mapping between host and container
+    ports:
+      - "8080:80"
+      - "10443:443"
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+
+    entrypoint: "/bin/sh"
+
+    # uncomment this after first start
+    # to prevent the installing dialog coming up
+    # if the container is recreated
+    # rm /htdocs/INSTALLING
+    command:
+      [
+        "-c",
+        "cp -n -r /htdocs/database/ /data/database; cp -n /htdocs/.env /data/.env; cp -n -r /htdocs/littlelink/images /data/images; cp -n -r /htdocs/themes /data/themes; cp -n -r /htdocs/img /data/img; chown -R apache:apache /data; rm -rf /htdocs/database/; rm /htdocs/.env; rm -rf /htdocs/littlelink/images; rm -rf /htdocs/themes; rm -rf /htdocs/img; sed -i 's/FORCE_HTTPS=false/FORCE_HTTPS=true/g' /data/.env; ln -s /data/database /htdocs/database; ln -s /data/.env /htdocs/.env; ln -s /data/images /htdocs/littlelink/images; ln -s /data/themes /htdocs/themes; ln -s /data/img/ /htdocs/img; cd /htdocs; php artisan migrate --force; exec /usr/local/bin/docker-entrypoint.sh server",
+      ]
+
+    # CasaOS specific configuration for this service
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data - LinkStack data directory"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80 - HTTP"
+        - container: "443"
+          description:
+            en_us: "Container Port: 443 - HTTPS"
+
+# CasaOS specific configuration for the entire application
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-linkstack
+  description:
+    # Description in English
+    en_us: LinkStack is a link-in-bio tool that allows you to create a personalized and easily customizable page that houses all the important links you want to share with your audience.
+  tagline:
+    # Short description or tagline in English
+    en_us: Your all-in-one link sharing solution
+  # Developer's name or identifier
+  developer: "LinkStackOrg"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application (replace with actual LinkStack icon URL if available)
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkstack.png
+  # Thumbnail image (currently empty, replace if available)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: LinkStack
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "10443"
+  scheme: https
