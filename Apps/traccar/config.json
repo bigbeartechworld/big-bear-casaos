@@ -1,6 +1,6 @@
 {
   "id": "traccar",
-  "version": "6.3-ubuntu",
+  "version": "6.4-ubuntu",
   "image": "traccar/traccar",
   "youtube": "https://youtu.be/zn_tu9r6g-w",
   "docs_link": "",
