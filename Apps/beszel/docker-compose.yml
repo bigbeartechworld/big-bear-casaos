@@ -55,7 +55,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/beszel.png
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beszel/logo.jpg
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
