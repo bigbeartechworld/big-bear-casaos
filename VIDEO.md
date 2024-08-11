@@ -30,9 +30,11 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | homer |  |
 | immich-aio-alpine |  |
 | jellyseerr |  |
+| jellystat |  |
 | kiwix-serve |  |
 | kopia |  |
 | lancache |  |
+| linkstack |  |
 | mind |  |
 | minio |  |
 | monica |  |
@@ -70,6 +72,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | rocket-chat |  |
 | seafile |  |
 | semaphore |  |
+| sftpgo |  |
 | tianji |  |
 | wg-easy |  |
 | whats-up-docker |  |
