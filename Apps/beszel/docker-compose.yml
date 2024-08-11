@@ -1,0 +1,67 @@
+# Configuration for beszel setup
+
+# Name of the big-bear-beszel application
+name: big-bear-beszel
+
+# Service definitions for the big-bear-beszel application
+services:
+  # Service name: big-bear-beszel
+  # The `big-bear-beszel` service definition
+  big-bear-beszel:
+    # Name of the container
+    container_name: big-bear-beszel
+
+    # Image to be used for the container
+    image: henrygd/beszel:0.1.2
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/beszel_data
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8090 of the host to port 8090 of the container
+      - "8090:8090"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: "/beszel_data"
+          description:
+            en_us: "Beszel Data"
+      ports:
+        - container: "8090"
+          description:
+            en_us: "Container Port: 8090"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-beszel
+  description:
+    # Description in English
+    en_us: A lightweight server resource monitoring hub with historical data, docker stats, and alerts.
+  tagline:
+    # Short description or tagline in English
+    en_us: Server Monitoring Hub
+  # Developer's name or identifier
+  developer: "henrygd"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/beszel.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Beszel
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8090"
