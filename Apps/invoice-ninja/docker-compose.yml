@@ -1,0 +1,172 @@
+# Configuration for invoice-ninja setup
+
+# Name of the big-bear-invoice-ninja application
+name: big-bear-invoice-ninja
+
+# Service definitions for the big-bear-invoice-ninja application
+services:
+  big-bear-invoice-ninja-web:
+    # Name of the container
+    container_name: big-bear-invoice-ninja-web
+
+    # Image to be used for the container
+    image: nginx:1.25
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data/nginx/invoice-ninja.conf:/etc/nginx/conf.d/default.conf:ro
+      - /DATA/AppData/$AppID/data/public:/var/www/app/public:ro
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+    networks:
+      - big-bear-invoice-ninja-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /etc/nginx/conf.d/default.conf
+          description:
+            en_us: "Container Path: /etc/nginx/conf.d/default.conf"
+        - container: /var/www/app/public
+          description:
+            en_us: "Container Path: /var/www/app/public"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+  big-bear-invoice-ninja:
+    image: invoiceninja/invoiceninja:5.10.20
+    container_name: big-bear-invoice-ninja
+    restart: unless-stopped
+    user: 1500:1500
+    environment:
+      - IN_USER_EMAIL=admin@bigbeartechworld.com
+      - IN_PASSWORD=ad178c4b-302f-44e6-937f-8c7808f23795
+      - APP_URL=http://big-bear-invoice-ninja-web
+      - APP_KEY=base64:4doW1cidLuSqm7Z/BhPu/bn5HGnCKyEcSSlbVPTYYRU=
+      - APP_CIPHER=AES-256-CBC
+      - DB_HOST=big-bear-invoice-ninja-db
+      - DB_PORT=3306
+      - DB_DATABASE=ninja
+      - DB_USERNAME=ninja
+      - DB_PASSWORD=ninja
+      - REQUIRE_HTTPS=false
+      - QUEUE_CONNECTION=database
+      - IS_DOCKER=TRUE
+    volumes:
+      - /DATA/AppData/$AppID/data/public:/var/www/app/public:rw,delegated
+      - /DATA/AppData/$AppID/data/storage:/var/www/app/storage:rw,delegated
+      - /DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini:ro
+      - /DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini:ro
+    depends_on:
+      - big-bear-invoice-ninja-db
+    networks:
+      - big-bear-invoice-ninja-network
+
+  big-bear-invoice-ninja-db:
+    image: mariadb:10.4
+    container_name: big-bear-invoice-ninja-db
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=ad178c4b-302f-44e6-937f-8c7808f23795
+      - MARIADB_USER=ninja
+      - MARIADB_PASSWORD=ninja
+      - MARIADB_DATABASE=ninja
+    volumes:
+      - /DATA/AppData/$AppID/data/mysql:/var/lib/mysql:rw,delegated
+    networks:
+      - big-bear-invoice-ninja-network
+    depends_on:
+      - big-bear-invoice-ninja-init
+    # This command is required to set important mariadb defaults
+    command:
+      [
+        mysqld,
+        --character-set-server=utf8mb4,
+        --collation-server=utf8mb4_unicode_ci,
+        --wait_timeout=28800,
+        --log-warnings=0,
+      ]
+
+  big-bear-invoice-ninja-init:
+    image: bash:5.2.32
+    container_name: big-bear-invoice-ninja-init
+    volumes:
+      - /DATA/AppData/$AppID/data:/tmp/data
+    # command:
+    #   [
+    #     "bash",
+    #     "-c",
+    #     "chmod +x /tmp/data/init/init.sh && /tmp/data/init/init.sh",
+    #   ]
+    command: [
+        "/bin/sh",
+        "-c",
+        "if [ ! -f /tmp/data/.init_complete ]; then \
+        echo 'Starting initialization process...' && \
+        if [ -f /tmp/data/init/init.sh ]; then \
+        echo 'Found init.sh, making it executable...' && \
+        chmod +x /tmp/data/init/init.sh && \
+        echo 'Executing init.sh...' && \
+        /tmp/data/init/init.sh && \
+        echo 'init.sh execution completed.' && \
+        touch /tmp/data/.init_complete && \
+        echo 'Initialization process finished.'; \
+        else \
+        echo 'Error: /tmp/data/init/init.sh not found!' && \
+        exit 1; \
+        fi; \
+        else \
+        echo 'Initialization already completed. Exiting.'; \
+        fi && \
+        exit 0",
+      ]
+    networks:
+      - big-bear-invoice-ninja-network
+    restart: "no"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+
+networks:
+  big-bear-invoice-ninja-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-invoice-ninja-web
+  description:
+    # Description in English
+    en_us: Invoice Ninja is a free and open-source invoice and expense management system. It is a web-based application that allows you to create, manage, and track invoices and expenses.
+  tagline:
+    # Short description or tagline in English
+    en_us: Invoice Ninja
+  # Developer's name or identifier
+  developer: "invoiceninja"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/invoiceninja.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Invoice Ninja
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
