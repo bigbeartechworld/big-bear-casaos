@@ -100,12 +100,6 @@ services:
     container_name: big-bear-invoice-ninja-init
     volumes:
       - /DATA/AppData/$AppID/data:/tmp/data
-    # command:
-    #   [
-    #     "bash",
-    #     "-c",
-    #     "chmod +x /tmp/data/init/init.sh && /tmp/data/init/init.sh",
-    #   ]
     command: [
         "/bin/sh",
         "-c",
