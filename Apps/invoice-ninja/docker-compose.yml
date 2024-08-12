@@ -10,7 +10,7 @@ services:
     container_name: big-bear-invoice-ninja-web
 
     # Image to be used for the container
-    image: nginx:1.27
+    image: nginx:1.25
 
     # Container restart policy
     restart: unless-stopped
@@ -164,3 +164,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-invoice-ninja-to-bigbearcasaos/1697?u=dragonfire1119#p-3214-instructions-3
