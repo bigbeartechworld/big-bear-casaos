@@ -10,7 +10,7 @@ services:
     container_name: big-bear-invoice-ninja-web
 
     # Image to be used for the container
-    image: nginx:1.25
+    image: nginx:1.27
 
     # Container restart policy
     restart: unless-stopped
