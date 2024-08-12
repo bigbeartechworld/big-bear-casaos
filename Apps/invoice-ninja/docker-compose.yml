@@ -5,6 +5,90 @@ name: big-bear-invoice-ninja
 
 # Service definitions for the big-bear-invoice-ninja application
 services:
+  big-bear-invoice-ninja:
+    image: invoiceninja/invoiceninja:5.10.20
+    container_name: big-bear-invoice-ninja
+    restart: unless-stopped
+    user: 1500:1500
+    environment:
+      - IN_USER_EMAIL=admin@bigbeartechworld.com
+      - IN_PASSWORD=ad178c4b-302f-44e6-937f-8c7808f23795
+      - APP_URL=http://big-bear-invoice-ninja-web
+      - APP_KEY=base64:4doW1cidLuSqm7Z/BhPu/bn5HGnCKyEcSSlbVPTYYRU=
+      - APP_CIPHER=AES-256-CBC
+      - DB_HOST=big-bear-invoice-ninja-db
+      - DB_PORT=3306
+      - DB_DATABASE=ninja
+      - DB_USERNAME=ninja
+      - DB_PASSWORD=ninja
+      - REQUIRE_HTTPS=false
+      - QUEUE_CONNECTION=database
+      - IS_DOCKER=TRUE
+    volumes:
+      - /DATA/AppData/$AppID/data/public:/var/www/app/public:rw,delegated
+      - /DATA/AppData/$AppID/data/storage:/var/www/app/storage:rw,delegated
+      - /DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini:ro
+      - /DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini:ro
+    depends_on:
+      - big-bear-invoice-ninja-db
+    networks:
+      - big-bear-invoice-ninja-network
+
+    x-casaos:
+      envs:
+        - container: IN_USER_EMAIL
+          description:
+            en_us: "Container Environment Variable: IN_USER_EMAIL"
+        - container: IN_PASSWORD
+          description:
+            en_us: "Container Environment Variable: IN_PASSWORD"
+        - container: APP_URL
+          description:
+            en_us: "Container Environment Variable: APP_URL"
+        - container: APP_KEY
+          description:
+            en_us: "Container Environment Variable: APP_KEY"
+        - container: APP_CIPHER
+          description:
+            en_us: "Container Environment Variable: APP_CIPHER"
+        - container: DB_HOST
+          description:
+            en_us: "Container Environment Variable: DB_HOST"
+        - container: DB_PORT
+          description:
+            en_us: "Container Environment Variable: DB_PORT"
+        - container: DB_DATABASE
+          description:
+            en_us: "Container Environment Variable: DB_DATABASE"
+        - container: DB_USERNAME
+          description:
+            en_us: "Container Environment Variable: DB_USERNAME"
+        - container: DB_PASSWORD
+          description:
+            en_us: "Container Environment Variable: DB_PASSWORD"
+        - container: REQUIRE_HTTPS
+          description:
+            en_us: "Container Environment Variable: REQUIRE_HTTPS"
+        - container: QUEUE_CONNECTION
+          description:
+            en_us: "Container Environment Variable: QUEUE_CONNECTION"
+        - container: IS_DOCKER
+          description:
+            en_us: "Container Environment Variable: IS_DOCKER"
+      volumes:
+        - container: /var/www/app/public
+          description:
+            en_us: "Container Path: /var/www/app/public"
+        - container: /var/www/app/storage
+          description:
+            en_us: "Container Path: /var/www/app/storage"
+        - container: /usr/local/etc/php/php.ini
+          description:
+            en_us: "Container Path: /usr/local/etc/php/php.ini"
+        - container: /usr/local/etc/php/php-cli.ini
+          description:
+            en_us: "Container Path: /usr/local/etc/php/php-cli.ini"
+
   big-bear-invoice-ninja-web:
     # Name of the container
     container_name: big-bear-invoice-ninja-web
@@ -41,35 +125,6 @@ services:
           description:
             en_us: "Container Port: 80"
 
-  big-bear-invoice-ninja:
-    image: invoiceninja/invoiceninja:5.10.20
-    container_name: big-bear-invoice-ninja
-    restart: unless-stopped
-    user: 1500:1500
-    environment:
-      - IN_USER_EMAIL=admin@bigbeartechworld.com
-      - IN_PASSWORD=ad178c4b-302f-44e6-937f-8c7808f23795
-      - APP_URL=http://big-bear-invoice-ninja-web
-      - APP_KEY=base64:4doW1cidLuSqm7Z/BhPu/bn5HGnCKyEcSSlbVPTYYRU=
-      - APP_CIPHER=AES-256-CBC
-      - DB_HOST=big-bear-invoice-ninja-db
-      - DB_PORT=3306
-      - DB_DATABASE=ninja
-      - DB_USERNAME=ninja
-      - DB_PASSWORD=ninja
-      - REQUIRE_HTTPS=false
-      - QUEUE_CONNECTION=database
-      - IS_DOCKER=TRUE
-    volumes:
-      - /DATA/AppData/$AppID/data/public:/var/www/app/public:rw,delegated
-      - /DATA/AppData/$AppID/data/storage:/var/www/app/storage:rw,delegated
-      - /DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini:ro
-      - /DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini:ro
-    depends_on:
-      - big-bear-invoice-ninja-db
-    networks:
-      - big-bear-invoice-ninja-network
-
   big-bear-invoice-ninja-db:
     image: mariadb:10.4
     container_name: big-bear-invoice-ninja-db
@@ -94,6 +149,24 @@ services:
         --wait_timeout=28800,
         --log-warnings=0,
       ]
+    x-casaos:
+      envs:
+        - container: MARIADB_ROOT_PASSWORD
+          description:
+            en_us: "Container Environment Variable: MARIADB_ROOT_PASSWORD"
+        - container: MARIADB_USER
+          description:
+            en_us: "Container Environment Variable: MARIADB_USER"
+        - container: MARIADB_PASSWORD
+          description:
+            en_us: "Container Environment Variable: MARIADB_PASSWORD"
+        - container: MARIADB_DATABASE
+          description:
+            en_us: "Container Environment Variable: MARIADB_DATABASE"
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
 
   big-bear-invoice-ninja-init:
     image: bash:5.2.32
@@ -130,6 +203,11 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
+    x-casaos:
+      volumes:
+        - container: /tmp/data
+          description:
+            en_us: "Container Path: /tmp/data"
 
 networks:
   big-bear-invoice-ninja-network:
