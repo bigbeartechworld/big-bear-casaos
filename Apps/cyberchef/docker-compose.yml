@@ -12,7 +12,7 @@ services:
     container_name: big-bear-cyberchef
 
     # Image to be used for the container
-    image: ghcr.io/gchq/cyberchef:10.19.0
+    image: ghcr.io/gchq/cyberchef:10.19.2
 
     # Container restart policy
     restart: unless-stopped
