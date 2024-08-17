@@ -41,7 +41,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.4 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 2.30.2 |  |  |
+| budibase | budibase/budibase | 2.30.3 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.46.02 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
@@ -76,14 +76,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gotify | gotify/server | 2.5.0 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.3 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.8.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.8.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.05.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.112.1-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.112.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.112.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.10.20 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.10.24 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 1.9.2 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.0 |  |  |
@@ -94,7 +94,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | lancache | lancachenet/monolithic | latest |  |  |
 | libretranslate | libretranslate/libretranslate | 1.6.0 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 |  |  |
-| linkwarden | ghcr.io/linkwarden/linkwarden | 2.6.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
+| linkwarden | ghcr.io/linkwarden/linkwarden | 2.7.1 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | mailpit | axllent/mailpit | 1.20 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 1.11.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | mind | mrcas/mind | v1.4.0 |  |  |
@@ -102,7 +102,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.54.0 |  |  |
+| n8n | n8nio/n8n | 1.55.3 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.7.18 |  |  |
@@ -151,7 +151,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.21.2 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.18 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.13.0 |  |  |
+| tianji | moonrailgun/tianji | 1.13.1 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.4-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
