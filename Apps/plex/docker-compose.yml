@@ -12,7 +12,7 @@ services:
     container_name: big-bear-plex
 
     # Image to be used for the container
-    image: linuxserver/plex:1.40.4
+    image: linuxserver/plex:1.40.5
 
     environment:
       - PUID=1000 # specify the user id
