@@ -55,7 +55,7 @@ services:
         - container: /etc/localtime
           description:
             en_us: "Container Path: /etc/localtime"
-        - container: "/casaos"
+        - container: /casaos
           description:
             en_us: "Container Path: /casaos"
       ports:
