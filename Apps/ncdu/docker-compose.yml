@@ -30,6 +30,7 @@ services:
       - /dev:/dev
       # Mount the host's /etc/localtime file to the container's /etc/localtime file (read-only)
       - /etc/localtime:/etc/localtime:ro
+      - /:casaos
 
     # Map port 7681 on the host to port 7681 on the container
     ports:
