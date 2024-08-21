@@ -70,7 +70,7 @@ x-casaos:
     en_us: Ncdu is a disk usage analyzer with an ncurses interface.
   developer: "bigbeartechworld"
   author: BigBearTechWorld
-  icon: ""
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/ncdu/logo.png"
   thumbnail: ""
   title:
     en_us: Ncdu
