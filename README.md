@@ -35,13 +35,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.31.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.12.3 |  |  |
-| authentik | ghcr.io/goauthentik/server | 2024.6.3 |  |  |
+| authentik | ghcr.io/goauthentik/server | 2024.6.4 |  |  |
 | baserow | baserow/baserow | 1.26.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beszel | henrygd/beszel | 0.1.2 |  |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.4 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 2.30.3 |  |  |
+| budibase | budibase/budibase | 2.31.1 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.46.03 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
