@@ -43,7 +43,7 @@ devDependencies:
     version: 10.4.5
   husky:
     specifier: ^9.0.11
-    version: 9.1.4
+    version: 9.1.5
   jest:
     specifier: ^29.0.0
     version: 29.7.0(@types/node@20.16.1)
@@ -2550,8 +2550,8 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /husky@9.1.4:
-    resolution: {integrity: sha512-bho94YyReb4JV7LYWRWxZ/xr6TtOTt8cMfmQ39MQYJ7f/YE268s3GdghGwi+y4zAeqewE5zYLvuhV0M0ijsDEA==}
+  /husky@9.1.5:
+    resolution: {integrity: sha512-rowAVRUBfI0b4+niA4SJMhfQwc107VLkBUgEYYAOQAbqDCnra1nYh83hF/MDmhYs9t9n1E3DuKOrs2LYNC+0Ag==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
