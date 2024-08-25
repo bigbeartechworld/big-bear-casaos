@@ -49,7 +49,7 @@ services:
   # Definition for penpot-backend service
   penpot-backend:
     # Docker image for the service
-    image: penpotapp/backend:2.1.2
+    image: penpotapp/backend:2.1.3
 
     # Name of the container
     container_name: big-bear-penpot-backend
