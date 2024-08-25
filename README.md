@@ -33,7 +33,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home-host | adguard/adguardhome | 0.107.52 |  |  |
 | adguard-home | adguard/adguardhome | 0.107.52 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
-| appsmith | appsmith/appsmith-ee | 1.31.1 |  |  |
+| appsmith | appsmith/appsmith-ee | 1.36.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.12.3 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.6.4 |  |  |
 | baserow | baserow/baserow | 1.26.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -68,8 +68,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 5.89.3-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.104.1 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghost | ghost | 5.90.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.105.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.44.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.1.2.1-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.39.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -96,18 +96,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | linkstack | linkstackorg/linkstack | V4 |  |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.7.1 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | mailpit | axllent/mailpit | 1.20 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
-| mealie | hkotel/mealie | 1.11.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
+| mealie | hkotel/mealie | 1.12.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | mind | mrcas/mind | v1.4.0 |  |  |
 | minio | minio/minio | RELEASE.2024-02-24T17-11-14Z |  |  |
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.55.3 |  |  |
+| n8n | n8nio/n8n | 1.56.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 |  |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.7.18 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 29.0.5 |  |  |
-| nextcloud | nextcloud | 29.0.4-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
+| nextcloud | nextcloud | 29.0.5-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
 | nocodb | nocodb/nocodb | 0.255.0 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.2 |  |  |
