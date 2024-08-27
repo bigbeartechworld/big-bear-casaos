@@ -52,7 +52,7 @@ services:
     # Name of the container
     container_name: big-bear-linkwarden-db
     # Image to be used
-    image: postgres
+    image: postgres:latest
     # Container restart policy
     restart: unless-stopped
     # Environment variables
