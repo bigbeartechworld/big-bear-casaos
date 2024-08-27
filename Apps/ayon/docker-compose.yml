@@ -1,0 +1,148 @@
+# Configuration for ayon setup
+
+# Name of the big-bear-ayon application
+name: big-bear-ayon
+
+# Service definitions for the big-bear-ayon application
+services:
+  # Service name: big-bear-ayon
+  # The `big-bear-ayon` service definition
+  big-bear-ayon:
+    # Name of the container
+    container_name: big-bear-ayon
+
+    # Image to be used for the container
+    image: ynput/ayon:1.3.6-20240823
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Healthcheck configuration to ensure the service is running properly
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/info"]
+      interval: 10s
+      timeout: 2s
+      retries: 3
+
+    # Volumes to be mounted to the container
+    volumes:
+      - "/DATA/AppData/$AppID/addons:/addons"
+      - "/DATA/AppData/$AppID/storage:/storage"
+
+      # comment out the following line on Windows
+      - "/etc/localtime:/etc/localtime:ro"
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5000 of the host to port 5000 of the container
+      - "5000:5000"
+
+    expose: ["5000"]
+
+    networks:
+      - big-bear-ayon-network
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+    x-casaos: # CasaOS specific configuration
+      volumes: # Volume mappings for the service
+        - container: /addons
+          description:
+            en_us: "Container Path: /addons"
+        - container: /storage
+          description:
+            en_us: "Container Path: /storage"
+        - container: /backend
+          description:
+            en_us: "Container Path: /backend"
+      ports: # Port mappings for the service
+        - container: "5000"
+          description:
+            en_us: "Container Port: 5000"
+
+  # Service definition for the PostgreSQL database
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=ayon
+      - POSTGRES_PASSWORD=ayon
+      - POSTGRES_DB=ayon
+    volumes:
+      - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ayon"]
+      interval: 10s
+      timeout: 5s
+      retries: "5"
+
+    expose: ["5432"]
+
+    networks:
+      - big-bear-ayon-network
+
+    x-casaos:
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+  # Service definition for the Redis database
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 5s
+      timeout: 5s
+      retries: "5"
+    expose: ["6379"]
+    networks:
+      - big-bear-ayon-network
+
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+
+networks:
+  big-bear-ayon-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+  # Main service of the application
+  main: big-bear-ayon
+  description:
+    # Description in English
+    en_us: This is the official Docker-based deployment for the Ayon Server. Ayon is a robust tool designed to manage and automate workflows in the animation and visual effects industries.
+  tagline:
+    # Short description or tagline in English
+    en_us: Ayon
+  # Developer's name or identifier
+  developer: "ynput"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/ayon/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Ayon
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "5000"
