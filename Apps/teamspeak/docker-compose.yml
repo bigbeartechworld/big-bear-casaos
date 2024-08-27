@@ -1,0 +1,135 @@
+# Configuration for teamspeak setup
+
+# Name of the big-bear-teamspeak application
+name: big-bear-teamspeak
+
+# Service definitions for the big-bear-teamspeak application
+services:
+  # Service name: big-bear-teamspeak
+  # The `big-bear-teamspeak` service definition
+  big-bear-teamspeak:
+    # Name of the container
+    container_name: big-bear-teamspeak
+
+    # Image to be used for the container
+    image: teamspeak:3.13.7
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      TS3SERVER_DB_PLUGIN: ts3db_mariadb
+      TS3SERVER_DB_SQLCREATEPATH: create_mariadb
+      TS3SERVER_DB_HOST: big-bear-teamspeak-db
+      TS3SERVER_DB_USER: bigbear
+      TS3SERVER_DB_PASSWORD: c17ab517-9097-48b7-9405-0f82cf796759
+      TS3SERVER_DB_NAME: teamspeak
+      TS3SERVER_DB_WAITUNTILREADY: "30"
+      TS3SERVER_LICENSE: accept
+
+    volumes:
+      - /DATA/AppData/$AppID/data:/var/ts3server
+
+    # Ports mapping between host and container
+    ports:
+      - 9987:9987/udp
+      - 10011:10011
+      - 30033:30033
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TS3SERVER_DB_PLUGIN
+          description:
+            en_us: Database plugin
+        - container: TS3SERVER_DB_SQLCREATEPATH
+          description:
+            en_us: Database SQL create path
+        - container: TS3SERVER_DB_HOST
+          description:
+            en_us: Database host
+        - container: TS3SERVER_DB_USER
+          description:
+            en_us: Database user
+        - container: TS3SERVER_DB_PASSWORD
+          description:
+            en_us: Database password
+        - container: TS3SERVER_DB_NAME
+          description:
+            en_us: Database name
+        - container: TS3SERVER_DB_WAITUNTILREADY
+          description:
+            en_us: Database wait until ready
+        - container: TS3SERVER_LICENSE
+          description:
+            en_us: License
+      volumes:
+        - container: /var/ts3server
+          description:
+            en_us: "Container Path: /var/ts3server"
+      ports:
+        - container: "9987"
+          description:
+            en_us: "Container Port: 9987"
+        - container: "10011"
+          description:
+            en_us: "Container Port: 10011"
+        - container: "30033"
+          description:
+            en_us: "Container Port: 30033"
+
+  big-bear-teamspeak-db:
+    image: linuxserver/mariadb:10.11.6 # The Docker image for MariaDB
+    container_name: big-bear-teamspeak-db # Name of the container
+    environment: # Environment variables for the MariaDB service
+      - MYSQL_ROOT_PASSWORD=793e92b7-58d2-47b9-aae5-b8c7d58bd699 # Root password for MariaDB
+      - MYSQL_DATABASE=teamspeak # Database name
+      - MYSQL_USER=bigbear # Database user
+      - MYSQL_PASSWORD=c17ab517-9097-48b7-9405-0f82cf796759 # Database password
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Mount the volume for MariaDB data
+    restart: unless-stopped # Restart policy
+    networks:
+      - big-bear-teamspeak-network # Connect to the teamspeak-network
+    x-casaos: # CasaOS specific configuration for volume and port descriptions
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
+
+networks:
+  big-bear-teamspeak-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-teamspeak
+  description:
+    # Description in English
+    en_us: TeamSpeak is a free and open source voice communication platform that enables you to easily create and manage online chat rooms. With TeamSpeak, you can easily connect with your friends, family, and colleagues from around the world. Whether you're a gamer, a student, or a professional, TeamSpeak makes it easy to communicate and collaborate with others.
+  tagline:
+    # Short description or tagline in English
+    en_us: TeamSpeak
+  # Developer's name or identifier
+  developer: "teamspeak"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/teamspeak.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: TeamSpeak
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "9987"
