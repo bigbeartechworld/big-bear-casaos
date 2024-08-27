@@ -1,0 +1,69 @@
+# Configuration for npmplus setup
+
+# Name of the big-bear-npmplus application
+name: big-bear-npmplus
+
+# Service definitions for the big-bear-npmplus application
+services:
+  # Service name: big-bear-npmplus
+  # The `big-bear-npmplus` service definition
+  big-bear-npmplus:
+    # Name of the container
+    container_name: big-bear-npmplus
+
+    # Image to be used for the container
+    image: zoeyvid/npmplus:417
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Network mode for the container
+    network_mode: host
+
+    environment:
+      - "TZ=America/Chicago" # Required for the container to function properly
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/data directory to /data inside the container
+      - "/DATA/AppData/$AppID/data:/data"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ # TZ environment variable
+          description: # Description for the TZ environment variable
+            en_us: Timezone # Description for the TZ environment variable
+      volumes: # Volume mappings for the service
+        - container: /data # Volume mapping for the /data directory
+          description: # Description for the volume
+            en_us: "Container Path: /data" # Description for the volume
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-npmplus
+  description:
+    # Description in English
+    en_us: Docker container for managing Nginx proxy hosts with a simple, powerful interface
+  tagline:
+    # Short description or tagline in English
+    en_us: NPMPlus
+  # Developer's name or identifier
+  developer: "zoeyvid"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/npmplus.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: NPMPlus
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "81"
