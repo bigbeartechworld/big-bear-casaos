@@ -1,0 +1,8 @@
+{
+  "id": "healthchecks",
+  "version": "3.5.2",
+  "image": "linuxserver/healthchecks",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}

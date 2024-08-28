@@ -1,0 +1,163 @@
+# Configuration for healthchecks setup
+
+# Name of the big-bear-healthchecks application
+name: big-bear-healthchecks
+
+# Service definitions for the big-bear-healthchecks application
+services:
+  # Service name: big-bear-healthchecks
+  # The `big-bear-healthchecks` service definition
+  big-bear-healthchecks:
+    # Name of the container
+    container_name: big-bear-healthchecks
+
+    # Image to be used for the container
+    image: linuxserver/healthchecks:3.5.2
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SITE_ROOT=http://[YOUR_CASAOS_IP]
+      - SITE_NAME="Big Bear HealthChecks"
+      - SUPERUSER_EMAIL=user@example.com
+      - SUPERUSER_PASSWORD=8a4c087a-2652-4d12-a6cc-feeb60e59dd4
+      - ALLOWED_HOSTS= #optional
+      - APPRISE_ENABLED=False #optional
+      - CSRF_TRUSTED_ORIGINS= #optional
+      - DEBUG=True #optional
+      - DEFAULT_FROM_EMAIL= #optional
+      - EMAIL_HOST= #optional
+      - EMAIL_PORT= #optional
+      - EMAIL_HOST_USER= #optional
+      - EMAIL_HOST_PASSWORD= #optional
+      - EMAIL_USE_TLS= #optional
+      - INTEGRATIONS_ALLOW_PRIVATE_IPS= #optional
+      - PING_EMAIL_DOMAIN= #optional
+      - RP_ID= #optional
+      - SECRET_KEY="b2ea4094-c950-4890-b85f-301d8a777af2" #optional
+      - SITE_LOGO_URL= #optional
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8000 of the host to port 8000 of the container
+      - "8000:8000"
+      # Mapping port 2525 of the host to port 2525 of the container
+      - "2525:2525"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PUID
+          description:
+            en_us: Process UID
+        - container: PGID
+          description:
+            en_us: Process GID
+        - container: TZ
+          description:
+            en_us: Timezone
+        - container: SITE_ROOT
+          description:
+            en_us: Site root
+        - container: SITE_NAME
+          description:
+            en_us: Site name
+        - container: SUPERUSER_EMAIL
+          description:
+            en_us: Superuser email
+        - container: SUPERUSER_PASSWORD
+          description:
+            en_us: Superuser password
+        - container: ALLOWED_HOSTS
+          description:
+            en_us: Allowed hosts
+        - container: APPRISE_ENABLED
+          description:
+            en_us: Apprise enabled
+        - container: CSRF_TRUSTED_ORIGINS
+          description:
+            en_us: CSRF trusted origins
+        - container: DEBUG
+          description:
+            en_us: Debug
+        - container: DEFAULT_FROM_EMAIL
+          description:
+            en_us: Default from email
+        - container: EMAIL_HOST
+          description:
+            en_us: Email host
+        - container: EMAIL_PORT
+          description:
+            en_us: Email port
+        - container: EMAIL_HOST_USER
+          description:
+            en_us: Email host user
+        - container: EMAIL_HOST_PASSWORD
+          description:
+            en_us: Email host password
+        - container: EMAIL_USE_TLS
+          description:
+            en_us: Email use TLS
+        - container: INTEGRATIONS_ALLOW_PRIVATE_IPS
+          description:
+            en_us: Integrations allow private IPs
+        - container: PING_EMAIL_DOMAIN
+          description:
+            en_us: Ping email domain
+        - container: RP_ID
+          description:
+            en_us: RP ID
+        - container: SECRET_KEY
+          description:
+            en_us: Secret key
+        - container: SITE_LOGO_URL
+          description:
+            en_us: Site logo URL
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+        - container: "2525"
+          description:
+            en_us: "Container Port: 2525"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-healthchecks
+  description:
+    # Description in English
+    en_us: Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
+  tagline:
+    # Short description or tagline in English
+    en_us: Healthchecks
+  # Developer's name or identifier
+  developer: "linuxserver"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/healthchecks.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Healthchecks
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8000"
