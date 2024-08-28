@@ -12,7 +12,7 @@ services:
     container_name: big-bear-btop
 
     # Image to be used for the container specifies the btop version and source
-    image: bigbeartechworld/big-bear-btop:0.0.4
+    image: bigbeartechworld/big-bear-btop:0.0.5
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
@@ -30,6 +30,8 @@ services:
       - /dev:/dev
       # Mount the host's /etc/localtime file to the container's /etc/localtime file (read-only)
       - /etc/localtime:/etc/localtime:ro
+      # Mount a local directory for persisting btop configuration files
+      - /DATA/AppData/$AppID/config:/root/.config/btop
 
     # Map port 7681 on the host to port 7681 on the container
     ports:
