@@ -1,0 +1,86 @@
+# Configuration for ejbca-ce setup
+
+# Name of the big-bear-ejbca-ce application
+name: big-bear-ejbca-ce
+
+# Service definitions for the big-bear-ejbca-ce application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-ejbca-ce
+
+    # Image to be used for the container
+    image: keyfactor/ejbca-ce:8.3.2
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local ejbca-ce/persistent directory to /mnt/persistent inside the container
+      - /DATA/AppData/$AppID/persistent:/mnt/persistent
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+
+      # Mapping port 8443 of the host to port 8443 of the container
+      - "8443:8443"
+
+    # Environment variables
+    environment:
+      - TLS_SETUP_ENABLED=simple
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+
+  # Main service of the application
+  main: app
+
+  description:
+    # Description in English
+    en_us: The open-source public key infrastructure (PKI) and certificate authority (CA) software EJBCA is one of the longest running CA software projects. EJBCA covers all your needs - from certificate enrollment, via certificate management, to certificate validation.
+
+  tagline:
+    # Short description or tagline in English
+    en_us: The open-source public key infrastructure (PKI) and certificate authority (CA)
+
+  # Developer's name or identifier
+  developer: "Keyfactor"
+
+  # Author of this configuration
+  author: BigBearCommunity
+
+  # Icon for the application
+  icon: https://raw.githubusercontent.com/Keyfactor/ejbca-ce/main/.github/images/community-ejbca-icon.png
+
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+
+  tips:
+    before_install:
+      en_us: |
+        After installation wait for a few minutes as the initialization takes a while.
+        Default admin URL: https://<host/ip>:8443/ejbca/adminweb
+        Default HTTP port: 8080
+        For more information on custom setup visit: https://github.com/Keyfactor/ejbca-ce
+
+  # Application Title
+  title:
+    # Title in English
+    en_us: EJBCA Community
+
+  # Application category
+  category: BigBearCasaOS
+
+  # Port mapping information
+  port_map: "8443"
+
+  # Application scheme
+  scheme: https
