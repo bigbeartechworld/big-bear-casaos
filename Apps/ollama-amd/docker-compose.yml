@@ -12,7 +12,7 @@ services:
     container_name: big-bear-ollama-amd
 
     # Image to be used for the container
-    image: ollama/ollama:0.3.7-rocm
+    image: ollama/ollama:0.3.8-rocm
 
     # Container restart policy
     restart: unless-stopped
