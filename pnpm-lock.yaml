@@ -10,7 +10,7 @@ devDependencies:
     version: 19.4.0(@types/node@20.16.2)(typescript@5.5.4)
   '@commitlint/config-conventional':
     specifier: ^19.2.2
-    version: 19.2.2
+    version: 19.4.1
   '@commitlint/cz-commitlint':
     specifier: ^19.2.0
     version: 19.4.0(@types/node@20.16.2)(commitizen@4.3.0)(inquirer@9.3.6)(typescript@5.5.4)
@@ -614,8 +614,8 @@ packages:
       - typescript
     dev: true
 
-  /@commitlint/config-conventional@19.2.2:
-    resolution: {integrity: sha512-mLXjsxUVLYEGgzbxbxicGPggDuyWNkf25Ht23owXIH+zV2pv1eJuzLK3t1gDY5Gp6pxdE60jZnWUY5cvgL3ufw==}
+  /@commitlint/config-conventional@19.4.1:
+    resolution: {integrity: sha512-D5S5T7ilI5roybWGc8X35OBlRXLAwuTseH1ro0XgqkOWrhZU8yOwBOslrNmSDlTXhXLq8cnfhQyC42qaUCzlXA==}
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/types': 19.0.3
