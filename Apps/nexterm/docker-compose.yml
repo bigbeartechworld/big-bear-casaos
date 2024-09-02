@@ -47,7 +47,7 @@ x-casaos:
   main: big-bear-nexterm
   description:
     # Description in English
-    en_us: The open source server management software for SSH, VNC & RDP
+    en_us: The open source server management software for SSH, VNC & RDP. This is in Preview Release.
   tagline:
     # Short description or tagline in English
     en_us: Nexterm
