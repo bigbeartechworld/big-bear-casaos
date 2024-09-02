@@ -66,3 +66,7 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "6989"
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3
