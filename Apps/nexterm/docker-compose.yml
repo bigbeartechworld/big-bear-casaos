@@ -1,0 +1,68 @@
+# Configuration for nexterm setup
+
+# Name of the big-bear-nexterm application
+name: big-bear-nexterm
+
+# Service definitions for the big-bear-nexterm application
+services:
+  # Service name: big-bear-nexterm
+  # The `big-bear-nexterm` service definition
+  big-bear-nexterm:
+    # Name of the container
+    container_name: big-bear-nexterm
+
+    # Image to be used for the container
+    image: germannewsmaker/nexterm:1.0.0-OPEN-PREVIEW
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/data directory to /app/data inside the container
+      - /DATA/AppData/$AppID/data:/app/data
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 6989 of the host to port 6989 of the container
+      - "6989:6989"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+      ports:
+        - container: "6989"
+          description:
+            en_us: "Container Port: 6989"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-nexterm
+  description:
+    # Description in English
+    en_us: The open source server management software for SSH, VNC & RDP
+  tagline:
+    # Short description or tagline in English
+    en_us: Nexterm
+  # Developer's name or identifier
+  developer: "germannewsmaker"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/nexterm/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Nexterm
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "6989"
