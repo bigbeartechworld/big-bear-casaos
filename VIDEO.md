@@ -12,7 +12,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | audiobookshelf |  |
 | authentik |  |
 | ayon |  |
-| beszel |  |
 | bookstack |  |
 | budibase |  |
 | cadvisor |  |
@@ -45,10 +44,10 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | monica |  |
 | mumble-server |  |
 | n8n |  |
-| ncdu |  |
 | neko-firefox |  |
 | netalertx |  |
 | nextcloud-ls |  |
+| nexterm |  |
 | nightscout |  |
 | node-red |  |
 | npmplus |  |
