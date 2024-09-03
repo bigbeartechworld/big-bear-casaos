@@ -34,11 +34,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.52 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.36.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.13.2 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.13.3 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.6.4 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.26.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
-| beszel | henrygd/beszel | 0.2.0 |  |  |
+| beszel | henrygd/beszel | 0.2.0 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
@@ -105,11 +105,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | n8n | n8nio/n8n | 1.57.0 |  |  |
-| ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 |  |  |
+| ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.7.18 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 29.0.5 |  |  |
 | nextcloud | nextcloud | 29.0.5-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
+| nexterm | germannewsmaker/nexterm | 1.0.0-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
 | nocodb | nocodb/nocodb | 0.255.2 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.2 |  |  |
