@@ -1,6 +1,6 @@
 {
   "id": "immich",
-  "version": "1.113.0",
+  "version": "1.113.1",
   "image": "ghcr.io/immich-app/immich-server",
   "youtube": "https://youtu.be/ZIx2jDHYjjE",
   "docs_link": "",
