@@ -1,0 +1,76 @@
+# Configuration for obsidian setup
+
+# Name of the big-bear-obsidian application
+name: big-bear-obsidian
+
+# Service definitions for the big-bear-obsidian application
+services:
+  # Service name: big-bear-obsidian
+  # The `big-bear-obsidian` service definition
+  big-bear-obsidian:
+    # Name of the container
+    container_name: big-bear-obsidian
+
+    # Image to be used for the container
+    image: linuxserver/obsidian:1.6.7
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+
+    # Ports mapping between host and container
+    ports:
+      - 3000:3000
+      - 3001:3001
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-obsidian
+  description:
+    # Description in English
+    en_us: Obsidian is a note-taking app that lets you create, link, and organize your notes on your device, with hundreds of plugins and themes to customize your workflow. You can also publish your notes online, access them offline, and sync them securely with end-to-end encryption.
+  tagline:
+    # Short description or tagline in English
+    en_us: Obsidian
+  # Developer's name or identifier
+  developer: "obsidianmd"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/obsidian.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Obsidian
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
