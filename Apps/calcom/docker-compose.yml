@@ -1,0 +1,199 @@
+# Configuration for calcom setup
+
+# Name of the big-bear-calcom application
+name: big-bear-calcom
+
+# Service definitions for the big-bear-calcom application
+services:
+  # Service name: big-bear-calcom
+  # The `big-bear-calcom` service definition
+  big-bear-calcom:
+    # Name of the container
+    container_name: big-bear-calcom
+
+    # Image to be used for the container
+    image: calcom/cal.com:v4.4.6
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - DATABASE_HOST=big-bear-calcom-db
+      - DATABASE_URL=postgresql://bigbear:9e45944b-37bb-41f7-aa6f-b74195fb58ec@big-bear-calcom-db/bigbear_calcom
+      - DATABASE_DIRECT_URL=postgresql://bigbear:9e45944b-37bb-41f7-aa6f-b74195fb58ec@big-bear-calcom-db/bigbear_calcom
+      - POSTGRES_USER=bigbear
+      - POSTGRES_PASSWORD=9e45944b-37bb-41f7-aa6f-b74195fb58ec
+      - POSTGRES_DB=bigbear_calcom
+      - LICENSE=agree
+      - NEXT_PUBLIC_LICENSE_CONSENT=agree
+      - NEXT_PUBLIC_WEBAPP_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=a5446147-f55c-4e29-98e7-e7638f223b9c
+      - CALENDSO_ENCRYPTION_KEY=82f83d51-5ef7-456c-8ebf-817495cd39d9
+      - MS_GRAPH_CLIENT_ID=
+      - MS_GRAPH_CLIENT_SECRET=
+      - ZOOM_CLIENT_ID=
+      - ZOOM_CLIENT_SECRET=
+      - GOOGLE_API_CREDENTIALS=
+      - EMAIL_FROM=user@example.com
+      - EMAIL_SERVER_HOST=mailpit
+      - EMAIL_SERVER_PORT=1025
+      - EMAIL_SERVER_PASSWORD=
+      - EMAIL_SERVER_USER=
+      - NODE_ENV=production
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+
+    # Ports mapping between host and container
+    ports:
+      - 3000:3000
+      - 3001:3001
+
+    networks:
+      - big_bear_calcom_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DATABASE_HOST
+          description:
+            en_us: Database host
+        - container: DATABASE_URL
+          description:
+            en_us: Database URL
+        - container: DATABASE_DIRECT_URL
+          description:
+            en_us: Database direct URL
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: POSTGRES_DB
+          description:
+            en_us: Database type
+        - container: LICENSE
+          description:
+            en_us: License
+        - container: NEXT_PUBLIC_LICENSE_CONSENT
+          description:
+            en_us: License consent
+        - container: NEXT_PUBLIC_WEBAPP_URL
+          description:
+            en_us: Webapp URL
+        - container: NEXTAUTH_SECRET
+          description:
+            en_us: Nextauth secret
+        - container: CALENDSO_ENCRYPTION_KEY
+          description:
+            en_us: Calendar encryption key
+        - container: MS_GRAPH_CLIENT_ID
+          description:
+            en_us: Microsoft Graph client ID
+        - container: MS_GRAPH_CLIENT_SECRET
+          description:
+            en_us: Microsoft Graph client secret
+        - container: ZOOM_CLIENT_ID
+          description:
+            en_us: Zoom client ID
+        - container: ZOOM_CLIENT_SECRET
+          description:
+            en_us: Zoom client secret
+        - container: GOOGLE_API_CREDENTIALS
+          description:
+            en_us: Google API credentials
+        - container: EMAIL_FROM
+          description:
+            en_us: Email from
+        - container: EMAIL_SERVER_HOST
+          description:
+            en_us: Email server host
+        - container: EMAIL_SERVER_PORT
+          description:
+            en_us: Email server port
+        - container: EMAIL_SERVER_PASSWORD
+          description:
+            en_us: Email server password
+        - container: EMAIL_SERVER_USER
+          description:
+            en_us: Email server user
+        - container: NODE_ENV
+          description:
+            en_us: Node environment
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
+        - container: "3001"
+          description:
+            en_us: "Container Port: 3001"
+
+  big-bear-calcom-db:
+    container_name: big-bear-calcom-db
+    image: postgres:16.1
+    restart: on-failure
+    volumes:
+      - /DATA/AppData/$AppID/data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=9e45944b-37bb-41f7-aa6f-b74195fb58ec
+      - POSTGRES_USER=bigbear
+      - POSTGRES_DB=bigbear_calcom
+
+    networks:
+      - big_bear_calcom_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_DB
+          description:
+            en_us: Database type
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+networks:
+  big_bear_calcom_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-calcom
+  description:
+    # Description in English
+    en_us: The open source Calendly successor. You are in charge of your own data, workflow, and appearance.\nCalendly and other scheduling tools are awesome. It made our lives massively easier. We're using it for business meetings, seminars, yoga classes, and even calls with our families. However, most tools are very limited in terms of control and customization.\n    That's where Cal.com comes in. Self-hosted or hosted by us. White-label by design. API-driven and ready to be deployed on your own domain. Full control of your events and data.
+  tagline:
+    # Short description or tagline in English
+    en_us: Cal.com
+  # Developer's name or identifier
+  developer: "calcom"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/calcom/logo.jpg
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Cal.com
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3000"
