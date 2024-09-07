@@ -197,3 +197,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "3000"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-cal-com-to-bigbearcasaos/1873#p-3510-documentation-4
