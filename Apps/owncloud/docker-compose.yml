@@ -1,0 +1,211 @@
+# Configuration for owncloud setup
+
+# Name of the big-bear-owncloud application
+name: big-bear-owncloud
+
+# Service definitions for the big-bear-owncloud application
+services:
+  # Service name: big-bear-owncloud
+  # The `big-bear-owncloud` service definition
+  big-bear-owncloud:
+    # Name of the container
+    container_name: big-bear-owncloud
+
+    # Image to be used for the container
+    image: owncloud/server:10.15.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - OWNCLOUD_DOMAIN=http://[YOUR_CASAOS_IP]:8080
+      - OWNCLOUD_TRUSTED_DOMAINS=[YOUR_CASAOS_IP]
+      - OWNCLOUD_DB_TYPE=mysql
+      - OWNCLOUD_DB_NAME=big_bear_owncloud
+      - OWNCLOUD_DB_USERNAME=bigbear
+      - OWNCLOUD_DB_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a
+      - OWNCLOUD_DB_HOST=big-bear-owncloud-db
+      - OWNCLOUD_ADMIN_USERNAME=bigbear
+      - OWNCLOUD_ADMIN_PASSWORD=ed135299-7c80-48d4-a2a0-357a012213e5
+      - OWNCLOUD_MYSQL_UTF8MB4=true
+      - OWNCLOUD_REDIS_ENABLED=true
+      - OWNCLOUD_REDIS_HOST=big-bear-owncloud-redis
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/data directory to /mnt/data inside the container
+      - /DATA/AppData/$AppID/data:/mnt/data
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
+
+    # Networks to be attached to the container
+    networks:
+      - big_bear_owncloud_network
+
+    # Healthcheck configuration for the service
+    healthcheck:
+      test: ["CMD", "/usr/bin/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: OWNCLOUD_DOMAIN
+          description:
+            en_us: Owncloud Domain
+        - container: OWNCLOUD_TRUSTED_DOMAINS
+          description:
+            en_us: Owncloud Trusted Domains
+        - container: OWNCLOUD_DB_TYPE
+          description:
+            en_us: Owncloud DB Type
+        - container: OWNCLOUD_DB_NAME
+          description:
+            en_us: Owncloud DB Name
+        - container: OWNCLOUD_DB_USERNAME
+          description:
+            en_us: Owncloud DB Username
+        - container: OWNCLOUD_DB_PASSWORD
+          description:
+            en_us: Owncloud DB Password
+        - container: OWNCLOUD_DB_HOST
+          description:
+            en_us: Owncloud DB Host
+        - container: OWNCLOUD_ADMIN_USERNAME
+          description:
+            en_us: Owncloud Admin Username
+        - container: OWNCLOUD_ADMIN_PASSWORD
+          description:
+            en_us: Owncloud Admin Password
+        - container: OWNCLOUD_MYSQL_UTF8MB4
+          description:
+            en_us: Owncloud MySQL UTF8MB4
+        - container: OWNCLOUD_REDIS_ENABLED
+          description:
+            en_us: Owncloud Redis Enabled
+        - container: OWNCLOUD_REDIS_HOST
+          description:
+            en_us: Owncloud Redis Host
+      volumes:
+        - container: /mnt/data
+          description:
+            en_us: "Container Path: /mnt/data"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+  big-bear-owncloud-db:
+    container_name: big-bear-owncloud-db
+    image: mariadb:10.6 # minimum required ownCloud version is 10.9
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a
+      - MYSQL_USER=bigbear
+      - MYSQL_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a
+      - MYSQL_DATABASE=big_bear_owncloud
+    command: ["--max-allowed-packet=128M", "--innodb-log-file-size=64M"]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-u",
+          "root",
+          "--password=f01914eb-2be3-4164-a57c-08e6518f313a",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ${APP_DATA_DIR}/data/mysql:/var/lib/mysql
+    networks:
+      - big_bear_owncloud_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: MySQL root password
+        - container: MYSQL_USER
+          description:
+            en_us: MySQL user
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: MySQL password
+        - container: MYSQL_DATABASE
+          description:
+            en_us: MySQL database
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+      ports:
+        - container: "3306"
+          description:
+            en_us: "Container Port: 3306"
+
+  big-bear-owncloud-redis:
+    container_name: big-bear-owncloud-redis
+    image: redis:6
+    restart: unless-stopped
+    command: ["--databases", "1"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ${APP_DATA_DIR}/data/redis:/data
+    networks:
+      - big_bear_owncloud_network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "6379"
+          description:
+            en_us: "Container Port: 6379"
+
+networks:
+  big_bear_owncloud_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-owncloud
+  description:
+    # Description in English
+    en_us: ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.
+  tagline:
+    # Short description or tagline in English
+    en_us: ownCloud
+  # Developer's name or identifier
+  developer: "owncloud"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/owncloud.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: ownCloud
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
