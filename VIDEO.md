@@ -15,6 +15,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | bookstack |  |
 | budibase |  |
 | cadvisor |  |
+| calcom |  |
 | changedetection |  |
 | chatpad |  |
 | cyberchef |  |
@@ -53,6 +54,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | node-red |  |
 | npmplus |  |
 | obsidian-livesync |  |
+| obsidian |  |
 | odoo |  |
 | ollama-amd |  |
 | ollama-cpu |  |
