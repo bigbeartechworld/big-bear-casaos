@@ -209,3 +209,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-owncloud-to-bigbearcasaos/1874#p-3512-documentation-4
