@@ -12,7 +12,7 @@ services:
     container_name: big-bear-zigbee2mqtt
 
     # Image to be used for the container
-    image: koenkk/zigbee2mqtt:1.40.0
+    image: koenkk/zigbee2mqtt:1.40.1
 
     # Container restart policy
     restart: unless-stopped
