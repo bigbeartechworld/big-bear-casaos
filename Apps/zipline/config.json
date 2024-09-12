@@ -1,6 +1,6 @@
 {
   "id": "zipline",
-  "version": "3.7.9",
+  "version": "3.7.10",
   "image": "ghcr.io/diced/zipline",
   "youtube": "",
   "docs_link": "",
