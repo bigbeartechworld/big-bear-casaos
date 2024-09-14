@@ -1,0 +1,206 @@
+# Configuration for davis setup
+
+# Name of the big-bear-davis application
+name: big-bear-davis
+
+# Service definitions for the big-bear-davis application
+services:
+  # Service name: big-bear-davis
+  # The `big-bear-davis` service definition
+  big-bear-davis:
+    # Name of the container
+    container_name: big-bear-davis
+
+    # Image to be used for the container
+    image: ghcr.io/tchapi/davis-standalone:4.4.4
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables to be set in the container
+    environment:
+      - APP_ENV=prod
+      - DATABASE_DRIVER=mysql
+      - DATABASE_URL=mysql://bigbear:0c9d2acc-d4f3-423c-8361-86f35cdd3eb2@big-bear-davis-mysql:3306/davis?serverVersion=10.6.10&charset=utf8mb4
+      - MAILER_DSN=smtp://:@big-bear-davis-mailpit:1025
+      - ADMIN_LOGIN=bigbear
+      - ADMIN_PASSWORD=aa9405b8-426c-41a1-bbc6-2924d8ec7eb3
+      - AUTH_REALM=
+      - AUTH_METHOD=
+      - CALDAV_ENABLED=
+      - CARDDAV_ENABLED=
+      - WEBDAV_ENABLED=
+      - WEBDAV_TMP_DIR=
+      - WEBDAV_PUBLIC_DIR=
+      - WEBDAV_HOMES_DIR=
+      - INVITE_FROM_ADDRESS=
+      - APP_TIMEZONE=UTC
+
+    # Ports to be exposed from the container
+    ports:
+      - 9000:9000
+
+    networks:
+      - big-bear-davis-network
+
+    depends_on:
+      - big-bear-davis-mysql
+      - big-bear-davis-mailpit
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: "APP_ENV"
+          description:
+            en_us: "APP_ENV"
+        - container: "DATABASE_DRIVER"
+          description:
+            en_us: "DATABASE_DRIVER"
+        - container: "DATABASE_URL"
+          description:
+            en_us: "DATABASE_URL"
+        - container: "MAILER_DSN"
+          description:
+            en_us: "MAILER_DSN"
+        - container: "ADMIN_LOGIN"
+          description:
+            en_us: "ADMIN_LOGIN"
+        - container: "ADMIN_PASSWORD"
+          description:
+            en_us: "ADMIN_PASSWORD"
+        - container: "AUTH_REALM"
+          description:
+            en_us: "AUTH_REALM"
+        - container: "AUTH_METHOD"
+          description:
+            en_us: "AUTH_METHOD"
+        - container: "CALDAV_ENABLED"
+          description:
+            en_us: "CALDAV_ENABLED"
+        - container: "CARDDAV_ENABLED"
+          description:
+            en_us: "CARDDAV_ENABLED"
+        - container: "WEBDAV_ENABLED"
+          description:
+            en_us: "WEBDAV_ENABLED"
+        - container: "WEBDAV_TMP_DIR"
+          description:
+            en_us: "WEBDAV_TMP_DIR"
+        - container: "WEBDAV_PUBLIC_DIR"
+          description:
+            en_us: "WEBDAV_PUBLIC_DIR"
+        - container: "WEBDAV_HOMES_DIR"
+          description:
+            en_us: "WEBDAV_HOMES_DIR"
+        - container: "INVITE_FROM_ADDRESS"
+          description:
+            en_us: "INVITE_FROM_ADDRESS"
+        - container: "APP_TIMEZONE"
+          description:
+            en_us: "APP_TIMEZONE"
+      ports:
+        - container: "9000"
+          description:
+            en_us: "Container Port: 9000"
+
+  # Service name: big-bear-davis-mailpit
+  big-bear-davis-mailpit:
+    container_name: big-bear-davis-mailpit # Container name for the app service
+    image: axllent/mailpit:v1.20 # Image for the app service
+    restart: unless-stopped # Restart policy for the container
+    volumes: # Volumes to mount for the app service
+      - /DATA/AppData/$AppID/mailpit/data:/data
+    environment: # Environment variables for the app service
+      - TZ=UTC
+    ports: # Ports to expose for the app service
+      - "8025:8025"
+      - "1025:1025"
+    networks:
+      - big-bear-davis-network
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "8025"
+          description:
+            en_us: "Container Port: 8025"
+
+  # Service name: big-bear-mysql
+  big-bear-davis-mysql:
+    container_name: big-bear-davis-mysql
+    image: mariadb:10.6.10
+    environment:
+      - MYSQL_ROOT_PASSWORD=0c9d2acc-d4f3-423c-8361-86f35cdd3eb2
+      - MYSQL_DATABASE=davis
+      - MYSQL_USER=bigbear
+      - MYSQL_PASSWORD=0c9d2acc-d4f3-423c-8361-86f35cdd3eb2
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+
+    networks:
+      - big-bear-davis-network
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+
+    # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: "MYSQL_ROOT_PASSWORD"
+          description:
+            en_us: "MYSQL_ROOT_PASSWORD"
+        - container: "MYSQL_DATABASE"
+          description:
+            en_us: "MYSQL_DATABASE"
+        - container: "MYSQL_USER"
+          description:
+            en_us: "MYSQL_USER"
+        - container: "MYSQL_PASSWORD"
+          description:
+            en_us: "MYSQL_PASSWORD"
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "MariaDB Data Volume"
+
+networks:
+  big-bear-davis-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-davis
+  description:
+    # Description in English
+    en_us: A simple, fully translatable admin interface for sabre/dav based on Symfony 5 and Bootstrap 5, initially inspired by Baïkal. Provides user edition, calendar creation and sharing, and address book creation. The interface is simple and straightforward, responsive, and provides a light and a dark mode.
+  tagline:
+    # Short description or tagline in English
+    en_us: Davis
+  # Developer's name or identifier
+  developer: "tchapi"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/davis/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Davis
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "9000"
