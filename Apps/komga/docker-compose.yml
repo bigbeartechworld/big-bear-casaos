@@ -1,0 +1,84 @@
+# Configuration for komga setup
+
+# Name of the big-bear-komga application
+name: big-bear-komga
+
+# Service definitions for the big-bear-komga application
+services:
+  # Service name: big-bear-komga
+  # The `big-bear-komga` service definition
+  big-bear-komga:
+    # Name of the container
+    container_name: big-bear-komga
+
+    # Image to be used for the container
+    image: ghcr.io/gotson/komga:1.13.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      - TZ=UTC
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/data:/data
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 25600 of the host to port 25600 of the container
+      - "25600:25600"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "25600"
+          description:
+            en_us: "Container Port: 25600"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-komga
+  description:
+    # Description in English
+    en_us: A media server for your comics, mangas, BDs, magazines and eBooks.
+  tagline:
+    # Short description or tagline in English
+    en_us: A media server for your comics, mangas, BDs, magazines and eBooks.
+  # Developer's name or identifier
+  developer: "gotson"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/komga.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Komga
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "25600"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-komga-to-bigbearcasaos/1916#p-3567-documentation-4
