@@ -34,7 +34,7 @@ devDependencies:
     version: 9.10.0
   eslint-plugin-json-schema-validator:
     specifier: ^5.1.0
-    version: 5.1.2(eslint@9.10.0)
+    version: 5.1.3(eslint@9.10.0)
   eslint-plugin-jsonc:
     specifier: ^2.15.1
     version: 2.16.0(eslint@9.10.0)
@@ -831,8 +831,8 @@ packages:
     engines: {node: '>=18.18'}
     dev: true
 
-  /@inquirer/figures@1.0.5:
-    resolution: {integrity: sha512-79hP/VWdZ2UVc9bFGJnoQ/lQMpL74mGgzSYX1xUqCVk7/v73vJCMw1VuyWN1jGkZ9B3z7THAbySqGbCNefcjfA==}
+  /@inquirer/figures@1.0.6:
+    resolution: {integrity: sha512-yfZzps3Cso2UbM7WlxKwZQh2Hs6plrbjs1QnzQDZhK2DgyCo6D8AaHps9olkNcUFlcYERMqU3uJSp1gmy3s/qQ==}
     engines: {node: '>=18'}
     dev: true
 
@@ -1308,12 +1308,6 @@ packages:
     hasBin: true
     dev: true
 
-  /acorn@8.12.0:
-    resolution: {integrity: sha512-RTvkC4w+KNXrM39/lWCUaG0IbRkWdCv7W/IOW9oU6SawyxulvkQy5HQPVTKxEjczcUvapcrw3cFx/60VN/NRNw==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: true
-
   /acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
     engines: {node: '>=0.4.0'}
@@ -1326,15 +1320,6 @@ packages:
       fast-deep-equal: 3.1.3
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
-      uri-js: 4.4.1
-    dev: true
-
-  /ajv@8.16.0:
-    resolution: {integrity: sha512-F0twR8U1ZU67JIEtekUcLkXkoO5mMMmgGD8sK/xUFzJ805jxHQl92hImFAqqXMyMYjSPOyUPAwHYhB72g5sTXw==}
-    dependencies:
-      fast-deep-equal: 3.1.3
-      json-schema-traverse: 1.0.0
-      require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
 
@@ -1868,18 +1853,6 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /debug@4.3.5:
-    resolution: {integrity: sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.2
-    dev: true
-
   /debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
     engines: {node: '>=6.0'}
@@ -2031,21 +2004,21 @@ packages:
       semver: 7.6.3
     dev: true
 
-  /eslint-plugin-json-schema-validator@5.1.2(eslint@9.10.0):
-    resolution: {integrity: sha512-NVMZ53vOk1d6HFwLkrevWFXavQPLvBZjC06L4YnxBTa+tHw2lTMkFUZRuKu5RR1JELI8Jgm/Xtoks7vaf74mtQ==}
+  /eslint-plugin-json-schema-validator@5.1.3(eslint@9.10.0):
+    resolution: {integrity: sha512-oD/MFPRihUzzQqw1Q0kiqAarXsWHUkFuKuvuuyPL3i9V/BJV/dTvWH/M735DZTaGxh1iwvCLFREhsW+y56hWmw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.10.0)
-      ajv: 8.16.0
-      debug: 4.3.5
+      ajv: 8.17.1
+      debug: 4.3.7
       eslint: 9.10.0
       eslint-compat-utils: 0.5.1(eslint@9.10.0)
       json-schema-migrate: 2.0.0
       jsonc-eslint-parser: 2.4.0
       minimatch: 8.0.4
-      synckit: 0.9.0
+      synckit: 0.9.1
       toml-eslint-parser: 0.10.0
       tunnel-agent: 0.6.0
       yaml-eslint-parser: 1.2.3
@@ -2620,7 +2593,7 @@ packages:
     resolution: {integrity: sha512-riK/iQB2ctwkpWYgjjWIRv3MBLt2gzb2Sj0JNQNbyTXgyXsLWcDPJ5WS5ZDTCx7BRFnJsARtYh+58fjP5M2Y0Q==}
     engines: {node: '>=18'}
     dependencies:
-      '@inquirer/figures': 1.0.5
+      '@inquirer/figures': 1.0.6
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
       external-editor: 3.1.0
@@ -3245,7 +3218,7 @@ packages:
   /json-schema-migrate@2.0.0:
     resolution: {integrity: sha512-r38SVTtojDRp4eD6WsCqiE0eNDt4v1WalBXb9cyZYw9ai5cGtBwzRNWjHzJl38w6TxFkXAIA7h+fyX3tnrAFhQ==}
     dependencies:
-      ajv: 8.16.0
+      ajv: 8.17.1
     dev: true
 
   /json-schema-traverse@0.4.1:
@@ -3270,7 +3243,7 @@ packages:
     resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.12.0
+      acorn: 8.12.1
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
       semver: 7.6.3
@@ -3498,10 +3471,6 @@ packages:
   /minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
-    dev: true
-
-  /ms@2.1.2:
-    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: true
 
   /ms@2.1.3:
@@ -3851,7 +3820,7 @@ packages:
   /rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.7.0
     dev: true
 
   /safe-buffer@5.1.2:
@@ -4029,12 +3998,12 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /synckit@0.9.0:
-    resolution: {integrity: sha512-7RnqIMq572L8PeEzKeBINYEJDDxpcH8JEgLwUqBd3TkofhFRbkq4QLR0u+36avGAhCRbk2nnmjcW9SE531hPDg==}
+  /synckit@0.9.1:
+    resolution: {integrity: sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@pkgr/core': 0.1.1
-      tslib: 2.6.3
+      tslib: 2.7.0
     dev: true
 
   /test-exclude@6.0.0:
@@ -4135,8 +4104,8 @@ packages:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
-  /tslib@2.6.3:
-    resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
+  /tslib@2.7.0:
+    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
     dev: true
 
   /tunnel-agent@0.6.0:
@@ -4309,11 +4278,11 @@ packages:
     dependencies:
       eslint-visitor-keys: 3.4.3
       lodash: 4.17.21
-      yaml: 2.4.5
+      yaml: 2.5.1
     dev: true
 
-  /yaml@2.4.5:
-    resolution: {integrity: sha512-aBx2bnqDzVOyNKfsysjA2ms5ZlnjSAW2eG3/L5G/CSujfjLJTJsEw1bGw8kCf04KodQWk1pxlGnZ56CRxiawmg==}
+  /yaml@2.5.1:
+    resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==}
     engines: {node: '>= 14'}
     hasBin: true
     dev: true
