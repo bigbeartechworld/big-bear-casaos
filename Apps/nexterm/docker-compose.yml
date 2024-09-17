@@ -12,7 +12,7 @@ services:
     container_name: big-bear-nexterm
 
     # Image to be used for the container
-    image: germannewsmaker/nexterm:1.0.1-OPEN-PREVIEW
+    image: germannewsmaker/nexterm:1.0.2-OPEN-PREVIEW
 
     # Container restart policy
     restart: unless-stopped
