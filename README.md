@@ -44,7 +44,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 2.32.3 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
-| calcom | calcom/cal.com | 4.4.9 |  |  |
+| calcom | calcom/cal.com | 4.5.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.46.04 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -71,7 +71,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 5.94.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 5.94.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.107.1 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.45.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.1.2.1-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -114,7 +114,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | netalertx | jokobsk/netalertx | 24.9.12 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 29.0.6 |  |  |
 | nextcloud | nextcloud | 29.0.6-apache | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
-| nexterm | germannewsmaker/nexterm | 1.0.1-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
+| nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
 | nocodb | nocodb/nocodb | 0.255.2 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.2 |  |  |
