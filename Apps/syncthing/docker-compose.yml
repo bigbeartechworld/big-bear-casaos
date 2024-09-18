@@ -1,0 +1,81 @@
+# Configuration for syncthing setup
+
+# Name of the big-bear-syncthing application
+name: big-bear-syncthing
+
+# Service definitions for the big-bear-syncthing application
+services:
+  # Service name: big-bear-syncthing
+  # The `big-bear-syncthing` service definition
+  big-bear-syncthing:
+    # Name of the container
+    container_name: big-bear-syncthing
+
+    # Image to be used for the container
+    image: syncthing/syncthing:1.27
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/var/syncthing
+      - /DATA/AppData/$AppID/media/data/syncthing:/media/data/syncthing
+
+    # Ports mapping between host and container
+    ports:
+      - 8384:8384 # WebUI
+      - 22000:22000/tcp # TCP file transfers
+      - 22000:22000/udp # QUIC file transfers
+      - 21027:21027/udp # Receive local discovery broadcasts
+
+    # Environment variables for the container
+    environment:
+      - PUID=1000 # User ID
+      - PGID=1000 # Group ID
+
+    # Stop the container if it exits
+    stop_grace_period: 1m
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/syncthing
+          description:
+            en_us: "Container Path: /var/syncthing"
+        - container: /media/data/syncthing
+          description:
+            en_us: "Container Path: /media/data/syncthing"
+      ports:
+        - container: "8384"
+          description:
+            en_us: "Container Port: 8384"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-syncthing
+  description:
+    # Description in English
+    en_us: Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers. We strive to fulfill the goals below. The goals are listed in order of importance, the most important one being the first.
+  tagline:
+    # Short description or tagline in English
+    en_us: Peer-to-peer file synchronization between your devices
+  # Developer's name or identifier
+  developer: "syncthing"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/syncthing.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Syncthing
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8384"
