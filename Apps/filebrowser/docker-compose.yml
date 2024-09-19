@@ -12,7 +12,7 @@ services:
     container_name: big-bear-filebrowser
 
     # Image to be used for the container
-    image: filebrowser/filebrowser:v2-s6
+    image: filebrowser/filebrowser:v2.31.1-s6
 
     # Container restart policy
     restart: unless-stopped
@@ -38,6 +38,8 @@ services:
       - /DATA/media:/srv/media
       # Volume mapping for the database files for filebrowser
       - /DATA/AppData/$AppID/data/db:/database
+      # Volume mapping for the config files for filebrowser
+      - /DATA/AppData/$AppID/data/config:/config
 
     # Ports mapping between host and container
     ports:
@@ -71,6 +73,9 @@ services:
         - container: /database
           description:
             en_us: "Container Path: /database"
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
       ports:
         - container: "80"
           description:

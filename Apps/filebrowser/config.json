@@ -1,6 +1,6 @@
 {
   "id": "filebrowser",
-  "version": "v2-s6",
+  "version": "v2.31.1-s6",
   "image": "filebrowser/filebrowser",
   "youtube": "",
   "docs_link": "",
