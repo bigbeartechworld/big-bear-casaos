@@ -45,6 +45,13 @@ services:
       - "8080:80"
 
     x-casaos: # CasaOS specific configuration
+      envs:
+        - container: "PUID"
+          description:
+            en_us: "User ID"
+        - container: "PGID"
+          description:
+            en_us: "Group ID"
       volumes:
         - container: /srv/app-data
           description:
