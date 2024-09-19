@@ -1,0 +1,105 @@
+# Configuration for filebrowser setup
+
+# Name of the big-bear-filebrowser application
+name: big-bear-filebrowser
+
+# Service definitions for the big-bear-filebrowser application
+services:
+  # Service name: big-bear-filebrowser
+  # The `big-bear-filebrowser` service definition
+  big-bear-filebrowser:
+    # Name of the container
+    container_name: big-bear-filebrowser
+
+    # Image to be used for the container
+    image: filebrowser/filebrowser:v2-s6
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      # User ID to run the container with
+      - PUID=0
+      # Group ID to run the container with
+      - PGID=0
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Volume mapping for the app data from CasaOS
+      - /DATA/AppData:/srv/app-data
+      # Volume mapping for the Documents files from CasaOS
+      - /DATA/Documents:/srv/documents
+      # Volume mapping for the Downloads files from CasaOS
+      - /DATA/Downloads:/srv/downloads
+      # Volume mapping for the Gallery files from CasaOS
+      - /DATA/Gallery:/srv/gallery
+      # Volume mapping for the media files from CasaOS
+      - /DATA/media:/srv/media
+      # Volume mapping for the database files for filebrowser
+      - /DATA/AppData/$AppID/data/db:/database
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:80"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /srv/app-data
+          description:
+            en_us: "Container Path: /srv/app-data"
+        - container: /srv/documents
+          description:
+            en_us: "Container Path: /srv/documents"
+        - container: /srv/downloads
+          description:
+            en_us: "Container Path: /srv/downloads"
+        - container: /srv/gallery
+          description:
+            en_us: "Container Path: /srv/gallery"
+        - container: /srv/media
+          description:
+            en_us: "Container Path: /srv/media"
+        - container: /database
+          description:
+            en_us: "Container Path: /database"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-filebrowser
+  description:
+    # Description in English
+    en_us: "Reliable and Performant File Management Desktop Sync and File Sharing Tool."
+  tagline:
+    # Short description or tagline in English
+    en_us: Access your homeserver files from your browser
+  # Developer's name or identifier
+  developer: "filebrowser"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Filebrowser
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-filebrowser-to-bigbearcasaos/1934#p-3590-documentation-4
