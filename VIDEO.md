@@ -82,6 +82,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | python-matter-server |  |
 | reactive-resume |  |
 | rocket-chat |  |
+| scrutiny |  |
 | seafile |  |
 | semaphore |  |
 | sftpgo |  |
