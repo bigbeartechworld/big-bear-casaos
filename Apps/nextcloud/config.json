@@ -1,6 +1,6 @@
 {
   "id": "nextcloud",
-  "version": "29.0.7-apache",
+  "version": "30.0.0-apache",
   "image": "nextcloud",
   "youtube": "https://youtu.be/O0fzG16COYc",
   "docs_link": "",
