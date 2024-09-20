@@ -1,0 +1,93 @@
+# Configuration for scrutiny setup
+
+# Name of the big-bear-scrutiny application
+name: big-bear-scrutiny
+
+# Service definitions for the big-bear-scrutiny application
+services:
+  # Service name: big-bear-scrutiny
+  # The `big-bear-scrutiny` service definition
+  big-bear-scrutiny:
+    # Name of the container
+    container_name: big-bear-scrutiny
+
+    # Image to be used for the container
+    image: ghcr.io/analogj/scrutiny:master-omnibus
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mount the config directory from the host to the container
+      # This allows the user to persist configuration changes
+      - /DATA/AppData/$AppID/config:/opt/scrutiny/config
+      # Mount the InfluxDB data directory from the host to the container
+      # This allows the user to persist data from the InfluxDB database
+      - /DATA/AppData/$AppID/influxdb:/opt/scrutiny/influxdb
+      # Mount the udev directory from the host to the container
+      # This is required for the container to access raw I/O devices
+      - /run/udev:/run/udev:ro
+
+    # Expose the following ports from the container to the host
+    ports:
+      # Expose port 8080 from the container to the host as port 8080
+      # This is the default port used by the Scrutiny web interface
+      - "8080:8080"
+      # Expose port 8086 from the container to the host as port 8086
+      # This is the default port used by the InfluxDB API
+      - "8086:8086"
+
+    # Grant the container the capability to access raw I/O devices
+    cap_add:
+      # The SYS_RAWIO capability allows the container to access raw I/O devices
+      - SYS_RAWIO
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: "/opt/scrutiny/config"
+          description:
+            en_us: "Container Path: /opt/scrutiny/config"
+        - container: "/opt/scrutiny/influxdb"
+          description:
+            en_us: "Container Path: /opt/scrutiny/influxdb"
+        - container: "/run/udev"
+          description:
+            en_us: "Container Path: /run/udev"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+        - container: "8086"
+          description:
+            en_us: "Container Port: 8086"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-scrutiny
+  description:
+    # Description in English
+    en_us: If you run a server with more than a couple of hard drives, you're probably already familiar with S.M.A.R.T and the smartd daemon.
+  tagline:
+    # Short description or tagline in English
+    en_us: Monitor your server's hard disk health
+  # Developer's name or identifier
+  developer: "analogj"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/scrutiny.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Scrutiny
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
