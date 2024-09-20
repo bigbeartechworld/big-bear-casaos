@@ -21,27 +21,57 @@ services:
     volumes:
       # Mount the config directory from the host to the container
       # This allows the user to persist configuration changes
-      - /DATA/AppData/$AppID/config:/opt/scrutiny/config
+      - /DATA/AppData/scrutiny/config:/opt/scrutiny/config
       # Mount the InfluxDB data directory from the host to the container
       # This allows the user to persist data from the InfluxDB database
-      - /DATA/AppData/$AppID/influxdb:/opt/scrutiny/influxdb
+      - /DATA/AppData/scrutiny/influxdb2:/opt/scrutiny/influxdb
       # Mount the udev directory from the host to the container
       # This is required for the container to access raw I/O devices
       - /run/udev:/run/udev:ro
 
     # Expose the following ports from the container to the host
     ports:
-      # Expose port 8080 from the container to the host as port 8080
-      # This is the default port used by the Scrutiny web interface
-      - "8080:8080"
-      # Expose port 8086 from the container to the host as port 8086
-      # This is the default port used by the InfluxDB API
-      - "8086:8086"
+      # Map port 8080 from the container to port 38080 on the host.
+      # This allows users to access the Scrutiny web interface from the host.
+      - "38080:8080"
+
+      # Map port 8086 from the container to port 38086 on the host.
+      # This allows users to access the InfluxDB API from the host.
+      - "38086:8086"
 
     # Grant the container the capability to access raw I/O devices
     cap_add:
       # The SYS_RAWIO capability allows the container to access raw I/O devices
       - SYS_RAWIO
+
+    # Map the following host devices to the container
+    # This allows Scrutiny to access the raw I/O devices
+    devices:
+      # Map the /dev/sda device from the host to the container
+      # This allows Scrutiny to access the first hard drive
+      - /dev/sda:/dev/sda
+      # Map the /dev/nvme0 device from the host to the container
+      # This allows Scrutiny to access the first NVMe drive
+      - /dev/nvme0:/dev/nvme0
+
+    # Allow the container to run in privileged mode.
+    # This is required for Scrutiny to access raw I/O devices.
+    privileged: true
+
+    # Run a healthcheck on the container to ensure it is running properly
+    # The healthcheck is a simple HTTP request to the /api/health endpoint
+    # If the endpoint returns a 200 status code, the container is considered healthy
+    healthcheck:
+      # The command to run to perform the healthcheck
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      # The interval between healthchecks
+      interval: 1m30s
+      # The timeout for the healthcheck command
+      timeout: 10s
+      # The number of times to retry the healthcheck if it fails
+      retries: 3
+      # The amount of time to wait after the container starts before running the healthcheck
+      start_period: 40s
 
     x-casaos: # CasaOS specific configuration
       volumes:
@@ -90,4 +120,4 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Port mapping information
-  port_map: "8080"
+  port_map: "38080"
