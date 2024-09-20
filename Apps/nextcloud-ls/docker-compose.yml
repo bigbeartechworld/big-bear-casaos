@@ -11,7 +11,7 @@ services:
     # Define the container name
     container_name: big-bear-nextcloud-ls
     # Use the nextcloud:28.0.1-apache image
-    image: linuxserver/nextcloud:29.0.6
+    image: linuxserver/nextcloud:29.0.7
     # Restart the container unless stopped
     restart: unless-stopped
     # Map port 7580 on the host to port 80 on the container
