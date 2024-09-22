@@ -1,0 +1,112 @@
+# Configuration for komf setup
+
+# Name of the big-bear-komf application
+name: big-bear-komf
+
+# Service definitions for the big-bear-homarr application
+services:
+  # Service name: big-bear-komf
+  # The `big-bear-komf` service definition
+  big-bear-komf:
+    # Name of the container
+    container_name: big-bear-komf
+
+    # Image to be used for the container
+    image: sndxr/komf:1.0.6
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      - KOMF_KOMGA_BASE_URI=http://komga:25600
+      - KOMF_KOMGA_USER=admin@example.org
+      - KOMF_KOMGA_PASSWORD=admin
+      - KOMF_KAVITA_BASE_URI=http://kavita:5000
+      - KOMF_KAVITA_API_KEY=cd1edcc1-6010-41a8-a82b-73f501dc2760
+      - KOMF_LOG_LEVEL=INFO
+      # optional jvm options. Example config for low memory usage. Runs guaranteed cleanup up every 3600000ms(1hour)
+      # - JAVA_TOOL_OPTIONS=-XX:+UnlockExperimentalVMOptions -XX:+UseShenandoahGC -XX:ShenandoahGCHeuristics=compact -XX:ShenandoahGuaranteedGCInterval=3600000 -XX:TrimNativeHeapInterval=3600000
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /config directory to /config inside the container
+      - /DATA/AppData/$AppID/config:/config
+
+    # User to run the container as
+    user: "1000:1000"
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8085:8085"
+
+    # Networks to be attached to the container
+    networks:
+      - big_bear_komf_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: KOMF_KOMGA_BASE_URI
+          description:
+            en_us: "Komga Base URI"
+        - container: KOMF_KOMGA_USER
+          description:
+            en_us: "Komga User"
+        - container: KOMF_KOMGA_PASSWORD
+          description:
+            en_us: "Komga Password"
+        - container: KOMF_KAVITA_BASE_URI
+          description:
+            en_us: "Kavita Base URI"
+        - container: KOMF_KAVITA_API_KEY
+          description:
+            en_us: "Kavita API Key"
+        - container: KOMF_LOG_LEVEL
+          description:
+            en_us: "Log Level"
+        - container: JAVA_TOOL_OPTIONS
+          description:
+            en_us: "Java Tool Options"
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+      ports:
+        - container: "8085"
+          description:
+            en_us: "Container Port: 8085"
+
+# Network definitions for the big-bear-komf application
+networks:
+  big_bear_komf_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-komf
+  description:
+    # Description in English
+    en_us: Komga and Kavita Metadata Fetcher is a tool that fetches metadata and thumbnails for your digital comic book library. It can automatically pick up added series and update their metadata and thumbnail. You can also manually search and identify series, or match the entire library or a series. Additionally, you can install the Komf userscript to add Komf integration directly to Komga and Kavita UI, allowing you to launch manual or automatic metadata identification.
+  tagline:
+    # Short description or tagline in English
+    en_us: Komga and Kavita Metadata Fetcher
+  # Developer's name or identifier
+  developer: "sndxr"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/komf.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Komf
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8085"
