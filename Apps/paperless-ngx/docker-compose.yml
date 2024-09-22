@@ -1,0 +1,228 @@
+# Configuration for paperless-ngx setup
+
+# Name of the big-bear-paperless-ngx application
+name: big-bear-paperless-ngx
+
+# Service definitions for the big-bear-paperless-ngx application
+services:
+  # Service name: big-bear-paperless-ngx
+  # The `big-bear-paperless-ngx` service definition
+  big-bear-paperless-ngx:
+    # Name of the container
+    container_name: big-bear-paperless-ngx
+
+    # Image to be used for the container
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.12.1
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # environment variables
+    environment:
+      PAPERLESS_REDIS: redis://big-bear-paperless-ngx-broker:6379
+      PAPERLESS_DBHOST: big-bear-paperless-ngx-db
+      PAPERLESS_DBUSER: bigbear
+      PAPERLESS_DBPASS: c6e74adb-3fce-4318-b657-4bdc0858fcac
+      PAPERLESS_ADMIN_USER: bigbear
+      PAPERLESS_ADMIN_PASSWORD: c22e92a6-2a3d-4edf-a98e-4044834daea6
+      PAPERLESS_TIKA_ENABLED: "true"
+      PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://big-bear-paperless-ngx-gotenberg:3000
+      PAPERLESS_TIKA_ENDPOINT: http://big-bear-paperless-ngx-tika:9998
+      PAPERLESS_URL: http://[YOUR_IP]:8000
+      COMPOSE_PROJECT_NAME: big-bear-paperless-ngx
+      PAPERLESS_CSRF_TRUSTED_ORIGINS: http://[YOUR_IP]:8000
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/paperless_data:/usr/src/paperless/data
+      - /DATA/AppData/$AppID/paperless_media:/usr/src/paperless/media
+      - /DATA/AppData/$AppID/paperless_export:/usr/src/paperless/export
+      - /DATA/AppData/$AppID/paperless_consume:/usr/src/paperless/consume
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8000 of the host to port 8000 of the container
+      - "8000:8000"
+
+    depends_on:
+      - big-bear-paperless-ngx-db
+      - big-bear-paperless-ngx-broker
+
+    networks:
+      - big-bear-paperless-ngx-network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PAPERLESS_REDIS
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_DBHOST
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_ADMIN_USER
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_ADMIN_PASSWORD
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_TIKA_ENABLED
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_TIKA_GOTENBERG_ENDPOINT
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_TIKA_ENDPOINT
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_URL
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: COMPOSE_PROJECT_NAME
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+        - container: PAPERLESS_CSRF_TRUSTED_ORIGINS
+          description:
+            en_us: "Container Path: /usr/src/paperless/data"
+      volumes:
+        - container: /app/data/configs
+          description:
+            en_us: "Container Path: /app/data/configs"
+        - container: /app/public/icons
+          description:
+            en_us: "Container Path: /app/public/icons"
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+
+  big-bear-paperless-ngx-broker:
+    container_name: big-bear-paperless-ngx-broker
+    image: docker.io/library/redis:7
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data
+    networks:
+      - big-bear-paperless-ngx-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "6379"
+          description:
+            en_us: "Container Port: 6379"
+
+  # The PostgreSQL database service is used to store the data for the paperless-ngx service.
+  big-bear-paperless-ngx-db:
+    # Container name
+    container_name: big-bear-paperless-ngx-db
+
+    # Image to be used for the container
+    image: library/postgres:16
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+
+    # Environment variables
+    environment:
+      # PostgreSQL database name
+      POSTGRES_DB: paperless
+
+      # PostgreSQL database user
+      POSTGRES_USER: bigbear
+
+      # PostgreSQL database password
+      POSTGRES_PASSWORD: c6e74adb-3fce-4318-b657-4bdc0858fcac
+
+    # Networks to be used for the service
+    networks:
+      - big-bear-paperless-ngx-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      ports:
+        - container: "5432"
+          description:
+            en_us: "Container Port: 5432"
+
+  # The gotenberg service is used for converting documents to PDFs. It is
+  # configured to disable JavaScript and only allow access to the
+  # /tmp directory to prevent potential security issues.
+  big-bear-paperless-ngx-gotenberg:
+    container_name: big-bear-paperless-ngx-gotenberg
+    image: gotenberg/gotenberg:8.10
+    restart: unless-stopped
+    # The gotenberg chromium route is used to convert .eml files. We do not
+    # want to allow external content like tracking pixels or even javascript.
+    # Therefore, we disable JavaScript and only allow access to the
+    # /tmp directory.
+    command:
+      - "gotenberg"
+      - "--chromium-disable-javascript=true"
+      - "--chromium-allow-list=file:///tmp/.*"
+    networks:
+      - big-bear-paperless-ngx-network
+
+  # The Tika service is used to extract text from files. It is based on the
+  # Apache Tika project and is configured to use the minimal image.
+  big-bear-paperless-ngx-tika:
+    container_name: big-bear-paperless-ngx-tika
+    image: ghcr.io/paperless-ngx/tika:2.9.1-minimal
+    restart: unless-stopped
+    # The Tika service is connected to the big-bear-paperless-ngx-network
+    # network.
+    networks:
+      - big-bear-paperless-ngx-network
+
+# Define a network for the paperless-ngx services to communicate with
+# each other. This network is a bridge network, which means that it is
+# not isolated from the host's network stack.
+networks:
+  big-bear-paperless-ngx-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-paperless-ngx
+  description:
+    # Description in English
+    en_us: Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
+  tagline:
+    # Short description or tagline in English
+    en_us: Paperless-ngx
+  # Developer's name or identifier
+  developer: "paperless-ngx"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/paperless.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Paperless-ngx
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8000"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-paperlessngx-to-bigbearcasaos/1954#p-3625-documentation-4
