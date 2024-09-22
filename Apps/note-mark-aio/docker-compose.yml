@@ -1,0 +1,93 @@
+# Configuration for note-mark-aio setup
+
+# Name of the big-bear-note-mark-aio application
+name: big-bear-note-mark-aio
+
+# Service definitions for the big-bear-homarr application
+services:
+  # Service name: big-bear-note-mark-aio
+  # The `big-bear-note-mark-aio` service definition
+  big-bear-note-mark-aio:
+    # Name of the container
+    container_name: big-bear-note-mark-aio
+
+    # Image to be used for the container
+    image: ghcr.io/enchant97/note-mark-aio:0.13.1
+
+    # Container restart policy
+    restart: unless-stopped
+
+    environment:
+      - JWT_SECRET="MGZiMzlkM2EtNmYxNC00NzNlLWI2YjItYTViY2M0Mzg0NjNl"
+      - CORS_ORIGINS="http://example.com:8000"
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /config directory to /config inside the container
+      - /DATA/AppData/$AppID/data:/data
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8000 of the host to port 8000 of the container
+      - "8000:8000"
+
+    # Networks to be attached to the container
+    networks:
+      - big_bear_note_mark_aio_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: JWT_SECRET
+          description:
+            en_us: "JWT Secret"
+        - container: CORS_ORIGINS
+          description:
+            en_us: "CORS Origins"
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+
+# Network definitions for the big-bear-note-mark-aio application
+networks:
+  big_bear_note_mark_aio_network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-note-mark-aio
+  description:
+    # Description in English
+    en_us: Note Mark Aio is a self-hosted note taking app that allows you to create, organize, and share notes. It's a fork of the popular note-mark app with a focus on simplicity and ease of use.
+  tagline:
+    # Short description or tagline in English
+    en_us: Note Mark Aio
+  # Developer's name or identifier
+  developer: "enchant97"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/note-mark-aio/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Note Mark AIO
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8000"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-note-mark-aio-to-bigbearcasaos/1951#p-3619-documentation-4
