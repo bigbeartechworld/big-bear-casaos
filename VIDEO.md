@@ -40,10 +40,10 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | jellystat |  |
 | kavita |  |
 | kiwix-serve |  |
+| komf |  |
 | komga |  |
 | kopia |  |
 | lancache |  |
-| linkstack |  |
 | mind |  |
 | minio |  |
 | monica |  |
@@ -55,6 +55,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | nexterm |  |
 | nightscout |  |
 | node-red |  |
+| note-mark-aio |  |
 | npmplus |  |
 | obsidian-livesync |  |
 | obsidian |  |
@@ -66,6 +67,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | open-webui |  |
 | openvpn-as |  |
 | owncloud |  |
+| paperless-ngx |  |
 | passwordpusher |  |
 | pd3f |  |
 | penpot |  |
