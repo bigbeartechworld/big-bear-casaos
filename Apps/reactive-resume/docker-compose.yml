@@ -78,7 +78,7 @@ services:
 
   # Database (Postgres)
   postgres:
-    container_name: big-bear-reactive-resume-postgres
+    container_name: big-bear-reactive-resume-db
     image: postgres:15-alpine
     restart: unless-stopped
     volumes:
@@ -98,7 +98,7 @@ services:
   # Storage (for image uploads)
   minio:
     container_name: big-bear-reactive-resume-minio
-    image: minio/minio
+    image: minio/minio:RELEASE.2024-09-13T20-26-02Z-cpuv1
     command: ["server", "/data"]
     restart: unless-stopped
     ports:
