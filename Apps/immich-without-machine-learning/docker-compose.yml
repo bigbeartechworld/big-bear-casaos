@@ -4,7 +4,7 @@ name: big-bear-immich-without-machine-learning
 # Service definitions for the big-bear-immich-without-machine-learning application
 services:
   # Main Immich Server service configuration
-  big-bear-immich-server:
+  immich-server:
     container_name: big-bear-immich-server # Name of the running container
     image: ghcr.io/immich-app/immich-server:v1.115.0 # Image to be used
     # extends:
@@ -22,8 +22,8 @@ services:
       DB_PORT: "5432"
       REDIS_HOSTNAME: big-bear-immich-redis
     depends_on: # Dependencies to ensure the order of service startup
-      - big-bear-immich-redis
-      - big-bear-immich-database
+      - redis
+      - database
     restart: unless-stopped # Policy to restart unless stopped
 
     x-casaos: # CasaOS specific configuration
@@ -56,13 +56,13 @@ services:
             en_us: "Container Port: 3001"
 
   # Configuration for Redis service
-  big-bear-immich-redis:
+  redis:
     container_name: big-bear-immich-redis # Name of the running container
     image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
     restart: always # Policy to always restart the container if it stops
 
   # Configuration for Database service
-  big-bear-immich-database:
+  database:
     container_name: big-bear-immich-postgres # Name of the running container
     image: tensorchord/pgvecto-rs:pg14-v0.2.0 # Image to be used
     environment: # Setting environment variables

@@ -4,7 +4,7 @@ name: big-bear-immich
 # Service definitions for the big-bear-immich application
 services:
   # Main Immich Server service configuration
-  big-bear-immich-server:
+  immich-server:
     container_name: big-bear-immich-server # Name of the running container
     image: ghcr.io/immich-app/immich-server:v1.115.0 # Image to be used
     # extends:
@@ -23,8 +23,8 @@ services:
       REDIS_HOSTNAME: big-bear-immich-redis
       IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
     depends_on: # Dependencies to ensure the order of service startup
-      - big-bear-immich-redis
-      - big-bear-immich-postgres
+      - redis
+      - database
     restart: unless-stopped # Policy to restart unless stopped
 
     # Networks to be attached to the container
@@ -64,7 +64,7 @@ services:
             en_us: "Container Port: 3001"
 
   # Configuration for Immich Machine Learning service
-  big-bear-immich-machine-learning:
+  immich-machine-learning:
     container_name: big-bear-immich-machine-learning # Name of the running container
     image: ghcr.io/immich-app/immich-machine-learning:v1.115.0 # Image to be used
     volumes: # Mounting directories for persistent data storage
@@ -108,7 +108,7 @@ services:
             en_us: "Container Path: /cache"
 
   # Configuration for Redis service
-  big-bear-immich-redis:
+  redis:
     container_name: big-bear-immich-redis # Name of the running container
     image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
     restart: always # Policy to always restart the container if it stops
@@ -116,7 +116,7 @@ services:
       - big_bear_immich_network # Connects the container to a defined network
 
   # Configuration for Database service
-  big-bear-immich-postgres:
+  database:
     container_name: big-bear-immich-postgres # Name of the running container
     image: tensorchord/pgvecto-rs:pg14-v0.2.0 # Image to be used
     environment: # Setting environment variables
@@ -160,7 +160,7 @@ x-casaos:
   architectures: # Supported CPU architectures
     - amd64
     - arm64
-  main: big-bear-immich-server # Main service of the application
+  main: immich-server # Main service of the application
   description: # Description in different languages
     en_us: Self-hosted photo and video storage.
   tagline: # Short description or tagline in different languages
