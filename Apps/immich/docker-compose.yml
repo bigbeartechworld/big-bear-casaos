@@ -4,8 +4,8 @@ name: big-bear-immich
 # Service definitions for the big-bear-immich application
 services:
   # Main Immich Server service configuration
-  immich-server:
-    container_name: immich-server # Name of the running container
+  big-bear-immich-server:
+    container_name: big-bear-immich-server # Name of the running container
     image: ghcr.io/immich-app/immich-server:v1.115.0 # Image to be used
     # extends:
     #   file: hwaccel.transcoding.yml
@@ -64,8 +64,8 @@ services:
             en_us: "Container Port: 3001"
 
   # Configuration for Immich Machine Learning service
-  immich-machine-learning:
-    container_name: immich-machine-learning # Name of the running container
+  big-bear-immich-machine-learning:
+    container_name: big-bear-immich-machine-learning # Name of the running container
     image: ghcr.io/immich-app/immich-machine-learning:v1.115.0 # Image to be used
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/model-cache:/cache
@@ -108,16 +108,16 @@ services:
             en_us: "Container Path: /cache"
 
   # Configuration for Redis service
-  redis:
-    container_name: immich-redis # Name of the running container
+  big-bear-immich-redis:
+    container_name: big-bear-immich-redis # Name of the running container
     image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3 # Image to be used
     restart: always # Policy to always restart the container if it stops
     networks:
       - big_bear_immich_network # Connects the container to a defined network
 
   # Configuration for Database service
-  database:
-    container_name: immich-postgres # Name of the running container
+  big-bear-immich-database:
+    container_name: big-bear-immich-postgres # Name of the running container
     image: tensorchord/pgvecto-rs:pg14-v0.2.0 # Image to be used
     environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
