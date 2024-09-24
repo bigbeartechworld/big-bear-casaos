@@ -22,8 +22,8 @@ services:
       DB_PORT: "5432"
       REDIS_HOSTNAME: big-bear-immich-redis
     depends_on: # Dependencies to ensure the order of service startup
-      - redis
-      - database
+      - big-bear-immich-redis
+      - big-bear-immich-database
     restart: unless-stopped # Policy to restart unless stopped
 
     x-casaos: # CasaOS specific configuration
