@@ -15,7 +15,7 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/upload:/usr/src/app/upload
     environment: # Setting environment variables
-      DB_HOSTNAME: immich-postgres
+      DB_HOSTNAME: big-bear-immich-postgres
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
       DB_DATABASE_NAME: immich
@@ -23,8 +23,8 @@ services:
       REDIS_HOSTNAME: immich-redis
       IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
     depends_on: # Dependencies to ensure the order of service startup
-      - redis
-      - database
+      - big-bear-immich-redis
+      - big-bear-immich-database
     restart: unless-stopped # Policy to restart unless stopped
 
     # Networks to be attached to the container
@@ -70,12 +70,12 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/model-cache:/cache
     environment: # Setting environment variables
-      DB_HOSTNAME: immich-postgres
+      DB_HOSTNAME: big-bear-immich-postgres
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
       DB_DATABASE_NAME: casaos
       DB_PORT: 5432
-      REDIS_HOSTNAME: immich-redis
+      REDIS_HOSTNAME: big-bear-immich-redis
     restart: unless-stopped # Policy to restart unless stopped
 
     # Networks to be attached to the container

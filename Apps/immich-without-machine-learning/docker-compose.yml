@@ -15,12 +15,12 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/big-bear-immich/upload:/usr/src/app/upload
     environment: # Setting environment variables
-      DB_HOSTNAME: immich-postgres
+      DB_HOSTNAME: big-bear-immich-postgres
       DB_USERNAME: casaos
       DB_PASSWORD: casaos
       DB_DATABASE_NAME: immich
       DB_PORT: "5432"
-      REDIS_HOSTNAME: immich-redis
+      REDIS_HOSTNAME: big-bear-immich-redis
     depends_on: # Dependencies to ensure the order of service startup
       - redis
       - database
