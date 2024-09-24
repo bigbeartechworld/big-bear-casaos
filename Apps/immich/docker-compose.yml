@@ -20,11 +20,11 @@ services:
       DB_PASSWORD: casaos
       DB_DATABASE_NAME: immich
       DB_PORT: "5432"
-      REDIS_HOSTNAME: immich-redis
+      REDIS_HOSTNAME: big-bear-immich-redis
       IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
     depends_on: # Dependencies to ensure the order of service startup
       - big-bear-immich-redis
-      - big-bear-immich-database
+      - big-bear-immich-postgres
     restart: unless-stopped # Policy to restart unless stopped
 
     # Networks to be attached to the container
@@ -116,7 +116,7 @@ services:
       - big_bear_immich_network # Connects the container to a defined network
 
   # Configuration for Database service
-  big-bear-immich-database:
+  big-bear-immich-postgres:
     container_name: big-bear-immich-postgres # Name of the running container
     image: tensorchord/pgvecto-rs:pg14-v0.2.0 # Image to be used
     environment: # Setting environment variables
