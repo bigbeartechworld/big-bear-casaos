@@ -160,7 +160,7 @@ x-casaos:
   architectures: # Supported CPU architectures
     - amd64
     - arm64
-  main: immich-server # Main service of the application
+  main: big-bear-immich-server # Main service of the application
   description: # Description in different languages
     en_us: Self-hosted photo and video storage.
   tagline: # Short description or tagline in different languages
