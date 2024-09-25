@@ -78,7 +78,7 @@ x-casaos:
   # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tududi.png
   # Thumbnail image (currently empty)
-  thumbnail: ""
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png"
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-2.png
@@ -87,3 +87,5 @@ x-casaos:
     en_us: Tududi
   # Application category
   category: BigBearCasaOS
+  # Port mapping information
+  port_map: "9292"
