@@ -56,7 +56,7 @@ services:
       - MAIL_PASSWORD=null
       - MAIL_ENCRYPTION=null
       - MAIL_FROM_ADDRESS=noreply@financialfreedom.dev.test
-      - MAIL_FROM_NAME="${APP_NAME}"
+      - MAIL_FROM_NAME="Financial Freedom"
 
       # serversideup/php settings
       - SSL_MODE=mixed
