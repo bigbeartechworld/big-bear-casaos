@@ -12,7 +12,7 @@ services:
     container_name: big-bear-note-mark-aio
 
     # Image to be used for the container
-    image: ghcr.io/enchant97/note-mark-aio:0.14.0
+    image: ghcr.io/enchant97/note-mark-aio:0.14.1
 
     # Container restart policy
     restart: unless-stopped
