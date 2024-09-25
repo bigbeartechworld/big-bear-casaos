@@ -77,7 +77,7 @@ x-casaos:
   author: BigBearTechWorld
   # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/logo.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image
   thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png"
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png
