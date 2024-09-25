@@ -124,7 +124,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - ${APP_DATA_DIR}/data/mysql:/var/lib/mysql
+      - /DATA/AppData/$AppID/data/mysql:/var/lib/mysql
     networks:
       - big_bear_owncloud_network
 
@@ -162,7 +162,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - ${APP_DATA_DIR}/data/redis:/data
+      - /DATA/AppData/$AppID/data/redis:/data
     networks:
       - big_bear_owncloud_network
 
