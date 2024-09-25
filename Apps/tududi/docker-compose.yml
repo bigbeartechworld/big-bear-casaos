@@ -1,0 +1,89 @@
+# Configuration for tudu di setup
+
+# Name of the big-bear-tududi application
+name: big-bear-tududi
+
+# Service definitions for the big-bear-tududi application
+services:
+  # Service name: big-bear-tududi
+  # The `big-bear-tududi` service definition
+  big-bear-tududi:
+    # Name of the container
+    container_name: big-bear-tududi
+
+    # Image to be used for the container
+    image: chrisvel/tududi:0.20
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - TUDUDI_USER_EMAIL=admin@example.com
+      - TUDUDI_USER_PASSWORD=2dd25e05-65f4-47d7-a9a6-1a3293c02461
+      - TUDUDI_SESSION_SECRET=3337c138d17ac7acefa412e5db0d7ef6540905b198cc28c5bf0d11e48807a71bdfe48d82ed0a0a6eb667c937cbdd1db3e1e6073b3148bff37f73cc6398a39671
+      - TUDUDI_INTERNAL_SSL_ENABLED=false
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the tududi database directory
+      - /DATA/AppData/$AppID/tududi_db:/usr/src/app/tududi_db
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 9292 of the host to port 9292 of the container
+      - "9292:9292"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TUDUDI_USER_EMAIL
+          description:
+            en_us: "User Email"
+        - container: TUDUDI_USER_PASSWORD
+          description:
+            en_us: "User Password"
+        - container: TUDUDI_SESSION_SECRET
+          description:
+            en_us: "Session Secret"
+        - container: TUDUDI_INTERNAL_SSL_ENABLED
+          description:
+            en_us: "Internal SSL Enabled"
+      volumes:
+        - container: /usr/src/app/tududi_db
+          description:
+            en_us: "Container Path: /usr/src/app/tududi_db"
+      ports:
+        - container: "9292"
+          description:
+            en_us: "Container Port: 9292"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-tududi
+  description:
+    # Description in English
+    en_us: tududi is a task and project management web application built with Sinatra. It allows users to efficiently manage their tasks and projects, categorize them into different areas, and track due dates. tududi is designed to be intuitive and easy to use, providing a seamless experience for personal productivity.
+  tagline:
+    # Short description or tagline in English
+    en_us: tududi is a task and project management web application built with Sinatra
+  # Developer's name or identifier
+  developer: "chrisvel"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tududi.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-2.png
+  title:
+    # Title in English
+    en_us: Tududi
+  # Application category
+  category: BigBearCasaOS
