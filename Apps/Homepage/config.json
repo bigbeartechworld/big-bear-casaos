@@ -1,6 +1,6 @@
 {
   "id": "Homepage",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "image": "ghcr.io/gethomepage/homepage",
   "youtube": "",
   "docs_link": "",
