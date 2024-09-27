@@ -12,7 +12,7 @@ services:
     container_name: big-bear-calcom
 
     # Image to be used for the container
-    image: calcom/cal.com:v4.5.3
+    image: calcom/cal.com:v4.5.4
 
     # Container restart policy
     restart: unless-stopped
