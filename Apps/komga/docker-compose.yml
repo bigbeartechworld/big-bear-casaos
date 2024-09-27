@@ -12,7 +12,7 @@ services:
     container_name: big-bear-komga
 
     # Image to be used for the container
-    image: ghcr.io/gotson/komga:1.13.0
+    image: ghcr.io/gotson/komga:1.14.0
 
     # Container restart policy
     restart: unless-stopped
