@@ -13,7 +13,7 @@ devDependencies:
     version: 19.5.0
   '@commitlint/cz-commitlint':
     specifier: ^19.2.0
-    version: 19.5.0(@types/node@20.16.8)(commitizen@4.3.0)(inquirer@9.3.7)(typescript@5.6.2)
+    version: 19.5.0(@types/node@20.16.8)(commitizen@4.3.1)(inquirer@9.3.7)(typescript@5.6.2)
   '@types/jest':
     specifier: ^29.0.0
     version: 29.5.13
@@ -28,7 +28,7 @@ devDependencies:
     version: 7.5.8
   commitizen:
     specifier: ^4.3.0
-    version: 4.3.0(@types/node@20.16.8)(typescript@5.6.2)
+    version: 4.3.1(@types/node@20.16.8)(typescript@5.6.2)
   eslint:
     specifier: ^9.0.0
     version: 9.11.1
@@ -608,7 +608,7 @@ packages:
       ajv: 8.17.1
     dev: true
 
-  /@commitlint/cz-commitlint@19.5.0(@types/node@20.16.8)(commitizen@4.3.0)(inquirer@9.3.7)(typescript@5.6.2):
+  /@commitlint/cz-commitlint@19.5.0(@types/node@20.16.8)(commitizen@4.3.1)(inquirer@9.3.7)(typescript@5.6.2):
     resolution: {integrity: sha512-PNfIC54J3lDVIBJTo7A1RMp1kdOYkGcUz27VG0NP/DzFKLspXcQm13RnKc16BjFNCJGLC7iaXjucrfrKHOqorQ==}
     engines: {node: '>=v18'}
     peerDependencies:
@@ -619,7 +619,7 @@ packages:
       '@commitlint/load': 19.5.0(@types/node@20.16.8)(typescript@5.6.2)
       '@commitlint/types': 19.5.0
       chalk: 5.3.0
-      commitizen: 4.3.0(@types/node@20.16.8)(typescript@5.6.2)
+      commitizen: 4.3.1(@types/node@20.16.8)(typescript@5.6.2)
       inquirer: 9.3.7
       lodash.isplainobject: 4.0.6
       word-wrap: 1.2.5
@@ -1488,7 +1488,7 @@ packages:
     dependencies:
       buffer: 5.7.1
       inherits: 2.0.4
-      readable-stream: 3.6.0
+      readable-stream: 3.6.2
     dev: true
 
   /brace-expansion@1.1.11:
@@ -1639,8 +1639,8 @@ packages:
       restore-cursor: 3.1.0
     dev: true
 
-  /cli-spinners@2.7.0:
-    resolution: {integrity: sha512-qu3pN8Y3qHNgE2AFweciB1IfMnmZ/fsNTEE+NOFjmGB2F/7rLhnhzppvpCnN4FovtP26k8lHyy9ptEbNwWFLzw==}
+  /cli-spinners@2.9.2:
+    resolution: {integrity: sha512-ywqV+5MmyL4E7ybXgKys4DugZbX0FC6LnwrhjuykIjnK9k8OQacQ7axGKnjDXWNhns0xot3bZI5h55H8yo9cJg==}
     engines: {node: '>=6'}
     dev: true
 
@@ -1698,8 +1698,8 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
-  /commitizen@4.3.0(@types/node@20.16.8)(typescript@5.6.2):
-    resolution: {integrity: sha512-H0iNtClNEhT0fotHvGV3E9tDejDeS04sN1veIebsKYGMuGscFaswRoYJKmT3eW85eIJAs0F28bG2+a/9wCOfPw==}
+  /commitizen@4.3.1(@types/node@20.16.8)(typescript@5.6.2):
+    resolution: {integrity: sha512-gwAPAVTy/j5YcOOebcCRIijn+mSjWJC+IYKivTu6aG8Ei/scoXgfsMRnuAk6b0GRste2J4NGxVdMN3ZpfNaVaw==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
@@ -1835,7 +1835,7 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.0(@types/node@20.16.8)(typescript@5.6.2)
+      commitizen: 4.3.1(@types/node@20.16.8)(typescript@5.6.2)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
@@ -1886,8 +1886,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /defaults@1.0.3:
-    resolution: {integrity: sha512-s82itHOnYrN0Ib8r+z7laQz3sdE+4FP3d9Q7VLO7U+KRT+CR0GsWuyHxzdAY82I7cXv0G/twrqomTJLOssO5HA==}
+  /defaults@1.0.4:
+    resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
     dependencies:
       clone: 1.0.4
     dev: true
@@ -2309,7 +2309,7 @@ packages:
     dependencies:
       detect-file: 1.0.0
       is-glob: 4.0.3
-      micromatch: 4.0.5
+      micromatch: 4.0.8
       resolve-dir: 1.0.1
     dev: true
 
@@ -2338,9 +2338,9 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       at-least-node: 1.0.0
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
       jsonfile: 6.1.0
-      universalify: 2.0.0
+      universalify: 2.0.1
     dev: true
 
   /fs.realpath@1.0.0:
@@ -2457,10 +2457,6 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /graceful-fs@4.2.10:
-    resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
-    dev: true
-
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
@@ -2552,6 +2548,7 @@ packages:
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -3254,9 +3251,9 @@ packages:
   /jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
     dependencies:
-      universalify: 2.0.0
+      universalify: 2.0.1
     optionalDependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
     dev: true
 
   /jsonparse@1.3.1:
@@ -3548,7 +3545,7 @@ packages:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.7.0
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
@@ -3732,8 +3729,8 @@ packages:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
     dev: true
 
-  /readable-stream@3.6.0:
-    resolution: {integrity: sha512-BViHy7LKeTz4oNnkcLJ+lVSL6vpiFeX6/d3oSH8zCW7UxP2onchk+vTGB143xuFjHS3deTgkKoXXymXqymiIdA==}
+  /readable-stream@3.6.2:
+    resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
     dependencies:
       inherits: 2.0.4
@@ -4148,8 +4145,8 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /universalify@2.0.0:
-    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+  /universalify@2.0.1:
+    resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
     dev: true
 
@@ -4203,7 +4200,7 @@ packages:
   /wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
-      defaults: 1.0.3
+      defaults: 1.0.4
     dev: true
 
   /which@1.3.1:
