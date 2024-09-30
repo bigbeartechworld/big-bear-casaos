@@ -44,7 +44,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 2.32.8 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
-| calcom | calcom/cal.com | 4.5.5 |  |  |
+| calcom | calcom/cal.com | 4.5.7 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.46.04 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -61,7 +61,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | docmost | docmost/docmost | 0.3.1 |  |  |
-| dozzle | amir20/dozzle | 8.5.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 8.5.3 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.2 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
