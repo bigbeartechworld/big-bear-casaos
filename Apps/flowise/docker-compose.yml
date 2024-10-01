@@ -12,7 +12,7 @@ services:
     container_name: big-bear-flowise
 
     # Image to be used for the container specifies the flowise version and source
-    image: flowise/flowise:2.1.1
+    image: flowiseai/flowise:2.1.1
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
