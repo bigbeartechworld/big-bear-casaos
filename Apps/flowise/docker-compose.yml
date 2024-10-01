@@ -1,0 +1,121 @@
+# Configuration for flowise setup
+
+# Name of the big-bear-flowise application
+name: big-bear-flowise
+
+# Service definitions for the big-bear-flowise application
+services:
+  # Service name: big-bear-flowise
+  # The `big-bear-flowise` service definition
+  big-bear-flowise:
+    # Name of the container
+    container_name: big-bear-flowise
+
+    # Image to be used for the container specifies the flowise version and source
+    image: flowise/flowise:2.1.1
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Entrypoint to be used for the container
+    entrypoint: /bin/sh -c "sleep 3; flowise start"
+
+    # Environment variables to be set in the container for application configuration
+    environment:
+      - PORT=8009
+      - FLOWISE_USERNAME=bigbear
+      - FLOWISE_PASSWORD=b0f91e4c-9d4b-4375-bc9b-9b57667ce7ab
+      - FLOWISE_SECRETKEY_OVERWRITE="true"
+      - LANGCHAIN_ENDPOINT=""
+      - LANGCHAIN_API_KEY=""
+      - LANGCHAIN_PROJECT=""
+      - LANGCHAIN_TRACING_V2=""
+      - DISABLE_FLOWISE_TELEMETRY="true"
+      - DATABASE_PATH=/root/.flowise
+      - APIKEY_PATH=/root/.flowise
+      - SECRETKEY_PATH=/root/.flowise/logs
+      - LOG_PATH=/root/.flowise
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8009 of the host to port 8009 of the container
+      - "8009:8009"
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/root/.flowise
+
+    # CasaOS specific configuration for volume and port descriptions
+    x-casaos:
+      envs:
+        - container: "PORT"
+          description:
+            en_us: "Container Port: 8009"
+        - container: "FLOWISE_USERNAME"
+          description:
+            en_us: "Username: bigbear"
+        - container: "FLOWISE_PASSWORD"
+          description:
+            en_us: "Password: b0f91e4c-9d4b-4375-bc9b-9b57667ce7ab"
+        - container: "FLOWISE_SECRETKEY_OVERWRITE"
+          description:
+            en_us: "Secretkey Overwrite: true"
+        - container: "LANGCHAIN_ENDPOINT"
+          description:
+            en_us: "Langchain Endpoint: "
+        - container: "LANGCHAIN_API_KEY"
+          description:
+            en_us: "Langchain API Key: "
+        - container: "LANGCHAIN_PROJECT"
+          description:
+            en_us: "Langchain Project: "
+        - container: "LANGCHAIN_TRACING_V2"
+          description:
+            en_us: "Langchain Tracing V2: "
+        - container: "DISABLE_FLOWISE_TELEMETRY"
+          description:
+            en_us: "Disable Flowise Telemetry: true"
+        - container: "DATABASE_PATH"
+          description:
+            en_us: "Database Path: /root/.flowise"
+        - container: "APIKEY_PATH"
+          description:
+            en_us: "Apikey Path: /root/.flowise"
+        - container: "SECRETKEY_PATH"
+          description:
+            en_us: "Secretkey Path: /root/.flowise/logs"
+        - container: "LOG_PATH"
+          description:
+            en_us: "Log Path: /root/.flowise"
+      volumes:
+        - container: "/root/.flowise"
+          description:
+            en_us: "Container Path: /root/.flowise"
+      ports:
+        - container: "8009"
+          description:
+            en_us: "Container Port: 8009"
+
+# CasaOS specific application metadata and configurations
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-flowise
+  description:
+    en_us: Flowise AI is an Open source UI visual tool to build your customized LLM orchestration flow & AI agents. Developing LLM apps takeslength iterations. With low code approach, Flowise AI enable quick iterations to go from testing to production.
+  tagline:
+    en_us: Build LLM Apps Easily
+  developer: "bigbeartechworld"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/flowise/logo.png"
+  thumbnail: ""
+  title:
+    en_us: Flowise AI
+  category: BigBearCasaOS
+  port_map: "8009"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-ncdu-to-bigbearcasaos/1240?u=dragonfire1119
