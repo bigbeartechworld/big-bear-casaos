@@ -34,11 +34,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.52 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.38.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.13.4 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.14.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.8.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.27.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
-| beszel | henrygd/beszel | 0.5.0 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
+| beszel | henrygd/beszel | 0.5.1 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.05.20240520 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
@@ -53,7 +53,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.4 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.19.2 |  |  |
-| dashdot | mauricenino/dashdot | 5.8.6 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
+| dashdot | mauricenino/dashdot | 5.9.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 4.4.4 |  |  |
 | dbgate | dbgate/dbgate | 5.5.3-alpine |  |  |
@@ -111,7 +111,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.61.0 |  |  |
+| n8n | n8nio/n8n | 1.62.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.9.26 |  |  |
@@ -151,8 +151,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plant-it | msdeluise/plant-it-server | 0.8.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.41.0 |  |  |
-| portainer-agent | portainer/agent | 2.21.2 |  |  |
-| portainer | portainer/portainer-ce | 2.21.2-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer-agent | portainer/agent | 2.22.0 |  |  |
+| portainer | portainer/portainer-ce | 2.22.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.7 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
