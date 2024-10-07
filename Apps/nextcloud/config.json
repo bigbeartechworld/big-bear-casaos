@@ -1,7 +1,7 @@
 {
   "id": "nextcloud",
   "version": "30.0.0-apache",
-  "image": "nextcloud",
+  "image": "bigbeartechworld/big-bear-nextcloud-with-smbclient",
   "youtube": "https://youtu.be/O0fzG16COYc",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
