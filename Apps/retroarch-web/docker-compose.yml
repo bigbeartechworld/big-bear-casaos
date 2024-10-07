@@ -1,0 +1,71 @@
+# Configuration for retroarch-web setup
+
+# Name of the big-bear-retroarch-web application
+name: big-bear-retroarch-web
+
+# Service definitions for the big-bear-retroarch-web application
+services:
+  # Service name: big-bear-retroarch-web
+  # The `big-bear-retroarch-web` service definition
+  big-bear-retroarch-web:
+    # Name of the container
+    container_name: big-bear-retroarch-web
+
+    # Image to be used for the container
+    image: inglebard/retroarch-web:latest
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - ROOT_WWW_PATH="/var/www/html"
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: "ROOT_WWW_PATH"
+          description:
+            en_us: "ROOT_WWW_PATH"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-retroarch-web
+  description:
+    # Description in English
+    en_us: Online retro games emulator.The RetroArch Web Player is RetroArch compiled through Emscripten.
+  tagline:
+    # Short description or tagline in English
+    en_us: RetroArch Web Player
+  # Developer's name or identifier
+  developer: "inglebard"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/retroarch-web/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: RetroArch
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
+  tips: # Tips or instructions for the user before installation
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-retroarch-web-player-to-bigbearcasaos/2002?u=dragonfire1119
