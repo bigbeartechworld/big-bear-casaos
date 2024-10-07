@@ -28,8 +28,9 @@ services:
 
     x-casaos: # CasaOS specific configuration
       envs:
-        - name: "ROOT_WWW_PATH"
-          value: "/var/www/html"
+        - container: "ROOT_WWW_PATH"
+          description:
+            en_us: "ROOT_WWW_PATH"
       ports:
         - container: "80"
           description:
@@ -64,3 +65,7 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  tips: # Tips or instructions for the user before installation
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com
