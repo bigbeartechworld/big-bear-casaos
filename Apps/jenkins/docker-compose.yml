@@ -1,0 +1,90 @@
+# Configuration for Jenkins setup
+
+# Name of the big-bear-jenkins application
+name: big-bear-jenkins
+
+# Service definitions for the big-bear-jenkins application
+services:
+  # Service name: big-bear-jenkins
+  # The `big-bear-jenkins` service definition
+  big-bear-jenkins:
+    # Name of the container
+    container_name: big-bear-jenkins
+
+    # Image to be used for the container
+    image: jenkins/jenkins:lts-jdk17
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+
+    # Ports mapping between host and container
+    ports:
+      - 8080:8080
+      - 50000:50000
+
+    # Volumes mapping between host and container
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+    security_opt:
+      - seccomp:unconfined #optional
+
+    shm_size: "1gb" #optional
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PUID
+          description:
+            en_us: Process UID
+        - container: PGID
+          description:
+            en_us: Process GID
+        - container: TZ
+          description:
+            en_us: Timezone
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Jenkins Web Interface"
+        - container: "50000"
+          description:
+            en_us: "Jenkins Agent Port"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-jenkins
+  description:
+    # Description in English
+    en_us: Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
+  tagline:
+    # Short description or tagline in English
+    en_us: Jenkins
+  # Developer's name or identifier
+  developer: "Jenkins"
+  # Author of this configuration
+  author: bepp-boop
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/jenkins/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Jenkins
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
+
+volumes:
+  jenkins_home:

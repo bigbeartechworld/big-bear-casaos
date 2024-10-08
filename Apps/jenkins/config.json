@@ -1,0 +1,8 @@
+{
+  "id": "jenkin",
+  "version": "1.0.0",
+  "image": "jenkins/jenkins:lts-jdk17",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}
