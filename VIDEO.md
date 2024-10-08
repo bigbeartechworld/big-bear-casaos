@@ -53,6 +53,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | neko-firefox |  |
 | netalertx |  |
 | nextcloud-ls |  |
+| nextcloud-with-smbclient |  |
 | nexterm |  |
 | nightscout |  |
 | node-red |  |
@@ -84,6 +85,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | pterodactyl-wings |  |
 | python-matter-server |  |
 | reactive-resume |  |
+| retroarch-web |  |
 | rocket-chat |  |
 | scrutiny |  |
 | seafile |  |
