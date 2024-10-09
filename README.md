@@ -89,7 +89,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.117.0-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.117.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.117.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.10.30 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.10.31 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 1.9.2 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.0 |  |  |
@@ -169,7 +169,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.21.2 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | syncthing | syncthing/syncthing | 1.27 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.19 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.20 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.15.7 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.5-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
@@ -181,7 +181,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.4 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 13 |  |  |
-| whats-up-docker | fmartinou/whats-up-docker | 6.6.0 |  |  |
+| whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.6.2 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 1.40.2 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.10 |  |  |
