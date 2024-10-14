@@ -34,7 +34,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.53 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.38.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.14.0 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.15.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.8.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.28.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -42,9 +42,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.10.20241009 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 2.32.15 |  |  |
+| budibase | budibase/budibase | 2.32.16 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
-| calcom | calcom/cal.com | 4.5.10 |  |  |
+| calcom | calcom/cal.com | 4.5.11 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.47.03 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -111,7 +111,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.62.3 |  |  |
+| n8n | n8nio/n8n | 1.63.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.9.26 |  |  |
@@ -121,7 +121,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
 | nocodb | nocodb/nocodb | 0.257.0 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
-| node-red | nodered/node-red | 4.0.4 |  |  |
+| node-red | nodered/node-red | 4.0.5 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.14.1 |  |  |
 | npmplus | zoeyvid/npmplus | 417 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
@@ -138,7 +138,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.12.1 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.45.11 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.46.1 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.2.0 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
@@ -158,7 +158,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.7 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 6.6.0 |  |  |
-| rallly | lukevella/rallly | 3.10.1 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
+| rallly | lukevella/rallly | 3.11.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | reactive-resume | amruthpillai/reactive-resume | 4.1.8 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.11.1 |  |  |
