@@ -66,7 +66,7 @@ services:
   # Configuration for Immich Machine Learning service
   immich-machine-learning:
     container_name: immich-machine-learning # Name of the running container
-    image: ghcr.io/immich-app/immich-machine-learning:v1.117.0 # Image to be used
+    image: ghcr.io/immich-app/immich-machine-learning:v1.118.0 # Image to be used
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/model-cache:/cache
     environment: # Setting environment variables
