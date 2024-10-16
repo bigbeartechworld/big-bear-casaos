@@ -12,7 +12,7 @@ services:
     container_name: big-bear-davis
 
     # Image to be used for the container
-    image: ghcr.io/tchapi/davis-standalone:4.4.4
+    image: ghcr.io/tchapi/davis-standalone:5.0.2
 
     # Container restart policy
     restart: unless-stopped
