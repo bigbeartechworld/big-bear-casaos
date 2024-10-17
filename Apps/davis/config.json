@@ -1,6 +1,6 @@
 {
   "id": "davis",
-  "version": "4.4.4",
+  "version": "5.0.2",
   "image": "ghcr.io/tchapi/davis-standalone",
   "youtube": "",
   "docs_link": "",
