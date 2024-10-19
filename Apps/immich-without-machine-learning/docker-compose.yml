@@ -11,7 +11,7 @@ services:
     #   file: hwaccel.transcoding.yml
     #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
     ports: # Mapping ports from the host OS to the container
-      - 2283:3001
+      - 2283:2283
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/big-bear-immich/upload:/usr/src/app/upload
     environment: # Setting environment variables
@@ -51,9 +51,9 @@ services:
           description:
             en_us: "Container Path: /usr/src/app/upload"
       ports:
-        - container: "3001"
+        - container: "2283"
           description:
-            en_us: "Container Port: 3001"
+            en_us: "Container Port: 2283"
 
   # Configuration for Redis service
   redis:
