@@ -1,6 +1,6 @@
 {
   "id": "syncthing",
-  "version": "1.27",
+  "version": "1.28",
   "image": "syncthing/syncthing",
   "youtube": "",
   "docs_link": "",
