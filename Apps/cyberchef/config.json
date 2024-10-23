@@ -1,6 +1,6 @@
 {
   "id": "cyberchef",
-  "version": "10.19.2",
+  "version": "10.19.4",
   "image": "ghcr.io/gchq/cyberchef",
   "youtube": "",
   "docs_link": "",
