@@ -73,8 +73,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flowise | flowiseai/flowise | 2.1.2 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 5.96.2-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.116.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghost | ghost | 5.97.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.117.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.46.2 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.1.2.1-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.39.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -170,7 +170,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.21.4 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.20 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.15.8 |  |  |
+| tianji | moonrailgun/tianji | 1.16.1 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.5-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
