@@ -1,0 +1,49 @@
+name: myMPD # Name of the CasaOS application
+services:
+  mympd:
+    image: ghcr.io/jcorporation/mympd/mympd:latest
+    container_name: mympd
+    ports:
+      - 8080:8080
+    user: 1000:1000
+    environment:
+      - UMASK_SET=022
+      - MYMPD_SSL=false
+      - MYMPD_HTTP_PORT=
+      - MPD_HOST=
+      - MPD_PORT=
+    volumes:
+      - /run/mpd:/run/mpd
+      ## Optional for myGPIOd support
+      ## - /run/mygpiod:/run/mygpiod
+      - /docker/mympd/workdir:/var/lib/mympd
+      - /docker/mympd/cachedir:/var/cache/mympd
+      - /var/lib/mpd/music:/var/lib/mpd/music:ro
+      - /var/lib/mpd/playlists:/var/lib/mpd/playlists:ro
+    restart: unless-stopped
+
+# Global CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures for the application
+    - amd64
+    - arm64
+    - armv6
+    - armv7
+  main: mympd # Specifies the main service of the application
+  description:
+    en_us: myMPD is a standalone and mobile friendly web-based MPD client with a tiny footprint and advanced features.# Description in English
+  tagline:
+    en_us: mpd # Short description or tagline in English
+  developer: "jcorporation" # Developer's name or identifier (currently empty)
+  author: BigBearTechWorld # Author of this Docker Compose configuration
+  icon: https://jcorporation.github.io/myMPD/assets/mympd-logo.svg # Icon URL for the application
+  thumbnail: "" # Thumbnail image URL
+  title:
+    en_us: mympd # Title in English
+  category: BigBearCasaOS # Category of the application
+  port_map: "8080" # Port mapping information for the service
+  scheme: https # Scheme for the service
+  tips:
+    before_install:
+      en_us: |
+        Check https://jcorporation.github.io/myMPD/010-installation/docker/#docker-compose and https://jcorporation.github.io/myMPD/020-configuration/configuration-files/ for more configuration.
