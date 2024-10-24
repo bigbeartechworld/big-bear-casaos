@@ -12,7 +12,7 @@ services:
     container_name: big-bear-zotero
 
     # Image to be used for the container
-    image: linuxserver/zotero:6.0.35
+    image: linuxserver/zotero:7.0.20240809
 
     # Container restart policy
     restart: unless-stopped
