@@ -12,7 +12,7 @@ services:
     container_name: big-bear-bookstack
 
     # Image to be used for the container
-    image: linuxserver/bookstack:24.10.20241014
+    image: linuxserver/bookstack:24.10.20241021
 
     # Container restart policy
     restart: unless-stopped
