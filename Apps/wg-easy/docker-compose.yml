@@ -12,7 +12,7 @@ services:
     container_name: big-bear-wg-easy
 
     # Image to be used for the container
-    image: ghcr.io/wg-easy/wg-easy:13
+    image: ghcr.io/wg-easy/wg-easy:14
 
     # Container restart policy
     restart: unless-stopped
