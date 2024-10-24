@@ -1,6 +1,6 @@
 {
   "id": "ollama-cpu",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "image": "ollama/ollama",
   "youtube": "",
   "docs_link": "",
