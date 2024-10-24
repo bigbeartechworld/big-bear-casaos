@@ -38,13 +38,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | authentik | ghcr.io/goauthentik/server | 2024.8.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.28.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
-| beszel | henrygd/beszel | 0.6.0 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
+| beszel | henrygd/beszel | 0.6.1 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.10.20241014 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 2.33.2 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
-| calcom | calcom/cal.com | 4.6.5 |  |  |
+| calcom | calcom/cal.com | 4.6.7 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.47.03 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -52,7 +52,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | code-server | linuxserver/code-server | 4.93.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.4 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
-| cyberchef | ghcr.io/gchq/cyberchef | 10.19.2 |  |  |
+| cyberchef | ghcr.io/gchq/cyberchef | 10.19.4 |  |  |
 | dashdot | mauricenino/dashdot | 5.9.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 4.4.4 |  |  |
@@ -70,7 +70,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
-| flowise | flowiseai/flowise | 2.1.2 |  |  |
+| flowise | flowiseai/flowise | 2.1.3 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 5.97.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
@@ -138,7 +138,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.12.1 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.46.3 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.47.1 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.2.0 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
@@ -148,7 +148,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole | pihole/pihole | 2024.07.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 0.29.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 14.5.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.23.2 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
+| planka | ghcr.io/plankanban/planka | 1.23.3 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.8.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.41.0 |  |  |
@@ -165,7 +165,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.121.0-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.12 |  |  |
-| semaphore | semaphoreui/semaphore | 2.10.30 |  |  |
+| semaphore | semaphoreui/semaphore | 2.10.31 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.21.4 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
