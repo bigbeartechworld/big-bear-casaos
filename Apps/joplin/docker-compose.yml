@@ -8,7 +8,7 @@ services:
   # Configuration for the Joplin server service
   big-bear-joplin:
     container_name: big-bear-joplin # The name of the Docker container for easy reference.
-    image: florider89/joplin-server:2.14.2 # Docker image to use, specifying version.
+    image: florider89/joplin-server:3.0.1 # Docker image to use, specifying version.
     restart: unless-stopped # Policy to automatically restart the container unless manually stopped.
 
     # Environment variables for the Joplin server, configuring database connection and application settings.
