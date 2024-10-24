@@ -12,7 +12,7 @@ services:
     container_name: big-bear-npmplus
 
     # Image to be used for the container
-    image: zoeyvid/npmplus:417
+    image: zoeyvid/npmplus:422
 
     # Container restart policy
     restart: unless-stopped
