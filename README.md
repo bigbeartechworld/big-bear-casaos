@@ -44,7 +44,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 2.33.2 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
-| calcom | calcom/cal.com | 4.6.7 |  |  |
+| calcom | calcom/cal.com | 4.6.9 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.47.03 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -82,7 +82,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.7.20241021 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.6 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.10.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2024.10.4 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.10.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -115,7 +115,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.10.12 |  |  |
-| nextcloud-ls | linuxserver/nextcloud | 30.0.0 |  |  |
+| nextcloud-ls | linuxserver/nextcloud | 30.0.1 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.1 |  |  |
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.1 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
@@ -132,12 +132,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.3.14-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.3.14 |  |  |
 | ollama-nvidia | ollama/ollama | 0.3.14 |  |  |
-| onedev | 1dev/server | 11.3.2 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 11.3.3 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.2.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-90503be |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.12.1 |  |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.13.0 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.47.1 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.2.0 |  |  |
@@ -147,7 +147,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2024.07.0 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole | pihole/pihole | 2024.07.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 1.2.2 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
-| piwigo | linuxserver/piwigo | 14.5.0 |  |  |
+| piwigo | linuxserver/piwigo | 15.0.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.23.3 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.9.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
@@ -170,7 +170,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.21.4 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.20 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.16.1 |  |  |
+| tianji | moonrailgun/tianji | 1.16.3 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.5-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
