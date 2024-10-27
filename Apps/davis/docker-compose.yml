@@ -105,7 +105,7 @@ services:
   # Service name: big-bear-davis-mailpit
   big-bear-davis-mailpit:
     container_name: big-bear-davis-mailpit # Container name for the app service
-    image: axllent/mailpit:v1.20 # Image for the app service
+    image: axllent/mailpit:v1.21 # Image for the app service
     restart: unless-stopped # Restart policy for the container
     volumes: # Volumes to mount for the app service
       - /DATA/AppData/$AppID/mailpit/data:/data
