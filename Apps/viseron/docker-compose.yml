@@ -31,10 +31,10 @@ services:
 
     x-casaos:
       envs:
-        - name: PUID
+        - container: PUID
           description:
             en_us: "Container Environment Variable: PUID"
-        - name: PGID
+        - container: PGID
           description:
             en_us: "Container Environment Variable: PGID"
       volumes:
