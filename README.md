@@ -26,7 +26,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
-| 2fauth | 2fauth/2fauth | 5.3.1 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
+| 2fauth | 2fauth/2fauth | 5.3.2 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | Homepage | ghcr.io/gethomepage/homepage | 0.9.11 |  |  |
 | Romm | zurdi15/romm | 3.5.1 |  |  |
 | actual-server | actualbudget/actual-server | 24.10.1 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
@@ -35,15 +35,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.46.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.16.2 |  |  |
-| authentik | ghcr.io/goauthentik/server | 2024.8.3 |  |  |
+| authentik | ghcr.io/goauthentik/server | 2024.10.0 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.28.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beszel | henrygd/beszel | 0.6.2 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
-| bookstack | lscr.io/linuxserver/bookstack | 24.10.20241021 |  |  |
+| bookstack | lscr.io/linuxserver/bookstack | 24.10.20241028 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 2.33.2 |  |  |
-| cadvisor | gcr.io/cadvisor/cadvisor | 0.50.0 |  |  |
+| cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.6.12 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.47.04 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
@@ -61,7 +61,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | docmost | docmost/docmost | 0.4.1 |  |  |
-| dozzle | amir20/dozzle | 8.6.2 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 8.7.0 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | faster-whisper | linuxserver/faster-whisper | 2.0.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.2 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
@@ -170,7 +170,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.21.4 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.20 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.16.3 |  |  |
+| tianji | moonrailgun/tianji | 1.16.4 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.5-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
@@ -181,6 +181,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.4 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 2.3.1 |  |  |
+| wallos | bellamy/wallos | 2.32.0 |  |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.6.2 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
