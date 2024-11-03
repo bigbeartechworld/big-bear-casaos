@@ -9,7 +9,7 @@ services:
   # The `app` service definition
   app:
     # Specifies the Docker image to be used for the service
-    image: b4bz/homer:v24.10.1
+    image: b4bz/homer:v24.10.2
 
     # Assigns a name to the container created from this service definition
     container_name: homer

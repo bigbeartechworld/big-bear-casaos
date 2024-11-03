@@ -1,7 +1,7 @@
 {
-  "id": "calcom",
-  "version": "4.6.14",
-  "image": "calcom/cal.com",
+  "id": "wallos",
+  "version": "2.33.1",
+  "image": "bellamy/wallos",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
