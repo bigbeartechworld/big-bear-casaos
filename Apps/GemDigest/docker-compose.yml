@@ -1,25 +1,18 @@
 # Configuration for GemDigest bot setup
 
 # Name of the gem-digest-bot application
-name: big-bear-gem_digest_bot
+name: big-bear-gem-digest-bot
 
 # Service definitions for the gem-digest-bot application
 services:
-  # Service name: bot
-  # The `bot` service definition
-  bot:
+  # Service name: big-bear-gem-digest-bot
+  # The `big-bear-gem-digest-bot` service definition
+  big-bear-gem-digest-bot:
     # Name of the container
-    container_name: big-bear-gem_digest_bot
+    container_name: big-bear-gem-digest-bot
 
     # Docker image to use
-    image: piero24/gemdigest:latest
-
-    # Build the container from the Dockerfile
-    build:
-      # Context points to the current directory
-      context: .
-      # Dockerfile location
-      dockerfile: Dockerfile
+    image: piero24/gemdigest:1.0
 
     # Mount local directory to the container's /home/dev directory
     volumes:
@@ -59,7 +52,7 @@ x-casaos:
     - arm64
 
   # Main service of the application
-  main: big-bear-gem_digest_bot
+  main: big-bear-gem-digest-bot
 
   description:
     # Description in English
@@ -79,7 +72,7 @@ x-casaos:
   category: BigBearCasaOS
   
   # Icon for the application
-  icon: https://raw.githubusercontent.com/Piero24/GemDigest/refs/heads/main/.github/images/casOS_logo.png
+  icon: https://cdn.jsdelivr.net/gh/Piero24/GemDigest/.github/images/casOS_logo.png
   
   # Thumbnail image (currently empty)
   thumbnail: ""
