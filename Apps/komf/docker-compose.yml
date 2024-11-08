@@ -12,7 +12,7 @@ services:
     container_name: big-bear-komf
 
     # Image to be used for the container
-    image: sndxr/komf:1.0.8
+    image: sndxr/komf:1.1.0
 
     # Container restart policy
     restart: unless-stopped
