@@ -1,0 +1,90 @@
+# Configuration for GemDigest bot setup
+
+# Name of the gem-digest-bot application
+name: big-bear-gem-digest-bot
+
+# Service definitions for the gem-digest-bot application
+services:
+  # Service name: big-bear-gem-digest-bot
+  # The `big-bear-gem-digest-bot` service definition
+  big-bear-gem-digest-bot:
+    # Name of the container
+    container_name: big-bear-gem-digest-bot
+
+    # Docker image to use
+    image: piero24/gemdigest:1.0
+
+    # Mount local directory to the container's /home/dev directory
+    volumes:
+      - /DATA/AppData/$AppID/extra_configs:/gem_digest_bot/extra_configs
+
+    # Environment variables with default values
+    environment:
+      TELEGRAM_API_KEY: TELEGRAM_API_KEY
+      GEMINI_API_KEY: GEMINI_API_KEY
+      # Add more users separating their id with ";"
+      ADMIN_USER_ID: 123;456
+
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Ports mapping between host and container
+    ports:
+      # Example: Mapping port 8080 of the host to port 8080 of the container (adjust as needed)
+      - "3333:8080"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /gem_digest_bot/extra_configs
+          description:
+            en_us: "Container Path: /gem_digest_bot/extra_configs"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+
+  # Main service of the application
+  main: big-bear-gem-digest-bot
+
+  description:
+    # Description in English
+    en_us: Simplify your reads, amplify your time! 📚✨ GemDigest is a Telegram bot that summarizes articles from any website into bite-sized nuggets, saving you time and energy for what matters most. 📱👋
+  
+  tagline:
+    # Short description or tagline in English
+    en_us: Your personal article summarizer
+  
+  # Developer's name or identifier
+  developer: "Armaggheddon"
+  
+  # Author of this configuration
+  author: BigBearCommunity
+
+  # Application category
+  category: BigBearCasaOS
+  
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/Piero24/GemDigest/.github/images/casOS_logo.png
+  
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  
+  title:
+    # Title in English
+    en_us: GemDigest Bot
+  
+  tips:
+    custom: Add you `TELEGRAM-API-KEY` and `GEMINI-API-KEY` in settings and the
+      users `ID` that are considered as admin separated by a ";" if thereare
+      more then one. for more info visit [GemDigest](https://github.com/Armaggheddon/GemDigest)
+  
+  # Port mapping information
+  port_map: "3333"
