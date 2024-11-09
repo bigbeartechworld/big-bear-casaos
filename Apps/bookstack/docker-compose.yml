@@ -21,7 +21,9 @@ services:
       - /DATA/AppData/$AppID/config:/config
 
     # Environment variables
+    # docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey
     environment:
+      - APP_KEY=base64:3w/hRS2HYVFH5tJqD9AFlyurTh8mBByMKeMRyH9kEEQ=
       - APP_URL=http://[change to your IP]:8080
       - DB_HOST=big-bear-bookstack-db
       - DB_USERNAME=bigbear
@@ -59,16 +61,16 @@ services:
       - MYSQL_USER=bigbear # Database user
       - MYSQL_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6 # Database password
     volumes:
-      - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Mount the volume for MariaDB data
+      - /DATA/AppData/$AppID/mysql:/config # Mount the volume for MariaDB data
     restart: unless-stopped # Restart policy
     networks:
       - big_bear_bookstack_network # Connect to the bookstack-network
 
     x-casaos: # CasaOS specific configuration
       volumes:
-        - container: /var/lib/mysql
+        - container: /config
           description:
-            en_us: "Container Path: /var/lib/mysql"
+            en_us: "Container Path: /config"
       ports:
         - container: "3306"
           description:
