@@ -22,6 +22,7 @@ services:
 
     # Environment variables
     environment:
+      - APP_KEY=base64:3w/hRS2HYVFH5tJqD9AFlyurTh8mBByMKeMRyH9kEEQ=
       - APP_URL=http://[change to your IP]:8080
       - DB_HOST=big-bear-bookstack-db
       - DB_USERNAME=bigbear
@@ -59,16 +60,16 @@ services:
       - MYSQL_USER=bigbear # Database user
       - MYSQL_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6 # Database password
     volumes:
-      - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Mount the volume for MariaDB data
+      - /DATA/AppData/$AppID/mysql:/config # Mount the volume for MariaDB data
     restart: unless-stopped # Restart policy
     networks:
       - big_bear_bookstack_network # Connect to the bookstack-network
 
     x-casaos: # CasaOS specific configuration
       volumes:
-        - container: /var/lib/mysql
+        - container: /config
           description:
-            en_us: "Container Path: /var/lib/mysql"
+            en_us: "Container Path: /config"
       ports:
         - container: "3306"
           description:
@@ -108,3 +109,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-bookstack-to-bigbearcasaos/1262#p-2263-documentation-3
