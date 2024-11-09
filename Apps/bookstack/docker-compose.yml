@@ -21,7 +21,6 @@ services:
       - /DATA/AppData/$AppID/config:/config
 
     # Environment variables
-    # docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey
     environment:
       - APP_KEY=base64:3w/hRS2HYVFH5tJqD9AFlyurTh8mBByMKeMRyH9kEEQ=
       - APP_URL=http://[change to your IP]:8080
@@ -110,3 +109,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-bookstack-to-bigbearcasaos/1262#p-2263-documentation-3
