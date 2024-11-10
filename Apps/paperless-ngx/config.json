@@ -1,6 +1,6 @@
 {
   "id": "paperless-ngx",
-  "version": "2.13.4",
+  "version": "2.13.5",
   "image": "ghcr.io/paperless-ngx/paperless-ngx",
   "youtube": "",
   "docs_link": "",
