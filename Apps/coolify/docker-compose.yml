@@ -12,7 +12,7 @@ services:
     container_name: big-bear-coolify
 
     # Image to be used for the container specifies the fastfetch version and source
-    image: ghcr.io/coollabsio/coolify:4.0.0-beta.319
+    image: ghcr.io/coollabsio/coolify:4.0.0-beta.367
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
@@ -24,8 +24,8 @@ services:
       - APP_ENV="production"
       - APP_DEBUG="false"
       - APP_NAME="Coolify"
-      - APP_KEY="base64:5a6e6b5e-b0a0-4c0e-a1c5-d0c2d3e4f5g6"
-      - APP_URL="http://[CASAOS_IP]:8080"
+      - APP_KEY="base64:lSStPbXB/yW6cxXIz8fauQ937PbSUktTdIf7R05szQ4="
+      - APP_URL="http://[CASAOS_IP]:8000"
       - DB_CONNECTION="pgsql"
       - DB_HOST="postgres"
       - DB_PORT="5432"
@@ -54,7 +54,7 @@ services:
       - PUSHER_APP_SECRET=
       - AUTOUPDATE=true
       - SELF_HOSTED=true
-      - SSH_MUX_PERSIST_TIME=
+      - SSH_MUX_PERSIST_TIME=3600
       - FEEDBACK_DISCORD_WEBHOOK=
       - WAITLIST=
       - SUBSCRIPTION_PROVIDER=
@@ -85,10 +85,11 @@ services:
       - /DATA/AppData/$AppID/services:/var/www/html/storage/app/services
       - /DATA/AppData/$AppID/backups:/var/www/html/storage/app/backups
       - /DATA/AppData/$AppID/webhooks-during-maintenance:/var/www/html/storage/app/webhooks-during-maintenance
+      - /DATA/AppData/$AppID/logs:/var/www/html/storage/logs
 
     # Map port 8080 on the host to port 80 on the container
     ports:
-      - "8080:80"
+      - "8000:80"
 
     healthcheck:
       test: curl --fail http://127.0.0.1:80/api/health || exit 1
@@ -399,6 +400,8 @@ services:
 networks:
   big_bear_coolify_network:
     driver: bridge
+  coolify:
+    external: true
 
 # CasaOS specific application metadata and configurations
 x-casaos:
@@ -417,7 +420,7 @@ x-casaos:
   title:
     en_us: Coolify
   category: BigBearCasaOS
-  port_map: "8080"
+  port_map: "8000"
   # Tips
   tips:
     before_install:
