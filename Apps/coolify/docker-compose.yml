@@ -27,13 +27,13 @@ services:
       - APP_KEY="base64:lSStPbXB/yW6cxXIz8fauQ937PbSUktTdIf7R05szQ4="
       - APP_URL="http://[CASAOS_IP]:8000"
       - DB_CONNECTION="pgsql"
-      - DB_HOST="postgres"
+      - DB_HOST="big-bear-coolify-postgres"
       - DB_PORT="5432"
       - DB_DATABASE="coolify"
       - DB_USERNAME="coolify"
       - DB_PASSWORD="f1986213-9d72-4c36-bbd4-adca2f414fa1"
       - QUEUE_CONNECTION="redis"
-      - REDIS_HOST="coolify-redis"
+      - REDIS_HOST="big-bear-coolify-redis"
       - REDIS_PASSWORD="9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
       - HORIZON_BALANCE="100"
       - HORIZON_MAX_PROCESSES="10"
@@ -98,9 +98,9 @@ services:
       timeout: 2s
 
     depends_on:
-      postgres:
+      big-bear-coolify-postgres:
         condition: service_healthy
-      coolify-redis:
+      big-bear-coolify-redis:
         condition: service_healthy
 
     networks:
@@ -294,9 +294,11 @@ services:
           description:
             en_us: Container path /var/www/html/storage/app/webhooks-during-maintenance
 
-  postgres:
-    container_name: postgres
+  big-bear-coolify-postgres:
+    container_name: big-bear-coolify-postgres
     image: postgres:15-alpine
+    ports:
+      - "5432:5432"
     volumes:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
     environment:
@@ -308,8 +310,10 @@ services:
       interval: 5s
       retries: "10"
       timeout: 2s
+
     networks:
       - big_bear_coolify_network
+
     x-casaos:
       envs:
         - container: POSTGRES_USER
@@ -326,9 +330,11 @@ services:
           description:
             en_us: "Container Path: /var/lib/postgresql/data"
 
-  coolify-redis: # Redis service configuration
-    container_name: coolify-redis # Name of the running container
+  big-bear-coolify-redis: # Redis service configuration
+    container_name: big-bear-coolify-redis # Name of the running container
     image: redis:alpine
+    ports:
+      - "6379:6379"
     command:
       [
         "redis-server",
@@ -349,8 +355,10 @@ services:
       interval: 5s
       retries: "10"
       timeout: 2s
+
     networks:
       - big_bear_coolify_network
+
     x-casaos:
       envs:
         - container: REDIS_PASSWORD
@@ -366,6 +374,7 @@ services:
     image: quay.io/soketi/soketi:1.6-16-alpine
     ports:
       - "6001:6001"
+      - "6002:6002"
     environment:
       SOKETI_DEBUG: "false"
       SOKETI_DEFAULT_APP_ID: ""
@@ -376,8 +385,10 @@ services:
       interval: 5s
       retries: "10"
       timeout: 2s
+
     networks:
       - big_bear_coolify_network
+
     x-casaos:
       envs:
         - container: SOKETI_DEBUG
@@ -399,6 +410,7 @@ services:
 
 networks:
   big_bear_coolify_network:
+    name: big_bear_coolify_network
     driver: bridge
   coolify:
     external: true
