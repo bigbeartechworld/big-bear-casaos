@@ -7,7 +7,7 @@ name: big-bear-ejbca-ce
 services:
   # Service name: app
   # The `app` service definition
-  app:
+  big-bear-ejbca-ce:
     # Name of the container
     container_name: big-bear-ejbca-ce
 
@@ -41,7 +41,7 @@ x-casaos:
     - amd64
 
   # Main service of the application
-  main: app
+  main: big-bear-ejbca-ce
 
   description:
     # Description in English
