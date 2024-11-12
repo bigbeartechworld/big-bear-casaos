@@ -58,7 +58,7 @@ x-casaos:
   author: BigBearCommunity
 
   # Icon for the application
-  icon: https://raw.githubusercontent.com/Keyfactor/ejbca-ce/main/.github/images/community-ejbca-icon.png
+  icon: https://cdn.jsdelivr.net/gh/Keyfactor/ejbca-ce/.github/images/community-ejbca-icon.png
 
   # Thumbnail image (currently empty)
   thumbnail: ""
