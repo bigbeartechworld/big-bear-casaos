@@ -425,8 +425,8 @@ x-casaos:
     en_us: Coolify is a self-hosted web application that allows you to manage your servers, applications, and services. It provides a simple and intuitive interface for managing your infrastructure, making it easy to deploy and manage your applications. With Coolify, you can easily manage your servers, applications, and services, providing a streamlined experience for managing your infrastructure.
   tagline:
     en_us: Coolify
-  developer: "bigbeartechworld"
-  author: BigBearTechWorld
+  developer: "coollabsio" # Developer of coolify
+  author: "BigBearTechWorld" # Author of the docker compose
   icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/coolify/logo.png"
   thumbnail: ""
   title:
