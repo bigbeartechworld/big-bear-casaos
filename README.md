@@ -26,7 +26,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
-| 2fauth | 2fauth/2fauth | 5.3.2 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
+| 2fauth | 2fauth/2fauth | 5.4.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
 | Homepage | ghcr.io/gethomepage/homepage | 0.9.12 |  |  |
 | Romm | zurdi15/romm | 3.5.1 |  |  |
@@ -39,7 +39,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | authentik | ghcr.io/goauthentik/server | 2024.10.1 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.28.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
-| beszel | henrygd/beszel | 0.7.3 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
+| beszel | henrygd/beszel | 0.7.4 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.10.20241104 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
@@ -88,10 +88,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.11.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
-| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.120.1-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.120.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | 1.120.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.10.43 |  |  |
+| immich-aio-alpine | ghcr.io/imagegenius/immich | 1.120.2-alpine |  |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.120.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | 1.120.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.10.44 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.0.1 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.0 |  |  |
@@ -150,7 +150,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole | pihole/pihole | 2024.07.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 1.2.4 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 15.0.0 |  |  |
-| planka | ghcr.io/plankanban/planka | 1.23.5 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
+| planka | ghcr.io/plankanban/planka | 1.24.0 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.9.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.41.1 |  |  |
@@ -171,7 +171,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 0.21.4 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.20 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.21 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.16.5 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.14 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.5-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
