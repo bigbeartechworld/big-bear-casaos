@@ -1,0 +1,114 @@
+# Configuration for tailscale setup
+
+# Name of the big-bear-tailscale application
+name: big-bear-tailscale
+
+# Service definitions for the big-bear-tailscale application
+services:
+  # Service name: big-bear-tailscale
+  # The `big-bear-tailscale` service definition
+  big-bear-tailscale:
+    # Name of the container
+    container_name: big-bear-tailscale
+
+    # Image to be used for the container
+    image: tailscale/tailscale:v1.76.6
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      - TS_SERVE_CONFIG=""
+      - TS_ACCEPT_DNS=false
+      - TS_AUTH_ONCE=false
+      - TS_AUTHKEY=""
+      - TS_HOSTNAME=""
+      - TS_ROUTES=""
+      - TS_EXTRA_ARGS=""
+      - TS_USERSPACE=true
+      - TS_STATE_DIR=/var/lib/tailscale
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/state:/var/lib/tailscale
+      - /DATA/AppData/$AppID/config:/config
+      - /dev/net/tun:/dev/net/tun
+
+    cap_add:
+      - net_admin
+      - sys_module
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - name: TS_SERVE_CONFIG
+          description:
+            en_us: "Tailscale Config"
+        - name: TS_ACCEPT_DNS
+          description:
+            en_us: "Accept DNS"
+        - name: TS_AUTH_ONCE
+          description:
+            en_us: "Auth Once"
+        - name: TS_AUTHKEY
+          description:
+            en_us: "Auth Key"
+        - name: TS_HOSTNAME
+          description:
+            en_us: "Tailscale Hostname"
+        - name: TS_ROUTES
+          description:
+            en_us: "Routes"
+        - name: TS_EXTRA_ARGS
+          description:
+            en_us: "Tailscale Extra Args"
+        - name: TS_USERSPACE
+          description:
+            en_us: "Tailscale User Space"
+        - name: TS_STATE_DIR
+          description:
+            en_us: "Tailscale State Dir"
+      volumes:
+        - container: /var/lib/tailscale
+          description:
+            en_us: "Container Path: /var/lib/tailscale"
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /dev/net/tun
+          description:
+            en_us: "Container Path: /dev/net/tun"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-tailscale
+  description:
+    # Description in English
+    en_us: Zero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.
+  tagline:
+    # Short description or tagline in English
+    en_us: The easiest, most secure way to use WireGuard and 2FA.
+  # Developer's name or identifier
+  developer: "tailscale"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tailscale.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Tailscale
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: ""
