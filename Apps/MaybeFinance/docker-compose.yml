@@ -203,7 +203,7 @@ services:
 networks:
   big_bear_maybe_finance_network:
     # Custom name for the default network
-    name: maybe_network
+    name: big_bear_maybe_finance_network
 
 # CasaOS specific configuration
 x-casaos:
