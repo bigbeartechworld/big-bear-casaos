@@ -1,13 +1,13 @@
 # Configuration for peppermint setup
 
-# Name of the big-bear-peppermint application
+# Name of the big-bear-maybe-finance application
 name: big-bear-maybe-finance
 
-# Service definitions for the big-bear-peppermint application
+# Service definitions for the big-bear-maybe-finance application
 services:
   # Service name: app
   # The `app` service definition
-  app:
+  big-bear-maybe-finance:
     # Name of the container
     container_name: big-bear-maybe-finance
 
@@ -23,7 +23,7 @@ services:
     # Uses default network mode
     networks:
       # Use the default Docker network
-      - default
+      - big_bear_maybe_finance_network
     
     # Volumes to be mounted to the container
     volumes:
@@ -66,7 +66,7 @@ services:
     
     # This section specifies that the `app` service depends on another service named `postgres`.
     depends_on:
-      postgres:
+      big-bear-maybe-finance-postgres:
         # Ensures that the `app` service starts only after `postgres` is healthy
         condition: service_healthy
     
@@ -128,11 +128,11 @@ services:
           description:
             en_us: "Password for the PostgreSQL user."
 
-  # Service name: postgres
+  # Service name: big-bear-maybe-finance-postgres
   # The `postgres` service definition
-  postgres:
+  big-bear-maybe-finance-postgres:
     # Name of the container
-    container_name: postgres
+    container_name: big-bear-maybe-finance-postgres
 
     # Image to be used for the container
     image: postgres:16
@@ -173,7 +173,7 @@ services:
     # Network configuration for the PostgreSQL service
     networks:
       # Use the default Docker network
-      - default
+      - big_bear_maybe_finance_network
     
     # CasaOS specific configuration
     x-casaos:
@@ -201,7 +201,7 @@ services:
 
 # Definition of networks used in the services
 networks:
-  default:
+  big_bear_maybe_finance_network:
     # Custom name for the default network
     name: maybe_network
 
@@ -213,7 +213,7 @@ x-casaos:
     # - arm64
 
   # Main service of the application
-  main: app
+  main: big-bear-maybe-finance
 
   description:
     # Description in English
