@@ -12,7 +12,7 @@ services:
     container_name: big-bear-tududi
 
     # Image to be used for the container
-    image: chrisvel/tududi:0.31
+    image: chrisvel/tududi:0.34
 
     # Container restart policy
     restart: unless-stopped
