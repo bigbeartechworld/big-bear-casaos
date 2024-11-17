@@ -57,7 +57,7 @@ x-casaos:
     - amd64
     - arm64
   # Main service of the application
-  main: app
+  main: phpmyadmin
   description:
     # Description in English
     en_us: phpMyAdmin - A web interface for MySQL and MariaDB.
