@@ -1,6 +1,6 @@
 {
   "id": "phpmyadmin",
-  "version": "5.2.1-fpm-alpine",
+  "version": "5.2.1",
   "image": "phpmyadmin/phpmyadmin",
   "youtube": "",
   "docs_link": "",
