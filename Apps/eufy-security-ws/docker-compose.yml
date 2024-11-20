@@ -87,3 +87,9 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "3000"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-eufy-security-ws-to-bigbearcasaos/2228
+
