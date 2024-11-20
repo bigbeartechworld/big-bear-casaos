@@ -1,0 +1,111 @@
+# Configuration for big-bear-casaos-user-management setup
+
+# Name of the big-bear-casaos-user-management application
+name: big-bear-casaos-user-management
+
+# Service definitions for the big-bear-casaos-user-management application
+services:
+  # Service name: big-bear-casaos-user-management
+  # The `big-bear-casaos-user-management` service definition
+  big-bear-casaos-user-management:
+    # Name of the container
+    container_name: big-bear-casaos-user-management
+
+    # Image to be used for the container specifies the btop version and source
+    image: bigbeartechworld/big-bear-casaos-user-management:0.0.1
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Run the container in privileged mode to allow access to system metrics
+    privileged: true
+
+    environment:
+      # Sets the Flask application entry point
+      - FLASK_APP=app.py
+      # Configures Flask to run in production mode
+      - FLASK_ENV=production
+      # Specifies the admin username for the service
+      - ADMIN_USERNAME=casaos
+      # Specifies the admin password for the service
+      - ADMIN_PASSWORD=casaos
+
+    # Mount necessary volumes for accessing system information
+    volumes:
+      # Mounting the cgroup filesystem in read-only mode for system resource monitoring
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      # Persisting CasaOS database files to retain data across container restarts
+      - /var/lib/casaos/db:/var/lib/casaos/db
+      # Mounting systemd's runtime directory for integration with the host system
+      - /run/systemd/system:/run/systemd/system
+      # Providing access to the D-Bus system bus for communication with host services
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+
+    # Map port 7681 on the host to port 7681 on the container
+    ports:
+      - "5000:5000"
+
+    cap_add:
+      # Adds the SYS_ADMIN capability to the container for advanced administrative actions
+      - SYS_ADMIN
+
+    security_opt:
+      # Disables the default seccomp security profile to allow unrestricted system calls
+      - seccomp:unconfined
+
+    # CasaOS specific configuration for volume and port descriptions
+    x-casaos:
+      envs:
+        - container: "FLASK_APP"
+          description:
+            en_us: "Sets the Flask application entry point"
+        - container: "FLASK_ENV"
+          description:
+            en_us: "Configures Flask to run in production mode"
+        - container: "ADMIN_USERNAME"
+          description:
+            en_us: "Specifies the admin username for the service"
+        - container: "ADMIN_PASSWORD"
+          description:
+            en_us: "Specifies the admin password for the service"
+      volumes:
+        - container: /sys/fs/cgroup:ro
+          description:
+            en_us: "Container Path: /sys/fs/cgroup:ro"
+        - container: /var/lib/casaos/db
+          description:
+            en_us: "Container Path: /var/lib/casaos/db"
+        - container: /run/systemd/system
+          description:
+            en_us: "Container Path: /run/systemd/system"
+        - container: /var/run/dbus/system_bus_socket
+          description:
+            en_us: "Container Path: /var/run/dbus/system_bus_socket"
+      ports:
+        - container: "5000"
+          description:
+            en_us: "Container Port: 5000"
+
+# CasaOS specific application metadata and configurations
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-casaos-user-management
+  description:
+    en_us: Manage users in CasaOS
+  tagline:
+    en_us: Manage users in CasaOS
+  developer: "bigbeartechworld"
+  author: BigBearTechWorld
+  icon: ""
+  thumbnail: ""
+  title:
+    en_us: Big Bear CasaOS User Management
+  category: BigBearCasaOS
+  port_map: "5000"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-big-bear-casaos-user-management-to-bigbearcasaos/2227#p-4191-quick-start-3
