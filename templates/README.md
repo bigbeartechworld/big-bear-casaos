@@ -1,4 +1,4 @@
-![Big Bear CasaOS App Store](https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/images/logo.jpeg)
+<img src="https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/images/logo.png" width="300" alt="Big Bear CasaOS App Store">
 
 ## Big Bear CasaOS App Store
 
