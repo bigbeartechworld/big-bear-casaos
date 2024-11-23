@@ -34,6 +34,23 @@ services:
     environment:
       - TLS_SETUP_ENABLED=simple
 
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TLS_SETUP_ENABLED
+          description:
+            en_us: Controls Admin UI access
+      volumes:
+        - container: /mnt/persistent
+          description:
+            en_us: "Container Path: /mnt/persistent"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "EJBCA Admin GUI"
+        - container: "8443"
+          description:
+            en_us: "EJBCA Admin GUI"
+
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application
