@@ -1,4 +1,4 @@
-# Configuration for umbrel setup
+# Configuration for big-bear-umbrel setup
 
 # Name of the big-bear-umbrel application
 name: big-bear-umbrel
@@ -72,3 +72,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8080"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-umbrelos-to-bigbearcasaos/2249"
