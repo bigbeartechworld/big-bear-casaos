@@ -1,0 +1,74 @@
+# Configuration for umbrel setup
+
+# Name of the big-bear-umbrel application
+name: big-bear-umbrel
+
+# Service definitions for the big-bear-umbrel application
+services:
+  # Service name: big-bear-umbrel
+  # The `big-bear-umbrel` service definition
+  big-bear-umbrel:
+    # Name of the container
+    container_name: big-bear-umbrel
+
+    # Image to be used for the container
+    image: dockurr/umbrel:1.2.2
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8080 of the host to port 80 of the container
+      - "8080:80"
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID directory to /data inside the container
+      - /DATA/AppData/$AppID/data:/data
+
+      # Mounting docker.sock to allow docker management via Umbrel
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    # Stop grace period for the container
+    stop_grace_period: 1m
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-umbrel
+  description:
+    # Description in English
+    en_us: Umbrel is a personal server OS that makes self-hosting accessible to everyone.
+  tagline:
+    # Short description or tagline in English
+    en_us: Umbrel OS
+  # Developer's name or identifier
+  developer: "dockurr"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/umbrel.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Umbrel OS
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
