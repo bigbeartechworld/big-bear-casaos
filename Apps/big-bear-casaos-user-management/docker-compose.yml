@@ -1,4 +1,4 @@
-# Docker Compose configuration for CasaOS User Management Service
+# Docker Compose configuration for BigBearCasaOS User Management Service
 # This service provides a web interface for managing CasaOS users and permissions
 # Version: 0.0.1
 
