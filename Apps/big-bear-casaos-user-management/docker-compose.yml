@@ -46,7 +46,7 @@ services:
       # D-Bus socket for system communication and service discovery
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
 
-    # Map port 7681 on the host to port 7681 on the container
+    # Map port 5000 on the host to port 5000 on the container
     ports:
       - "5000:5000"
 
