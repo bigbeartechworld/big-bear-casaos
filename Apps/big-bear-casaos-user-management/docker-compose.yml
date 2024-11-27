@@ -1,12 +1,14 @@
-# Configuration for big-bear-casaos-user-management setup
+# Docker Compose configuration for CasaOS User Management Service
+# This service provides a web interface for managing CasaOS users and permissions
+# Version: 0.0.1
 
 # Name of the big-bear-casaos-user-management application
 name: big-bear-casaos-user-management
 
 # Service definitions for the big-bear-casaos-user-management application
 services:
-  # Service name: big-bear-casaos-user-management
-  # The `big-bear-casaos-user-management` service definition
+  # Main service configuration for the CasaOS User Management application
+  # This service provides a web interface running on port 5000 for user administration
   big-bear-casaos-user-management:
     # Name of the container
     container_name: big-bear-casaos-user-management
@@ -20,6 +22,8 @@ services:
     # Run the container in privileged mode to allow access to system metrics
     privileged: true
 
+    # Environment variables for service configuration
+    # These settings control the Flask application behavior and default admin credentials
     environment:
       # Sets the Flask application entry point
       - FLASK_APP=app.py
@@ -30,30 +34,33 @@ services:
       # Specifies the admin password for the service
       - ADMIN_PASSWORD=casaos
 
-    # Mount necessary volumes for accessing system information
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
     volumes:
-      # Mounting the cgroup filesystem in read-only mode for system resource monitoring
+      # Required for monitoring system resources and container metrics
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      # Persisting CasaOS database files to retain data across container restarts
+      # Persistent storage for CasaOS database to maintain user data
       - /var/lib/casaos/db:/var/lib/casaos/db
-      # Mounting systemd's runtime directory for integration with the host system
+      # Access to systemd for service management and system integration
       - /run/systemd/system:/run/systemd/system
-      # Providing access to the D-Bus system bus for communication with host services
+      # D-Bus socket for system communication and service discovery
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
 
-    # Map port 7681 on the host to port 7681 on the container
+    # Map port 5000 on the host to port 5000 on the container
     ports:
       - "5000:5000"
 
+    # Additional container capabilities
     cap_add:
-      # Adds the SYS_ADMIN capability to the container for advanced administrative actions
+      # Required for system administration tasks within the container
       - SYS_ADMIN
 
+    # Security options for container runtime
     security_opt:
-      # Disables the default seccomp security profile to allow unrestricted system calls
+      # Allows necessary system calls for full functionality
       - seccomp:unconfined
 
-    # CasaOS specific configuration for volume and port descriptions
+    # CasaOS-specific configuration metadata
     x-casaos:
       envs:
         - container: "FLASK_APP"
@@ -86,7 +93,8 @@ services:
           description:
             en_us: "Container Port: 5000"
 
-# CasaOS specific application metadata and configurations
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
 x-casaos:
   architectures:
     - amd64
@@ -104,7 +112,7 @@ x-casaos:
     en_us: Big Bear CasaOS User Management
   category: BigBearCasaOS
   port_map: "5000"
-  # Tips
+  # Installation instructions and documentation
   tips:
     before_install:
       en_us: |
