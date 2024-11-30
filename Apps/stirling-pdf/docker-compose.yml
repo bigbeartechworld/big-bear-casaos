@@ -1,6 +1,5 @@
-# Docker Compose configuration for BigBearCasaOS Stirling PDF Service and Stirling PDF
-# This service provides a web interface for managing CasaOS users and permissions
-# Version: 0.0.1
+# Docker Compose configuration for BigBearCasaOS Stirling PDF Service
+# This service provides a web interface for a Local hosted web based PDF editor
 
 # Name of the big-bear-stirling-pdf application
 name: big-bear-stirling-pdf
@@ -77,11 +76,11 @@ x-casaos:
   icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/stirling-pdf/logo.png"
   thumbnail: ""
   title:
-    en_us: Stirling PDF
+    en_us: Stirling-PDF
   category: BigBearCasaOS
   port_map: "8080"
   # Installation instructions and documentation
   tips:
     before_install:
       en_us: |
-        Read this before installing: https://community.bigbeartechworld.com/t/added-big-bear-casaos-user-management-to-bigbearcasaos/2227#p-4191-quick-start-3
+        Read this before installing: https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3
