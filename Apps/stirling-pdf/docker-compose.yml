@@ -1,0 +1,87 @@
+# Docker Compose configuration for BigBearCasaOS Stirling PDF Service and Stirling PDF
+# This service provides a web interface for managing CasaOS users and permissions
+# Version: 0.0.1
+
+# Name of the big-bear-stirling-pdf application
+name: big-bear-stirling-pdf
+
+# Service definitions for the big-bear-stirling-pdf application
+services:
+  # Main service configuration for the CasaOS User Management application
+  # This service provides a web interface running on port 5000 for user administration
+  big-bear-stirling-pdf:
+    # Name of the container
+    container_name: big-bear-stirling-pdf
+
+    # Image to be used for the container specifies the stirling-pdf version and source
+    image: stirlingtools/stirling-pdf:0.35.0
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Environment variables for service configuration
+    environment:
+      # Set to true to download security jar (required for authentication login)
+      - DOCKER_ENABLE_SECURITY=false
+      
+      # Download Calibre onto Stirling-PDF to enable PDF to/from book and advanced HTML conversion
+      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
+      
+      # Define custom font libraries to install for document conversions
+      - LANGS=en_US
+
+    # Volume mappings for persistent storage and configuration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      # Required for monitoring system resources and container metrics
+      - /DATA/AppData/$AppID/tessdata:/usr/share/tessdata # Required for extra OCR languages
+
+    # Map port 8080 on the host to port 8080 on the container
+    ports:
+      - "8080:8080"
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: "DOCKER_ENABLE_SECURITY"
+          description:
+            en_us: "Docker Enable Security"
+        - container: "INSTALL_BOOK_AND_ADVANCED_HTML_OPS"
+          description:
+            en_us: "Install Book and Advanced HTML Ops"
+        - container: "LANGS"
+          description:
+            en_us: "Languages"
+      volumes:
+        - container: "/usr/share/tessdata"
+          description:
+            en_us: "Container Path: /usr/share/tessdata"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-stirling-pdf
+  description:
+    en_us: Stirling PDF - Local hosted web based PDF editor
+  tagline:
+    en_us: Stirling PDF - Local hosted web based PDF editor
+  developer: "stirlingtools"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/stirling-pdf/logo.png"
+  thumbnail: ""
+  title:
+    en_us: Stirling PDF
+  category: BigBearCasaOS
+  port_map: "8080"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-big-bear-casaos-user-management-to-bigbearcasaos/2227#p-4191-quick-start-3
