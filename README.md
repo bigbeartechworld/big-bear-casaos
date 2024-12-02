@@ -46,7 +46,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.10.20241104 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.2.13 |  |  |
+| budibase | budibase/budibase | 3.2.14 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.7.8 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.47.06 |  |  |
@@ -77,12 +77,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
-| flowise | flowiseai/flowise | 2.1.5 |  |  |
+| flowise | flowiseai/flowise | 2.2.0 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 5.101.4-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.124.1 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
-| gladys | gladysassistant/gladys | 4.49.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
+| gladys | gladysassistant/gladys | 4.50.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.1.2.1-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.39.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | gotify | gotify/server | 2.6.1 |  |  |
@@ -127,7 +127,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.3 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
-| nocodb | nocodb/nocodb | 0.258.2 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nocodb | nocodb/nocodb | 0.258.3 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.5 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.14.1 |  |  |
 | npmplus | zoeyvid/npmplus | 424 |  |  |
@@ -136,11 +136,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.7.7 |  |  |
 | octoprint | octoprint/octoprint | 1.10.3 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 18 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.4.5-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.4.5 |  |  |
-| ollama-nvidia | ollama/ollama | 0.4.5 |  |  |
+| ollama-amd | ollama/ollama | 0.4.6-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.4.6 |  |  |
+| ollama-nvidia | ollama/ollama | 0.4.6 |  |  |
 | onedev | 1dev/server | 11.5.3 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
-| onlyoffice | onlyoffice/documentserver | 8.2.1 |  |  |
+| onlyoffice | onlyoffice/documentserver | 8.2.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
@@ -170,7 +170,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.0 |  |  |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
-| scrypted | koush/scrypted | 0.123.38-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
+| scrypted | koush/scrypted | 0.123.46-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | semaphore | semaphoreui/semaphore | 2.10.43 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
