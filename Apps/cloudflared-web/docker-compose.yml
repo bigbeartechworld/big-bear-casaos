@@ -1,0 +1,92 @@
+# Configuration for cloudflared-web setup
+
+# Name of the big-bear-cloudflared-web application
+name: big-bear-cloudflared-web
+
+# Service definitions for the big-bear-cloudflared-web application
+services:
+  # Service name: big-bear-cloudflared-web
+  # The `big-bear-cloudflared-web` service definition
+  big-bear-cloudflared-web:
+    # Name of the container
+    container_name: big-bear-cloudflared-web
+
+    # Image to be used for the container
+    image: wisdomsky/cloudflared-web:2024.11.1
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Network mode
+    network_mode: host
+
+    # Environment variables for the container
+    environment:
+      - WEBUI_PORT=14333
+      - EDGE_IP_VERSION=auto
+      - PROTOCOL=auto
+      - METRICS_ENABLE=false
+      - METRICS_PORT=60123
+      - BASIC_AUTH_USER=admin
+      - BASIC_AUTH_PASS=""
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: WEBUI_PORT
+          description:
+            en_us: "Web UI Port"
+        - container: EDGE_IP_VERSION
+          description:
+            en_us: "Edge IP Version"
+        - container: PROTOCOL
+          description:
+            en_us: "Protocol"
+        - container: METRICS_ENABLE
+          description:
+            en_us: "Metrics Enable"
+        - container: METRICS_PORT
+          description:
+            en_us: "Metrics Port"
+        - container: BASIC_AUTH_USER
+          description:
+            en_us: "Basic Auth User"
+        - container: BASIC_AUTH_PASS
+      ports:
+        - container: "14333"
+          description:
+            en_us: "Container Port: 14333"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-cloudflared-web
+  description:
+    # Description in English
+    en_us: Cloudflared-web is a docker image that packages both cloudflared cli and a simple Web UI to easily start or stop remotely-managed Cloudflare tunnel.
+  tagline:
+    # Short description or tagline in English
+    en_us: Cloudflared Web
+  # Developer's name or identifier
+  developer: "wisdomsky"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cloudflare.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Cloudflared Web
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "14333"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-cloudflared-web-to-bigbearcasaos/2275?u=dragonfire1119
