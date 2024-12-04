@@ -83,6 +83,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | photoprism |  |
 | phpmyadmin |  |
 | piwigo |  |
+| playit-docker-web |  |
 | playitgg |  |
 | plex |  |
 | portainer-agent |  |
@@ -103,6 +104,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | tianji |  |
 | tududi |  |
 | umbrel-os |  |
+| upsnap |  |
 | viseron |  |
 | wallos |  |
 | wg-easy |  |
