@@ -29,7 +29,7 @@ x-casaos:
     - arm64
     - armv6
     - armv7
-  main: mympd # Specifies the main service of the application
+  main: big-bear-mympd # Specifies the main service of the application
   description:
     en_us: myMPD is a standalone and mobile friendly web-based MPD client with a tiny footprint and advanced features.
   tagline:
