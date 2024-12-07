@@ -4,14 +4,15 @@ services:
     image: ghcr.io/jcorporation/mympd/mympd:18.2.2
     container_name: big-bear-mympd
     ports:
-      - 8080:8080
-    user: 1000:1000
+      - ${MYMPD_HTTP_PORT:-8080}:8080
+    user: ${MYMPD_UID:-1000}:${MYMPD_GID:-1000}
     environment:
       - UMASK_SET=022
       - MYMPD_SSL=false
-      - MYMPD_HTTP_PORT=
-      - MPD_HOST=
-      - MPD_PORT=
+      - MYMPD_HTTP_PORT=${MYMPD_HTTP_PORT:-8080}
+      - MPD_HOST=${MPD_HOST:-localhost}
+      - MPD_PORT=${MPD_PORT:-6600}
+      - MYMPD_UID=1000
     volumes:
       - /DATA/AppData/$AppID/run/mpd:/run/mpd
       ## Optional for myGPIOd support
