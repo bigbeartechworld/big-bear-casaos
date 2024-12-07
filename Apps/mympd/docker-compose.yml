@@ -42,7 +42,7 @@ x-casaos:
     en_us: mympd # Title in English
   category: BigBearCasaOS # Category of the application
   port_map: "8080" # Port mapping information for the service
-  scheme: https # Scheme for the service
+  scheme: http # Scheme for the service
   tips:
     before_install:
       en_us: |
