@@ -13,13 +13,13 @@ services:
       - MPD_HOST=
       - MPD_PORT=
     volumes:
-      - /run/mpd:/run/mpd
+      - /DATA/AppData/$AppID/run/mpd:/run/mpd
       ## Optional for myGPIOd support
       ## - /run/mygpiod:/run/mygpiod
-      - /docker/mympd/workdir:/var/lib/mympd
-      - /docker/mympd/cachedir:/var/cache/mympd
-      - /var/lib/mpd/music:/var/lib/mpd/music:ro
-      - /var/lib/mpd/playlists:/var/lib/mpd/playlists:ro
+      - /DATA/AppData/$AppID/docker/mympd/workdir:/var/lib/mympd
+      - /DATA/AppData/$AppID/docker/mympd/cachedir:/var/cache/mympd
+      - /DATA/AppData/$AppID/var/lib/mpd/music:/var/lib/mpd/music:ro
+      - /DATA/AppData/$AppID/var/lib/mpd/playlists:/var/lib/mpd/playlists:ro
     restart: unless-stopped
 
 # Global CasaOS specific configuration
