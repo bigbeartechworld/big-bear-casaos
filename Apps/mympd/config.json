@@ -1,6 +1,6 @@
 {
   "id": "mympd",
-  "version": "latest",
+  "version": "18.2.2",
   "image": "ghcr.io/jcorporation/mympd/mympd",
   "youtube": "",
   "docs_link": "",
