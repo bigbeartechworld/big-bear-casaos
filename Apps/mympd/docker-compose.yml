@@ -31,7 +31,7 @@ x-casaos:
     - armv7
   main: mympd # Specifies the main service of the application
   description:
-    en_us: myMPD is a standalone and mobile friendly web-based MPD client with a tiny footprint and advanced features.# Description in English
+    en_us: myMPD is a standalone and mobile friendly web-based MPD client with a tiny footprint and advanced features.
   tagline:
     en_us: mpd # Short description or tagline in English
   developer: "jcorporation" # Developer's name or identifier (currently empty)
