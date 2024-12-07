@@ -35,7 +35,7 @@ x-casaos:
   tagline:
     en_us: mpd # Short description or tagline in English
   developer: "jcorporation" # Developer's name or identifier (currently empty)
-  author: BigBearTechWorld # Author of this Docker Compose configuration
+  author: BigBearCommunity # Author of this Docker Compose configuration
   icon: https://jcorporation.github.io/myMPD/assets/mympd-logo.svg # Icon URL for the application
   thumbnail: "" # Thumbnail image URL
   title:
