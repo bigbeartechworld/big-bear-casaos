@@ -2,7 +2,7 @@ name: big-bear-mympd # Name of the CasaOS application
 services:
   mympd:
     image: ghcr.io/jcorporation/mympd/mympd:18.2.2
-    container_name: mympd
+    container_name: big-bear-mympd
     ports:
       - 8080:8080
     user: 1000:1000
