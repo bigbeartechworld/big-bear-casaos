@@ -37,7 +37,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.54 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.46.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.17.3 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.17.5 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.10.4 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.29.3 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -46,10 +46,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.10.20241104 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.2.16 |  |  |
+| budibase | budibase/budibase | 3.2.25 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.7.8 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.48.00 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.48.01 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -131,7 +131,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nocodb | nocodb/nocodb | 0.258.3 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.5 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.14.1 |  |  |
-| npmplus | zoeyvid/npmplus | 424 |  |  |
+| npmplus | zoeyvid/npmplus | 426 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.4.2 |  |  |
 | obsidian | linuxserver/obsidian | 1.7.7 |  |  |
@@ -140,13 +140,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.4.6-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.4.6 |  |  |
 | ollama-nvidia | ollama/ollama | 0.4.6 |  |  |
-| onedev | 1dev/server | 11.6.0 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 11.6.3 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.2.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.13.5 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.49.0 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.49.1 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.3.3 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
