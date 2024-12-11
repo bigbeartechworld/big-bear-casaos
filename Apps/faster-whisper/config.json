@@ -1,6 +1,6 @@
 {
   "id": "faster-whisper",
-  "version": "2.0.0",
+  "version": "2.3.0",
   "image": "linuxserver/faster-whisper",
   "youtube": "",
   "docs_link": "",
