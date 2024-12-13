@@ -12,7 +12,7 @@ services:
     container_name: big-bear-plant-it
 
     # Image to be used for the container
-    image: msdeluise/plant-it-server:0.9.0
+    image: msdeluise/plant-it-server:0.10.0
 
     # Container restart policy
     restart: unless-stopped
