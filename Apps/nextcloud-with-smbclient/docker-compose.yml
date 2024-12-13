@@ -188,7 +188,7 @@ x-casaos:
   main: big-bear-nextcloud-smb
   description:
     # Description in English
-    en_us: Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
+    en_us: This is legacy and you should use the BigBearCasaOS Nextcloud instead. Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
   tagline:
     en_us: The productivity platform that keeps you in control
   # Developer's name or identifier
@@ -205,7 +205,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-3.png
   title:
     # Title in English
-    en_us: Nextcloud with SMB
+    en_us: Nextcloud with SMB (Legacy)
   # Application category
   category: BigBearCasaOS
   # Port mapping information
