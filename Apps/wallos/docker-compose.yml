@@ -12,7 +12,7 @@ services:
     container_name: big-bear-wallos
 
     # Image to be used for the container
-    image: bellamy/wallos:2.40.0
+    image: bellamy/wallos:2.41.0
 
     # Container restart policy
     restart: unless-stopped
