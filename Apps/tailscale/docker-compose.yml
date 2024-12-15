@@ -12,7 +12,7 @@ services:
     container_name: big-bear-tailscale
 
     # Image to be used for the container
-    image: tailscale/tailscale:v1.78.1
+    image: tailscale/tailscale:v1.78.3
 
     # Container restart policy
     restart: unless-stopped
