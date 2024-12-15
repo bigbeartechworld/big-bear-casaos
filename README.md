@@ -33,8 +33,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage | ghcr.io/gethomepage/homepage | v0.9.13 |  |  |
 | Romm | zurdi15/romm | 3.6.0 |  |  |
 | actual-server | actualbudget/actual-server | 24.12.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
-| adguard-home-host | adguard/adguardhome | 0.107.54 |  |  |
-| adguard-home | adguard/adguardhome | 0.107.54 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
+| adguard-home-host | adguard/adguardhome | 0.107.55 |  |  |
+| adguard-home | adguard/adguardhome | 0.107.55 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.50.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.17.5 |  |  |
@@ -53,7 +53,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
-| cloudflared-web | wisdomsky/cloudflared-web | 2024.11.1 |  |  |
+| cloudflared-web | wisdomsky/cloudflared-web | 2024.12.1 |  |  |
 | code-server | linuxserver/code-server | 4.95.3 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.367 |  |  |
@@ -119,7 +119,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.71.2 |  |  |
+| n8n | n8nio/n8n | 1.72.0 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 24.10.31 |  |  |
@@ -137,10 +137,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.7.7 |  |  |
 | octoprint | octoprint/octoprint | 1.10.3 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 18 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.5.1-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.5.1 |  |  |
-| ollama-nvidia | ollama/ollama | 0.5.1 |  |  |
-| onedev | 1dev/server | 11.6.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| ollama-amd | ollama/ollama | 0.5.2-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.5.2 |  |  |
+| ollama-nvidia | ollama/ollama | 0.5.2 |  |  |
+| onedev | 1dev/server | 11.6.6 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.2.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
@@ -160,7 +160,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plant-it | msdeluise/plant-it-server | 0.10.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playit-docker-web | wisdomsky/playit-docker-web | 1.1 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
-| plex | linuxserver/plex | 1.41.2 |  |  |
+| plex | linuxserver/plex | 1.41.3 |  |  |
 | portainer-agent | portainer/agent | 2.24.1 |  |  |
 | portainer | portainer/portainer-ce | 2.24.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
@@ -176,7 +176,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | semaphore | semaphoreui/semaphore | 2.10.43 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 0.25.1 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 0.26.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 0.36.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
 | tailscale | tailscale/tailscale | 1.78.1 |  |  |
@@ -194,7 +194,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.5 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 2.3.1 |  |  |
-| wallos | bellamy/wallos | 2.40.0 |  |  |
+| wallos | bellamy/wallos | 2.41.0 |  |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.7.1 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
