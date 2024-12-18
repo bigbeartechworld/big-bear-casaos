@@ -22,7 +22,7 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:5000/api/info"]
       interval: 10s
       timeout: 2s
-      retries: 3
+      retries: "3"
 
     # Volumes to be mounted to the container
     volumes:
