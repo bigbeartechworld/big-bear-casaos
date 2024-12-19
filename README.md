@@ -71,6 +71,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ejbca-ce | keyfactor/ejbca-ce | 8.3.2 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
+| farmos | farmos/farmos | 3.3.2 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 2.4.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.2 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
 | filebrowser | filebrowser/filebrowser | 2.31.2-s6 |  |  |
@@ -125,7 +126,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | netalertx | jokobsk/netalertx | 24.10.31 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 30.0.4 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.4 |  |  |
-| nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.3 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
+| nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.4 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
 | nocodb | nocodb/nocodb | 0.258.7 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
@@ -161,8 +162,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playit-docker-web | wisdomsky/playit-docker-web | 1.1 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.41.3 |  |  |
-| portainer-agent | portainer/agent | 2.24.1 |  |  |
-| portainer | portainer/portainer-ce | 2.24.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer-agent | portainer/agent | 2.25.0 |  |  |
+| portainer | portainer/portainer-ce | 2.25.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.10 |  |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 |  |  |
