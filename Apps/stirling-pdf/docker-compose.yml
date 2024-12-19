@@ -13,7 +13,7 @@ services:
     container_name: big-bear-stirling-pdf
 
     # Image to be used for the container specifies the stirling-pdf version and source
-    image: stirlingtools/stirling-pdf:0.36.2
+    image: stirlingtools/stirling-pdf:0.36.3
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
