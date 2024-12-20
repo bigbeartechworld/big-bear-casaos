@@ -38,7 +38,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.50.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.17.5 |  |  |
-| authentik | ghcr.io/goauthentik/server | 2024.10.5 |  |  |
+| authentik | ghcr.io/goauthentik/server | 2024.12.0 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.29.3 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beszel | henrygd/beszel | 0.8.0 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
@@ -46,7 +46,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.10.20241104 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.2.28 |  |  |
+| budibase | budibase/budibase | 3.2.29 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.7.8 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.48.04 |  |  |
@@ -130,7 +130,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW |  | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
 | nocodb | nocodb/nocodb | 0.258.7 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
-| node-red | nodered/node-red | 4.0.5 |  |  |
+| node-red | nodered/node-red | 4.0.6 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.15.0 |  |  |
 | npmplus | zoeyvid/npmplus | 426 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
@@ -177,8 +177,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | seafile | seafileltd/seafile-mc | 12.0.4 |  |  |
 | semaphore | semaphoreui/semaphore | 2.10.43 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.0.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
-| stirling-pdf | stirlingpdf/stirlingpdf | 0.36.2 |  | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.0.1 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| stirling-pdf | stirlingpdf/stirlingpdf | 0.36.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.28 |  |  |
 | tailscale | tailscale/tailscale | 1.78.3 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.24 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
