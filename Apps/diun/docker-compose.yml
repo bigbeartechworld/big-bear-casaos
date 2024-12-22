@@ -12,7 +12,7 @@ services:
     container_name: big-bear-diun
 
     # Image to be used for the container
-    image: crazymax/diun:4.28.0
+    image: crazymax/diun:4.29.0
 
     # Command to run inside the container
     command: ["serve"]
