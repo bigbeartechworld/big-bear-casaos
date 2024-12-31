@@ -56,7 +56,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | cloudflared-web | wisdomsky/cloudflared-web | 2024.12.2 |  |  |
 | code-server | linuxserver/code-server | 4.96.2 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
-| coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.367 |  |  |
+| coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 |  |  |
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.4 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.19.4 |  |  |
 | dashdot | mauricenino/dashdot | 5.9.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
@@ -85,7 +85,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ghost | ghost | 5.105.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.131.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.50.2 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
-| glances | nicolargo/glances | 4.1.2.1-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
+| glances | nicolargo/glances | 4.3.0.3-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.40.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | gotify | gotify/server | 2.6.1 |  |  |
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
@@ -132,7 +132,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nocodb | nocodb/nocodb | 0.258.10 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.8 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.15.0 |  |  |
-| npmplus | zoeyvid/npmplus | 426 |  |  |
+| npmplus | zoeyvid/npmplus | 427 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.4.2 |  |  |
 | obsidian | linuxserver/obsidian | 1.7.7 |  |  |
@@ -147,7 +147,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.13.5 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.50.2 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.50.3 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.3.3 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
