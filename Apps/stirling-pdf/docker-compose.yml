@@ -22,10 +22,25 @@ services:
     environment:
       # Set to true to download security jar (required for authentication login)
       - DOCKER_ENABLE_SECURITY=false
-      
+
+      # Set to true to enable login for authentication
+      - SECURITY_ENABLE_LOGIN=true
+
+      # Set the initial admin username
+      - SECURITY_INITIALLOGIN_USERNAME=bigbear
+
+      # Set the initial admin password
+      - SECURITY_INITIALLOGIN_PASSWORD=4500733e-a0f8-4605-a712-fd267404956a
+
+      # Set to true to enable CSRF protection
+      - CSRF_DISABLED=false
+
+      # Set the default locale for the application
+      - DEFAULT_LOCALE=en-US
+
       # Download Calibre onto Stirling-PDF to enable PDF to/from book and advanced HTML conversion
       - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
-      
+
       # Define custom font libraries to install for document conversions
       - LANGS=en_US
 
@@ -34,6 +49,7 @@ services:
     volumes:
       # Required for monitoring system resources and container metrics
       - /DATA/AppData/$AppID/tessdata:/usr/share/tessdata # Required for extra OCR languages
+      - /DATA/AppData/$AppID/configs:/configs
 
     # Map port 8080 on the host to port 8080 on the container
     ports:
@@ -44,7 +60,22 @@ services:
       envs:
         - container: "DOCKER_ENABLE_SECURITY"
           description:
-            en_us: "Docker Enable Security"
+            en_us: "Enable Security Jar for Authentication"
+        - container: "SECURITY_ENABLE_LOGIN"
+          description:
+            en_us: "Enable Login for Authentication"
+        - container: "SECURITY_INITIALLOGIN_USERNAME"
+          description:
+            en_us: "Initial admin username"
+        - container: "SECURITY_INITIALLOGIN_PASSWORD"
+          description:
+            en_us: "Initial admin password"
+        - container: "CSRF_DISABLED"
+          description:
+            en_us: "Disable CSRF Protection"
+        - container: "DEFAULT_LOCALE"
+          description:
+            en_us: "Set Default Locale"
         - container: "INSTALL_BOOK_AND_ADVANCED_HTML_OPS"
           description:
             en_us: "Install Book and Advanced HTML Ops"
@@ -55,6 +86,9 @@ services:
         - container: "/usr/share/tessdata"
           description:
             en_us: "Container Path: /usr/share/tessdata"
+        - container: "/configs"
+          description:
+            en_us: "Configuration Files Path: /configs"
       ports:
         - container: "8080"
           description:
