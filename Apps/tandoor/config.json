@@ -1,6 +1,6 @@
 {
   "id": "tandoor",
-  "version": "1.5.24",
+  "version": "1.5.26",
   "image": "ghcr.io/tandoorrecipes/recipes",
   "youtube": "https://youtu.be/f4-op1UOaWc",
   "docs_link": "",
