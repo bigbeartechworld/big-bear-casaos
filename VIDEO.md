@@ -52,6 +52,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | komga |  |
 | kopia |  |
 | lancache |  |
+| lobe-chat |  |
 | mind |  |
 | minio |  |
 | monica |  |
