@@ -1,6 +1,6 @@
 {
   "id": "audiobookshelf",
-  "version": "2.17.6",
+  "version": "2.17.7",
   "image": "ghcr.io/advplyr/audiobookshelf",
   "youtube": "",
   "docs_link": "",
