@@ -20,7 +20,7 @@ services:
     # Environment variables for the container
     environment:
       WG_HOST: "[YOUR_PUBLIC_IP]"
-      PASSWORD_HASH: "$2b$12$coPqCsPtcFO.Ab99xylBNOW4.Iu7OOA2/ZIboHN6/oyxca3MWo7fW"
+      PASSWORD_HASH: '$2b$12$coPqCsPtcFO.Ab99xylBNOW4.Iu7OOA2/ZIboHN6/oyxca3MWo7fW'
       WG_DEFAULT_DNS: "1.1.1.1"
       WG_ALLOWED_IPS: 0.0.0.0/0, ::/0
 
