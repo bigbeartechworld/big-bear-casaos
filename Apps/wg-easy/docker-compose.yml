@@ -86,3 +86,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "51821"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-wg-easy-to-bigbearcasaos/1631#p-3101-documentation-3
