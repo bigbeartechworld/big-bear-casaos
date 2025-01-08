@@ -9,7 +9,7 @@ services:
     container_name: big-bear-glances
 
     # Docker image to use
-    image: nicolargo/glances:4.3.0.6-full
+    image: nicolargo/glances:4.3.0.8-full
 
     # Port mapping between host and container
     ports:
