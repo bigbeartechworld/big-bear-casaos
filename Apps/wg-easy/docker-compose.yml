@@ -44,7 +44,8 @@ services:
       - 51820:51820/udp
       - 51821:51821/tcp # UI port
 
-    x-casaos: # CasaOS specific configuration
+    # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /etc/wireguard
           description:
