@@ -48,25 +48,13 @@ services:
       - "/etc/ssl/certs:/etc/ssl/certs:ro"
 
       # Mount a temporary directory for Pterodactyl
-      - "/DATA/AppData/$AppID/tmp:/tmp/pterodactyl/"
-
-      # Mount a temporary directory for Pterodactyl
       - "/tmp/pterodactyl:/tmp/pterodactyl/"
-
-      # Mount the configuration directory for Pterodactyl
-      - "/DATA/AppData/$AppID/etc:/etc/pterodactyl/"
 
       # Mount the configuration directory for Pterodactyl
       - "/etc/pterodactyl:/etc/pterodactyl/"
 
       # Mount the logs directory for Pterodactyl
-      - "/DATA/AppData/$AppID/logs:/var/log/pterodactyl/"
-
-      # Mount the logs directory for Pterodactyl
       - "/var/log/pterodactyl:/var/log/pterodactyl/"
-
-      # Mount the library directory for Pterodactyl
-      - "/DATA/AppData/$AppID/lib:/var/lib/pterodactyl/"
 
       # Mount the library directory for Pterodactyl
       - "/var/lib/pterodactyl:/var/lib/pterodactyl/"
@@ -85,7 +73,6 @@ services:
         - container: WINGS_USERNAME
           description:
             en_us: Username for the Wings process
-
       ports:
         - container: "8080"
           description:
@@ -148,7 +135,7 @@ x-casaos:
         Copy the Configuration: After creating the node, the panel will provide a configuration file. You need to copy the content of this configuration and place it in:
 
         ```
-        /DATA/AppData/big-bear-pterodactyl-wings/etc/config.yml
+        /etc/pterodactyl/config.yml
         ```
 
         Tip: Use the CasaOS files app for an easy file management experience.
