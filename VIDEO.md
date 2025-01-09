@@ -46,6 +46,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | invoice-ninja |  |
 | jellyseerr |  |
 | jellystat |  |
+| jlesage-firefox |  |
 | kavita |  |
 | kiwix-serve |  |
 | komf |  |
