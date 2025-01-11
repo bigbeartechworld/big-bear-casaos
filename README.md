@@ -46,10 +46,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.12.20241223 |  |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.2.32 |  |  |
+| budibase | budibase/budibase | 3.2.34 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.7.8 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.48.05 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.48.06 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -67,11 +67,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | docmost | docmost/docmost | 0.6.2 |  |  |
-| dozzle | amir20/dozzle | 8.9.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 8.10.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.0.0 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
-| farmos | farmos/farmos | 3.3.2 |  |  |
+| farmos | farmos/farmos | 3.3.3 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 2.4.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.2 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
 | filebrowser | filebrowser/filebrowser | 2.31.2-s6 |  |  |
@@ -91,14 +91,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.9.20251230 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.1.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.1.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.12.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.124.2-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.124.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.124.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.9 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.10 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.2.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.2 |  |  |
@@ -114,9 +114,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.43.4 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.44.0 |  |  |
 | mailpit | axllent/mailpit | 1.21 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
-| mealie | hkotel/mealie | 2.4.1 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
+| mealie | hkotel/mealie | 2.4.2 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | mind | mrcas/mind | 1.4.1 |  |  |
 | minio | minio/minio | RELEASE.2024-02-24T17-11-14Z |  |  |
 | monica | monica | 4.1.2 |  |  |
