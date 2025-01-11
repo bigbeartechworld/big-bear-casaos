@@ -8,7 +8,7 @@ services:
   # Service name: big-bear-romm
   # The `big-bear-romm` service definition
   big-bear-romm:
-    image: rommapp/romm:3.7.0-alpha.1 # Docker image for the application
+    image: rommapp/romm:3.7.0 # Docker image for the application
     container_name: big-bear-romm
     environment:
       - DB_HOST=big-bear-rommdb # Hostname of the MariaDB container
@@ -16,21 +16,16 @@ services:
       - DB_USER=romm-user # Database user for MariaDB
       - DB_NAME=romm # Name of the database (Should match the MYSQL_DATABASE value in the mariadb container)
       - DB_PASSWD=casaos # Database password (Should match the MYSQL_PASSWORD value in the mariadb container)
-      - IGDB_CLIENT_ID=<IGDB client id> # IGDB client ID
-      - IGDB_CLIENT_SECRET=<IGDB client secret> # IGDB client secret
-      # [Optional] Enable user management and require authentication to access the interface (disabled by default)
       - ROMM_AUTH_SECRET_KEY=<secret key> # Authentication secret key (Generate a key with `openssl rand -hex 32`)
-      - ROMM_AUTH_USERNAME=admin # Authentication username (default: admin)
-      - ROMM_AUTH_PASSWORD=casaos # Authentication password (default: admin)
+      # [Optional] Enable metadata providers (all disabled by default)
+      - IGDB_CLIENT_ID=<igdb client id> # Generate an ID and SECRET in IGDB
+      - IGDB_CLIENT_SECRET=<igdb client secret> # https://api-docs.igdb.com/#account-creation
+      - MOBYGAMES_API_KEY=<moby api key> # https://www.mobygames.com/info/api/
+      - STEAMGRIDDB_API_KEY=<sgdb api key> # https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
       # [Optional] Enable asynchronous tasks (all disabled by default)
       - ENABLE_RESCAN_ON_FILESYSTEM_CHANGE=true # Enable rescan on filesystem change
-      - RESCAN_ON_FILESYSTEM_CHANGE_DELAY=5 # Delay in seconds before running the quick scan (default: 5)
       - ENABLE_SCHEDULED_RESCAN=true # Enable scheduled rescan
-      - SCHEDULED_RESCAN_CRON=0 3 * * * # Cron expression for the scheduled scan (default: 0 3 * * * - At 3:00 AM every day)
       - ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB=true # Enable scheduled update of Switch TitleDB database
-      - SCHEDULED_UPDATE_SWITCH_TITLEDB_CRON=0 4 * * * # Cron expression for the scheduled update (default: 0 4 * * * - At 4:00 AM every day)
-      - ENABLE_SCHEDULED_UPDATE_MAME_XML=true # Enable scheduled update of MAME XML database
-      - SCHEDULED_UPDATE_MAME_XML_CRON=0 5 * * * # Cron expression for the scheduled update (default: 0 5 * * * - At 5:00 AM every day)
     volumes:
       - "/DATA/AppData/$AppID/resources:/romm/resources" # [Optional] Path where roms metadata (covers) are stored
       - "/DATA/AppData/$AppID/redis-data:/redis-data" # Cached data for background tasks
@@ -49,9 +44,6 @@ services:
     x-casaos: # CasaOS specific configuration
       envs:
         # Environment variables for CasaOS
-        - container: ROMM_DB_DRIVER
-          description:
-            en_us: "Database Driver: mariadb"
         - container: DB_HOST
           description:
             en_us: "Database Host: romm_db"
@@ -69,58 +61,28 @@ services:
             en_us: "Database Password: casaos"
         - container: IGDB_CLIENT_ID
           description:
-            en_us: "IGDB Client ID: <IGDB client id>"
+            en_us: "IGDB Client ID (Optional): Generate an ID and SECRET in IGDB"
         - container: IGDB_CLIENT_SECRET
           description:
-            en_us: "IGDB Client Secret: <IGDB client secret>"
-        - container: ROMM_AUTH_ENABLED
+            en_us: "IGDB Client Secret (Optional): https://api-docs.igdb.com/#account-creation"
+        - container: MOBYGAMES_API_KEY
           description:
-            en_us: "Authentication Enabled: true"
+            en_us: "MobyGames API Key (Optional): Generate at https://www.mobygames.com/info/api/"
+        - container: STEAMGRIDDB_API_KEY
+          description:
+            en_us: "SteamGridDB API Key (Optional): See https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
         - container: ROMM_AUTH_SECRET_KEY
           description:
             en_us: "Authentication Secret Key: <secret key>"
-        - container: ROMM_AUTH_USERNAME
-          description:
-            en_us: "Authentication Username: admin"
-        - container: ROMM_AUTH_PASSWORD
-          description:
-            en_us: "Authentication Password: admin"
-        - container: ENABLE_EXPERIMENTAL_REDIS
-          description:
-            en_us: "Experimental Redis: true"
-        - container: REDIS_HOST
-          description:
-            en_us: "Redis Host: redis"
-        - container: REDIS_PORT
-          description:
-            en_us: "Redis Port: 6379"
-        - container: REDIS_PASSWORD
-          description:
-            en_us: "Redis Password: casaos"
         - container: ENABLE_RESCAN_ON_FILESYSTEM_CHANGE
           description:
             en_us: "Rescan On Filesystem Change: true"
-        - container: RESCAN_ON_FILESYSTEM_CHANGE_DELAY
-          description:
-            en_us: "Rescan On Filesystem Change Delay: 5"
         - container: ENABLE_SCHEDULED_RESCAN
           description:
             en_us: "Scheduled Rescan: true"
-        - container: SCHEDULED_RESCAN_CRON
-          description:
-            en_us: "Scheduled Rescan Cron: 0 3 * * *"
         - container: ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB
           description:
             en_us: "Scheduled Update Switch TitleDB: true"
-        - container: SCHEDULED_UPDATE_SWITCH_TITLEDB_CRON
-          description:
-            en_us: "Scheduled Update Switch TitleDB Cron: 0 4 * * *"
-        - container: ENABLE_SCHEDULED_UPDATE_MAME_XML
-          description:
-            en_us: "Scheduled Update MAME XML: true"
-        - container: SCHEDULED_UPDATE_MAME_XML_CRON
-          description:
-            en_us: "Scheduled Update MAME XML Cron: 0 5 * * *"
       volumes:
         # Volume mappings for CasaOS
         - container: /romm/resources
@@ -202,12 +164,12 @@ x-casaos:
   main: big-bear-romm
   description:
     # Description in English
-    en_us: RomM (Rom Manager) is a web-based retro roms manager integrated with IGDB.
+    en_us: ROM manager for organizing, enriching, and playing retro games, with support for 400+ platforms.
   tagline:
     # Short description or tagline in English
     en_us: RomM
   # Developer's name or identifier
-  developer: "Zurdi15"
+  developer: "RomM Team"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
