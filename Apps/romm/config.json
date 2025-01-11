@@ -1,9 +1,8 @@
 {
-    "id": "romm",
-    "version": "3.7.0",
-    "image": "rommapp/romm",
-    "youtube": "",
-    "docs_link": "https://github.com/rommapp/romm/wiki",
-    "big_bear_cosmos_youtube": ""
+  "id": "romm",
+  "version": "3.7.0",
+  "image": "rommapp/romm",
+  "youtube": "",
+  "docs_link": "https://github.com/rommapp/romm/wiki",
+  "big_bear_cosmos_youtube": ""
 }
-  
