@@ -31,7 +31,6 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | 2fauth | 2fauth/2fauth | 5.4.3 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
 | Homepage | ghcr.io/gethomepage/homepage | 0.10.9 |  |  |
-| Romm | zurdi15/romm | 3.7.0-alpha.1 |  |  |
 | actual-server | actualbudget/actual-server | 24.12.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.55 |  |  |
 | adguard-home | adguard/adguardhome | 0.107.55 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
@@ -174,6 +173,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | reactive-resume | amruthpillai/reactive-resume | 4.1.8 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
+| romm | rommapp/romm | 3.7.0 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
