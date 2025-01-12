@@ -6,22 +6,18 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | --- | --- |
 | GemDigest |  |
 | Homepage |  |
-| Romm |  |
 | adguard-home-host |  |
 | anse |  |
 | appsmith |  |
 | audiobookshelf |  |
 | authentik |  |
 | ayon |  |
-| big-bear-casaos-user-management |  |
-| bookstack |  |
 | budibase |  |
 | cadvisor |  |
 | calcom |  |
 | changedetection |  |
 | chatpad |  |
 | cloudflared-web |  |
-| coolify |  |
 | cyberchef |  |
 | dashy |  |
 | davis |  |
@@ -63,7 +59,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | netalertx |  |
 | nextcloud-ls |  |
 | nextcloud-with-smbclient |  |
-| nexterm |  |
 | nightscout |  |
 | node-red |  |
 | note-mark-aio |  |
@@ -91,12 +86,11 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | plex |  |
 | portainer-agent |  |
 | project-management |  |
-| pterodactyl-panel |  |
-| pterodactyl-wings |  |
 | python-matter-server |  |
 | reactive-resume |  |
 | retroarch-web |  |
 | rocket-chat |  |
+| romm |  |
 | scrutiny |  |
 | seafile |  |
 | semaphore |  |
@@ -106,10 +100,8 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | tailscale |  |
 | tianji |  |
 | tududi |  |
-| umbrel-os |  |
 | upsnap |  |
 | viseron |  |
-| wallos |  |
 | wg-easy |  |
 | whats-up-docker |  |
 | zigbee2mqtt |  |
