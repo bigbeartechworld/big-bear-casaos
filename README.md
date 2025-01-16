@@ -97,7 +97,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.124.2-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.124.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.124.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.21 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.22 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.2.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.2 |  |  |
@@ -107,7 +107,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kavita | jvmilazz0/kavita | 0.8.4 |  |  |
 | kiwix-serve | ghcr.io/kiwix/kiwix-serve | 3.7.0-2 |  |  |
 | komf | sndxr/komf | 1.2.3 |  |  |
-| komga | ghcr.io/gotson/komga | 1.17.0 |  |  |
+| komga | ghcr.io/gotson/komga | 1.18.0 |  |  |
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
 | libretranslate | libretranslate/libretranslate | 1.6.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
@@ -147,7 +147,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.14.1 |  |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.14.3 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.50.3 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.4.1 |  |  |
@@ -170,10 +170,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 7.0.1 |  |  |
 | rallly | lukevella/rallly | 3.11.2 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | 4.3.1 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | 4.3.5 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 3.7.0 |  | [Docs](https://github.com/rommapp/romm/wiki) |
+| romm | rommapp/romm | 3.7.2 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
@@ -197,7 +197,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 2.3.1 |  |  |
-| wallos | bellamy/wallos | 2.42.2 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
+| wallos | bellamy/wallos | 2.44.0 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.7.1 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
