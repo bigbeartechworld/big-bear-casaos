@@ -1,9 +1,9 @@
-# Configuration for unms setup
+# Configuration for uisp setup
 
-# Name of the big-bear-unms application
-name: big-bear-unms
+# Name of the big-bear-uisp application
+name: big-bear-uisp
 
-# Service definitions for the big-bear-unms application
+# Service definitions for the big-bear-uisp application
 services:
   # Service name: big-bear-uisp
   # The `big-bear-uisp` service definition
