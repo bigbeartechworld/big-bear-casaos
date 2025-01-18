@@ -1,6 +1,6 @@
 {
   "id": "portainer-agent",
-  "version": "2.25.1",
+  "version": "2.26.0",
   "image": "portainer/agent",
   "youtube": "",
   "docs_link": "",
