@@ -106,7 +106,7 @@ x-casaos:
   # Author of this configuration (docker-compose.yml)
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-lyrionmusicserver/Apps/lyrionmusicserver/logo.png
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/lyrionmusicserver/logo.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
