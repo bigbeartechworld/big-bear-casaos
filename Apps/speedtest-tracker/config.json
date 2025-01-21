@@ -1,6 +1,6 @@
 {
   "id": "speedtest-tracker",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "image": "linuxserver/speedtest-tracker",
   "youtube": "https://youtu.be/TLjS8xNNwis",
   "docs_link": "",
