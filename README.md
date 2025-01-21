@@ -36,7 +36,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.55 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.53.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.17.7 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.18.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.12.2 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.30.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -56,7 +56,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | code-server | linuxserver/code-server | 4.96.2 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
-| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.5 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
+| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.7 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.19.4 |  |  |
 | dashdot | mauricenino/dashdot | 5.9.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
@@ -82,7 +82,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 5.106.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.133.1 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.134.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.50.2 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.40.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -90,16 +90,16 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.9.20251230 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.1.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.1.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 24.12.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.124.2-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.124.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.124.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.25 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.27 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
-| jellyseerr | fallenbagel/jellyseerr | 2.2.3 |  |  |
+| jellyseerr | fallenbagel/jellyseerr | 2.3.0 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.2 |  |  |
 | jlesage-firefox | jlesage/firefox | v24.12.1 |  |  |
 | joplin | florider89/joplin-server | 3.0.1 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
@@ -110,11 +110,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | komga | ghcr.io/gotson/komga | 1.18.0 |  |  |
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
-| libretranslate | libretranslate/libretranslate | 1.6.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
+| libretranslate | libretranslate/libretranslate | 1.6.3 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | lobe-chat | lobehub/lobe-chat | 1.47.2 |  |  |
-| lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.0.2 |  |  |
+| lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.21 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.4.2 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | mind | mrcas/mind | 1.4.1 |  |  |
@@ -122,7 +122,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.74.1 |  |  |
+| n8n | n8nio/n8n | 1.75.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.1.8 |  |  |
@@ -143,7 +143,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.5.7-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.5.7 |  |  |
 | ollama-nvidia | ollama/ollama | 0.5.7 |  |  |
-| onedev | 1dev/server | 11.6.9 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 11.6.10 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.2.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
