@@ -12,7 +12,7 @@ services:
     container_name: big-bear-netalertx
 
     # Image to be used for the container
-    image: jokobsk/netalertx:25.1.8
+    image: jokobsk/netalertx:25.1.19
 
     # Container restart policy
     restart: unless-stopped
