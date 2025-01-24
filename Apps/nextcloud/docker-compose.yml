@@ -128,7 +128,7 @@ services:
     container_name: redis-nextcloud
     user: "1000:1000"
     image: redis:6.2.6
-    restart: on-failure
+    restart: unless-stopped
     volumes:
       - "/DATA/AppData/$AppID/redis:/data" # Mount the Redis data directory
     networks:
@@ -153,7 +153,7 @@ services:
 
   cron:
     image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.4
-    restart: on-failure
+    restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
     entrypoint: /cron.sh
