@@ -1,6 +1,6 @@
 {
   "id": "immich-aio-alpine",
-  "version": "1.125.2-alpine",
+  "version": "1.125.3-alpine",
   "image": "ghcr.io/imagegenius/immich",
   "youtube": "",
   "docs_link": "",
