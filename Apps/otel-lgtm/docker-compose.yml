@@ -1,0 +1,118 @@
+# Configuration for big-bear-otel-lgtm setup
+
+# Name of the big-bear-otel-lgtm application
+name: big-bear-otel-lgtm
+
+# Service definitions for big-bear-otel-lgtm application
+services:
+  # Service name: big-bear-otel-lgtm
+  # The `big-bear-otel-lgtm` service definition
+  big-bear-otel-lgtm:
+    # Name of the container
+    container_name: big-bear-otel-lgtm
+
+    # Image to be used for the container
+    image: grafana/otel-lgtm:0.8.3
+
+    # Container restart policy
+    restart: unless-stopped
+ 
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/$AppID/data directory to /data inside the container
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+        bind:
+          create_host_path: true
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 3000 of the host to port 3000 of the container
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
+      # Mapping port 4317 of the host to port 4317 of the container  
+      - mode: ingress
+        target: 4317
+        published: "4317"
+        protocol: tcp
+      # Mapping port 4318 of the host to port 4318 of the container  
+      - mode: ingress
+        target: 4318
+        published: "4318"
+        protocol: tcp
+
+    # Networks to be attached to the container
+    networks:
+      - big-bear-otel-lgtm    
+    
+    x-casaos: # CasaOS specific service configuration
+      ports:
+        - container: "3000"
+          description:
+            en_us: WebUI HTTP Port
+            en_uk: WebUI HTTP Port
+        - container: "4317"
+          description:
+            en_us: OpenTelemetry gRPC endpoint
+            en_uk: OpenTelemetry gRPC endpoint
+        - container: "4318"
+          description:
+            en_us: OpenTelemetry HTTP endpoint
+            en_uk: OpenTelemetry HTTP endpoint
+      volumes:
+        - container: /data
+          description:
+            en_us: Data directory
+            en_uk: Data directory
+
+networks:
+  big-bear-otel-lgtm:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application  
+  main: big-bear-otel-lgtm
+  # Developer's name or identifier
+  developer: "Grafana Labs"
+  # Author of this configuration
+  author: "Konrad Botor (Forinil)"
+  # Application category
+  category: BigBearCasaOS
+  description:
+    # Description in English
+    en_us: An OpenTelemetry Backend in a Docker Image.
+    en_uk: An OpenTelemetry Backend in a Docker Image.
+  # Icon for the application
+  icon: "https://www.gravatar.com/avatar/31cea69afa424609b2d83621b4d47f1d?s=120&r=g&d=404"
+  # Thumbnail 
+  thumbnail: "https://raw.githubusercontent.com/grafana/docker-otel-lgtm/main/img/overview.png"
+  tagline:
+    # Short description or tagline in English
+    en_us: OpenTelemetry Backend
+    en_uk: OpenTelemetry Backend
+  scheme: http
+  title:
+    # Title in English
+    en_us: OTEL LGTM
+    en_uk: OTEL LGTM
+  # Path to index webpage of the application  
+  index: /
+  # Port mapping information
+  port_map: "3000"
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://github.com/grafana/docker-otel-lgtm/
+        and https://grafana.com/blog/2024/03/13/an-opentelemetry-backend-in-a-docker-image-introducing-grafana/otel-lgtm/
+      en_uk: |
+        Read this before installing: https://github.com/grafana/docker-otel-lgtm/
+        and https://grafana.com/blog/2024/03/13/an-opentelemetry-backend-in-a-docker-image-introducing-grafana/otel-lgtm/

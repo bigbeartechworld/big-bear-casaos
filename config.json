@@ -95,5 +95,6 @@
     "zipline": "3.7.9",
     "pihole-unbound": "2024.03.2",
     "seafile": "11.0.8",
-    "pterodactyl-panel": "v1.11.5"
+    "pterodactyl-panel": "v1.11.5",
+    "otel-lgtm": "0.8.3"
 }
