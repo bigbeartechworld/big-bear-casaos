@@ -45,14 +45,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.12.20241223 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.3.6 |  |  |
+| budibase | budibase/budibase | 3.4.0 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.7.8 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.49.0 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
-| cloudflared-web | wisdomsky/cloudflared-web | 2025.1.0 |  |  |
+| cloudflared-web | wisdomsky/cloudflared-web | 2025.1.1 |  |  |
 | code-server | linuxserver/code-server | 4.96.4 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
@@ -92,7 +92,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2025.2.0 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
-| homer | b4bz/homer | 24.12.1 |  |  |
+| homer | b4bz/homer | 25.02.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.125.7-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.125.7 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
@@ -113,7 +113,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.49.12 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.50.1 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.22 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.5.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
@@ -122,7 +122,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.77.0 |  |  |
+| n8n | n8nio/n8n | 1.77.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.1.19 |  |  |
@@ -178,9 +178,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
-| semaphore | semaphoreui/semaphore | 2.12.3 |  |  |
+| semaphore | semaphoreui/semaphore | 2.12.4 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.2.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.2.2 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 0.40.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.78.3 |  |  |
