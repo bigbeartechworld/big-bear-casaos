@@ -2,7 +2,7 @@
 
 ## Big Bear CasaOS App Store
 
-This repository contains the BigBearCasaOS App Store. This app store is a community app store that is not maintained by the CasaOS team. It is maintained by BigBearTechWorld and the BigBearCommunity.
+This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms including CasaOS and ZimaOS. As an independent company, BigBearTechWorld has established an official partnership with IceWhale to provide this app store as a default option on IceWhale products. The app store is fully maintained by BigBearTechWorld and the BigBearCommunity as a separate entity from IceWhale, while maintaining a collaborative partnership.
 
 ## Need Help or have an issue?
 
