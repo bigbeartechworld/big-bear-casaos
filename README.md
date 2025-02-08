@@ -90,7 +90,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.9.20251230 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.2.0 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.2.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.02.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -196,7 +196,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | umbrel-os | dockurr/umbrel | 1.3.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| upsnap | ghcr.io/seriousm4x/upsnap | 4.6.0 |  |  |
+| upsnap | ghcr.io/seriousm4x/upsnap | 4.6.1 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 2.3.1 |  |  |
