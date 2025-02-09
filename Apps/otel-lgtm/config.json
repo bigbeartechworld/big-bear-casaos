@@ -1,8 +1,8 @@
 {
-    "id": "otel-lgtm",
-    "version": "0.8.3",
-    "image": "grafana/otel-lgtm",
-    "youtube": "",
-    "docs_link": "",
-    "big_bear_cosmos_youtube": ""
-  }
+  "id": "otel-lgtm",
+  "version": "0.8.4",
+  "image": "grafana/otel-lgtm",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}
