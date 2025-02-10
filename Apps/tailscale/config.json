@@ -1,6 +1,6 @@
 {
   "id": "tailscale",
-  "version": "1.78.3",
+  "version": "1.80.0",
   "image": "tailscale/tailscale",
   "youtube": "",
   "docs_link": "",
