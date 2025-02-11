@@ -1,0 +1,75 @@
+# Configuration for watchyourlan setup
+
+# Name of the big-bear-watchyourlan application
+name: big-bear-watchyourlan
+
+# Service definitions for the big-bear-watchyourlan application
+services:
+  # Service name: big-bear-watchyourlan
+  # The `big-bear-watchyourlan` service definition
+  big-bear-watchyourlan:
+    # Name of the container
+    container_name: big-bear-watchyourlan
+
+    # Image to be used for the container
+    image: aceberg/watchyourlan:2.0.4
+
+    # Environment variables to be used for the container
+    environment:
+      - IFACES="eth0"
+      - TZ="UTC"
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/big-bear-watchyourlan/data directory to /data/WatchYourLAN inside the container
+      - /DATA/AppData/$AppID/data:/data/WatchYourLAN
+
+    # Network mode to be used for the container
+    network_mode: host
+
+    x-casaos: # CasaOS specific configuration
+      env:
+        - container: IFACES
+          description:
+            en_us: "Interfaces to monitor"
+        - container: TZ
+          description:
+            en_us: "Timezone"
+      volumes:
+        - container: /data/WatchYourLAN
+          description:
+            en_us: "Container Path: /data/WatchYourLAN"
+
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-watchyourlan
+  description:
+    # Description in English
+    en_us: Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history
+  tagline:
+    # Short description or tagline in English
+    en_us: WatchYourLAN
+  # Developer's name or identifier
+  developer: "ajnart"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchyourlan.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: WatchYourLAN
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8840"
