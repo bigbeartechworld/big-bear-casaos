@@ -36,7 +36,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.56 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.53.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.19.1 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.19.2 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.12.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.31.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -66,7 +66,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | docmost | docmost/docmost | 0.7.0 |  |  |
-| dozzle | amir20/dozzle | 8.10.6 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 8.10.7 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.0.0 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
@@ -90,7 +90,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.9.20251230 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.2.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.2.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.02.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -113,7 +113,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.52.6 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.52.9 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.22 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.6.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
@@ -179,7 +179,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
-| semaphore | semaphoreui/semaphore | 2.12.4 |  |  |
+| semaphore | semaphoreui/semaphore | 2.12.5 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.2.3 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 0.41.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
