@@ -3,7 +3,7 @@ name: big-bear-jlesage-firefox # Name of the CasaOS application
 services:
   big-bear-jlesage-firefox:
     container_name: big-bear-jlesage-firefox # Name of the Docker container
-    image: jlesage/firefox:v24.12.1 # Docker image for the Firefox browser
+    image: jlesage/firefox:v25.02.1 # Docker image for the Firefox browser
     ports:
       - "5800:5800" # Expose port 5800 for VNC access
     environment:
