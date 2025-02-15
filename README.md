@@ -39,13 +39,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.19.2 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.12.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
-| baserow | baserow/baserow | 1.31.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
+| baserow | baserow/baserow | 1.31.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beszel | henrygd/beszel | 0.9.1 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.0.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 24.12.20241223 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.4.5 |  |  |
+| budibase | budibase/budibase | 3.4.6 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.7.8 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.49.1 |  |  |
@@ -81,7 +81,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flowise | flowiseai/flowise | 2.2.5 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 5.109.2-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 5.109.3-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.138.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.52.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -90,14 +90,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.9.20251230 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.2.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.2.4 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.02.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.126.1-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.126.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.126.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.37 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.38 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.3.0 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.3 |  |  |
@@ -113,7 +113,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.52.15 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.52.16 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.22 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.6.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
@@ -140,9 +140,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.8.4 |  |  |
 | octoprint | octoprint/octoprint | 1.10.3 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 18 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.5.7-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.5.7 |  |  |
-| ollama-nvidia | ollama/ollama | 0.5.7 |  |  |
+| ollama-amd | ollama/ollama | 0.5.8-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.5.8 |  |  |
+| ollama-nvidia | ollama/ollama | 0.5.8 |  |  |
 | onedev | 1dev/server | 11.6.13 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.3.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
@@ -150,7 +150,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | otel-lgtm | grafana/otel-lgtm | 0.8.4 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.14.7 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.50.11 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.50.12 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.4.3 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
@@ -186,7 +186,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.80.0 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.31 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.18.2 |  |  |
+| tianji | moonrailgun/tianji | 1.18.5 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.6-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
@@ -206,7 +206,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.7.1 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 2.1.1 |  |  |
-| zipline | ghcr.io/diced/zipline | 3.7.12 |  |  |
+| zipline | ghcr.io/diced/zipline | 3.7.13 |  |  |
 | zotero | linuxserver/zotero | 7.0.20240809 |  |  |
 
 
