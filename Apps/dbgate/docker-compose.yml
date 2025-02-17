@@ -12,7 +12,7 @@ services:
     container_name: big-bear-dbgate
 
     # Image to be used for the container
-    image: dbgate/dbgate:6.1.6-alpine
+    image: dbgate/dbgate:6.2.0-alpine
 
     # Container restart policy
     restart: unless-stopped
