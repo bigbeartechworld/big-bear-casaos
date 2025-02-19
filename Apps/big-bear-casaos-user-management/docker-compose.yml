@@ -106,7 +106,7 @@ x-casaos:
     en_us: Manage users in CasaOS
   developer: "bigbeartechworld"
   author: BigBearTechWorld
-  icon: ""
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg"
   thumbnail: ""
   title:
     en_us: Big Bear CasaOS User Management
