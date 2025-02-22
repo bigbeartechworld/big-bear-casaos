@@ -32,8 +32,8 @@ services:
 
     # Ports mapping between host and container
     ports:
-      # Mapping port 3000 of the host to port 3000 of the container
-      - 3000:3000
+      # Mapping port 4000 of the host to port 3000 of the container
+      - 4000:3000
     
     # Environment variables
     environment:
@@ -53,7 +53,7 @@ services:
       SECRET_KEY_BASE: SECRET_KEY_BASE
       
       # Hostname for the PostgreSQL database service
-      DB_HOST: postgres
+      DB_HOST: big-bear-maybe-finance-postgres
 
       # Name of the PostgreSQL database
       POSTGRES_DB: maybe_production
@@ -129,7 +129,7 @@ services:
             en_us: "Password for the PostgreSQL user."
 
   # Service name: big-bear-maybe-finance-postgres
-  # The `postgres` service definition
+  # The `big-bear-maybe-finance-postgres` service definition
   big-bear-maybe-finance-postgres:
     # Name of the container
     container_name: big-bear-maybe-finance-postgres
@@ -268,7 +268,7 @@ x-casaos:
   category: BigBearCasaOS
 
   # Port mapping information
-  port_map: "3000"
+  port_map: "4000"
 
   # Application scheme
   scheme: http
