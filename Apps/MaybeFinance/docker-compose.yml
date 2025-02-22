@@ -129,7 +129,7 @@ services:
             en_us: "Password for the PostgreSQL user."
 
   # Service name: big-bear-maybe-finance-postgres
-  # The `postgres` service definition
+  # The `big-bear-maybe-finance-postgres` service definition
   big-bear-maybe-finance-postgres:
     # Name of the container
     container_name: big-bear-maybe-finance-postgres
