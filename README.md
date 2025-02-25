@@ -37,7 +37,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.57 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.53.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.19.4 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.19.5 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2024.12.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.31.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -46,7 +46,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 24.12.20241223 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.4.15 |  |  |
+| budibase | budibase/budibase | 3.4.16 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
 | calcom | calcom/cal.com | 4.9.12 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.49.3 |  |  |
@@ -66,7 +66,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | diun | crazymax/diun | 4.29.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| docmost | docmost/docmost | 0.8.1 |  |  |
+| docmost | docmost/docmost | 0.8.3 |  |  |
 | dozzle | amir20/dozzle | 8.11.5 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.0.0 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
@@ -123,7 +123,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.80.1 |  |  |
+| n8n | n8nio/n8n | 1.80.3 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.2.8 |  |  |
@@ -151,14 +151,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | otel-lgtm | grafana/otel-lgtm | 0.8.6 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.14.7 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.51.4 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.51.5 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.4.3 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.2 |  |  |
-| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2025.02.1 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
-| pihole | pihole/pihole | 2025.02.1 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
+| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2025.02.3 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
+| pihole | pihole/pihole | 2025.02.3 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 1.9.1 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 15.3.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.24.4 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
@@ -182,7 +182,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | semaphore | semaphoreui/semaphore | 2.12.14 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.2.3 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.2.5 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 0.42.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.80.0 |  |  |
