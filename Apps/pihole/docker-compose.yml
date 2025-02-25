@@ -12,7 +12,7 @@ services:
     container_name: big-bear-pihole
 
     # Image to be used for the container
-    image: pihole/pihole:2025.02.3
+    image: pihole/pihole:2025.02.4
 
     # Container restart policy
     restart: unless-stopped
