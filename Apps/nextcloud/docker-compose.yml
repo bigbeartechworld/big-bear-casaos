@@ -11,7 +11,7 @@ services:
     # Define the container name
     container_name: nextcloud
     # Use the nextcloud image from the official Docker Hub
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.5
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.6
     # Restart the container unless stopped
     restart: unless-stopped
     # Map port 7580 on the host to port 80 on the container
