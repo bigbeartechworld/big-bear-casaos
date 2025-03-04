@@ -152,7 +152,7 @@ services:
             en_us: "Container Port: 6379"
 
   cron:
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.5
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.6
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
