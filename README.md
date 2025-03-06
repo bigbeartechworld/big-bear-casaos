@@ -32,7 +32,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
 | Homepage | ghcr.io/gethomepage/homepage | 0.10.9 |  |  |
 | MaybeFinance | ghcr.io/maybe-finance/maybe | sha-9522a191de1f258d76ed996ba1c84e3a0629dd80 |  |  |
-| actual-server | actualbudget/actual-server | 25.2.1 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
+| actual-server | actualbudget/actual-server | 25.3.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.57 |  |  |
 | adguard-home | adguard/adguardhome | 0.107.57 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
@@ -53,7 +53,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
-| cloudflared-web | wisdomsky/cloudflared-web | 2025.2.0 |  |  |
+| cloudflared-web | wisdomsky/cloudflared-web | 2025.2.1 |  |  |
 | code-server | linuxserver/code-server | 4.97.2 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
@@ -98,7 +98,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.127.0-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.127.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.127.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.42 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.43 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.3.0 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.3 |  |  |
@@ -123,7 +123,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.81.0 |  |  |
+| n8n | n8nio/n8n | 1.81.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.2.8 |  |  |
@@ -132,7 +132,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.6 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.2-OPEN-PREVIEW | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
-| nocodb | nocodb/nocodb | 0.262.0 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nocodb | nocodb/nocodb | 0.262.1 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.9 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.15.1 |  |  |
 | npmplus | zoeyvid/npmplus | 443 |  |  |
@@ -145,20 +145,20 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-cpu | ollama/ollama | 0.5.12 |  |  |
 | ollama-nvidia | ollama/ollama | 0.5.12 |  |  |
 | onedev | 1dev/server | 11.7.2 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
-| onlyoffice | onlyoffice/documentserver | 8.3.0 |  |  |
+| onlyoffice | onlyoffice/documentserver | 8.3.1 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.8.6 |  |  |
 | owncloud | owncloud/server | 10.15.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.14.7 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.51.5 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.51.10 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.4.3 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.2 |  |  |
-| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2025.02.3 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
-| pihole | pihole/pihole | 2025.02.6 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
+| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2025.02.7 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
+| pihole | pihole/pihole | 2025.02.7 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | 1.9.1 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 15.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.24.4 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
@@ -166,8 +166,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playit-docker-web | wisdomsky/playit-docker-web | 1.1 |  |  |
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.41.4 |  |  |
-| portainer-agent | portainer/agent | 2.27.0 |  |  |
-| portainer | portainer/portainer-ce | 2.27.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer-agent | portainer/agent | 2.27.1 |  |  |
+| portainer | portainer/portainer-ce | 2.27.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.10 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
@@ -206,7 +206,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.7.2 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
-| zigbee2mqtt | koenkk/zigbee2mqtt | 2.1.1 |  |  |
+| zigbee2mqtt | koenkk/zigbee2mqtt | 2.1.3 |  |  |
 | zipline | ghcr.io/diced/zipline | 4.0.0 |  |  |
 | zotero | linuxserver/zotero | 7.0.20240809 |  |  |
 
