@@ -1,0 +1,68 @@
+# Configuration for erugo setup
+
+# Name of the big-bear-erugo application
+name: big-bear-erugo
+
+# Service definitions for the big-bear-erugo application
+services:
+  # Service name: big-bear-erugo
+  # The `big-bear-erugo` service definition
+  big-bear-erugo:
+    # Name of the container
+    container_name: big-bear-erugo
+
+    # Image to be used for the container
+    image: wardy784/erugo:v0.0.006b
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting storage directory to allow erugo to save data
+      - /DATA/AppData/$AppID/storage:/var/www/html/storage
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 9997 of the host to port 80 of the container
+      - "9997:80"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/www/html/storage
+          description:
+            en_us: "Container Path: /var/www/html/storage"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-erugo
+  description:
+    # Description in English
+    en_us: A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend. It offers secure, customizable file-transfer capabilities through an elegant user interface, giving you complete control over your data while providing a seamless experience for both senders and recipients.
+  tagline:
+    # Short description or tagline in English
+    en_us: A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend.
+  # Developer's name or identifier
+  developer: "wardy784"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/erugo/erugo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Erugo
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "9997"
