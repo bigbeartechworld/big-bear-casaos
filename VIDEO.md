@@ -27,6 +27,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | docker-cron-restart-notifier |  |
 | docmost |  |
 | ejbca-ce |  |
+| erugo |  |
 | eufy-security-ws |  |
 | farmos |  |
 | faster-whisper |  |
@@ -43,6 +44,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | invoice-ninja |  |
 | jellyseerr |  |
 | jellystat |  |
+| jlesage-handbrake |  |
 | kavita |  |
 | kiwix-serve |  |
 | komf |  |
