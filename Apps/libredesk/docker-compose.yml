@@ -155,3 +155,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "9000"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-libredesk-to-bigbearcasaos/2993#p-5277-documentation-4
