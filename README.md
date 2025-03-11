@@ -48,7 +48,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 3.4.24 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.51.0 |  |  |
-| calcom | calcom/cal.com | 5.0.12 |  |  |
+| calcom | calcom/cal.com | 5.0.13 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.49.3 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -116,7 +116,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.68.10 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.69.2 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.23 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.7.1 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
@@ -159,9 +159,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.2 |  |  |
-| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2025.02.7 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
+| pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2025.03.0 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole | pihole/pihole | 2025.03.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
-| pingvin-share | stonith404/pingvin-share | 1.10.1 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
+| pingvin-share | stonith404/pingvin-share | 1.10.2 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 15.4.0 |  |  |
 | planka | ghcr.io/plankanban/planka | 1.25.0 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.10.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
