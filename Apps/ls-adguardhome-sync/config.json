@@ -1,5 +1,5 @@
 {
-  "id": "adguard-home-sync",
+  "id": "ls-adguardhome-sync",
   "version": "0.7.1",
   "image": "linuxserver/adguardhome-sync",
   "youtube": "",

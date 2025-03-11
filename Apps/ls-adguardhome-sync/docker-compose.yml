@@ -103,7 +103,7 @@ x-casaos:
   main: big-bear-ls-adguard-home-sync
   description:
     # Description in English
-    en_us: 🛡️ Synchronize AdGuard Home config to replicas
+    en_us: 🛡️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version.
   tagline:
     # Short description or tagline in English
     en_us: LS Adguard Home Sync
