@@ -1,0 +1,162 @@
+# Configuration for libredesk setup
+
+# Name of the big-bear-libredesk application
+name: big-bear-libredesk
+
+# Service definitions for the big-bear-libredesk application
+services:
+  # Service name: big-bear-libredesk
+  # The `big-bear-libredesk` service definition
+  big-bear-libredesk:
+    # Name of the container
+    container_name: big-bear-libredesk
+
+    # Image to be used for the container
+    image: libredesk/libredesk:v0.4.3-alpha
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      - LIBREDESK_SYSTEM_USER_PASSWORD="c6b51a4e-ab9d-4f4f-933e-e96ed3570c1A"
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local libredesk/uploads directory to /libredesk/uploads inside the container
+      - /DATA/AppData/$AppID/uploads:/libredesk/uploads:rw
+      # Mounting the local libredesk/config.toml directory to /libredesk/config.toml inside the container
+      - /DATA/AppData/$AppID/config:/libredesk/config:rw
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 9000 of the host to port 9000 of the container
+      - "9000:9000"
+
+    command:
+      [
+        sh,
+        -c,
+        "./libredesk --install --idempotent-install --yes --config /libredesk/config/config.toml && ./libredesk --upgrade --yes --config /libredesk/config/config.toml && ./libredesk --config /libredesk/config/config.toml",
+      ]
+
+    # Dependencies
+    depends_on:
+      - big-bear-libredesk-db
+      - big-bear-libredesk-redis
+
+    # Networks
+    networks:
+      - big-bear-libredesk-network
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /libredesk/uploads
+          description:
+            en_us: "Container Path: /libredesk/uploads"
+        - container: /libredesk/config.toml
+          description:
+            en_us: "Container Path: /libredesk/config.toml"
+      ports:
+        - container: "9000"
+          description:
+            en_us: "Container Port: 9000"
+
+  # PostgreSQL database
+  big-bear-libredesk-db:
+    image: postgres:17-alpine
+    container_name: big-bear-libredesk-db
+    restart: unless-stopped
+    networks:
+      - big-bear-libredesk-network
+    ports:
+      - "5432:5432"
+    environment:
+      # Set these environment variables to configure the database, defaults to libredesk.
+      POSTGRES_USER: libredesk
+      POSTGRES_PASSWORD: libredesk
+      POSTGRES_DB: big_bear_libredesk
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U libredesk"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    volumes:
+      - /DATA/AppData/$AppID/data/postgres:/var/lib/postgresql/data
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_us: Database user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: Database password
+        - container: POSTGRES_DB
+          description:
+            en_us: Database type
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+
+  # Redis
+  big-bear-libredesk-redis:
+    image: redis:7-alpine
+    container_name: big-bear-libredesk-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - big-bear-libredesk-network
+    volumes:
+      - /DATA/AppData/$AppID/data/redis:/data
+
+    x-casaos: # CasaOS specific configuration
+      ports:
+        - container: "6379"
+          description:
+            en_us: "Container Port: 6379"
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+
+networks:
+  big-bear-libredesk-network:
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-libredesk
+  description:
+    # Description in English
+    en_us: Open source, self-hosted customer support desk. Single binary app.
+  tagline:
+    # Short description or tagline in English
+    en_us: Open source, self-hosted customer support desk. Single binary app.
+  # Developer's name or identifier
+  developer: "libredesk"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: ""
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Libredesk
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "9000"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-libredesk-to-bigbearcasaos/2993#p-5277-documentation-4
