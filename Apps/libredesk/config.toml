@@ -35,7 +35,7 @@ expiry = "6h"
 # Postgres.
 [db]
 # If using docker compose, use the service name as the host. e.g. db
-host = "127.0.0.1"
+host = "big-bear-libredesk-db"
 port = 5432
 # Update the following values with your database credentials.
 user = "libredesk"

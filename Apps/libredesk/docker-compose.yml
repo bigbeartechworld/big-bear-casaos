@@ -19,7 +19,7 @@ services:
 
     # Environment variables
     environment:
-      - LIBREDESK_SYSTEM_USER_PASSWORD="casaos"
+      - LIBREDESK_SYSTEM_USER_PASSWORD="c6b51a4e-ab9d-4f4f-933e-e96ed3570c1A"
 
     # Volumes to be mounted to the container
     volumes:
