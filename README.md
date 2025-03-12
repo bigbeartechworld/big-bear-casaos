@@ -83,7 +83,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flowise | flowiseai/flowise | 2.2.6 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 5.110.4-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 5.111.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.144.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.54.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -92,14 +92,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.9.20251230 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.3.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.3.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.03.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.129.0-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.129.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.129.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.51 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.53 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.3.0 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.3 |  |  |
@@ -116,7 +116,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.69.2 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.70.2 |  |  |
+| ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.1 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.23 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.7.1 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
@@ -185,10 +186,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | semaphore | semaphoreui/semaphore | 2.12.14 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.2.5 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
-| stirling-pdf | stirlingpdf/stirlingpdf | 0.43.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
+| stirling-pdf | stirlingpdf/stirlingpdf | 0.44.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.80.3 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.31 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.32 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.18.12 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.6-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
