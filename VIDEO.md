@@ -18,7 +18,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | calcom |  |
 | changedetection |  |
 | chatpad |  |
-| cloudflared-web |  |
 | cyberchef |  |
 | dashy |  |
 | davis |  |
@@ -68,7 +67,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | node-red |  |
 | note-mark-aio |  |
 | npmplus |  |
-| obsidian-livesync |  |
 | obsidian |  |
 | odoo |  |
 | ollama-amd |  |
@@ -108,7 +106,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | uisp |  |
 | upsnap |  |
 | viseron |  |
-| watchyourlan |  |
 | wg-easy |  |
 | whats-up-docker |  |
 | zigbee2mqtt |  |
