@@ -33,14 +33,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage | ghcr.io/gethomepage/homepage | 0.10.9 |  |  |
 | MaybeFinance | ghcr.io/maybe-finance/maybe | sha-9522a191de1f258d76ed996ba1c84e3a0629dd80 |  |  |
 | actual-server | actualbudget/actual-server | 25.3.1 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
-| adguard-home-host | adguard/adguardhome | 0.107.58 |  |  |
-| adguard-home | adguard/adguardhome | 0.107.58 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
+| adguard-home-host | adguard/adguardhome | 0.107.59 |  |  |
+| adguard-home | adguard/adguardhome | 0.107.59 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.53.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.20.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2025.2.2 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
-| baserow | baserow/baserow | 1.32.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
+| baserow | baserow/baserow | 1.32.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beszel | henrygd/beszel | 0.10.2 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.0.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 25.02.20250309 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
@@ -117,7 +117,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.72.1 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.73.0 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.2 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.23 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
