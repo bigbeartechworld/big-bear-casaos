@@ -97,8 +97,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homer | b4bz/homer | 25.03.3 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.130.1-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.129.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | 1.129.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.130.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | 1.130.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | invoice-ninja | invoiceninja/invoiceninja | 5.11.61 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.5.1 |  |  |
@@ -117,7 +117,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.73.0 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.74.5 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.2 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.23 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -148,7 +148,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.6.2-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.6.2 |  |  |
 | ollama-nvidia | ollama/ollama | 0.6.2 |  |  |
-| onedev | 1dev/server | 11.7.5 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 11.7.6 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.3.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
@@ -191,7 +191,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.80.3 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.33 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.18.22 |  |  |
+| tianji | moonrailgun/tianji | 1.19.0 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.6-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
