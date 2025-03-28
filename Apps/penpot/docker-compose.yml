@@ -24,8 +24,8 @@ services:
 
     # Ports mapping between host and container
     ports:
-      # Mapping port 9001 of the host to port 80 of the container
-      - "9001:80"
+      # Mapping port 9001 of the host to port 8080 of the container
+      - "9001:8080"
 
     # Other services that this service depends on
     depends_on:
@@ -42,9 +42,9 @@ services:
           description:
             en_us: "Local Assets directory"
       ports:
-        - container: "80"
+        - container: "8080"
           description:
-            en_us: "Container Port: 80"
+            en_us: "Container Port: 8080"
 
   # Definition for penpot-backend service
   penpot-backend:
