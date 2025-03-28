@@ -2,7 +2,49 @@
 
 ## Big Bear CasaOS App Store
 
-This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms including CasaOS and ZimaOS. As an independent company, BigBearTechWorld has established an official partnership with IceWhale to provide this app store as a default option on IceWhale products. The app store is fully maintained by BigBearTechWorld and the BigBearCommunity as a separate entity from IceWhale, while maintaining a collaborative partnership.
+This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms, including CasaOS and ZimaOS. As an independent company, BigBearTechWorld has established an official partnership with IceWhale to provide this app store as a default option on IceWhale products. The app store is fully maintained by BigBearTechWorld and the BigBearCommunity as a separate entity from IceWhale while maintaining a collaborative partnership.
+
+## App Store Sponsorship Opportunities
+
+We offer app developers and companies the opportunity to gain visibility through sponsored placements in our recommended apps list. As one of the largest third-party app stores and the most up-to-date for CasaOS and ZimaOS and the default option on all IceWhale hardware, we can help your application reach a dedicated community of self-hosters and home server enthusiasts.
+
+### Sponsorship Tiers:
+
+#### 🥉 Basic Placement - $50/month
+
+- Inclusion in our recommended apps list
+- Regular updates and maintenance
+
+#### 🥈 Premium Placement - $150/month
+
+- Prominent position in the recommended apps list
+- Featured mention in our community updates
+- Priority support for app maintenance
+
+#### 🥇 Featured Partner - $300/month
+
+- Top placement in the recommended apps list with highlighted entry
+- Dedicated YouTube video showcasing your application
+- Regular maintenance and priority updates
+- Monthly mention in BigBearCommunity updates
+
+For sponsorship please go to my ko-fi and join the membership level. https://ko-fi.com/bigbeartechworld
+
+## Recommended Apps List
+
+Our curated selection of recommended applications for CasaOS users:
+
+### 🥇 Featured Partners
+
+- **Your App Here with logo** - Brief description of the application
+
+### 🥈 Premium Apps
+
+- **Your App here with logo** - Brief description of the application
+
+### 🥉 Basic Apps
+
+- **Your App Here with logo** - Brief description of the application
 
 ## Need Help or have an issue?
 
@@ -117,7 +159,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.74.8 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.74.11 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.2 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.23 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -135,10 +177,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.6 |  |  |
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.6 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.3-OPEN-PREVIEW | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
-| nightscout | nightscout/cgm-remote-monitor | 15.0.2 |  |  |
-| nocodb | nocodb/nocodb | 0.262.4 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nightscout | nightscout/cgm-remote-monitor | 15.0.2 | [YouTube Video](https://youtu.be/ty0F0lo9kSo) |  |
+| nocodb | nocodb/nocodb | 0.262.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.0.9 |  |  |
-| note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.15.2 |  |  |
+| note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.15.3 |  |  |
 | npmplus | zoeyvid/npmplus | 443 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.11.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.4.3 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
@@ -184,7 +226,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
-| semaphore | semaphoreui/semaphore | 2.13.0 |  |  |
+| semaphore | semaphoreui/semaphore | 2.13.2 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.3.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 0.44.3 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
@@ -206,7 +248,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 2.3.1 |  |  |
 | wallos | bellamy/wallos | 2.48.0 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
-| watchyourlan | aceberg/watchyourlan | 2.0.4 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
+| watchyourlan | aceberg/watchyourlan | 2.1.1 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
 | wordpress | wordpress | 6.7.2 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
