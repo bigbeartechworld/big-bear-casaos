@@ -4,6 +4,48 @@
 
 This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms including CasaOS and ZimaOS. As an independent company, BigBearTechWorld has established an official partnership with IceWhale to provide this app store as a default option on IceWhale products. The app store is fully maintained by BigBearTechWorld and the BigBearCommunity as a separate entity from IceWhale, while maintaining a collaborative partnership.
 
+## App Store Sponsorship Opportunities
+
+We offer app developers and companies the opportunity to gain visibility through sponsored placements in our recommended apps list. As one of the largest third-party app store and most up to date for CasaOS and ZimaOS and the default option on all IceWhale hardware, we can help your application reach a dedicated community of self-hosters and home server enthusiasts.
+
+### Sponsorship Tiers:
+
+#### 🥉 Basic Placement - $50/month
+
+- Inclusion in our recommended apps list
+- Regular updates and maintenance
+
+#### 🥈 Premium Placement - $150/month
+
+- Prominent position in the recommended apps list
+- Featured mention in our community updates
+- Priority support for app maintenance
+
+#### 🥇 Featured Partner - $300/month
+
+- Top placement in the recommended apps list with highlighted entry
+- Dedicated YouTube video showcasing your application
+- Regular maintenance and priority updates
+- Monthly mention in BigBearCommunity updates
+
+For sponsorship please go to my ko-fi and join the membership level. https://ko-fi.com/bigbeartechworld
+
+## Recommended Apps List
+
+Our curated selection of recommended applications for CasaOS users:
+
+### 🥇 Featured Partners
+
+- **Your App Here with logo** - Brief description of the application
+
+### 🥈 Premium Apps
+
+- **Your App here with logo** - Brief description of the application
+
+### 🥉 Basic Apps
+
+- **Your App Here with logo** - Brief description of the application
+
 ## Need Help or have an issue?
 
 Please post in the [BigBearCommunity](https://community.bigbeartechworld.com/c/big-bear-casas/10) with your issue. Try to be detailed in your issue.
