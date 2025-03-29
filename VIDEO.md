@@ -63,7 +63,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | netalertx |  |
 | nextcloud-ls |  |
 | nextcloud-with-smbclient |  |
-| nightscout |  |
 | node-red |  |
 | note-mark-aio |  |
 | npmplus |  |
