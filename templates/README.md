@@ -55,7 +55,7 @@ If you have a feature request please post in the [BigBearCommunity](https://comm
 ## App Store URL
 
 ```text
-https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zip
+https://icewhale.bigbeartechworld.com/big-bear-casaos.zip
 ```
 
 ## App Store Suggestions
