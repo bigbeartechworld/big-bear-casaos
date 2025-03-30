@@ -20,7 +20,7 @@ services:
     # Environment variables
     environment:
       TZ: "UTC"
-      WEBPASSWORD: "your_password"
+      FTLCONF_webserver_api_password: "your_password"
 
     # Volumes to be mounted to the container
     volumes:
