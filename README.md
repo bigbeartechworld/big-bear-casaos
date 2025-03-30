@@ -55,7 +55,7 @@ If you have a feature request please post in the [BigBearCommunity](https://comm
 ## App Store URL
 
 ```text
-https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zip
+https://icewhale.bigbeartechworld.com/big-bear-casaos.zip
 ```
 
 ## App Store Suggestions
@@ -88,7 +88,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.02.20250309 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.6.0 |  |  |
+| budibase | budibase/budibase | 3.7.2 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.0.19 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.49.9 |  |  |
@@ -108,7 +108,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | diun | crazymax/diun | 4.29.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.4.2 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| docmost | docmost/docmost | 0.8.4 |  |  |
+| docmost | docmost/docmost | 0.9.0 |  |  |
 | dozzle | amir20/dozzle | 8.11.9 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.0.0 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | v0.0.006b |  |  |
@@ -125,8 +125,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flowise | flowiseai/flowise | 2.2.6 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 0.0.6 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 5.113.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.147.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghost | ghost | 5.114.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.148.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gladys | gladysassistant/gladys | 4.55.2 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.40.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -155,11 +155,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | komga | ghcr.io/gotson/komga | 1.21.2 |  |  |
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
-| libredesk | libredesk/libredesk | v0.4.3-alpha |  |  |
+| libredesk | libredesk/libredesk | 0.5.0-alpha |  |  |
 | libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.9.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.74.11 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.75.3 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.2 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.23 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -169,7 +169,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.84.1 |  |  |
+| n8n | n8nio/n8n | 1.85.3 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.3.1 |  |  |
@@ -190,7 +190,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.6.2-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.6.2 |  |  |
 | ollama-nvidia | ollama/ollama | 0.6.2 |  |  |
-| onedev | 1dev/server | 11.7.6 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 11.8.0 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.3.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
