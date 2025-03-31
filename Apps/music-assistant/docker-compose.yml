@@ -5,11 +5,11 @@ name: big-bear-music-assistant
 
 # Service definitions for the big-bear-music-assistant application
 services:
-  # Service name: music-assistant-server
+  # Service name: big-bear-music-assistant-server
   # The `appserver service definition
-  music-assistant-server:
+  big-bear-music-assistant-server:
     # Name of the container
-    container_name: music-assistant-server
+    container_name: big-bear-music-assistant-server
 
     # Image to be used for the container
     image: ghcr.io/music-assistant/server:2.4.4
@@ -44,7 +44,7 @@ x-casaos:
     - amd64
     - arm64
   # Main service of the application
-  main: music-assistant-server
+  main: big-bear-music-assistant-server
   description:
     # Description in English
     en_us: Music Assistant is a music library manager for your offline and online music sources which can easily stream your favourite music to a wide range of supported players and be combined with the power of Home Assistant!
@@ -54,9 +54,9 @@ x-casaos:
   # Developer's name or identifier
   developer: "music-assistant"
   # Author of this configuration
-  author: BigBearTechWorld
+  author: Tofil
   # Icon for the application
-  icon: https://avatars.githubusercontent.com/u/71128003
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/music-assistant/logo.png
   # Thumbnail image (currently empty)
   thumbnail: https://www.music-assistant.io/assets/banner.png
   title:
