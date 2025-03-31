@@ -1,0 +1,68 @@
+# Configuration for music-assistant setup
+
+# Name of the big-bear-music-assistant application
+name: big-bear-music-assistant
+
+# Service definitions for the big-bear-music-assistant application
+services:
+  # Service name: music-assistant-server
+  # The `appserver service definition
+  music-assistant-server:
+    # Name of the container
+    container_name: music-assistant-server
+
+    # Image to be used for the container
+    image: ghcr.io/music-assistant/server:2.4.4
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+
+    # Network mode for the container
+    network_mode: host
+
+    # Security options for container runtime
+    security_opt:
+      # Allows necessary system calls for full functionality
+      - apparmor:unconfined
+
+    # Additional container capabilities
+    cap_add:
+      # Required for system administration tasks within the container
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: music-assistant-server
+  description:
+    # Description in English
+    en_us: Music Assistant is a music library manager for your offline and online music sources which can easily stream your favourite music to a wide range of supported players and be combined with the power of Home Assistant!
+  tagline:
+    # Short description or tagline in English
+    en_us: Home Automation
+  # Developer's name or identifier
+  developer: "music-assistant"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://avatars.githubusercontent.com/u/71128003
+  # Thumbnail image (currently empty)
+  thumbnail: https://www.music-assistant.io/assets/banner.png
+  title:
+    # Title in English
+    en_us: Music Assistant
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8095"
