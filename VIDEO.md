@@ -58,6 +58,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | minio |  |
 | monica |  |
 | mumble-server |  |
+| music-assistant |  |
 | n8n |  |
 | neko-firefox |  |
 | netalertx |  |
