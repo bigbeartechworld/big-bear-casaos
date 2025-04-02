@@ -19,7 +19,7 @@ services:
     # These mounts allow the container to interact with the host system
     volumes:
       # Temporary storage for morphos
-      - /DATA/AppData/morphos/tmp:/tmp
+      - /DATA/AppData/$AppID/tmp:/tmp
 
     # Map port 8080 on the host to port 8080 on the container
     ports:
