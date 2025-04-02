@@ -58,7 +58,15 @@ x-casaos:
   developer: "danvergara"
   author: BigBearTechWorld
   icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/logo.png"
-  thumbnail: ""
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-6.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-7.png
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/thumbnail.png"
   title:
     en_us: Morphos
   category: BigBearCasaOS
