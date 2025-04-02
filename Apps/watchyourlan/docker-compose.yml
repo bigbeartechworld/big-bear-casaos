@@ -12,7 +12,7 @@ services:
     container_name: big-bear-watchyourlan
 
     # Image to be used for the container
-    image: aceberg/watchyourlan:2.1.1
+    image: aceberg/watchyourlan:2.1.2
 
     # Environment variables to be used for the container
     environment:
