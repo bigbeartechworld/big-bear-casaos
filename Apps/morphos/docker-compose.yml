@@ -4,7 +4,7 @@ name: big-bear-morphos
 # Service definitions for the big-bear-morphos application
 services:
   # Main service configuration for the morphos application
-  # This service provides a web interface running on port 5000 for user administration
+  # This service provides a web interface running on port 8080 for file conversion
   big-bear-morphos:
     # Name of the container
     container_name: big-bear-morphos
