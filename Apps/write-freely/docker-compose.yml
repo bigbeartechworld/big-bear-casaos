@@ -1,0 +1,86 @@
+# Docker Compose configuration for BigBearCasaOS Write Freely Service
+# This service provides a web interface for managing Write Freely
+# Version: 0.15
+
+# Name of the big-bear-write-freely application
+name: big-bear-write-freely
+
+# Service definitions for the big-bear-write-freely application
+services:
+  # Main service configuration for the Write Freely application
+  # This service provides a web interface running on port 8080
+  big-bear-write-freely:
+    # Name of the container
+    container_name: big-bear-write-freely
+
+    # Image to be used for the container specifies the write-freely version and source
+    image: nephatrine/write-freely:0.15
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Environment variables for service configuration
+    # These settings control the Write Freely application behavior
+    environment:
+      TZ: "UTC"
+      PUID: 1000
+      PGID: 1000
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      - /DATA/AppData/$AppID/data/config:/mnt/config
+
+    # Map port 8080 on the host to port 8080 on the container
+    ports:
+      - 70:70/tcp
+      - 8080:8080/tcp
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: "Container Environment Variable: TZ"
+        - container: PUID
+          description:
+            en_us: "Container Environment Variable: PUID"
+        - container: PGID
+          description:
+            en_us: "Container Environment Variable: PGID"
+      volumes:
+        - container: /mnt/config
+          description:
+            en_us: "Container Path: /mnt/config"
+      ports:
+        - container: "70"
+          description:
+            en_us: "Container Port: 70"
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-write-freely
+  description:
+    en_us: WriteFreely is a clean, minimalist publishing platform made for writers. Start a blog, share knowledge within your organization, or build a community around the shared act of writing.
+  tagline:
+    en_us: Markdown-based publishing platform.
+  developer: "nephatrine"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/write-freely/logo.png"
+  thumbnail: ""
+  title:
+    en_us: Write Freely
+  category: BigBearCasaOS
+  port_map: "8080"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-write-freely-to-bigbearcasaos/2227#p-4191-quick-start-3
