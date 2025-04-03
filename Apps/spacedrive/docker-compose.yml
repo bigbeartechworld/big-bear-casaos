@@ -1,0 +1,74 @@
+# Docker Compose configuration for BigBearCasaOS Spacedrive Service
+# This service provides a web interface for managing files
+# Version: 0.4.2
+
+# Name of the big-bear-spacedrive application
+name: big-bear-spacedrive
+
+# Service definitions for the big-bear-spacedrive application
+services:
+  # Main service configuration for the spacedrive application
+  # This service provides a web interface running on port 8080 for file management
+  big-bear-spacedrive:
+    # Name of the container
+    container_name: big-bear-spacedrive
+
+    # Image to be used for the container specifies the spacedrive version and source
+    image: ghcr.io/spacedriveapp/spacedrive/server:0.4.2
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Environment variables for service configuration
+    # These settings control the spacedrive application behavior and authentication
+    environment:
+      - SD_AUTH=bigbear:casaos # username:password
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      - /DATA/AppData/$AppID/data/spacedrive:/var/spacedrive
+
+    # Map port 8080 on the host to port 8080 on the container
+    ports:
+      - 8080:8080
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: SD_AUTH
+          description:
+            en_us: "Container Environment Variable: SD_AUTH"
+      volumes:
+        - container: /var/spacedrive
+          description:
+            en_us: "Container Path: /var/spacedrive"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-spacedrive
+  description:
+    en_us: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.
+  tagline:
+    en_us: Cross-platform file explorer
+  developer: "spacedriveapp"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/spacedrive/logo.png"
+  thumbnail: ""
+  title:
+    en_us: Spacedrive
+  category: BigBearCasaOS
+  port_map: "8080"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-spacedrive-to-bigbearcasaos/2622#p-4722-quick-start-3
