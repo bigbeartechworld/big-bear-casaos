@@ -1,6 +1,6 @@
 {
   "id": "otel-lgtm",
-  "version": "0.9.1",
+  "version": "0.9.3",
   "image": "grafana/otel-lgtm",
   "youtube": "",
   "docs_link": "",
