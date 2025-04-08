@@ -1,6 +1,6 @@
 {
   "id": "linkwarden",
-  "version": "2.9.3",
+  "version": "2.10.0",
   "image": "ghcr.io/linkwarden/linkwarden",
   "youtube": "https://youtu.be/KZXZAi9Vjs4",
   "docs_link": "",
