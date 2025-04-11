@@ -3,52 +3,46 @@ name: big-bear-dozzle-swarm
 
 # Service definitions for the big-bear-dozzle application
 services:
-  # Service name: app
-  # The `app` service definition
-  app:
+  # Service name: big-bear-dozzle-swarm
+  # The `big-bear-dozzle-swarm` service definition
+  big-bear-dozzle-swarm:
     # Name of the container
     container_name: big-bear-dozzle-swarm
-
     # Image to be used for the container
     image: amir20/dozzle:v8.12.4
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables to enable swarm mode
     environment:
       - DOZZLE_MODE=swarm
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting docker.sock to allow docker management via the container
       - /var/run/docker.sock:/var/run/docker.sock
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8888 of the host to port 8080 of the container
       - "8888:8080"
-
     networks:
-      - dozzle
-
+      - big-bear-dozzle-swarm-network
     # Swarm deployment mode
     deploy:
       mode: global
-
+      
     x-casaos: # CasaOS specific configuration
       volumes:
         - container: /var/run/docker.sock
           description:
             en_us: "Container Path: /var/run/docker.sock"
       ports:
-        - container: "8888:8080"
-
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+            
 # Network definition for overlay
 networks:
-  - big-bear-dozzle-swarm
+  big-bear-dozzle-swarm-network:
     driver: overlay
-
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application
@@ -78,4 +72,3 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "8888"
-
