@@ -12,7 +12,7 @@ services:
     container_name: big-bear-owncloud
 
     # Image to be used for the container
-    image: owncloud/server:10.15.0
+    image: owncloud/server:10.15.2
 
     # Container restart policy
     restart: unless-stopped
@@ -52,6 +52,10 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+
+    depends_on:
+      - big-bear-owncloud-db
+      - big-bear-owncloud-redis
 
     x-casaos: # CasaOS specific configuration
       envs:
@@ -102,13 +106,14 @@ services:
 
   big-bear-owncloud-db:
     container_name: big-bear-owncloud-db
-    image: mariadb:10.6 # minimum required ownCloud version is 10.9
+    image: mariadb:10.6
     restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a
       - MYSQL_USER=bigbear
       - MYSQL_PASSWORD=f01914eb-2be3-4164-a57c-08e6518f313a
       - MYSQL_DATABASE=big_bear_owncloud
+      - MARIADB_AUTO_UPGRADE=1
     command: ["--max-allowed-packet=128M", "--innodb-log-file-size=64M"]
     healthcheck:
       test:
@@ -117,14 +122,14 @@ services:
           "mysqladmin",
           "ping",
           "-u",
-          "root",
+          "bigbear",
           "--password=f01914eb-2be3-4164-a57c-08e6518f313a",
         ]
       interval: 10s
       timeout: 5s
       retries: 5
     volumes:
-      - /DATA/AppData/$AppID/data/mysql:/var/lib/mysql
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     networks:
       - big_bear_owncloud_network
 
@@ -162,7 +167,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - /DATA/AppData/$AppID/data/redis:/data
+      - /DATA/AppData/$AppID/redis:/data
     networks:
       - big_bear_owncloud_network
 
@@ -178,6 +183,7 @@ services:
 
 networks:
   big_bear_owncloud_network:
+    name: big_bear_owncloud_network
     driver: bridge
 
 # CasaOS specific configuration

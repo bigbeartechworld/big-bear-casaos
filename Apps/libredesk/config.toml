@@ -1,0 +1,77 @@
+# App.
+[app]
+log_level = "debug"
+env = "dev"
+check_updates = true
+
+# HTTP server.
+[app.server]
+address = "0.0.0.0:9000"
+socket = ""
+read_timeout = "5s"
+write_timeout = "5s"
+max_body_size = 500000000
+read_buffer_size = 4096
+keepalive_timeout = "10s"
+
+# File upload provider to use, either `fs` or `s3`.
+[upload]
+provider = "fs"
+
+# Filesytem provider.
+[upload.fs]
+upload_path = 'uploads'
+
+# S3 provider.
+[upload.s3]
+url = ""
+access_key = ""
+secret_key = ""
+region = "ap-south-1"
+bucket = "bucket"
+bucket_path = ""
+expiry = "6h"
+
+# Postgres.
+[db]
+# If using docker compose, use the service name as the host. e.g. db
+host = "big-bear-libredesk-db"
+port = 5432
+# Update the following values with your database credentials.
+user = "libredesk"
+password = "libredesk"
+database = "big_bear_libredesk"
+ssl_mode = "disable"
+max_open = 30
+max_idle = 30
+max_lifetime = "300s"
+
+# Redis.
+[redis]
+# If using docker compose, use the service name as the host. e.g. redis:6379
+address = "big-bear-libredesk-redis:6379"
+password = ""
+db = 0
+
+[message]
+outgoing_queue_workers = 10
+incoming_queue_workers = 10
+message_outoing_scan_interval = "50ms"
+incoming_queue_size = 5000
+outgoing_queue_size = 5000
+
+[notification]
+concurrency = 2
+queue_size = 2000
+
+[automation]
+worker_count = 10
+
+[autoassigner]
+autoassign_interval = "5m"
+
+[conversation]
+unsnooze_interval = "5m"
+
+[sla]
+evaluation_interval = "5m"

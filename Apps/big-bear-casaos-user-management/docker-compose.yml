@@ -1,6 +1,6 @@
 # Docker Compose configuration for BigBearCasaOS User Management Service
 # This service provides a web interface for managing CasaOS users and permissions
-# Version: 0.0.1
+# Version: 0.1.0
 
 # Name of the big-bear-casaos-user-management application
 name: big-bear-casaos-user-management
@@ -14,7 +14,7 @@ services:
     container_name: big-bear-casaos-user-management
 
     # Image to be used for the container specifies the btop version and source
-    image: bigbeartechworld/big-bear-casaos-user-management:0.0.1
+    image: bigbeartechworld/big-bear-casaos-user-management:0.1.0
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
@@ -106,7 +106,7 @@ x-casaos:
     en_us: Manage users in CasaOS
   developer: "bigbeartechworld"
   author: BigBearTechWorld
-  icon: ""
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg"
   thumbnail: ""
   title:
     en_us: Big Bear CasaOS User Management

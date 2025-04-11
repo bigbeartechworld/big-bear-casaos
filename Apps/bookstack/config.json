@@ -1,6 +1,6 @@
 {
   "id": "bookstack",
-  "version": "24.12.20241223",
+  "version": "25.02.20250309",
   "image": "lscr.io/linuxserver/bookstack",
   "youtube": "https://youtu.be/_jW4RjJm-6A",
   "docs_link": "",

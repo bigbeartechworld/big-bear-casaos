@@ -1,8 +1,8 @@
 {
   "id": "cloudflared-web",
-  "version": "2024.12.2",
+  "version": "2025.4.0",
   "image": "wisdomsky/cloudflared-web",
-  "youtube": "",
+  "youtube": "https://youtu.be/JvyyolXJ0-A",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
 }

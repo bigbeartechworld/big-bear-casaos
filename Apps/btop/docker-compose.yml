@@ -12,13 +12,19 @@ services:
     container_name: big-bear-btop
 
     # Image to be used for the container specifies the btop version and source
-    image: bigbeartechworld/big-bear-btop:0.0.8
+    image: bigbeartechworld/big-bear-btop:0.0.9
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
 
     # Run the container in privileged mode to allow access to system metrics
     privileged: true
+
+    # Environment variables for authentication
+    environment:
+      - GOTTY_AUTH_USER=bigbear
+      - GOTTY_AUTH_PASS=password
+      - GOTTY_AUTH_ENABLED=true
 
     # Mount necessary volumes for accessing system information
     volumes:
@@ -39,6 +45,16 @@ services:
 
     # CasaOS specific configuration for volume and port descriptions
     x-casaos:
+      envs:
+        - container: GOTTY_AUTH_USER
+          description:
+            en_us: "Container Environment Variable: GOTTY_AUTH_USER"
+        - container: GOTTY_AUTH_PASS
+          description:
+            en_us: "Container Environment Variable: GOTTY_AUTH_PASS"
+        - container: GOTTY_AUTH_ENABLED
+          description:
+            en_us: "Container Environment Variable: GOTTY_AUTH_ENABLED"
       volumes:
         - container: /proc
           description:
@@ -52,6 +68,9 @@ services:
         - container: /etc/localtime
           description:
             en_us: "Container Path: /etc/localtime"
+        - container: /root/.config/btop
+          description:
+            en_us: "Container Path: /root/.config/btop"
       ports:
         - container: "7681"
 

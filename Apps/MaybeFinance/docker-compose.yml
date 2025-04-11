@@ -1,0 +1,274 @@
+# Configuration for peppermint setup
+
+# Name of the big-bear-maybe-finance application
+name: big-bear-maybe-finance
+
+# Service definitions for the big-bear-maybe-finance application
+services:
+  # Service name: app
+  # The `app` service definition
+  big-bear-maybe-finance:
+    # Name of the container
+    container_name: big-bear-maybe-finance
+
+    # Image to be used for the container
+    image: ghcr.io/maybe-finance/maybe:sha-9522a191de1f258d76ed996ba1c84e3a0629dd80
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Privilege of the container
+    privileged: false
+
+    # Uses default network mode
+    networks:
+      # Use the default Docker network
+      - big_bear_maybe_finance_network
+    
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local maybe/pp-storage directory to /rails/storage inside the container
+      - /DATA/AppData/$AppID/app-storage:/rails/storage
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 4000 of the host to port 3000 of the container
+      - 4000:3000
+    
+    # Environment variables
+    environment:
+      # Indicates the application is self-hosted
+      SELF_HOSTED: "true"
+
+      # SSL configuration
+      RAILS_FORCE_SSL: "false"
+
+      # SSL assumption configuration
+      RAILS_ASSUME_SSL: "false"
+
+      # Sets the execution mode for GoodJob
+      GOOD_JOB_EXECUTION_MODE: async
+
+      # Secret key for Rails application
+      SECRET_KEY_BASE: SECRET_KEY_BASE
+      
+      # Hostname for the PostgreSQL database service
+      DB_HOST: big-bear-maybe-finance-postgres
+
+      # Name of the PostgreSQL database
+      POSTGRES_DB: maybe_production
+
+      # PostgreSQL user
+      POSTGRES_USER: maybe_user
+
+      # Password for the PostgreSQL user
+      POSTGRES_PASSWORD: casaos
+    
+    # This section specifies that the `app` service depends on another service named `postgres`.
+    depends_on:
+      big-bear-maybe-finance-postgres:
+        # Ensures that the `app` service starts only after `postgres` is healthy
+        condition: service_healthy
+    
+    # CasaOS specific configuration
+    x-casaos:
+      # Volume definitions for the application
+      volumes:
+        # Path in the container for application storage
+        - container: /rails/storage
+          description:
+            en_us: "Container Path: /rails/storage"
+
+      # Port definitions for the application
+      ports:
+        # Port exposed by the application
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000"
+
+      # Environment variable definitions for the application
+      envs:
+        # Indicates if the application is self-hosted
+        - container: SELF_HOSTED
+          description:
+            en_us: "Indicates whether the application is self-hosted (true/false)."
+
+        # Configuration for SSL enforcement
+        - container: RAILS_FORCE_SSL
+          description:
+            en_us: "Determines if SSL should be forced (true/false)."
+
+        # Execution mode for GoodJob background processing
+        - container: GOOD_JOB_EXECUTION_MODE
+          description:
+            en_us: "Sets the execution mode for GoodJob (e.g., async)."
+
+        # Security key for the Rails application
+        - container: SECRET_KEY_BASE
+          description:
+            en_us: "Secret key used for verifying the integrity of signed cookies."
+
+        # Hostname of the PostgreSQL database
+        - container: DB_HOST
+          description:
+            en_us: "Hostname for the PostgreSQL database service."
+
+        # Name of the PostgreSQL database
+        - container: POSTGRES_DB
+          description:
+            en_us: "PostgreSQL database to be created and used by the application."
+
+        # PostgreSQL username
+        - container: POSTGRES_USER
+          description:
+            en_us: "Username for connecting to the PostgreSQL database."
+
+        # Password for the PostgreSQL user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Password for the PostgreSQL user."
+
+  # Service name: big-bear-maybe-finance-postgres
+  # The `big-bear-maybe-finance-postgres` service definition
+  big-bear-maybe-finance-postgres:
+    # Name of the container
+    container_name: big-bear-maybe-finance-postgres
+
+    # Image to be used for the container
+    image: postgres:16
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local maybe/postgres-data directory to /var/lib/postgresql/data inside the container
+      - /DATA/AppData/$AppID/postgres-data:/var/lib/postgresql/data
+
+    # Environment variables
+    environment:
+      # Name of the database to create
+      POSTGRES_DB: maybe_production
+
+      # PostgreSQL user
+      POSTGRES_USER: maybe_user
+
+      # Password for the PostgreSQL user
+      POSTGRES_PASSWORD: casaos
+
+    # Health check configuration for the PostgreSQL service
+    healthcheck:
+      # Command to check if PostgreSQL is ready
+      test: [ "CMD-SHELL", "pg_isready -U maybe_user -d maybe_production" ]
+
+      # Interval between health checks
+      interval: 5s
+
+      # Timeout for the health check command
+      timeout: 5s
+
+      # Number of retries before considering the service unhealthy
+      retries: 5
+
+    # Network configuration for the PostgreSQL service
+    networks:
+      # Use the default Docker network
+      - big_bear_maybe_finance_network
+    
+    # CasaOS specific configuration
+    x-casaos:
+      # Volume definitions for the application
+      volumes:
+        # Path in the container for application storage
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: "Container Path: /var/lib/postgresql/data"
+      envs:
+        # Name of the PostgreSQL database
+        - container: POSTGRES_DB
+          description:
+            en_us: "PostgreSQL database to be created and used by the application."
+
+        # PostgreSQL username
+        - container: POSTGRES_USER
+          description:
+            en_us: "Username for connecting to the PostgreSQL database."
+
+        # Password for the PostgreSQL user
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: "Password for the PostgreSQL user."
+
+# Definition of networks used in the services
+networks:
+  big_bear_maybe_finance_network:
+    # Custom name for the default network
+    name: big_bear_maybe_finance_network
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    # - arm64
+
+  # Main service of the application
+  main: big-bear-maybe-finance
+
+  description:
+    # Description in English
+    en_us:
+      Maybe is a fully* open-source OS for your personal finances 
+      built by a small team alongside an incredible community Discord
+
+  tagline:
+    # Short description or tagline in English
+    en_us: maybe-finance
+
+  # Developer's name or identifier
+  developer: "Maybe Finance"
+
+  # Author of this configuration
+  author: BigBearCommunity
+
+  # Icon for the application
+  icon: https://raw.githubusercontent.com/maybe-finance/maybe/refs/heads/main/app/assets/images/logo-color.png
+
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+
+  store_app_id: maybefinance
+
+  # Tips for the application
+  tips:
+    before_install:
+      en_us: >
+        ### Additional Instructions:
+
+        Generate the app secret key:
+
+          1. Open a terminal and digit:
+
+          ```bash
+          head -c 64 /dev/urandom | od -An -tx1 | tr -d ' \n' && echo
+          ```
+          2. Copy the generated key and paste it in the `SECRET_KEY_BASE`.
+
+          3. Save the changes and restart the application.
+
+        For more information, refer to the [official documentation](https://maybe.co)
+
+  # Application Title
+  title:
+    custom: "Maybe Finance"
+    # Title in English
+    en_us: Maybe Finance
+
+  # Application category
+  category: BigBearCasaOS
+
+  # Port mapping information
+  port_map: "4000"
+
+  # Application scheme
+  scheme: http

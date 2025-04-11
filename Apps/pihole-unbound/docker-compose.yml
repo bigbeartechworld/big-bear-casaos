@@ -12,7 +12,7 @@ services:
     container_name: big-bear-pihole-unbound
 
     # Image to be used for the container
-    image: bigbeartechworld/big-bear-pihole-unbound:2024.07.0
+    image: bigbeartechworld/big-bear-pihole-unbound:2025.03.0
 
     # Container restart policy
     restart: unless-stopped
@@ -20,9 +20,8 @@ services:
     # Environment variables
     environment:
       TZ: "America/Chicago"
-      WEBPASSWORD: "your_password"
-      DNS1: "127.0.0.1#5353" # Use Unbound
-      DNS2: "no" # No secondary DNS
+      FTLCONF_webserver_api_password: "your_password"
+      FTLCONF_dns_upstreams: "127.0.0.1#5353" # Use Unbound IPs delimited by ; ex: 8.8.8.8;8.8.4.4
 
     # Volumes to be mounted to the container
     volumes:

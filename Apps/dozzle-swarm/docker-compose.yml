@@ -43,6 +43,7 @@ services:
 networks:
   big-bear-dozzle-swarm-network:
     driver: overlay
+    
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application
@@ -67,7 +68,7 @@ x-casaos:
   thumbnail: ""
   title:
     # Title in English
-    en_us: dozzle-swarm
+    en_us: Dozzle Swarm
   # Application category
   category: BigBearCasaOS
   # Port mapping information

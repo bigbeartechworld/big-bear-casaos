@@ -2,7 +2,49 @@
 
 ## Big Bear CasaOS App Store
 
-This repository contains the BigBearCasaOS App Store. This app store is a community app store that is not maintained by the CasaOS team. It is maintained by BigBearTechWorld and the BigBearCommunity.
+This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms, including CasaOS and ZimaOS. As an independent company, BigBearTechWorld has established an official partnership with IceWhale to provide this app store as a default option on IceWhale products. The app store is fully maintained by BigBearTechWorld and the BigBearCommunity as a separate entity from IceWhale while maintaining a collaborative partnership.
+
+## App Store Sponsorship Opportunities
+
+We offer app developers and companies the opportunity to gain visibility through sponsored placements in our recommended apps list. As one of the largest third-party app stores and the most up-to-date for CasaOS and ZimaOS and the default option on all IceWhale hardware, we can help your application reach a dedicated community of self-hosters and home server enthusiasts.
+
+### Sponsorship Tiers:
+
+#### 🥉 Basic Placement - $50/month
+
+- Inclusion in our recommended apps list
+- Regular updates and maintenance
+
+#### 🥈 Premium Placement - $150/month
+
+- Prominent position in the recommended apps list
+- Featured mention in our community updates
+- Priority support for app maintenance
+
+#### 🥇 Featured Partner - $300/month
+
+- Top placement in the recommended apps list with highlighted entry
+- Dedicated YouTube video showcasing your application
+- Regular maintenance and priority updates
+- Monthly mention in BigBearCommunity updates
+
+For sponsorship please go to my ko-fi and join the membership level. https://ko-fi.com/bigbeartechworld
+
+## Recommended Apps List
+
+Our curated selection of recommended applications for CasaOS users:
+
+### 🥇 Featured Partners
+
+- **Your App Here with logo** - Brief description of the application
+
+### 🥈 Premium Apps
+
+- **Your App here with logo** - Brief description of the application
+
+### 🥉 Basic Apps
+
+- **Your App Here with logo** - Brief description of the application
 
 ## Need Help or have an issue?
 
@@ -13,7 +55,7 @@ If you have a feature request please post in the [BigBearCommunity](https://comm
 ## App Store URL
 
 ```text
-https://github.com/bigbeartechworld/big-bear-casaos/archive/refs/heads/master.zip
+https://icewhale.bigbeartechworld.com/big-bear-casaos.zip
 ```
 
 ## App Store Suggestions
@@ -29,6 +71,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 <!appsList>
 
 ## UI How to
+
+[![Video](https://img.youtube.com/vi/nF5rcslDOZc/0.jpg)](https://youtu.be/nF5rcslDOZc)
 
 [![Video](https://img.youtube.com/vi/iN-Zh9ul578/0.jpg)](https://youtu.be/iN-Zh9ul578)
 

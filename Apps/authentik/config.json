@@ -1,6 +1,6 @@
 {
   "id": "authentik",
-  "version": "2024.12.2",
+  "version": "2025.2.4",
   "image": "ghcr.io/goauthentik/server",
   "youtube": "",
   "docs_link": "",

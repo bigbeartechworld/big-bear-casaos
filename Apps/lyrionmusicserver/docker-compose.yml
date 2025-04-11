@@ -1,0 +1,123 @@
+# Configuration for lyrionmusicserver setup
+
+# Name of the big-bear-lyrionmusicserver application
+name: big-bear-lyrionmusicserver
+
+# Service definitions for the big-bear-lyrionmusicserver application
+services:
+  # Service name: big-bear-lyrionmusicserver
+  # The `big-bear-lyrionmusicserver` service definition
+  big-bear-lyrionmusicserver:
+    # Name of the container
+    container_name: big-bear-lyrionmusicserver
+
+    # Image to be used for the container
+    image: lmscommunity/lyrionmusicserver:9.1.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      - HTTP_PORT=9000
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local big-bear-lyrionmusicserver/config directory to /config inside the container
+      - /DATA/AppData/$AppID/config:/config:rw
+
+      # Mounting the local big-bear-lyrionmusicserver/music directory to /music inside the container
+      - /DATA/AppData/$AppID/music:/music:ro
+
+      # Mounting the local big-bear-lyrionmusicserver/playlists directory to /playlist inside the container
+      - /DATA/AppData/$AppID/playlists:/playlist:rw
+
+      # Mounting the local /etc/localtime directory to /etc/localtime inside the container
+      - /etc/localtime:/etc/localtime:ro
+
+      # Mounting the local /etc/timezone directory to /etc/timezone inside the container
+      - /etc/timezone:/etc/timezone:ro
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 9000 of the host to port 9000 of the container
+      - 9000:9000/tcp
+
+      # Mapping port 9090 of the host to port 9090 of the container
+      - 9090:9090/tcp
+
+      # Mapping port 3483 of the host to port 3483 of the container
+      - 3483:3483/tcp
+
+      # Mapping port 3483 of the host to port 3483 of the container
+      - 3483:3483/udp
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: HTTP_PORT
+          description:
+            en_us: "Container Port: 9000"
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /music
+          description:
+            en_us: "Container Path: /music"
+        - container: /playlist
+          description:
+            en_us: "Container Path: /playlist"
+        - container: /etc/localtime
+          description:
+            en_us: "Container Path: /etc/localtime"
+        - container: /etc/timezone
+          description:
+            en_us: "Container Path: /etc/timezone"
+      ports:
+        - container: "9000"
+          description:
+            en_us: "Container Port: 9000"
+        - container: "9090"
+          description:
+            en_us: "Container Port: 9090"
+        - container: "3483"
+          description:
+            en_us: "Container Port: 3483"
+        - container: "3483"
+          description:
+            en_us: "Container Port: 3483"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-lyrionmusicserver
+  description:
+    # Description in English
+    en_us: Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
+  tagline:
+    # Short description or tagline in English
+    en_us: Streaming audio server
+  # Developer's name or identifier (LMS-Community Maintainer)
+  developer: "LMS-Community"
+  # Author of this configuration (docker-compose.yml)
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/lyrionmusicserver/logo.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: LyriOn Music Server
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "9000"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-lyrion-music-server-to-bigbearcasaos/2606#p-4742-documentation-3

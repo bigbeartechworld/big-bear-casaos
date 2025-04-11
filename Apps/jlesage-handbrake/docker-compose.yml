@@ -1,0 +1,63 @@
+name: big-bear-jlesage-handbrake # Name of the CasaOS application
+
+services:
+  big-bear-jlesage-handbrake:
+    container_name: big-bear-jlesage-handbrake # Name of the Docker container
+    image: jlesage/handbrake:v25.02.3 # Docker image for the Handbrake
+    ports:
+      - "5800:5800" # Expose port 5800 for VNC access
+    environment:
+      - VNC_PASSWORD=casaos # Set the VNC password to 'casaos'
+    volumes:
+      - /DATA/AppData/$AppID/config:/config:rw
+      - /DATA/AppData/$AppID/storage:/storage:ro
+      - /DATA/AppData/$AppID/watch:/watch:rw
+      - /DATA/AppData/$AppID/output:/output:rw
+
+    x-casaos: # CasaOS specific configuration for the brave service
+      envs:
+        - container: VNC_PASSWORD
+          description:
+            en_us: VNC Password # Description for the VNC password environment variable
+      ports:
+        - container: "5800"
+          description:
+            en_us: "Container Port: 5800"
+      volumes:
+        - container: /config
+          description:
+            en_us: "Container Path: /config"
+        - container: /storage
+          description:
+            en_us: "Container Path: /storage"
+        - container: /watch
+          description:
+            en_us: "Container Path: /watch"
+        - container: /output
+          description:
+            en_us: "Container Path: /output"
+
+# Global CasaOS specific configuration
+x-casaos:
+  architectures: # Supported CPU architectures for the application
+    - amd64
+    - arm64
+  main: big-bear-jlesage-handbrake # Specifies the main service of the application
+  description:
+    en_us: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client. # Description in English
+  tagline:
+    en_us: This project implements a Docker container for Handbrake. # Short description or tagline in English
+  developer: "jlesage" # Developer's name or identifier (currently empty)
+  author: BigBearTechWorld # Author of this Docker Compose configuration
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/handbrake.png # Icon URL for the application
+  thumbnail: "" # Thumbnail image URL
+  title:
+    en_us: Jlesage Handbrake # Title in English
+  category: BigBearCasaOS # Category of the application
+  port_map: "5800" # Port mapping information for the service
+  scheme: http # Scheme for the service
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-jlesage-handbrake-to-bigbearcasaos/2956?u=dragonfire1119
