@@ -56,7 +56,7 @@ x-casaos:
     - amd64
     - arm64
   # Main service of the application
-  main: app
+  main: big-bear-dozzle-swarm
   description:
     # Description in English
     en_us: Dozzle is a real-time log viewer for docker containers, now supporting Swarm mode.
@@ -73,7 +73,7 @@ x-casaos:
   thumbnail: ""
   title:
     # Title in English
-    en_us: Dozzle
+    en_us: dozzle-swarm
   # Application category
   category: BigBearCasaOS
   # Port mapping information
