@@ -42,13 +42,11 @@ services:
           description:
             en_us: "Container Path: /var/run/docker.sock"
       ports:
-        - container: "8080"
-          description:
-            en_us: "Container Port: 8080"
+        - container: "8888:8080"
 
 # Network definition for overlay
 networks:
-  dozzle:
+  - big-bear-dozzle-swarm
     driver: overlay
 
 # CasaOS specific configuration
