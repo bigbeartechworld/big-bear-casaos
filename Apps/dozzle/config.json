@@ -1,8 +1,7 @@
 {
-  "id": "dozzle swarm",
+  "id": "dozzle",
   "version": "8.12.5",
   "image": "amir20/dozzle",
-  "description": "Real-time Docker log viewer (Swarm Mode)",
   "youtube": "https://youtu.be/lLLNDcHNOuM",
   "docs_link": "",
   "big_bear_cosmos_youtube": "https://youtu.be/cTzSPrkB4rg"
