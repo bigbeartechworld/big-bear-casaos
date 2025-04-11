@@ -1,5 +1,5 @@
 # Name of the big-bear-dozzle application
-name: big-bear-dozzle
+name: big-bear-dozzle-swarm
 
 # Service definitions for the big-bear-dozzle application
 services:
@@ -7,7 +7,7 @@ services:
   # The `app` service definition
   app:
     # Name of the container
-    container_name: big-bear-dozzle
+    container_name: big-bear-dozzle-swarm
 
     # Image to be used for the container
     image: amir20/dozzle:v8.12.4
