@@ -1,5 +1,3 @@
-# Configuration for dozzle setup
-
 # Name of the big-bear-dozzle application
 name: big-bear-dozzle
 
@@ -17,6 +15,10 @@ services:
     # Container restart policy
     restart: unless-stopped
 
+    # Environment variables to enable swarm mode
+    environment:
+      - DOZZLE_MODE=swarm
+
     # Volumes to be mounted to the container
     volumes:
       # Mounting docker.sock to allow docker management via the container
@@ -26,6 +28,13 @@ services:
     ports:
       # Mapping port 8888 of the host to port 8080 of the container
       - "8888:8080"
+
+    networks:
+      - dozzle
+
+    # Swarm deployment mode
+    deploy:
+      mode: global
 
     x-casaos: # CasaOS specific configuration
       volumes:
@@ -37,6 +46,11 @@ services:
           description:
             en_us: "Container Port: 8080"
 
+# Network definition for overlay
+networks:
+  dozzle:
+    driver: overlay
+
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application
@@ -47,10 +61,10 @@ x-casaos:
   main: app
   description:
     # Description in English
-    en_us: Dozzle is a real-time log viewer for docker containers.
+    en_us: Dozzle is a real-time log viewer for docker containers, now supporting Swarm mode.
   tagline:
     # Short description or tagline in English
-    en_us: Dozzle is a real-time log viewer for docker containers.
+    en_us: Swarm-ready real-time Docker log viewer.
   # Developer's name or identifier
   developer: "amir20"
   # Author of this configuration
