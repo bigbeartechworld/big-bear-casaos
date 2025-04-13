@@ -12,7 +12,7 @@ services:
     container_name: big-bear-pihole-unbound
 
     # Image to be used for the container
-    image: bigbeartechworld/big-bear-pihole-unbound:2025.03.0
+    image: bigbeartechworld/big-bear-pihole-unbound:2025.04.0
 
     # Container restart policy
     restart: unless-stopped
