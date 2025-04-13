@@ -61,3 +61,8 @@ x-casaos:
     en_us: ConvertX
   category: BigBearCasaOS
   port_map: "3000"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/add-convertx-to-bigbearcasaos/3232#p-5599-documentation-5
