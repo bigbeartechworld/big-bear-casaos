@@ -21,6 +21,7 @@ services:
     # Environment variables for the container
     environment:
       - JWT_SECRET=c8330437-e6ae-4cf0-9837-4d1326457e32 # will use randomUUID() if unset
+      - HTTP_ALLOWED=true
 
     # Volume mappings for data persistence
     volumes:
@@ -28,6 +29,13 @@ services:
 
     # CasaOS-specific configuration metadata
     x-casaos:
+      envs:
+        - container: JWT_SECRET
+          description:
+            en_us: "JWT Secret"
+        - container: HTTP_ALLOWED
+          description:
+            en_us: "HTTP Allowed"
       volumes:
         - container: /app/data
           description:
