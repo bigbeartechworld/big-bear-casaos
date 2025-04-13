@@ -1,0 +1,55 @@
+# Name of the convertx application
+name: big-bear-convertx
+
+# Service definitions for the convertx application
+services:
+  # Main service configuration for the convertx application
+  big-bear-convertx:
+    # Name of the container
+    container_name: big-bear-convertx
+
+    # Image to be used for the container
+    image: ghcr.io/c4illin/convertx:v0.12.1
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Map port 3000 on the host to port 3000 on the container
+    ports:
+      - "3000:3000"
+
+    # Environment variables for the container
+    environment:
+      - JWT_SECRET=c8330437-e6ae-4cf0-9837-4d1326457e32 # will use randomUUID() if unset
+
+    # Volume mappings for data persistence
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+
+# Application metadata for CasaOS integration (optional, can be removed if not needed)
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-convertx
+  description:
+    en_us: A self-hosted online file converter. Supports over a thousand different formats. Written with TypeScript, Bun and Elysia.
+  tagline:
+    en_us: 💾 Self-hosted online file converter. Supports 1000+ formats ⚙️
+  developer: "C4illin"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/convertx/logo.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/convertx/screenshot-1.png
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/convertx/thumbnail.png"
+  title:
+    en_us: ConvertX
+  category: BigBearCasaOS
+  port_map: "3000"
