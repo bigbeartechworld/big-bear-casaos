@@ -73,7 +73,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | 2fauth | 2fauth/2fauth | 5.5.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
 | Homepage | ghcr.io/gethomepage/homepage | 1.1.1 |  |  |
-| MaybeFinance | ghcr.io/maybe-finance/maybe | sha-9522a191de1f258d76ed996ba1c84e3a0629dd80 |  |  |
+| MaybeFinance | ghcr.io/maybe-finance/maybe | sha-9fa3698823476a5b1773176ed67bb3d327d1dc05 |  |  |
 | actual-server | actualbudget/actual-server | 25.4.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.59 |  |  |
 | adguard-home | adguard/adguardhome | 0.107.59 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
