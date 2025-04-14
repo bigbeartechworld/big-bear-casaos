@@ -12,7 +12,7 @@ services:
     container_name: big-bear-maybe-finance
 
     # Image to be used for the container
-    image: ghcr.io/maybe-finance/maybe:sha-9fa3698823476a5b1773176ed67bb3d327d1dc05
+    image: ghcr.io/maybe-finance/maybe:sha-9522a191de1f258d76ed996ba1c84e3a0629dd80
 
     # Container restart policy
     restart: unless-stopped
