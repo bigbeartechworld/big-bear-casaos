@@ -9,7 +9,7 @@ services:
     # Name of the container
     container_name: big-bear-dozzle-swarm
     # Image to be used for the container
-    image: amir20/dozzle:v8.12.4
+    image: amir20/dozzle:v8.12.8
     # Container restart policy
     restart: unless-stopped
     # Environment variables to enable swarm mode
@@ -30,6 +30,10 @@ services:
       mode: global
       
     x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DOZZLE_MODE
+          description:
+            en_us: "Dozzle Mode: swarm"
       volumes:
         - container: /var/run/docker.sock
           description:
@@ -38,7 +42,7 @@ services:
         - container: "8080"
           description:
             en_us: "Container Port: 8080"
-            
+           
 # Network definition for overlay
 networks:
   big-bear-dozzle-swarm-network:
