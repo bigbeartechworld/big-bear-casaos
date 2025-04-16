@@ -1,0 +1,8 @@
+{
+  "id": "spacedrive",
+  "version": "0.4.2",
+  "image": "ghcr.io/spacedriveapp/spacedrive/server",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}
