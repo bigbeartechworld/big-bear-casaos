@@ -1,75 +1,69 @@
-# Name of the big-bear-dozzle application
 name: big-bear-dozzle-swarm
-
-# Service definitions for the big-bear-dozzle application
 services:
-  # Service name: big-bear-dozzle-swarm
-  # The `big-bear-dozzle-swarm` service definition
-  big-bear-dozzle-swarm:
-    # Name of the container
+  app:
     container_name: big-bear-dozzle-swarm
-    # Image to be used for the container
-    image: amir20/dozzle:v8.12.4
-    # Container restart policy
-    restart: unless-stopped
-    # Environment variables to enable swarm mode
-    environment:
-      - DOZZLE_MODE=swarm
-    # Volumes to be mounted to the container
-    volumes:
-      # Mounting docker.sock to allow docker management via the container
-      - /var/run/docker.sock:/var/run/docker.sock
-    # Ports mapping between host and container
+    image: amir20/dozzle:v8.12.6
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/dozzle/logo.png
     ports:
-      # Mapping port 8888 of the host to port 8080 of the container
-      - "8888:8080"
-    networks:
-      - big-bear-dozzle-swarm-network
-    # Swarm deployment mode
-    deploy:
-      mode: global
-      
-    x-casaos: # CasaOS specific configuration
-      volumes:
-        - container: /var/run/docker.sock
-          description:
-            en_us: "Container Path: /var/run/docker.sock"
+      - mode: ingress
+        target: 8080
+        published: "8888"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        bind:
+          create_host_path: true
+    environment:
+      - DOZZLE_MODE=swarm      
+    x-casaos:
       ports:
         - container: "8080"
           description:
             en_us: "Container Port: 8080"
-            
-# Network definition for overlay
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+    devices: []
+    cap_add: []
+    command: []
+    environment: []
+    networks:
+      - default
+    privileged: false
+    hostname: big-bear-dozzle-swarm
+    cpu_shares: 90
+    deploy:
+      resources:
+        limits:
+          memory: 7785M
 networks:
-  big-bear-dozzle-swarm-network:
-    driver: overlay
-    
-# CasaOS specific configuration
+  default:
+    name: big-bear-dozzle-swarm_default
 x-casaos:
-  # Supported CPU architectures for the application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
-  main: big-bear-dozzle-swarm
-  description:
-    # Description in English
-    en_us: Dozzle is a real-time log viewer for docker containers, now supporting Swarm mode.
-  tagline:
-    # Short description or tagline in English
-    en_us: Swarm-ready real-time Docker log viewer.
-  # Developer's name or identifier
-  developer: "amir20"
-  # Author of this configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dozzle.png
-  # Thumbnail image (currently empty)
+  category: BigBearCasaOS
+  description:
+    en_us: Dozzle is a real-time log viewer for docker containers.
+  developer: amir20
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/dozzle/logo.png
+  is_uncontrolled: false
+  main: app
+  port_map: "8888"
+  store_app_id: big-bear-dozzle-swarm
+  tagline:
+    en_us: Dozzle is a real-time log viewer for docker containers.
   thumbnail: ""
   title:
-    # Title in English
     en_us: Dozzle Swarm
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8888"
+    custom: ""
+  hostname: ""
+  scheme: http
+  index: /
