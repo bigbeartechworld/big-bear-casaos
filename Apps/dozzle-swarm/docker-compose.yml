@@ -42,8 +42,9 @@ services:
         limits:
           memory: 7785M
 networks:
-  default:
-    name: big-bear-dozzle-swarm_default
+  big-bear-dozzle-swarm_network:
+    name: big-bear-dozzle-swarm_network
+    driver: overlay
 x-casaos:
   architectures:
     - amd64
