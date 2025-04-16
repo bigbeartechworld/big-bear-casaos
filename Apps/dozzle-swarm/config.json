@@ -2,13 +2,5 @@
   "id": "dozzle-swarm",
   "version": "8.12.8",
   "image": "amir20/dozzle-swarm",
-  "youtube": "https://youtu.be/lLLNDcHNOuM",
-  "envs": [
-    {
-      "container": "DOZZLE_MODE",
-      "description": {
-        "en_us": "Set to 'swarm' to enable multi-node Swarm mode"
-      }
-    }
-  ]
+  "youtube": "https://youtu.be/lLLNDcHNOuM"
 }
