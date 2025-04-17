@@ -100,6 +100,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | seafile |  |
 | semaphore |  |
 | sftpgo |  |
+| spacedrive |  |
 | syncthing |  |
 | tailscale |  |
 | tianji |  |
@@ -109,6 +110,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | viseron |  |
 | wg-easy |  |
 | whats-up-docker |  |
+| write-freely |  |
 | zigbee2mqtt |  |
 | zipline |  |
 | zotero |  |
