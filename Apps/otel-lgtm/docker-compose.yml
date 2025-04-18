@@ -12,7 +12,7 @@ services:
     container_name: big-bear-otel-lgtm
 
     # Image to be used for the container
-    image: grafana/otel-lgtm:0.10.1
+    image: grafana/otel-lgtm:0.11.0
 
     # Container restart policy
     restart: unless-stopped
