@@ -75,8 +75,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage | ghcr.io/gethomepage/homepage | 1.1.1 |  |  |
 | MaybeFinance | ghcr.io/maybe-finance/maybe | sha-9522a191de1f258d76ed996ba1c84e3a0629dd80 |  |  |
 | actual-server | actualbudget/actual-server | 25.4.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
-| adguard-home-host | adguard/adguardhome | 0.107.59 |  |  |
-| adguard-home | adguard/adguardhome | 0.107.59 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
+| adguard-home-host | adguard/adguardhome | 0.107.60 |  |  |
+| adguard-home | adguard/adguardhome | 0.107.60 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.53.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.20.0 |  |  |
@@ -88,7 +88,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.02.20250309 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.9 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.9.0 |  |  |
+| budibase | budibase/budibase | 3.9.1 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.0.19 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.49.14 |  |  |
@@ -110,7 +110,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | docmost | docmost/docmost | 0.10.1 |  |  |
-| dozzle | amir20/dozzle | 8.12.7 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 8.12.8 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.1.1 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.1.1 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
@@ -150,7 +150,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | jlesage-handbrake | jlesage/handbrake | v25.02.3 |  |  |
 | joplin | florider89/joplin-server | 3.0.1 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
 | kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
-| kavita | jvmilazz0/kavita | 0.8.5 |  |  |
+| kavita | jvmilazz0/kavita | 0.8.6 |  |  |
 | kiwix-serve | ghcr.io/kiwix/kiwix-serve | 3.7.0-2 |  |  |
 | komf | sndxr/komf | 1.3.0 |  |  |
 | komga | ghcr.io/gotson/komga | 1.21.2 |  |  |
@@ -197,7 +197,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | onlyoffice | onlyoffice/documentserver | 8.3.2 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
-| otel-lgtm | grafana/otel-lgtm | 0.10.0 |  |  |
+| otel-lgtm | grafana/otel-lgtm | 0.10.1 |  |  |
 | owncloud | owncloud/server | 10.15.2 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.15.2 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.53.5 |  |  |
@@ -233,7 +233,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.4.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
-| stirling-pdf | stirlingpdf/stirlingpdf | 0.45.4 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
+| stirling-pdf | stirlingpdf/stirlingpdf | 0.45.5 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.82.0 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.34 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
