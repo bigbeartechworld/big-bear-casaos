@@ -107,7 +107,7 @@ x-casaos:
   developer: "bigbeartechworld"
   author: BigBearTechWorld
   icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg"
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/thumbnail.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/thumbnail-v2.png"
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/screenshot-2.png
