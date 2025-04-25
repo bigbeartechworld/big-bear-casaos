@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
         with:
-          fetch-depth: 0  # Fetch all history
+          fetch-depth: 0 # Fetch all history
 
       - name: Get changed files
         uses: jitterbit/get-changed-files@v1
@@ -68,7 +68,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 8
+          version: 10
           run_install: false
 
       - name: Get pnpm store directory
