@@ -1,0 +1,98 @@
+# Docker Compose configuration for BigBearCasaOS Stalwart Mail Service
+# This service provides a mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features.
+# Initial Version: v0.11.7
+
+# Name of the big-bear-stalwart-mail application
+name: big-bear-stalwart-mail
+
+# Service definitions for the big-bear-stalwart-mail application
+services:
+  # Main service configuration for the Stalwart Mail application
+  # This service provides a mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features.
+  big-bear-stalwart-mail:
+    # Name of the container
+    container_name: big-bear-stalwart-mail
+
+    # Image to be used for the container specifies the stalwartlabs/mail-server version and source
+    image: stalwartlabs/mail-server:v0.11.7
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      # Required for monitoring system resources and container metrics
+      - /DATA/AppData/$AppID/data:/opt/stalwart-mail
+
+    # Map port 8080 on the host to port 8080 on the container for the web interface
+    ports:
+      - 8080:8080
+      # Map port 25 on the host to port 25 on the container for the SMTP service
+      - 25:25/tcp
+      # Map port 143 on the host to port 143 on the container for the IMAP service
+      - 143:143/tcp
+      # Map port 465 on the host to port 465 on the container for the SMTP service with encryption
+      - 465:465/tcp
+      # Map port 587 on the host to port 587 on the container for the SMTP service with encryption
+      - 587:587/tcp
+      # Map port 993 on the host to port 993 on the container for the IMAP service with encryption
+      - 993:993/tcp
+      # Map port 4190 on the host to port 4190 on the container for the web interface
+      - 4190:4190/tcp
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      volumes:
+        - container: /opt/stalwart-mail
+          description:
+            en_us: "Container Path: /opt/stalwart-mail"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+        - container: "25"
+          description:
+            en_us: "Container Port: 25"
+        - container: "143"
+          description:
+            en_us: "Container Port: 143"
+        - container: "465"
+          description:
+            en_us: "Container Port: 465"
+        - container: "587"
+          description:
+            en_us: "Container Port: 587"
+        - container: "993"
+          description:
+            en_us: "Container Port: 993"
+        - container: "4190"
+          description:
+            en_us: "Container Port: 4190"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-stalwart-mail
+  description:
+    en_us: Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.
+  tagline:
+    en_us: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) 🛡️
+  developer: "bigbeartechworld"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/stalwart-mail-server.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-stalwart-mail/thumbnail.gif"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-stalwart-mail/thumbnail.gif
+  title:
+    en_us: Stalwart Mail
+  category: BigBearCasaOS
+  port_map: "8080"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-stalwart-to-bigbearcasaos/3342#p-5723-documentation-3
