@@ -109,8 +109,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | diun | crazymax/diun | 4.29.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| docmost | docmost/docmost | 0.20.1 |  |  |
-| dozzle | amir20/dozzle | 8.12.12 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| docmost | docmost/docmost | 0.20.2 |  |  |
+| dozzle | amir20/dozzle | 8.12.13 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.1.1 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.1.1 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
@@ -142,7 +142,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.131.3-alpine |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.132.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.132.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.11.70 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.11.72 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.5.2 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.5 |  |  |
@@ -160,8 +160,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.10.0 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.82.10 |  |  |
-| ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.3 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.83.6 |  |  |
+| ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.4 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.24 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.8.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
@@ -216,7 +216,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex | linuxserver/plex | 1.41.6 |  |  |
 | portainer-agent | portainer/agent | 2.29.2 |  |  |
-| portainer | portainer/portainer-ce | 2.29.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer | portainer/portainer-ce | 2.29.2-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.10 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
@@ -247,7 +247,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | umbrel-os | dockurr/umbrel | 1.4.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| upsnap | ghcr.io/seriousm4x/upsnap | 5.0.4 |  |  |
+| upsnap | ghcr.io/seriousm4x/upsnap | 5.0.5 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.1.1 |  |  |
