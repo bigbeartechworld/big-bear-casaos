@@ -72,14 +72,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 5.5.2 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
-| Homepage | ghcr.io/gethomepage/homepage | 1.1.1 |  |  |
+| Homepage | ghcr.io/gethomepage/homepage | 1.2.0 |  |  |
 | MaybeFinance | ghcr.io/maybe-finance/maybe | sha-9522a191de1f258d76ed996ba1c84e3a0629dd80 |  |  |
 | actual-server | actualbudget/actual-server | 25.4.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.61 |  |  |
 | adguard-home | adguard/adguardhome | 0.107.61 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.53.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.20.0 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.21.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2025.2.4 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.32.5 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -88,7 +88,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.02.20250309 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.0.9 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.9.3 |  |  |
+| budibase | budibase/budibase | 3.9.5 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.0.19 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.49.15 |  |  |
@@ -109,7 +109,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | diun | crazymax/diun | 4.29.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| docmost | docmost/docmost | 0.20.2 |  |  |
+| docmost | docmost/docmost | 0.20.3 |  |  |
 | dozzle | amir20/dozzle | 8.12.13 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.1.1 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.1.1 |  |  |
@@ -140,8 +140,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homer | b4bz/homer | 25.04.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.131.3-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.132.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | 1.132.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.132.3 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | 1.132.3 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | invoice-ninja | invoiceninja/invoiceninja | 5.11.72 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.5.2 |  |  |
@@ -161,7 +161,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.10.0 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | lobe-chat | lobehub/lobe-chat | 1.83.6 |  |  |
-| ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.4 |  |  |
+| ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.5 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.24 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mealie | hkotel/mealie | 2.8.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
@@ -225,7 +225,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | reactive-resume | amruthpillai/reactive-resume | 4.4.5 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 3.8.3 |  | [Docs](https://github.com/rommapp/romm/wiki) |
+| romm | rommapp/romm | 3.9.0 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
@@ -233,6 +233,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.5.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| stalwart-mail | stalwartlabs/mail-server | v0.11.7 |  |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 0.45.6 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.29 |  |  |
 | tailscale | tailscale/tailscale | 1.82.0 |  |  |
