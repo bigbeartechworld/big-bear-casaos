@@ -83,7 +83,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beaverhabits/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beaverhabits/screenshot-3.png
   title:
-    en_us: BeaverHabits
+    en_us: Beaver Habit Tracker
   category: BigBearCasaOS
   port_map: "8080"
   # Installation instructions and documentation
