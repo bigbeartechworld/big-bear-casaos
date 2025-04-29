@@ -1,0 +1,93 @@
+# Docker Compose configuration for BeaverHabits Service
+# This service provides a web interface for managing habits
+# Version: 0.5.2
+
+# Name of the big-bear-beaverhabits application
+name: big-bear-beaverhabits
+
+# Service definitions for the big-bear-beaverhabits application
+services:
+  # Main service configuration for the BeaverHabits application
+  # This service provides a web interface running on port 8080 for habit administration
+  big-bear-beaverhabits:
+    # Name of the container
+    container_name: big-bear-beaverhabits
+
+    # Image to be used for the container specifies the btop version and source
+    image: daya0576/beaverhabits:0.5.2
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    user: "1000:1000"
+
+    # Environment variables for service configuration
+    # These settings control the Flask application behavior and default admin credentials
+    environment:
+      - HABITS_STORAGE=USER_DISK
+      - TRUSTED_LOCAL_EMAIL=your@email.com
+      - INDEX_HABIT_DATE_COLUMNS=5
+      - ENABLE_IOS_STANDALONE=true
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      # Required for monitoring system resources and container metrics
+      - /DATA/AppData/$AppID/.user:/app/.user/
+
+    # Map port 8080 on the host to port 8080 on the container
+    ports:
+      - "8080:8080"
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: "HABITS_STORAGE"
+          description:
+            en_us: "Sets the storage type for habits"
+        - container: "TRUSTED_LOCAL_EMAIL"
+          description:
+            en_us: "Sets the trusted local email"
+        - container: "INDEX_HABIT_DATE_COLUMNS"
+          description:
+            en_us: "Specifies the number of date columns for the index page"
+        - container: "ENABLE_IOS_STANDALONE"
+          description:
+            en_us: "Enables iOS standalone mode"
+      volumes:
+        - container: /app/.user/
+          description:
+            en_us: "Container Path: /app/.user/"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-beaverhabits
+  description:
+    en_us: A self-hosted habit tracking app without "Goals"
+  tagline:
+    en_us: A self-hosted habit tracking app without "Goals"
+  developer: "daya0576"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/beaver-habit-tracker.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beaverhabits/thumbnail.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beaverhabits/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beaverhabits/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beaverhabits/screenshot-3.png
+  title:
+    en_us: BeaverHabits
+  category: BigBearCasaOS
+  port_map: "8080"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-beaverhabits-to-bigbearcasaos/3345?u=dragonfire1119
