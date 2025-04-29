@@ -81,7 +81,7 @@ x-casaos:
     en_us: Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.
   tagline:
     en_us: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) 🛡️
-  developer: "bigbeartechworld"
+  developer: "stalwartlabs"
   author: BigBearTechWorld
   icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/stalwart-mail-server.png"
   thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-stalwart-mail/thumbnail.gif"
