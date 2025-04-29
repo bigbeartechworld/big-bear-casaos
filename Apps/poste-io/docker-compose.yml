@@ -1,0 +1,79 @@
+# Docker Compose configuration for BigBearCasaOS Poste.io Service
+# This service provides a mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features.
+# Initial Version: v2.4.11
+
+# Name of the big-bear-poste-io application
+name: big-bear-poste-io
+
+# Service definitions for the big-bear-poste-io application
+services:
+  # Main service configuration for the Poste.io application
+  # This service provides a mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features.
+  big-bear-poste-io:
+    # Name of the container
+    container_name: big-bear-poste-io
+
+    # Image to be used for the container specifies the analogic/poste.io version and source
+    image: analogic/poste.io:2.4.11
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Network mode
+    network_mode: host
+
+    # Environment variables
+    environment:
+      - TZ=UTC
+
+    # Container hostname
+    hostname: mail.example.com
+
+    # Enable pseudo-TTY
+    tty: true
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      # Required for monitoring system resources and container metrics
+      - /DATA/AppData/$AppID/data:/data
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: "Timezone: UTC"
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-poste-io
+  description:
+    en_us: Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.
+  tagline:
+    en_us: Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin
+  developer: "bigbeartechworld"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/poste.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/thumbnail.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/screenshot-3.png
+  title:
+    en_us: Poste.io
+  category: BigBearCasaOS
+  port_map: "80"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-poste-io-to-bigbearcasaos/3344
