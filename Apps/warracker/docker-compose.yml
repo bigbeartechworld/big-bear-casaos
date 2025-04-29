@@ -1,0 +1,156 @@
+# Docker Compose configuration for Warracker Service
+# This service provides a web interface for managing CasaOS users and permissions
+# Version: 0.1.0
+
+# Name of the big-bear-warracker application
+name: big-bear-warracker
+
+# Service definitions for the big-bear-warracker application
+services:
+  # Main service configuration for the Warracker application
+  # This service provides a web interface running on port 5000 for user administration
+  big-bear-warracker:
+    # Name of the container
+    container_name: big-bear-warracker
+
+    # Image to be used for the container specifies the btop version and source
+    image: ghcr.io/sassanix/warracker/main:9.9.3
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Run the container in privileged mode to allow access to system metrics
+    privileged: true
+
+    # Environment variables for service configuration
+    # These settings control the Flask application behavior and default admin credentials
+    environment:
+      - DB_HOST=big-bear-warrackerdb
+      - DB_NAME=big_bear_warracker
+      - DB_USER=big_bear_warracker_user
+      - DB_PASSWORD=4892f1bc-f1ea-464f-b528-1d52b2c9bb05
+      - SMTP_HOST=smtp.email.com
+      - SMTP_PORT=465
+      - SMTP_USERNAME=youremail@email.com
+      - SMTP_PASSWORD=password
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      # Required for monitoring system resources and container metrics
+      - /DATA/AppData/$AppID/uploads:/data/uploads
+
+    # Map port 8005 on the host to port 80 on the container
+    ports:
+      - "8005:80"
+
+    # Container networks
+    networks:
+      - big_bear_warracker_network
+
+    # Depends on the warrackerdb service
+    depends_on:
+      big-bear-warrackerdb:
+        condition: service_healthy
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: "DB_HOST"
+          description:
+            en_us: "Sets the database host"
+        - container: "DB_NAME"
+          description:
+            en_us: "Sets the database name"
+        - container: "DB_USER"
+          description:
+            en_us: "Sets the database user"
+        - container: "DB_PASSWORD"
+          description:
+            en_us: "Sets the database password"
+        - container: "SMTP_HOST"
+          description:
+            en_us: "Sets the SMTP host"
+        - container: "SMTP_PORT"
+          description:
+            en_us: "Sets the SMTP port"
+        - container: "SMTP_USERNAME"
+          description:
+            en_us: "Sets the SMTP username"
+        - container: "SMTP_PASSWORD"
+          description:
+            en_us: "Sets the SMTP password"
+      volumes:
+        - container: /DATA/AppData/$AppID/uploads
+          description:
+            en_us: "Container Path: /DATA/AppData/$AppID/uploads"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+  big-bear-warrackerdb:
+    # Container name
+    container_name: big-bear-warrackerdb
+
+    # Container image
+    image: postgres:15-alpine
+
+    # Container volumes
+    volumes:
+      - /DATA/AppData/$AppID/warrackerdb:/var/lib/postgresql/data
+
+    # Container environment variables
+    environment:
+      - POSTGRES_DB=big_bear_warracker
+      - POSTGRES_USER=big_bear_warracker_user
+      - POSTGRES_PASSWORD=4892f1bc-f1ea-464f-b528-1d52b2c9bb05
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Container networks
+    networks:
+      - big_bear_warracker_network
+
+    # Health check for the container
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+# Container networks
+networks:
+  big_bear_warracker_network:
+    name: big_bear_warracker_network
+    driver: bridge
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-warracker
+  description:
+    en_us: A self-hosted warranty tracker
+  tagline:
+    en_us: A self-hosted warranty tracker
+  developer: "sassanix"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/warracker.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/warracker/thumbnail.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/warracker/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/warracker/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/warracker/screenshot-3.png
+  title:
+    en_us: Warracker
+  category: BigBearCasaOS
+  port_map: "8005"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-warracker-to-bigbearcasaos/3346?u=dragonfire1119
