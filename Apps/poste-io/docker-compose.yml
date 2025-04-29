@@ -60,7 +60,7 @@ x-casaos:
     en_us: Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.
   tagline:
     en_us: Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin
-  developer: "bigbeartechworld"
+  developer: "analogic"
   author: BigBearTechWorld
   icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/poste.png"
   thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/thumbnail.png"
