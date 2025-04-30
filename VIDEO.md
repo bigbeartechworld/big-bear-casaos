@@ -13,6 +13,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | audiobookshelf |  |
 | authentik |  |
 | ayon |  |
+| beaverhabits |  |
 | budibase |  |
 | cadvisor |  |
 | calcom |  |
@@ -90,6 +91,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | playitgg |  |
 | plex |  |
 | portainer-agent |  |
+| poste-io |  |
 | project-management |  |
 | python-matter-server |  |
 | reactive-resume |  |
@@ -109,6 +111,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | uisp |  |
 | upsnap |  |
 | viseron |  |
+| warracker |  |
 | wg-easy |  |
 | whats-up-docker |  |
 | write-freely |  |
