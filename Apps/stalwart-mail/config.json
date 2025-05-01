@@ -1,6 +1,6 @@
 {
   "id": "stalwart-mail",
-  "version": "v0.11.7",
+  "version": "0.11.8",
   "image": "stalwartlabs/mail-server",
   "youtube": "",
   "docs_link": "",
