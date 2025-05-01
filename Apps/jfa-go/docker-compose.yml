@@ -1,4 +1,4 @@
-# Docker Compose configuration for BigBearJFA-GO
+# Docker Compose configuration for BigBear CasaOS JFA-GO
 # This service provides a web interface for managing Jellyfin users and permissions
 # Version: latest
 
@@ -13,7 +13,7 @@ services:
     # Name of the container
     container_name: big-bear-jfa-go
 
-    # Image to be used for the container specifies the btop version and source
+    # Image to be used for the container specifies the hrfee/jfa-go version and source
     image: hrfee/jfa-go:latest
 
     # Container restart policy - restarts the container unless manually stopped
