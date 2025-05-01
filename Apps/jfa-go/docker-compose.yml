@@ -1,0 +1,78 @@
+# Docker Compose configuration for BigBear CasaOS JFA-GO
+# This service provides a web interface for managing Jellyfin users and permissions
+# Initial Version: latest
+
+# Name of the big-bear-jfa-go application
+name: big-bear-jfa-go
+
+# Service definitions for the big-bear-jfa-go application
+services:
+  # Main service configuration for the JFA-GO application
+  # This service provides a web interface running on port 8056 for user administration
+  big-bear-jfa-go:
+    # Name of the container
+    container_name: big-bear-jfa-go
+
+    # Image to be used for the container specifies the hrfee/jfa-go version and source
+    image: hrfee/jfa-go:latest
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      - /DATA/AppData/$AppID/.config/jfa-go:/data # Path to wherever you want to store the config file and other data
+      - /DATA/AppData/$AppID/jellyfin:/jf # Only needed for password resets through Jellyfin, ignore if not using or using Emby
+      - /etc/localtime:/etc/localtime:ro # Makes sure time is correct
+
+    # Map port 8056 on the host to port 8056 on the container
+    ports:
+      - "8056:8056"
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+        - container: /jf
+          description:
+            en_us: "Container Path: /jf"
+        - container: /etc/localtime
+          description:
+            en_us: "Container Path: /etc/localtime"
+      ports:
+        - container: "8056"
+          description:
+            en_us: "Container Port: 8056"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-jfa-go
+  description:
+    en_us: jfa-go is a user management app for Jellyfin (and Emby as 2nd class) that provides invite-based account creation as well as other features that make one's instance much easier to manage.
+  tagline:
+    en_us: Manage users in Jellyfin
+  developer: "hrfee"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyfin.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/jfa-go/thumbnail.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/jfa-go/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/jfa-go/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/jfa-go/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/jfa-go/screenshot-4.png
+  title:
+    en_us: jfa-go
+  category: BigBearCasaOS
+  port_map: "8056"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-jfa-go-to-bigbearcasaos/3364?u=dragonfire1119
