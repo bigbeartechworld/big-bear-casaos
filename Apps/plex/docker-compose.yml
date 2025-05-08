@@ -72,5 +72,7 @@ x-casaos:
     en_us: Plex
   # Application category
   category: BigBearCasaOS
+  # Index file for the application
+  index: /web/index.html
   # Port mapping information
   port_map: "32400"
