@@ -1,0 +1,122 @@
+# Configuration for plex-nvidia setup
+
+# Name of the big-bear-plex-nvidia application
+name: big-bear-plex-nvidia
+
+# Service definitions for the big-bear-plex-nvidia application
+services:
+  # Service name: big-bear-plex-nvidia
+  # The `big-bear-plex-nvidia` service definition
+  big-bear-plex-nvidia:
+    # Name of the container
+    container_name: big-bear-plex-nvidia
+
+    # Image to be used for the container
+    image: linuxserver/plex:1.41.6
+
+    # Environment variables for the container
+    environment:
+      - PUID=1000 # specify the user id
+      - PGID=1000 # specify the group id
+      - TZ=Etc/UTC # specify a timezone to use.
+      - VERSION=docker # Set whether to update plex or not.
+      - PLEX_CLAIM= #optional Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.
+      - CPU_FALLBACK=true # Optional, only if you have a GPU
+      - NVIDIA_VISIBLE_DEVICES=all # Optional, only if you have a GPU
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Network mode for the container
+    network_mode: host
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/tv:/tv
+      - /DATA/AppData/$AppID/movies:/movies
+
+    # Devices to be mounted to the container
+    devices:
+      - /dev/dri:/dev/dri # Optional, only if you have a GPU
+      - /dev/dvb:/dev/dvb # Optional, only if you have a DVB card
+
+    # Deploy configuration
+    deploy:
+      resources:
+        reservations:
+          memory: "256M"
+          devices:
+            - capabilities:
+                - gpu
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PUID
+          description:
+            en_us: "User ID"
+        - container: PGID
+          description:
+            en_us: "Group ID"
+        - container: TZ
+          description:
+            en_us: "Timezone"
+        - container: VERSION
+          description:
+            en_us: "Version"
+        - container: PLEX_CLAIM
+          description:
+            en_us: "Plex Claim"
+        - container: CPU_FALLBACK
+          description:
+            en_us: "CPU Fallback"
+        - container: NVIDIA_VISIBLE_DEVICES
+          description:
+            en_us: "NVIDIA Visible Devices"
+      volumes:
+        - container: /config
+          description:
+            en_us: "Configuration files"
+        - container: /tv
+          description:
+            en_us: "TV Shows"
+        - container: /movies
+          description:
+            en_us: "Movies"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-plex-nvidia
+  description:
+    # Description in English
+    en_us: Stream Movies & TV Shows with NVIDIA GPU
+  tagline:
+    # Short description or tagline in English
+    en_us: Stream Movies & TV Shows with NVIDIA GPU
+  # Developer's name or identifier
+  developer: "plexinc"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/plex.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Plex with NVIDIA GPU
+  # Application category
+  category: BigBearCasaOS
+  # Index file for the application
+  index: /web/index.html
+  # Port mapping information
+  port_map: "32400"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-plex-with-nvidia-gpu-to-bigbearcasaos/3447?u=dragonfire1119
