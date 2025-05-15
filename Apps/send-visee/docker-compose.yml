@@ -45,23 +45,29 @@ services:
 
     x-casaos: # CasaOS specific configuration
       envs:
-        - container: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT
+        - container: NODE_ENV
           description:
-            en_us: "Password Expire After Days Default"
-        - container: PWP__PW__EXPIRE_AFTER_VIEWS_MIN
+            en_us: "Node Environment"
+        - container: BASE_URL
           description:
-            en_us: "Password Expire After Views Min"
-        - container: PWP__PW__RETRIEVAL_STEP_DEFAULT
+            en_us: "Base URL"
+        - container: REDIS_HOST
           description:
-            en_us: "Password Retrieval Step Default"
+            en_us: "Redis Host"
+        - container: MAX_FILE_SIZE
+          description:
+            en_us: "Max File Size"
+        - container: FILE_DIR
+          description:
+            en_us: "File Directory"
       volumes:
-        - container: /opt/PasswordPusher/storage
+        - container: /uploads
           description:
-            en_us: "Container Path: /opt/PasswordPusher/storage"
+            en_us: "Container Path: /uploads"
       ports:
-        - container: "5100"
+        - container: "1443"
           description:
-            en_us: "Container Port: 5100"
+            en_us: "Container Port: 1443"
 
   big-bear-send-visee-redis:
     # Name of the container (Docker does not have to generate a random name)
