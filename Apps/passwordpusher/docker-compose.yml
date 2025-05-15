@@ -126,3 +126,8 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "5100"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-password-pusher-to-bigbearcasaos/1508?u=dragonfire1119
