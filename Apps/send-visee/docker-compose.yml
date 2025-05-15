@@ -1,0 +1,140 @@
+# Configuration for send setup
+# Intial version: v3.4.25
+
+# Name of the big-bear-send-visee application
+name: big-bear-send-visee
+
+# Service definitions for the big-bear-send application
+services:
+  # Service name: big-bear-send-visee
+  # The `big-bear-send-visee` service definition
+  big-bear-send-visee:
+    # Name of the container (Docker does not have to generate a random name)
+    container_name: big-bear-send-visee
+
+    # Image to be used for the container
+    image: registry.gitlab.com/timvisee/send:v3.4.25
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for the container
+    environment:
+      - NODE_ENV=production
+      # Networking
+      - BASE_URL=http://${APP_DOMAIN}
+      # Redis
+      - REDIS_HOST=big-bear-send-visee-redis
+      # Storage Limit
+      - MAX_FILE_SIZE=2147483648
+      # Storage path
+      - FILE_DIR=/uploads
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Storage volume
+      - /DATA/AppData/$AppID/uploads:/uploads
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 1443 of the host to port 1443 of the container
+      - "1443:1443"
+
+    networks:
+      - big_bear_send_visee_network
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT
+          description:
+            en_us: "Password Expire After Days Default"
+        - container: PWP__PW__EXPIRE_AFTER_VIEWS_MIN
+          description:
+            en_us: "Password Expire After Views Min"
+        - container: PWP__PW__RETRIEVAL_STEP_DEFAULT
+          description:
+            en_us: "Password Retrieval Step Default"
+      volumes:
+        - container: /opt/PasswordPusher/storage
+          description:
+            en_us: "Container Path: /opt/PasswordPusher/storage"
+      ports:
+        - container: "5100"
+          description:
+            en_us: "Container Port: 5100"
+
+  big-bear-send-visee-redis:
+    # Name of the container (Docker does not have to generate a random name)
+    container_name: big-bear-send-visee-redis
+
+    # Image to be used for the container
+    image: redis:alpine
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+    # Networks to be used for the container
+    networks:
+      - big_bear_send_visee_network
+
+    # CasaOS specific configuration
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+
+# Networks to be used for the containers
+networks:
+  big_bear_send_visee_network:
+    # Driver to be used for the network
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-send-visee
+  description:
+    # Description in English
+    en_us: A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
+  tagline:
+    # Short description or tagline in English
+    en_us: A fork of Mozilla's Firefox Send.
+  # Developer's name or identifier
+  developer: "timvisee"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/send-visee.png
+  # Thumbnail image (currently empty)
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/send-visee/thumbnail.png"
+  # Screenshot links
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/send-visee/screenshot-1.png
+  title:
+    # Title in English
+    en_us: Send Visee
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "1443"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-send-visee-to-bigbearcasaos/3456?u=dragonfire1119
