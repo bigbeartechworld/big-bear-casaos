@@ -3,12 +3,12 @@
 # Name of the big-bear-pwpush application
 name: big-bear-pwpush
 
-# Service definitions for the big-bear-homarr application
+# Service definitions for the big-bear-pwpush application
 services:
   # Service name: big-bear-pwpush
   # The `big-bear-pwpush` service definition
   big-bear-pwpush:
-    # Name of the container
+    # Name of the container (Docker does not have to generate a random name)
     container_name: big-bear-pwpush
 
     # Image to be used for the container
@@ -19,13 +19,16 @@ services:
 
     # Environment variables for the container
     environment:
+      # Database connection string
       DATABASE_URL: "mysql2://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-db:3306/passwordpusher_db"
+      # Password expiration settings
       PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT: "1"
       PWP__PW__EXPIRE_AFTER_VIEWS_MIN: "1"
       PWP__PW__RETRIEVAL_STEP_DEFAULT: "true"
 
     # Volumes to be mounted to the container
     volumes:
+      # Storage volume
       - /DATA/AppData/$AppID/storage:/opt/PasswordPusher/storage:rw
 
     # Ports mapping between host and container
@@ -113,7 +116,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/passwordpusher.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/password-pusher.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
