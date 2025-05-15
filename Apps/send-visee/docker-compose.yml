@@ -122,7 +122,10 @@ x-casaos:
   # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/send-visee.png
   # Thumbnail image (currently empty)
-  thumbnail: ""
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/send-visee/thumbnail.png"
+  # Screenshot links
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/send-visee/screenshot-1.png
   title:
     # Title in English
     en_us: Send Visee
