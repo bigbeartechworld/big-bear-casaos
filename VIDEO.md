@@ -81,7 +81,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | otel-lgtm |  |
 | owncloud |  |
 | paperless-ngx |  |
-| passwordpusher |  |
 | pd3f |  |
 | penpot |  |
 | peppermint |  |
@@ -103,6 +102,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | scrutiny |  |
 | seafile |  |
 | semaphore |  |
+| send-visee |  |
 | sftpgo |  |
 | spacedrive |  |
 | stalwart-mail |  |
