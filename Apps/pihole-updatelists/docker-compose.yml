@@ -53,6 +53,19 @@ services:
       - NET_ADMIN
 
     x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: "Container Environment: TZ"
+        - container: FTLCONF_webserver_api_password
+          description:
+            en_us: "Container Environment: FTLCONF_webserver_api_password"
+        - container: BLOCKLISTS_URL
+          description:
+            en_us: "Container Environment: BLOCKLISTS_URL"
+        - container: REGEX_BLACKLIST_URL
+          description:
+            en_us: "Container Environment: REGEX_BLACKLIST_URL"
       volumes:
         - container: /etc/pihole
           description:
