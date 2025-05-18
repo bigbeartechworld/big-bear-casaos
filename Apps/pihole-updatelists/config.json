@@ -1,0 +1,8 @@
+{
+  "id": "pihole-updatelists",
+  "version": "2025.04.0",
+  "image": "jacklul/pihole",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}
