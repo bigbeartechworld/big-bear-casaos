@@ -57,7 +57,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | lobe-chat |  |
 | ls-adguardhome-sync |  |
 | lyrionmusicserver |  |
-| mind |  |
 | minio |  |
 | monica |  |
 | mumble-server |  |
@@ -65,7 +64,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | n8n |  |
 | neko-firefox |  |
 | netalertx |  |
-| nextcloud-ls |  |
 | nextcloud-with-smbclient |  |
 | node-red |  |
 | note-mark-aio |  |
@@ -78,17 +76,14 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | onlyoffice |  |
 | open-webui |  |
 | openvpn-as |  |
-| otel-lgtm |  |
 | owncloud |  |
 | paperless-ngx |  |
 | pd3f |  |
 | penpot |  |
 | peppermint |  |
-| photoprism |  |
 | phpmyadmin |  |
 | piwigo |  |
 | playit-docker-web |  |
-| playitgg |  |
 | plex-nvidia |  |
 | plex |  |
 | portainer-agent |  |
