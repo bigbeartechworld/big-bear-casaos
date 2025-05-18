@@ -1,0 +1,117 @@
+# Configuration for pihole-updatelists setup
+
+# Name of the big-bear-pihole-updatelists application
+name: big-bear-pihole-updatelists
+
+# Service definitions for the big-bear-pihole-updatelists application
+services:
+  # Service name: big-bear-pihole-updatelists
+  # The `big-bear-pihole-updatelists` service definition
+  big-bear-pihole-updatelists:
+    # Name of the container
+    container_name: big-bear-pihole-updatelists
+
+    # Image to be used for the container
+    image: jacklul/pihole:2025.04.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables
+    environment:
+      TZ: "UTC"
+      FTLCONF_webserver_api_password: "your_password"
+      BLOCKLISTS_URL: "https://v.firebog.net/hosts/lists.php?type=tick"
+      REGEX_BLACKLIST_URL: "https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list"
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local /DATA/AppData/big-bear-pihole-updatelists/etc directory to /etc/pihole/ inside the container
+      - /DATA/AppData/$AppID/etc:/etc/pihole/
+
+      # Mounting the local /DATA/AppData/big-bear-pihole-updatelists/etc/pihole-updatelists directory to /etc/pihole-updatelists/ inside the container
+      - /DATA/AppData/$AppID/etc/pihole-updatelists:/etc/pihole-updatelists/
+
+      # Mounting the local /DATA/AppData/big-bear-pihole-updatelists/dnsmasq.d directory to /etc/dnsmasq.d inside the container
+      - /DATA/AppData/$AppID/dnsmasq.d:/etc/dnsmasq.d/
+
+    # Ports mapping between host and container
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "8080:80/tcp"
+      - "10443:443/tcp"
+
+    # Define the networks section
+    networks:
+      # Define the pihole-network
+      - pihole-network
+
+    # Capabilities to be added to the container
+    cap_add:
+      - NET_ADMIN
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /etc/pihole
+          description:
+            en_us: "Container Path: /etc/pihole"
+        - container: /etc/pihole-updatelists
+          description:
+            en_us: "Container Path: /etc/pihole-updatelists"
+        - container: /etc/dnsmasq.d
+          description:
+            en_us: "Container Path: /etc/dnsmasq.d"
+      ports:
+        - container: "53"
+          description:
+            en_us: "Container Port: 53"
+        - container: "67"
+          description:
+            en_us: "Container Port: 67"
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_us: "Container Port: 443"
+
+# Define the networks section
+networks:
+  # Define the pihole-network
+  pihole-network:
+    # Set the driver to bridge
+    driver: bridge
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-pihole-updatelists
+  description:
+    # Description in English
+    en_us: The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software. This is a fork of the Pi-hole® application that adds the ability to update the lists of blocked domains and regexes.
+  tagline:
+    # Short description or tagline in English
+    en_us: A black hole for Internet advertisements. This is a fork of the Pi-hole® application that adds the ability to update the lists of blocked domains and regexes.
+  # Developer's name or identifier
+  developer: "jacklul"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pi-hole.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Pi-hole® Updatelists
+  # Go to /admin to access the application
+  index: /admin
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "8080"
