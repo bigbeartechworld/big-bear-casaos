@@ -11,9 +11,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | anse |  |
 | appsmith |  |
 | audiobookshelf |  |
-| authentik |  |
 | ayon |  |
-| beaverhabits |  |
 | budibase |  |
 | cadvisor |  |
 | calcom |  |
@@ -37,14 +35,9 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | flcontainers-guacamole |  |
 | flowise |  |
 | gluetun |  |
-| gotify |  |
-| healthchecks |  |
 | homebridge |  |
-| homer |  |
 | immich-aio-alpine |  |
 | invoice-ninja |  |
-| jellyseerr |  |
-| jellystat |  |
 | jfa-go |  |
 | jlesage-handbrake |  |
 | kavita |  |
@@ -57,6 +50,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | lobe-chat |  |
 | ls-adguardhome-sync |  |
 | lyrionmusicserver |  |
+| mind |  |
 | minio |  |
 | monica |  |
 | mumble-server |  |
@@ -64,6 +58,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | n8n |  |
 | neko-firefox |  |
 | netalertx |  |
+| nextcloud-ls |  |
 | nextcloud-with-smbclient |  |
 | node-red |  |
 | note-mark-aio |  |
@@ -76,14 +71,18 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | onlyoffice |  |
 | open-webui |  |
 | openvpn-as |  |
+| otel-lgtm |  |
 | owncloud |  |
 | paperless-ngx |  |
 | pd3f |  |
 | penpot |  |
 | peppermint |  |
+| photoprism |  |
 | phpmyadmin |  |
+| pihole-updatelists |  |
 | piwigo |  |
 | playit-docker-web |  |
+| playitgg |  |
 | plex-nvidia |  |
 | plex |  |
 | portainer-agent |  |
@@ -104,7 +103,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | syncthing |  |
 | tailscale |  |
 | tianji |  |
-| tududi |  |
 | uisp |  |
 | upsnap |  |
 | viseron |  |
