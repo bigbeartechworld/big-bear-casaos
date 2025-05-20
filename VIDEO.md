@@ -4,14 +4,15 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 
 | Application | YouTube Video |
 | --- | --- |
-| GemDigest |  |
 | Homepage |  |
 | MaybeFinance |  |
 | adguard-home-host |  |
 | anse |  |
 | appsmith |  |
 | audiobookshelf |  |
+| authentik |  |
 | ayon |  |
+| beaverhabits |  |
 | budibase |  |
 | cadvisor |  |
 | calcom |  |
@@ -35,9 +36,14 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | flcontainers-guacamole |  |
 | flowise |  |
 | gluetun |  |
+| gotify |  |
+| healthchecks |  |
 | homebridge |  |
+| homer |  |
 | immich-aio-alpine |  |
 | invoice-ninja |  |
+| jellyseerr |  |
+| jellystat |  |
 | jfa-go |  |
 | jlesage-handbrake |  |
 | kavita |  |
@@ -103,6 +109,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | syncthing |  |
 | tailscale |  |
 | tianji |  |
+| tududi |  |
 | uisp |  |
 | upsnap |  |
 | viseron |  |
