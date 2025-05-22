@@ -33,7 +33,7 @@ services:
       - DATABASE_URL=file:data/gitea-mirror.db
       - HOST=0.0.0.0
       - PORT=4321
-      - JWT_SECRET=${JWT_SECRET:-your-secret-key-change-this-in-production}
+      - JWT_SECRET=your-secret-key-change-this-in-production
       # Optional GitHub/Gitea Mirror Config (can also be set through the UI)
       # - GITHUB_USERNAME=your-github-username
       # - GITHUB_TOKEN=your-github-token
@@ -83,22 +83,34 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-3.png
   # Environment variables descriptions
   envs:
-    - name: JWT_SECRET
+    - container: NODE_ENV
+      description:
+        en_us: "Node Environment: production"
+    - container: HOST
+      description:
+        en_us: "Host Interface: 0.0.0.0"
+    - container: PORT
+      description:
+        en_us: "Application Port: 4321"
+    - container: JWT_SECRET
       description:
         en_us: "Secret key for JWT authentication"
-    - name: GITHUB_USERNAME
+    - container: DATABASE_URL
+      description:
+        en_us: "SQLite Database URL: file:data/gitea-mirror.db"
+    - container: GITHUB_USERNAME
       description:
         en_us: "Your GitHub username"
-    - name: GITHUB_TOKEN
+    - container: GITHUB_TOKEN
       description:
         en_us: "Your GitHub personal access token"
-    - name: GITEA_URL
+    - container: GITEA_URL
       description:
         en_us: "URL of your Gitea instance"
-    - name: GITEA_TOKEN
+    - container: GITEA_TOKEN
       description:
         en_us: "Your Gitea access token"
-    - name: GITEA_USERNAME
+    - container: GITEA_USERNAME
       description:
         en_us: "Your Gitea username"
   # Volume descriptions
