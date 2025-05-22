@@ -126,20 +126,17 @@ x-casaos:
   # Tips for the application
   tips:
     before_install:
-      en_us: >
+      en_us: |
         ### Configuration Instructions:
-
         On first launch, you'll be guided through creating an admin account with your chosen credentials.
 
         After logging in, you can configure the application through the UI:
-
         1. Go to the **Configuration** tab
         2. Set up your GitHub connection (username and token)
         3. Set up your Gitea connection (URL, username, and token)
         4. Configure mirroring options (repositories, organizations, etc.)
 
         Alternatively, you can pre-configure these settings using environment variables:
-
         - `JWT_SECRET`: Secret key for JWT authentication (important for security)
         - `GITHUB_USERNAME`: Your GitHub username
         - `GITHUB_TOKEN`: Your GitHub personal access token with appropriate permissions
