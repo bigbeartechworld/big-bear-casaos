@@ -1,6 +1,6 @@
 {
   "id": "gitea-mirror",
-  "version": "latest",
+  "version": "v2.1.0",
   "image": "ghcr.io/arunavo4/gitea-mirror",
   "youtube": "",
   "docs_link": "",
