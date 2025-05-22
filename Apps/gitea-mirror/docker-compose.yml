@@ -43,7 +43,7 @@ services:
 
     # Health check configuration
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=3", "--spider", "http://localhost:4321/"]
+      test: ["CMD", "curl", "-f", "http://localhost:4321/"]
       interval: 30s
       timeout: 10s
       retries: 5
