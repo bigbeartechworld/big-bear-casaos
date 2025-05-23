@@ -118,12 +118,14 @@ services:
   # Configuration for Database service
   database:
     container_name: immich-postgres # Name of the running container
-    image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:739cdd626151ff1f796dc95a6591b55a714f341c737e27f045019ceabf8e8c52 # Image to be used
+    image: ghcr.io/immich-app/postgres:14-vectorchord0.3.0-pgvectors0.2.0 # Image to be used
     environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
       POSTGRES_DB: immich
       PG_DATA: /var/lib/postgresql/data
+      # Uncomment the DB_STORAGE_TYPE: 'HDD' var if your database isn't stored on SSDs
+      # DB_STORAGE_TYPE: 'HDD'
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
     restart: unless-stopped # Policy to always restart the container if it stops
