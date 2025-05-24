@@ -12,7 +12,7 @@ services:
     container_name: big-bear-gitea-mirror
 
     # Image to be used for the container
-    image: ghcr.io/arunavo4/gitea-mirror:v2.7.0
+    image: ghcr.io/arunavo4/gitea-mirror:v2.8.0
 
     # Container restart policy
     restart: unless-stopped
@@ -43,11 +43,11 @@ services:
 
     # Health check configuration
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:4321/"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=3", "--spider", "http://localhost:4321/api/health"]
       interval: 30s
       timeout: 10s
       retries: 5
-      start_period: 15s
+      start_period: 30s
 
     # CasaOS specific configuration for this service
     x-casaos:
