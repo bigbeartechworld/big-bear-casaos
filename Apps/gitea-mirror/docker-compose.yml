@@ -12,7 +12,7 @@ services:
     container_name: big-bear-gitea-mirror
 
     # Image to be used for the container
-    image: ghcr.io/arunavo4/gitea-mirror:v2.5.3
+    image: ghcr.io/arunavo4/gitea-mirror:v2.6.0
 
     # Container restart policy
     restart: unless-stopped
@@ -66,7 +66,7 @@ x-casaos:
   # Developer's name or identifier
   developer: "arunavo4"
   # Author of this configuration
-  author: BigBearTechWorld
+  author: Arunavo Ray
   # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/logo.png
   # Thumbnail image
