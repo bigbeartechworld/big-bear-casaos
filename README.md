@@ -136,13 +136,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.10.20250519 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.5.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.5.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.05.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.131.3-alpine |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.133.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | 1.133.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.133.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | 1.133.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | invoice-ninja | invoiceninja/invoiceninja | 5.11.78 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.5.2 |  |  |
@@ -162,7 +162,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.10.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.87.7 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.88.0 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.6 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.25 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -221,7 +221,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plex | linuxserver/plex | 1.41.7 |  |  |
 | portainer-agent | portainer/agent | 2.30.1 |  |  |
 | portainer | portainer/portainer-ce | 2.30.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
-| poste-io | analogic/poste.io | 2.5.1 |  |  |
+| poste-io | analogic/poste.io | 2.5.2 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.10 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
@@ -246,7 +246,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.34 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.20.10 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
-| traccar | traccar/traccar | 6.6-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
+| traccar | traccar/traccar | 6.7-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.37 |  |  |
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
