@@ -49,6 +49,48 @@ services:
       retries: 5
       start_period: 15s
 
+    # CasaOS specific configuration for this service
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_us: "Node Environment: production"
+        - container: HOST
+          description:
+            en_us: "Host Interface: 0.0.0.0"
+        - container: PORT
+          description:
+            en_us: "Application Port: 4321"
+        - container: JWT_SECRET
+          description:
+            en_us: "Secret key for JWT authentication"
+        - container: DATABASE_URL
+          description:
+            en_us: "SQLite Database URL: file:data/gitea-mirror.db"
+        - container: GITHUB_USERNAME
+          description:
+            en_us: "Your GitHub username (optional - can be set in UI)"
+        - container: GITHUB_TOKEN
+          description:
+            en_us: "Your GitHub personal access token (optional - can be set in UI)"
+        - container: GITEA_URL
+          description:
+            en_us: "URL of your Gitea instance (optional - can be set in UI)"
+        - container: GITEA_TOKEN
+          description:
+            en_us: "Your Gitea access token (optional - can be set in UI)"
+        - container: GITEA_USERNAME
+          description:
+            en_us: "Your Gitea username (optional - can be set in UI)"
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+      ports:
+        - container: "4321"
+          description:
+            en_us: "Container Port: 4321"
+
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application
@@ -81,48 +123,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-3.png
-  # Environment variables descriptions
-  envs:
-    - container: NODE_ENV
-      description:
-        en_us: "Node Environment: production"
-    - container: HOST
-      description:
-        en_us: "Host Interface: 0.0.0.0"
-    - container: PORT
-      description:
-        en_us: "Application Port: 4321"
-    - container: JWT_SECRET
-      description:
-        en_us: "Secret key for JWT authentication"
-    - container: DATABASE_URL
-      description:
-        en_us: "SQLite Database URL: file:data/gitea-mirror.db"
-    - container: GITHUB_USERNAME
-      description:
-        en_us: "Your GitHub username"
-    - container: GITHUB_TOKEN
-      description:
-        en_us: "Your GitHub personal access token"
-    - container: GITEA_URL
-      description:
-        en_us: "URL of your Gitea instance"
-    - container: GITEA_TOKEN
-      description:
-        en_us: "Your Gitea access token"
-    - container: GITEA_USERNAME
-      description:
-        en_us: "Your Gitea username"
-  # Volume descriptions
-  volumes:
-    - container: /app/data
-      description:
-        en_us: "Container Path: /app/data"
-  # Port descriptions
-  ports:
-    - container: "4321"
-      description:
-        en_us: "Container Port: 4321"
+
   # Tips for the application
   tips:
     before_install:
