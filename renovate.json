@@ -27,6 +27,10 @@
       "enabled": false
     },
     {
+      "matchPackageNames": ["ghcr.io/immich-app/postgres"],
+      "enabled": false
+    },
+    {
       "matchPackageNames": [
         "rocket.chat",
         "ghcr.io/immich-app/immich-machine-learning",
