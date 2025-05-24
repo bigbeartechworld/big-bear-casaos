@@ -1,0 +1,89 @@
+# Docker Compose configuration for Immich Kiosk Service
+# This service provides a web interface for managing Immich Kiosk
+# Initial Immich Kiosk Version: 0.21.0
+
+# Name of the big-bear-immich-kiosk application
+name: big-bear-immich-kiosk
+
+# Service definitions for the big-bear-immich-kiosk application
+services:
+  # Main service configuration for the Immich Kiosk application
+  # This service provides a web interface running on port 4000 for Immich Kiosk
+  big-bear-immich-kiosk:
+    # Name of the container
+    container_name: big-bear-immich-kiosk
+
+    # Image to be used for the container specifies the Immich Kiosk version and source
+    image: ghcr.io/damongolding/immich-kiosk:0.21.0
+
+    # Enable TTY for interactive terminal access
+    tty: true
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Environment variables for service configuration
+    # These settings control the Immich Kiosk application behavior and default admin credentials
+    # https://github.com/damongolding/immich-kiosk#configuration
+    environment:
+      # Sets the language and timezone for the container
+      LANG: "en_us"
+      # Sets the timezone for the container
+      TZ: "UTC"
+      # Sets the Immich API key for the container
+      KIOSK_IMMICH_API_KEY: ""
+      # Sets the Immich server URL for the container
+      KIOSK_IMMICH_URL: ""
+      # Sets the Immich external URL for the container
+      KIOSK_IMMICH_EXTERNAL_URL: ""
+
+    # Map port 4000 on the host to port 4000 on the container
+    ports:
+      - "4000:4000"
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: "LANG"
+          description:
+            en_us: "Sets the language and timezone for the container"
+        - container: "TZ"
+          description:
+            en_us: "Sets the language and timezone for the container"
+        - container: "KIOSK_IMMICH_API_KEY"
+          description:
+            en_us: "Sets the Immich API key for the container"
+        - container: "KIOSK_IMMICH_URL"
+          description:
+            en_us: "Sets the Immich server URL for the container"
+        - container: "KIOSK_IMMICH_EXTERNAL_URL"
+          description:
+            en_us: "Sets the Immich external URL for the container"
+      ports:
+        - container: "4000"
+          description:
+            en_us: "Container Port: 4000"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-immich-kiosk
+  description:
+    en_us: Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.
+  tagline:
+    en_us: Immich Kiosk
+  developer: "damongolding"
+  author: "BigBearTechWorld"
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/immich-kiosk.png"
+  title:
+    en_us: Immich Kiosk
+  category: BigBearCasaOS
+  port_map: "4000"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-immich-kiosk-to-bigbearcasaos/3513?u=dragonfire1119

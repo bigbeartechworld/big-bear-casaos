@@ -1,0 +1,8 @@
+{
+  "id": "immich-kiosk",
+  "version": "0.21.0",
+  "image": "ghcr.io/damongolding/immich-kiosk",
+  "youtube": "",
+  "docs_link": "",
+  "big_bear_cosmos_youtube": ""
+}
