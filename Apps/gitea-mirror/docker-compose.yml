@@ -118,6 +118,8 @@ x-casaos:
     en_us: Gitea Mirror
   # Application category
   category: BigBearCasaOS
+  # Port mapping information
+  port_map: "4321"
   # Screenshot links
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-1.png
