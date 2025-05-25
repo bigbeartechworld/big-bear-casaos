@@ -8,7 +8,7 @@ name: big-bear-immich-kiosk
 # Service definitions for the big-bear-immich-kiosk application
 services:
   # Main service configuration for the Immich Kiosk application
-  # This service provides a web interface running on port 4000 for Immich Kiosk
+  # This service provides a web interface running on port 3000 for Immich Kiosk
   big-bear-immich-kiosk:
     # Name of the container
     container_name: big-bear-immich-kiosk
@@ -37,9 +37,9 @@ services:
       # Sets the Immich external URL for the container
       KIOSK_IMMICH_EXTERNAL_URL: ""
 
-    # Map port 4000 on the host to port 4000 on the container
+    # Map port 3000 on the host to port 3000 on the container
     ports:
-      - "4000:4000"
+      - "3000:3000"
 
     # CasaOS-specific configuration metadata
     x-casaos:
@@ -60,9 +60,9 @@ services:
           description:
             en_us: "Sets the Immich external URL for the container"
       ports:
-        - container: "4000"
+        - container: "3000"
           description:
-            en_us: "Container Port: 4000"
+            en_us: "Container Port: 3000"
 
 # Application metadata for CasaOS integration
 # This section provides information for the CasaOS app store and installation process
@@ -81,7 +81,7 @@ x-casaos:
   title:
     en_us: Immich Kiosk
   category: BigBearCasaOS
-  port_map: "4000"
+  port_map: "3000"
   # Installation instructions and documentation
   tips:
     before_install:
