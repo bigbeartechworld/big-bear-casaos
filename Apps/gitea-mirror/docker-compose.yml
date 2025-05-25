@@ -1,4 +1,7 @@
 # Configuration for gitea-mirror setup
+# Initial version: v2.9.0
+# Author: Arunavo Ray
+# Description: Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It can mirror personal repositories, starred repositories, and organization repositories.
 
 # Name of the big-bear-gitea-mirror application
 name: big-bear-gitea-mirror
@@ -43,7 +46,15 @@ services:
 
     # Health check configuration
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=3", "--spider", "http://localhost:4321/api/health"]
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=3",
+          "--spider",
+          "http://localhost:4321/api/health",
+        ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -108,7 +119,7 @@ x-casaos:
   # Developer's name or identifier
   developer: "arunavo4"
   # Author of this configuration
-  author: Arunavo Ray
+  author: "Arunavo Ray"
   # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/logo.png
   # Thumbnail image
@@ -126,25 +137,8 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-3.png
 
-  # Tips for the application
+  # Tips for installation
   tips:
     before_install:
       en_us: |
-        ### Configuration Instructions:
-        On first launch, you'll be guided through creating an admin account with your chosen credentials.
-
-        After logging in, you can configure the application through the UI:
-        1. Go to the **Configuration** tab
-        2. Set up your GitHub connection (username and token)
-        3. Set up your Gitea connection (URL, username, and token)
-        4. Configure mirroring options (repositories, organizations, etc.)
-
-        Alternatively, you can pre-configure these settings using environment variables:
-        - `JWT_SECRET`: Secret key for JWT authentication (important for security)
-        - `GITHUB_USERNAME`: Your GitHub username
-        - `GITHUB_TOKEN`: Your GitHub personal access token with appropriate permissions
-        - `GITEA_URL`: The URL of your Gitea instance
-        - `GITEA_TOKEN`: Your Gitea access token
-        - `GITEA_USERNAME`: Your Gitea username
-
-        The application uses SQLite for data storage, with the database file stored in the mounted volume.
+        Read this before installing: https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119
