@@ -55,11 +55,11 @@ x-casaos:
     # Short description or tagline in English
     en_us: Homepage
   # Developer's name or identifier
-  developer: "ajnart"
+  developer: "gethomepage"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://gethomepage.dev/v0.7.3/assets/light_squircle@2x.png
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homepage.png"
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
