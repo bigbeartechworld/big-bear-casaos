@@ -12,7 +12,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 7835M
+          memory: 2048M
     environment:
       - APP_URL=http://localhost:1411 # Application URL for pocket-id, should be set to your domain name e.g https://pocketid.example.com if using a reverse proxy
       - TRUST_PROXY=false # Whether to trust proxy headers, set to true if behind a reverse proxy
