@@ -95,7 +95,7 @@ x-casaos:
     en_us: Workflow automation tool # Short description or tagline in English
   developer: "n8n" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/n8n.png # Icon URL
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/n8n.png # Icon URL
   thumbnail: "" # Thumbnail image URL (empty if not available)
   title:
     en_us: n8n # Title in English

@@ -54,7 +54,7 @@ x-casaos:
     en_us: Code Server # Short description or tagline in English
   developer: "" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code-server.png # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/coder.png # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
     en_us: Code Server # Title in English

@@ -75,7 +75,7 @@ x-casaos:
     en_us: cAdvisor # Short description or tagline in English
   developer: "" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cadvisor.png # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/cadvisor.png # Icon for the application
   thumbnail: "" # Thumbnail image
   title:
     en_us: cAdvisor # Title in English

@@ -64,7 +64,7 @@ x-casaos:
   author: BigBearTechWorld
 
   # Icon for the service
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/node-red.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/node-red.png
 
   # Thumbnail for the service (if applicable)
   thumbnail: ""

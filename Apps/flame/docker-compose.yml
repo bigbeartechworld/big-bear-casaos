@@ -82,7 +82,7 @@ x-casaos:
   author: BigBearCommunity
 
   # URL pointing to the icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/flame.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/flame.png
 
   # URL pointing to a thumbnail image representing the application
   thumbnail: https://github.com/pawelmalak/flame/raw/master/.github/home.png
