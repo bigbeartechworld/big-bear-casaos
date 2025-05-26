@@ -83,7 +83,7 @@ x-casaos:
     en_us: Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) 🛡️
   developer: "stalwartlabs"
   author: BigBearTechWorld
-  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/stalwart-mail-server.png"
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/stalwart.png"
   thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-stalwart-mail/thumbnail.gif"
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-stalwart-mail/thumbnail.gif
