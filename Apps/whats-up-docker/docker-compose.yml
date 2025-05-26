@@ -43,7 +43,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/whats-up-docker.png
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/whats-up-docker.png
   # Thumbnail image URL for the application (currently empty)
   thumbnail: ""
   # Title for the application

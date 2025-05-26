@@ -140,7 +140,7 @@ x-casaos:
   author: BigBearTechWorld
 
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nightscout.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nightscout.png
 
   # Thumbnail image
   thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/nightscout/screenshot.png"

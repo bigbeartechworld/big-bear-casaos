@@ -151,7 +151,7 @@ x-casaos:
   author: BigBearTechWorld
 
   # Icons and thumbnails for CasaOS dashboard.
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/omada.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/omada.png
   thumbnail: ""
 
   # Title for the CasaOS dashboard.

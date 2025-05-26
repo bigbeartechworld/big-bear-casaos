@@ -103,7 +103,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wordpress.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wordpress.png
   # Thumbnail image URL for the application (currently empty)
   thumbnail: ""
   # Title for the application

@@ -100,7 +100,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/filebrowser.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/filebrowser-quantum.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

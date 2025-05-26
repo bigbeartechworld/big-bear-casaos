@@ -77,7 +77,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application (replace with actual LinkStack icon URL if available)
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/linkstack.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/linkstack.png
   # Thumbnail image (currently empty, replace if available)
   thumbnail: ""
   title:

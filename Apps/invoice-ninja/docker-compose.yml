@@ -232,7 +232,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/invoiceninja.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/invoice-ninja.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

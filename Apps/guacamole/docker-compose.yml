@@ -104,7 +104,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/guacamole.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/guacamole.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   # Title of the application in English

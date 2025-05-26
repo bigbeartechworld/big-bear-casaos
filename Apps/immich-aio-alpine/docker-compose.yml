@@ -153,7 +153,7 @@ x-casaos:
     en_us: Immich All In One Alpine
   developer: "imagegenius" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/immich.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   # Title of the application in English

@@ -43,7 +43,6 @@ services:
           description:
             en_us: "Container Path: /data/WatchYourLAN"
 
-
 # CasaOS specific configuration
 x-casaos:
   # Supported CPU architectures for the application
@@ -63,7 +62,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchyourlan.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/watchyourlan.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
