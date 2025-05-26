@@ -36,6 +36,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | financial-freedom |  |
 | flcontainers-guacamole |  |
 | flowise |  |
+| gitea-mirror |  |
 | gluetun |  |
 | gotify |  |
 | healthchecks |  |
