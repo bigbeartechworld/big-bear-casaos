@@ -1,7 +1,7 @@
 {
-  "id": "pocketid",
+  "id": "pocket-id",
   "version": "v1.0",
-  "image": "pocket-id/pocket-id",
+  "image": "ghcr.io/pocket-id/pocket-id",
   "youtube": "",
   "docs_link": "https://pocket-id.org/docs/introduction",
   "big_bear_cosmos_youtube": ""
