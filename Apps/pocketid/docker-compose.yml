@@ -1,10 +1,10 @@
 # Configuration for pocket-id setup
-name: pocket-id
+name: big-bear-pocketid
 # Service definitions for the pocket-id application
 services:
   # Service configuration for the pocket-id application
-  pocket-id:
-    container_name: pocket-id # Name of the pocket-id container
+  big-bear-pocketid:
+    container_name: big-bear-pocketid # Name of the pocket-id container
     image: ghcr.io/pocket-id/pocket-id:v1.0 # Docker image to use for pocket-id
     restart: unless-stopped # Restart policy: Restart unless manually stopped
     cpu_shares: 90
@@ -19,7 +19,7 @@ services:
       - MAXMIND_LICENSE_KEY= # MaxMind license key for geolocation, optional
       - PUID=1000 # User ID for file permissions
       - PGID=1000 # Group ID for file permissions
-    hostname: pocket-id
+    hostname: big-bear-pocketid
     labels:
       icon: https://pocket-id.org/img/logo.png # Icon URL
     ports:
@@ -28,7 +28,7 @@ services:
         protocol: tcp # Port mapping between host and container
     volumes:
       - type: bind
-        source: /DATA/AppData/pocketid/data
+        source: /DATA/AppData/$AppID/data
         target: /app/data # Volume for persistent data
     devices: []
     cap_add: []
@@ -75,7 +75,7 @@ x-casaos:
   architectures: # Supported CPU architectures
     - amd64
     - arm64
-  main: pocket-id # Main service of the application
+  main: big-bear-pocketid # Main service of the application
   description:
     en_us: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services. # Description in English
   tagline:
