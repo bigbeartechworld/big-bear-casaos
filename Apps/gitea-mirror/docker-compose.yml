@@ -123,7 +123,7 @@ x-casaos:
   # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/logo.png
   # Thumbnail image
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-1.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot1.png"
   title:
     # Title in English
     en_us: Gitea Mirror
@@ -133,12 +133,12 @@ x-casaos:
   port_map: "4321"
   # Screenshot links
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-5.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot-6.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot3.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot4.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot5.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot6.png
 
   # Tips for installation
   tips:
