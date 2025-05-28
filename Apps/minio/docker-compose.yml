@@ -46,7 +46,7 @@ x-casaos:
     en_us: An open-source S3 alternative # Short description or tagline in English
   developer: "minio" # Developer's name or identifier
   author: BigBearCommunity # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/minio.png # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/minio.png # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
     en_us: Minio # Title in English

@@ -43,7 +43,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dashdot.png
   # Thumbnail image URL for the application (currently empty)
   thumbnail: ""
   # Title for the application

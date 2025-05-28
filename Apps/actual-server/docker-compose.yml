@@ -33,7 +33,7 @@ x-casaos:
     en_us: Local-first OpenSource Budget tool # Short description or tagline in English
   developer: "" # Developer's name or identifier
   author: BigBearCommunity # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/actual.png # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/actual-budget.png # Icon for the application
   thumbnail: "" # Thumbnail image (currently empty)
   title:
     en_us: Actual Budget # Title in English

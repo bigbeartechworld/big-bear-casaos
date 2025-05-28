@@ -6,7 +6,7 @@ services:
   # Main Immich Server service configuration
   immich-server:
     container_name: immich-server # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v1.133.1 # Image to be used
+    image: ghcr.io/immich-app/immich-server:v1.134.0 # Image to be used
     # extends:
     #   file: hwaccel.transcoding.yml
     #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
@@ -107,7 +107,7 @@ x-casaos:
     en_us: Immich without machine learning
   developer: "immich" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/immich.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   # Title of the application in English

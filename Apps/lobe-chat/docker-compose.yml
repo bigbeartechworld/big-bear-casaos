@@ -12,7 +12,7 @@ services:
     container_name: big-bear-lobe-chat
 
     # Image to be used for the container
-    image: lobehub/lobe-chat:1.88.2
+    image: lobehub/lobe-chat:1.88.14
 
     # Container restart policy
     restart: unless-stopped
@@ -67,7 +67,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/lobe-chat.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/lobe-chat.png
   # Thumbnail image (currently empty)
   thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@main/Apps/lobe-chat/thumbnail.png"
   screenshot_link:
@@ -84,4 +84,3 @@ x-casaos:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-lobe-chat-to-bigbearcasaos/2453?u=dragonfire1119
-    

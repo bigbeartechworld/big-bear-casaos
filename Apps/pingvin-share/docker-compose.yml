@@ -5,7 +5,7 @@ services:
   app:
     # Name of the service
 
-    image: stonith404/pingvin-share:v1.12.0
+    image: stonith404/pingvin-share:v1.13.0
     # Image to be used for this service
 
     restart: unless-stopped
@@ -47,7 +47,7 @@ x-casaos:
     en_us: Pingvin Share
   developer: "stonith404"
   author: BigBearTechWorld
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/pingvin.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/pingvin-share.png
   thumbnail: "https://user-images.githubusercontent.com/58886915/225038319-b2ef742c-3a74-4eb6-9689-4207a36842a4.png"
   title:
     en_us: Pingvin Share

@@ -77,7 +77,7 @@ x-casaos:
   author: BigBearTechWorld
 
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ntfy.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ntfy.png
 
   # Thumbnail or screenshot URL for the application
   thumbnail: https://ntfy.sh/_next/static/media/screenshot-web-3.de6f19af.png

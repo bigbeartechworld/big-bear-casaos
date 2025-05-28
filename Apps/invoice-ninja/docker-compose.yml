@@ -6,7 +6,7 @@ name: big-bear-invoice-ninja
 # Service definitions for the big-bear-invoice-ninja application
 services:
   big-bear-invoice-ninja:
-    image: invoiceninja/invoiceninja:5.11.78
+    image: invoiceninja/invoiceninja:5.11.79
     container_name: big-bear-invoice-ninja
     restart: unless-stopped
     user: 1500:1500
@@ -232,7 +232,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/invoiceninja.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/invoice-ninja.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

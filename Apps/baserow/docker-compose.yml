@@ -54,7 +54,7 @@ x-casaos:
     en_us: Baserow # Short description or tagline in English
   developer: "" # Developer's name or identifier
   author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/baserow.png # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/baserow.png # Icon for the application
   thumbnail: "https://github.com/bram2w/baserow/raw/master/docs/assets/screenshot.png" # Thumbnail image (currently empty)
   title:
     en_us: Baserow # Title in English

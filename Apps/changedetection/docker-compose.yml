@@ -12,7 +12,7 @@ services:
     container_name: big-bear-changedetection
 
     # Image to be used for the container
-    image: ghcr.io/dgtlmoon/changedetection.io:0.49.17
+    image: ghcr.io/dgtlmoon/changedetection.io:0.49.18
 
     # Container restart policy
     restart: unless-stopped
@@ -54,7 +54,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/changedetection-io.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/changedetection.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:

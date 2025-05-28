@@ -12,7 +12,7 @@ services:
     container_name: big-bear-semaphore
 
     # Image to be used for the container
-    image: semaphoreui/semaphore:v2.14.10
+    image: semaphoreui/semaphore:v2.14.12
 
     # Container restart policy
     restart: unless-stopped
@@ -105,7 +105,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/semaphore.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/semaphore-ui.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
