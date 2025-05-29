@@ -1,0 +1,221 @@
+# Docker Compose configuration for Wallabag
+# Wallabag is a self-hosted application for saving web pages
+# Version: 2.6.12
+
+# Name of the wallabag application
+name: big-bear-wallabag
+
+services:
+  # Main Wallabag service configuration
+  big-bear-wallabag:
+    # Name of the container
+    container_name: big-bear-wallabag
+
+    # Image to be used for the container
+    image: wallabag/wallabag:2.6.12
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Environment variables for Wallabag configuration
+    environment:
+      - MYSQL_ROOT_PASSWORD=777134a0-4480-49f3-b00c-29db42c6d136
+      - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
+      - SYMFONY__ENV__DATABASE_HOST=big-bear-wallabag-db
+      - SYMFONY__ENV__DATABASE_PORT=3306
+      - SYMFONY__ENV__DATABASE_NAME=wallabag
+      - SYMFONY__ENV__DATABASE_USER=big_bear_wallabag
+      - SYMFONY__ENV__DATABASE_PASSWORD=fbe433e9-e3a8-432a-a382-d132596a76fc
+      - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
+      - SYMFONY__ENV__DATABASE_TABLE_PREFIX="big_bear_wallabag_"
+      - SYMFONY__ENV__MAILER_DSN=smtp://127.0.0.1
+      - SYMFONY__ENV__FROM_EMAIL=wallabag@example.com
+      - SYMFONY__ENV__DOMAIN_NAME=http://[IP]:8080
+      - SYMFONY__ENV__SERVER_NAME="Big Bear Wallabag"
+
+    # Port mapping
+    ports:
+      - "8080:80"
+
+    # Volume mappings for persistent storage
+    volumes:
+      - /DATA/AppData/$AppID/images:/var/www/wallabag/web/assets/images
+
+    # Health check configuration
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost/api/info",
+        ]
+      interval: 1m
+      timeout: 3s
+
+    # Network configuration
+    networks:
+      - big-bear-wallabag-network
+
+    # Service dependencies
+    depends_on:
+      - big-bear-wallabag-db
+      - big-bear-wallabag-redis
+
+    # CasaOS-specific configuration metadata for the main service
+    x-casaos:
+      envs:
+        - container: "MYSQL_ROOT_PASSWORD"
+          description:
+            en_us: "MySQL root password"
+        - container: "SYMFONY__ENV__DATABASE_DRIVER"
+          description:
+            en_us: "Database driver for Symfony"
+        - container: "SYMFONY__ENV__DATABASE_HOST"
+          description:
+            en_us: "Database host"
+        - container: "SYMFONY__ENV__DATABASE_PORT"
+          description:
+            en_us: "Database port"
+        - container: "SYMFONY__ENV__DATABASE_NAME"
+          description:
+            en_us: "Database name"
+        - container: "SYMFONY__ENV__DATABASE_USER"
+          description:
+            en_us: "Database user"
+        - container: "SYMFONY__ENV__DATABASE_PASSWORD"
+          description:
+            en_us: "Database password"
+        - container: "SYMFONY__ENV__DATABASE_CHARSET"
+          description:
+            en_us: "Database charset"
+        - container: "SYMFONY__ENV__DATABASE_TABLE_PREFIX"
+          description:
+            en_us: "Database table prefix"
+        - container: "SYMFONY__ENV__MAILER_DSN"
+          description:
+            en_us: "Mailer DSN configuration"
+        - container: "SYMFONY__ENV__FROM_EMAIL"
+          description:
+            en_us: "From email address"
+        - container: "SYMFONY__ENV__DOMAIN_NAME"
+          description:
+            en_us: "Domain name for Wallabag instance"
+        - container: "SYMFONY__ENV__SERVER_NAME"
+          description:
+            en_us: "Server name for Wallabag instance"
+      volumes:
+        - container: /var/www/wallabag/web/assets/images
+          description:
+            en_us: "Container Path: /var/www/wallabag/web/assets/images"
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+
+  # MariaDB database service
+  big-bear-wallabag-db:
+    # Name of the container
+    container_name: big-bear-wallabag-db
+
+    # Image to be used for the database container
+    image: mariadb:10.11.10
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for MariaDB configuration
+    environment:
+      - MYSQL_ROOT_PASSWORD=777134a0-4480-49f3-b00c-29db42c6d136
+
+    # Volume mappings for database persistence
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+
+    # Network configuration
+    networks:
+      - big-bear-wallabag-network
+
+    # Health check configuration for database
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 20s
+      timeout: 3s
+
+    # CasaOS-specific configuration metadata for the database service
+    x-casaos:
+      envs:
+        - container: "MYSQL_ROOT_PASSWORD"
+          description:
+            en_us: "MySQL root password"
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: "Container Path: /var/lib/mysql"
+
+  # Redis cache service
+  big-bear-wallabag-redis:
+    # Name of the container
+    container_name: big-bear-wallabag-redis
+
+    # Image to be used for the Redis container
+    image: redis:7.4.1-alpine
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Network configuration
+    networks:
+      - big-bear-wallabag-network
+
+    # Health check configuration for Redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 20s
+      timeout: 3s
+
+    # CasaOS-specific configuration metadata for the Redis service
+    x-casaos:
+      envs:
+        - container: "REDIS_PASSWORD"
+          description:
+            en_us: "Redis password"
+      volumes:
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+
+# Network configuration
+networks:
+  big-bear-wallabag-network:
+    driver: bridge
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-wallabag
+  description:
+    en_us: Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.
+  tagline:
+    en_us: Save and classify articles. Read them later. Freely.
+  developer: "wallabag"
+  author: "Wallabag Team"
+  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallabag.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wallabag/thumbnail.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wallabag/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wallabag/screenshot-2.png
+  title:
+    en_us: Wallabag
+  category: BigBearCasaOS
+  port_map: "8080"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-wallabag-to-bigbearcasaos/3544#p-6005-documentation-4
