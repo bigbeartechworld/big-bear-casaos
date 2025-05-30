@@ -1,5 +1,5 @@
 {
-  "id": "pocket-id",
+  "id": "pocketid",
   "version": "v1.0",
   "image": "ghcr.io/pocket-id/pocket-id",
   "youtube": "",

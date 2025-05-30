@@ -86,7 +86,7 @@ x-casaos:
   thumbnail: "" # Thumbnail image URL (empty if not available)
   title:
     en_us: Pocket ID # Title in English
-  category: Authentication # Application category
+  category: BigBearCasaOS # Application category
   port_map: "1411" # Port mapping information
   tips:
     before_install:
