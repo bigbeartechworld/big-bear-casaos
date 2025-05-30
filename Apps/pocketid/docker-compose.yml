@@ -88,9 +88,8 @@ x-casaos:
     en_us: Pocket ID # Title in English
   category: BigBearCasaOS # Application category
   port_map: "1411" # Port mapping information
+  # Tips
   tips:
     before_install:
       en_us: |
-        **Important:** Pocket ID requires HTTPS (secure context) because it uses the WebAuthn API for passkey authentication.
-        You can sign in with the admin account on `http://localhost:1411/login/setup` after installation.
-        Replace APP_URL with your domain name and set up a reverse proxy to access the application via HTTPS.
+        Before you install read this: https://community.bigbeartechworld.com/t/added-pocket-id-to-bigbearcasaos/3552#p-6013-documentation-4
