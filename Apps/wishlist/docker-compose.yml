@@ -1,0 +1,98 @@
+# Docker Compose configuration for BigBearWishlist Service
+# This service provides a web interface for managing Wishlist
+# Version: v0.42.5
+
+# Name of the big-bear-wishlist application
+name: big-bear-wishlist
+
+# Service definitions for the big-bear-wishlist application
+services:
+  # Main service configuration for the BigBearWishlist application
+  # This service provides a web interface running on port 3280 for user administration
+  big-bear-wishlist:
+    # Name of the container
+    container_name: big-bear-wishlist
+
+    # Image to be used for the container specifies the wishlist version and source
+    image: ghcr.io/cmintey/wishlist:v0.42.5
+
+    # Container restart policy - restarts the container unless manually stopped
+    restart: unless-stopped
+
+    # Environment variables for service configuration
+    # These settings control the Flask application behavior and default admin credentials
+    environment:
+      # If behind a reverse proxy, set this to your domain
+      ORIGIN: ""
+      # Hours until signup and password reset tokens expire
+      TOKEN_TIME: "72"
+      # The currency to use when a product search does not return a currency
+      DEFAULT_CURRENCY: USD
+      # Set the logging level: trace | debug | info | warn | error | fatal | silent
+      LOG_LEVEL: info
+
+    # Volume mappings required for system integration
+    # These mounts allow the container to interact with the host system
+    volumes:
+      - /DATA/AppData/$AppID/uploads:/usr/src/app/uploads
+      - /DATA/AppData/$AppID/data:/usr/src/app/data
+
+    # Map port 3280 on the host to port 3280 on the container
+    ports:
+      - "3280:3280"
+
+    # CasaOS-specific configuration metadata
+    x-casaos:
+      envs:
+        - container: "ORIGIN"
+          description:
+            en_us: "If behind a reverse proxy, set this to your domain"
+        - container: "TOKEN_TIME"
+          description:
+            en_us: "Hours until signup and password reset tokens expire"
+        - container: "DEFAULT_CURRENCY"
+          description:
+            en_us: "The currency to use when a product search does not return a currency"
+        - container: "LOG_LEVEL"
+          description:
+            en_us: "Set the logging level: trace | debug | info | warn | error | fatal | silent"
+      volumes:
+        - container: /usr/src/app/uploads
+          description:
+            en_us: "Container Path: /usr/src/app/uploads"
+        - container: /usr/src/app/data
+          description:
+            en_us: "Container Path: /usr/src/app/data"
+      ports:
+        - container: "3280"
+          description:
+            en_us: "Container Port: 3280"
+
+# Application metadata for CasaOS integration
+# This section provides information for the CasaOS app store and installation process
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: big-bear-wishlist
+  description:
+    en_us: Wishlist is a self-hosted wishlist application that you can share with your friends and family. You no longer have to wonder what to get your family for the holidays, simply check their wishlist and claim any available item!
+  tagline:
+    en_us: Wishlist is a self-hosted wishlist application that you can share with your friends and family.
+  developer: "cmintey"
+  author: BigBearTechWorld
+  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wishlist/logo.png"
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wishlist/thumbnail.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wishlist/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wishlist/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wishlist/screenshot-3.png
+  title:
+    en_us: Wishlist
+  category: BigBearCasaOS
+  port_map: "3280"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-big-bear-casaos-user-management-to-bigbearcasaos/2227#p-4191-quick-start-3
