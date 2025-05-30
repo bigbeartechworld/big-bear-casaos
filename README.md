@@ -127,10 +127,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flowise | flowiseai/flowise | 3.0.0 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 5.120.2-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.162.1 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghost | ghost | 5.120.4-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.164.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/arunavo4/gitea-mirror | 2.11.2 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
-| gladys | gladysassistant/gladys | 4.58.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
+| gladys | gladysassistant/gladys | 4.59.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.40.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | gotify | gotify/server | 2.6.3 |  |  |
@@ -142,7 +142,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homer | b4bz/homer | 25.05.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.131.3-alpine |  |  |
-| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.21.0 |  |  |
+| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.21.2 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.134.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.134.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | invoice-ninja | invoiceninja/invoiceninja | 5.11.79 |  |  |
@@ -164,7 +164,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.10.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.88.14 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.88.18 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.6 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.25 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -176,7 +176,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.5.2 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.94.0 |  |  |
+| n8n | n8nio/n8n | 1.95.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.5.24 |  |  |
@@ -260,6 +260,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.1.2 |  |  |
+| wallabag | wallabag/wallabag | 2.6.12 |  |  |
 | wallos | bellamy/wallos | 3.1.1 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 9.9.3 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.2 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
