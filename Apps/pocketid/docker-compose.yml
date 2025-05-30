@@ -1,0 +1,96 @@
+# Configuration for pocket-id setup
+name: big-bear-pocketid
+# Service definitions for the pocket-id application
+services:
+  # Service configuration for the pocket-id application
+  big-bear-pocketid:
+    container_name: big-bear-pocketid # Name of the pocket-id container
+    image: ghcr.io/pocket-id/pocket-id:v1.0 # Docker image to use for pocket-id
+    restart: unless-stopped # Restart policy: Restart unless manually stopped
+    cpu_shares: 90
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
+    environment:
+      - APP_URL=http://localhost:1411 # Application URL for pocket-id, should be set to your domain name e.g https://pocketid.example.com if using a reverse proxy
+      - TRUST_PROXY=false # Whether to trust proxy headers, set to true if behind a reverse proxy
+      - MAXMIND_LICENSE_KEY= # MaxMind license key for geolocation, optional
+      - PUID=1000 # User ID for file permissions
+      - PGID=1000 # Group ID for file permissions
+    hostname: big-bear-pocketid
+    labels:
+      icon: https://pocket-id.org/img/logo.png # Icon URL
+    ports:
+      - target: 1411
+        published: "1411"
+        protocol: tcp # Port mapping between host and container
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /app/data # Volume for persistent data
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+    # Optional healthcheck
+    healthcheck:
+      test: "curl -f http://localhost:1411/healthz" # Health check command
+      interval: 1m30s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+    x-casaos: # CasaOS specific configuration
+      envs:
+        # Environment variables for CasaOS UI
+        - container: APP_URL
+          description:
+            en_us: "Application URL for pocket-id"
+        - container: TRUST_PROXY
+          description:
+            en_us: "Whether to trust proxy headers"
+        - container: MAXMIND_LICENSE_KEY
+          description:
+            en_us: "MaxMind license key for geolocation (optional)"
+        - container: PUID
+          description:
+            en_us: "User ID for file permissions"
+        - container: PGID
+          description:
+            en_us: "Group ID for file permissions"
+      volumes:
+        # Volume mapping descriptions for CasaOS UI
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data"
+      ports:
+        # Port configuration descriptions for CasaOS UI
+        - container: "1411"
+          description:
+            en_us: "Container Port: 1411"
+
+# CasaOS specific top-level configuration
+x-casaos:
+  architectures: # Supported CPU architectures
+    - amd64
+    - arm64
+  main: big-bear-pocketid # Main service of the application
+  description:
+    en_us: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services. # Description in English
+  tagline:
+    en_us: Passkey-based OIDC authentication # Short description or tagline in English
+  developer: "pocket-id" # Developer's name or identifier
+  author: techieanant # Author of this configuration
+  icon: https://pocket-id.org/img/logo.png # Icon URL
+  thumbnail: "" # Thumbnail image URL (empty if not available)
+  title:
+    en_us: Pocket ID # Title in English
+  category: BigBearCasaOS # Application category
+  port_map: "1411" # Port mapping information
+  tips:
+    before_install:
+      en_us: |
+        **Important:** Pocket ID requires HTTPS (secure context) because it uses the WebAuthn API for passkey authentication.
+        You can sign in with the admin account on `http://localhost:1411/login/setup` after installation.
+        Replace APP_URL with your domain name and set up a reverse proxy to access the application via HTTPS.
