@@ -94,6 +94,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | playitgg |  |
 | plex-nvidia |  |
 | plex |  |
+| pocketid |  |
 | portainer-agent |  |
 | poste-io |  |
 | project-management |  |
@@ -120,6 +121,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | warracker |  |
 | wg-easy |  |
 | whats-up-docker |  |
+| big-bear-wishlist |  |
 | write-freely |  |
 | zigbee2mqtt |  |
 | zipline |  |
