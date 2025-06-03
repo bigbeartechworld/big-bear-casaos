@@ -1,6 +1,6 @@
 {
   "id": "pocketid",
-  "version": "1.1",
+  "version": "1.2",
   "image": "ghcr.io/pocket-id/pocket-id",
   "youtube": "",
   "docs_link": "https://pocket-id.org/docs/introduction",
