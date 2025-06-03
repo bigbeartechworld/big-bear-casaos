@@ -9,7 +9,7 @@ services:
     container_name: big-bear-convertx
 
     # Image to be used for the container
-    image: ghcr.io/c4illin/convertx:v0.13.0
+    image: ghcr.io/c4illin/convertx:v0.14.0
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
