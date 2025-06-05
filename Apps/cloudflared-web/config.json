@@ -1,6 +1,6 @@
 {
   "id": "cloudflared-web",
-  "version": "2025.4.2",
+  "version": "2025.5.0",
   "image": "wisdomsky/cloudflared-web",
   "youtube": "https://youtu.be/JvyyolXJ0-A",
   "docs_link": "",
