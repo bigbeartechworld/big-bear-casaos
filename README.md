@@ -89,7 +89,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.05.20250531 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.2 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.12.6 |  |  |
+| budibase | budibase/budibase | 3.12.8 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.3.4 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.2 |  |  |
@@ -197,13 +197,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.9.0-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.9.0 |  |  |
 | ollama-nvidia | ollama/ollama | 0.9.0 |  |  |
-| onedev | 1dev/server | 11.10.1 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 11.10.3 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.3.3 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.11.3 |  |  |
 | owncloud | owncloud/server | 10.15.2 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.16.2 |  |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.16.3 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.55.0 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.7.1 |  |  |
@@ -224,7 +224,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pocketid | ghcr.io/pocket-id/pocket-id | 1.2 |  | [Docs](https://pocket-id.org/docs/introduction) |
 | portainer-agent | portainer/agent | 2.30.1 |  |  |
 | portainer | portainer/portainer-ce | 2.30.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
-| poste-io | analogic/poste.io | 2.5.4 |  |  |
+| poste-io | analogic/poste.io | 2.5.5 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.10 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | 1.11.13 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
