@@ -45,6 +45,11 @@
     {
       "matchUpdateTypes": ["major"],
       "automerge": false
+    },
+    {
+      "matchPackageNames": ["ghcr.io/diced/zipline"],
+      "matchFileNames": ["Apps/zipline/docker-compose.yml"],
+      "enabled": false
     }
   ],
   "regexManagers": []
