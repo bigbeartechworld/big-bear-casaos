@@ -12,7 +12,7 @@ services:
     container_name: big-bear-libredesk
 
     # Image to be used for the container
-    image: libredesk/libredesk:v0.5.0-alpha
+    image: libredesk/libredesk:v0.6.0-alpha
 
     # Container restart policy
     restart: unless-stopped
