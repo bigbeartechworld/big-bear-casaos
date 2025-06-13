@@ -83,7 +83,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | authentik | ghcr.io/goauthentik/server | 2025.6.1 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.33.4 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
-| beaverhabits | daya0576/beaverhabits | 0.6.1 |  |  |
+| beaverhabits | daya0576/beaverhabits | 0.6.2 |  |  |
 | beszel | henrygd/beszel | 0.11.1 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.0 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 25.05.20250531 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
@@ -105,7 +105,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | cyberchef | ghcr.io/gchq/cyberchef | 10.19.4 |  |  |
 | dashdot | mauricenino/dashdot | 6.0.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
-| davis | ghcr.io/tchapi/davis-standalone | 5.1.1 |  |  |
+| davis | ghcr.io/tchapi/davis-standalone | 5.1.2 |  |  |
 | dbgate | dbgate/dbgate | 6.4.2-alpine |  |  |
 | diun | crazymax/diun | 4.29.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
@@ -128,7 +128,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 5.121.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.168.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.169.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/arunavo4/gitea-mirror | 2.12.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | 4.59.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -137,7 +137,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.10.20250609 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.5.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.6.0 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.05.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -164,7 +164,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.10.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.94.3 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.94.5 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.6 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.26 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -180,7 +180,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.6.7 |  |  |
-| nextcloud-ls | linuxserver/nextcloud | 31.0.5 |  |  |
+| nextcloud-ls | linuxserver/nextcloud | 31.0.6 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.9 |  |  |
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.9 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.3-OPEN-PREVIEW | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
@@ -204,9 +204,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | otel-lgtm | grafana/otel-lgtm | 0.11.4 |  |  |
 | owncloud | owncloud/server | 10.15.2 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.16.3 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.56.5 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
+| passwordpusher | pglombardo/pwpush | 1.56.6 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
-| penpot | penpotapp/frontend | 2.7.1 |  |  |
+| penpot | penpotapp/frontend | 2.7.2 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.2 |  |  |
