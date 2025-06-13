@@ -1,6 +1,6 @@
 {
   "id": "pihole-updatelists",
-  "version": "2025.06.1",
+  "version": "2025.06.2",
   "image": "jacklul/pihole",
   "youtube": "",
   "docs_link": "",
