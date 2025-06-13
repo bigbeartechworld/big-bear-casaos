@@ -12,7 +12,7 @@ services:
     container_name: big-bear-pihole-updatelists
 
     # Image to be used for the container
-    image: jacklul/pihole:2025.06.1
+    image: jacklul/pihole:2025.06.2
 
     # Container restart policy
     restart: unless-stopped
