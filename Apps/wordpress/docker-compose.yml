@@ -8,7 +8,7 @@ services:
   # Service definition for the main application
   app:
     # Docker image to use for the application
-    image: wordpress:6.8.1
+    image: wordpress:latest # This must be the latest, otherwise it will not come as an ARM processor. If you need to run ARM directly, you can write # arm64v8/wordpress:latest.
     # Port mapping for the application
     ports:
       - 8080:80
@@ -21,6 +21,7 @@ services:
     # Volume mapping for the application
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
+      #- /DATA/AppData/$AppID/html:/usr/local/etc/php/ # In case you need it one day :)
     # Service dependencies for the application
     depends_on:
       - db
@@ -40,6 +41,7 @@ services:
             en_us: Database name
       volumes:
         - container: /var/www/html
+        - container: /usr/local/etc/php/
           description:
             en_us: "Container Path: /var/www/html"
       ports:
@@ -50,7 +52,7 @@ services:
   # Service definition for the database
   db:
     # Docker image to use for the database
-    image: mysql:5.7
+    image: mysql:latest # This must be the latest, otherwise it will not come as an ARM processor. If you need to run ARM directly, you can write # arm64v8/mysql:latest.
     # Environment variables for the database
     environment:
       MYSQL_DATABASE: wordpress
