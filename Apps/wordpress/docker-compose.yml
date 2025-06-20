@@ -41,7 +41,7 @@ services:
             en_us: Database name
       volumes:
         - container: /var/www/html
-        - container: /usr/local/etc/php/
+        - container: /usr/local/etc/php/ # php.ini file, if you need it
           description:
             en_us: "Container Path: /var/www/html"
       ports:
