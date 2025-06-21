@@ -1,6 +1,6 @@
 {
   "id": "changedetection",
-  "version": "0.50.3",
+  "version": "0.50.4",
   "image": "ghcr.io/dgtlmoon/changedetection.io",
   "youtube": "",
   "docs_link": "",
