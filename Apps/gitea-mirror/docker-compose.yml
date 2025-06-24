@@ -15,7 +15,7 @@ services:
     container_name: big-bear-gitea-mirror
 
     # Image to be used for the container
-    image: ghcr.io/arunavo4/gitea-mirror:v2.19.0
+    image: ghcr.io/arunavo4/gitea-mirror:v2.19.1
 
     # Container restart policy
     restart: unless-stopped
