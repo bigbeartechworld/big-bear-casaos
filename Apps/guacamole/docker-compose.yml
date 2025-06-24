@@ -12,7 +12,7 @@ services:
 
   # app service configuration
   app:
-    image: guacamole/guacamole:1.5.5
+    image: guacamole/guacamole:1.6.0
     restart: always
     # Link this service to the guacd service
     links:
