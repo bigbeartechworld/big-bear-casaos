@@ -97,7 +97,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | cloudflared-web | wisdomsky/cloudflared-web | 2025.5.0 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) |  |
-| code-server | linuxserver/code-server | 4.101.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.101.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | convertx | ghcr.io/c4illin/convertx | 0.14.1 |  |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
@@ -119,7 +119,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | farmos | farmos/farmos | 3.4.5 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 2.5.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.3 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
-| filebrowser | filebrowser/filebrowser | 2.33.0-s6 |  |  |
+| filebrowser | filebrowser/filebrowser | 2.33.5-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
@@ -128,8 +128,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 5.126.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.172.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
-| gitea-mirror | ghcr.io/arunavo4/gitea-mirror | 2.16.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
+| ghostfolio | ghostfolio/ghostfolio | 2.173.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| gitea-mirror | ghcr.io/arunavo4/gitea-mirror | 2.19.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | 4.60.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.40.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -137,7 +137,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.5.5 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.10.20250616 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.6.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.6.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.05.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -164,7 +164,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.10.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.96.0 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.96.9 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.6 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.26 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
