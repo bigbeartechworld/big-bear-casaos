@@ -6,7 +6,7 @@ services:
   # guacd service configuration
   guacd:
     # Docker image to use for this service
-    image: guacamole/guacd:1.5.5
+    image: guacamole/guacd:1.6.0
     # Restart policy for the container
     restart: always
 
