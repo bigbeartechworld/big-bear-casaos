@@ -3,7 +3,7 @@ name: big-bear-jlesage-handbrake # Name of the CasaOS application
 services:
   big-bear-jlesage-handbrake:
     container_name: big-bear-jlesage-handbrake # Name of the Docker container
-    image: jlesage/handbrake:v25.02.3 # Docker image for the Handbrake
+    image: jlesage/handbrake:v25.06.1 # Docker image for the Handbrake
     ports:
       - "5800:5800" # Expose port 5800 for VNC access
     environment:
