@@ -75,8 +75,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Homepage | ghcr.io/gethomepage/homepage | 1.3.2 |  |  |
 | MaybeFinance | ghcr.io/maybe-finance/maybe | sha-9522a191de1f258d76ed996ba1c84e3a0629dd80 |  |  |
 | actual-server | actualbudget/actual-server | 25.6.1 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
-| adguard-home-host | adguard/adguardhome | 0.107.62 |  |  |
-| adguard-home | adguard/adguardhome | 0.107.62 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
+| adguard-home-host | adguard/adguardhome | 0.107.63 |  |  |
+| adguard-home | adguard/adguardhome | 0.107.63 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.73.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.25.1 |  |  |
@@ -92,12 +92,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | budibase | budibase/budibase | 3.13.6 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.4.7 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.4 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.5 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | cloudflared-web | wisdomsky/cloudflared-web | 2025.5.0 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) |  |
-| code-server | linuxserver/code-server | 4.101.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.101.2 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | convertx | ghcr.io/c4illin/convertx | 0.14.1 |  |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
@@ -119,7 +119,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | farmos | farmos/farmos | 3.4.5 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 2.5.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.3 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
-| filebrowser | filebrowser/filebrowser | 2.33.8-s6 |  |  |
+| filebrowser | filebrowser/filebrowser | 2.33.10-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
@@ -150,8 +150,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | jellyseerr | fallenbagel/jellyseerr | 2.7.0 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.6 |  |  |
 | jfa-go | hrfee/jfa-go | latest |  |  |
-| jlesage-firefox | jlesage/firefox | 25.06.1 | [YouTube Video](https://youtu.be/JWhR8RKGh9Y) | [Docs](https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-4) |
-| jlesage-handbrake | jlesage/handbrake | 25.06.1 |  |  |
+| jlesage-firefox | jlesage/firefox | 25.06.2 | [YouTube Video](https://youtu.be/JWhR8RKGh9Y) | [Docs](https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-4) |
+| jlesage-handbrake | jlesage/handbrake | 25.06.2 |  |  |
 | joplin | joplin/server:3.3.13 | 3.3.13 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
 | kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
 | kavita | jvmilazz0/kavita | 0.8.6 |  |  |
@@ -194,9 +194,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.8.10 |  |  |
 | octoprint | octoprint/octoprint | 1.11.2 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 18 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.9.2-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.9.2 |  |  |
-| ollama-nvidia | ollama/ollama | 0.9.2 |  |  |
+| ollama-amd | ollama/ollama | 0.9.3-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.9.3 |  |  |
+| ollama-nvidia | ollama/ollama | 0.9.3 |  |  |
 | onedev | 1dev/server | 11.11.1 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.3.3 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
@@ -222,8 +222,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plex-nvidia | linuxserver/plex | 1.41.8 |  |  |
 | plex | linuxserver/plex | 1.41.8 |  |  |
 | pocketid | ghcr.io/pocket-id/pocket-id | 1.5 |  | [Docs](https://pocket-id.org/docs/introduction) |
-| portainer-agent | portainer/agent | 2.31.1 |  |  |
-| portainer | portainer/portainer-ce | 2.31.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer-agent | portainer/agent | 2.31.2 |  |  |
+| portainer | portainer/portainer-ce | 2.31.2-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | poste-io | analogic/poste.io | 2.5.5 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.11 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
@@ -245,9 +245,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | stalwart-mail | stalwartlabs/mail-server | 0.11.8 |  |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 0.46.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.29 |  |  |
-| tailscale | tailscale/tailscale | 1.84.2 |  |  |
+| tailscale | tailscale/tailscale | 1.84.3 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.35 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.22.3 |  |  |
+| tianji | moonrailgun/tianji | 1.22.4 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.7-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
