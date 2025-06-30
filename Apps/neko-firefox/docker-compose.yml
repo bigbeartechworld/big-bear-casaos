@@ -12,7 +12,7 @@ services:
     container_name: neko-firefox
 
     # Image to be used for the container
-    image: m1k1o/neko:firefox
+    image: ghcr.io/m1k1o/neko/firefox:latest
 
     # Container restart policy
     restart: unless-stopped
@@ -37,31 +37,32 @@ services:
 
     # Environment variables
     environment:
-      NEKO_SCREEN: 1920x1080@30
-      NEKO_PASSWORD: neko
-      NEKO_PASSWORD_ADMIN: bigbear
-      NEKO_EPR: 52000-52010
-      NEKO_ICELITE: "1"
+      NEKO_DESKTOP_SCREEN: 1920x1080@30
+      NEKO_MEMBER_PROVIDER: multiuser
+      NEKO_MEMBER_MULTIUSER_USER_PASSWORD: neko
+      NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD: bigbear
+      NEKO_WEBRTC_EPR: 52000-52010
+      NEKO_WEBRTC_ICELITE: "1"
+      NEKO_WEBRTC_NAT1TO1: "[CASAOS_IP]" # Replace with your own IP address
       NEKO_DEBUG: "1"
-      NEKO_NAT1TO1: "[CASAOS_IP]" # Replace with your own IP address
 
     x-casaos: # CasaOS specific configuration
       envs:
-        - container: NEKO_SCREEN
+        - container: NEKO_DESKTOP_SCREEN
           description:
-            en_us: "Container Environment: NEKO_SCREEN"
-        - container: NEKO_PASSWORD
+            en_us: "Container Environment: NEKO_DESKTOP_SCREEN"
+        - container: NEKO_MEMBER_MULTIUSER_USER_PASSWORD
           description:
-            en_us: "Container Environment: NEKO_PASSWORD"
-        - container: NEKO_PASSWORD_ADMIN
+            en_us: "Container Environment: NEKO_MEMBER_MULTIUSER_USER_PASSWORD"
+        - container: NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD
           description:
-            en_us: "Container Environment: NEKO_PASSWORD_ADMIN"
-        - container: NEKO_EPR
+            en_us: "Container Environment: NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD"
+        - container: NEKO_WEBRTC_EPR
           description:
-            en_us: "Container Environment: NEKO_EPR"
-        - container: NEKO_ICELITE
+            en_us: "Container Environment: NEKO_WEBRTC_EPR"
+        - container: NEKO_WEBRTC_ICELITE
           description:
-            en_us: "Container Environment: NEKO_ICELITE"
+            en_us: "Container Environment: NEKO_WEBRTC_ICELITE"
       ports:
         - container: "8080"
           description:
@@ -75,6 +76,7 @@ x-casaos:
   # Supported CPU architectures for the application
   architectures:
     - amd64
+    - arm64
   # Main service of the application
   main: big-bear-neko-firefox
   description:
