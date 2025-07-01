@@ -1,6 +1,6 @@
 {
   "id": "send-visee",
-  "version": "3.4.26",
+  "version": "3.4.27",
   "image": "registry.gitlab.com/timvisee/send",
   "youtube": "",
   "docs_link": "",
