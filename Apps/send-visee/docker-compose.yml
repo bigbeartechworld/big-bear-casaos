@@ -13,7 +13,7 @@ services:
     container_name: big-bear-send-visee
 
     # Image to be used for the container
-    image: registry.gitlab.com/timvisee/send:v3.4.25
+    image: registry.gitlab.com/timvisee/send:v3.4.26
 
     # Container restart policy
     restart: unless-stopped
