@@ -1,6 +1,6 @@
 {
   "id": "portainer",
-  "version": "2.31.2-alpine",
+  "version": "2.31.3-alpine",
   "image": "portainer/portainer-ce",
   "youtube": "https://youtu.be/GW4_OALLI_s",
   "docs_link": "",
