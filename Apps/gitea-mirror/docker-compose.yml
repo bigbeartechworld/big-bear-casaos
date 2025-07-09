@@ -15,7 +15,7 @@ services:
     container_name: big-bear-gitea-mirror
 
     # Image to be used for the container
-    image: ghcr.io/arunavo4/gitea-mirror:v2.19.1
+    image: ghcr.io/raylabshq/gitea-mirror:v2.20.0
 
     # Container restart policy
     restart: unless-stopped
@@ -117,11 +117,11 @@ x-casaos:
     # Short description or tagline in English
     en_us: Mirror GitHub repositories to Gitea
   # Developer's name or identifier
-  developer: "arunavo4"
+  developer: "raylabs.io"
   # Author of this configuration
-  author: "Arunavo Ray"
+  author: "RayLabs HQ"
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/logo.png
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/logo-no-bg.png
   # Thumbnail image
   thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/screenshot1.png"
   title:
