@@ -89,7 +89,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.05.20250616 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.3 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.13.8 |  |  |
+| budibase | budibase/budibase | 3.13.10 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.5.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.5 |  |  |
@@ -164,7 +164,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.11.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.96.18 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.96.19 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.6 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -247,7 +247,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 1.30 |  |  |
 | tailscale | tailscale/tailscale | 1.84.3 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.35 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.23.0 |  |  |
+| tianji | moonrailgun/tianji | 1.23.2 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.7-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
