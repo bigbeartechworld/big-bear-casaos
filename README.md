@@ -82,7 +82,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.26.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2025.6.3 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
-| baserow | baserow/baserow | 1.34.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
+| baserow | baserow/baserow | 1.34.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beaverhabits | daya0576/beaverhabits | 0.6.2 |  |  |
 | beszel | henrygd/beszel | 0.11.1 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.0 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
@@ -124,7 +124,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
-| flowise | flowiseai/flowise | 3.0.3 |  |  |
+| flowise | flowiseai/flowise | 3.0.4 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 5.129.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
@@ -137,7 +137,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.10.20250705 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.7.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.7.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.05.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -161,10 +161,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
 | libredesk | libredesk/libredesk | 0.7.0-alpha |  |  |
-| libretranslate | libretranslate/libretranslate | 1.6.5 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
+| libretranslate | libretranslate/libretranslate | 1.7.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.11.3 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.97.9 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.97.12 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.6 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -189,7 +189,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | node-red | nodered/node-red | 4.0.9 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.16.3 |  |  |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
-| ntfysh | binwiederhier/ntfy | 2.12.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
+| ntfysh | binwiederhier/ntfy | 2.13.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
 | obsidian | linuxserver/obsidian | 1.8.10 |  |  |
 | octoprint | octoprint/octoprint | 1.11.2 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
@@ -247,7 +247,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 1.30 |  |  |
 | tailscale | tailscale/tailscale | 1.84.3 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.35 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.23.3 |  |  |
+| tianji | moonrailgun/tianji | 1.23.4 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.8-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
@@ -257,7 +257,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | umbrel-os | dockurr/umbrel | 1.4.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| upsnap | ghcr.io/seriousm4x/upsnap | 5.1.3 |  |  |
+| upsnap | ghcr.io/seriousm4x/upsnap | 5.1.4 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.1.2 |  |  |
@@ -267,7 +267,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | watchyourlan | aceberg/watchyourlan | 2.1.2 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
-| wishlist | ghcr.io/cmintey/wishlist | 0.45.1 |  |  |
+| wishlist | ghcr.io/cmintey/wishlist | 0.46.0 |  |  |
 | wordpress | wordpress | 6.8.1 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | write-freely | nephatrine/write-freely | 0.15 |  |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 2.5.1 |  |  |
