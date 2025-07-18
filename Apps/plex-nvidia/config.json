@@ -1,6 +1,6 @@
 {
   "id": "plex-nvidia",
-  "version": "1.41.8",
+  "version": "1.41.9",
   "image": "linuxserver/plex",
   "youtube": "",
   "docs_link": "",
