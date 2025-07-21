@@ -89,15 +89,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.05.20250616 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.3 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.13.16 |  |  |
+| budibase | budibase/budibase | 3.13.17 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
-| calcom | calcom/cal.com | 5.5.0 |  |  |
+| calcom | calcom/cal.com | 5.5.1 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.7 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | cloudflared-web | wisdomsky/cloudflared-web | 2025.7.0 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) |  |
-| code-server | linuxserver/code-server | 4.101.2 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.102.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | convertx | ghcr.io/c4illin/convertx | 0.14.1 |  |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashdot | mauricenino/dashdot | 6.1.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.1.2 |  |  |
-| dbgate | dbgate/dbgate | 6.5.5-alpine |  |  |
+| dbgate | dbgate/dbgate | 6.5.6-alpine |  |  |
 | diun | crazymax/diun | 4.29.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
@@ -119,11 +119,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | farmos | farmos/farmos | 3.4.5 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 2.5.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.3 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
-| filebrowser | filebrowser/filebrowser | 2.40.1-s6 |  |  |
+| filebrowser | filebrowser/filebrowser | 2.40.2-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
-| flcontainers-guacamole | flcontainers/guacamole | 1.5.5 |  |  |
+| flcontainers-guacamole | flcontainers/guacamole | 1.6.0 |  |  |
 | flowise | flowiseai/flowise | 3.0.4 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
@@ -152,7 +152,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | jfa-go | hrfee/jfa-go | latest |  |  |
 | jlesage-firefox | jlesage/firefox | 25.07.1 | [YouTube Video](https://youtu.be/JWhR8RKGh9Y) | [Docs](https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-4) |
 | jlesage-handbrake | jlesage/handbrake | 25.07.1 |  |  |
-| joplin | joplin/server:3.3.13 | 3.3.13 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
+| joplin | joplin/server:3.3.13 | 3.4.1 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
 | kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
 | kavita | jvmilazz0/kavita | 0.8.7 |  |  |
 | kiwix-serve | ghcr.io/kiwix/kiwix-serve | 3.7.0-2 |  |  |
@@ -163,7 +163,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libredesk | libredesk/libredesk | 0.7.0-alpha |  |  |
 | libretranslate | libretranslate/libretranslate | 1.7.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
-| linkwarden | ghcr.io/linkwarden/linkwarden | 2.11.4 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
+| linkwarden | ghcr.io/linkwarden/linkwarden | 2.11.5 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | lobe-chat | lobehub/lobe-chat | 1.99.6 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.8 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
@@ -176,7 +176,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.5.5 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.103.0 |  |  |
+| n8n | n8nio/n8n | 1.103.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.7.4 |  |  |
@@ -204,7 +204,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | otel-lgtm | grafana/otel-lgtm | 0.11.5 |  |  |
 | owncloud | owncloud/server | 10.15.3 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.17.1 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.58.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
+| passwordpusher | pglombardo/pwpush | 1.58.4 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.8.0 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
@@ -260,14 +260,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | upsnap | ghcr.io/seriousm4x/upsnap | 5.1.4 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
-| viseron | roflcoopter/viseron | 3.1.2 |  |  |
+| viseron | roflcoopter/viseron | 3.2.0 |  |  |
 | wallabag | wallabag/wallabag | 2.6.13 |  |  |
 | wallos | bellamy/wallos | 3.3.0 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 9.9.3 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.2 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
-| wishlist | ghcr.io/cmintey/wishlist | 0.46.1 |  |  |
+| wishlist | ghcr.io/cmintey/wishlist | 0.46.2 |  |  |
 | wordpress | wordpress | 6.8.2 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | write-freely | nephatrine/write-freely | 0.15 |  |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 2.5.1 |  |  |
