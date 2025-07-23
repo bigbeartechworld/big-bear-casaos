@@ -79,8 +79,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.63 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.73.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.26.1 |  |  |
-| authentik | ghcr.io/goauthentik/server | 2025.6.3 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.26.2 |  |  |
+| authentik | ghcr.io/goauthentik/server | 2025.6.4 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.34.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beaverhabits | daya0576/beaverhabits | 0.6.2 |  |  |
@@ -111,7 +111,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | docmost | docmost/docmost | 0.21.0 |  |  |
-| dozzle | amir20/dozzle | 8.13.6 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | 8.13.7 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.1.1 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.1.1 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 1.9.1 |  |  |
@@ -137,12 +137,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.10.20250714 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.15.10 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.7.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.7.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.05.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.131.3-alpine |  |  |
-| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.22.0 |  |  |
+| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.22.1 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.135.3 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.135.3 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | invoice-ninja | invoiceninja/invoiceninja | 5.12.8 |  |  |
@@ -262,7 +262,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.2.0 |  |  |
 | wallabag | wallabag/wallabag | 2.6.13 |  |  |
-| wallos | bellamy/wallos | 3.3.0 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
+| wallos | bellamy/wallos | 3.3.1 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 9.9.3 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.2 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 14 |  |  |
