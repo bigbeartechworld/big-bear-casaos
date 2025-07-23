@@ -8,7 +8,7 @@ services:
   # Service name: big-bear-romm
   # The `big-bear-romm` service definition
   big-bear-romm:
-    image: rommapp/romm:3.10.3 # Docker image for the application
+    image: rommapp/romm:4.0.0 # Docker image for the application
     container_name: big-bear-romm
     environment:
       - DB_HOST=big-bear-rommdb # Hostname of the MariaDB container
@@ -22,6 +22,10 @@ services:
       - IGDB_CLIENT_SECRET=<igdb client secret> # https://api-docs.igdb.com/#account-creation
       - MOBYGAMES_API_KEY=<moby api key> # https://www.mobygames.com/info/api/
       - STEAMGRIDDB_API_KEY=<sgdb api key> # https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
+      - SCREENSCRAPER_USER=<screenscraper user> # [Optional] ScreenScraper user
+      - SCREENSCRAPER_PASSWORD=<screenscraper password> # [Optional] ScreenScraper password
+      - RETROACHIEVEMENTS_API_KEY=<retroachievements api key> # [Optional] RetroAchievements API key
+      - HASHEOUS_API_ENABLED=true # [Optional] Enable Hasheous API
       # [Optional] Enable asynchronous tasks (all disabled by default)
       - ENABLE_RESCAN_ON_FILESYSTEM_CHANGE=true # Enable rescan on filesystem change
       - ENABLE_SCHEDULED_RESCAN=true # Enable scheduled rescan
@@ -71,6 +75,18 @@ services:
         - container: STEAMGRIDDB_API_KEY
           description:
             en_us: "SteamGridDB API Key (Optional): See https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
+        - container: SCREENSCRAPER_USER
+          description:
+            en_us: "ScreenScraper User (Optional): ScreenScraper username"
+        - container: SCREENSCRAPER_PASSWORD
+          description:
+            en_us: "ScreenScraper Password (Optional): ScreenScraper password"
+        - container: RETROACHIEVEMENTS_API_KEY
+          description:
+            en_us: "RetroAchievements API Key (Optional): RetroAchievements API key"
+        - container: HASHEOUS_API_ENABLED
+          description:
+            en_us: "Hasheous API Enabled (Optional): Enable Hasheous API integration"
         - container: ROMM_AUTH_SECRET_KEY
           description:
             en_us: "Authentication Secret Key: <secret key>"
