@@ -210,7 +210,7 @@ services:
     container_name: big-bear-maybe-finance-redis
 
     # Image to be used for the container
-    image: redis:latest
+    image: redis:7-alpine
 
     # Container restart policy
     restart: unless-stopped
@@ -222,8 +222,8 @@ services:
 
     # Health check configuration for the Redis service
     healthcheck:
-      # Command to check if Redis is ready
-      test: [ "CMD", "redis-cli", "ping" ]
+      # Command to check if Redis is ready and responds with exactly "PONG"
+      test: [ "CMD", "sh", "-c", "[ \"$(redis-cli ping)\" = \"PONG\" ]" ]
 
       # Interval between health checks
       interval: 5s
