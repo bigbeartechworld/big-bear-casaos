@@ -1,6 +1,6 @@
 {
   "id": "healthchecks",
-  "version": "3.10.20250714",
+  "version": "3.10.20250721",
   "image": "linuxserver/healthchecks",
   "youtube": "",
   "docs_link": "",
