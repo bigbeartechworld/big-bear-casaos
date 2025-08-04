@@ -72,14 +72,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 5.6.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
-| Homepage | ghcr.io/gethomepage/homepage | 1.4.1 |  |  |
+| Homepage | ghcr.io/gethomepage/homepage | 1.4.2 |  |  |
 | MaybeFinance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
 | actual-server | actualbudget/actual-server | 25.7.1 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.64 |  |  |
 | adguard-home | adguard/adguardhome | 0.107.64 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.73.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.26.3 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.27.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2025.6.4 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.34.5 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -91,7 +91,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.1.3 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 3.13.27 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
-| calcom | calcom/cal.com | 5.5.7 |  |  |
+| calcom | calcom/cal.com | 5.5.9 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.8 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -119,7 +119,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | farmos | farmos/farmos | 3.4.5 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 2.5.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.3 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
-| filebrowser | filebrowser/filebrowser | 2.42.0-s6 |  |  |
+| filebrowser | filebrowser/filebrowser | 2.42.1-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | kasmweb/firefox | 1.15.0-rolling | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
