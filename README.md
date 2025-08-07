@@ -137,7 +137,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.10.20250728 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.16.0 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.7.4 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.8.0 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.05.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -156,7 +156,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
 | kavita | jvmilazz0/kavita | 0.8.7 |  |  |
 | kiwix-serve | ghcr.io/kiwix/kiwix-serve | 3.7.0-2 |  |  |
-| komf | sndxr/komf | 1.5.2 |  |  |
+| komf | sndxr/komf | 1.6.0 |  |  |
 | komga | ghcr.io/gotson/komga | 1.23.1 |  |  |
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
@@ -164,7 +164,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.7.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.11.5 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.106.5 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.107.3 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.8 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -194,9 +194,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.8.10 |  |  |
 | octoprint | octoprint/octoprint | 1.11.2 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 18 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.9.6-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.9.6 |  |  |
-| ollama-nvidia | ollama/ollama | 0.9.6 |  |  |
+| ollama-amd | ollama/ollama | 0.10.1-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.10.1 |  |  |
+| ollama-nvidia | ollama/ollama | 0.10.1 |  |  |
 | onedev | 1dev/server | 11.11.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 8.3.3 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
@@ -245,7 +245,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | stalwart-mail | stalwartlabs/mail-server | 0.11.8 |  |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 1.1.1 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 1.30 |  |  |
-| tailscale | tailscale/tailscale | 1.84.3 |  |  |
+| tailscale | tailscale/tailscale | 1.86.2 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 1.5.35 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.24.9 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
