@@ -73,27 +73,12 @@ services:
         - container: PORT
           description:
             en_us: "Application Port: 4321"
-        - container: JWT_SECRET
+        - container: BETTER_AUTH_URL
           description:
-            en_us: "Secret key for JWT authentication"
-        - container: DATABASE_URL
+            en_us: "Better Auth URL for authentication"
+        - container: BETTER_AUTH_SECRET
           description:
-            en_us: "SQLite Database URL: file:data/gitea-mirror.db"
-        - container: GITHUB_USERNAME
-          description:
-            en_us: "Your GitHub username (optional - can be set in UI)"
-        - container: GITHUB_TOKEN
-          description:
-            en_us: "Your GitHub personal access token (optional - can be set in UI)"
-        - container: GITEA_URL
-          description:
-            en_us: "URL of your Gitea instance (optional - can be set in UI)"
-        - container: GITEA_TOKEN
-          description:
-            en_us: "Your Gitea access token (optional - can be set in UI)"
-        - container: GITEA_USERNAME
-          description:
-            en_us: "Your Gitea username (optional - can be set in UI)"
+            en_us: "Secret key for Better Auth authentication (change in production)"
       volumes:
         - container: /app/data
           description:
