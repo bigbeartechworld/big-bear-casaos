@@ -260,7 +260,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | upsnap | ghcr.io/seriousm4x/upsnap | 5.1.5 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
-| viseron | roflcoopter/viseron | 3.2.0 |  |  |
+| viseron | roflcoopter/viseron | 3.2.1 |  |  |
 | wallabag | wallabag/wallabag | 2.6.13 |  |  |
 | wallos | bellamy/wallos | 4.0.0 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 9.9.3 |  |  |
