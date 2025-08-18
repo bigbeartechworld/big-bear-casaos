@@ -12,10 +12,17 @@ services:
     container_name: big-bear-seafile
 
     # Image to be used for the container
-    image: seafileltd/seafile-mc:13.0.8
+    image: seafileltd/seafile-mc:11.0.13
 
     # Container restart policy
     restart: unless-stopped
+
+    # Service dependencies
+    depends_on:
+      big-bear-seafile-db:
+        condition: service_healthy
+      big-bear-seafile-memcached:
+        condition: service_started
 
     volumes:
       - /DATA/AppData/$AppID/shared:/shared
@@ -40,14 +47,36 @@ services:
       - big_bear_seafile_network
 
     x-casaos: # CasaOS specific configuration
+      envs:
+        - container: DB_HOST
+          description:
+            en_us: Database host
+        - container: DB_ROOT_PASSWD
+          description:
+            en_us: Database root password
+        - container: TIME_ZONE
+          description:
+            en_us: Timezone
+        - container: SEAFILE_ADMIN_EMAIL
+          description:
+            en_us: Seafile admin email
+        - container: SEAFILE_ADMIN_PASSWORD
+          description:
+            en_us: Seafile admin password
+        - container: SEAFILE_SERVER_LETSENCRYPT
+          description:
+            en_us: Seafile server Let's Encrypt
+        - container: SEAFILE_SERVER_HOSTNAME
+          description:
+            en_us: Seafile server hostname
       volumes:
         - container: /var/www/html/storage
           description:
             en_us: "Container Path: /var/www/html/storage"
       ports:
-        - container: "7575"
+        - container: "80"
           description:
-            en_us: "Container Port: 7575"
+            en_us: "Container Port: 80"
 
   # Database service for seafile
   big-bear-seafile-db:
@@ -60,26 +89,27 @@ services:
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 1m
+      start_interval: 10s
+      interval: 1m
+      timeout: 5s
+      retries: 3
     networks:
       - big_bear_seafile_network
 
     x-casaos: # CasaOS specific configuration
       envs:
-        - container: TZ
+        - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: Timezone
-        - container: MARIADB_RANDOM_ROOT_PASSWORD
+            en_us: Database root password
+        - container: MYSQL_LOG_CONSOLE
           description:
-            en_us: MariaDB random root password
-        - container: MARIADB_DATABASE
+            en_us: Database log console
+        - container: MARIADB_AUTO_UPGRADE
           description:
-            en_us: MariaDB database
-        - container: MARIADB_USER
-          description:
-            en_us: MariaDB user
-        - container: MARIADB_PASSWORD
-          description:
-            en_us: MariaDB password
+            en_us: Database auto upgrade
       volumes:
         - container: /var/lib/mysql
           description:
