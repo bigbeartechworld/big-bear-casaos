@@ -12,7 +12,7 @@ services:
     container_name: big-bear-eufy-security-ws
 
     # Image to be used for the container
-    image: bropat/eufy-security-ws:1.9.1
+    image: bropat/eufy-security-ws:1.9.3
 
     # Environment variables for the container
     environment:
