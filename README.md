@@ -72,7 +72,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 5.6.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | GemDigest | piero24/gemdigest | 1.0 |  |  |
-| Homepage | ghcr.io/gethomepage/homepage | 1.4.5 |  |  |
+| Homepage | ghcr.io/gethomepage/homepage | 1.4.6 |  |  |
 | MaybeFinance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
 | actual-server | actualbudget/actual-server | 25.8.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | 0.107.64 |  |  |
@@ -138,7 +138,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.10.20250811 |  |  |
 | homarr | ghcr.io/ajnart/homarr | 0.16.0 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.8.2 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2025.8.3 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homer | b4bz/homer | 25.08.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
@@ -234,7 +234,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | reactive-resume | amruthpillai/reactive-resume | 4.4.6 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 4.1.2 |  | [Docs](https://github.com/rommapp/romm/wiki) |
+| romm | rommapp/romm | 4.1.3 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
