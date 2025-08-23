@@ -2,7 +2,24 @@
 
 ## Big Bear CasaOS App Store
 
-This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms, including CasaOS and ZimaOS. As an independent company, BigBearTechWorld has established an official partnership with IceWhale to provide this app store as a default option on IceWhale products. The app store is fully maintained by BigBearTechWorld and the BigBearCommunity as a separate entity from IceWhale while maintaining a collaborative partnership.
+This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms, including CasaOS and ZimaOS. The app store is independently developed and maintained by BigBearTechWorld and the BigBearCommunity. BigBearCasaOS operates as a completely separate and independent project from IceWhale.
+
+## ⚠️ Important Notice: Funding & Donations Needed
+
+**IceWhale does not fund this project.** This app store is maintained entirely by BigBearTechWorld and the community through donations and sponsorships. As an independent project, we rely on community support to continue providing and maintaining this app store.
+
+If you find this app store valuable, please consider supporting us through donations on [Ko-fi](https://ko-fi.com/bigbeartechworld). Your support helps us:
+- Maintain and update existing applications
+- Add new applications to the store
+- Provide community support
+- Keep the project running and growing
+
+## 📊 Project Stats
+
+- **200+ Applications** available for CasaOS and ZimaOS
+- **134+ Video Tutorials** in our [CasaOS playlist](https://www.youtube.com/playlist?list=PL2RAscIdkpt-nrRuDk1g1RvqI-R2cNwqU)
+- **Maintained & Updated** existing applications
+- **Community Driven** by BigBearCommunity members and contributors
 
 ## App Store Sponsorship Opportunities
 
