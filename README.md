@@ -108,7 +108,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.1.3 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 3.17.3 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
-| calcom | calcom/cal.com | 5.6.2 |  |  |
+| calcom | calcom/cal.com | 5.6.3 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.10 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -118,7 +118,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | codex-docs | ghcr.io/codex-team/codex.docs | 2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | convertx | ghcr.io/c4illin/convertx | 0.14.1 |  |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.380 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
-| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.4.11 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
+| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.5.1 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.19.4 |  |  |
 | dashdot | mauricenino/dashdot | 6.2.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
@@ -145,7 +145,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.0.4-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.191.1 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.192.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | 2.22.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | 4.61.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -182,7 +182,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.7.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.11.8 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.113.3 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.114.2 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.8 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -212,9 +212,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.9.10 |  |  |
 | octoprint | octoprint/octoprint | 1.11.2 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 18 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.11.5-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.11.5 |  |  |
-| ollama-nvidia | ollama/ollama | 0.11.5 |  |  |
+| ollama-amd | ollama/ollama | 0.11.6-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.11.6 |  |  |
+| ollama-nvidia | ollama/ollama | 0.11.6 |  |  |
 | onedev | 1dev/server | 12.0.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.0.4 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
@@ -239,9 +239,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex-nvidia | linuxserver/plex | 1.42.1 |  |  |
 | plex | linuxserver/plex | 1.42.1 |  |  |
-| pocketid | ghcr.io/pocket-id/pocket-id | 1.8 |  | [Docs](https://pocket-id.org/docs/introduction) |
-| portainer-agent | portainer/agent | 2.32.0 |  |  |
-| portainer | portainer/portainer-ce | 2.32.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| pocketid | ghcr.io/pocket-id/pocket-id | 1.9 |  | [Docs](https://pocket-id.org/docs/introduction) |
+| portainer-agent | portainer/agent | 2.33.0 |  |  |
+| portainer | portainer/portainer-ce | 2.33.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | poste-io | analogic/poste.io | 2.5.6 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | 1.11.11 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
@@ -251,11 +251,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | reactive-resume | amruthpillai/reactive-resume | 4.4.6 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 4.1.3 |  | [Docs](https://github.com/rommapp/romm/wiki) |
+| romm | rommapp/romm | 4.1.4 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | 0.123.58-jammy-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
-| semaphore | semaphoreui/semaphore | 2.16.17 |  |  |
+| semaphore | semaphoreui/semaphore | 2.16.18 |  |  |
 | send-visee | registry.gitlab.com/timvisee/send | 3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.6 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
@@ -275,7 +275,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | umbrel-os | dockurr/umbrel | 1.4.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 4.4.28 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unifi-network-application | linuxserver/unifi-network-application | 6.0.11 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| upsnap | ghcr.io/seriousm4x/upsnap | 5.1.6 |  |  |
+| upsnap | ghcr.io/seriousm4x/upsnap | 5.1.7 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 1 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.2.1 |  |  |
