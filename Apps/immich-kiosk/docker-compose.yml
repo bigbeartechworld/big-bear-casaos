@@ -14,7 +14,7 @@ services:
     container_name: big-bear-immich-kiosk
 
     # Image to be used for the container specifies the Immich Kiosk version and source
-    image: ghcr.io/damongolding/immich-kiosk:0.23.1
+    image: ghcr.io/damongolding/immich-kiosk:0.23.3
 
     # Enable TTY for interactive terminal access
     tty: true
