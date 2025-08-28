@@ -1,0 +1,90 @@
+# Configuration for dockpeek setup
+
+# Name of the big-bear-dockpeek application
+name: big-bear-dockpeek
+
+# Service definitions for the big-bear-dockpeek application
+services:
+  # Service name: big-bear-dockpeek
+  # The `big-bear-dockpeek` service definition
+  big-bear-dockpeek:
+    # Name of the container
+    container_name: big-bear-dockpeek
+
+    # Image to be used for the container
+    image: ghcr.io/dockpeek/dockpeek:v1.5.5
+
+    # Environment variables
+    environment:
+      # Secret key for the application (change this)
+      SECRET_KEY: "change_this_secret_key"
+      # Username for authentication (change this)
+      USERNAME: "bigbear"
+      # Password for authentication (change this)
+      PASSWORD: "casaos"
+      # Docker host configuration
+      DOCKER_HOST: "unix:///var/run/docker.sock"
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    # Ports mapping between host and container
+    ports:
+      - 3420:8000
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+      ports:
+        - container: "8000"
+          description:
+            en_us: "Container Port: 8000"
+      envs:
+        - container: SECRET_KEY
+          description:
+            en_us: "Secret key for the application. Change this for security."
+        - container: USERNAME
+          description:
+            en_us: "Username for authentication. Change this from default."
+        - container: PASSWORD
+          description:
+            en_us: "Password for authentication. Change this from default."
+        - container: DOCKER_HOST
+          description:
+            en_us: "Docker host socket path."
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-dockpeek
+  description:
+    # Description in English
+    en_us: A lightweight, self-hosted Docker dashboard that provides quick access to all running containers and their exposed ports with one-click access to web apps.
+  tagline:
+    # Short description or tagline in English
+    en_us: Docker Dashboard
+  # Developer's name or identifier
+  developer: "dockpeek"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dockpeek.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Dockpeek
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "3420"
