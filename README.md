@@ -145,7 +145,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.0.5-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.192.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.193.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | 2.22.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | 4.61.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -160,7 +160,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homer | b4bz/homer | 25.08.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 1.131.3-alpine |  |  |
-| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.22.2 |  |  |
+| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.23.1 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | 1.139.4 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | 1.139.4 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | invoice-ninja | invoiceninja/invoiceninja | 5.12.18 |  |  |
@@ -181,7 +181,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libredesk | libredesk/libredesk | 0.7.3-alpha |  |  |
 | libretranslate | libretranslate/libretranslate | 1.7.2 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
-| linkwarden | ghcr.io/linkwarden/linkwarden | 2.11.8 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
+| linkwarden | ghcr.io/linkwarden/linkwarden | 2.12.1 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | lobe-chat | lobehub/lobe-chat | 1.114.6 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.8 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
@@ -239,7 +239,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playitgg | dysta/playitgg | 1.1.0 |  |  |
 | plex-nvidia | linuxserver/plex | 1.42.1 |  |  |
 | plex | linuxserver/plex | 1.42.1 |  |  |
-| pocketid | ghcr.io/pocket-id/pocket-id | 1.9 |  | [Docs](https://pocket-id.org/docs/introduction) |
+| pocketid | ghcr.io/pocket-id/pocket-id | 1.10 |  | [Docs](https://pocket-id.org/docs/introduction) |
 | portainer-agent | portainer/agent | 2.33.0 |  |  |
 | portainer | portainer/portainer-ce | 2.33.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | poste-io | analogic/poste.io | 2.5.6 |  |  |
@@ -265,7 +265,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | 1.86.5 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.0.3 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.24.20 |  |  |
+| tianji | moonrailgun/tianji | 1.24.22 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.9-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
