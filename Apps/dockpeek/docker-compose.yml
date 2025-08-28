@@ -88,3 +88,11 @@ x-casaos:
   category: BigBearCasaOS
   # Port mapping information
   port_map: "3420"
+  # Tips
+  tips:
+    before_install:
+      en_us: |
+        **Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld
+        **Community Forum**: https://community.bigbeartechworld.com
+        
+        Before you install, make sure to change the default credentials (SECRET_KEY, USERNAME, PASSWORD) for security.
