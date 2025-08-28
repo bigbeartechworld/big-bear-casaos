@@ -98,7 +98,10 @@ services:
 
   big-bear-authentik-db:
     container_name: big-bear-authentik-db
-    image: postgres:12-alpine
+    # PostgreSQL 14+ required by Authentik (since version 2024.6)
+    # BREAKING CHANGE: Existing users with PostgreSQL 12 data need to migrate
+    # See: https://www.postgresql.org/docs/current/upgrading.html
+    image: postgres:14-alpine
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
