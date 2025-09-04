@@ -1,0 +1,115 @@
+# Configuration for Portracker setup
+
+# Name of the big-bear-portracker application
+name: big-bear-portracker
+
+# Service definitions for the big-bear-portracker application
+services:
+  # Service name: big-bear-portracker
+  # The `big-bear-portracker` service definition
+  big-bear-portracker:
+    # Name of the container
+    container_name: big-bear-portracker
+
+    # Image to be used for the container
+    image: mostafawahied/portracker:1.1
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Environment variables for service configuration
+    environment:
+      - PORT=4999
+      - DATABASE_PATH=/data/portracker.db
+      - TRUSTED_LOCAL_EMAIL=your@email.com
+      - CACHE_TIMEOUT_MS=30000
+      - DISABLE_CACHE=false
+      - INCLUDE_UDP=false
+      - DEBUG=false
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 4999 of the host to port 4999 of the container
+      - "4999:4999"
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: "PORT"
+          description:
+            en_us: "Web application port"
+        - container: "DATABASE_PATH"
+          description:
+            en_us: "SQLite database file path"
+        - container: "TRUSTED_LOCAL_EMAIL"
+          description:
+            en_us: "Trusted local email for authentication"
+        - container: "CACHE_TIMEOUT_MS"
+          description:
+            en_us: "Cache timeout in milliseconds"
+        - container: "DISABLE_CACHE"
+          description:
+            en_us: "Disable caching (true/false)"
+        - container: "INCLUDE_UDP"
+          description:
+            en_us: "Include UDP ports in scanning (true/false)"
+        - container: "DEBUG"
+          description:
+            en_us: "Enable debug logging (true/false)"
+      volumes:
+        - container: "/data"
+          description:
+            en_us: "Portracker Data Directory"
+        - container: "/var/run/docker.sock"
+          description:
+            en_us: "Docker Socket for Container Discovery"
+      ports:
+        - container: "4999"
+          description:
+            en_us: "Container Port: 4999"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-portracker
+  description:
+    # Description in English
+    en_us: A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.
+  tagline:
+    # Short description or tagline in English
+    en_us: Real-time Port Monitoring Tool
+  # Developer's name or identifier
+  developer: "Mostafa-Wahied"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/portracker.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-4.png
+  title:
+    # Title in English
+    en_us: Portracker
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "4999"
+  # Installation instructions and documentation
+  tips:
+    before_install:
+      en_us: |
+        Portracker is a self-hosted port monitoring tool that automatically discovers network services.
+                        
+        Read this before installing: https://community.bigbeartechworld.com/t/added-portracker-to-bigbearcasaos/5003?u=dragonfire1119
