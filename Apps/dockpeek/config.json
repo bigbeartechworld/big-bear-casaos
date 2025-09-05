@@ -1,6 +1,6 @@
 {
   "id": "dockpeek",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "image": "ghcr.io/dockpeek/dockpeek",
   "youtube": "",
   "docs_link": "",
