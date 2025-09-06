@@ -24,7 +24,7 @@ services:
 
     # Volumes to be mounted to the container
     volumes:
-      - /DATA/AppData/composetoolbox/data:/app/data
+      - /DATA/AppData/$AppID/data:/app/data
 
     # Name of the container
     container_name: "big-bear-composetoolbox"
