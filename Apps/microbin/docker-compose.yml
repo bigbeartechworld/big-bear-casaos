@@ -115,37 +115,124 @@ services:
       envs:
         - container: MICROBIN_ADMIN_USERNAME
           description:
-            en_us: "Microbin admin username"
+            en_us: "Admin username for /admin/."
         - container: MICROBIN_ADMIN_PASSWORD
           description:
-            en_us: "Microbin admin password"
-        - container: MICROBIN_BIND
-          description:
-            en_us: "Bind address for Microbin"
-        - container: MICROBIN_DATA_DIR
-          description:
-            en_us: "Data directory inside the container"
-        - container: MICROBIN_DEFAULT_EXPIRY
-          description:
-            en_us: "Default expiry for pastes"
+            en_us: "Admin password for /admin/."
         - container: MICROBIN_EDITABLE
           description:
-            en_us: "Allow editing of pastes"
-        - container: MICROBIN_ENABLE_BURN_AFTER
+            en_us: "Allow editing of pastas."
+        - container: MICROBIN_FOOTER_TEXT
           description:
-            en_us: "Enable burn-after-reading feature"
-        - container: MICROBIN_ENABLE_READONLY
+            en_us: "Custom footer text."
+        - container: MICROBIN_HIDE_HEADER
           description:
-            en_us: "Enable readonly mode"
-        - container: MICROBIN_ENCRYPTION_CLIENT_SIDE
+            en_us: "Hide header bar."
+        - container: MICROBIN_HIDE_FOOTER
           description:
-            en_us: "Enable client-side encryption"
-        - container: MICROBIN_ENCRYPTION_SERVER_SIDE
+            en_us: "Hide footer bar."
+        - container: MICROBIN_HIDE_LOGO
           description:
-            en_us: "Enable server-side encryption"
+            en_us: "Hide Microbin logo."
+        - container: MICROBIN_NO_LISTING
+          description:
+            en_us: "Disable /pastalist endpoint."
+        - container: MICROBIN_HIGHLIGHTSYNTAX
+          description:
+            en_us: "Enable syntax highlighting."
+        - container: MICROBIN_PORT
+          description:
+            en_us: "Port Microbin listens on."
+        - container: MICROBIN_BIND
+          description:
+            en_us: "Bind address for Microbin."
         - container: MICROBIN_PRIVATE
           description:
-            en_us: "Set Microbin to private mode"
+            en_us: "Enable private pastas."
+        - container: MICROBIN_PURE_HTML
+          description:
+            en_us: "Use minimal HTML, disables main CSS."
+        - container: MICROBIN_DATA_DIR
+          description:
+            en_us: "Data directory inside the container."
+        - container: MICROBIN_JSON_DB
+          description:
+            en_us: "Store data in JSON instead of SQLite."
+        - container: MICROBIN_PUBLIC_PATH
+          description:
+            en_us: "Public path prefix for reverse proxy."
+        - container: MICROBIN_SHORT_PATH
+          description:
+            en_us: "Shorten URLs."
+        - container: MICROBIN_UPLOADER_PASSWORD
+          description:
+            en_us: "Password for uploading in read-only mode."
+        - container: MICROBIN_READONLY
+          description:
+            en_us: "Enable read-only mode."
+        - container: MICROBIN_SHOW_READ_STATS
+          description:
+            en_us: "Show read count on pastas."
+        - container: MICROBIN_TITLE
+          description:
+            en_us: "Custom title in navigation bar."
+        - container: MICROBIN_THREADS
+          description:
+            en_us: "Number of worker threads."
+        - container: MICROBIN_GC_DAYS
+          description:
+            en_us: "Days before unused pastas are deleted."
+        - container: MICROBIN_ENABLE_BURN_AFTER
+          description:
+            en_us: "Enable burn-after-reading."
+        - container: MICROBIN_DEFAULT_BURN_AFTER
+          description:
+            en_us: "Default burn-after value."
+        - container: MICROBIN_WIDE
+          description:
+            en_us: "Use wider UI."
+        - container: MICROBIN_QR
+          description:
+            en_us: "Enable QR code generation."
+        - container: MICROBIN_ETERNAL_PASTA
+          description:
+            en_us: "Enable 'never expire' option."
+        - container: MICROBIN_ENABLE_READONLY
+          description:
+            en_us: "Enable read-only uploads."
+        - container: MICROBIN_DEFAULT_EXPIRY
+          description:
+            en_us: "Default expiry for pastas."
+        - container: MICROBIN_NO_FILE_UPLOAD
+          description:
+            en_us: "Disable file uploads."
+        - container: MICROBIN_CUSTOM_CSS
+          description:
+            en_us: "URL for custom CSS."
+        - container: MICROBIN_HASH_IDS
+          description:
+            en_us: "Use hash IDs for URLs."
+        - container: MICROBIN_ENCRYPTION_CLIENT_SIDE
+          description:
+            en_us: "Enable client-side encryption."
+        - container: MICROBIN_ENCRYPTION_SERVER_SIDE
+          description:
+            en_us: "Enable server-side encryption."
+        - container: MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB
+          description:
+            en_us: "Max file size with encryption."
+        - container: MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB
+          description:
+            en_us: "Max file size without encryption."
+        - container: MICROBIN_DISABLE_UPDATE_CHECKING
+          description:
+            en_us: "Disable update checking."
+        - container: MICROBIN_DISABLE_TELEMETRY
+          description:
+            en_us: "Disable telemetry."
+        - container: MICROBIN_LIST_SERVER
+          description:
+            en_us: "List server publicly."
 
 # CasaOS specific configuration
 x-casaos:
