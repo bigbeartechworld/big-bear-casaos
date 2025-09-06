@@ -12,33 +12,84 @@ services:
     environment:
       # Microbin admin username and password
       MICROBIN_ADMIN_USERNAME: admin
+      # Admin password for /admin/ (default: m1cr0b1n)
       MICROBIN_ADMIN_PASSWORD: m1cr0b1n
-      # Bind address
-      MICROBIN_BIND: 0.0.0.0
-      # Data directory inside the container
-      MICROBIN_DATA_DIR: microbin_data
-      # Default expiry and burn-after settings
-      MICROBIN_DEFAULT_EXPIRY: 24hour
-      MICROBIN_DEFAULT_BURN_AFTER: "0"
-      # Enable/disable features
+      # Allow editing pastas (default: true)
       MICROBIN_EDITABLE: "true"
-      MICROBIN_ENABLE_BURN_AFTER: "true"
-      MICROBIN_ENABLE_READONLY: "true"
-      MICROBIN_ENCRYPTION_CLIENT_SIDE: "true"
-      MICROBIN_ENCRYPTION_SERVER_SIDE: "true"
-      MICROBIN_ETERNAL_PASTA: "false"
-      MICROBIN_GC_DAYS: "90"
-      MICROBIN_HIGHLIGHTSYNTAX: "true"
-      MICROBIN_JSON_DB: "false"
-      MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB: "256"
-      MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB: "2048"
-      MICROBIN_NO_FILE_UPLOAD: "false"
+      # Custom footer text (optional)
+      MICROBIN_FOOTER_TEXT: ""
+      # Hide header (default: false)
+      MICROBIN_HIDE_HEADER: "false"
+      # Hide footer (default: false)
+      MICROBIN_HIDE_FOOTER: "false"
+      # Hide logo (default: false)
+      MICROBIN_HIDE_LOGO: "false"
+      # Disable /pastalist endpoint (default: false)
       MICROBIN_NO_LISTING: "false"
+      # Enable syntax highlighting (default: true)
+      MICROBIN_HIGHLIGHTSYNTAX: "true"
+      # Server port (default: 8080)
+      MICROBIN_PORT: "8080"
+      # Bind address (default: 0.0.0.0)
+      MICROBIN_BIND: "0.0.0.0"
+      # Enable private pastas (default: true)
       MICROBIN_PRIVATE: "true"
-      MICROBIN_QR: "true"
+      # Use pure HTML, disables main CSS (default: false)
+      MICROBIN_PURE_HTML: "false"
+      # Data directory (default: microbin_data)
+      MICROBIN_DATA_DIR: "microbin_data"
+      # Use JSON DB (default: false)
+      MICROBIN_JSON_DB: "false"
+      # Public path prefix (optional)
+      MICROBIN_PUBLIC_PATH: ""
+      # Short path for URLs (optional)
+      MICROBIN_SHORT_PATH: ""
+      # Uploader password (optional)
+      MICROBIN_UPLOADER_PASSWORD: ""
+      # Read-only mode (default: false)
       MICROBIN_READONLY: "false"
+      # Show read stats (default: true)
       MICROBIN_SHOW_READ_STATS: "true"
+      # Custom title (optional)
+      MICROBIN_TITLE: ""
+      # Number of worker threads (default: 1)
       MICROBIN_THREADS: "1"
+      # GC days (default: 90)
+      MICROBIN_GC_DAYS: "90"
+      # Enable burn-after-reading (default: true)
+      MICROBIN_ENABLE_BURN_AFTER: "true"
+      # Default burn-after value (default: 0)
+      MICROBIN_DEFAULT_BURN_AFTER: "0"
+      # Wide UI (default: false)
+      MICROBIN_WIDE: "false"
+      # Enable QR codes (default: true)
+      MICROBIN_QR: "true"
+      # Enable eternal pastas (default: false)
+      MICROBIN_ETERNAL_PASTA: "false"
+      # Enable read-only uploads (default: true)
+      MICROBIN_ENABLE_READONLY: "true"
+      # Default expiry (default: 24hour)
+      MICROBIN_DEFAULT_EXPIRY: 24hour
+      # Disable file upload (default: false)
+      MICROBIN_NO_FILE_UPLOAD: "false"
+      # Custom CSS URL (optional)
+      MICROBIN_CUSTOM_CSS: ""
+      # Use hash IDs for URLs (default: false)
+      MICROBIN_HASH_IDS: "false"
+      # Enable client-side encryption (default: true)
+      MICROBIN_ENCRYPTION_CLIENT_SIDE: "true"
+      # Enable server-side encryption (default: true)
+      MICROBIN_ENCRYPTION_SERVER_SIDE: "true"
+      # Max file size with encryption (default: 256)
+      MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB: "256"
+      # Max file size without encryption (default: 2048)
+      MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB: "2048"
+      # Disable update checking (default: false)
+      MICROBIN_DISABLE_UPDATE_CHECKING: "false"
+      # Disable telemetry (default: false)
+      MICROBIN_DISABLE_TELEMETRY: "false"
+      # List server publicly (default: false)
+      MICROBIN_LIST_SERVER: "false"
     # Image to be used for the container
     image: danielszabo99/microbin:2.0.4
     # Ports mapping between host and container
