@@ -99,7 +99,7 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      - /DATA/AppData/Microbin/data:/app/microbin_data
+      - /DATA/AppData/$AppID/data:/app/microbin_data
     # Name of the container
     container_name: "big-bear-microbin"
     # CasaOS specific service-level configuration
