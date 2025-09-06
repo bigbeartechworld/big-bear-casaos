@@ -15,6 +15,7 @@ services:
 
     # Image to be used for the container
     image: ghcr.io/bluegoosemedia/composetoolbox:latest
+    pull_policy: always
     # Ports mapping between host and container
     ports:
       - "3002:3000"
