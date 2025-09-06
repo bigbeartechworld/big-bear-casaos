@@ -1,0 +1,74 @@
+# Configuration for ComposeToolbox setup
+
+# Name of the big-bear-composetoolbox application
+name: big-bear-composetoolbox
+
+# Service definitions for the big-bear-composetoolbox application
+services:
+  # Service name: big-bear-composetoolbox
+  # The `big-bear-composetoolbox` service definition
+  big-bear-composetoolbox:
+    # Environment variables
+    environment:
+      # Node environment
+      NODE_ENV: production
+
+    # Image to be used for the container
+    image: ghcr.io/bluegoosemedia/composetoolbox:latest
+    # Ports mapping between host and container
+    ports:
+      - "3002:3000"
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/composetoolbox/data:/app/data
+
+    # Name of the container
+    container_name: "big-bear-composetoolbox"
+
+    # CasaOS specific service-level configuration
+    x-casaos:
+      volumes:
+        - container: /app/data
+          description:
+            en_us: "Container Path: /app/data for ComposeToolbox data storage"
+      ports:
+        - container: "3000"
+          description:
+            en_us: "Container Port: 3000 (web interface)"
+      envs:
+        - container: NODE_ENV
+          description:
+            en_us: "Node environment (should be 'production' for deployment)"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+  # Main service of the application
+  main: big-bear-composetoolbox
+  # Tagline for the application
+  tagline:
+    en_us: Compose file editor & validator
+  # Developer's name or identifier
+  developer: "bluegoosemedia"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Application category
+  category: BigBearCasaOS
+  # Icon for the application
+  icon: https://raw.githubusercontent.com/bluegoosemedia/composetoolbox/main/public/favicon.png
+  # Port mapping information
+  port_map: "3002"
+  # Scheme used by the application
+  scheme: http
+  title:
+    # Title in English
+    en_us: Compose Toolbox
+  description:
+    # Description in English
+    en_us: Self-hosted tool to edit, validate, and get suggestions for docker-compose.yml files.
