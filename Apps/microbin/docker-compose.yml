@@ -19,7 +19,7 @@ services:
       MICROBIN_DATA_DIR: microbin_data
       # Default expiry and burn-after settings
       MICROBIN_DEFAULT_EXPIRY: 24hour
-      MICROBIN_DEFAULT_BURN_AFTER: 0
+      MICROBIN_DEFAULT_BURN_AFTER: "0"
       # Enable/disable features
       MICROBIN_EDITABLE: "true"
       MICROBIN_ENABLE_BURN_AFTER: "true"
@@ -27,18 +27,18 @@ services:
       MICROBIN_ENCRYPTION_CLIENT_SIDE: "true"
       MICROBIN_ENCRYPTION_SERVER_SIDE: "true"
       MICROBIN_ETERNAL_PASTA: "false"
-      MICROBIN_GC_DAYS: 90
+      MICROBIN_GC_DAYS: "90"
       MICROBIN_HIGHLIGHTSYNTAX: "true"
       MICROBIN_JSON_DB: "false"
-      MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB: 256
-      MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB: 2048
+      MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB: "256"
+      MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB: "2048"
       MICROBIN_NO_FILE_UPLOAD: "false"
       MICROBIN_NO_LISTING: "false"
       MICROBIN_PRIVATE: "true"
       MICROBIN_QR: "true"
       MICROBIN_READONLY: "false"
       MICROBIN_SHOW_READ_STATS: "true"
-      MICROBIN_THREADS: 1
+      MICROBIN_THREADS: "1"
     # Image to be used for the container
     image: danielszabo99/microbin:2.0.4
     # Ports mapping between host and container
@@ -113,7 +113,7 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Icon for the application
-  icon: https://icon.casaos.io/main/all/microbin.png
+  icon: https://raw.githubusercontent.com/szabodanika/microbin/master/templates/assets/logo-square.png
   # Port mapping information
   port_map: "8888"
   # Scheme used by the application
