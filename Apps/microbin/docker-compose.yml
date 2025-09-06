@@ -252,7 +252,7 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Icon for the application
-  icon: https://raw.githubusercontent.com/szabodanika/microbin/master/templates/assets/logo-square.png
+  icon: https://cdn.jsdelivr.net/gh/szabodanika/microbin@master/templates/assets/logo-square.png
   # Port mapping information
   port_map: "8888"
   # Scheme used by the application
