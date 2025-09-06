@@ -69,7 +69,7 @@ services:
       # Enable read-only uploads (default: true)
       MICROBIN_ENABLE_READONLY: "true"
       # Default expiry (default: 24hour)
-      MICROBIN_DEFAULT_EXPIRY: 24hour
+      MICROBIN_DEFAULT_EXPIRY: "24hour"
       # Disable file upload (default: false)
       MICROBIN_NO_FILE_UPLOAD: "false"
       # Custom CSS URL (optional)
