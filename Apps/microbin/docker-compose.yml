@@ -1,0 +1,126 @@
+# Configuration for Microbin setup
+
+# Name of the big-bear-microbin application
+name: big-bear-microbin
+
+# Service definitions for the big-bear-microbin application
+services:
+  # Service name: big-bear-microbin
+  # The `big-bear-microbin` service definition
+  big-bear-microbin:
+    # Environment variables
+    environment:
+      # Microbin admin username and password
+      MICROBIN_ADMIN_USERNAME: admin
+      MICROBIN_ADMIN_PASSWORD: m1cr0b1n
+      # Bind address
+      MICROBIN_BIND: 0.0.0.0
+      # Data directory inside the container
+      MICROBIN_DATA_DIR: microbin_data
+      # Default expiry and burn-after settings
+      MICROBIN_DEFAULT_EXPIRY: 24hour
+      MICROBIN_DEFAULT_BURN_AFTER: 0
+      # Enable/disable features
+      MICROBIN_EDITABLE: "true"
+      MICROBIN_ENABLE_BURN_AFTER: "true"
+      MICROBIN_ENABLE_READONLY: "true"
+      MICROBIN_ENCRYPTION_CLIENT_SIDE: "true"
+      MICROBIN_ENCRYPTION_SERVER_SIDE: "true"
+      MICROBIN_ETERNAL_PASTA: "false"
+      MICROBIN_GC_DAYS: 90
+      MICROBIN_HIGHLIGHTSYNTAX: "true"
+      MICROBIN_JSON_DB: "false"
+      MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB: 256
+      MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB: 2048
+      MICROBIN_NO_FILE_UPLOAD: "false"
+      MICROBIN_NO_LISTING: "false"
+      MICROBIN_PRIVATE: "true"
+      MICROBIN_QR: "true"
+      MICROBIN_READONLY: "false"
+      MICROBIN_SHOW_READ_STATS: "true"
+      MICROBIN_THREADS: 1
+    # Image to be used for the container
+    image: danielszabo99/microbin:2.0.4
+    # Ports mapping between host and container
+    ports:
+      - "8888:8080"
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/Microbin/data:/app/microbin_data
+    # Name of the container
+    container_name: "big-bear-microbin"
+    # CasaOS specific service-level configuration
+    x-casaos:
+      volumes:
+        - container: /app/microbin_data
+          description:
+            en_us: "Container Path: /app/microbin_data for Microbin data storage"
+      ports:
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080 (web interface)"
+      envs:
+        - container: MICROBIN_ADMIN_USERNAME
+          description:
+            en_us: "Microbin admin username"
+        - container: MICROBIN_ADMIN_PASSWORD
+          description:
+            en_us: "Microbin admin password"
+        - container: MICROBIN_BIND
+          description:
+            en_us: "Bind address for Microbin"
+        - container: MICROBIN_DATA_DIR
+          description:
+            en_us: "Data directory inside the container"
+        - container: MICROBIN_DEFAULT_EXPIRY
+          description:
+            en_us: "Default expiry for pastes"
+        - container: MICROBIN_EDITABLE
+          description:
+            en_us: "Allow editing of pastes"
+        - container: MICROBIN_ENABLE_BURN_AFTER
+          description:
+            en_us: "Enable burn-after-reading feature"
+        - container: MICROBIN_ENABLE_READONLY
+          description:
+            en_us: "Enable readonly mode"
+        - container: MICROBIN_ENCRYPTION_CLIENT_SIDE
+          description:
+            en_us: "Enable client-side encryption"
+        - container: MICROBIN_ENCRYPTION_SERVER_SIDE
+          description:
+            en_us: "Enable server-side encryption"
+        - container: MICROBIN_PRIVATE
+          description:
+            en_us: "Set Microbin to private mode"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+  # Main service of the application
+  main: big-bear-microbin
+  # Tagline for the application
+  tagline:
+    en_us: Pastebin alternative with encryption
+  # Developer's name or identifier
+  developer: "danielszabo99"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Application category
+  category: BigBearCasaOS
+  # Icon for the application
+  icon: https://icon.casaos.io/main/all/microbin.png
+  # Port mapping information
+  port_map: "8888"
+  # Scheme used by the application
+  scheme: http
+  title:
+    # Title in English
+    en_us: Microbin
+  description:
+    # Description in English
+    en_us: Self-hosted, encrypted pastebin alternative with configurable features.
