@@ -169,6 +169,12 @@ x-casaos:
   port_map: "8888"
   # Scheme used by the application
   scheme: http
+  tips:
+    before_install:
+      en_us: |
+        For a full list of Microbin environment variables and their meanings, see:
+        https://github.com/szabodanika/microbin/blob/master/.env
+
   title:
     # Title in English
     en_us: Microbin
