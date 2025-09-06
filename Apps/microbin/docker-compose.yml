@@ -11,9 +11,9 @@ services:
     # Environment variables
     environment:
       # Microbin admin username and password
-      MICROBIN_ADMIN_USERNAME: ""
+      MICROBIN_ADMIN_USERNAME: "admin"
       # Admin password for /admin/ (default: m1cr0b1n)
-      MICROBIN_ADMIN_PASSWORD: ""
+      MICROBIN_ADMIN_PASSWORD: "password"
       # Allow editing pastas (default: true)
       MICROBIN_EDITABLE: "true"
       # Custom footer text (optional)
