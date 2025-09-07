@@ -63,7 +63,7 @@ x-casaos:
   # Application category
   category: BigBearCasaOS
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bluegoosemedia/composetoolbox@main/public/favicon.png
+  icon: https://cdn.jsdelivr.net/gh/bluegoosemedia/composetoolbox@498d1527dcf9cc6422300216df6244ea79ae3630/public/favicon.png
   # Port mapping information
   port_map: "3002"
   # Scheme used by the application
