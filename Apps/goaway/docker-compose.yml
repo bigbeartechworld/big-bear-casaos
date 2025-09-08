@@ -1,0 +1,83 @@
+# Configuration for goaway setup
+
+# Application Name
+name: big-bear-goaway
+
+# Services used in the application
+services:
+  # The `big-bear-goaway` service for the goaway application
+  big-bear-goaway:
+    # Name of the container
+    container_name: big-bear-goaway
+    # Docker image to be used
+    image: pommee/goaway:0.61.0
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
+    ports:
+      - "53:53/udp" # DNS port UDP
+      - "53:53/tcp" # DNS port TCP
+      - "8080:8080" # Web dashboard port
+    # Network mode for the service
+    network_mode: bridge
+    # Volumes for the service HOST -> CONTAINER
+    volumes:
+      - /DATA/AppData/$AppID/config:/app/config
+    # Capabilities required for DNS services
+    cap_add:
+      - NET_BIND_SERVICE
+      - NET_RAW
+    # CasaOS specific configuration for the app service
+    x-casaos:
+      volumes:
+        - container: /app/config
+          description:
+            en_us: "Container Path: /app/config"
+      ports:
+        - container: "53"
+          description:
+            en_us: "Container Port: 53 (DNS)"
+          protocol: udp
+        - container: "53"
+          description:
+            en_us: "Container Port: 53 (DNS)"
+          protocol: tcp
+        - container: "8080"
+          description:
+            en_us: "Container Port: 8080 (Web Dashboard)"
+
+# CasaOS global application configuration
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-goaway
+  # Detailed description for the application
+  description:
+    en_us: GoAway is a lightweight DNS sinkhole that blocks ads, trackers, and malicious domains at the network level. It provides a web-based admin dashboard for management and supports customizable blocking rules with real-time statistics tracking.
+  # Brief tagline for the application
+  tagline:
+    en_us: Lightweight DNS sinkhole for blocking ads and trackers
+  # Developer's information
+  developer: "pommee"
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/goaway.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: GoAway
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"
+  # This is shown before installing
+  tips:
+    before_install:
+      en_us: |
+        Visit the community post for setup instructions and community support:
+        https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085

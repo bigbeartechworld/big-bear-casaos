@@ -1,7 +1,7 @@
 {
   "id": "stalwart-mail",
-  "version": "0.11.8",
-  "image": "stalwartlabs/mail-server",
+  "version": "0.13.2",
+  "image": "stalwartlabs/stalwart",
   "youtube": "",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""

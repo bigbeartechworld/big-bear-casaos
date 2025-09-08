@@ -12,7 +12,7 @@ services:
     container_name: big-bear-paperless-ngx
 
     # Image to be used for the container
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.17.1
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.18.4
 
     # Container restart policy
     restart: unless-stopped
@@ -161,7 +161,7 @@ services:
   # /tmp directory to prevent potential security issues.
   big-bear-paperless-ngx-gotenberg:
     container_name: big-bear-paperless-ngx-gotenberg
-    image: gotenberg/gotenberg:8.21
+    image: gotenberg/gotenberg:8.23
     restart: unless-stopped
     # The gotenberg chromium route is used to convert .eml files. We do not
     # want to allow external content like tracking pixels or even javascript.
