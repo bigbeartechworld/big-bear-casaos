@@ -45,8 +45,8 @@ All of these options can be configured through the UI after installation:
 
 While most configuration can be done through the UI, you can also pre-configure the application using environment variables:
 
-- `BETTER_AUTH_SECRET`: Secret key for Better Auth authentication (important for security)
-- `BETTER_AUTH_URL`: Authentication URL (defaults to http://0.0.0.0:4321)
+- `BETTER_AUTH_SECRET`: Secret key for Better Auth authentication (important for security). If unset, it is securely auto-generated on first run and persisted.
+- `BETTER_AUTH_URL`: Authentication URL (defaults to <http://0.0.0.0:4321>)
 - `GITHUB_USERNAME`: Your GitHub username
 - `GITHUB_TOKEN`: Your GitHub personal access token
 - `GITEA_URL`: The URL of your Gitea instance
