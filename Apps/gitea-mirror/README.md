@@ -1,18 +1,23 @@
-# Gitea Mirror
+# Gitea Mirror (v3.6.0)
 
 Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It can mirror personal repositories, starred repositories, and organization repositories.
 
 ## Features
 
-- 🔁 Sync public, private, or starred GitHub repos to Gitea
-- 🏢 Mirror entire organizations with structure preservation
-- 🐞 Optional mirroring of issues and labels
-- 🌟 Mirror your starred repositories
-- 🕹️ Modern user interface with toast notifications and smooth experience
-- 🧠 Smart filtering and job queue with detailed logs
-- 🛠️ Works with personal access tokens (GitHub + Gitea)
-- 🔒 First-time user signup experience with secure authentication
-- ⏱️ Scheduled automatic mirroring
+- 🔁 Mirror public, private, and starred GitHub repos to Gitea
+- 🏢 Mirror entire organizations with flexible strategies
+- 🎯 Custom destination control for repos and organizations
+- 📦 **Git LFS support** - Mirror large files with Git LFS
+- 📝 **Metadata mirroring** - Issues, pull requests (as issues), labels, milestones, wiki
+- 🚫 **Repository ignore** - Mark specific repos to skip
+- 🔐 Secure authentication with Better Auth (email/password, SSO, OIDC)
+- 📊 Real-time dashboard with activity logs
+- ⏱️ Scheduled automatic mirroring with configurable intervals
+- 🔄 **Auto-discovery** - Automatically import new GitHub repositories
+- 🧹 **Repository cleanup** - Auto-remove repos deleted from GitHub
+- 🎯 **Proper mirror intervals** - Respects configured sync intervals
+- 🗑️ Automatic database cleanup with configurable retention
+- 🐳 Dockerized with multi-arch support (AMD64/ARM64)
 
 ## Getting Started
 
@@ -40,12 +45,15 @@ All of these options can be configured through the UI after installation:
 
 While most configuration can be done through the UI, you can also pre-configure the application using environment variables:
 
-- `JWT_SECRET`: Secret key for JWT authentication (important for security)
+- `BETTER_AUTH_SECRET`: Secret key for Better Auth authentication (important for security)
+- `BETTER_AUTH_URL`: Authentication URL (defaults to http://0.0.0.0:4321)
 - `GITHUB_USERNAME`: Your GitHub username
 - `GITHUB_TOKEN`: Your GitHub personal access token
 - `GITEA_URL`: The URL of your Gitea instance
 - `GITEA_TOKEN`: Your Gitea access token
 - `GITEA_USERNAME`: Your Gitea username
+- `SCHEDULE_ENABLED`: Enable automatic scheduled mirroring
+- `GITEA_MIRROR_INTERVAL`: Mirror interval (e.g., "8h" for 8 hours)
 
 ## Access
 

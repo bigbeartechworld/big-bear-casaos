@@ -1,5 +1,5 @@
 # Configuration for gitea-mirror setup
-# Initial version: v2.9.0
+# Initial version: v3.6.0
 # Author: Arunavo Ray
 # Description: Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It can mirror personal repositories, starred repositories, and organization repositories.
 
@@ -15,7 +15,7 @@ services:
     container_name: big-bear-gitea-mirror
 
     # Image to be used for the container
-    image: ghcr.io/raylabshq/gitea-mirror:v3.2.4
+    image: ghcr.io/raylabshq/gitea-mirror:v3.6.0
 
     # Container restart policy
     restart: unless-stopped
@@ -36,7 +36,7 @@ services:
       - DATABASE_URL=file:data/gitea-mirror.db
       - HOST=0.0.0.0
       - PORT=4321
-      - BETTER_AUTH_URL=http://localhost:4321
+      - BETTER_AUTH_URL=http://0.0.0.0:4321
       - BETTER_AUTH_SECRET=your-secret-key-change-this-in-production
       # Optional GitHub/Gitea Mirror Config (can also be set through the UI)
       # - GITHUB_USERNAME=your-github-username
