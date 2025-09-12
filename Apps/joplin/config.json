@@ -1,6 +1,6 @@
 {
   "id": "joplin",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "image": "joplin/server:3.3.13",
   "youtube": "https://youtu.be/FjVyg0X-_zc",
   "docs_link": "",
