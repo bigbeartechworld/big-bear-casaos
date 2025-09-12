@@ -106,9 +106,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.07.20250804 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.4 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.18.5 |  |  |
+| budibase | budibase/budibase | 3.18.6 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
-| calcom | calcom/cal.com | 5.6.14 |  |  |
+| calcom | calcom/cal.com | 5.6.15 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.12 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -170,7 +170,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.6 |  |  |
 | jfa-go | hrfee/jfa-go | latest |  |  |
-| jlesage-firefox | jlesage/firefox | 25.07.2 | [YouTube Video](https://youtu.be/JWhR8RKGh9Y) | [Docs](https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-4) |
+| jlesage-firefox | jlesage/firefox | 25.09.1 | [YouTube Video](https://youtu.be/JWhR8RKGh9Y) | [Docs](https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-4) |
 | jlesage-handbrake | jlesage/handbrake | 25.09.1 |  |  |
 | joplin | joplin/server:3.3.13 | 3.4.2 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
 | kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
@@ -184,7 +184,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.7.3 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.12.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.124.4 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.125.0 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.7.8 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -218,14 +218,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.11.10-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.11.10 |  |  |
 | ollama-nvidia | ollama/ollama | 0.11.10 |  |  |
-| onedev | 1dev/server | 12.0.9 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 12.0.10 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.0.4 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.11.10 |  |  |
 | owncloud | owncloud/server | 10.15.3 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.18.4 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.60.2 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
+| passwordpusher | pglombardo/pwpush | 1.61.0 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.9.0 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
