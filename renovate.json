@@ -1,33 +1,43 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  "stabilityDays": 3,
+  "extends": [
+    "config:recommended"
+  ],
+  "minimumReleaseAge": "3 days",
   "automerge": true,
   "packageRules": [
     {
       "matchDatasources": "docker",
-      "matchPackagePatterns": ["^guacamole/"],
-      "groupName": "guacamole docker images"
+      "groupName": "guacamole docker images",
+      "matchPackageNames": [
+        "/^guacamole//"
+      ]
     },
     {
       "matchDatasources": "docker",
-      "matchPackagePatterns": ["^vikunja/"],
-      "groupName": "vikunja docker images"
+      "groupName": "vikunja docker images",
+      "matchPackageNames": [
+        "/^vikunja//"
+      ]
     },
     {
       "matchDatasources": "docker",
-      "matchPackagePatterns": ["^ghcr\\.io/immich-app/"],
-      "groupName": "immich docker images"
+      "groupName": "immich docker images",
+      "matchPackageNames": [
+        "/^ghcr\\.io/immich-app//"
+      ]
     },
     {
       "matchDatasources": "docker",
-      "matchPackagePatterns": [
-        "^([^\\/]+\\/)?(mysql|mariadb|mongodb|mongo|postgres|redis)(:|$)"
+      "enabled": false,
+      "matchPackageNames": [
+        "/^([^\\/]+\\/)?(mysql|mariadb|mongodb|mongo|postgres|redis)(:|$)/"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "ghcr.io/immich-app/postgres"
       ],
-      "enabled": false
-    },
-    {
-      "matchPackageNames": ["ghcr.io/immich-app/postgres"],
       "enabled": false
     },
     {
@@ -39,18 +49,27 @@
       "automerge": false
     },
     {
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     },
     {
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false
     },
     {
-      "matchPackageNames": ["ghcr.io/diced/zipline"],
-      "matchFileNames": ["Apps/zipline/docker-compose.yml"],
+      "matchPackageNames": [
+        "ghcr.io/diced/zipline"
+      ],
+      "matchFileNames": [
+        "Apps/zipline/docker-compose.yml"
+      ],
       "enabled": false
     }
   ],
-  "regexManagers": []
+  "customManagers": []
 }
