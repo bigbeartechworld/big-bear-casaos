@@ -1,6 +1,6 @@
 {
   "id": "ls-adguardhome-sync",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "image": "linuxserver/adguardhome-sync",
   "youtube": "",
   "docs_link": "",
