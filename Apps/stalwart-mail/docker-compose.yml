@@ -23,7 +23,7 @@ services:
     # These mounts allow the container to interact with the host system
     volumes:
       # Required for monitoring system resources and container metrics
-      - /DATA/AppData/$AppID/data:/opt/stalwart-mail
+      - /DATA/AppData/$AppID/data:/opt/stalwart
 
     # Map port 8080 on the host to port 8080 on the container for the web interface
     ports:
@@ -44,9 +44,9 @@ services:
     # CasaOS-specific configuration metadata
     x-casaos:
       volumes:
-        - container: /opt/stalwart-mail
+        - container: /opt/stalwart
           description:
-            en_us: "Container Path: /opt/stalwart-mail"
+            en_us: "Container Path: /opt/stalwart"
       ports:
         - container: "8080"
           description:
