@@ -108,7 +108,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.1.4 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 3.18.15 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
-| calcom | calcom/cal.com | 5.7.0 |  |  |
+| calcom | calcom/cal.com | 5.7.1 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.14 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -129,7 +129,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | dockpeek | ghcr.io/dockpeek/dockpeek | 1.6.2 |  |  |
-| docmost | docmost/docmost | 0.23.1 |  |  |
+| docmost | docmost/docmost | 0.23.2 |  |  |
 | dozzle | amir20/dozzle | 8.13.14 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.1.1 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.1.1 |  |  |
@@ -184,7 +184,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.7.3 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.12.2 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.129.3 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.130.1 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.8.1 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -197,7 +197,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.5.8 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.112.1 |  |  |
+| n8n | n8nio/n8n | 1.112.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.2 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.8.6 |  |  |
@@ -206,7 +206,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 0.0.10 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.5-OPEN-PREVIEW | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.3 | [YouTube Video](https://youtu.be/ty0F0lo9kSo) |  |
-| nocodb | nocodb/nocodb | 0.264.7 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nocodb | nocodb/nocodb | 0.264.8 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.1.0 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.17.1 |  |  |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
@@ -243,8 +243,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plex-nvidia | linuxserver/plex | 1.42.1 |  |  |
 | plex | linuxserver/plex | 1.42.1 |  |  |
 | pocketid | ghcr.io/pocket-id/pocket-id | 1.11 |  | [Docs](https://pocket-id.org/docs/introduction) |
-| portainer-agent | portainer/agent | 2.33.1 |  |  |
-| portainer | portainer/portainer-ce | 2.33.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer-agent | portainer/agent | 2.34.0 |  |  |
+| portainer | portainer/portainer-ce | 2.34.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | portracker | mostafawahied/portracker | 1.1 |  |  |
 | poste-io | analogic/poste.io | 2.5.7 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
@@ -267,7 +267,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | stalwart-mail | stalwartlabs/stalwart | 0.13.3 |  |  |
 | stirling-pdf | stirlingpdf/stirlingpdf | 1.3.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 2.0 |  |  |
-| tailscale | tailscale/tailscale | 1.86.5 |  |  |
+| tailscale | tailscale/tailscale | 1.88.2 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.2.3 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.25.14 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
