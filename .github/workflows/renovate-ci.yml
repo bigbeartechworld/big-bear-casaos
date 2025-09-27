@@ -89,7 +89,7 @@ jobs:
 
       - name: Check bumped version
         id: check-bumped-version
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -146,7 +146,7 @@ jobs:
 
       - name: Label this PR as "automerge" if major_bump is false
         if: steps.check-bumped-version.outputs.major_bump == 'false'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.PERSONAL_TOKEN }}
           script: |
