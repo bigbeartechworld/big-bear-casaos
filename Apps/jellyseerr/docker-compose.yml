@@ -48,7 +48,7 @@ x-casaos:
   # Author of this configuration
   author: BigBearCommunity
   # Icon for the application
-  icon: https://static-00.iconduck.com/assets.00/jellyseerr-icon-512x492-iwuo1nft.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyseerr.png
   # Thumbnail image
   thumbnail: "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg"
   title:
