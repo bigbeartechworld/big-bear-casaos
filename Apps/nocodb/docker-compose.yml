@@ -53,7 +53,7 @@ services:
 
   # Redis service configuration
   big-bear-nocodb-redis:
-    image: redis:8.2.2-alpine # Specifies the Redis Docker image to use
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0 # Specifies the Redis Docker image to use
     container_name: big-bear-nocodb-redis
     restart: unless-stopped # Ensures Redis container is available unless manually stopped
     command: ["redis-server", "--requirepass", "casaos"] # Starts Redis with a password

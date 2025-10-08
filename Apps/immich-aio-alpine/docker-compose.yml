@@ -96,7 +96,7 @@ services:
   # Configuration for Redis service
   big-bear-immich-redis:
     container_name: big-bear-immich-redis # Name of the running container
-    image: redis:6.2.20-alpine # patched for CVE-2025-49844
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f # patched for CVE-2025-49844
     restart: always # Policy to always restart the container if it stops
     networks:
       - big_bear_immich_network # Connects the container to a defined network

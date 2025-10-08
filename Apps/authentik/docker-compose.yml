@@ -135,7 +135,7 @@ services:
             en_us: "Container Path: /var/lib/postgresql/data"
 
   big-bear-authentik-redis:
-    image: redis:8.2.2-alpine
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     command: ["--save", "60", "1", "--loglevel", "warning"]
     container_name: big-bear-authentik-redis
     restart: unless-stopped

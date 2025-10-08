@@ -158,7 +158,7 @@ services:
 
   big-bear-owncloud-redis:
     container_name: big-bear-owncloud-redis
-    image: redis:6.2.20
+    image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
     restart: unless-stopped
     command: ["--databases", "1"]
     healthcheck:

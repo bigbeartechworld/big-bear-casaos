@@ -98,7 +98,7 @@ services:
 
   big-bear-docmost-redis:
     container_name: big-bear-docmost-redis
-    image: redis:7.2.11-alpine
+    image: redis:7.2.11-alpine@sha256:b19a2cb55412c26e0c3725011ac04397eba5cb0d7f090f739cbbce8dc97f8e60
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/data/redis:/data

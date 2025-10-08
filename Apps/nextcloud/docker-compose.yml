@@ -127,7 +127,7 @@ services:
   redis-nextcloud:
     container_name: redis-nextcloud
     user: "1000:1000"
-    image: redis:6.2.20
+    image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
     restart: unless-stopped
     volumes:
       - "/DATA/AppData/$AppID/redis:/data" # Mount the Redis data directory
