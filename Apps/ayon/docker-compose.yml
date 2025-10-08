@@ -94,7 +94,7 @@ services:
 
   # Service definition for the Redis database
   redis:
-    image: redis:7-alpine
+    image: redis:7.4.6-alpine
     container_name: redis
     restart: unless-stopped
     volumes:

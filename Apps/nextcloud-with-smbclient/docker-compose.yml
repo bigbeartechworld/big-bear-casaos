@@ -127,7 +127,7 @@ services:
   big-bear-nextcloud-smb-redis:
     container_name: big-bear-nextcloud-smb-redis
     user: "1000:1000"
-    image: redis:6.2.6
+    image: redis:6.2.20
     restart: on-failure
     volumes:
       - "/DATA/AppData/$AppID/redis:/data" # Mount the Redis data directory

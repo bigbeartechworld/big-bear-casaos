@@ -332,7 +332,7 @@ services:
 
   big-bear-coolify-redis: # Redis service configuration
     container_name: big-bear-coolify-redis # Name of the running container
-    image: redis:alpine
+    image: redis:8.2.2-alpine
     ports:
       - "6379:6379"
     command:

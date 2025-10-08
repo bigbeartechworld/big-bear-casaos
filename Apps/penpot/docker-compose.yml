@@ -182,7 +182,7 @@ services:
 
   # Define the Redis service for Penpot
   penpot-redis:
-    image: redis:7
+    image: redis:7.4.6
     container_name: big-bear-penpot-redis
     restart: unless-stopped
     networks:

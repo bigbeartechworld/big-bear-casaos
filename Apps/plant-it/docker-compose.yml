@@ -134,7 +134,7 @@ services:
     # Name of the cache container
     container_name: big-bear-plant-it-cache
     # Image for the cache
-    image: redis:7.2.1
+    image: redis:7.2.11
     # Restart policy for the cache container
     restart: always
     networks:

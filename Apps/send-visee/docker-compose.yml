@@ -74,7 +74,7 @@ services:
     container_name: big-bear-send-visee-redis
 
     # Image to be used for the container
-    image: redis:alpine
+    image: redis:8.2.2-alpine
 
     # Container restart policy
     restart: unless-stopped

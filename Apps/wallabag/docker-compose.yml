@@ -161,7 +161,7 @@ services:
     container_name: big-bear-wallabag-redis
 
     # Image to be used for the Redis container
-    image: redis:7.4.1-alpine
+    image: redis:7.4.6-alpine
 
     # Container restart policy
     restart: unless-stopped
