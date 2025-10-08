@@ -1,0 +1,103 @@
+# Configuration for tugtainer setup
+
+# Name of the big-bear-tugtainer application
+name: big-bear-tugtainer
+
+# Service definitions for the big-bear-tugtainer application
+services:
+  # Service name: big-bear-tugtainer
+  # The `big-bear-tugtainer` service definition
+  big-bear-tugtainer:
+    # Name of the container
+    container_name: big-bear-tugtainer
+
+    # Image to be used for the container
+    image: quenary/tugtainer:v1.1.2@sha256:7a138506d3be609a67a057cfad71baaca05f6b5a76a8a37b3dc664dfef944e96
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Ports to expose from the container
+    ports:
+      - "9412:80"
+
+    # Environment variables for the container
+    environment:
+      TZ: "UTC"
+      LOG_LEVEL: "warning"
+      JWT_SECRET_KEY: "your-secret-key-here"
+      ACCESS_TOKEN_LIFETIME_MIN: "5"
+      REFRESH_TOKEN_LIFETIME_MIN: "43200"
+      HTTPS: "FALSE"
+
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/tugtainer
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    x-casaos: # CasaOS specific configuration
+      envs:
+        - container: TZ
+          description:
+            en_us: Timezone
+        - container: LOG_LEVEL
+          description:
+            en_us: Log level (critical, error, warning, info, debug, trace)
+        - container: JWT_SECRET_KEY
+          description:
+            en_us: JWT secret key for authentication
+        - container: ACCESS_TOKEN_LIFETIME_MIN
+          description:
+            en_us: Access token lifetime in minutes
+        - container: REFRESH_TOKEN_LIFETIME_MIN
+          description:
+            en_us: Refresh token lifetime in minutes
+        - container: HTTPS
+          description:
+            en_us: Enable HTTPS (true/false)
+      ports:
+        - container: "80"
+          description:
+            en_us: "Container Port: 80"
+      volumes:
+        - container: /tugtainer
+          description:
+            en_us: "Container Path: /tugtainer"
+        - container: /var/run/docker.sock
+          description:
+            en_us: "Container Path: /var/run/docker.sock"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    # - arm64
+  # Main service of the application
+  main: big-bear-tugtainer
+  description:
+    # Description in English
+    en_us: Tugtainer is a self-hosted app for automating updates of your docker containers with a web UI. It's like watchtower but with more control and a user-friendly interface.
+  tagline:
+    # Short description or tagline in English
+    en_us: Docker Container Update Automator
+  # Developer's name or identifier
+  developer: "Quenary"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/docker.png
+  # Thumbnail image
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-1.png"
+  title:
+    # Title in English
+    en_us: Tugtainer
+  # Port mapping information
+  port_map: "9412"
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-3.png
+  # Application category
+  category: BigBearCasaOS
