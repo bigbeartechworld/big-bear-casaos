@@ -59,7 +59,7 @@ services:
 
   # Service name: redis
   redis:
-    image: redis:6-alpine
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f
     networks:
       - big-bear-pd3f-network
     expose:

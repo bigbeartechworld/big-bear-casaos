@@ -210,7 +210,7 @@ services:
     container_name: big-bear-maybe-finance-redis
 
     # Image to be used for the container
-    image: redis:7-alpine
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
 
     # Container restart policy
     restart: unless-stopped

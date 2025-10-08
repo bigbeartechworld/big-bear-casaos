@@ -122,7 +122,7 @@ services:
   # Redis service for Ghostfolio, used for caching and session storage
   big-bear-ghostfolio-redis:
     container_name: big-bear-ghostfolio-redis
-    image: redis:7-alpine # Using Redis 7 on Alpine Linux
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166 # Using Redis 7 on Alpine Linux
     restart: unless-stopped
     command: >
       --requirepass casaosredispassword
