@@ -87,12 +87,17 @@ x-casaos:
   author: BigBearTechWorld
   # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/docker.png
-  # Thumbnail image (currently empty)
-  thumbnail: ""
+  # Thumbnail image
+  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-1.png"
   title:
     # Title in English
     en_us: Tugtainer
   # Port mapping information
   port_map: "9412"
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tugtainer/screenshot-3.png
   # Application category
   category: BigBearCasaOS
