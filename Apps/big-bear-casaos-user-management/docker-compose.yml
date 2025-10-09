@@ -14,7 +14,7 @@ services:
     container_name: big-bear-casaos-user-management
 
     # Image to be used for the container specifies the btop version and source
-    image: bigbeartechworld/big-bear-casaos-user-management:0.1.0
+    image: bigbeartechworld/big-bear-casaos-user-management:0.1.1
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
