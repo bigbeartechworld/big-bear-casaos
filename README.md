@@ -96,7 +96,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | adguard-home | adguard/adguardhome | 0.107.67 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ee | 1.73.1 |  |  |
-| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.29.0 |  |  |
+| audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.30.0 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2025.8.4 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.35.2 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
@@ -109,7 +109,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | budibase | budibase/budibase | 3.20.9 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.7.1 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.16 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.17 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -147,12 +147,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.05 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.2.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.205.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.206.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | 3.8.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | 4.63.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | 3.40.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
-| goaway | pommee/goaway | 0.62.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
+| goaway | pommee/goaway | 0.62.11 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 2.7.3 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.11.20250828 |  |  |
@@ -177,14 +177,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kavita | jvmilazz0/kavita | 0.8.7 |  |  |
 | kiwix-serve | ghcr.io/kiwix/kiwix-serve | 3.7.0-2 |  |  |
 | komf | sndxr/komf | 1.6.0 |  |  |
-| komga | ghcr.io/gotson/komga | 1.23.4 |  |  |
+| komga | ghcr.io/gotson/komga | 1.23.5 |  |  |
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
 | libredesk | libredesk/libredesk | 0.7.4-alpha |  |  |
 | libretranslate | libretranslate/libretranslate | 1.7.3 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.13.0 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.133.6 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.134.6 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.8.1 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -212,7 +212,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | npmplus | zoeyvid/npmplus | 449 |  |  |
 | ntfysh | binwiederhier/ntfy | 2.14.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
-| obsidian | linuxserver/obsidian | 1.9.12 |  |  |
+| obsidian | linuxserver/obsidian | 1.9.14 |  |  |
 | octoprint | octoprint/octoprint | 1.11.3 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
 | ollama-amd | ollama/ollama | 0.12.3-rocm |  |  |
@@ -268,12 +268,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | stirling-pdf | stirlingpdf/stirlingpdf | 1.3.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | 1.88.3 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 2.3.0 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.27.5 |  |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 2.3.1 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
+| tianji | moonrailgun/tianji | 1.27.6 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 5.15 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.10-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | zadam/trilium | 0.63.7 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.82 |  |  |
+| tugtainer | quenary/tugtainer | 1.1.2 |  |  |
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
 | umbrel-os | dockurr/umbrel | 1.4.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
