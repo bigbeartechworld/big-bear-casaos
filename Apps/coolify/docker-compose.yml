@@ -89,7 +89,7 @@ services:
 
     # Map port 8080 on the host to port 80 on the container
     ports:
-      - "8000:80"
+      - "8000:8080"
 
     healthcheck:
       test: curl --fail http://127.0.0.1:8080/api/health || exit 1
