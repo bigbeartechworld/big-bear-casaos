@@ -12,7 +12,7 @@ services:
     container_name: big-bear-coolify
 
     # Image to be used for the container specifies the fastfetch version and source
-    image: ghcr.io/coollabsio/coolify:4.0.0-beta.380
+    image: ghcr.io/coollabsio/coolify:4.0.0-beta.434
 
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
@@ -92,7 +92,7 @@ services:
       - "8000:80"
 
     healthcheck:
-      test: curl --fail http://127.0.0.1:80/api/health || exit 1
+      test: curl --fail http://127.0.0.1:8080/api/health || exit 1
       interval: 5s
       retries: 10
       timeout: 2s
