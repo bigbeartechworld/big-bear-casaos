@@ -12,7 +12,7 @@ services:
     container_name: big-bear-tugtainer
 
     # Image to be used for the container
-    image: quenary/tugtainer:v1.1.2@sha256:7a138506d3be609a67a057cfad71baaca05f6b5a76a8a37b3dc664dfef944e96
+    image: quenary/tugtainer:v1.1.4@sha256:6837f45cc569a75a2cb43210eb46d86e2463a7870aff7ea8166e2b0fce30b5cc
 
     # Container restart policy
     restart: unless-stopped
