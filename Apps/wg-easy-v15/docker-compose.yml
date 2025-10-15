@@ -1,28 +1,33 @@
-# Configuration for wg-easy setup
+# Configuration for wg-easy v15 setup
 
-# Name of the big-bear-wg-easy application
-name: big-bear-wg-easy
+# Name of the big-bear-wg-easy-v15 application
+name: big-bear-wg-easy-v15
 
-# Service definitions for the big-bear-wg-easy application
+# Service definitions for the big-bear-wg-easy-v15 application
 services:
-  # Service name: big-bear-wg-easy
-  # The `big-bear-wg-easy` service definition
-  big-bear-wg-easy:
+  # Service name: big-bear-wg-easy-v15
+  # The `big-bear-wg-easy-v15` service definition
+  big-bear-wg-easy-v15:
     # Name of the container
-    container_name: big-bear-wg-easy
+    container_name: big-bear-wg-easy-v15
 
     # Image to be used for the container
-    image: ghcr.io/wg-easy/wg-easy:14
+    image: ghcr.io/wg-easy/wg-easy:15
 
     # Container restart policy
     restart: unless-stopped
 
     # Environment variables for the container
+    # v15 uses INIT_* variables for unattended setup (only used on first start)
     environment:
-      WG_HOST: "[YOUR_PUBLIC_IP]"
-      PASSWORD_HASH: "$2b$12$coPqCsPtcFO.Ab99xylBNOW4.Iu7OOA2/ZIboHN6/oyxca3MWo7fW"
-      WG_DEFAULT_DNS: "1.1.1.1"
-      WG_ALLOWED_IPS: 0.0.0.0/0, ::/0
+      INIT_ENABLED: "true"
+      INIT_USERNAME: "admin"
+      INIT_PASSWORD: "changeme"
+      INIT_HOST: "[YOUR_PUBLIC_IP]"
+      INIT_PORT: "51820"
+      INIT_DNS: "1.1.1.1,8.8.8.8"
+      INIT_IPV4_CIDR: "10.8.0.0/24"
+      INIT_IPV6_CIDR: "fd42:42:42::/64"
 
     # capabilities to be added to the container
     cap_add:
@@ -33,6 +38,9 @@ services:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
       - net.ipv4.ip_forward=1
+      - net.ipv6.conf.all.disable_ipv6=0
+      - net.ipv6.conf.all.forwarding=1
+      - net.ipv6.conf.default.forwarding=1
 
     # Volumes to be mounted to the container
     volumes:
@@ -65,24 +73,24 @@ x-casaos:
     - amd64
     - arm64
   # Main service of the application
-  main: big-bear-wg-easy
+  main: big-bear-wg-easy-v15
   description:
     # Description in English
-    en_us: Access your homeserver from anywhere even on your mobile device. Wireguard-easy is a simple tool to configure and manage Wireguard VPN servers. It is written in Go and uses the official Wireguard client. You have to open and redirect port 51820 to your homeserver in order to connect.
+    en_us: "WireGuard Easy v15 - Complete rewrite with new features and improved UI. Access your homeserver from anywhere with this modern VPN solution. NOTE: This is v15 which has breaking changes from v14. If you're currently using v14, please backup your configuration before migrating."
   tagline:
     # Short description or tagline in English
-    en_us: VPN server for your homeserver
+    en_us: WireGuard VPN server v15 (New Version)
   # Developer's name or identifier
   developer: "WeeJeWel"
   # Author of this configuration
   author: BigBearTechWorld
   # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wg-easy/logo.png
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wg-easy-v15/logo.png
   # Thumbnail image (currently empty)
   thumbnail: ""
   title:
     # Title in English
-    en_us: Wireguard Easy
+    en_us: WireGuard Easy v15
   # Application category
   category: BigBearCasaOS
   # Port mapping information
@@ -91,4 +99,4 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        Read this before installing: https://community.bigbeartechworld.com/t/added-wg-easy-to-bigbearcasaos/1631#p-3101-documentation-3
+        Read this before installing: https://community.bigbeartechworld.com/t/added-wg-easy-v15-to-bigbearcasaos/5071#p-7701-why-a-new-version-4
