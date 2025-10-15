@@ -89,11 +89,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 ## Related Projects
 
-- [Big Bear CasaOS](https://github.com/bigbeartechworld/big-bear-casaos) - Original CasaOS app store
 - [Big Bear Runtipi](https://github.com/bigbeartechworld/big-bear-runtipi) - Runtipi apps
 - [Big Bear Umbrel](https://github.com/bigbeartechworld/big-bear-umbrel) - Umbrel apps
 - [Big Bear Cosmos](https://github.com/bigbeartechworld/big-bear-cosmos) - Cosmos apps
 - [Big Bear Dockge](https://github.com/bigbeartechworld/big-bear-dockge) - Dockge apps
+- [Big Bear Portainer](https://github.com/bigbeartechworld/big-bear-portainer) - Portainer apps
 
 ## UI How to
 
