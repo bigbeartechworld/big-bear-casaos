@@ -39,7 +39,7 @@ services:
 
     # Labels for the container
     labels:
-      icon: https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/openvpn.png
 
     # Ports to be exposed by the container
     ports:
