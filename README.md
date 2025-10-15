@@ -299,6 +299,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | zotero | linuxserver/zotero | 7.0.20240809 |  |  |
 
 
+## Related Projects
+
+- [Big Bear CasaOS](https://github.com/bigbeartechworld/big-bear-casaos) - Original CasaOS app store
+- [Big Bear Runtipi](https://github.com/bigbeartechworld/big-bear-runtipi) - Runtipi apps
+- [Big Bear Umbrel](https://github.com/bigbeartechworld/big-bear-umbrel) - Umbrel apps
+- [Big Bear Cosmos](https://github.com/bigbeartechworld/big-bear-cosmos) - Cosmos apps
+- [Big Bear Dockge](https://github.com/bigbeartechworld/big-bear-dockge) - Dockge apps
+
 ## UI How to
 
 [![Video](https://img.youtube.com/vi/nF5rcslDOZc/0.jpg)](https://youtu.be/nF5rcslDOZc)

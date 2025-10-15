@@ -71,9 +71,9 @@ x-casaos:
     - arm64
   main: big-bear-beaverhabits
   description:
-    en_us: A self-hosted habit tracking app without "Goals"
+    en_us: A self-hosted habit tracking app without \"Goals\"
   tagline:
-    en_us: A self-hosted habit tracking app without "Goals"
+    en_us: A self-hosted habit tracking app without \"Goals\"
   developer: "daya0576"
   author: BigBearTechWorld
   icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/beaver-habit-tracker.png"
