@@ -21,7 +21,7 @@ services:
     # v15 uses INIT_* variables for unattended setup (only used on first start)
     environment:
       INIT_ENABLED: "true"
-      INIT_USERNAME: "admin"
+      INIT_USERNAME: "bigbear"
       INIT_PASSWORD: "changeme"
       INIT_HOST: "[YOUR_PUBLIC_IP]"
       INIT_PORT: "51820"
