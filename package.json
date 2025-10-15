@@ -4,6 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
+    "generate-readme": "bun .github/scripts/readme-generator.ts",
     "commit": "git-cz",
     "lint": "eslint ./apps --ext .json",
     "test": "jest"
