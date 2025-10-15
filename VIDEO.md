@@ -125,6 +125,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | viseron |  |
 | wallabag |  |
 | warracker |  |
+| wg-easy-v15 |  |
 | wg-easy |  |
 | whats-up-docker |  |
 | wishlist |  |
