@@ -9,10 +9,10 @@ services:
   # The `big-bear-homarr-v1` service definition
   big-bear-homarr-v1:
     # Name of the container
-    container_name: homarr-v1
+    container_name: big-bear-homarr-v1
 
     # Image to be used for the container
-    image: ghcr.io/homarr-labs/homarr:1.41.0
+    image: ghcr.io/homarr-labs/homarr:v1.40.0
 
     # Container restart policy
     restart: unless-stopped
