@@ -1,0 +1,82 @@
+# Configuration for homarr-v1 setup
+
+# Name of the big-bear-homarr-v1 application
+name: big-bear-homarr-v1
+
+# Service definitions for the big-bear-homarr-v1 application
+services:
+  # Service name: big-bear-homarr-v1
+  # The `big-bear-homarr-v1` service definition
+  big-bear-homarr-v1:
+    # Name of the container
+    container_name: big-bear-homarr-v1
+
+    # Image to be used for the container
+    image: ghcr.io/homarr-labs/homarr:v1.40.0
+
+    # Container restart policy
+    restart: unless-stopped
+
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting docker.sock to allow docker management via Homarr
+      - /var/run/docker.sock:/var/run/docker.sock
+
+      # Mounting the local homarr directory to /appdata inside the container
+      - /DATA/AppData/$AppID/appdata:/appdata
+
+    # Environment variables
+    environment:
+      # Secret encryption key for securing sensitive data (64 character hex string)
+      # Generate with: openssl rand -hex 32
+      - SECRET_ENCRYPTION_KEY=
+
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 7575 of the host to port 7575 of the container
+      - "7575:7575"
+
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /appdata
+          description:
+            en_us: "Container Path: /appdata"
+      ports:
+        - container: "7575"
+          description:
+            en_us: "Container Port: 7575"
+
+# CasaOS specific configuration
+x-casaos:
+  # Supported CPU architectures for the application
+  architectures:
+    - amd64
+    - arm64
+  # Main service of the application
+  main: big-bear-homarr-v1
+  description:
+    # Description in English
+    en_us: "Homarr v1 - A sleek, modern dashboard for your server. This is the latest major version (v1.x) from homarr-labs with improved architecture and features. Note: This version uses a different data structure and requires SECRET_ENCRYPTION_KEY. Not compatible with legacy Homarr (v0.x) data without migration."
+  tagline:
+    # Short description or tagline in English
+    en_us: Homarr v1 (Latest)
+  # Developer's name or identifier
+  developer: "homarr-labs"
+  # Author of this configuration
+  author: BigBearTechWorld
+  # Icon for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/homarr.png
+  # Thumbnail image (currently empty)
+  thumbnail: ""
+  title:
+    # Title in English
+    en_us: Homarr v1
+  # Application category
+  category: BigBearCasaOS
+  # Port mapping information
+  port_map: "7575"
+  # Tips for using the application
+  tips:
+    before_install:
+      en_us: |
+        Read this before installing: https://community.bigbeartechworld.com/t/added-homarr-v1-to-bigbearcasaos/5074#p-7710-documentation-2
