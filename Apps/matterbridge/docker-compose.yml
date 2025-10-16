@@ -1,0 +1,69 @@
+# Configuration for matterbridge setup
+
+# Application Name
+name: big-bear-matterbridge
+
+# Services used in the application
+services:
+  # The `big-bear-matterbridge` service for the Matterbridge application
+  big-bear-matterbridge:
+    # Name of the container
+    container_name: big-bear-matterbridge
+    # Docker image to be used
+    image: luligu/matterbridge:3.3.2
+    # Restart policy for the service
+    restart: unless-stopped
+    # Network mode set to host for Matter mdns support
+    network_mode: host
+    # Volume mappings for persistent storage
+    volumes:
+      - /DATA/AppData/$AppID/Matterbridge:/root/Matterbridge
+      - /DATA/AppData/$AppID/.matterbridge:/root/.matterbridge
+    # CasaOS specific configuration for the big-bear-matterbridge service
+    x-casaos:
+      volumes:
+        - container: /root/Matterbridge
+          description:
+            en_us: "Container Path: /root/Matterbridge (Plugin directory)"
+        - container: /root/.matterbridge
+          description:
+            en_us: "Container Path: /root/.matterbridge (Storage directory)"
+
+# CasaOS global application configuration
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  # Main service for this application
+  main: big-bear-matterbridge
+  # Detailed description for the application
+  description:
+    en_us: Matterbridge is a Matter plugin manager that allows you to have all your Matter devices up and running in a couple of minutes without having to deal with the pairing process for each individual device. It creates a device that can be paired with any ecosystem, such as Apple Home, Google Home, Amazon Alexa, Home Assistant, or any other platform supporting Matter.
+  # Brief tagline for the application
+  tagline:
+    en_us: Matter plugin manager for smart home devices
+  # Developer's information
+  developer: "Luligu"
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/matterbridge.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Matterbridge
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8283"
+  tips:
+    before_install:
+      en_us: |
+        Matterbridge requires IPv6 to be enabled on your local network for Matter protocol support.
+        
+        After installation, access the frontend at http://YOUR_IP:8283 to configure plugins and pair devices.
+        
+        The application uses host networking mode to support Matter's mDNS discovery protocol.
