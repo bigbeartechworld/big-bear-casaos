@@ -62,8 +62,4 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        Matterbridge requires IPv6 to be enabled on your local network for Matter protocol support.
-        
-        After installation, access the frontend at http://YOUR_IP:8283 to configure plugins and pair devices.
-        
-        The application uses host networking mode to support Matter's mDNS discovery protocol.
+        Before you install read this: https://community.bigbeartechworld.com/t/added-matterbridge-to-bigbearcasaos/5072#p-7704-documentation-2
