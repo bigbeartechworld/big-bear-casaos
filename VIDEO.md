@@ -43,6 +43,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | goaway |  |
 | gotify |  |
 | healthchecks |  |
+| homarr-v1 |  |
 | homebridge |  |
 | homer |  |
 | immich-aio-alpine |  |
@@ -62,6 +63,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | lobe-chat |  |
 | ls-adguardhome-sync |  |
 | lyrionmusicserver |  |
+| matterbridge |  |
 | microbin |  |
 | mind |  |
 | minio |  |
