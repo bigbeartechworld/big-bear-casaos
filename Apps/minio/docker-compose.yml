@@ -4,7 +4,7 @@ name: big-bear-minio
 services:
   # Service name: app
   app:
-    image: minio/minio:RELEASE.2024-02-24T17-11-14Z # The Docker image to use (latest version of minio)
+    image: bigbeartechworld/big-bear-minio:RELEASE.2025-10-15T17-29-55Z # The Docker image to use (latest version of minio)
     container_name: big-bear-minio # Name of the container instance
     volumes:
       - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
