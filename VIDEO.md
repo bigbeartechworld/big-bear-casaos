@@ -107,6 +107,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | project-management |  |
 | python-matter-server |  |
 | reactive-resume |  |
+| readeck |  |
 | retroarch-web |  |
 | rocket-chat |  |
 | romm |  |
