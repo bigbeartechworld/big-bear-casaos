@@ -101,7 +101,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.35.3 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beaverhabits | daya0576/beaverhabits | 0.7.3 |  |  |
-| beszel | henrygd/beszel | 0.14.0 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
+| beszel | henrygd/beszel | 0.14.1 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 25.07.20250804 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
@@ -109,7 +109,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | budibase | budibase/budibase | 3.21.1 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | 0.52.1 |  |  |
 | calcom | calcom/cal.com | 5.7.1 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.28 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.50.29 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | kasmweb/chromium | 1.15.0-rolling | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -128,7 +128,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | diun | crazymax/diun | 4.30.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
-| dockpeek | ghcr.io/dockpeek/dockpeek | 1.6.8 |  |  |
+| dockpeek | ghcr.io/dockpeek/dockpeek | 1.6.9 |  |  |
 | docmost | docmost/docmost | 0.23.2 |  |  |
 | dozzle | amir20/dozzle | 8.14.5 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.1.1 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
@@ -185,7 +185,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | libretranslate | libretranslate/libretranslate | 1.7.3 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | 2.13.1 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
-| lobe-chat | lobehub/lobe-chat | 1.139.0 |  |  |
+| lobe-chat | lobehub/lobe-chat | 1.139.1 |  |  |
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.8.1 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.1.0 |  |  |
 | mailpit | axllent/mailpit | 1.27 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
@@ -193,7 +193,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mealie | hkotel/mealie | 3.3.2 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | microbin | danielszabo99/microbin | 2.0.4 |  | [Docs](https://github.com/szabodanika/microbin) |
 | mind | mrcas/mind | 1.4.1 |  |  |
-| minio | minio/minio | RELEASE.2024-02-24T17-11-14Z |  |  |
+| minio | minio/minio | RELEASE.2025-10-15T17-29-55Z |  |  |
 | monica | monica | 4.1.2 |  |  |
 | morphos | ghcr.io/danvergara/morphos-server | 0.6.0 | [YouTube Video](https://youtu.be/dw7AEDbGqZY) |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
@@ -226,7 +226,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.11.11 |  |  |
 | owncloud | owncloud/server | 10.15.3 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.19.1 |  |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.19.2 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.62.1 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.10.1 |  |  |
@@ -255,6 +255,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rallly | lukevella/rallly | 4.4.1 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | reactive-resume | amruthpillai/reactive-resume | 4.5.2 |  |  |
+| readeck | codeberg.org/readeck/readeck | 0.20.4 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
 | romm | rommapp/romm | 4.3.2 |  | [Docs](https://github.com/rommapp/romm/wiki) |
