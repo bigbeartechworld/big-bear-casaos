@@ -1,0 +1,248 @@
+name: Auto Sync Platform Repositories
+
+on:
+  # Run daily at 2 AM UTC
+  schedule:
+    - cron: '0 2 * * *'
+  
+  # Allow manual trigger with options
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'Specific app to sync (leave empty for all apps)'
+        required: false
+        type: string
+      platforms:
+        description: 'Platforms to sync (comma-separated: portainer,runtipi,dockge,cosmos,umbrel)'
+        required: false
+        default: 'portainer,dockge'
+        type: string
+      create_draft:
+        description: 'Create PRs as drafts'
+        required: false
+        default: false
+        type: boolean
+      auto_merge:
+        description: 'Enable auto-merge on PRs'
+        required: false
+        default: false
+        type: boolean
+      dry_run:
+        description: 'Dry run (preview only, no actual changes)'
+        required: false
+        default: false
+        type: boolean
+  
+  # Run on push to main/master branch
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'Apps/**'
+      - 'convert-apps.sh'
+      - 'sync-apps.sh'
+
+jobs:
+  sync-platforms:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: 🚀 Checkout CasaOS repository
+        uses: actions/checkout@v4
+        with:
+          path: big-bear-casaos
+          fetch-depth: 0
+      
+      - name: 📦 Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq rsync
+          
+          # Install yq
+          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+          sudo chmod +x /usr/bin/yq
+          
+          # Install gh CLI (GitHub Actions has it pre-installed, but act doesn't)
+          if ! command -v gh &> /dev/null; then
+            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+            sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+            echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+            sudo apt-get update
+            sudo apt-get install -y gh
+          fi
+          
+          # Verify installations
+          jq --version
+          yq --version
+          rsync --version
+          gh --version
+      
+      - name: 🔧 Configure Git
+        run: |
+          git config --global user.name "BigBear Bot"
+          git config --global user.email "github.bot@emailcove.com"
+      
+      - name: 📥 Clone platform repositories
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "$(dirname big-bear-casaos)"
+          
+          echo "🔄 Cloning platform repositories..."
+          
+          # Array of platform repositories
+          platforms=(
+            "big-bear-runtipi"
+            "big-bear-umbrel"
+            "big-bear-cosmos"
+            "big-bear-portainer"
+            "big-bear-dockge"
+          )
+          
+          for repo in "${platforms[@]}"; do
+            if [ -d "$repo" ]; then
+              echo "📂 Repository $repo already exists, pulling latest..."
+              cd "$repo"
+              git checkout main 2>/dev/null || git checkout master 2>/dev/null || true
+              git pull origin main 2>/dev/null || git pull origin master 2>/dev/null || true
+              cd ..
+            else
+              echo "📥 Cloning $repo..."
+              gh repo clone bigbeartechworld/$repo || {
+                echo "⚠️  Failed to clone $repo, it may not exist yet"
+              }
+            fi
+          done
+          
+          echo "✅ Platform repositories ready"
+      
+      - name: 🔄 Convert CasaOS apps
+        run: |
+          cd big-bear-casaos
+          
+          # Determine platforms to convert
+          PLATFORMS="${{ github.event.inputs.platforms || 'portainer,runtipi,dockge,cosmos,umbrel' }}"
+          
+          # Determine if specific app
+          APP_ARG=""
+          if [ -n "${{ github.event.inputs.app_name }}" ]; then
+            APP_ARG="-a ${{ github.event.inputs.app_name }}"
+          fi
+          
+          # Determine if dry run
+          DRY_RUN_ARG=""
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            DRY_RUN_ARG="--dry-run"
+          fi
+          
+          echo "🔄 Converting apps for platforms: $PLATFORMS"
+          bash convert-apps.sh -p "$PLATFORMS" $APP_ARG $DRY_RUN_ARG -v
+          
+          echo "✅ Conversion complete"
+      
+      - name: 📤 Sync apps to platform repositories
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          cd big-bear-casaos
+          
+          # Determine platforms to sync
+          PLATFORMS="${{ github.event.inputs.platforms || 'portainer,runtipi,dockge,cosmos,umbrel' }}"
+          
+          # Determine if specific app
+          APP_ARG=""
+          if [ -n "${{ github.event.inputs.app_name }}" ]; then
+            APP_ARG="-a ${{ github.event.inputs.app_name }}"
+          fi
+          
+          # Determine if dry run
+          DRY_RUN_ARG=""
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            DRY_RUN_ARG="--dry-run"
+          fi
+          
+          echo "📤 Syncing apps to platforms: $PLATFORMS"
+          bash sync-apps.sh -p "$PLATFORMS" $APP_ARG --force $DRY_RUN_ARG -v
+          
+          echo "✅ Sync complete"
+      
+      - name: 🔀 Create Pull Requests
+        if: github.event.inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd big-bear-casaos
+          
+          # Determine platforms to create PRs for
+          PLATFORMS="${{ github.event.inputs.platforms || 'portainer,runtipi,dockge,cosmos,umbrel' }}"
+          
+          # Determine if specific app
+          APP_ARG=""
+          if [ -n "${{ github.event.inputs.app_name }}" ]; then
+            APP_ARG="-a ${{ github.event.inputs.app_name }}"
+          fi
+          
+          # Determine draft and auto-merge options
+          DRAFT_ARG=""
+          if [ "${{ github.event.inputs.create_draft }}" == "true" ]; then
+            DRAFT_ARG="--draft"
+          fi
+          
+          AUTO_MERGE_ARG=""
+          if [ "${{ github.event.inputs.auto_merge }}" == "true" ]; then
+            AUTO_MERGE_ARG="--auto-merge"
+          fi
+          
+          echo "🔀 Creating pull requests for platforms: $PLATFORMS"
+          bash create-prs.sh -p "$PLATFORMS" $APP_ARG $DRAFT_ARG $AUTO_MERGE_ARG --skip-summary -v
+          
+          echo "✅ Pull requests created"
+      
+      - name: 📊 Generate summary
+        if: always()
+        run: |
+          cd big-bear-casaos
+          
+          echo "## 📊 Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -n "${{ github.event.inputs.app_name }}" ]; then
+            echo "**App:** ${{ github.event.inputs.app_name }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Apps:** All apps" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "**Platforms:** ${{ github.event.inputs.platforms || 'portainer,runtipi,dockge,cosmos,umbrel' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Dry Run:** ${{ github.event.inputs.dry_run || 'false' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Draft PRs:** ${{ github.event.inputs.create_draft || 'false' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Auto Merge:** ${{ github.event.inputs.auto_merge || 'false' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Check if converted directory exists and count apps
+          if [ -d "converted" ]; then
+            echo "### 🔄 Converted Apps" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            for platform_dir in converted/*/; do
+              if [ -d "$platform_dir" ]; then
+                platform=$(basename "$platform_dir")
+                app_count=$(find "$platform_dir" -mindepth 1 -maxdepth 1 -type d | wc -l)
+                echo "- **$platform**: $app_count apps" >> $GITHUB_STEP_SUMMARY
+              fi
+            done
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Workflow completed at $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> $GITHUB_STEP_SUMMARY
+      
+      - name: 🧹 Cleanup on failure
+        if: failure()
+        run: |
+          echo "❌ Workflow failed. Check logs for details."
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## ❌ Workflow Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Please check the workflow logs for detailed error information." >> $GITHUB_STEP_SUMMARY
