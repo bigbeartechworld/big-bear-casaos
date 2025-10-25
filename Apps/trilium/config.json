@@ -1,7 +1,7 @@
 {
   "id": "trilium",
-  "version": "0.63.7",
-  "image": "zadam/trilium",
+  "version": "v0.99.3",
+  "image": "triliumnext/trilium",
   "youtube": "https://youtu.be/h5ISPmUuBHs",
   "docs_link": "",
   "big_bear_cosmos_youtube": ""
