@@ -57,6 +57,7 @@ OPTIONS:
     -a, --app NAME          Sync specific app only
     --dry-run              Show what would be synced without actually syncing
     --force                Overwrite existing apps without confirmation
+    --replace-all          Delete all existing apps before syncing (complete replacement)
     --clean                Remove apps in destination that don't exist in source
     -v, --verbose          Verbose output
 
@@ -65,6 +66,7 @@ EXAMPLES:
     $0 -p runtipi,umbrel                 # Sync to Runtipi and Umbrel only
     $0 -a jellyseerr                     # Sync only jellyseerr app
     $0 --dry-run                         # Preview sync without changes
+    $0 --replace-all                     # Delete all existing apps and sync fresh
     $0 --clean                           # Remove orphaned apps in destinations
 
 REPOSITORY PATHS:
@@ -94,6 +96,7 @@ EOF
 parse_args() {
     DRY_RUN=false
     FORCE=false
+    REPLACE_ALL=false
     CLEAN=false
     VERBOSE=false
     SPECIFIC_APP=""
@@ -129,6 +132,11 @@ parse_args() {
                 FORCE=true
                 shift
                 ;;
+            --replace-all)
+                REPLACE_ALL=true
+                FORCE=true
+                shift
+                ;;
             --clean)
                 CLEAN=true
                 shift
@@ -160,6 +168,10 @@ validate_directories() {
     
     if [[ "$DRY_RUN" == "true" ]]; then
         print_warning "DRY RUN MODE - No changes will be made"
+    fi
+    
+    if [[ "$REPLACE_ALL" == "true" ]]; then
+        print_warning "REPLACE ALL MODE - All existing apps will be deleted before syncing"
     fi
     
     echo ""
@@ -221,8 +233,8 @@ get_dest_app_name() {
     
     case "$platform" in
         umbrel)
-            # Umbrel apps have big-bear-umbrel- prefix
-            echo "big-bear-umbrel-$app_name"
+            # Umbrel conversion already adds big-bear-umbrel- prefix, so just use app_name as-is
+            echo "$app_name"
             ;;
         *)
             echo "$app_name"
@@ -244,6 +256,30 @@ get_source_app_name() {
             echo "$dest_name"
             ;;
     esac
+}
+
+# Replace all apps in a platform (delete all existing apps)
+replace_all_apps() {
+    local platform="$1"
+    local dest_dir
+    dest_dir=$(get_platform_dest_dir "$platform")
+    
+    if [[ ! -d "$dest_dir" ]]; then
+        print_warning "Destination directory does not exist: $dest_dir"
+        return
+    fi
+    
+    if [[ "$DRY_RUN" == "true" ]]; then
+        print_info "[DRY RUN] Would delete all existing apps in $platform"
+        return
+    fi
+    
+    print_warning "Deleting all existing apps in $platform..."
+    
+    # Delete all app directories, but preserve __tests__ and schema files
+    find "$dest_dir" -mindepth 1 -maxdepth 1 -type d ! -name '__tests__' -exec rm -rf {} + 2>/dev/null || true
+    
+    print_success "Cleared all existing apps from $platform"
 }
 
 # Sync a single app to a platform
@@ -308,6 +344,11 @@ sync_platform() {
     # Check if platform repository exists
     if ! check_platform_repo "$platform"; then
         return
+    fi
+    
+    # Replace all existing apps if --replace-all flag is set
+    if [[ "$REPLACE_ALL" == "true" ]]; then
+        replace_all_apps "$platform"
     fi
     
     # Get list of apps in converted directory

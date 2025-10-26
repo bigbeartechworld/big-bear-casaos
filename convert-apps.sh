@@ -1210,14 +1210,52 @@ convert_to_umbrel() {
     local main_service
     main_service=$(yq eval '.services | keys | .[0]' "$app_dir/docker-compose.yml" 2>/dev/null || echo "app")
     
-    # Extract first port from docker-compose.yml
+    # Extract port from docker-compose.yml with improved parsing
     local port
-    port=$(yq eval '.services[].ports[0]' "$app_dir/docker-compose.yml" 2>/dev/null | cut -d':' -f1 | head -1 || echo "$METADATA_PORT_MAP")
+    local port_spec
+    port_spec=$(yq eval '.services[].ports[0]' "$app_dir/docker-compose.yml" 2>/dev/null | head -1)
     
-    # If port is empty, use METADATA_PORT_MAP
-    if [[ -z "$port" || "$port" == "null" ]]; then
-        port="$METADATA_PORT_MAP"
+    if [[ -n "$port_spec" && "$port_spec" != "null" ]]; then
+        # Extract the container port (right side of the colon for host:container format)
+        if [[ "$port_spec" =~ ^[0-9]+:[0-9]+$ ]]; then
+            # Format: "host:container" - use host port
+            port=$(echo "$port_spec" | cut -d':' -f1)
+        elif [[ "$port_spec" =~ ^[0-9]+$ ]]; then
+            # Format: just the port number
+            port="$port_spec"
+        else
+            # Complex format - try to extract first number
+            port=$(echo "$port_spec" | grep -oE '[0-9]+' | head -1)
+        fi
     fi
+    
+    # If port is still empty, null, or less than 1000, use METADATA_PORT_MAP
+    if [[ -z "$port" || "$port" == "null" || ! "$port" =~ ^[0-9]+$ || "$port" -lt 1000 ]]; then
+        port="${METADATA_PORT_MAP:-8080}"
+        
+        # Map common low ports to higher ports
+        case "$port" in
+            80) port=8080 ;;
+            81) port=8081 ;;
+            443) port=8443 ;;
+            943) port=9943 ;;
+            22) port=2222 ;;
+            21) port=2121 ;;
+            25) port=2525 ;;
+        esac
+    fi
+    
+    # Check for port conflicts using the port tracker (similar to Runtipi)
+    local port_track_file="$OUTPUT_DIR/.port_tracker"
+    if [[ -f "$port_track_file" ]]; then
+        while grep -q "^$port$" "$port_track_file"; do
+            print_warning "Port $port already used, incrementing to avoid conflict"
+            port=$((port + 1))
+        done
+    fi
+    
+    # Track this port
+    echo "$port" >> "$port_track_file"
     
     # Extract dependencies (if any)
     local dependencies
@@ -1227,6 +1265,27 @@ convert_to_umbrel() {
     local deps_yaml=""
     if [[ "$dependencies" != "[]" ]]; then
         deps_yaml=$(echo "$dependencies" | jq -r '.[] | "  - " + .')
+    fi
+    
+    # Get website URL with fallback
+    local website_url
+    website_url=$(yq eval '.x-casaos.project_url // ""' "$app_dir/docker-compose.yml" 2>/dev/null || echo "")
+    if [[ -z "$website_url" || "$website_url" == "null" ]]; then
+        website_url="https://github.com/bigbeartechworld/big-bear-casaos"
+    fi
+    
+    # Get icon URL with fallback
+    local icon_url
+    icon_url="$METADATA_ICON"
+    if [[ -z "$icon_url" || "$icon_url" == "null" ]]; then
+        icon_url="https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@master/Apps/${app_name}/icon.png"
+    fi
+    
+    # Get developer with fallback
+    local developer
+    developer="$METADATA_DEVELOPER"
+    if [[ -z "$developer" || "$developer" == "null" ]]; then
+        developer="BigBearTechWorld"
     fi
     
     # Create umbrel-app.yml manifest
@@ -1241,8 +1300,8 @@ description: >-
   $METADATA_DESCRIPTION
 releaseNotes: >-
   This version includes various improvements and bug fixes.
-developer: $METADATA_DEVELOPER
-website: $(yq eval '.x-casaos.project_url // ""' "$app_dir/docker-compose.yml" 2>/dev/null || echo "")
+developer: $developer
+website: $website_url
 dependencies:$(if [[ -n "$deps_yaml" ]]; then echo "
 $deps_yaml"; else echo " []"; fi)
 repo: https://github.com/bigbeartechworld/big-bear-casaos
@@ -1255,6 +1314,7 @@ gallery:
 path: ""
 defaultUsername: ""
 defaultPassword: ""
+icon: $icon_url
 submitter: BigBearTechWorld
 submission: https://github.com/bigbeartechworld/big-bear-casaos
 EOF
