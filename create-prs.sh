@@ -3,8 +3,7 @@
 # Big Bear CasaOS - Automated Pull Request Creator
 # Creates pull requests in platform repositories after syncing
 
-# Note: We don't use 'set -e' here because we want to handle errors gracefully
-# and continue processing other platforms even if one fails
+set -e
 
 # Color codes for output
 RED='\033[0;31m'
@@ -170,6 +169,12 @@ fi
 
 # Check if GitHub CLI is installed
 check_github_cli() {
+    # Skip check in dry-run mode
+    if [[ "$DRY_RUN" == "true" ]]; then
+        print_info "Dry run mode - skipping GitHub CLI check"
+        return 0
+    fi
+    
     if ! command -v gh &> /dev/null; then
         print_error "GitHub CLI (gh) is not installed"
         print_info "Install it from: https://cli.github.com/"
@@ -227,6 +232,12 @@ get_changed_files() {
     
     # Check for staged and unstaged changes
     local changed_files=$(git status --porcelain)
+    
+    if [[ "$VERBOSE" == "true" ]]; then
+        print_info "Checking for changes in: $repo_path"
+        print_info "Git status output:"
+        git status --porcelain | head -20
+    fi
     
     if [[ -z "$changed_files" ]]; then
         echo ""
@@ -362,9 +373,16 @@ create_branch_and_commit() {
     # Check if there are uncommitted changes
     if ! git diff-index --quiet HEAD 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard)" ]; then
         print_step "Stashing uncommitted changes..."
+        if [[ "$VERBOSE" == "true" ]]; then
+            print_info "Changes to be stashed:"
+            git status --porcelain | head -10
+        fi
         git stash push -u -m "Temporary stash for PR creation" || true
         local stashed=true
     else
+        if [[ "$VERBOSE" == "true" ]]; then
+            print_info "No uncommitted changes to stash"
+        fi
         local stashed=false
     fi
     
@@ -409,13 +427,31 @@ create_branch_and_commit() {
     # Apply stashed changes if we stashed them
     if [ "$stashed" = true ]; then
         print_step "Applying stashed changes..."
+        if [[ "$VERBOSE" == "true" ]]; then
+            print_info "Attempting to apply stash..."
+        fi
         if ! git stash pop 2>/dev/null; then
             print_error "Could not apply stashed changes - conflicts detected"
             print_warning "This usually means the local files conflict with remote changes"
             print_info "Dropping conflicting stash and continuing with fresh pull..."
             git stash drop 2>/dev/null || true
             # The fresh pull should have the latest, so we continue
+        else
+            if [[ "$VERBOSE" == "true" ]]; then
+                print_success "Stash applied successfully"
+                print_info "Changes after applying stash:"
+                git status --porcelain | head -10
+            fi
         fi
+    fi
+    
+    # Check if there are actually any changes to commit after pull and stash operations
+    # git diff-index returns 0 (success) if there are NO changes, 1 if there ARE changes
+    # git ls-files --others returns a list of untracked files
+    if git diff-index --quiet HEAD 2>/dev/null && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+        print_warning "No changes to commit after syncing with remote"
+        print_info "The changes may have already been committed to the remote branch"
+        return 0
     fi
     
     # Delete branch if it exists
@@ -434,6 +470,16 @@ create_branch_and_commit() {
     # Stage all changes
     print_step "Staging changes..."
     git add -A
+    
+    # Check again if there are changes to commit after staging
+    if git diff --cached --quiet; then
+        print_warning "No changes to commit after staging"
+        print_info "All files are already up to date in the base branch"
+        # Clean up: delete branch and go back to base branch
+        git checkout "$BASE_BRANCH" 2>/dev/null || true
+        git branch -D "$branch_name" 2>/dev/null || true
+        return 0
+    fi
     
     # Commit changes
     print_step "Committing changes..."
@@ -657,9 +703,18 @@ process_platform() {
     fi
     
     # Create branch and commit
+    local commit_result
     if ! create_branch_and_commit "$repo_path" "$platform" "$branch_name" "$commit_message"; then
-        print_error "Failed to create branch and commit for $platform"
-        return 1
+        commit_result=$?
+        # Check if we're still on base branch (meaning no changes were found)
+        local current_branch=$(cd "$repo_path" && git rev-parse --abbrev-ref HEAD)
+        if [[ "$current_branch" == "$BASE_BRANCH" ]]; then
+            print_warning "No changes to commit for $platform - already up to date"
+            return 0
+        else
+            print_error "Failed to create branch and commit for $platform"
+            return 1
+        fi
     fi
     
     # Push branch
@@ -713,12 +768,12 @@ main() {
     # Process each platform
     for platform in "${PLATFORMS[@]}"; do
         if process_platform "$platform"; then
-            ((successful_prs++))
+            successful_prs=$((successful_prs + 1))
         else
             if check_repository "$platform"; then
-                ((failed_prs++))
+                failed_prs=$((failed_prs + 1))
             else
-                ((skipped++))
+                skipped=$((skipped + 1))
             fi
         fi
     done
@@ -734,14 +789,14 @@ main() {
         print_warning "Skipped: $skipped"
     fi
     
-    # Consider it a success if there are no failures, even if no PRs were created
-    # (e.g., when there are no changes to sync)
+    # In dry-run mode, always exit successfully
+    if [[ "$DRY_RUN" == "true" ]]; then
+        print_success "Dry run completed successfully!"
+        exit 0
+    fi
+    
     if [[ $failed_prs -eq 0 ]]; then
-        if [[ $successful_prs -gt 0 ]]; then
-            print_success "All PRs created successfully!"
-        else
-            print_info "No PRs created (no changes detected)"
-        fi
+        print_success "All PRs created successfully!"
         exit 0
     else
         print_error "Some PRs failed to create"
@@ -750,4 +805,4 @@ main() {
 }
 
 # Run main function
-main
+main "$@"
