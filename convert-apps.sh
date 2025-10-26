@@ -191,6 +191,7 @@ clean_compose() {
     local base_path="$3"
     local add_volumes="${4:-false}"  # Optional parameter to convert to named volumes
     local app_prefix="${5:-}"  # Optional app name prefix for volume names
+    local add_runtipi_label="${6:-false}"  # Optional parameter to add runtipi.managed label
     
     # First remove x-casaos sections
     local temp_file="${output_file}.tmp"
@@ -288,6 +289,18 @@ clean_compose() {
         # Original behavior: just replace paths with bind mounts
         sed "s|/DATA/AppData/\$AppID|$base_path|g" "$temp_file" > "${temp_file}.2"
         mv "${temp_file}.2" "$temp_file"
+    fi
+    
+    # Add runtipi.managed label if requested
+    if [[ "$add_runtipi_label" == "true" ]]; then
+        # Get all services and add the runtipi.managed label
+        local services
+        services=$(yq eval '.services | keys | .[]' "$temp_file" 2>/dev/null)
+        
+        while IFS= read -r service; do
+            [[ -z "$service" ]] && continue
+            yq eval ".services[\"$service\"].labels.\"runtipi.managed\" = \"true\"" -i "$temp_file"
+        done <<< "$services"
     fi
     
     mv "$temp_file" "$output_file"
@@ -484,8 +497,9 @@ convert_to_runtipi() {
     # Extract metadata for Runtipi
     eval "$(extract_metadata "$app_dir" "$app_name")"
     
-    # Clean compose file for Runtipi (add standard docker-compose.yml)
-    clean_compose "$app_dir/docker-compose.yml" "$output_dir/docker-compose.yml" "./data"
+    # Clean compose file for Runtipi (add standard docker-compose.yml with runtipi.managed label)
+    # Parameters: input, output, base_path, add_volumes, app_prefix, add_runtipi_label
+    clean_compose "$app_dir/docker-compose.yml" "$output_dir/docker-compose.yml" "./data" "false" "" "true"
     
     # Extract services and convert to Runtipi JSON format
     local compose_file="$app_dir/docker-compose.yml"
