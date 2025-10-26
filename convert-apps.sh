@@ -579,13 +579,17 @@ get_existing_runtipi_port() {
 # Initialize port tracker with all existing ports from destination repositories
 init_port_tracker() {
     local port_track_file="$OUTPUT_DIR/.port_tracker"
+    local port_map_file="$OUTPUT_DIR/.port_map"
     
-    # Clear any existing port tracker
+    # Clear any existing port tracker files
     > "$port_track_file"
+    > "$port_map_file"
     
     # For each platform, scan existing apps and load their ports
     for platform in "${PLATFORMS[@]}"; do
-        local workspace_dir="$(dirname "$OUTPUT_DIR")"
+        # Get the workspace directory (parent of the script directory)
+        local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+        local workspace_dir="$(dirname "$script_dir")"
         local platform_apps_dir
         
         case "$platform" in
@@ -608,15 +612,25 @@ init_port_tracker() {
             print_info "Loading existing ports from $platform..."
             local port_count=0
             
+            # Temporarily disable errexit for port loading (errors are non-fatal)
+            set +e
+            
             if [[ "$platform" == "umbrel" ]]; then
                 # Find all umbrel-app.yml files and extract ports
                 while IFS= read -r app_config; do
                     if [[ -f "$app_config" ]]; then
-                        local port
-                        port=$(yq eval '.port // empty' "$app_config" 2>/dev/null)
+                        local port app_id
+                        port=$(yq eval '.port' "$app_config" 2>/dev/null)
+                        app_id=$(yq eval '.id' "$app_config" 2>/dev/null)
                         
                         if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
                             echo "$port" >> "$port_track_file"
+                            # Store app-to-port mapping (format: platform:app_name:port)
+                            if [[ -n "$app_id" && "$app_id" != "null" ]]; then
+                                # Extract base app name (remove big-bear-umbrel- prefix)
+                                local base_name="${app_id#big-bear-umbrel-}"
+                                echo "umbrel:$base_name:$port" >> "$port_map_file"
+                            fi
                             ((port_count++)) || true
                         fi
                     fi
@@ -625,16 +639,24 @@ init_port_tracker() {
                 # Find all config.json files and extract ports (for runtipi)
                 while IFS= read -r config_file; do
                     if [[ -f "$config_file" ]]; then
-                        local port
+                        local port app_id
                         port=$(jq -r '.port // empty' "$config_file" 2>/dev/null)
+                        app_id=$(jq -r '.id // empty' "$config_file" 2>/dev/null)
                         
                         if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
                             echo "$port" >> "$port_track_file"
+                            # Store app-to-port mapping
+                            if [[ -n "$app_id" && "$app_id" != "null" ]]; then
+                                echo "runtipi:$app_id:$port" >> "$port_map_file"
+                            fi
                             ((port_count++)) || true
                         fi
                     fi
                 done < <(find "$platform_apps_dir" -name "config.json" -type f 2>/dev/null)
             fi
+            
+            # Re-enable errexit
+            set -e
             
             if [[ $port_count -gt 0 ]]; then
                 print_success "Loaded $port_count existing ports from $platform"
@@ -821,12 +843,23 @@ EOF
     fi
     
     # Ensure port is valid for Runtipi (must be > 999)
-    # First, try to preserve existing port from destination repository
-    local runtipi_port
-    if runtipi_port=$(get_existing_runtipi_port "$app_name"); then
+    # First, check if this app already has a port assignment from the port map
+    local runtipi_port=""
+    local port_map_file="$OUTPUT_DIR/.port_map"
+    if [[ -f "$port_map_file" ]]; then
+        runtipi_port=$(grep "^runtipi:${app_name}:" "$port_map_file" 2>/dev/null | cut -d':' -f3)
+        if [[ -n "$runtipi_port" ]]; then
+            print_info "Preserving existing port $runtipi_port for $app_name"
+        fi
+    fi
+    
+    # If no port from map, try the old method (direct repository check)
+    if [[ -z "$runtipi_port" ]] && runtipi_port=$(get_existing_runtipi_port "$app_name"); then
         print_info "Preserving existing port $runtipi_port for $app_name"
-    else
-        # No existing port, assign a new one
+    fi
+    
+    # If still no port, assign a new one
+    if [[ -z "$runtipi_port" ]]; then
         # Map common low ports to their high port equivalents
         runtipi_port="${METADATA_PORT_MAP:-8080}"
         if [[ "$runtipi_port" -le 999 ]]; then
@@ -844,8 +877,7 @@ EOF
         fi
         
         # Check for port conflicts and auto-increment if needed
-        # Create a port tracking file if converting multiple apps
-        local port_track_file="$OUTPUT_DIR/runtipi/.port_tracker"
+        local port_track_file="$OUTPUT_DIR/.port_tracker"
         if [[ -f "$port_track_file" ]]; then
             # Check if this port is already used
             while grep -q "^${runtipi_port}$" "$port_track_file" 2>/dev/null; do
@@ -854,9 +886,9 @@ EOF
             done
         fi
         
-        # Track this port for future conversions
-        mkdir -p "$OUTPUT_DIR/runtipi"
+        # Track this port and save the mapping for future conversions
         echo "$runtipi_port" >> "$port_track_file"
+        echo "runtipi:$app_name:$runtipi_port" >> "$port_map_file"
     fi
     
     # Escape special characters in JSON strings
@@ -1263,17 +1295,32 @@ convert_to_umbrel() {
         esac
     fi
     
-    # Check for port conflicts using the port tracker (similar to Runtipi)
-    local port_track_file="$OUTPUT_DIR/.port_tracker"
-    if [[ -f "$port_track_file" ]]; then
-        while grep -q "^$port$" "$port_track_file"; do
-            print_warning "Port $port already used, incrementing to avoid conflict"
-            port=$((port + 1))
-        done
+    # Check if this app already has a port assignment in the destination repository
+    local port_map_file="$OUTPUT_DIR/.port_map"
+    local existing_port=""
+    if [[ -f "$port_map_file" ]]; then
+        existing_port=$(grep "^umbrel:${app_name}:" "$port_map_file" 2>/dev/null | cut -d':' -f3)
+        if [[ -n "$existing_port" ]]; then
+            print_info "Preserving existing port $existing_port for $app_name"
+            port="$existing_port"
+        fi
     fi
     
-    # Track this port
-    echo "$port" >> "$port_track_file"
+    # Only check for conflicts if we don't have an existing port assignment
+    if [[ -z "$existing_port" ]]; then
+        # Check for port conflicts using the port tracker
+        local port_track_file="$OUTPUT_DIR/.port_tracker"
+        if [[ -f "$port_track_file" ]]; then
+            while grep -q "^$port$" "$port_track_file"; do
+                print_warning "Port $port already used, incrementing to avoid conflict"
+                port=$((port + 1))
+            done
+        fi
+        
+        # Track this port and save the mapping for future conversions
+        echo "$port" >> "$port_track_file"
+        echo "umbrel:$app_name:$port" >> "$port_map_file"
+    fi
     
     # Extract dependencies (if any)
     local dependencies
