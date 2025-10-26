@@ -1,6 +1,9 @@
 <img src="https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/images/logo.png" width="300" alt="Big Bear CasaOS App Store">
 
-## Big Bear CasaOS App Store
+# Big Bear CasaOS App Store
+
+[![Auto Sync Platforms](https://github.com/bigbeartechworld/big-bear-casaos/actions/workflows/auto-sync-platforms.yml/badge.svg)](https://github.com/bigbeartechworld/big-bear-casaos/actions/workflows/auto-sync-platforms.yml)
+[![BigBear CI](https://github.com/bigbeartechworld/big-bear-casaos/actions/workflows/ci.yml/badge.svg)](https://github.com/bigbeartechworld/big-bear-casaos/actions/workflows/ci.yml)
 
 This repository contains the BigBearCasaOS App Store, which comes pre-installed alongside IceWhale's own app store on their hardware and software platforms, including CasaOS and ZimaOS. The app store is independently developed and maintained by BigBearTechWorld and the BigBearCommunity. BigBearCasaOS operates as a completely separate and independent project from IceWhale.
 
@@ -86,6 +89,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 ## Apps
 
 <!appsList>
+
+## 🤖 Automated Platform Sync
+
+This repository automatically syncs apps to all Big Bear platform repositories using GitHub Actions:
+
+- **Daily automated sync** at 2 AM UTC
+- **Manual trigger** for on-demand updates
+- **Automatic PR creation** in platform repositories
 
 ## Related Projects
 
