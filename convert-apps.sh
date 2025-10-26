@@ -146,6 +146,12 @@ init_directories() {
     mkdir -p "$OUTPUT_DIR"
     for platform in "${PLATFORMS[@]}"; do
         mkdir -p "$OUTPUT_DIR/$platform"
+        
+        # Initialize port tracker for Runtipi to ensure unique ports
+        if [[ "$platform" == "runtipi" ]]; then
+            # Clear the port tracker file for fresh conversion
+            rm -f "$OUTPUT_DIR/runtipi/.port_tracker"
+        fi
     done
     print_success "Created output directories in $OUTPUT_DIR"
 }
@@ -198,6 +204,28 @@ extract_metadata() {
     printf "METADATA_PORT_MAP=%q\n" "$port_map"
     printf "METADATA_YOUTUBE=%q\n" "$youtube"
     printf "METADATA_DOCS_LINK=%q\n" "$docs_link"
+}
+
+# Create a placeholder logo.jpg image
+create_placeholder_logo() {
+    local output_file="$1"
+    
+    # Create a minimal 512x512 gray placeholder image using ImageMagick
+    if command -v convert &> /dev/null; then
+        convert -size 512x512 xc:#cccccc -gravity center -pointsize 48 -fill white -annotate +0+0 "No Icon" "$output_file" 2>/dev/null
+        
+        # Verify the placeholder was created
+        if [[ ! -f "$output_file" || ! -s "$output_file" ]]; then
+            # If ImageMagick failed, create an even simpler placeholder
+            convert -size 512x512 xc:#cccccc "$output_file" 2>/dev/null || {
+                # Last resort: create an empty file (better than nothing)
+                touch "$output_file"
+            }
+        fi
+    else
+        # If no ImageMagick, just create an empty file
+        touch "$output_file"
+    fi
 }
 
 # Clean docker-compose.yml by removing CasaOS-specific extensions
@@ -563,42 +591,74 @@ convert_to_runtipi() {
     # 2. Set container_name for the main service (should equal app_name)
     yq eval ".services[\"$app_name\"].container_name = \"$app_name\"" -i "$runtipi_compose"
     
-    # 3. Add tipi_main_network to all services
+    # Check if using network_mode: host
+    local network_mode
+    network_mode=$(yq eval ".services[\"$app_name\"].network_mode // \"\"" "$runtipi_compose" 2>/dev/null)
+    local uses_host_network=false
+    if [[ "$network_mode" == "host" ]]; then
+        uses_host_network=true
+        print_info "App $app_name uses network_mode: host, removing port mappings from compose file"
+        # Remove ports section when using host networking (not needed with host mode)
+        yq eval "del(.services[\"$app_name\"].ports)" -i "$runtipi_compose"
+    fi
+    
+    # 3. Add tipi_main_network to all services (unless using host networking or in exceptions list)
     local services
     services=$(yq eval '.services | keys | .[]' "$runtipi_compose" 2>/dev/null)
     
-    while IFS= read -r service; do
-        [[ -z "$service" ]] && continue
-        
-        # Check if the service already has networks defined
-        local has_networks
-        has_networks=$(yq eval ".services[\"$service\"].networks" "$runtipi_compose" 2>/dev/null)
-        
-        if [[ "$has_networks" == "null" ]]; then
-            # No networks defined, add tipi_main_network as an array
-            yq eval ".services[\"$service\"].networks = [\"tipi_main_network\"]" -i "$runtipi_compose"
-        else
-            # Networks exist, append tipi_main_network if not already present
-            local network_type
-            network_type=$(yq eval ".services[\"$service\"].networks | type" "$runtipi_compose" 2>/dev/null)
-            
-            if [[ "$network_type" == "!!seq" ]]; then
-                # Networks is an array, append if not present
-                local has_tipi_network
-                has_tipi_network=$(yq eval ".services[\"$service\"].networks[] | select(. == \"tipi_main_network\")" "$runtipi_compose" 2>/dev/null)
-                
-                if [[ -z "$has_tipi_network" ]]; then
-                    yq eval ".services[\"$service\"].networks += [\"tipi_main_network\"]" -i "$runtipi_compose"
-                fi
-            else
-                # Networks is a map/object, convert to array with tipi_main_network
-                yq eval ".services[\"$service\"].networks = [\"tipi_main_network\"]" -i "$runtipi_compose"
-            fi
-        fi
-    done <<< "$services"
+    # Network exceptions list - apps that should not get tipi_main_network
+    local network_exceptions=("matter-server" "mdns-repeater" "pihole" "tailscale" "homeassistant" "plex" "zerotier" "gladys" "scrypted" "homebridge" "cloudflared" "beszel-agent" "watchyourlan")
+    local skip_network=false
     
-    # 4. Add tipi_main_network to the top-level networks section
-    yq eval '.networks.tipi_main_network.external = true' -i "$runtipi_compose"
+    # Check if app is in exception list
+    for exception in "${network_exceptions[@]}"; do
+        if [[ "$app_name" == "$exception" ]]; then
+            skip_network=true
+            print_info "App $app_name is in network exceptions list, skipping tipi_main_network"
+            break
+        fi
+    done
+    
+    # Also skip network config if using host networking
+    if [[ "$uses_host_network" == "true" ]]; then
+        skip_network=true
+        print_info "App $app_name uses host networking, skipping tipi_main_network"
+    fi
+    
+    if [[ "$skip_network" == "false" ]]; then
+        while IFS= read -r service; do
+            [[ -z "$service" ]] && continue
+            
+            # Check if the service already has networks defined
+            local has_networks
+            has_networks=$(yq eval ".services[\"$service\"].networks" "$runtipi_compose" 2>/dev/null)
+            
+            if [[ "$has_networks" == "null" ]]; then
+                # No networks defined, add tipi_main_network as an array
+                yq eval ".services[\"$service\"].networks = [\"tipi_main_network\"]" -i "$runtipi_compose"
+            else
+                # Networks exist, append tipi_main_network if not already present
+                local network_type
+                network_type=$(yq eval ".services[\"$service\"].networks | type" "$runtipi_compose" 2>/dev/null)
+                
+                if [[ "$network_type" == "!!seq" ]]; then
+                    # Networks is an array, append if not present
+                    local has_tipi_network
+                    has_tipi_network=$(yq eval ".services[\"$service\"].networks[] | select(. == \"tipi_main_network\")" "$runtipi_compose" 2>/dev/null)
+                    
+                    if [[ -z "$has_tipi_network" ]]; then
+                        yq eval ".services[\"$service\"].networks += [\"tipi_main_network\"]" -i "$runtipi_compose"
+                    fi
+                else
+                    # Networks is a map/object, convert to array with tipi_main_network
+                    yq eval ".services[\"$service\"].networks = [\"tipi_main_network\"]" -i "$runtipi_compose"
+                fi
+            fi
+        done <<< "$services"
+        
+        # 4. Add tipi_main_network to the top-level networks section
+        yq eval '.networks.tipi_main_network.external = true' -i "$runtipi_compose"
+    fi
     
     # Extract services and convert to Runtipi JSON format
     local compose_file="$app_dir/docker-compose.yml"
@@ -645,19 +705,63 @@ EOF
         categories_json="[\"utilities\"]"
     fi
     
+    # Ensure port is valid for Runtipi (must be > 999)
+    # Map common low ports to their high port equivalents
+    local runtipi_port="${METADATA_PORT_MAP:-8080}"
+    if [[ "$runtipi_port" -le 999 ]]; then
+        case "$runtipi_port" in
+            80) runtipi_port=8080 ;;
+            81) runtipi_port=8081 ;;
+            443) runtipi_port=8443 ;;
+            943) runtipi_port=9443 ;;
+            *) 
+                # For other low ports, add 8000 to make them 4+ digits
+                runtipi_port=$((runtipi_port + 8000))
+                ;;
+        esac
+        print_warning "Port $METADATA_PORT_MAP is below 1000 for $app_name, mapped to $runtipi_port for Runtipi"
+    fi
+    
+    # Check for port conflicts and auto-increment if needed
+    # Create a port tracking file if converting multiple apps
+    local port_track_file="$OUTPUT_DIR/runtipi/.port_tracker"
+    if [[ -f "$port_track_file" ]]; then
+        # Check if this port is already used
+        while grep -q "^${runtipi_port}$" "$port_track_file" 2>/dev/null; do
+            print_warning "Port $runtipi_port already used, incrementing to avoid conflict"
+            runtipi_port=$((runtipi_port + 1))
+        done
+    fi
+    
+    # Track this port for future conversions
+    mkdir -p "$OUTPUT_DIR/runtipi"
+    echo "$runtipi_port" >> "$port_track_file"
+    
+    # Escape special characters in JSON strings
+    local escaped_description="${METADATA_DESCRIPTION//\\/\\\\}"  # Escape backslashes first
+    escaped_description="${escaped_description//\"/\\\"}"         # Escape quotes
+    escaped_description="${escaped_description//$'\n'/\\n}"       # Escape newlines
+    escaped_description="${escaped_description//$'\r'/}"          # Remove carriage returns
+    escaped_description="${escaped_description//$'\t'/ }"         # Replace tabs with spaces
+    
+    local escaped_tagline="${METADATA_TAGLINE//\\/\\\\}"
+    escaped_tagline="${escaped_tagline//\"/\\\"}"
+    escaped_tagline="${escaped_tagline//$'\n'/\\n}"
+    escaped_tagline="${escaped_tagline//$'\r'/}"
+    
     cat > "$output_dir/config.json" << EOF
 {
   "name": "$METADATA_TITLE",
   "available": true,
-  "port": ${METADATA_PORT_MAP:-8080},
+  "port": ${runtipi_port},
   "exposable": true,
   "dynamic_config": true,
   "id": "$METADATA_ID",
-  "description": "$METADATA_DESCRIPTION",
+  "description": "$escaped_description",
   "tipi_version": 1,
   "version": "$METADATA_VERSION",
   "categories": $categories_json,
-  "short_desc": "$METADATA_TAGLINE",
+  "short_desc": "$escaped_tagline",
   "author": "$METADATA_DEVELOPER",
   "source": "$source_url",
   "website": "$website_url",
@@ -702,19 +806,19 @@ EOF
             
             # Verify the file was created
             if [[ ! -f "$output_dir/metadata/logo.jpg" ]]; then
-                print_warning "Failed to create logo.jpg for $app_name"
-                # Create a placeholder if download/conversion failed
-                touch "$output_dir/metadata/logo.jpg"
+                print_warning "Failed to create logo.jpg for $app_name, creating placeholder"
+                # Create a minimal placeholder JPEG if download/conversion failed
+                create_placeholder_logo "$output_dir/metadata/logo.jpg"
             fi
         else
             print_warning "Failed to download icon for $app_name from $METADATA_ICON"
-            # Create a placeholder file
-            touch "$output_dir/metadata/logo.jpg"
+            # Create a placeholder image
+            create_placeholder_logo "$output_dir/metadata/logo.jpg"
         fi
     else
         print_warning "No icon URL found for $app_name, creating placeholder"
-        # Create a placeholder file
-        touch "$output_dir/metadata/logo.jpg"
+        # Create a placeholder image
+        create_placeholder_logo "$output_dir/metadata/logo.jpg"
     fi
     
     print_success "Converted $app_name for Runtipi"
