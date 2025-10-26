@@ -513,19 +513,46 @@ convert_to_runtipi() {
 EOF
     
     # Create config.json for Runtipi
+    # Generate timestamps in milliseconds (Unix timestamp * 1000)
+    local updated_at=$(($(date +%s) * 1000))
+    local created_at=$updated_at  # Use same timestamp for created_at
+    
+    # Extract source URL and website from docker-compose.yml
+    local source_url
+    source_url=$(yq eval '.x-casaos.project_url // ""' "$compose_file" 2>/dev/null || echo "")
+    
+    local website_url
+    website_url=$(yq eval '.x-casaos.index // ""' "$compose_file" 2>/dev/null || echo "$source_url")
+    
+    # Parse categories - convert single category to array format if needed
+    local categories_json
+    if [[ -n "$METADATA_CATEGORY" ]]; then
+        categories_json="[\"$(echo "$METADATA_CATEGORY" | tr '[:upper:]' '[:lower:]')\"]"
+    else
+        categories_json="[\"utilities\"]"
+    fi
+    
     cat > "$output_dir/config.json" << EOF
 {
   "name": "$METADATA_TITLE",
-  "id": "$METADATA_ID",
   "available": true,
-  "short_desc": "$METADATA_TAGLINE",
-  "author": "$METADATA_DEVELOPER",
   "port": ${METADATA_PORT_MAP:-8080},
-  "categories": ["$METADATA_CATEGORY"],
+  "exposable": true,
+  "dynamic_config": true,
+  "id": "$METADATA_ID",
   "description": "$METADATA_DESCRIPTION",
   "tipi_version": 1,
   "version": "$METADATA_VERSION",
-  "supported_architectures": ["arm64", "amd64"]
+  "categories": $categories_json,
+  "short_desc": "$METADATA_TAGLINE",
+  "author": "$METADATA_DEVELOPER",
+  "source": "$source_url",
+  "website": "$website_url",
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": $created_at,
+  "updated_at": $updated_at,
+  "\$schema": "../app-info-schema.json",
+  "min_tipi_version": "4.5.0"
 }
 EOF
     
