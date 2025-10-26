@@ -531,6 +531,59 @@ convert_to_runtipi() {
     # Parameters: input, output, base_path, add_volumes, app_prefix, add_runtipi_label
     clean_compose "$app_dir/docker-compose.yml" "$output_dir/docker-compose.yml" "./data" "false" "" "true"
     
+    # Post-process the docker-compose.yml for Runtipi-specific requirements
+    local runtipi_compose="$output_dir/docker-compose.yml"
+    
+    # 1. Rename the main service to match the app ID
+    # Get the first service name from the converted compose file
+    local first_service
+    first_service=$(yq eval '.services | keys | .[0]' "$runtipi_compose" 2>/dev/null)
+    
+    if [[ "$first_service" != "$app_name" && -n "$first_service" ]]; then
+        # Rename the service to match app_name
+        yq eval ".services.\"$app_name\" = .services.\"$first_service\" | del(.services.\"$first_service\")" -i "$runtipi_compose"
+    fi
+    
+    # 2. Set container_name for the main service (should equal app_name)
+    yq eval ".services[\"$app_name\"].container_name = \"$app_name\"" -i "$runtipi_compose"
+    
+    # 3. Add tipi_main_network to all services
+    local services
+    services=$(yq eval '.services | keys | .[]' "$runtipi_compose" 2>/dev/null)
+    
+    while IFS= read -r service; do
+        [[ -z "$service" ]] && continue
+        
+        # Check if the service already has networks defined
+        local has_networks
+        has_networks=$(yq eval ".services[\"$service\"].networks" "$runtipi_compose" 2>/dev/null)
+        
+        if [[ "$has_networks" == "null" ]]; then
+            # No networks defined, add tipi_main_network as an array
+            yq eval ".services[\"$service\"].networks = [\"tipi_main_network\"]" -i "$runtipi_compose"
+        else
+            # Networks exist, append tipi_main_network if not already present
+            local network_type
+            network_type=$(yq eval ".services[\"$service\"].networks | type" "$runtipi_compose" 2>/dev/null)
+            
+            if [[ "$network_type" == "!!seq" ]]; then
+                # Networks is an array, append if not present
+                local has_tipi_network
+                has_tipi_network=$(yq eval ".services[\"$service\"].networks[] | select(. == \"tipi_main_network\")" "$runtipi_compose" 2>/dev/null)
+                
+                if [[ -z "$has_tipi_network" ]]; then
+                    yq eval ".services[\"$service\"].networks += [\"tipi_main_network\"]" -i "$runtipi_compose"
+                fi
+            else
+                # Networks is a map/object, convert to array with tipi_main_network
+                yq eval ".services[\"$service\"].networks = [\"tipi_main_network\"]" -i "$runtipi_compose"
+            fi
+        fi
+    done <<< "$services"
+    
+    # 4. Add tipi_main_network to the top-level networks section
+    yq eval '.networks.tipi_main_network.external = true' -i "$runtipi_compose"
+    
     # Extract services and convert to Runtipi JSON format
     local compose_file="$app_dir/docker-compose.yml"
     local services_json="[]"
