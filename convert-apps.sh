@@ -118,6 +118,22 @@ check_dependencies() {
         done
         exit 1
     fi
+    
+    # Check for optional image conversion tools (for Runtipi icon conversion)
+    local has_image_converter=false
+    if command -v convert &> /dev/null; then
+        has_image_converter=true
+    elif command -v ffmpeg &> /dev/null; then
+        has_image_converter=true
+    elif command -v sips &> /dev/null; then
+        has_image_converter=true
+    fi
+    
+    if [[ "$has_image_converter" == "false" ]]; then
+        print_warning "No image conversion tool found (ImageMagick, ffmpeg, or sips)"
+        print_warning "Icon conversion for Runtipi may not work properly"
+        print_info "Install ImageMagick: apt-get install imagemagick  # or brew install imagemagick"
+    fi
 }
 
 # Initialize output directories
@@ -656,6 +672,50 @@ EOF
     # Create metadata directory
     mkdir -p "$output_dir/metadata"
     echo "$METADATA_DESCRIPTION" > "$output_dir/metadata/description.md"
+    
+    # Download and convert icon to logo.jpg
+    if [[ -n "$METADATA_ICON" && "$METADATA_ICON" != "null" ]]; then
+        # Download the icon
+        if curl -fsSL "$METADATA_ICON" -o "$output_dir/metadata/logo_temp" 2>/dev/null; then
+            # Detect file type
+            local file_type
+            file_type=$(file -b --mime-type "$output_dir/metadata/logo_temp" 2>/dev/null || echo "unknown")
+            
+            # Check if conversion is needed (not already JPEG)
+            if [[ "$file_type" == "image/jpeg" ]]; then
+                # Already JPEG, just rename
+                mv "$output_dir/metadata/logo_temp" "$output_dir/metadata/logo.jpg"
+            elif command -v convert &> /dev/null; then
+                # Use ImageMagick convert (available on most Linux systems including Ubuntu GitHub runners)
+                convert "$output_dir/metadata/logo_temp" "$output_dir/metadata/logo.jpg" 2>/dev/null && rm -f "$output_dir/metadata/logo_temp"
+            elif command -v ffmpeg &> /dev/null; then
+                # Use ffmpeg as fallback (often available on Ubuntu)
+                ffmpeg -i "$output_dir/metadata/logo_temp" "$output_dir/metadata/logo.jpg" -y &>/dev/null && rm -f "$output_dir/metadata/logo_temp"
+            elif command -v sips &> /dev/null; then
+                # Use macOS sips as fallback
+                sips -s format jpeg "$output_dir/metadata/logo_temp" --out "$output_dir/metadata/logo.jpg" &>/dev/null && rm -f "$output_dir/metadata/logo_temp"
+            else
+                # No conversion tool available - try renaming anyway
+                print_warning "No image conversion tool found (convert, ffmpeg, or sips) for $app_name"
+                mv "$output_dir/metadata/logo_temp" "$output_dir/metadata/logo.jpg"
+            fi
+            
+            # Verify the file was created
+            if [[ ! -f "$output_dir/metadata/logo.jpg" ]]; then
+                print_warning "Failed to create logo.jpg for $app_name"
+                # Create a placeholder if download/conversion failed
+                touch "$output_dir/metadata/logo.jpg"
+            fi
+        else
+            print_warning "Failed to download icon for $app_name from $METADATA_ICON"
+            # Create a placeholder file
+            touch "$output_dir/metadata/logo.jpg"
+        fi
+    else
+        print_warning "No icon URL found for $app_name, creating placeholder"
+        # Create a placeholder file
+        touch "$output_dir/metadata/logo.jpg"
+    fi
     
     print_success "Converted $app_name for Runtipi"
 }
