@@ -60,7 +60,7 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq rsync
+          sudo apt-get install -y jq rsync imagemagick
           
           # Install yq
           sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
@@ -80,6 +80,7 @@ jobs:
           yq --version
           rsync --version
           gh --version
+          convert --version
       
       - name: 🔧 Configure Git
         run: |
