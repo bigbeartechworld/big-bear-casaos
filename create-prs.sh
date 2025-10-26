@@ -3,7 +3,8 @@
 # Big Bear CasaOS - Automated Pull Request Creator
 # Creates pull requests in platform repositories after syncing
 
-set -e
+# Note: We don't use 'set -e' here because we want to handle errors gracefully
+# and continue processing other platforms even if one fails
 
 # Color codes for output
 RED='\033[0;31m'
@@ -733,8 +734,14 @@ main() {
         print_warning "Skipped: $skipped"
     fi
     
+    # Consider it a success if there are no failures, even if no PRs were created
+    # (e.g., when there are no changes to sync)
     if [[ $failed_prs -eq 0 ]]; then
-        print_success "All PRs created successfully!"
+        if [[ $successful_prs -gt 0 ]]; then
+            print_success "All PRs created successfully!"
+        else
+            print_info "No PRs created (no changes detected)"
+        fi
         exit 0
     else
         print_error "Some PRs failed to create"

@@ -554,7 +554,8 @@ convert_to_dockge() {
     
     # Clean compose file for Dockge (most compatible format)
     # Enable volume declarations for Dockge with app-specific prefix
-    clean_compose "$app_dir/docker-compose.yml" "$output_dir/docker-compose.yml" "./data" "true" "$app_name"
+    # Dockge uses compose.yaml as the standard filename
+    clean_compose "$app_dir/docker-compose.yml" "$output_dir/compose.yaml" "./data" "true" "$app_name"
     
     # Create metadata.json file for Dockge stack
     cat > "$output_dir/metadata.json" << EOF
