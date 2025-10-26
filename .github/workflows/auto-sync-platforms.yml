@@ -88,7 +88,7 @@ jobs:
       
       - name: 📥 Clone platform repositories
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PLATFORM_SYNC_TOKEN }}
         run: |
           cd "$(dirname big-bear-casaos)"
           
@@ -172,8 +172,8 @@ jobs:
       - name: 🔀 Create Pull Requests
         if: github.event.inputs.dry_run != 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PLATFORM_SYNC_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PLATFORM_SYNC_TOKEN }}
         run: |
           cd big-bear-casaos
           
