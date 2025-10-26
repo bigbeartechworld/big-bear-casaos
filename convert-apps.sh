@@ -305,7 +305,8 @@ clean_compose() {
                         # Add app prefix to prevent collisions between different apps
                         # Convert dashes to underscores in the app prefix too
                         if [[ -n "$app_prefix" ]]; then
-                            local safe_prefix=$(echo "$app_prefix" | sed 's|-|_|g')
+                            local safe_prefix
+                            safe_prefix=$(echo "$app_prefix" | sed 's|-|_|g')
                             volume_name="${safe_prefix}_${volume_name}"
                         fi
                         
@@ -586,14 +587,22 @@ init_port_tracker() {
     local port_map_file="$OUTPUT_DIR/.port_map"
     
     # Clear any existing port tracker files
-    > "$port_track_file"
-    > "$port_map_file"
+    : > "$port_track_file"
+    : > "$port_map_file"
     
     # For each platform, scan existing apps and load their ports
     for platform in "${PLATFORMS[@]}"; do
         # Get the workspace directory (parent of the script directory)
-        local script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-        local workspace_dir="$(dirname "$script_dir")"
+        local script_dir
+        script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)" || {
+            print_error "Failed to determine script directory"
+            return 1
+        }
+        local workspace_dir
+        workspace_dir="$(dirname "$script_dir")" || {
+            print_error "Failed to determine workspace directory"
+            return 1
+        }
         local platform_apps_dir
         
         case "$platform" in
