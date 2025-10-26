@@ -299,7 +299,37 @@ clean_compose() {
         
         while IFS= read -r service; do
             [[ -z "$service" ]] && continue
-            yq eval ".services[\"$service\"].labels.\"runtipi.managed\" = \"true\"" -i "$temp_file"
+            
+            # Check if labels exists and what type it is
+            local label_type
+            label_type=$(yq eval ".services[\"$service\"].labels | type" "$temp_file" 2>/dev/null)
+            
+            if [[ "$label_type" == "!!seq" ]]; then
+                # Labels is an array, convert to map first
+                # Get existing labels
+                local existing_labels
+                existing_labels=$(yq eval ".services[\"$service\"].labels[]" "$temp_file" 2>/dev/null | while read -r label; do
+                    # Parse key=value format
+                    if [[ "$label" == *"="* ]]; then
+                        key="${label%%=*}"
+                        value="${label#*=}"
+                        # Remove quotes if present
+                        key="${key//\"/}"
+                        value="${value//\"/}"
+                        echo "  \"$key\": \"$value\""
+                    fi
+                done | paste -sd ',' -)
+                
+                # Replace array with map including the runtipi.managed label
+                if [[ -n "$existing_labels" ]]; then
+                    yq eval ".services[\"$service\"].labels = {$existing_labels, \"runtipi.managed\": \"true\"}" -i "$temp_file"
+                else
+                    yq eval ".services[\"$service\"].labels = {\"runtipi.managed\": \"true\"}" -i "$temp_file"
+                fi
+            else
+                # Labels is already a map or doesn't exist, just add the label
+                yq eval ".services[\"$service\"].labels.\"runtipi.managed\" = \"true\"" -i "$temp_file"
+            fi
         done <<< "$services"
     fi
     
