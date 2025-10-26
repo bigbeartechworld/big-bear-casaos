@@ -5,3 +5,5 @@ github.secrets
 .nova
 .vscode/
 run.py
+converted/
+docs/
