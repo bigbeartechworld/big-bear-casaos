@@ -1036,7 +1036,7 @@ EOF
     print_success "Converted $app_name for Dockge"
 }
 
-# Convert to Cosmos format (cosmos-compose with routes)
+# Convert to Cosmos format (cosmos-compose.json + description.json)
 convert_to_cosmos() {
     local app_name="$1"
     local app_dir="$2"
@@ -1048,44 +1048,214 @@ convert_to_cosmos() {
     fi
     
     mkdir -p "$output_dir"
+    mkdir -p "$output_dir/screenshots"
     
-    # Extract metadata for route configuration
+    # Extract metadata
     eval "$(extract_metadata "$app_dir" "$app_name")"
     
-    # Clean compose and add Cosmos-specific routes section
-    # Enable volume declarations for Cosmos with app-specific prefix
-    clean_compose "$app_dir/docker-compose.yml" "$output_dir/cosmos-compose.yml" "./data" "true" "$app_name"
+    # Get the docker-compose content
+    local compose_file="$app_dir/docker-compose.yml"
     
-    # Add routes section for reverse proxy
-    if [[ -n "$METADATA_PORT_MAP" ]]; then
-        cat >> "$output_dir/cosmos-compose.yml" << EOF
-
-# Cosmos-specific routes for reverse proxy
-routes:
-  - name: ${app_name}
-    description: ${METADATA_TITLE}
-    useHost: true
-    target: http://localhost:${METADATA_PORT_MAP}
-    mode: SERVAPP
-    Timeout: 14400000
-    ThrottlePerMinute: 0
-    BlockCommonBots: false
-    BlockAPIAbuse: false
-EOF
+    # Extract main service name
+    local main_service
+    main_service=$(yq eval '.services | keys | .[0]' "$compose_file" 2>/dev/null || echo "app")
+    
+    # Extract port from docker-compose.yml
+    local internal_port=""
+    local port_spec
+    port_spec=$(yq eval ".services[\"$main_service\"].ports[0]" "$compose_file" 2>/dev/null)
+    
+    if [[ -n "$port_spec" && "$port_spec" != "null" ]]; then
+        if [[ "$port_spec" =~ ^[0-9]+:([0-9]+) ]]; then
+            internal_port="${BASH_REMATCH[1]}"
+        elif [[ "$port_spec" =~ :([0-9]+)$ ]]; then
+            internal_port="${BASH_REMATCH[1]}"
+        fi
     fi
     
-    # Create cosmos app metadata file
-    cat > "$output_dir/servapp.json" << EOF
+    # Fallback to METADATA_PORT_MAP if no port found
+    if [[ -z "$internal_port" || "$internal_port" == "null" ]]; then
+        internal_port="$METADATA_PORT_MAP"
+    fi
+    
+    # Extract image
+    local image
+    image=$(yq eval ".services[\"$main_service\"].image" "$compose_file" 2>/dev/null || echo "")
+    
+    # Extract environment variables (handles both array and object formats)
+    local env_vars_json="["
+    local env_count=0
+    
+    # First check if environment is an object or array
+    local env_type
+    env_type=$(yq eval ".services[\"$main_service\"].environment | type" "$compose_file" 2>/dev/null || echo "null")
+    
+    if [[ "$env_type" == "!!map" ]]; then
+        # Environment is an object (key: value pairs)
+        while IFS= read -r env_line; do
+            if [[ -n "$env_line" && "$env_line" != "null" ]]; then
+                if [[ $env_count -gt 0 ]]; then
+                    env_vars_json+=","
+                fi
+                # Escape double quotes within the env value for JSON
+                local escaped_env="${env_line//\"/\\\"}"
+                env_vars_json+=$'\n'"        \"$escaped_env\""
+                ((env_count++))
+            fi
+        done < <(yq eval ".services[\"$main_service\"].environment | to_entries | .[] | .key + \"=\" + .value" "$compose_file" 2>/dev/null)
+    else
+        # Environment is an array (key=value format)
+        while IFS= read -r env_line; do
+            if [[ -n "$env_line" && "$env_line" != "null" ]]; then
+                if [[ $env_count -gt 0 ]]; then
+                    env_vars_json+=","
+                fi
+                # Escape double quotes within the env value for JSON
+                local escaped_env="${env_line//\"/\\\"}"
+                env_vars_json+=$'\n'"        \"$escaped_env\""
+                ((env_count++))
+            fi
+        done < <(yq eval ".services[\"$main_service\"].environment[]?" "$compose_file" 2>/dev/null)
+    fi
+    
+    env_vars_json+=$'\n'"      ]"
+    
+    # Extract volumes and convert to Cosmos format
+    local volumes_json=""
+    local volume_count=0
+    while IFS= read -r volume_line; do
+        if [[ -n "$volume_line" && "$volume_line" != "null" ]]; then
+            if [[ $volume_count -gt 0 ]]; then
+                volumes_json+=","
+            fi
+            
+            # Parse volume specification
+            local source="" target="" vol_type="volume"
+            if [[ "$volume_line" =~ ^(.+):(.+)$ ]]; then
+                source="${BASH_REMATCH[1]}"
+                target="${BASH_REMATCH[2]}"
+                
+                # Determine volume type
+                if [[ "$source" =~ ^[./] ]]; then
+                    vol_type="bind"
+                    source="{DefaultDataPath}/${app_name}${source#.}"
+                else
+                    vol_type="volume"
+                    source="{ServiceName}-${source}"
+                fi
+            fi
+            
+            volumes_json+=$'\n'"        {"
+            volumes_json+=$'\n'"          \"source\": \"$source\","
+            volumes_json+=$'\n'"          \"target\": \"$target\","
+            volumes_json+=$'\n'"          \"type\": \"$vol_type\""
+            volumes_json+=$'\n'"        }"
+            ((volume_count++))
+        fi
+    done < <(yq eval ".services[\"$main_service\"].volumes[]?" "$compose_file" 2>/dev/null)
+    
+    # Extract restart policy
+    local restart_policy
+    restart_policy=$(yq eval ".services[\"$main_service\"].restart // \"unless-stopped\"" "$compose_file" 2>/dev/null)
+    
+    # Get icon URL - use Cosmos servapps CDN format
+    local icon_url="https://azukaar.github.io/cosmos-servapps-official/servapps/${app_name}/icon.png"
+    
+    # Create cosmos-compose.json
+    cat > "$output_dir/cosmos-compose.json" << EOF
 {
-  "name": "$METADATA_TITLE",
-  "description": "$METADATA_DESCRIPTION",
-  "author": "$METADATA_DEVELOPER",
-  "icon": "$METADATA_ICON",
-  "category": "$METADATA_CATEGORY",
-  "port": $METADATA_PORT_MAP,
-  "compose_file": "cosmos-compose.yml"
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "$image",
+      "container_name": "{ServiceName}",
+      "restart": "$restart_policy",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": $env_vars_json,
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "$icon_url"
+      },
+      "volumes": [$volumes_json
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:${internal_port}",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
 }
 EOF
+    
+    # Escape special characters for JSON
+    local escaped_description="${METADATA_DESCRIPTION//\\/\\\\}"
+    escaped_description="${escaped_description//\"/\\\"}"
+    escaped_description="${escaped_description//$'\n'/ }"
+    escaped_description="${escaped_description//$'\r'/}"
+    
+    local escaped_tagline="${METADATA_TAGLINE//\\/\\\\}"
+    escaped_tagline="${escaped_tagline//\"/\\\"}"
+    escaped_tagline="${escaped_tagline//$'\n'/ }"
+    escaped_tagline="${escaped_tagline//$'\r'/}"
+    
+    # Convert category to tags array
+    local tags_json="[\"self-hosted\""
+    if [[ -n "$METADATA_CATEGORY" && "$METADATA_CATEGORY" != "null" ]]; then
+        tags_json+=", \"$METADATA_CATEGORY\""
+    fi
+    tags_json+="]"
+    
+    # Get source URLs
+    local repository_url
+    repository_url=$(yq eval '.x-casaos.project_url // ""' "$compose_file" 2>/dev/null || echo "")
+    
+    # Create description.json
+    cat > "$output_dir/description.json" << EOF
+{
+  "name": "$METADATA_TITLE",
+  "description": "$escaped_tagline",
+  "longDescription": "<p>$escaped_description</p>",
+  "tags": $tags_json,
+  "repository": "$repository_url",
+  "image": "https://hub.docker.com/r/${image%%:*}",
+  "supported_architectures": ["amd64", "arm64"]
+}
+EOF
+    
+    # Copy or download icon
+    if [[ -f "$app_dir/icon.png" ]]; then
+        cp "$app_dir/icon.png" "$output_dir/icon.png"
+    elif [[ -n "$METADATA_ICON" && "$METADATA_ICON" != "null" ]]; then
+        # Try to download the icon
+        if command -v curl &> /dev/null; then
+            curl -sL "$METADATA_ICON" -o "$output_dir/icon.png" 2>/dev/null || create_placeholder_logo "$output_dir/icon.png"
+        elif command -v wget &> /dev/null; then
+            wget -q "$METADATA_ICON" -O "$output_dir/icon.png" 2>/dev/null || create_placeholder_logo "$output_dir/icon.png"
+        else
+            create_placeholder_logo "$output_dir/icon.png"
+        fi
+    else
+        create_placeholder_logo "$output_dir/icon.png"
+    fi
+    
+    # Copy screenshots if they exist
+    if [[ -d "$app_dir/screenshots" ]]; then
+        cp -r "$app_dir/screenshots/"* "$output_dir/screenshots/" 2>/dev/null || true
+    fi
     
     print_success "Converted $app_name for Cosmos"
 }
