@@ -224,6 +224,40 @@ check_repository() {
     return 0
 }
 
+# Detect the default branch for the repository
+detect_default_branch() {
+    local repo_path="$1"
+    
+    cd "$repo_path"
+    
+    # Try to get the default branch from remote
+    local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+    
+    if [[ -n "$default_branch" ]]; then
+        echo "$default_branch"
+        return 0
+    fi
+    
+    # If that fails, try common branch names in order
+    for branch in "main" "master"; do
+        if git rev-parse --verify "$branch" >/dev/null 2>&1; then
+            echo "$branch"
+            return 0
+        fi
+    done
+    
+    # If still nothing, get the current branch
+    local current_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [[ -n "$current_branch" && "$current_branch" != "HEAD" ]]; then
+        echo "$current_branch"
+        return 0
+    fi
+    
+    # Last resort: return main
+    echo "main"
+    return 0
+}
+
 # Get changed files in repository
 get_changed_files() {
     local repo_path="$1"
@@ -358,6 +392,7 @@ EOF
 }
 
 # Create branch and commit changes
+# Returns the actual base branch used (either detected or user-specified)
 create_branch_and_commit() {
     local repo_path="$1"
     local platform="$2"
@@ -365,6 +400,18 @@ create_branch_and_commit() {
     local commit_message="$4"
     
     cd "$repo_path"
+    
+    # Detect the default branch for this repository
+    local detected_base_branch=$(detect_default_branch "$repo_path")
+    print_info "Detected default branch: $detected_base_branch"
+    
+    # Use detected branch if BASE_BRANCH is still the default "main"
+    # This allows user override via --base-branch flag
+    ACTUAL_BASE_BRANCH="$BASE_BRANCH"
+    if [[ "$BASE_BRANCH" == "main" ]]; then
+        ACTUAL_BASE_BRANCH="$detected_base_branch"
+        print_info "Using detected default branch: $ACTUAL_BASE_BRANCH"
+    fi
     
     # Get current branch
     local current_branch=$(git rev-parse --abbrev-ref HEAD)
@@ -387,8 +434,8 @@ create_branch_and_commit() {
     fi
     
     # Check if base branch exists
-    if ! git rev-parse --verify "$BASE_BRANCH" >/dev/null 2>&1; then
-        print_error "Base branch '$BASE_BRANCH' does not exist in repository"
+    if ! git rev-parse --verify "$ACTUAL_BASE_BRANCH" >/dev/null 2>&1; then
+        print_error "Base branch '$ACTUAL_BASE_BRANCH' does not exist in repository"
         print_info "Available branches:"
         git branch -a | grep -v "HEAD" | sed 's/^/  /'
         # Try to restore stashed changes if we stashed them
@@ -400,9 +447,9 @@ create_branch_and_commit() {
     fi
     
     # Ensure we're on the base branch and up to date
-    print_step "Checking out $BASE_BRANCH..."
-    if ! git checkout "$BASE_BRANCH" 2>/dev/null; then
-        print_error "Failed to checkout $BASE_BRANCH"
+    print_step "Checking out $ACTUAL_BASE_BRANCH..."
+    if ! git checkout "$ACTUAL_BASE_BRANCH" 2>/dev/null; then
+        print_error "Failed to checkout $ACTUAL_BASE_BRANCH"
         # Try to restore stashed changes if we stashed them
         if [ "$stashed" = true ]; then
             git checkout "$current_branch" 2>/dev/null || true
@@ -412,9 +459,9 @@ create_branch_and_commit() {
     fi
     
     # Pull latest changes BEFORE applying stash to avoid conflicts
-    print_step "Pulling latest changes from $BASE_BRANCH..."
-    if ! git pull origin "$BASE_BRANCH"; then
-        print_error "Failed to pull latest changes from $BASE_BRANCH"
+    print_step "Pulling latest changes from $ACTUAL_BASE_BRANCH..."
+    if ! git pull origin "$ACTUAL_BASE_BRANCH"; then
+        print_error "Failed to pull latest changes from $ACTUAL_BASE_BRANCH"
         print_warning "Your local branch may be out of sync with remote"
         # Try to restore stashed changes if we stashed them
         if [ "$stashed" = true ]; then
@@ -476,7 +523,7 @@ create_branch_and_commit() {
         print_warning "No changes to commit after staging"
         print_info "All files are already up to date in the base branch"
         # Clean up: delete branch and go back to base branch
-        git checkout "$BASE_BRANCH" 2>/dev/null || true
+        git checkout "$ACTUAL_BASE_BRANCH" 2>/dev/null || true
         git branch -D "$branch_name" 2>/dev/null || true
         return 0
     fi
@@ -486,7 +533,7 @@ create_branch_and_commit() {
     if ! git commit -m "$commit_message"; then
         print_error "Failed to commit changes"
         # Clean up: delete branch and go back to base branch
-        git checkout "$BASE_BRANCH" 2>/dev/null || true
+        git checkout "$ACTUAL_BASE_BRANCH" 2>/dev/null || true
         git branch -D "$branch_name" 2>/dev/null || true
         return 1
     fi
@@ -526,8 +573,11 @@ create_pull_request() {
     
     print_step "Creating pull request..."
     
+    # Use ACTUAL_BASE_BRANCH if set (from create_branch_and_commit), otherwise use BASE_BRANCH
+    local base_branch="${ACTUAL_BASE_BRANCH:-$BASE_BRANCH}"
+    
     # Build gh pr create command
-    local gh_cmd="gh pr create --base $BASE_BRANCH --head $branch_name --title \"$pr_title\" --body \"$pr_body\""
+    local gh_cmd="gh pr create --base $base_branch --head $branch_name --title \"$pr_title\" --body \"$pr_body\""
     
     if [[ "$CREATE_DRAFT" == "true" ]]; then
         gh_cmd="$gh_cmd --draft"
@@ -708,7 +758,8 @@ process_platform() {
         commit_result=$?
         # Check if we're still on base branch (meaning no changes were found)
         local current_branch=$(cd "$repo_path" && git rev-parse --abbrev-ref HEAD)
-        if [[ "$current_branch" == "$BASE_BRANCH" ]]; then
+        local base_branch="${ACTUAL_BASE_BRANCH:-$BASE_BRANCH}"
+        if [[ "$current_branch" == "$base_branch" ]]; then
             print_warning "No changes to commit for $platform - already up to date"
             return 0
         else
@@ -722,7 +773,7 @@ process_platform() {
         print_error "Failed to push branch for $platform"
         # Cleanup: go back to base branch
         cd "$repo_path"
-        git checkout "$BASE_BRANCH"
+        git checkout "${ACTUAL_BASE_BRANCH:-$BASE_BRANCH}"
         return 1
     fi
     
@@ -731,13 +782,13 @@ process_platform() {
         print_error "Failed to create pull request for $platform"
         # Clean up: go back to base branch
         cd "$repo_path"
-        git checkout "$BASE_BRANCH" 2>/dev/null || true
+        git checkout "${ACTUAL_BASE_BRANCH:-$BASE_BRANCH}" 2>/dev/null || true
         return 1
     fi
     
     # Go back to base branch
     cd "$repo_path"
-    git checkout "$BASE_BRANCH" 2>/dev/null || git checkout - 2>/dev/null || true
+    git checkout "${ACTUAL_BASE_BRANCH:-$BASE_BRANCH}" 2>/dev/null || git checkout - 2>/dev/null || true
     
     print_success "Successfully created PR for $platform: $pr_url"
     return 0
