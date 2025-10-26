@@ -592,6 +592,9 @@ init_port_tracker() {
             runtipi)
                 platform_apps_dir="$workspace_dir/big-bear-runtipi/apps"
                 ;;
+            umbrel)
+                platform_apps_dir="$workspace_dir/big-bear-umbrel"
+                ;;
             portainer)
                 # Portainer uses templates, not individual config files with ports
                 continue
@@ -605,18 +608,33 @@ init_port_tracker() {
             print_info "Loading existing ports from $platform..."
             local port_count=0
             
-            # Find all config.json files and extract ports
-            while IFS= read -r config_file; do
-                if [[ -f "$config_file" ]]; then
-                    local port
-                    port=$(jq -r '.port // empty' "$config_file" 2>/dev/null)
-                    
-                    if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
-                        echo "$port" >> "$port_track_file"
-                        ((port_count++)) || true
+            if [[ "$platform" == "umbrel" ]]; then
+                # Find all umbrel-app.yml files and extract ports
+                while IFS= read -r app_config; do
+                    if [[ -f "$app_config" ]]; then
+                        local port
+                        port=$(yq eval '.port // empty' "$app_config" 2>/dev/null)
+                        
+                        if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
+                            echo "$port" >> "$port_track_file"
+                            ((port_count++)) || true
+                        fi
                     fi
-                fi
-            done < <(find "$platform_apps_dir" -name "config.json" -type f 2>/dev/null)
+                done < <(find "$platform_apps_dir" -name "umbrel-app.yml" -type f 2>/dev/null)
+            else
+                # Find all config.json files and extract ports (for runtipi)
+                while IFS= read -r config_file; do
+                    if [[ -f "$config_file" ]]; then
+                        local port
+                        port=$(jq -r '.port // empty' "$config_file" 2>/dev/null)
+                        
+                        if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
+                            echo "$port" >> "$port_track_file"
+                            ((port_count++)) || true
+                        fi
+                    fi
+                done < <(find "$platform_apps_dir" -name "config.json" -type f 2>/dev/null)
+            fi
             
             if [[ $port_count -gt 0 ]]; then
                 print_success "Loaded $port_count existing ports from $platform"
