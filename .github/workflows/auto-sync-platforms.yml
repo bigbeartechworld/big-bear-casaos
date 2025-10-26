@@ -25,7 +25,7 @@ on:
       auto_merge:
         description: 'Enable auto-merge on PRs'
         required: false
-        default: false
+        default: true
         type: boolean
       dry_run:
         description: 'Dry run (preview only, no actual changes)'
@@ -173,8 +173,12 @@ jobs:
         if: github.event.inputs.dry_run != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd big-bear-casaos
+          
+          # Configure git to use token authentication for HTTPS
+          git config --global url."https://oauth2:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
           
           # Determine platforms to create PRs for
           PLATFORMS="${{ github.event.inputs.platforms || 'portainer,runtipi,dockge,cosmos,umbrel' }}"
