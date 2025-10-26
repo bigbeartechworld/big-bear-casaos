@@ -555,6 +555,76 @@ EOF
     print_success "Converted $app_name for Portainer"
 }
 
+# Get existing port from destination repository if it exists
+get_existing_runtipi_port() {
+    local app_name="$1"
+    
+    # Check in workspace for existing Runtipi app
+    local workspace_dir="$(dirname "$(dirname "$OUTPUT_DIR")")"
+    local existing_config="$workspace_dir/big-bear-runtipi/apps/$app_name/config.json"
+    
+    if [[ -f "$existing_config" ]]; then
+        local existing_port
+        existing_port=$(jq -r '.port // empty' "$existing_config" 2>/dev/null)
+        if [[ -n "$existing_port" && "$existing_port" != "null" ]]; then
+            echo "$existing_port"
+            return 0
+        fi
+    fi
+    
+    # No existing port found
+    return 1
+}
+
+# Initialize port tracker with all existing ports from destination repositories
+init_port_tracker() {
+    local port_track_file="$OUTPUT_DIR/.port_tracker"
+    
+    # Clear any existing port tracker
+    > "$port_track_file"
+    
+    # For each platform, scan existing apps and load their ports
+    for platform in "${PLATFORMS[@]}"; do
+        local workspace_dir="$(dirname "$OUTPUT_DIR")"
+        local platform_apps_dir
+        
+        case "$platform" in
+            runtipi)
+                platform_apps_dir="$workspace_dir/big-bear-runtipi/apps"
+                ;;
+            portainer)
+                # Portainer uses templates, not individual config files with ports
+                continue
+                ;;
+            *)
+                continue
+                ;;
+        esac
+        
+        if [[ -d "$platform_apps_dir" ]]; then
+            print_info "Loading existing ports from $platform..."
+            local port_count=0
+            
+            # Find all config.json files and extract ports
+            while IFS= read -r config_file; do
+                if [[ -f "$config_file" ]]; then
+                    local port
+                    port=$(jq -r '.port // empty' "$config_file" 2>/dev/null)
+                    
+                    if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
+                        echo "$port" >> "$port_track_file"
+                        ((port_count++)) || true
+                    fi
+                fi
+            done < <(find "$platform_apps_dir" -name "config.json" -type f 2>/dev/null)
+            
+            if [[ $port_count -gt 0 ]]; then
+                print_success "Loaded $port_count existing ports from $platform"
+            fi
+        fi
+    done
+}
+
 # Convert to Runtipi dynamic compose format
 convert_to_runtipi() {
     local app_name="$1"
@@ -672,13 +742,40 @@ convert_to_runtipi() {
     local main_service_data
     main_service_data=$(yq eval '.services | to_entries | .[0]' "$compose_file")
     
+    # Extract internal port - if no ports defined in docker-compose, it will be set later from config.json port
+    local internal_port
+    local port_spec
+    port_spec=$(echo "$main_service_data" | yq eval '.value.ports[0]' - 2>/dev/null)
+    
+    if [[ -n "$port_spec" && "$port_spec" != "null" ]]; then
+        # Extract the container port (right side of the colon)
+        # Handle formats like "8080:8080", "target: 8080", or just "8080"
+        if [[ "$port_spec" =~ ^[0-9]+:[0-9]+$ ]]; then
+            # Format: "host:container"
+            internal_port=$(echo "$port_spec" | cut -d':' -f2)
+        elif [[ "$port_spec" =~ ^[0-9]+$ ]]; then
+            # Format: just the port number
+            internal_port="$port_spec"
+        else
+            # Complex format or target format - try to extract number
+            internal_port=$(echo "$port_spec" | grep -oE '[0-9]+' | head -1)
+        fi
+    fi
+    
+    # If internal_port is empty, null, or invalid, we'll use the runtipi_port that gets assigned later
+    # For now, use a placeholder that will be replaced
+    if [[ -z "$internal_port" || "$internal_port" == "null" ]]; then
+        internal_port="__PORT_PLACEHOLDER__"
+    fi
+    
     cat > "$output_dir/docker-compose.json" << EOF
 {
+  "schemaVersion": 2,
   "services": [
     {
       "name": "$(echo "$main_service_data" | yq eval '.key' -)",
       "image": "$(echo "$main_service_data" | yq eval '.value.image' -)",
-      "internalPort": $(echo "$main_service_data" | yq eval '.value.ports[0]' - | cut -d':' -f2),
+      "internalPort": $internal_port,
       "isMain": true
     }
   ]
@@ -706,36 +803,43 @@ EOF
     fi
     
     # Ensure port is valid for Runtipi (must be > 999)
-    # Map common low ports to their high port equivalents
-    local runtipi_port="${METADATA_PORT_MAP:-8080}"
-    if [[ "$runtipi_port" -le 999 ]]; then
-        case "$runtipi_port" in
-            80) runtipi_port=8080 ;;
-            81) runtipi_port=8081 ;;
-            443) runtipi_port=8443 ;;
-            943) runtipi_port=9443 ;;
-            *) 
-                # For other low ports, add 8000 to make them 4+ digits
-                runtipi_port=$((runtipi_port + 8000))
-                ;;
-        esac
-        print_warning "Port $METADATA_PORT_MAP is below 1000 for $app_name, mapped to $runtipi_port for Runtipi"
+    # First, try to preserve existing port from destination repository
+    local runtipi_port
+    if runtipi_port=$(get_existing_runtipi_port "$app_name"); then
+        print_info "Preserving existing port $runtipi_port for $app_name"
+    else
+        # No existing port, assign a new one
+        # Map common low ports to their high port equivalents
+        runtipi_port="${METADATA_PORT_MAP:-8080}"
+        if [[ "$runtipi_port" -le 999 ]]; then
+            case "$runtipi_port" in
+                80) runtipi_port=8080 ;;
+                81) runtipi_port=8081 ;;
+                443) runtipi_port=8443 ;;
+                943) runtipi_port=9443 ;;
+                *) 
+                    # For other low ports, add 8000 to make them 4+ digits
+                    runtipi_port=$((runtipi_port + 8000))
+                    ;;
+            esac
+            print_warning "Port $METADATA_PORT_MAP is below 1000 for $app_name, mapped to $runtipi_port for Runtipi"
+        fi
+        
+        # Check for port conflicts and auto-increment if needed
+        # Create a port tracking file if converting multiple apps
+        local port_track_file="$OUTPUT_DIR/runtipi/.port_tracker"
+        if [[ -f "$port_track_file" ]]; then
+            # Check if this port is already used
+            while grep -q "^${runtipi_port}$" "$port_track_file" 2>/dev/null; do
+                print_warning "Port $runtipi_port already used, incrementing to avoid conflict"
+                runtipi_port=$((runtipi_port + 1))
+            done
+        fi
+        
+        # Track this port for future conversions
+        mkdir -p "$OUTPUT_DIR/runtipi"
+        echo "$runtipi_port" >> "$port_track_file"
     fi
-    
-    # Check for port conflicts and auto-increment if needed
-    # Create a port tracking file if converting multiple apps
-    local port_track_file="$OUTPUT_DIR/runtipi/.port_tracker"
-    if [[ -f "$port_track_file" ]]; then
-        # Check if this port is already used
-        while grep -q "^${runtipi_port}$" "$port_track_file" 2>/dev/null; do
-            print_warning "Port $runtipi_port already used, incrementing to avoid conflict"
-            runtipi_port=$((runtipi_port + 1))
-        done
-    fi
-    
-    # Track this port for future conversions
-    mkdir -p "$OUTPUT_DIR/runtipi"
-    echo "$runtipi_port" >> "$port_track_file"
     
     # Escape special characters in JSON strings
     local escaped_description="${METADATA_DESCRIPTION//\\/\\\\}"  # Escape backslashes first
@@ -772,6 +876,12 @@ EOF
   "min_tipi_version": "4.5.0"
 }
 EOF
+    
+    # Replace port placeholder in docker-compose.json if it exists
+    if grep -q "__PORT_PLACEHOLDER__" "$output_dir/docker-compose.json" 2>/dev/null; then
+        sed -i.bak "s/__PORT_PLACEHOLDER__/$runtipi_port/" "$output_dir/docker-compose.json"
+        rm -f "$output_dir/docker-compose.json.bak"
+    fi
     
     # Create metadata directory
     mkdir -p "$output_dir/metadata"
@@ -1324,6 +1434,10 @@ main() {
     
     check_dependencies
     init_directories
+    
+    # Initialize port tracker with existing ports from destination repositories
+    # This ensures we don't reassign ports that are already in use
+    init_port_tracker
     
     # Initialize Portainer master template if converting to Portainer
     local has_portainer=false
