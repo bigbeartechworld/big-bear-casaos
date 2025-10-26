@@ -1114,7 +1114,7 @@ convert_to_cosmos() {
                 local escaped_env="${env_line//\\/\\\\}"
                 escaped_env="${escaped_env//\"/\\\"}"
                 env_vars_json+=$'\n'"        \"$escaped_env\""
-                ((env_count++))
+                ((env_count++)) || true
             fi
         done < <(yq eval ".services[\"$main_service\"].environment | to_entries | .[] | .key + \"=\" + .value" "$compose_file" 2>/dev/null)
     else
@@ -1128,7 +1128,7 @@ convert_to_cosmos() {
                 local escaped_env="${env_line//\\/\\\\}"
                 escaped_env="${escaped_env//\"/\\\"}"
                 env_vars_json+=$'\n'"        \"$escaped_env\""
-                ((env_count++))
+                ((env_count++)) || true
             fi
         done < <(yq eval ".services[\"$main_service\"].environment[]?" "$compose_file" 2>/dev/null)
     fi
@@ -1171,7 +1171,7 @@ convert_to_cosmos() {
             volumes_json+=$'\n'"          \"target\": \"$escaped_target\","
             volumes_json+=$'\n'"          \"type\": \"$vol_type\""
             volumes_json+=$'\n'"        }"
-            ((volume_count++))
+            ((volume_count++)) || true
         fi
     done < <(yq eval ".services[\"$main_service\"].volumes[]?" "$compose_file" 2>/dev/null)
     
