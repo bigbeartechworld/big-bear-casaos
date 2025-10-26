@@ -560,7 +560,11 @@ get_existing_runtipi_port() {
     local app_name="$1"
     
     # Check in workspace for existing Runtipi app
-    local workspace_dir="$(dirname "$(dirname "$OUTPUT_DIR")")"
+    local workspace_dir
+    workspace_dir="$(dirname "$(dirname "$OUTPUT_DIR")")" || {
+        print_error "Failed to determine workspace directory"
+        return 1
+    }
     local existing_config="$workspace_dir/big-bear-runtipi/apps/$app_name/config.json"
     
     if [[ -f "$existing_config" ]]; then
@@ -1097,8 +1101,9 @@ convert_to_cosmos() {
                 if [[ $env_count -gt 0 ]]; then
                     env_vars_json+=","
                 fi
-                # Escape double quotes within the env value for JSON
-                local escaped_env="${env_line//\"/\\\"}"
+                # Escape special characters for JSON (backslashes first, then quotes)
+                local escaped_env="${env_line//\\/\\\\}"
+                escaped_env="${escaped_env//\"/\\\"}"
                 env_vars_json+=$'\n'"        \"$escaped_env\""
                 ((env_count++))
             fi
@@ -1110,8 +1115,9 @@ convert_to_cosmos() {
                 if [[ $env_count -gt 0 ]]; then
                     env_vars_json+=","
                 fi
-                # Escape double quotes within the env value for JSON
-                local escaped_env="${env_line//\"/\\\"}"
+                # Escape special characters for JSON (backslashes first, then quotes)
+                local escaped_env="${env_line//\\/\\\\}"
+                escaped_env="${escaped_env//\"/\\\"}"
                 env_vars_json+=$'\n'"        \"$escaped_env\""
                 ((env_count++))
             fi
@@ -1145,9 +1151,15 @@ convert_to_cosmos() {
                 fi
             fi
             
+            # Escape special characters for JSON
+            local escaped_source="${source//\\/\\\\}"
+            escaped_source="${escaped_source//\"/\\\"}"
+            local escaped_target="${target//\\/\\\\}"
+            escaped_target="${escaped_target//\"/\\\"}"
+            
             volumes_json+=$'\n'"        {"
-            volumes_json+=$'\n'"          \"source\": \"$source\","
-            volumes_json+=$'\n'"          \"target\": \"$target\","
+            volumes_json+=$'\n'"          \"source\": \"$escaped_source\","
+            volumes_json+=$'\n'"          \"target\": \"$escaped_target\","
             volumes_json+=$'\n'"          \"type\": \"$vol_type\""
             volumes_json+=$'\n'"        }"
             ((volume_count++))
