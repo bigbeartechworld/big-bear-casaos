@@ -2,8 +2,8 @@ name: Auto Sync Platform Repositories
 
 on:
   # Run daily at 2 AM UTC
-  schedule:
-    - cron: '0 2 * * *'
+  # schedule:
+  #   - cron: '0 2 * * *'
   
   # Allow manual trigger with options
   workflow_dispatch:
@@ -34,14 +34,14 @@ on:
         type: boolean
   
   # Run on push to main/master branch
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - 'Apps/**'
-      - 'convert-apps.sh'
-      - 'sync-apps.sh'
+  # push:
+  #   branches:
+  #     - main
+  #     - master
+  #   paths:
+  #     - 'Apps/**'
+  #     - 'convert-apps.sh'
+  #     - 'sync-apps.sh'
 
 jobs:
   sync-platforms:
