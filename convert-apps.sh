@@ -1452,6 +1452,9 @@ convert_to_umbrel() {
     local main_service
     main_service=$(yq eval '.services | keys | .[0]' "$app_dir/docker-compose.yml" 2>/dev/null || echo "app")
     
+    # Umbrel base port for safer port allocation (avoids common 8000s conflicts)
+    local UMBREL_BASE_PORT=10000
+    
     # Extract ports from docker-compose.yml
     # For Umbrel we need TWO ports:
     # 1. host_port (umbrel-app.yml "port" field) - unique public port, must be stable
@@ -1503,6 +1506,23 @@ convert_to_umbrel() {
     # If container_port is empty, use host_port as fallback
     if [[ -z "$container_port" || "$container_port" == "null" ]]; then
         container_port="$host_port"
+    fi
+    
+    # Remap host_port to safer 10000+ range to avoid common port conflicts
+    # Keep container_port as-is (internal app port)
+    if [[ "$host_port" -lt "$UMBREL_BASE_PORT" ]]; then
+        # Calculate sequential port from base
+        local port_sequence_file="$OUTPUT_DIR/.port_sequence"
+        if [[ ! -f "$port_sequence_file" ]]; then
+            echo "$UMBREL_BASE_PORT" > "$port_sequence_file"
+        fi
+        
+        # Read next available port
+        local next_port=$(cat "$port_sequence_file")
+        host_port="$next_port"
+        
+        # Increment for next app
+        echo $((next_port + 1)) > "$port_sequence_file"
     fi
     
     # Check if this app already has a port assignment in the destination repository
@@ -1565,13 +1585,21 @@ convert_to_umbrel() {
     
     # Create umbrel-app.yml manifest with full app name including prefix
     # Use host_port for the public port field
+    # Quote tagline if it contains colon (common YAML issue)
+    local tagline_value="$METADATA_TAGLINE"
+    if [[ "$tagline_value" == *:* ]] || [[ "$tagline_value" == *\#* ]] || [[ "$tagline_value" == *\[* ]] || [[ "$tagline_value" == *\{* ]]; then
+        # Escape any existing quotes in the tagline
+        local escaped_tagline="${METADATA_TAGLINE//\"/\\\"}"
+        tagline_value="\"$escaped_tagline\""
+    fi
+    
     cat > "$output_dir/umbrel-app.yml" << EOF
 manifestVersion: 1
 id: $umbrel_app_name
 category: $METADATA_CATEGORY
 name: $METADATA_TITLE
 version: "$METADATA_VERSION"
-tagline: $METADATA_TAGLINE
+tagline: $tagline_value
 description: >-
   $METADATA_DESCRIPTION
 releaseNotes: >-
