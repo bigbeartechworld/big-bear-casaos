@@ -1431,9 +1431,7 @@ EOF
 convert_to_umbrel() {
     local app_name="$1"
     local app_dir="$2"
-    # Umbrel uses simple app IDs without prefixes (e.g., "2fauth" not "big-bear-umbrel-2fauth")
-    local umbrel_app_id="$app_name"
-    # Directory name still uses prefix for big-bear-umbrel repo organization
+    # Umbrel app ID and folder name both use the big-bear-umbrel- prefix
     local umbrel_app_name="big-bear-umbrel-$app_name"
     local output_dir="$OUTPUT_DIR/umbrel/$umbrel_app_name"
     
@@ -1547,10 +1545,10 @@ convert_to_umbrel() {
         developer="BigBearTechWorld"
     fi
     
-    # Create umbrel-app.yml manifest with simple app ID
+    # Create umbrel-app.yml manifest with full app name including prefix
     cat > "$output_dir/umbrel-app.yml" << EOF
 manifestVersion: 1
-id: $umbrel_app_id
+id: $umbrel_app_name
 category: $METADATA_CATEGORY
 name: $METADATA_TITLE
 version: "$METADATA_VERSION"
