@@ -1452,66 +1452,84 @@ convert_to_umbrel() {
     local main_service
     main_service=$(yq eval '.services | keys | .[0]' "$app_dir/docker-compose.yml" 2>/dev/null || echo "app")
     
-    # Extract port from docker-compose.yml with improved parsing
-    local port
+    # Extract ports from docker-compose.yml
+    # For Umbrel we need TWO ports:
+    # 1. host_port (umbrel-app.yml "port" field) - unique public port, must be stable
+    # 2. container_port (APP_PORT in docker-compose.yml) - internal port app listens on
+    local host_port
+    local container_port
     local port_spec
     port_spec=$(yq eval '.services[].ports[0]' "$app_dir/docker-compose.yml" 2>/dev/null | head -1)
     
     if [[ -n "$port_spec" && "$port_spec" != "null" ]]; then
-        # Extract the container port (right side of the colon for host:container format)
         if [[ "$port_spec" =~ ^[0-9]+:[0-9]+$ ]]; then
-            # Format: "host:container" - use host port
-            port=$(echo "$port_spec" | cut -d':' -f1)
+            # Format: "host:container" - extract both sides
+            host_port=$(echo "$port_spec" | cut -d':' -f1)
+            container_port=$(echo "$port_spec" | cut -d':' -f2)
         elif [[ "$port_spec" =~ ^[0-9]+$ ]]; then
-            # Format: just the port number
-            port="$port_spec"
+            # Format: just the port number - use for both
+            host_port="$port_spec"
+            container_port="$port_spec"
         else
-            # Complex format - try to extract first number
-            port=$(echo "$port_spec" | grep -oE '[0-9]+' | head -1)
+            # Complex format - try to extract both (e.g., "8080:8000/tcp")
+            local clean_spec=$(echo "$port_spec" | sed 's|/.*||')
+            if [[ "$clean_spec" =~ : ]]; then
+                host_port=$(echo "$clean_spec" | cut -d':' -f1)
+                container_port=$(echo "$clean_spec" | cut -d':' -f2)
+            else
+                # Fallback to extracting first number
+                host_port=$(echo "$port_spec" | grep -oE '[0-9]+' | head -1)
+                container_port="$host_port"
+            fi
         fi
     fi
     
-    # If port is still empty, null, or less than 1000, use METADATA_PORT_MAP
-    if [[ -z "$port" || "$port" == "null" || ! "$port" =~ ^[0-9]+$ || "$port" -lt 1000 ]]; then
-        port="${METADATA_PORT_MAP:-8080}"
+    # If host_port is still empty, null, or less than 1000, use METADATA_PORT_MAP
+    if [[ -z "$host_port" || "$host_port" == "null" || ! "$host_port" =~ ^[0-9]+$ || "$host_port" -lt 1000 ]]; then
+        host_port="${METADATA_PORT_MAP:-8080}"
         
-        # Map common low ports to higher ports
-        case "$port" in
-            80) port=8080 ;;
-            81) port=8081 ;;
-            443) port=8443 ;;
-            943) port=9943 ;;
-            22) port=2222 ;;
-            21) port=2121 ;;
-            25) port=2525 ;;
+        # Map common low ports to higher ports for the public/host port
+        case "$host_port" in
+            80) host_port=8080 ;;
+            81) host_port=8081 ;;
+            443) host_port=8443 ;;
+            943) host_port=9943 ;;
+            22) host_port=2222 ;;
+            21) host_port=2121 ;;
+            25) host_port=2525 ;;
         esac
+    fi
+    
+    # If container_port is empty, use host_port as fallback
+    if [[ -z "$container_port" || "$container_port" == "null" ]]; then
+        container_port="$host_port"
     fi
     
     # Check if this app already has a port assignment in the destination repository
     local port_map_file="$OUTPUT_DIR/.port_map"
-    local existing_port=""
+    local existing_host_port=""
     if [[ -f "$port_map_file" ]]; then
-        existing_port=$(grep "^umbrel:${app_name}:" "$port_map_file" 2>/dev/null | cut -d':' -f3)
-        if [[ -n "$existing_port" ]]; then
-            print_info "Preserving existing port $existing_port for $app_name"
-            port="$existing_port"
+        existing_host_port=$(grep "^umbrel:${app_name}:" "$port_map_file" 2>/dev/null | cut -d':' -f3)
+        if [[ -n "$existing_host_port" ]]; then
+            print_info "Preserving existing port $existing_host_port for $app_name"
+            host_port="$existing_host_port"
         fi
     fi
     
     # Only check for conflicts if we don't have an existing port assignment
-    if [[ -z "$existing_port" ]]; then
+    if [[ -z "$existing_host_port" ]]; then
         # Check for port conflicts using the port tracker
         local port_track_file="$OUTPUT_DIR/.port_tracker"
         if [[ -f "$port_track_file" ]]; then
-            while grep -q "^$port$" "$port_track_file"; do
-                print_warning "Port $port already used, incrementing to avoid conflict"
-                port=$((port + 1))
+            while grep -q "^$host_port$" "$port_track_file"; do
+                print_warning "Port $host_port already used, incrementing to avoid conflict"
+                host_port=$((host_port + 1))
             done
         fi
         
         # Track this port and save the mapping for future conversions
-        echo "$port" >> "$port_track_file"
-        echo "umbrel:$app_name:$port" >> "$port_map_file"
+        echo "$host_port" >> "$port_track_file"
+        echo "umbrel:$app_name:$host_port" >> "$port_map_file"
     fi
     
     # Extract dependencies (if any)
@@ -1546,6 +1564,7 @@ convert_to_umbrel() {
     fi
     
     # Create umbrel-app.yml manifest with full app name including prefix
+    # Use host_port for the public port field
     cat > "$output_dir/umbrel-app.yml" << EOF
 manifestVersion: 1
 id: $umbrel_app_name
@@ -1563,7 +1582,7 @@ dependencies:$(if [[ -n "$deps_yaml" ]]; then echo "
 $deps_yaml"; else echo " []"; fi)
 repo: https://github.com/bigbeartechworld/big-bear-casaos
 support: https://github.com/bigbeartechworld/big-bear-casaos/issues
-port: $port
+port: $host_port
 gallery:
   - 1.jpg
   - 2.jpg
@@ -1577,22 +1596,39 @@ submission: https://github.com/bigbeartechworld/big-bear-casaos
 EOF
     
     # Update docker-compose.yml to use Umbrel-compatible format
-    # Umbrel docker-compose files should NOT have a 'name:' field
     local temp_compose="${output_dir}/docker-compose.tmp.yml"
     local final_compose="${output_dir}/docker-compose.yml"
     
-    # Remove the 'name:' field if it exists
-    yq eval 'del(.name)' "$final_compose" > "$temp_compose"
+    # Step 1: Add version: "3.7" at the top and remove incompatible fields
+    yq eval 'del(.name) | 
+             del(.services[].ports) | 
+             del(.services[].container_name) | 
+             del(.services[].network_mode) |
+             . = {"version": "3.7"} + .' "$final_compose" > "$temp_compose"
     mv "$temp_compose" "$final_compose"
     
-    # Update app_proxy APP_HOST and APP_PORT to use Umbrel naming convention
-    # APP_HOST format: {folder_name}_{service_name}_1 (e.g., "big-bear-umbrel-2fauth_app_1")
-    # The folder name is used because Docker Compose prefixes containers with the directory name
-    # APP_PORT must be a string
+    # Step 2: Remove all comments from the YAML file
+    # Umbrel apps should be clean without CasaOS-specific comments
+    sed '/^[[:space:]]*#/d' "$final_compose" > "$temp_compose"
+    mv "$temp_compose" "$final_compose"
+    
+    # Step 3: Add or update app_proxy service
+    # APP_HOST: container name that proxy connects to
+    # APP_PORT: container's internal port (what the app listens on inside the container)
     if yq eval '.services.app_proxy' "$final_compose" > /dev/null 2>&1; then
-        yq eval ".services.app_proxy.environment.APP_HOST = \"${umbrel_app_name}_${main_service}_1\" | .services.app_proxy.environment.APP_PORT = \"$port\"" "$final_compose" > "$temp_compose"
+        # Update existing app_proxy
+        yq eval ".services.app_proxy.environment.APP_HOST = \"${umbrel_app_name}_${main_service}_1\" | 
+                 .services.app_proxy.environment.APP_PORT = \"$container_port\"" "$final_compose" > "$temp_compose"
+        mv "$temp_compose" "$final_compose"
+    else
+        # Add new app_proxy service at the beginning of services
+        yq eval ".services = {\"app_proxy\": {\"environment\": {\"APP_HOST\": \"${umbrel_app_name}_${main_service}_1\", \"APP_PORT\": \"$container_port\"}}} + .services" "$final_compose" > "$temp_compose"
         mv "$temp_compose" "$final_compose"
     fi
+    
+    # Create data directory with .gitkeep (standard Umbrel app structure)
+    mkdir -p "$output_dir/data"
+    touch "$output_dir/data/.gitkeep"
     
     print_success "Converted $app_name for Umbrel"
 }
