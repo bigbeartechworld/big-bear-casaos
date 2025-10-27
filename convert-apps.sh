@@ -1452,6 +1452,15 @@ convert_to_umbrel() {
     local main_service
     main_service=$(yq eval '.services | keys | .[0]' "$app_dir/docker-compose.yml" 2>/dev/null || echo "app")
     
+    # Check if main service uses network_mode: host
+    local uses_host_network=false
+    local network_mode_check
+    network_mode_check=$(yq eval ".services[\"$main_service\"].network_mode // \"\"" "$app_dir/docker-compose.yml" 2>/dev/null)
+    if [[ "$network_mode_check" == "host" ]]; then
+        uses_host_network=true
+        print_info "App $app_name uses network_mode: host"
+    fi
+    
     # Umbrel base port for safer port allocation (avoids common 8000s conflicts)
     local UMBREL_BASE_PORT=10000
     
@@ -1584,7 +1593,16 @@ convert_to_umbrel() {
     fi
     
     # Create umbrel-app.yml manifest with full app name including prefix
-    # Use host_port for the public port field
+    # For network_mode: host apps, use container_port (the actual port the app binds to)
+    # For normal apps, use host_port (the remapped public port)
+    local umbrel_port
+    if [[ "$uses_host_network" == "true" ]]; then
+        umbrel_port="$container_port"
+        print_info "Using container port $container_port for umbrel-app.yml (network_mode: host)"
+    else
+        umbrel_port="$host_port"
+    fi
+    
     # Quote tagline if it contains colon (common YAML issue)
     local tagline_value="$METADATA_TAGLINE"
     if [[ "$tagline_value" == *:* ]] || [[ "$tagline_value" == *\#* ]] || [[ "$tagline_value" == *\[* ]] || [[ "$tagline_value" == *\{* ]]; then
@@ -1610,7 +1628,7 @@ dependencies:$(if [[ -n "$deps_yaml" ]]; then echo "
 $deps_yaml"; else echo " []"; fi)
 repo: https://github.com/bigbeartechworld/big-bear-casaos
 support: https://github.com/bigbeartechworld/big-bear-casaos/issues
-port: $host_port
+port: $umbrel_port
 gallery:
   - 1.jpg
   - 2.jpg
@@ -1628,30 +1646,44 @@ EOF
     local final_compose="${output_dir}/docker-compose.yml"
     
     # Step 1: Add version: "3.7" at the top and remove incompatible fields
+    # For network_mode: only delete if NOT set to "host" (host networking is valid for Umbrel)
     yq eval 'del(.name) | 
              del(.services[].ports) | 
              del(.services[].container_name) | 
-             del(.services[].network_mode) |
+             (.services[] | select(.network_mode != "host") | .network_mode) |= null |
+             del(.services[] | select(.network_mode == null) | .network_mode) |
              . = {"version": "3.7"} + .' "$final_compose" > "$temp_compose"
     mv "$temp_compose" "$final_compose"
     
     # Step 2: Remove all comments from the YAML file
     # Umbrel apps should be clean without CasaOS-specific comments
-    sed '/^[[:space:]]*#/d' "$final_compose" > "$temp_compose"
+    # Remove both comment-only lines and inline comments
+    sed -E 's/[[:space:]]*#.*$//g; /^[[:space:]]*$/d' "$final_compose" > "$temp_compose"
     mv "$temp_compose" "$final_compose"
     
-    # Step 3: Add or update app_proxy service
+    # Check if main service uses network_mode: host
+    local uses_host_network=false
+    local network_mode_value
+    network_mode_value=$(yq eval ".services[\"$main_service\"].network_mode // \"\"" "$final_compose" 2>/dev/null)
+    if [[ "$network_mode_value" == "host" ]]; then
+        uses_host_network=true
+        print_info "App $app_name uses network_mode: host, skipping app_proxy service"
+    fi
+    
+    # Step 3: Add or update app_proxy service (only if not using host networking)
     # APP_HOST: container name that proxy connects to
     # APP_PORT: container's internal port (what the app listens on inside the container)
-    if yq eval '.services.app_proxy' "$final_compose" > /dev/null 2>&1; then
-        # Update existing app_proxy
-        yq eval ".services.app_proxy.environment.APP_HOST = \"${umbrel_app_name}_${main_service}_1\" | 
-                 .services.app_proxy.environment.APP_PORT = \"$container_port\"" "$final_compose" > "$temp_compose"
-        mv "$temp_compose" "$final_compose"
-    else
-        # Add new app_proxy service at the beginning of services
-        yq eval ".services = {\"app_proxy\": {\"environment\": {\"APP_HOST\": \"${umbrel_app_name}_${main_service}_1\", \"APP_PORT\": \"$container_port\"}}} + .services" "$final_compose" > "$temp_compose"
-        mv "$temp_compose" "$final_compose"
+    if [[ "$uses_host_network" == "false" ]]; then
+        if yq eval '.services.app_proxy' "$final_compose" > /dev/null 2>&1; then
+            # Update existing app_proxy
+            yq eval ".services.app_proxy.environment.APP_HOST = \"${umbrel_app_name}_${main_service}_1\" | 
+                     .services.app_proxy.environment.APP_PORT = \"$container_port\"" "$final_compose" > "$temp_compose"
+            mv "$temp_compose" "$final_compose"
+        else
+            # Add new app_proxy service at the beginning of services
+            yq eval ".services = {\"app_proxy\": {\"environment\": {\"APP_HOST\": \"${umbrel_app_name}_${main_service}_1\", \"APP_PORT\": \"$container_port\"}}} + .services" "$final_compose" > "$temp_compose"
+            mv "$temp_compose" "$final_compose"
+        fi
     fi
     
     # Create data directory with .gitkeep (standard Umbrel app structure)
