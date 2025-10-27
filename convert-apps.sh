@@ -305,7 +305,8 @@ clean_compose() {
                         # Add app prefix to prevent collisions between different apps
                         # Convert dashes to underscores in the app prefix too
                         if [[ -n "$app_prefix" ]]; then
-                            local safe_prefix=$(echo "$app_prefix" | sed 's|-|_|g')
+                            local safe_prefix
+                            safe_prefix=$(echo "$app_prefix" | sed 's|-|_|g')
                             volume_name="${safe_prefix}_${volume_name}"
                         fi
                         
@@ -560,7 +561,11 @@ get_existing_runtipi_port() {
     local app_name="$1"
     
     # Check in workspace for existing Runtipi app
-    local workspace_dir="$(dirname "$(dirname "$OUTPUT_DIR")")"
+    local workspace_dir
+    workspace_dir="$(dirname "$(dirname "$OUTPUT_DIR")")" || {
+        print_error "Failed to determine workspace directory"
+        return 1
+    }
     local existing_config="$workspace_dir/big-bear-runtipi/apps/$app_name/config.json"
     
     if [[ -f "$existing_config" ]]; then
@@ -579,13 +584,25 @@ get_existing_runtipi_port() {
 # Initialize port tracker with all existing ports from destination repositories
 init_port_tracker() {
     local port_track_file="$OUTPUT_DIR/.port_tracker"
+    local port_map_file="$OUTPUT_DIR/.port_map"
     
-    # Clear any existing port tracker
-    > "$port_track_file"
+    # Clear any existing port tracker files
+    : > "$port_track_file"
+    : > "$port_map_file"
     
     # For each platform, scan existing apps and load their ports
     for platform in "${PLATFORMS[@]}"; do
-        local workspace_dir="$(dirname "$OUTPUT_DIR")"
+        # Get the workspace directory (parent of the script directory)
+        local script_dir
+        script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)" || {
+            print_error "Failed to determine script directory"
+            return 1
+        }
+        local workspace_dir
+        workspace_dir="$(dirname "$script_dir")" || {
+            print_error "Failed to determine workspace directory"
+            return 1
+        }
         local platform_apps_dir
         
         case "$platform" in
@@ -608,15 +625,25 @@ init_port_tracker() {
             print_info "Loading existing ports from $platform..."
             local port_count=0
             
+            # Temporarily disable errexit for port loading (errors are non-fatal)
+            set +e
+            
             if [[ "$platform" == "umbrel" ]]; then
                 # Find all umbrel-app.yml files and extract ports
                 while IFS= read -r app_config; do
                     if [[ -f "$app_config" ]]; then
-                        local port
-                        port=$(yq eval '.port // empty' "$app_config" 2>/dev/null)
+                        local port app_id
+                        port=$(yq eval '.port' "$app_config" 2>/dev/null)
+                        app_id=$(yq eval '.id' "$app_config" 2>/dev/null)
                         
                         if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
                             echo "$port" >> "$port_track_file"
+                            # Store app-to-port mapping (format: platform:app_name:port)
+                            if [[ -n "$app_id" && "$app_id" != "null" ]]; then
+                                # Extract base app name (remove big-bear-umbrel- prefix)
+                                local base_name="${app_id#big-bear-umbrel-}"
+                                echo "umbrel:$base_name:$port" >> "$port_map_file"
+                            fi
                             ((port_count++)) || true
                         fi
                     fi
@@ -625,16 +652,24 @@ init_port_tracker() {
                 # Find all config.json files and extract ports (for runtipi)
                 while IFS= read -r config_file; do
                     if [[ -f "$config_file" ]]; then
-                        local port
+                        local port app_id
                         port=$(jq -r '.port // empty' "$config_file" 2>/dev/null)
+                        app_id=$(jq -r '.id // empty' "$config_file" 2>/dev/null)
                         
                         if [[ -n "$port" && "$port" != "null" && "$port" =~ ^[0-9]+$ ]]; then
                             echo "$port" >> "$port_track_file"
+                            # Store app-to-port mapping
+                            if [[ -n "$app_id" && "$app_id" != "null" ]]; then
+                                echo "runtipi:$app_id:$port" >> "$port_map_file"
+                            fi
                             ((port_count++)) || true
                         fi
                     fi
                 done < <(find "$platform_apps_dir" -name "config.json" -type f 2>/dev/null)
             fi
+            
+            # Re-enable errexit
+            set -e
             
             if [[ $port_count -gt 0 ]]; then
                 print_success "Loaded $port_count existing ports from $platform"
@@ -821,12 +856,23 @@ EOF
     fi
     
     # Ensure port is valid for Runtipi (must be > 999)
-    # First, try to preserve existing port from destination repository
-    local runtipi_port
-    if runtipi_port=$(get_existing_runtipi_port "$app_name"); then
+    # First, check if this app already has a port assignment from the port map
+    local runtipi_port=""
+    local port_map_file="$OUTPUT_DIR/.port_map"
+    if [[ -f "$port_map_file" ]]; then
+        runtipi_port=$(grep "^runtipi:${app_name}:" "$port_map_file" 2>/dev/null | cut -d':' -f3)
+        if [[ -n "$runtipi_port" ]]; then
+            print_info "Preserving existing port $runtipi_port for $app_name"
+        fi
+    fi
+    
+    # If no port from map, try the old method (direct repository check)
+    if [[ -z "$runtipi_port" ]] && runtipi_port=$(get_existing_runtipi_port "$app_name"); then
         print_info "Preserving existing port $runtipi_port for $app_name"
-    else
-        # No existing port, assign a new one
+    fi
+    
+    # If still no port, assign a new one
+    if [[ -z "$runtipi_port" ]]; then
         # Map common low ports to their high port equivalents
         runtipi_port="${METADATA_PORT_MAP:-8080}"
         if [[ "$runtipi_port" -le 999 ]]; then
@@ -844,8 +890,7 @@ EOF
         fi
         
         # Check for port conflicts and auto-increment if needed
-        # Create a port tracking file if converting multiple apps
-        local port_track_file="$OUTPUT_DIR/runtipi/.port_tracker"
+        local port_track_file="$OUTPUT_DIR/.port_tracker"
         if [[ -f "$port_track_file" ]]; then
             # Check if this port is already used
             while grep -q "^${runtipi_port}$" "$port_track_file" 2>/dev/null; do
@@ -854,9 +899,9 @@ EOF
             done
         fi
         
-        # Track this port for future conversions
-        mkdir -p "$OUTPUT_DIR/runtipi"
+        # Track this port and save the mapping for future conversions
         echo "$runtipi_port" >> "$port_track_file"
+        echo "runtipi:$app_name:$runtipi_port" >> "$port_map_file"
     fi
     
     # Escape special characters in JSON strings
@@ -1004,7 +1049,7 @@ EOF
     print_success "Converted $app_name for Dockge"
 }
 
-# Convert to Cosmos format (cosmos-compose with routes)
+# Convert to Cosmos format (cosmos-compose.json + description.json)
 convert_to_cosmos() {
     local app_name="$1"
     local app_dir="$2"
@@ -1016,44 +1061,222 @@ convert_to_cosmos() {
     fi
     
     mkdir -p "$output_dir"
+    mkdir -p "$output_dir/screenshots"
     
-    # Extract metadata for route configuration
+    # Extract metadata
     eval "$(extract_metadata "$app_dir" "$app_name")"
     
-    # Clean compose and add Cosmos-specific routes section
-    # Enable volume declarations for Cosmos with app-specific prefix
-    clean_compose "$app_dir/docker-compose.yml" "$output_dir/cosmos-compose.yml" "./data" "true" "$app_name"
+    # Get the docker-compose content
+    local compose_file="$app_dir/docker-compose.yml"
     
-    # Add routes section for reverse proxy
-    if [[ -n "$METADATA_PORT_MAP" ]]; then
-        cat >> "$output_dir/cosmos-compose.yml" << EOF
-
-# Cosmos-specific routes for reverse proxy
-routes:
-  - name: ${app_name}
-    description: ${METADATA_TITLE}
-    useHost: true
-    target: http://localhost:${METADATA_PORT_MAP}
-    mode: SERVAPP
-    Timeout: 14400000
-    ThrottlePerMinute: 0
-    BlockCommonBots: false
-    BlockAPIAbuse: false
-EOF
+    # Extract main service name
+    local main_service
+    main_service=$(yq eval '.services | keys | .[0]' "$compose_file" 2>/dev/null || echo "app")
+    
+    # Extract port from docker-compose.yml
+    local internal_port=""
+    local port_spec
+    port_spec=$(yq eval ".services[\"$main_service\"].ports[0]" "$compose_file" 2>/dev/null)
+    
+    if [[ -n "$port_spec" && "$port_spec" != "null" ]]; then
+        if [[ "$port_spec" =~ ^[0-9]+:([0-9]+) ]]; then
+            internal_port="${BASH_REMATCH[1]}"
+        elif [[ "$port_spec" =~ :([0-9]+)$ ]]; then
+            internal_port="${BASH_REMATCH[1]}"
+        fi
     fi
     
-    # Create cosmos app metadata file
-    cat > "$output_dir/servapp.json" << EOF
+    # Fallback to METADATA_PORT_MAP if no port found
+    if [[ -z "$internal_port" || "$internal_port" == "null" ]]; then
+        internal_port="$METADATA_PORT_MAP"
+    fi
+    
+    # Extract image
+    local image
+    image=$(yq eval ".services[\"$main_service\"].image" "$compose_file" 2>/dev/null || echo "")
+    
+    # Extract environment variables (handles both array and object formats)
+    local env_vars_json="["
+    local env_count=0
+    
+    # First check if environment is an object or array
+    local env_type
+    env_type=$(yq eval ".services[\"$main_service\"].environment | type" "$compose_file" 2>/dev/null || echo "null")
+    
+    if [[ "$env_type" == "!!map" ]]; then
+        # Environment is an object (key: value pairs)
+        while IFS= read -r env_line; do
+            if [[ -n "$env_line" && "$env_line" != "null" ]]; then
+                if [[ $env_count -gt 0 ]]; then
+                    env_vars_json+=","
+                fi
+                # Escape special characters for JSON (backslashes first, then quotes)
+                local escaped_env="${env_line//\\/\\\\}"
+                escaped_env="${escaped_env//\"/\\\"}"
+                env_vars_json+=$'\n'"        \"$escaped_env\""
+                ((env_count++)) || true
+            fi
+        done < <(yq eval ".services[\"$main_service\"].environment | to_entries | .[] | .key + \"=\" + .value" "$compose_file" 2>/dev/null)
+    else
+        # Environment is an array (key=value format)
+        while IFS= read -r env_line; do
+            if [[ -n "$env_line" && "$env_line" != "null" ]]; then
+                if [[ $env_count -gt 0 ]]; then
+                    env_vars_json+=","
+                fi
+                # Escape special characters for JSON (backslashes first, then quotes)
+                local escaped_env="${env_line//\\/\\\\}"
+                escaped_env="${escaped_env//\"/\\\"}"
+                env_vars_json+=$'\n'"        \"$escaped_env\""
+                ((env_count++)) || true
+            fi
+        done < <(yq eval ".services[\"$main_service\"].environment[]?" "$compose_file" 2>/dev/null)
+    fi
+    
+    env_vars_json+=$'\n'"      ]"
+    
+    # Extract volumes and convert to Cosmos format
+    local volumes_json=""
+    local volume_count=0
+    while IFS= read -r volume_line; do
+        if [[ -n "$volume_line" && "$volume_line" != "null" ]]; then
+            if [[ $volume_count -gt 0 ]]; then
+                volumes_json+=","
+            fi
+            
+            # Parse volume specification
+            local source="" target="" vol_type="volume"
+            if [[ "$volume_line" =~ ^(.+):(.+)$ ]]; then
+                source="${BASH_REMATCH[1]}"
+                target="${BASH_REMATCH[2]}"
+                
+                # Determine volume type
+                if [[ "$source" =~ ^[./] ]]; then
+                    vol_type="bind"
+                    source="{DefaultDataPath}/${app_name}${source#.}"
+                else
+                    vol_type="volume"
+                    source="{ServiceName}-${source}"
+                fi
+            fi
+            
+            # Escape special characters for JSON
+            local escaped_source="${source//\\/\\\\}"
+            escaped_source="${escaped_source//\"/\\\"}"
+            local escaped_target="${target//\\/\\\\}"
+            escaped_target="${escaped_target//\"/\\\"}"
+            
+            volumes_json+=$'\n'"        {"
+            volumes_json+=$'\n'"          \"source\": \"$escaped_source\","
+            volumes_json+=$'\n'"          \"target\": \"$escaped_target\","
+            volumes_json+=$'\n'"          \"type\": \"$vol_type\""
+            volumes_json+=$'\n'"        }"
+            ((volume_count++)) || true
+        fi
+    done < <(yq eval ".services[\"$main_service\"].volumes[]?" "$compose_file" 2>/dev/null)
+    
+    # Extract restart policy
+    local restart_policy
+    restart_policy=$(yq eval ".services[\"$main_service\"].restart // \"unless-stopped\"" "$compose_file" 2>/dev/null)
+    
+    # Get icon URL - use Cosmos servapps CDN format
+    local icon_url="https://azukaar.github.io/cosmos-servapps-official/servapps/${app_name}/icon.png"
+    
+    # Create cosmos-compose.json
+    cat > "$output_dir/cosmos-compose.json" << EOF
 {
-  "name": "$METADATA_TITLE",
-  "description": "$METADATA_DESCRIPTION",
-  "author": "$METADATA_DEVELOPER",
-  "icon": "$METADATA_ICON",
-  "category": "$METADATA_CATEGORY",
-  "port": $METADATA_PORT_MAP,
-  "compose_file": "cosmos-compose.yml"
+  "cosmos-installer": {},
+  "minVersion": "0.7.6",
+  "services": {
+    "{ServiceName}": {
+      "image": "$image",
+      "container_name": "{ServiceName}",
+      "restart": "$restart_policy",
+      "UID": 1000,
+      "GID": 1000,
+      "environment": $env_vars_json,
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "true",
+        "cosmos-icon": "$icon_url"
+      },
+      "volumes": [$volumes_json
+      ],
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:${internal_port}",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    }
+  }
 }
 EOF
+    
+    # Escape special characters for JSON
+    local escaped_description="${METADATA_DESCRIPTION//\\/\\\\}"
+    escaped_description="${escaped_description//\"/\\\"}"
+    escaped_description="${escaped_description//$'\n'/ }"
+    escaped_description="${escaped_description//$'\r'/}"
+    
+    local escaped_tagline="${METADATA_TAGLINE//\\/\\\\}"
+    escaped_tagline="${escaped_tagline//\"/\\\"}"
+    escaped_tagline="${escaped_tagline//$'\n'/ }"
+    escaped_tagline="${escaped_tagline//$'\r'/}"
+    
+    # Convert category to tags array
+    local tags_json="[\"self-hosted\""
+    if [[ -n "$METADATA_CATEGORY" && "$METADATA_CATEGORY" != "null" ]]; then
+        tags_json+=", \"$METADATA_CATEGORY\""
+    fi
+    tags_json+="]"
+    
+    # Get source URLs
+    local repository_url
+    repository_url=$(yq eval '.x-casaos.project_url // ""' "$compose_file" 2>/dev/null || echo "")
+    
+    # Create description.json
+    cat > "$output_dir/description.json" << EOF
+{
+  "name": "$METADATA_TITLE",
+  "description": "$escaped_tagline",
+  "longDescription": "<p>$escaped_description</p>",
+  "tags": $tags_json,
+  "repository": "$repository_url",
+  "image": "https://hub.docker.com/r/${image%%:*}",
+  "supported_architectures": ["amd64", "arm64"]
+}
+EOF
+    
+    # Copy or download icon
+    if [[ -f "$app_dir/icon.png" ]]; then
+        cp "$app_dir/icon.png" "$output_dir/icon.png"
+    elif [[ -n "$METADATA_ICON" && "$METADATA_ICON" != "null" ]]; then
+        # Try to download the icon
+        if command -v curl &> /dev/null; then
+            curl -sL "$METADATA_ICON" -o "$output_dir/icon.png" 2>/dev/null || create_placeholder_logo "$output_dir/icon.png"
+        elif command -v wget &> /dev/null; then
+            wget -q "$METADATA_ICON" -O "$output_dir/icon.png" 2>/dev/null || create_placeholder_logo "$output_dir/icon.png"
+        else
+            create_placeholder_logo "$output_dir/icon.png"
+        fi
+    else
+        create_placeholder_logo "$output_dir/icon.png"
+    fi
+    
+    # Copy screenshots if they exist
+    if [[ -d "$app_dir/screenshots" ]]; then
+        cp -r "$app_dir/screenshots/"* "$output_dir/screenshots/" 2>/dev/null || true
+    fi
     
     print_success "Converted $app_name for Cosmos"
 }
@@ -1208,6 +1431,9 @@ EOF
 convert_to_umbrel() {
     local app_name="$1"
     local app_dir="$2"
+    # Umbrel uses simple app IDs without prefixes (e.g., "2fauth" not "big-bear-umbrel-2fauth")
+    local umbrel_app_id="$app_name"
+    # Directory name still uses prefix for big-bear-umbrel repo organization
     local umbrel_app_name="big-bear-umbrel-$app_name"
     local output_dir="$OUTPUT_DIR/umbrel/$umbrel_app_name"
     
@@ -1221,7 +1447,7 @@ convert_to_umbrel() {
     # Extract metadata for Umbrel format
     eval "$(extract_metadata "$app_dir" "$app_name")"
     
-    # Clean compose file for Umbrel
+    # Clean compose file for Umbrel - use APP_DATA_DIR for app data
     clean_compose "$app_dir/docker-compose.yml" "$output_dir/docker-compose.yml" "\${APP_DATA_DIR}"
     
     # Get main service name from docker-compose.yml
@@ -1263,17 +1489,32 @@ convert_to_umbrel() {
         esac
     fi
     
-    # Check for port conflicts using the port tracker (similar to Runtipi)
-    local port_track_file="$OUTPUT_DIR/.port_tracker"
-    if [[ -f "$port_track_file" ]]; then
-        while grep -q "^$port$" "$port_track_file"; do
-            print_warning "Port $port already used, incrementing to avoid conflict"
-            port=$((port + 1))
-        done
+    # Check if this app already has a port assignment in the destination repository
+    local port_map_file="$OUTPUT_DIR/.port_map"
+    local existing_port=""
+    if [[ -f "$port_map_file" ]]; then
+        existing_port=$(grep "^umbrel:${app_name}:" "$port_map_file" 2>/dev/null | cut -d':' -f3)
+        if [[ -n "$existing_port" ]]; then
+            print_info "Preserving existing port $existing_port for $app_name"
+            port="$existing_port"
+        fi
     fi
     
-    # Track this port
-    echo "$port" >> "$port_track_file"
+    # Only check for conflicts if we don't have an existing port assignment
+    if [[ -z "$existing_port" ]]; then
+        # Check for port conflicts using the port tracker
+        local port_track_file="$OUTPUT_DIR/.port_tracker"
+        if [[ -f "$port_track_file" ]]; then
+            while grep -q "^$port$" "$port_track_file"; do
+                print_warning "Port $port already used, incrementing to avoid conflict"
+                port=$((port + 1))
+            done
+        fi
+        
+        # Track this port and save the mapping for future conversions
+        echo "$port" >> "$port_track_file"
+        echo "umbrel:$app_name:$port" >> "$port_map_file"
+    fi
     
     # Extract dependencies (if any)
     local dependencies
@@ -1306,10 +1547,10 @@ convert_to_umbrel() {
         developer="BigBearTechWorld"
     fi
     
-    # Create umbrel-app.yml manifest
+    # Create umbrel-app.yml manifest with simple app ID
     cat > "$output_dir/umbrel-app.yml" << EOF
 manifestVersion: 1
-id: $umbrel_app_name
+id: $umbrel_app_id
 category: $METADATA_CATEGORY
 name: $METADATA_TITLE
 version: "$METADATA_VERSION"
@@ -1337,12 +1578,19 @@ submitter: BigBearTechWorld
 submission: https://github.com/bigbeartechworld/big-bear-casaos
 EOF
     
-    # Update docker-compose.yml to use Umbrel-compatible naming
-    # Replace service names to match Umbrel naming convention: app-id_service-name_1
+    # Update docker-compose.yml to use Umbrel-compatible format
+    # Umbrel docker-compose files should NOT have a 'name:' field
     local temp_compose="${output_dir}/docker-compose.tmp.yml"
     local final_compose="${output_dir}/docker-compose.yml"
     
-    # Read the cleaned compose file and update app_proxy APP_HOST and APP_PORT if it exists
+    # Remove the 'name:' field if it exists
+    yq eval 'del(.name)' "$final_compose" > "$temp_compose"
+    mv "$temp_compose" "$final_compose"
+    
+    # Update app_proxy APP_HOST and APP_PORT to use Umbrel naming convention
+    # APP_HOST format: {folder_name}_{service_name}_1 (e.g., "big-bear-umbrel-2fauth_app_1")
+    # The folder name is used because Docker Compose prefixes containers with the directory name
+    # APP_PORT must be a string
     if yq eval '.services.app_proxy' "$final_compose" > /dev/null 2>&1; then
         yq eval ".services.app_proxy.environment.APP_HOST = \"${umbrel_app_name}_${main_service}_1\" | .services.app_proxy.environment.APP_PORT = \"$port\"" "$final_compose" > "$temp_compose"
         mv "$temp_compose" "$final_compose"
