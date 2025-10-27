@@ -1431,6 +1431,9 @@ EOF
 convert_to_umbrel() {
     local app_name="$1"
     local app_dir="$2"
+    # Umbrel uses simple app IDs without prefixes (e.g., "2fauth" not "big-bear-umbrel-2fauth")
+    local umbrel_app_id="$app_name"
+    # Directory name still uses prefix for big-bear-umbrel repo organization
     local umbrel_app_name="big-bear-umbrel-$app_name"
     local output_dir="$OUTPUT_DIR/umbrel/$umbrel_app_name"
     
@@ -1444,7 +1447,7 @@ convert_to_umbrel() {
     # Extract metadata for Umbrel format
     eval "$(extract_metadata "$app_dir" "$app_name")"
     
-    # Clean compose file for Umbrel
+    # Clean compose file for Umbrel - use APP_DATA_DIR for app data
     clean_compose "$app_dir/docker-compose.yml" "$output_dir/docker-compose.yml" "\${APP_DATA_DIR}"
     
     # Get main service name from docker-compose.yml
@@ -1544,10 +1547,10 @@ convert_to_umbrel() {
         developer="BigBearTechWorld"
     fi
     
-    # Create umbrel-app.yml manifest
+    # Create umbrel-app.yml manifest with simple app ID
     cat > "$output_dir/umbrel-app.yml" << EOF
 manifestVersion: 1
-id: $umbrel_app_name
+id: $umbrel_app_id
 category: $METADATA_CATEGORY
 name: $METADATA_TITLE
 version: "$METADATA_VERSION"
@@ -1575,12 +1578,19 @@ submitter: BigBearTechWorld
 submission: https://github.com/bigbeartechworld/big-bear-casaos
 EOF
     
-    # Update docker-compose.yml to use Umbrel-compatible naming
-    # Replace service names to match Umbrel naming convention: app-id_service-name_1
+    # Update docker-compose.yml to use Umbrel-compatible format
+    # Umbrel docker-compose files should NOT have a 'name:' field
     local temp_compose="${output_dir}/docker-compose.tmp.yml"
     local final_compose="${output_dir}/docker-compose.yml"
     
-    # Read the cleaned compose file and update app_proxy APP_HOST and APP_PORT if it exists
+    # Remove the 'name:' field if it exists
+    yq eval 'del(.name)' "$final_compose" > "$temp_compose"
+    mv "$temp_compose" "$final_compose"
+    
+    # Update app_proxy APP_HOST and APP_PORT to use Umbrel naming convention
+    # APP_HOST format: {folder_name}_{service_name}_1 (e.g., "big-bear-umbrel-2fauth_app_1")
+    # The folder name is used because Docker Compose prefixes containers with the directory name
+    # APP_PORT must be a string
     if yq eval '.services.app_proxy' "$final_compose" > /dev/null 2>&1; then
         yq eval ".services.app_proxy.environment.APP_HOST = \"${umbrel_app_name}_${main_service}_1\" | .services.app_proxy.environment.APP_PORT = \"$port\"" "$final_compose" > "$temp_compose"
         mv "$temp_compose" "$final_compose"
