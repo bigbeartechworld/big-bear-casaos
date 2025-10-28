@@ -2,7 +2,6 @@
 
 # Name of the big-bear-syncthing application
 name: big-bear-syncthing
-
 # Service definitions for the big-bear-syncthing application
 services:
   # Service name: big-bear-syncthing
@@ -10,72 +9,79 @@ services:
   big-bear-syncthing:
     # Name of the container
     container_name: big-bear-syncthing
-
     # Image to be used for the container
     image: syncthing/syncthing:2.0
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/data:/var/syncthing
       - /DATA/AppData/$AppID/media/data/syncthing:/media/data/syncthing
-
     # Ports mapping between host and container
     ports:
       - 8384:8384 # WebUI
       - 22000:22000/tcp # TCP file transfers
       - 22000:22000/udp # QUIC file transfers
       - 21027:21027/udp # Receive local discovery broadcasts
-
     # Environment variables for the container
     environment:
       - PUID=1000 # User ID
       - PGID=1000 # Group ID
-
     # Stop the container if it exits
     stop_grace_period: 1m
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_us: 'Container Variable: PGID'
       volumes:
         - container: /var/syncthing
           description:
-            en_us: "Container Path: /var/syncthing"
+            en_us: 'Container Path: /var/syncthing'
         - container: /media/data/syncthing
           description:
-            en_us: "Container Path: /media/data/syncthing"
+            en_us: 'Container Path: /media/data/syncthing'
       ports:
         - container: "8384"
           description:
-            en_us: "Container Port: 8384"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8384'
+        - container: "22000"
+          description:
+            en_us: 'Container Port: 22000'
+        - container: "22000"
+          description:
+            en_us: 'Container Port: 22000'
+        - container: "21027"
+          description:
+            en_us: 'Container Port: 21027'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-syncthing
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers. We strive to fulfill the goals below. The goals are listed in order of importance, the most important one being the first.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Peer-to-peer file synchronization between your devices
-  # Developer's name or identifier
-  developer: "syncthing"
-  # Author of this configuration
+  # Developer's information
+  developer: syncthing
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/syncthing.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Syncthing
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8384"

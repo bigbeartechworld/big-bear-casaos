@@ -2,7 +2,6 @@
 
 # Name of the big-bear-pihole-updatelists application
 name: big-bear-pihole-updatelists
-
 # Service definitions for the big-bear-pihole-updatelists application
 services:
   # Service name: big-bear-pihole-updatelists
@@ -10,31 +9,24 @@ services:
   big-bear-pihole-updatelists:
     # Name of the container
     container_name: big-bear-pihole-updatelists
-
     # Image to be used for the container
     image: jacklul/pihole:2025.08.0
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       TZ: "UTC"
       FTLCONF_webserver_api_password: "your_password"
       BLOCKLISTS_URL: "https://v.firebog.net/hosts/lists.php?type=tick"
       REGEX_BLACKLIST_URL: "https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list"
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/big-bear-pihole-updatelists/etc directory to /etc/pihole/ inside the container
       - /DATA/AppData/$AppID/etc:/etc/pihole/
-
       # Mounting the local /DATA/AppData/big-bear-pihole-updatelists/etc/pihole-updatelists directory to /etc/pihole-updatelists/ inside the container
       - /DATA/AppData/$AppID/etc/pihole-updatelists:/etc/pihole-updatelists/
-
       # Mounting the local /DATA/AppData/big-bear-pihole-updatelists/dnsmasq.d directory to /etc/dnsmasq.d inside the container
       - /DATA/AppData/$AppID/dnsmasq.d:/etc/dnsmasq.d/
-
     # Ports mapping between host and container
     ports:
       - "53:53/tcp"
@@ -42,94 +34,89 @@ services:
       - "67:67/udp"
       - "8080:80/tcp"
       - "10443:443/tcp"
-
     # Define the networks section
     networks:
       # Define the pihole-network
       - pihole-network
-
     # Capabilities to be added to the container
     cap_add:
       - NET_ADMIN
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: "Container Environment: TZ"
+            en_us: 'Container Variable: TZ'
         - container: FTLCONF_webserver_api_password
           description:
-            en_us: "Container Environment: FTLCONF_webserver_api_password"
+            en_us: 'Container Variable: FTLCONF_webserver_api_password'
         - container: BLOCKLISTS_URL
           description:
-            en_us: "Container Environment: BLOCKLISTS_URL"
+            en_us: 'Container Variable: BLOCKLISTS_URL'
         - container: REGEX_BLACKLIST_URL
           description:
-            en_us: "Container Environment: REGEX_BLACKLIST_URL"
+            en_us: 'Container Variable: REGEX_BLACKLIST_URL'
       volumes:
-        - container: /etc/pihole
+        - container: /etc/pihole/
           description:
-            en_us: "Container Path: /etc/pihole"
-        - container: /etc/pihole-updatelists
+            en_us: 'Container Path: /etc/pihole/'
+        - container: /etc/pihole-updatelists/
           description:
-            en_us: "Container Path: /etc/pihole-updatelists"
-        - container: /etc/dnsmasq.d
+            en_us: 'Container Path: /etc/pihole-updatelists/'
+        - container: /etc/dnsmasq.d/
           description:
-            en_us: "Container Path: /etc/dnsmasq.d"
+            en_us: 'Container Path: /etc/dnsmasq.d/'
       ports:
         - container: "53"
           description:
-            en_us: "Container Port: 53"
+            en_us: 'Container Port: 53'
+        - container: "53"
+          description:
+            en_us: 'Container Port: 53'
         - container: "67"
           description:
-            en_us: "Container Port: 67"
+            en_us: 'Container Port: 67'
         - container: "80"
           description:
-            en_us: "Container Port: 80"
+            en_us: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: "Container Port: 443"
-
+            en_us: 'Container Port: 443'
 # Define the networks section
 networks:
   # Define the pihole-network
   pihole-network:
     # Set the driver to bridge
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-pihole-updatelists
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software. This is a fork of the Pi-hole® application that adds the ability to update the lists of blocked domains and regexes.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: A black hole for Internet advertisements. This is a fork of the Pi-hole® application that adds the ability to update the lists of blocked domains and regexes.
-  # Developer's name or identifier
-  developer: "jacklul"
-  # Author of this configuration
+  # Developer's information
+  developer: jacklul
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/pi-hole.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Pi-hole® Updatelists
-  # Go to /admin to access the application
-  index: /admin
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8080"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-pi-hole-updatelists-to-bigbearcasaos/3472?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Pi-hole® Updatelists
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"

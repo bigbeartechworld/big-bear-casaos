@@ -2,7 +2,6 @@
 
 # Name of the big-bear-nocodb application
 name: big-bear-nocodb
-
 # Service definitions for the big-bear-nocodb application
 services:
   # Service name: big-bear-nocodb
@@ -21,16 +20,25 @@ services:
       - /DATA/AppData/$AppID/data:/usr/src/app/data # Maps persistent data storage for NocoDB
     networks:
       - big-bear-nocodb-network # Connects to the custom network
-    x-casaos: # CasaOS specific configuration for better integration
+    x-casaos:
+      envs:
+        - container: DATABASE_URL
+          description:
+            en_us: 'Container Variable: DATABASE_URL'
+        - container: NC_AUTH_JWT_SECRET
+          description:
+            en_us: 'Container Variable: NC_AUTH_JWT_SECRET'
+        - container: NC_REDIS_URL
+          description:
+            en_us: 'Container Variable: NC_REDIS_URL'
       volumes:
         - container: /usr/src/app/data
           description:
-            en_us: "Container Path: /usr/src/app/data"
+            en_us: 'Container Path: /usr/src/app/data'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
+            en_us: 'Container Port: 8080'
   # Database service configuration
   big-bear-nocodb-db:
     container_name: big-bear-nocodb-db
@@ -44,13 +52,21 @@ services:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Persistent storage for the database
     networks:
       - big-bear-nocodb-network # Connects to the custom network
-
-    x-casaos: # CasaOS specific configuration for the database
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_us: 'Container Variable: POSTGRES_DB'
+        - container: POSTGRES_USER
+          description:
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
   # Redis service configuration
   big-bear-nocodb-redis:
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0 # Specifies the Redis Docker image to use
@@ -66,33 +82,40 @@ services:
       retries: 30 # Number of retries before considering the service unhealthy
     networks:
       - big-bear-nocodb-network # Connects to the custom network
-
-    x-casaos: # CasaOS specific configuration for Redis
+    x-casaos:
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-
+            en_us: 'Container Path: /data'
 # Network configuration
 networks:
   big-bear-nocodb-network:
     driver: bridge # Uses a bridge network for inter-container communication
-
-# CasaOS specific configuration for application metadata
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: big-bear-nocodb # Main service of the application
-  description: # Detailed application description
+  # Main service for this application
+  main: big-bear-nocodb
+  # Detailed description for the application
+  description:
     en_us: NocoDB allows building no-code database solutions with ease of spreadsheets. Bring your own database or choose ours! Millions of rows? Not a problem. Your Data. Your rules. You are in control.
-  tagline: # Short description or tagline
-    en_us: 🔥 🔥 🔥 Open Source Airtable Alternative
-  developer: "nocodb" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nocodb.png # Icon for the application
-  thumbnail: "https://user-images.githubusercontent.com/86527202/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif" # Thumbnail image (currently empty)
+  # Brief tagline for the application
+  tagline:
+    en_us: "\U0001F525 \U0001F525 \U0001F525 Open Source Airtable Alternative"
+  # Developer's information
+  developer: nocodb
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nocodb.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://user-images.githubusercontent.com/86527202/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif
+  # Title for the application
   title:
-    en_us: NocoDB # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "8080" # Port mapping information
+    en_us: NocoDB
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"

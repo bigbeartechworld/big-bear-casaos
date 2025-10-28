@@ -2,7 +2,6 @@
 
 # Name of the big-bear-ollama-nvidia application
 name: big-bear-ollama-nvidia
-
 # Service definitions for the big-bear-ollama-nvidia application
 services:
   # Service name: big-bear-ollama-nvidia
@@ -10,22 +9,17 @@ services:
   big-bear-ollama-nvidia:
     # Name of the container
     container_name: big-bear-ollama-nvidia
-
     # Image to be used for the container
     image: ollama/ollama:0.12.6
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/.ollama:/root/.ollama
-
     # Ports mapping between host and container
     ports:
       # Mapping port 11434 of the host to port 11434 of the container
       - "11434:11434"
-
     # Define the deployment settings
     deploy:
       # Specify resource reservations
@@ -39,43 +33,40 @@ services:
               capabilities:
                 # Define the required capabilities (gpu for GPU resources)
                 - gpu
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /root/.ollama
           description:
-            en_us: "Container Path: /root/.ollama"
+            en_us: 'Container Path: /root/.ollama'
       ports:
         - container: "11434"
           description:
-            en_us: "Container Port: 11434"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 11434'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-ollama-nvidia
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Get up and running with Llama 3, Mistral, Gemma, and other large language models.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: LLMs inference server with OpenAI compatible API
-  # Developer's name or identifier
-  developer: "ollama"
-  # Author of this configuration
+  # Developer's information
+  developer: ollama
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ollama.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Ollama - NVIDIA
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "11434"

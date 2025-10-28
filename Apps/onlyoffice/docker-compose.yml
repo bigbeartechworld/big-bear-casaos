@@ -1,6 +1,5 @@
 # Configuration for big-bear-onlyoffice setup
 name: big-bear-onlyoffice
-
 # Service definitions for the big-bear-onlyoffice application
 services:
   app:
@@ -15,46 +14,55 @@ services:
       - /DATA/AppData/$AppID/onlyoffice/rabbitmq:/var/lib/rabbitmq
       - /DATA/AppData/$AppID/onlyoffice/redis:/var/lib/redis
       - /DATA/AppData/$AppID/onlyoffice/db:/var/lib/postgresql
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /var/log/onlyoffice
           description:
-            en_us: "Container Path: /var/log/onlyoffice"
+            en_us: 'Container Path: /var/log/onlyoffice'
         - container: /var/www/onlyoffice/Data
           description:
-            en_us: "Container Path: /var/www/onlyoffice/Data"
+            en_us: 'Container Path: /var/www/onlyoffice/Data'
         - container: /var/lib/onlyoffice
           description:
-            en_us: "Container Path: /var/lib/onlyoffice"
+            en_us: 'Container Path: /var/lib/onlyoffice'
         - container: /var/lib/rabbitmq
           description:
-            en_us: "Container Path: /var/lib/rabbitmq"
+            en_us: 'Container Path: /var/lib/rabbitmq'
         - container: /var/lib/redis
           description:
-            en_us: "Container Path: /var/lib/redis"
+            en_us: 'Container Path: /var/lib/redis'
         - container: /var/lib/postgresql
           description:
-            en_us: "Container Path: /var/lib/postgresql"
+            en_us: 'Container Path: /var/lib/postgresql'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 80'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: app # Main service of the application
+  # Main service for this application
+  main: app
+  # Detailed description for the application
   description:
-    en_us: Feature-rich web-based office suite with a vast range of collaborative capabilities # Description in English
+    en_us: Feature-rich web-based office suite with a vast range of collaborative capabilities
+  # Brief tagline for the application
   tagline:
-    en_us: OnlyOffice # Short description or tagline in English
-  developer: "" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/onlyoffice.png # Icon for the application
-  thumbnail: "" # Thumbnail image (currently empty)
+    en_us: OnlyOffice
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/onlyoffice.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
   title:
-    en_us: OnlyOffice # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "7400" # Port mapping information
+    en_us: OnlyOffice
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "7400"

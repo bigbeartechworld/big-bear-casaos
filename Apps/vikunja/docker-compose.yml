@@ -2,7 +2,6 @@
 
 # Name of the big-bear-vikunja application
 name: big-bear-vikunja
-
 # Service definitions for the big-bear-vikunja application
 services:
   vikunja:
@@ -28,38 +27,37 @@ services:
       - vikunja-db
     networks:
       - vikunja-network
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
+        - container: VIKUNJA_SERVICE_PUBLICURL
+          description:
+            en_us: 'Container Variable: VIKUNJA_SERVICE_PUBLICURL'
         - container: VIKUNJA_DATABASE_HOST
           description:
-            en_us: Database host
+            en_us: 'Container Variable: VIKUNJA_DATABASE_HOST'
         - container: VIKUNJA_DATABASE_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: VIKUNJA_DATABASE_PASSWORD'
         - container: VIKUNJA_DATABASE_TYPE
           description:
-            en_us: Database type
+            en_us: 'Container Variable: VIKUNJA_DATABASE_TYPE'
         - container: VIKUNJA_DATABASE_USER
           description:
-            en_us: Database user
+            en_us: 'Container Variable: VIKUNJA_DATABASE_USER'
         - container: VIKUNJA_DATABASE_DATABASE
           description:
-            en_us: Database name
+            en_us: 'Container Variable: VIKUNJA_DATABASE_DATABASE'
         - container: VIKUNJA_SERVICE_JWTSECRET
           description:
-            en_us: JWT secret
-        - container: VIKUNJA_SERVICE_FRONTENDURL
-          description:
-            en_us: Frontend URL
-      ports:
-        - container: "3456"
-          description:
-            en_us: "Container Port: 3456"
+            en_us: 'Container Variable: VIKUNJA_SERVICE_JWTSECRET'
       volumes:
         - container: /app/vikunja/files
           description:
-            en_us: "Container Path: /app/vikunja/files"
-
+            en_us: 'Container Path: /app/vikunja/files'
+      ports:
+        - container: "3456"
+          description:
+            en_us: 'Container Port: 3456'
   vikunja-db:
     image: mariadb:10
     container_name: vikunja-db
@@ -76,60 +74,54 @@ services:
       # Map container path to host path for MariaDB data
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     restart: unless-stopped
-
     networks:
       - vikunja-network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: "MySQL root password: supersecret"
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_USER
           description:
-            en_us: "MySQL user: vikunja"
+            en_us: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: "MySQL password: secret"
+            en_us: 'Container Variable: MYSQL_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: "MySQL database: vikunja"
+            en_us: 'Container Variable: MYSQL_DATABASE'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
-
+            en_us: 'Container Path: /var/lib/mysql'
 networks:
   vikunja-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: vikunja
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: The open-source, self-hostable to-do app. Organize everything, on all platforms.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Vikunja
-  # Developer's name or identifier
-  developer: "kolaente"
-  # Author of this configuration
+  # Developer's information
+  developer: kolaente
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/vikunja.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Vikunja
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8081"
-  scheme: http

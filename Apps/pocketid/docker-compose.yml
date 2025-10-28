@@ -28,7 +28,7 @@ services:
         protocol: tcp # Port mapping between host and container
     volumes:
       - type: bind
-        source: /DATA/AppData/$AppID/data
+        source: pocketid_data
         target: /app/data # Volume for persistent data
     devices: []
     cap_add: []
@@ -41,55 +41,71 @@ services:
       timeout: 5s
       retries: 2
       start_period: 10s
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        # Environment variables for CasaOS UI
         - container: APP_URL
           description:
-            en_us: "Application URL for pocket-id"
+            en_us: 'Container Variable: APP_URL'
         - container: TRUST_PROXY
           description:
-            en_us: "Whether to trust proxy headers"
+            en_us: 'Container Variable: TRUST_PROXY'
         - container: MAXMIND_LICENSE_KEY
           description:
-            en_us: "MaxMind license key for geolocation (optional)"
+            en_us: 'Container Variable: MAXMIND_LICENSE_KEY'
         - container: PUID
           description:
-            en_us: "User ID for file permissions"
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: "Group ID for file permissions"
+            en_us: 'Container Variable: PGID'
       volumes:
-        # Volume mapping descriptions for CasaOS UI
-        - container: /app/data
+        - container: ' bind'
           description:
-            en_us: "Container Path: /app/data"
+            en_us: 'Container Path:  bind'
+        - container: ' pocketid_data'
+          description:
+            en_us: 'Container Path:  pocketid_data'
+        - container: ' /app/data # Volume for persistent data'
+          description:
+            en_us: 'Container Path:  /app/data # Volume for persistent data'
       ports:
-        # Port configuration descriptions for CasaOS UI
-        - container: "1411"
+        - container: ' 1411'
           description:
-            en_us: "Container Port: 1411"
-
-# CasaOS specific top-level configuration
+            en_us: 'Container Port:  1411'
+        - null
+        - container: ' tcp # Port mapping between host and container'
+          description:
+            en_us: 'Container Port:  tcp # Port mapping between host and container'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: big-bear-pocketid # Main service of the application
+  # Main service for this application
+  main: big-bear-pocketid
+  # Detailed description for the application
   description:
-    en_us: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services. # Description in English
+    en_us: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.
+  # Brief tagline for the application
   tagline:
-    en_us: Passkey-based OIDC authentication # Short description or tagline in English
-  developer: "pocket-id" # Developer's name or identifier
-  author: techieanant # Author of this configuration
-  icon: https://pocket-id.org/img/logo.png # Icon URL
-  thumbnail: "" # Thumbnail image URL (empty if not available)
-  title:
-    en_us: Pocket ID # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "1411" # Port mapping information
-  # Tips
+    en_us: Passkey-based OIDC authentication
+  # Developer's information
+  developer: pocket-id
+  # Author of this particular configuration
+  author: techieanant
+  # Icon URL for the application
+  icon: https://pocket-id.org/img/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-pocket-id-to-bigbearcasaos/3552#p-6013-documentation-4
+  # Title for the application
+  title:
+    en_us: Pocket ID
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "1411"
