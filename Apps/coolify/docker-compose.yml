@@ -2,7 +2,6 @@
 
 # Name of the big-bear-coolify application
 name: big-bear-coolify
-
 # Service definitions for the big-bear-coolify application
 services:
   # Service name: big-bear-coolify
@@ -10,13 +9,10 @@ services:
   big-bear-coolify:
     # Name of the container
     container_name: big-bear-coolify
-
     # Image to be used for the container specifies the fastfetch version and source
     image: ghcr.io/coollabsio/coolify:4.0.0-beta.434
-
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
-
     # Environment variables for the container
     environment:
       - PHP_MEMORY_LIMIT="512M"
@@ -75,7 +71,6 @@ services:
       - STRIPE_PRICE_ID_ULTIMATE_MONTHLY_OLD=
       - STRIPE_PRICE_ID_ULTIMATE_YEARLY_OLD=
       - STRIPE_EXCLUDED_PLANS=
-
     # Mount necessary volumes for accessing system information
     volumes:
       # ssh-keygen -f /DATA/AppData/big-bear-coolify/ssh/keys/id.root@host.docker.internal -t ed25519 -N '' -C root@coolify
@@ -86,214 +81,217 @@ services:
       - /DATA/AppData/$AppID/backups:/var/www/html/storage/app/backups
       - /DATA/AppData/$AppID/webhooks-during-maintenance:/var/www/html/storage/app/webhooks-during-maintenance
       - /DATA/AppData/$AppID/logs:/var/www/html/storage/logs
-
     # Map port 8080 on the host to port 80 on the container
     ports:
       - "8000:8080"
-
     healthcheck:
       test: curl --fail http://127.0.0.1:8080/api/health || exit 1
       interval: 5s
       retries: 10
       timeout: 2s
-
     depends_on:
       big-bear-coolify-postgres:
         condition: service_healthy
       big-bear-coolify-redis:
         condition: service_healthy
-
     networks:
       - big_bear_coolify_network
-
-    # CasaOS specific configuration for volume and port descriptions
     x-casaos:
       envs:
+        - container: PHP_MEMORY_LIMIT
+          description:
+            en_us: 'Container Variable: PHP_MEMORY_LIMIT'
         - container: APP_ID
           description:
-            en_us: App ID
+            en_us: 'Container Variable: APP_ID'
         - container: APP_ENV
           description:
-            en_us: App environment
+            en_us: 'Container Variable: APP_ENV'
         - container: APP_DEBUG
           description:
-            en_us: App debug
+            en_us: 'Container Variable: APP_DEBUG'
         - container: APP_NAME
           description:
-            en_us: App name
+            en_us: 'Container Variable: APP_NAME'
         - container: APP_KEY
           description:
-            en_us: App key
+            en_us: 'Container Variable: APP_KEY'
         - container: APP_URL
           description:
-            en_us: App URL
+            en_us: 'Container Variable: APP_URL'
         - container: DB_CONNECTION
           description:
-            en_us: Database connection
+            en_us: 'Container Variable: DB_CONNECTION'
         - container: DB_HOST
           description:
-            en_us: Database host
+            en_us: 'Container Variable: DB_HOST'
         - container: DB_PORT
           description:
-            en_us: Database port
+            en_us: 'Container Variable: DB_PORT'
         - container: DB_DATABASE
           description:
-            en_us: Database name
+            en_us: 'Container Variable: DB_DATABASE'
         - container: DB_USERNAME
           description:
-            en_us: Database user
+            en_us: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: DB_PASSWORD'
         - container: QUEUE_CONNECTION
           description:
-            en_us: Queue connection
+            en_us: 'Container Variable: QUEUE_CONNECTION'
         - container: REDIS_HOST
           description:
-            en_us: Redis host
+            en_us: 'Container Variable: REDIS_HOST'
         - container: REDIS_PASSWORD
           description:
-            en_us: Redis password
+            en_us: 'Container Variable: REDIS_PASSWORD'
         - container: HORIZON_BALANCE
           description:
-            en_us: Horizon balance
+            en_us: 'Container Variable: HORIZON_BALANCE'
         - container: HORIZON_MAX_PROCESSES
           description:
-            en_us: Horizon max processes
+            en_us: 'Container Variable: HORIZON_MAX_PROCESSES'
         - container: HORIZON_BALANCE_MAX_SHIFT
           description:
-            en_us: Horizon balance max shift
+            en_us: 'Container Variable: HORIZON_BALANCE_MAX_SHIFT'
         - container: HORIZON_BALANCE_COOLDOWN
           description:
-            en_us: Horizon balance cooldown
+            en_us: 'Container Variable: HORIZON_BALANCE_COOLDOWN'
         - container: SSL_MODE
           description:
-            en_us: SSL mode
+            en_us: 'Container Variable: SSL_MODE'
         - container: PHP_PM_CONTROL
           description:
-            en_us: PHP PM control
+            en_us: 'Container Variable: PHP_PM_CONTROL'
         - container: PHP_PM_START_SERVERS
           description:
-            en_us: PHP PM start servers
+            en_us: 'Container Variable: PHP_PM_START_SERVERS'
         - container: PHP_PM_MIN_SPARE_SERVERS
           description:
-            en_us: PHP PM min spare servers
+            en_us: 'Container Variable: PHP_PM_MIN_SPARE_SERVERS'
         - container: PHP_PM_MAX_SPARE_SERVERS
           description:
-            en_us: PHP PM max spare servers
+            en_us: 'Container Variable: PHP_PM_MAX_SPARE_SERVERS'
         - container: PUSHER_HOST
           description:
-            en_us: Pusher host
+            en_us: 'Container Variable: PUSHER_HOST'
         - container: PUSHER_BACKEND_HOST
           description:
-            en_us: Pusher backend host
+            en_us: 'Container Variable: PUSHER_BACKEND_HOST'
         - container: PUSHER_PORT
           description:
-            en_us: Pusher port
+            en_us: 'Container Variable: PUSHER_PORT'
         - container: PUSHER_BACKEND_PORT
           description:
-            en_us: Pusher backend port
+            en_us: 'Container Variable: PUSHER_BACKEND_PORT'
         - container: PUSHER_SCHEME
           description:
-            en_us: Pusher scheme
+            en_us: 'Container Variable: PUSHER_SCHEME'
         - container: PUSHER_APP_ID
           description:
-            en_us: Pusher app ID
+            en_us: 'Container Variable: PUSHER_APP_ID'
         - container: PUSHER_APP_KEY
           description:
-            en_us: Pusher app key
+            en_us: 'Container Variable: PUSHER_APP_KEY'
         - container: PUSHER_APP_SECRET
           description:
-            en_us: Pusher app secret
+            en_us: 'Container Variable: PUSHER_APP_SECRET'
         - container: AUTOUPDATE
           description:
-            en_us: Autoupdate
+            en_us: 'Container Variable: AUTOUPDATE'
         - container: SELF_HOSTED
           description:
-            en_us: Self hosted
+            en_us: 'Container Variable: SELF_HOSTED'
         - container: SSH_MUX_PERSIST_TIME
           description:
-            en_us: SSH multiplexing persist time
+            en_us: 'Container Variable: SSH_MUX_PERSIST_TIME'
         - container: FEEDBACK_DISCORD_WEBHOOK
           description:
-            en_us: Feedback Discord webhook
+            en_us: 'Container Variable: FEEDBACK_DISCORD_WEBHOOK'
         - container: WAITLIST
           description:
-            en_us: Waitlist
+            en_us: 'Container Variable: WAITLIST'
         - container: SUBSCRIPTION_PROVIDER
           description:
-            en_us: Subscription provider
+            en_us: 'Container Variable: SUBSCRIPTION_PROVIDER'
         - container: STRIPE_API_KEY
           description:
-            en_us: Stripe API key
+            en_us: 'Container Variable: STRIPE_API_KEY'
         - container: STRIPE_WEBHOOK_SECRET
           description:
-            en_us: Stripe webhook secret
+            en_us: 'Container Variable: STRIPE_WEBHOOK_SECRET'
         - container: STRIPE_PRICE_ID_BASIC_MONTHLY
           description:
-            en_us: Stripe price ID basic monthly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_BASIC_MONTHLY'
         - container: STRIPE_PRICE_ID_BASIC_YEARLY
           description:
-            en_us: Stripe price ID basic yearly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_BASIC_YEARLY'
         - container: STRIPE_PRICE_ID_PRO_MONTHLY
           description:
-            en_us: Stripe price ID pro monthly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_PRO_MONTHLY'
         - container: STRIPE_PRICE_ID_PRO_YEARLY
           description:
-            en_us: Stripe price ID pro yearly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_PRO_YEARLY'
         - container: STRIPE_PRICE_ID_ULTIMATE_MONTHLY
           description:
-            en_us: Stripe price ID ultimate monthly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_ULTIMATE_MONTHLY'
         - container: STRIPE_PRICE_ID_ULTIMATE_YEARLY
           description:
-            en_us: Stripe price ID ultimate yearly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_ULTIMATE_YEARLY'
         - container: STRIPE_PRICE_ID_DYNAMIC_MONTHLY
           description:
-            en_us: Stripe price ID dynamic monthly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_DYNAMIC_MONTHLY'
         - container: STRIPE_PRICE_ID_DYNAMIC_YEARLY
           description:
-            en_us: Stripe price ID dynamic yearly
+            en_us: 'Container Variable: STRIPE_PRICE_ID_DYNAMIC_YEARLY'
         - container: STRIPE_PRICE_ID_BASIC_MONTHLY_OLD
           description:
-            en_us: Stripe price ID basic monthly old
+            en_us: 'Container Variable: STRIPE_PRICE_ID_BASIC_MONTHLY_OLD'
         - container: STRIPE_PRICE_ID_BASIC_YEARLY_OLD
           description:
-            en_us: Stripe price ID basic yearly old
+            en_us: 'Container Variable: STRIPE_PRICE_ID_BASIC_YEARLY_OLD'
         - container: STRIPE_PRICE_ID_PRO_MONTHLY_OLD
           description:
-            en_us: Stripe price ID pro monthly old
+            en_us: 'Container Variable: STRIPE_PRICE_ID_PRO_MONTHLY_OLD'
         - container: STRIPE_PRICE_ID_PRO_YEARLY_OLD
           description:
-            en_us: Stripe price ID pro yearly old
+            en_us: 'Container Variable: STRIPE_PRICE_ID_PRO_YEARLY_OLD'
         - container: STRIPE_PRICE_ID_ULTIMATE_MONTHLY_OLD
           description:
-            en_us: Stripe price ID ultimate monthly old
+            en_us: 'Container Variable: STRIPE_PRICE_ID_ULTIMATE_MONTHLY_OLD'
         - container: STRIPE_PRICE_ID_ULTIMATE_YEARLY_OLD
           description:
-            en_us: Stripe price ID ultimate yearly old
+            en_us: 'Container Variable: STRIPE_PRICE_ID_ULTIMATE_YEARLY_OLD'
         - container: STRIPE_EXCLUDED_PLANS
           description:
-            en_us: Stripe excluded plans
+            en_us: 'Container Variable: STRIPE_EXCLUDED_PLANS'
       volumes:
         - container: /var/www/html/storage/app/ssh
           description:
-            en_us: Container path /var/www/html/storage/app/ssh
+            en_us: 'Container Path: /var/www/html/storage/app/ssh'
         - container: /var/www/html/storage/app/applications
           description:
-            en_us: Container path /var/www/html/storage/app/applications
+            en_us: 'Container Path: /var/www/html/storage/app/applications'
         - container: /var/www/html/storage/app/databases
           description:
-            en_us: Container path /var/www/html/storage/app/databases
+            en_us: 'Container Path: /var/www/html/storage/app/databases'
         - container: /var/www/html/storage/app/services
           description:
-            en_us: Container path /var/www/html/storage/app/services
+            en_us: 'Container Path: /var/www/html/storage/app/services'
         - container: /var/www/html/storage/app/backups
           description:
-            en_us: Container path /var/www/html/storage/app/backups
+            en_us: 'Container Path: /var/www/html/storage/app/backups'
         - container: /var/www/html/storage/app/webhooks-during-maintenance
           description:
-            en_us: Container path /var/www/html/storage/app/webhooks-during-maintenance
-
+            en_us: 'Container Path: /var/www/html/storage/app/webhooks-during-maintenance'
+        - container: /var/www/html/storage/logs
+          description:
+            en_us: 'Container Path: /var/www/html/storage/logs'
+      ports:
+        - container: "8080"
+          description:
+            en_us: 'Container Port: 8080'
   big-bear-coolify-postgres:
     container_name: big-bear-coolify-postgres
     image: postgres:15-alpine
@@ -310,42 +308,33 @@ services:
       interval: 5s
       retries: 10
       timeout: 2s
-
     networks:
       - big_bear_coolify_network
-
     x-casaos:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: Database user
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: Database name
+            en_us: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
+      ports:
+        - container: "5432"
+          description:
+            en_us: 'Container Port: 5432'
   big-bear-coolify-redis: # Redis service configuration
     container_name: big-bear-coolify-redis # Name of the running container
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     ports:
       - "6379:6379"
-    command:
-      [
-        "redis-server",
-        "--save",
-        "20",
-        "1",
-        "--loglevel",
-        "warning",
-        "--requirepass",
-        "9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4",
-      ]
+    command: ["redis-server", "--save", "20", "1", "--loglevel", "warning", "--requirepass", "9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"]
     environment:
       REDIS_PASSWORD: "9e3df6aa-ea48-4e59-a9c4-59798f1ba9b4"
     volumes:
@@ -355,20 +344,21 @@ services:
       interval: 5s
       retries: 10
       timeout: 2s
-
     networks:
       - big_bear_coolify_network
-
     x-casaos:
       envs:
         - container: REDIS_PASSWORD
           description:
-            en_us: Redis password
+            en_us: 'Container Variable: REDIS_PASSWORD'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-
+            en_us: 'Container Path: /data'
+      ports:
+        - container: "6379"
+          description:
+            en_us: 'Container Port: 6379'
   big-bear-coolify-soketi:
     container_name: big-bear-coolify-soketi
     image: quay.io/soketi/soketi:1.6-16-alpine
@@ -385,56 +375,65 @@ services:
       interval: 5s
       retries: 10
       timeout: 2s
-
     networks:
       - big_bear_coolify_network
-
     x-casaos:
       envs:
         - container: SOKETI_DEBUG
           description:
-            en_us: Soketi debug
+            en_us: 'Container Variable: SOKETI_DEBUG'
         - container: SOKETI_DEFAULT_APP_ID
           description:
-            en_us: Soketi default app ID
+            en_us: 'Container Variable: SOKETI_DEFAULT_APP_ID'
         - container: SOKETI_DEFAULT_APP_KEY
           description:
-            en_us: Soketi default app key
+            en_us: 'Container Variable: SOKETI_DEFAULT_APP_KEY'
         - container: SOKETI_DEFAULT_APP_SECRET
           description:
-            en_us: Soketi default app secret
-      volumes:
-        - container: /data
+            en_us: 'Container Variable: SOKETI_DEFAULT_APP_SECRET'
+      ports:
+        - container: "6001"
           description:
-            en_us: "Container Path: /data"
-
+            en_us: 'Container Port: 6001'
+        - container: "6002"
+          description:
+            en_us: 'Container Port: 6002'
 networks:
   big_bear_coolify_network:
     name: big_bear_coolify_network
     driver: bridge
   coolify:
     external: true
-
-# CasaOS specific application metadata and configurations
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Main service for this application
   main: big-bear-coolify
+  # Detailed description for the application
   description:
     en_us: Coolify is a self-hosted web application that allows you to manage your servers, applications, and services. It provides a simple and intuitive interface for managing your infrastructure, making it easy to deploy and manage your applications. With Coolify, you can easily manage your servers, applications, and services, providing a streamlined experience for managing your infrastructure.
+  # Brief tagline for the application
   tagline:
     en_us: Coolify
-  developer: "coollabsio" # Developer of coolify
-  author: "BigBearTechWorld" # Author of the docker compose
-  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/coolify/logo.png"
+  # Developer's information
+  developer: coollabsio
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/coolify/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    en_us: Coolify
-  category: BigBearCasaOS
-  port_map: "8000"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-coolify-to-casaos/2186?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Coolify
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8000"

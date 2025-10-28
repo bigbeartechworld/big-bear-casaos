@@ -2,7 +2,6 @@
 
 # Name of the big-bear-fastfetch application
 name: big-bear-fastfetch
-
 # Service definitions for the big-bear-fastfetch application
 services:
   # Service name: big-bear-fastfetch
@@ -10,16 +9,12 @@ services:
   big-bear-fastfetch:
     # Name of the container
     container_name: big-bear-fastfetch
-
     # Image to be used for the container specifies the fastfetch version and source
     image: bigbeartechworld/big-bear-fastfetch:0.0.4
-
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
-
     # Run the container in privileged mode to allow access to system metrics
     privileged: true
-
     # Mount necessary volumes for accessing system information
     volumes:
       # Mount the host's /proc directory to the container's /proc directory
@@ -30,51 +25,57 @@ services:
       - /dev:/dev
       # Mount the host's /etc/localtime file to the container's /etc/localtime file (read-only)
       - /etc/localtime:/etc/localtime:ro
-
     # Map port 7681 on the host to port 7681 on the container
     ports:
       - "7681:7681"
-
-    # CasaOS specific configuration for volume and port descriptions
     x-casaos:
       volumes:
         - container: /proc
           description:
-            en_us: "Container Path: /proc"
+            en_us: 'Container Path: /proc'
         - container: /sys
           description:
-            en_us: "Container Path: /sys"
+            en_us: 'Container Path: /sys'
         - container: /dev
           description:
-            en_us: "Container Path: /dev"
+            en_us: 'Container Path: /dev'
         - container: /etc/localtime
           description:
-            en_us: "Container Path: /etc/localtime"
+            en_us: 'Container Path: /etc/localtime'
       ports:
-        - container: "7681" # Expose port 7681 for the container
+        - container: "7681"
           description:
-            en_us: "Container Port: 7681"
-
-# CasaOS specific application metadata and configurations
+            en_us: 'Container Port: 7681'
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Main service for this application
   main: big-bear-fastfetch
+  # Detailed description for the application
   description:
     en_us: Fastfetch is a neofetch-like tool for fetching system information and displaying it prettily. It is written mainly in C, with performance and customizability in mind. Currently, Linux, Android, FreeBSD, macOS, SunOS and Windows 7+ are supported. https://github.com/fastfetch-cli/fastfetch
+  # Brief tagline for the application
   tagline:
     en_us: Fastfetch is a neofetch-like tool.
-  developer: "bigbeartechworld"
+  # Developer's information
+  developer: bigbeartechworld
+  # Author of this particular configuration
   author: BigBearTechWorld
-  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/fastfetch/logo.png"
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/fastfetch/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    en_us: Fastfetch
-  category: BigBearCasaOS
-  port_map: "7681"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-fastfetch-to-bigbearcasaos/1579?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Fastfetch
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "7681"

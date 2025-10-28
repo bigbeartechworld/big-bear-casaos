@@ -2,7 +2,6 @@
 
 # Name of the big-bear-tududi application
 name: big-bear-tududi
-
 # Service definitions for the big-bear-tududi application
 services:
   # Service name: big-bear-tududi
@@ -10,81 +9,74 @@ services:
   big-bear-tududi:
     # Name of the container
     container_name: big-bear-tududi
-
     # Image to be used for the container
     image: chrisvel/tududi:0.84
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - TUDUDI_USER_EMAIL=admin@example.com
       - TUDUDI_USER_PASSWORD=2dd25e05-65f4-47d7-a9a6-1a3293c02461
       - TUDUDI_SESSION_SECRET=3337c138d17ac7acefa412e5db0d7ef6540905b198cc28c5bf0d11e48807a71bdfe48d82ed0a0a6eb667c937cbdd1db3e1e6073b3148bff37f73cc6398a39671
       - TUDUDI_INTERNAL_SSL_ENABLED=false
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the tududi database directory
-      - /DATA/AppData/$AppID/tududi_db:/usr/src/app/tududi_db
-
+      - /DATA/AppData/$AppID/tududi/db:/usr/src/app/tududi_db
     # Ports mapping between host and container
     ports:
       # Mapping port 9292 of the host to port 9292 of the container
       - "9292:9292"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TUDUDI_USER_EMAIL
           description:
-            en_us: "User Email"
+            en_us: 'Container Variable: TUDUDI_USER_EMAIL'
         - container: TUDUDI_USER_PASSWORD
           description:
-            en_us: "User Password"
+            en_us: 'Container Variable: TUDUDI_USER_PASSWORD'
         - container: TUDUDI_SESSION_SECRET
           description:
-            en_us: "Session Secret"
+            en_us: 'Container Variable: TUDUDI_SESSION_SECRET'
         - container: TUDUDI_INTERNAL_SSL_ENABLED
           description:
-            en_us: "Internal SSL Enabled"
+            en_us: 'Container Variable: TUDUDI_INTERNAL_SSL_ENABLED'
       volumes:
         - container: /usr/src/app/tududi_db
           description:
-            en_us: "Container Path: /usr/src/app/tududi_db"
+            en_us: 'Container Path: /usr/src/app/tududi_db'
       ports:
         - container: "9292"
           description:
-            en_us: "Container Port: 9292"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 9292'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-tududi
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: tududi is a task and project management web application built with Sinatra. It allows users to efficiently manage their tasks and projects, categorize them into different areas, and track due dates. tududi is designed to be intuitive and easy to use, providing a seamless experience for personal productivity.
-  tagline:
-    # Short description or tagline in English
-    en_us: tududi is a task and project management web application built with Sinatra
-  # Developer's name or identifier
-  developer: "chrisvel"
-  # Author of this configuration
-  author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/logo.png
-  # Thumbnail image
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png"
+  # Screenshot links for the application
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/tududi/screenshots/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/tududi/screenshots/screenshot-2.png
+  # Brief tagline for the application
+  tagline:
+    en_us: tududi is a task and project management web application built with Sinatra
+  # Developer's information
+  developer: chrisvel
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/tududi/screenshot-1.png
+  # Title for the application
   title:
-    # Title in English
     en_us: Tududi
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "9292"

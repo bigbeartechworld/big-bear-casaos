@@ -2,7 +2,6 @@
 
 # Name of the big-bear-beszel application
 name: big-bear-beszel
-
 # Service definitions for the big-bear-beszel application
 services:
   # Service name: big-bear-beszel
@@ -10,58 +9,51 @@ services:
   big-bear-beszel:
     # Name of the container
     container_name: big-bear-beszel
-
     # Image to be used for the container
     image: henrygd/beszel:0.14.1
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/data:/beszel_data
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8090 of the host to port 8090 of the container
       - "8090:8090"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
-        - container: "/beszel_data"
+        - container: /beszel_data
           description:
-            en_us: "Beszel Data"
+            en_us: 'Container Path: /beszel_data'
       ports:
         - container: "8090"
           description:
-            en_us: "Container Port: 8090"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8090'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-beszel
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: A lightweight server resource monitoring hub with historical data, docker stats, and alerts.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Server Monitoring Hub
-  # Developer's name or identifier
-  developer: "henrygd"
-  # Author of this configuration
+  # Developer's information
+  developer: henrygd
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/beszel/logo.jpg
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Beszel
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8090"

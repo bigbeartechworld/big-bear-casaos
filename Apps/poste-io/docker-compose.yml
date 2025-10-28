@@ -4,7 +4,6 @@
 
 # Name of the big-bear-poste-io application
 name: big-bear-poste-io
-
 # Service definitions for the big-bear-poste-io application
 services:
   # Main service configuration for the Poste.io application
@@ -12,68 +11,67 @@ services:
   big-bear-poste-io:
     # Name of the container
     container_name: big-bear-poste-io
-
     # Image to be used for the container specifies the analogic/poste.io version and source
     image: analogic/poste.io:2.5.7
-
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
-
     # Network mode
     network_mode: host
-
     # Environment variables
     environment:
       - TZ=UTC
-
     # Container hostname
     hostname: mail.example.com
-
     # Enable pseudo-TTY
     tty: true
-
     # Volume mappings required for system integration
     # These mounts allow the container to interact with the host system
     volumes:
       # Required for monitoring system resources and container metrics
       - /DATA/AppData/$AppID/data:/data
-
-    # CasaOS-specific configuration metadata
     x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: "Timezone: UTC"
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-
-# Application metadata for CasaOS integration
-# This section provides information for the CasaOS app store and installation process
+            en_us: 'Container Path: /data'
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Main service for this application
   main: big-bear-poste-io
+  # Detailed description for the application
   description:
     en_us: Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/poste-io/screenshots/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/poste-io/screenshots/screenshot-2.png
+  # Brief tagline for the application
   tagline:
     en_us: Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin
-  developer: "analogic"
+  # Developer's information
+  developer: analogic
+  # Author of this particular configuration
   author: BigBearTechWorld
-  icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/poste.png"
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/thumbnail.png"
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/screenshot-3.png
-  title:
-    en_us: Poste.io
-  category: BigBearCasaOS
-  port_map: "80"
-  # Installation instructions and documentation
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/poste.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/poste-io/thumbnail.png
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-poste-io-to-bigbearcasaos/3344
+  # Title for the application
+  title:
+    en_us: Poste.io
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "80"

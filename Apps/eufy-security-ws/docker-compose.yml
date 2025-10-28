@@ -2,7 +2,6 @@
 
 # Name of the big-bear-eufy-security-ws application
 name: big-bear-eufy-security-ws
-
 # Service definitions for the big-bear-eufy-security-ws application
 services:
   # Service name: big-bear-eufy-security-ws
@@ -10,86 +9,70 @@ services:
   big-bear-eufy-security-ws:
     # Name of the container
     container_name: big-bear-eufy-security-ws
-
     # Image to be used for the container
     image: bropat/eufy-security-ws:1.9.3
-
     # Environment variables for the container
     environment:
       USERNAME: "[EUFY_USERNAME]"
       PASSWORD: "[EUFY_PASSWORD]"
       COUNTRY: "US"
       LANGUAGE: "en"
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local data directory to /data inside the container
       - /DATA/AppData/$AppID/data:/data
-
     # Network configuration
     network_mode: host
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - name: USERNAME
+        - container: USERNAME
           description:
-            en_us: "Eufy Account Username (required)"
-        - name: PASSWORD
+            en_us: 'Container Variable: USERNAME'
+        - container: PASSWORD
           description:
-            en_us: "Eufy Account Password (required)"
-        - name: COUNTRY
+            en_us: 'Container Variable: PASSWORD'
+        - container: COUNTRY
           description:
-            en_us: "ISO 3166-1 Alpha-2 country code (default: US)"
-        - name: LANGUAGE
+            en_us: 'Container Variable: COUNTRY'
+        - container: LANGUAGE
           description:
-            en_us: "ISO 639 language code (default: en)"
-        - name: TRUSTED_DEVICE_NAME
-          description:
-            en_us: "Label of the trusted devices (viewable with 2fa activated in Eufy App; default: random device name)"
+            en_us: 'Container Variable: LANGUAGE'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-      ports:
-        - container: "3000"
-          description:
-            en_us: "Container Port: 3000"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /data'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-eufy-security-ws
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: eufy-security-ws is a small server wrapper around the eufy-security-client library to access it via a WebSocket. It allows you to control Eufy security devices by connecting to the Eufy cloud servers and local/remote stations.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: eufy-security-ws
-  # Developer's name or identifier
-  developer: "bropat"
-  # Author of this configuration
+  # Developer's information
+  developer: bropat
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: ""
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Eufy Security WS
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "3000"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-eufy-security-ws-to-bigbearcasaos/2228
-
+  # Title for the application
+  title:
+    en_us: Eufy Security WS
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"

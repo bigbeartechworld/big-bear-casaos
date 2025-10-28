@@ -2,7 +2,6 @@
 
 # Name of the big-bear-authentik application
 name: big-bear-authentik
-
 # Service definitions for the big-bear-authentik application
 services:
   # Service name: authentik
@@ -10,12 +9,9 @@ services:
   big-bear-authentik:
     # Name of the container
     container_name: big-bear-authentik
-
     # Image to be used for the container
-    image: ghcr.io/goauthentik/server:2025.10.0
-
+    image: ghcr.io/goauthentik/server:2025.8.4
     command: server
-
     environment:
       AUTHENTIK_REDIS__HOST: big-bear-authentik-redis
       AUTHENTIK_POSTGRESQL__HOST: big-bear-authentik-db
@@ -23,39 +19,49 @@ services:
       AUTHENTIK_POSTGRESQL__NAME: authentik
       AUTHENTIK_POSTGRESQL__PASSWORD: authentik-password
       AUTHENTIK_SECRET_KEY: changeme
-
     volumes:
       - /DATA/AppData/$AppID/data/authentik-media:/media
       - /DATA/AppData/$AppID/data/authentik-custom-templates:/templates
-
     ports:
       - "9443:9443"
-
     depends_on:
       - big-bear-authentik-db
       - big-bear-authentik-redis
-
     networks:
       - big_bear_authentik_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: AUTHENTIK_REDIS__HOST
+          description:
+            en_us: 'Container Variable: AUTHENTIK_REDIS__HOST'
+        - container: AUTHENTIK_POSTGRESQL__HOST
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__HOST'
+        - container: AUTHENTIK_POSTGRESQL__USER
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__USER'
+        - container: AUTHENTIK_POSTGRESQL__NAME
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__NAME'
+        - container: AUTHENTIK_POSTGRESQL__PASSWORD
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__PASSWORD'
+        - container: AUTHENTIK_SECRET_KEY
+          description:
+            en_us: 'Container Variable: AUTHENTIK_SECRET_KEY'
       volumes:
-        - container: /app/data/configs
+        - container: /media
           description:
-            en_us: "Container Path: /app/data/configs"
-        - container: /app/public/icons
+            en_us: 'Container Path: /media'
+        - container: /templates
           description:
-            en_us: "Container Path: /app/public/icons"
-        - container: /data
-          description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /templates'
       ports:
-        - container: "7575"
+        - container: "9443"
           description:
-            en_us: "Container Port: 7575"
-
+            en_us: 'Container Port: 9443'
   big-bear-authentik-worker:
-    image: ghcr.io/goauthentik/server:2025.10.0
+    image: ghcr.io/goauthentik/server:2025.8.4
     restart: unless-stopped
     command: worker
     container_name: big-bear-authentik-worker
@@ -83,19 +89,39 @@ services:
       - big-bear-authentik-redis
     networks:
       - big_bear_authentik_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: AUTHENTIK_REDIS__HOST
+          description:
+            en_us: 'Container Variable: AUTHENTIK_REDIS__HOST'
+        - container: AUTHENTIK_POSTGRESQL__HOST
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__HOST'
+        - container: AUTHENTIK_POSTGRESQL__USER
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__USER'
+        - container: AUTHENTIK_POSTGRESQL__NAME
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__NAME'
+        - container: AUTHENTIK_POSTGRESQL__PASSWORD
+          description:
+            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__PASSWORD'
+        - container: AUTHENTIK_SECRET_KEY
+          description:
+            en_us: 'Container Variable: AUTHENTIK_SECRET_KEY'
       volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: 'Container Path: /var/run/docker.sock'
         - container: /media
           description:
-            en_us: "Container Path: /media"
+            en_us: 'Container Path: /media'
         - container: /certs
           description:
-            en_us: "Container Path: /certs"
+            en_us: 'Container Path: /certs'
         - container: /templates
           description:
-            en_us: "Container Path: /templates"
-
+            en_us: 'Container Path: /templates'
   big-bear-authentik-db:
     container_name: big-bear-authentik-db
     # PostgreSQL 14+ required by Authentik (since version 2024.6)
@@ -117,23 +143,21 @@ services:
       POSTGRES_DB: authentik
     networks:
       - big_bear_authentik_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: Database user
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: Database type
+            en_us: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
   big-bear-authentik-redis:
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     command: ["--save", "60", "1", "--loglevel", "warning"]
@@ -149,50 +173,44 @@ services:
       - /DATA/AppData/$AppID/data/redis:/data
     networks:
       - big_bear_authentik_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-
+            en_us: 'Container Path: /data'
 networks:
   big_bear_authentik_network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-authentik
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Authentik is a self-hosted identity and access management platform that provides a secure and scalable solution for managing user accounts, authentication, and authorization. It offers a range of features, including user management, role-based access control, and multi-factor authentication. Authentik is designed to be easy to use and integrate with your existing systems, making it a great choice for organizations looking to improve their security and compliance.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Authentik
-  # Developer's name or identifier
-  developer: "authentik"
-  # Author of this configuration
+  # Developer's information
+  developer: authentik
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/authentik.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Authentik
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "9443"
-  # Scheme used (https)
-  scheme: https
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-authentik-to-bigbearcasaos/1196#instructions-3
+  # Title for the application
+  title:
+    en_us: Authentik
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "9443"

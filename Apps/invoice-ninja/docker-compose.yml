@@ -2,7 +2,6 @@
 
 # Name of the big-bear-invoice-ninja application
 name: big-bear-invoice-ninja
-
 # Service definitions for the big-bear-invoice-ninja application
 services:
   big-bear-invoice-ninja:
@@ -25,106 +24,97 @@ services:
       - QUEUE_CONNECTION=database
       - IS_DOCKER=TRUE
     volumes:
-      - /DATA/AppData/$AppID/data/public:/var/www/app/public:rw,delegated
-      - /DATA/AppData/$AppID/data/storage:/var/www/app/storage:rw,delegated
-      - /DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini:ro
-      - /DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini:ro
+      - /DATA/AppData/$AppID/data/public:/var/www/app/public
+      - /DATA/AppData/$AppID/data/storage:/var/www/app/storage
+      - /DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini
+      - /DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini
     depends_on:
       - big-bear-invoice-ninja-db
     networks:
       - big-bear-invoice-ninja-network
-
     x-casaos:
       envs:
         - container: IN_USER_EMAIL
           description:
-            en_us: "Container Environment Variable: IN_USER_EMAIL"
+            en_us: 'Container Variable: IN_USER_EMAIL'
         - container: IN_PASSWORD
           description:
-            en_us: "Container Environment Variable: IN_PASSWORD"
+            en_us: 'Container Variable: IN_PASSWORD'
         - container: APP_URL
           description:
-            en_us: "Container Environment Variable: APP_URL"
+            en_us: 'Container Variable: APP_URL'
         - container: APP_KEY
           description:
-            en_us: "Container Environment Variable: APP_KEY"
+            en_us: 'Container Variable: APP_KEY'
         - container: APP_CIPHER
           description:
-            en_us: "Container Environment Variable: APP_CIPHER"
+            en_us: 'Container Variable: APP_CIPHER'
         - container: DB_HOST
           description:
-            en_us: "Container Environment Variable: DB_HOST"
+            en_us: 'Container Variable: DB_HOST'
         - container: DB_PORT
           description:
-            en_us: "Container Environment Variable: DB_PORT"
+            en_us: 'Container Variable: DB_PORT'
         - container: DB_DATABASE
           description:
-            en_us: "Container Environment Variable: DB_DATABASE"
+            en_us: 'Container Variable: DB_DATABASE'
         - container: DB_USERNAME
           description:
-            en_us: "Container Environment Variable: DB_USERNAME"
+            en_us: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: "Container Environment Variable: DB_PASSWORD"
+            en_us: 'Container Variable: DB_PASSWORD'
         - container: REQUIRE_HTTPS
           description:
-            en_us: "Container Environment Variable: REQUIRE_HTTPS"
+            en_us: 'Container Variable: REQUIRE_HTTPS'
         - container: QUEUE_CONNECTION
           description:
-            en_us: "Container Environment Variable: QUEUE_CONNECTION"
+            en_us: 'Container Variable: QUEUE_CONNECTION'
         - container: IS_DOCKER
           description:
-            en_us: "Container Environment Variable: IS_DOCKER"
+            en_us: 'Container Variable: IS_DOCKER'
       volumes:
         - container: /var/www/app/public
           description:
-            en_us: "Container Path: /var/www/app/public"
+            en_us: 'Container Path: /var/www/app/public'
         - container: /var/www/app/storage
           description:
-            en_us: "Container Path: /var/www/app/storage"
+            en_us: 'Container Path: /var/www/app/storage'
         - container: /usr/local/etc/php/php.ini
           description:
-            en_us: "Container Path: /usr/local/etc/php/php.ini"
+            en_us: 'Container Path: /usr/local/etc/php/php.ini'
         - container: /usr/local/etc/php/php-cli.ini
           description:
-            en_us: "Container Path: /usr/local/etc/php/php-cli.ini"
-
+            en_us: 'Container Path: /usr/local/etc/php/php-cli.ini'
   big-bear-invoice-ninja-web:
     # Name of the container
     container_name: big-bear-invoice-ninja-web
-
     # Image to be used for the container
     image: nginx:1.29
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
-      - /DATA/AppData/$AppID/data/nginx/invoice-ninja.conf:/etc/nginx/conf.d/default.conf:ro
-      - /DATA/AppData/$AppID/data/public:/var/www/app/public:ro
-
+      - /DATA/AppData/$AppID/data/nginx/invoice-ninja.conf:/etc/nginx/conf.d/default.conf
+      - /DATA/AppData/$AppID/data/public:/var/www/app/public
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 80 of the container
       - "8080:80"
-
     networks:
       - big-bear-invoice-ninja-network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /etc/nginx/conf.d/default.conf
           description:
-            en_us: "Container Path: /etc/nginx/conf.d/default.conf"
+            en_us: 'Container Path: /etc/nginx/conf.d/default.conf'
         - container: /var/www/app/public
           description:
-            en_us: "Container Path: /var/www/app/public"
+            en_us: 'Container Path: /var/www/app/public'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80"
-
+            en_us: 'Container Port: 80'
   big-bear-invoice-ninja-db:
     image: mariadb:10.4
     container_name: big-bear-invoice-ninja-db
@@ -135,66 +125,37 @@ services:
       - MARIADB_PASSWORD=ninja
       - MARIADB_DATABASE=ninja
     volumes:
-      - /DATA/AppData/$AppID/data/mysql:/var/lib/mysql:rw,delegated
+      - /DATA/AppData/$AppID/data/mysql:/var/lib/mysql
     networks:
       - big-bear-invoice-ninja-network
     depends_on:
       - big-bear-invoice-ninja-init
     # This command is required to set important mariadb defaults
-    command:
-      [
-        mysqld,
-        --character-set-server=utf8mb4,
-        --collation-server=utf8mb4_unicode_ci,
-        --wait_timeout=28800,
-        --log-warnings=0,
-      ]
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
     x-casaos:
       envs:
         - container: MARIADB_ROOT_PASSWORD
           description:
-            en_us: "Container Environment Variable: MARIADB_ROOT_PASSWORD"
+            en_us: 'Container Variable: MARIADB_ROOT_PASSWORD'
         - container: MARIADB_USER
           description:
-            en_us: "Container Environment Variable: MARIADB_USER"
+            en_us: 'Container Variable: MARIADB_USER'
         - container: MARIADB_PASSWORD
           description:
-            en_us: "Container Environment Variable: MARIADB_PASSWORD"
+            en_us: 'Container Variable: MARIADB_PASSWORD'
         - container: MARIADB_DATABASE
           description:
-            en_us: "Container Environment Variable: MARIADB_DATABASE"
+            en_us: 'Container Variable: MARIADB_DATABASE'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
-
+            en_us: 'Container Path: /var/lib/mysql'
   big-bear-invoice-ninja-init:
     image: bash:5.3.3
     container_name: big-bear-invoice-ninja-init
     volumes:
       - /DATA/AppData/$AppID/data:/tmp/data
-    command: [
-        "/bin/sh",
-        "-c",
-        "if [ ! -f /tmp/data/.init_complete ]; then \
-        echo 'Starting initialization process...' && \
-        if [ -f /tmp/data/init/init.sh ]; then \
-        echo 'Found init.sh, making it executable...' && \
-        chmod +x /tmp/data/init/init.sh && \
-        echo 'Executing init.sh...' && \
-        /tmp/data/init/init.sh && \
-        echo 'init.sh execution completed.' && \
-        touch /tmp/data/.init_complete && \
-        echo 'Initialization process finished.'; \
-        else \
-        echo 'Error: /tmp/data/init/init.sh not found!' && \
-        exit 1; \
-        fi; \
-        else \
-        echo 'Initialization already completed. Exiting.'; \
-        fi && \
-        exit 0",
-      ]
+    command: ["/bin/sh", "-c", "if [ ! -f /tmp/data/.init_complete ]; then echo 'Starting initialization process...' && if [ -f /tmp/data/init/init.sh ]; then echo 'Found init.sh, making it executable...' && chmod +x /tmp/data/init/init.sh && echo 'Executing init.sh...' && /tmp/data/init/init.sh && echo 'init.sh execution completed.' && touch /tmp/data/.init_complete && echo 'Initialization process finished.'; else echo 'Error: /tmp/data/init/init.sh not found!' && exit 1; fi; else echo 'Initialization already completed. Exiting.'; fi && exit 0"]
     networks:
       - big-bear-invoice-ninja-network
     restart: "no"
@@ -207,43 +168,40 @@ services:
       volumes:
         - container: /tmp/data
           description:
-            en_us: "Container Path: /tmp/data"
-
+            en_us: 'Container Path: /tmp/data'
 networks:
   big-bear-invoice-ninja-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-invoice-ninja-web
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Invoice Ninja is a free and open-source invoice and expense management system. It is a web-based application that allows you to create, manage, and track invoices and expenses.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Invoice Ninja
-  # Developer's name or identifier
-  developer: "invoiceninja"
-  # Author of this configuration
+  # Developer's information
+  developer: invoiceninja
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/invoice-ninja.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Invoice Ninja
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8080"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-invoice-ninja-to-bigbearcasaos/1697?u=dragonfire1119#p-3214-instructions-3
+  # Title for the application
+  title:
+    en_us: Invoice Ninja
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"
