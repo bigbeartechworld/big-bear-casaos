@@ -2,7 +2,6 @@
 
 # Name of the big-bear-ihatemoney application
 name: big-bear-ihatemoney
-
 # Service definitions for the big-bear-ihatemoney application
 services:
   # Service name: big-bear-ihatemoney
@@ -10,50 +9,43 @@ services:
   big-bear-ihatemoney:
     # Name of the container
     container_name: big-bear-ihatemoney
-
     # Image to be used for the container
     image: ihatemoney/ihatemoney:6.1.5
-
     # Container restart policy
     restart: unless-stopped
-
     environment:
       SECRET_KEY: "1d58bc34-e7ff-4f6d-a1e4-f319262ed9b8" # Sets the secret key environment variable for the application.
       SQLALCHEMY_DATABASE_URI: "mysql+pymysql://bigbear:password@big-bear-ihatemoney-db/ihatemoney" # Database connection string.
       ACTIVATE_ADMIN_DASHBOARD: "True" # Enables the admin dashboard.
       ADMIN_PASSWORD: "" # Sets the admin password. On the host run: docker run -it --rm --entrypoint ihatemoney ihatemoney/ihatemoney generate_password_hash
       SESSION_COOKIE_SECURE: "False" # Disables secure session cookies for development.
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8001 of the host to port 8000 of the container
       - "8001:8000"
-
     networks:
       - big_bear_ihatemoney_network # Connects the service to a network.
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - name: "SECRET_KEY"
+        - container: SECRET_KEY
           description:
-            en_us: "Sets the secret key environment variable for the application."
-        - name: "SQLALCHEMY_DATABASE_URI"
+            en_us: 'Container Variable: SECRET_KEY'
+        - container: SQLALCHEMY_DATABASE_URI
           description:
-            en_us: "Database connection string."
-        - name: "ACTIVATE_ADMIN_DASHBOARD"
+            en_us: 'Container Variable: SQLALCHEMY_DATABASE_URI'
+        - container: ACTIVATE_ADMIN_DASHBOARD
           description:
-            en_us: "Enables the admin dashboard."
-        - name: "ADMIN_PASSWORD"
+            en_us: 'Container Variable: ACTIVATE_ADMIN_DASHBOARD'
+        - container: ADMIN_PASSWORD
           description:
-            en_us: "Sets the admin password. On the host run: docker run -it --rm --entrypoint ihatemoney ihatemoney/ihatemoney generate_password_hash"
-        - name: "SESSION_COOKIE_SECURE"
+            en_us: 'Container Variable: ADMIN_PASSWORD'
+        - container: SESSION_COOKIE_SECURE
           description:
-            en_us: "Disables secure session cookies for development."
+            en_us: 'Container Variable: SESSION_COOKIE_SECURE'
       ports:
         - container: "8000"
           description:
-            en_us: "Container Port: 8000"
-
+            en_us: 'Container Port: 8000'
   # Define a service named 'big-bear-ihatemoney-db' for the database.
   big-bear-ihatemoney-db:
     image: mariadb:10 # Use MariaDB version 10 Docker image.
@@ -69,56 +61,56 @@ services:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Maps a volume for data persistence.
     networks:
       - big_bear_ihatemoney_network # Connects the MySQL service to the network.
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - name: "MYSQL_ROOT_PASSWORD"
+        - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: "Root password for MariaDB."
-        - name: "MYSQL_DATABASE"
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+        - container: MYSQL_DATABASE
           description:
-            en_us: "Default database name."
-        - name: "MYSQL_USER"
+            en_us: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_USER
           description:
-            en_us: "Username for MariaDB."
-        - name: "MYSQL_PASSWORD"
+            en_us: 'Container Variable: MYSQL_USER'
+        - container: MYSQL_PASSWORD
           description:
-            en_us: "Password for the MariaDB user."
+            en_us: 'Container Variable: MYSQL_PASSWORD'
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_us: 'Container Path: /var/lib/mysql'
       ports:
         - container: "3306"
           description:
-            en_us: "Container Port: 3306"
-
+            en_us: 'Container Port: 3306'
 networks:
   big_bear_ihatemoney_network: # Define a network named 'big_bear_ihatemoney_network'.
     driver: bridge # Use the bridge network driver.
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-ihatemoney
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: I hate money is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: A simple shared budget manager web application
-  # Developer's name or identifier
-  developer: "spiral-project"
-  # Author of this configuration
+  # Developer's information
+  developer: spiral-project
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ihatemoney.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: I Hate Money
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8001"

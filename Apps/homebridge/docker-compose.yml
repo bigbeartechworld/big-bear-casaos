@@ -2,7 +2,6 @@
 
 # Name of the big-bear-homebridge application
 name: big-bear-homebridge
-
 # Service definitions for the big-bear-homebridge application
 services:
   # Service name: big-bear-homebridge
@@ -10,57 +9,52 @@ services:
   big-bear-homebridge:
     # Name of the container
     container_name: big-bear-homebridge
-
     # Image to be used for the container
     image: homebridge/homebridge:2024-05-02
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment Variables
     environment:
       - TZ=UTC # Timezone
-
     privileged: true
-
     network_mode: host
-
     # Volumes HOST:CONTAINER
     volumes:
       - /DATA/AppData/$AppID/data:/homebridge
-
-    x-casaos: # CasaOS specific configuration
-      volumes:
+    x-casaos:
+      envs:
         - container: TZ
           description:
-            en_us: "Container Path: TZ"
-
-# CasaOS specific configuration
+            en_us: 'Container Variable: TZ'
+      volumes:
+        - container: /homebridge
+          description:
+            en_us: 'Container Path: /homebridge'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-homebridge
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: HomeKit support for the impatient.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: HomeKit support for the impatient.
-  # Developer's name or identifier
-  developer: "homebridge"
-  # Author of this configuration
+  # Developer's information
+  developer: homebridge
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/homebridge.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: HomeBridge
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8581"

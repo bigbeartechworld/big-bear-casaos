@@ -2,7 +2,6 @@
 
 # Name of the big-bear-dashdot application
 name: big-bear-dashdot
-
 # Service definitions for the dashdot application
 services:
   # Service definition for the main application
@@ -13,43 +12,41 @@ services:
     volumes:
       - /DATA/AppData/$AppID:/mnt/host# Mounting the local dashdot directory to /mnt/host inside the container
     privileged: true # Runs the container in privileged mode, allowing it access to host devices
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
-        - container: /mnt/host
+        - container: /mnt/host# Mounting the local dashdot directory to /mnt/host inside the container
           description:
-            en_us: "Container Path: /mnt/host"
+            en_us: 'Container Path: /mnt/host# Mounting the local dashdot directory to /mnt/host inside the container'
       ports:
         - container: "3001"
           description:
-            en_us: "Container Port: 3001"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 3001'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
-  # Detailed description of the application
+  # Detailed description for the application
   description:
     en_us: About A simple, modern server dashboard, primarily used by smaller private servers.
-  # Short description or tagline for the application
+  # Brief tagline for the application
   tagline:
     en_us: dash. - a modern server dashboard
-  # Developer's name or identifier for the application
-  developer: "mauricenino"
-  # Author of this configuration
+  # Developer's information
+  developer: mauricenino
+  # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dashdot.png
-  # Thumbnail image URL for the application (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
   title:
     en_us: Dashdot
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information for the application
+  # Default port mapping for the application
   port_map: "3001"

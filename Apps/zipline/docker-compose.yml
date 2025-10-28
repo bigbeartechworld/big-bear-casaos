@@ -2,7 +2,6 @@
 
 # Name of the big-bear-zipline application
 name: big-bear-zipline
-
 # Service definitions for the big-bear-zipline application
 services:
   # Service name: zipline
@@ -10,18 +9,14 @@ services:
   zipline:
     # Name of the container
     container_name: big-bear-zipline
-
     # Image to be used for the container
     image: ghcr.io/diced/zipline:3.7.13
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       - "/DATA/AppData/$AppID/uploads:/zipline/uploads"
       - "/DATA/AppData/$AppID/public:/zipline/public"
-
     # Environment variables
     environment:
       - CORE_RETURN_HTTPS=false
@@ -30,29 +25,44 @@ services:
       - CORE_PORT=3000
       - CORE_DATABASE_URL=postgres://postgres:postgrespassword@zipline-db/zipline
       - CORE_LOGGER=true
-
     # Ports mapping between host and container
     ports:
       # Mapping port 3000 of the host to port 3000 of the container
       - "3000:3000"
-
     # Networks to be attached to the container
     networks:
       - zipline_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: CORE_RETURN_HTTPS
+          description:
+            en_us: 'Container Variable: CORE_RETURN_HTTPS'
+        - container: CORE_SECRET
+          description:
+            en_us: 'Container Variable: CORE_SECRET'
+        - container: CORE_HOST
+          description:
+            en_us: 'Container Variable: CORE_HOST'
+        - container: CORE_PORT
+          description:
+            en_us: 'Container Variable: CORE_PORT'
+        - container: CORE_DATABASE_URL
+          description:
+            en_us: 'Container Variable: CORE_DATABASE_URL'
+        - container: CORE_LOGGER
+          description:
+            en_us: 'Container Variable: CORE_LOGGER'
       volumes:
         - container: /zipline/uploads
           description:
-            en_us: "Container Path: /zipline/uploads"
+            en_us: 'Container Path: /zipline/uploads'
         - container: /zipline/public
           description:
-            en_us: "Container Path: /zipline/public"
+            en_us: 'Container Path: /zipline/public'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
+            en_us: 'Container Port: 3000'
   # Postgres database
   zipline-db:
     # Name of the container
@@ -72,62 +82,57 @@ services:
     # Networks to be attached
     networks:
       - zipline_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: Database user
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DATABASE
           description:
-            en_us: Database type
+            en_us: 'Container Variable: POSTGRES_DATABASE'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
 # Networks to be created
 networks:
   # Network name
   zipline_network:
     # Set the driver to bridge
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: zipline
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: zipline
-  # Developer's name or identifier
-  developer: "zipline"
-  # Author of this configuration
+  # Developer's information
+  developer: zipline
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: "https://github.com/bigbeartechworld/big-bear-casaos/assets/1289128/3b655316-f72c-4b89-8138-0abee624e9b8"
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://github.com/bigbeartechworld/big-bear-casaos/assets/1289128/3b655316-f72c-4b89-8138-0abee624e9b8
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: zipline
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "3000"
-  # Tips
-  # Tips in English
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-zipline-to-bigbearcasaos/629?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: zipline
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"

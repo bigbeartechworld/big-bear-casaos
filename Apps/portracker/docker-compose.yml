@@ -2,7 +2,6 @@
 
 # Name of the big-bear-portracker application
 name: big-bear-portracker
-
 # Service definitions for the big-bear-portracker application
 services:
   # Service name: big-bear-portracker
@@ -10,13 +9,10 @@ services:
   big-bear-portracker:
     # Name of the container
     container_name: big-bear-portracker
-
     # Image to be used for the container
     image: mostafawahied/portracker:1.1
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables for service configuration
     environment:
       - PORT=4999
@@ -26,90 +22,83 @@ services:
       - DISABLE_CACHE=false
       - INCLUDE_UDP=false
       - DEBUG=false
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/data:/data
       - /var/run/docker.sock:/var/run/docker.sock
-
     # Ports mapping between host and container
     ports:
       # Mapping port 4999 of the host to port 4999 of the container
       - "4999:4999"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - container: "PORT"
+        - container: PORT
           description:
-            en_us: "Web application port"
-        - container: "DATABASE_PATH"
+            en_us: 'Container Variable: PORT'
+        - container: DATABASE_PATH
           description:
-            en_us: "SQLite database file path"
-        - container: "TRUSTED_LOCAL_EMAIL"
+            en_us: 'Container Variable: DATABASE_PATH'
+        - container: TRUSTED_LOCAL_EMAIL
           description:
-            en_us: "Trusted local email for authentication"
-        - container: "CACHE_TIMEOUT_MS"
+            en_us: 'Container Variable: TRUSTED_LOCAL_EMAIL'
+        - container: CACHE_TIMEOUT_MS
           description:
-            en_us: "Cache timeout in milliseconds"
-        - container: "DISABLE_CACHE"
+            en_us: 'Container Variable: CACHE_TIMEOUT_MS'
+        - container: DISABLE_CACHE
           description:
-            en_us: "Disable caching (true/false)"
-        - container: "INCLUDE_UDP"
+            en_us: 'Container Variable: DISABLE_CACHE'
+        - container: INCLUDE_UDP
           description:
-            en_us: "Include UDP ports in scanning (true/false)"
-        - container: "DEBUG"
+            en_us: 'Container Variable: INCLUDE_UDP'
+        - container: DEBUG
           description:
-            en_us: "Enable debug logging (true/false)"
+            en_us: 'Container Variable: DEBUG'
       volumes:
-        - container: "/data"
+        - container: /data
           description:
-            en_us: "Portracker Data Directory"
-        - container: "/var/run/docker.sock"
+            en_us: 'Container Path: /data'
+        - container: /var/run/docker.sock
           description:
-            en_us: "Docker Socket for Container Discovery"
+            en_us: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "4999"
           description:
-            en_us: "Container Port: 4999"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 4999'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-portracker
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.
-  tagline:
-    # Short description or tagline in English
-    en_us: Real-time Port Monitoring Tool
-  # Developer's name or identifier
-  developer: "Mostafa-Wahied"
-  # Author of this configuration
-  author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/portracker.png
-  # Thumbnail image (currently empty)
-  thumbnail: ""
+  # Screenshot links for the application
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/portracker/screenshot-4.png
-  title:
-    # Title in English
-    en_us: Portracker
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "4999"
-  # Installation instructions and documentation
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/portracker/screenshots/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/portracker/screenshots/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/portracker/screenshots/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/portracker/screenshots/screenshot-4.png
+  # Brief tagline for the application
+  tagline:
+    en_us: Real-time Port Monitoring Tool
+  # Developer's information
+  developer: Mostafa-Wahied
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/portracker.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
   tips:
     before_install:
-      en_us: |
-        Portracker is a self-hosted port monitoring tool that automatically discovers network services.
-                        
-        Read this before installing: https://community.bigbeartechworld.com/t/added-portracker-to-bigbearcasaos/5003?u=dragonfire1119
+      en_us: "Portracker is a self-hosted port monitoring tool that automatically discovers network services.\n                \nRead this before installing: https://community.bigbeartechworld.com/t/added-portracker-to-bigbearcasaos/5003?u=dragonfire1119"
+  # Title for the application
+  title:
+    en_us: Portracker
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "4999"

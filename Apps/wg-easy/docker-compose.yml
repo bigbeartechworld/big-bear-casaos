@@ -2,7 +2,6 @@
 
 # Name of the big-bear-wg-easy application
 name: big-bear-wg-easy
-
 # Service definitions for the big-bear-wg-easy application
 services:
   # Service name: big-bear-wg-easy
@@ -10,85 +9,87 @@ services:
   big-bear-wg-easy:
     # Name of the container
     container_name: big-bear-wg-easy
-
     # Image to be used for the container
     image: ghcr.io/wg-easy/wg-easy:14
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables for the container
     environment:
       WG_HOST: "[YOUR_PUBLIC_IP]"
       PASSWORD_HASH: "$2b$12$coPqCsPtcFO.Ab99xylBNOW4.Iu7OOA2/ZIboHN6/oyxca3MWo7fW"
       WG_DEFAULT_DNS: "1.1.1.1"
       WG_ALLOWED_IPS: 0.0.0.0/0, ::/0
-
     # capabilities to be added to the container
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
-
     # sysctls to be added to the container
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
       - net.ipv4.ip_forward=1
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/$AppID/data directory to /etc/wireguard inside the container
       - /DATA/AppData/$AppID/data:/etc/wireguard
-
     # Ports mapping between host and container
     ports:
       - 51820:51820/udp
       - 51821:51821/tcp # UI port
-
-    # CasaOS specific configuration
     x-casaos:
+      envs:
+        - container: WG_HOST
+          description:
+            en_us: 'Container Variable: WG_HOST'
+        - container: PASSWORD_HASH
+          description:
+            en_us: 'Container Variable: PASSWORD_HASH'
+        - container: WG_DEFAULT_DNS
+          description:
+            en_us: 'Container Variable: WG_DEFAULT_DNS'
+        - container: WG_ALLOWED_IPS
+          description:
+            en_us: 'Container Variable: WG_ALLOWED_IPS'
       volumes:
         - container: /etc/wireguard
           description:
-            en_us: "Container Path: /etc/wireguard"
+            en_us: 'Container Path: /etc/wireguard'
       ports:
         - container: "51820"
           description:
-            en_us: "Container Port: 51820"
+            en_us: 'Container Port: 51820'
         - container: "51821"
           description:
-            en_us: "Container Port: 51821"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 51821'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-wg-easy
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Access your homeserver from anywhere even on your mobile device. Wireguard-easy is a simple tool to configure and manage Wireguard VPN servers. It is written in Go and uses the official Wireguard client. You have to open and redirect port 51820 to your homeserver in order to connect.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: VPN server for your homeserver
-  # Developer's name or identifier
-  developer: "WeeJeWel"
-  # Author of this configuration
+  # Developer's information
+  developer: WeeJeWel
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/wg-easy/logo.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Wireguard Easy 14 (Legacy)
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "51821"
-  # Installation instructions and documentation
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-wg-easy-to-bigbearcasaos/1631#p-3101-documentation-3
+  # Title for the application
+  title:
+    en_us: Wireguard Easy 14 (Legacy)
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "51821"

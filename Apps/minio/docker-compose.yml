@@ -16,40 +16,51 @@ services:
       MINIO_ROOT_USER: "minioadmin"
     restart: unless-stopped # Policy to restart the container if it stops unexpectedly
     command: ["server", "--console-address", ":9001", "/data"]
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - container: MINIO_ROOT_USER
-          description:
-            en_us: "Minio Console User"
         - container: MINIO_ROOT_PASSWORD
           description:
-            en_us: "Minio Console Password"
+            en_us: 'Container Variable: MINIO_ROOT_PASSWORD'
+        - container: MINIO_ROOT_USER
+          description:
+            en_us: 'Container Variable: MINIO_ROOT_USER'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /data'
       ports:
-        - container: "9002"
+        - container: "9000"
           description:
-            en_us: "Container Port: 9002"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 9000'
+        - container: "9001"
+          description:
+            en_us: 'Container Port: 9001'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-  main: app # Main service of the application
+  # Main service for this application
+  main: app
+  # Detailed description for the application
   description:
-    en_us: A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables. # Description in English
+    en_us: A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.
+  # Brief tagline for the application
   tagline:
-    en_us: An open-source S3 alternative # Short description or tagline in English
-  developer: "minio" # Developer's name or identifier
-  author: BigBearCommunity # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/minio.png # Icon for the application
-  thumbnail: "" # Thumbnail image (currently empty)
+    en_us: An open-source S3 alternative
+  # Developer's information
+  developer: minio
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/minio.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
   title:
-    en_us: Minio # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "9011" # Port mapping information
-  scheme: http # URL scheme for the application
+    en_us: Minio
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "9011"

@@ -1,80 +1,60 @@
-# Name of the service configuration
+# Configuration for node-red setup
+
+# Application Name
 name: big-bear-node-red
-
-# Define the services for this configuration
+# Services used in the application
 services:
+  # The `app` service for the node-red application
   app:
-    # Docker image for the service
-    image: nodered/node-red:4.1.1
-
-    # Use the host's network stack
-    network_mode: host
-
-    # Port mapping configurations
-    ports:
-      - target: 1880 # Container's port
-        published: "1880" # Host's port
-        protocol: tcp # Communication protocol
-
-    # Restart policy for the service
-    restart: always
-
-    # Volume configurations for persistent storage
-    volumes:
-      - type: bind # Bind type volume
-        source: /DATA/AppData/$AppID/data # Source path on the host
-        target: /data # Path inside the container
-
     # Name of the container
-    container_name: node-red-updated
-
-    x-casaos: # CasaOS specific configuration
+    container_name: node-red
+    # Docker image to be used
+    image: nodered/node-red:4.1.1
+    # Restart policy for the service
+    restart: unless-stopped
+    # Port mappings for the service
+    ports:
+      - "1880:1880"
+    # Network mode for the service
+    network_mode: bridge
+    # Volumes for the service HOST -> CONTAINER
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    x-casaos:
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /data'
       ports:
         - container: "1880"
           description:
-            en_us: "Container Port: 1880"
-
-# Custom configurations specific to casaos
+            en_us: 'Container Port: 1880'
 x-casaos:
-  # Supported architectures
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-
-  # Main service for this configuration
+  # Main service for this application
   main: app
-
-  # Description for the service
+  # Detailed description for the application
   description:
     en_us: Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.  It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.
-
-  # Short description or slogan
+  # Brief tagline for the application
   tagline:
     en_us: Low-code programming for event-driven applications
-
-  # Developer of the service (if applicable)
+  # Developer's information
   developer: ""
-
-  # Author of the configuration
+  # Author of this particular configuration
   author: BigBearTechWorld
-
-  # Icon for the service
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/node-red.png
-
-  # Thumbnail for the service (if applicable)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-
-  # Display title for the service
+  # Title for the application
   title:
     en_us: Node-RED
-
-  # Category for organization
+  # Category under which the application falls
   category: BigBearCasaOS
-
-  # Port map for quick reference
+  # Default port mapping for the application
   port_map: "1880"

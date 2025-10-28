@@ -2,7 +2,6 @@
 
 # Name of the big-bear-anse application
 name: big-bear-anse
-
 # Service definitions for the big-bear-anse application
 services:
   # Service name: big-bear-anse
@@ -10,58 +9,51 @@ services:
   big-bear-anse:
     # Name of the container
     container_name: big-bear-anse
-
     # Image to be used for the container
     image: ddiu8081/anse:v1.1.11
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - PORT=8014
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8014 of the host to port 8014 of the container
       - "8014:8014"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: PORT
           description:
-            en_us: "Port: 8014"
+            en_us: 'Container Variable: PORT'
       ports:
         - container: "8014"
           description:
-            en_us: "Container Port: 8014"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8014'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-anse
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Anse is a fully optimized UI for AI Chats. Supercharged experience for multiple models such as ChatGPT, DALL-E and Stable Diffusion.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Fully optimized UI for AI Chats.
-  # Developer's name or identifier
-  developer: "ddiu8081"
-  # Author of this configuration
+  # Developer's information
+  developer: ddiu8081
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/anse/logo.jpg
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Anse
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8014"

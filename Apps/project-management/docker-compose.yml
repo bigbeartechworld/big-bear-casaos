@@ -2,20 +2,16 @@
 
 # Name of the big-bear-project-management application
 name: big-bear-project-management
-
 # Service definitions for the big-bear-project-management application
 services:
   # The `big-bear-project-management` service definition
   big-bear-project-management:
     # Name of the container
     container_name: big-bear-project-management
-
     # Image to be used for the container
     image: eloufirhatim/helper:1.2.3
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - DB_CONNECTION=mysql
@@ -30,109 +26,127 @@ services:
       - MAIL_USERNAME=
       - MAIL_PASSWORD=
       - MAIL_ENCRYPTION=null
-
     # Volumes to be mounted to the container
     volumes:
       - /etc/localtime:/etc/localtime
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8000 of the host to port 8000 of the container
       - "8000:8000"
-
     networks:
       - big_bear_project_management_network
-
     depends_on:
       - big-bear-project-management-db
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: DB_CONNECTION
+          description:
+            en_us: 'Container Variable: DB_CONNECTION'
+        - container: DB_HOST
+          description:
+            en_us: 'Container Variable: DB_HOST'
+        - container: DB_PORT
+          description:
+            en_us: 'Container Variable: DB_PORT'
+        - container: DB_DATABASE
+          description:
+            en_us: 'Container Variable: DB_DATABASE'
+        - container: DB_USERNAME
+          description:
+            en_us: 'Container Variable: DB_USERNAME'
+        - container: DB_PASSWORD
+          description:
+            en_us: 'Container Variable: DB_PASSWORD'
+        - container: MAIL_MAILER
+          description:
+            en_us: 'Container Variable: MAIL_MAILER'
+        - container: MAIL_HOST
+          description:
+            en_us: 'Container Variable: MAIL_HOST'
+        - container: MAIL_PORT
+          description:
+            en_us: 'Container Variable: MAIL_PORT'
+        - container: MAIL_USERNAME
+          description:
+            en_us: 'Container Variable: MAIL_USERNAME'
+        - container: MAIL_PASSWORD
+          description:
+            en_us: 'Container Variable: MAIL_PASSWORD'
+        - container: MAIL_ENCRYPTION
+          description:
+            en_us: 'Container Variable: MAIL_ENCRYPTION'
       volumes:
-        - container: /app/data/configs
+        - container: /etc/localtime
           description:
-            en_us: "Container Path: /app/data/configs"
-        - container: /app/public/icons
-          description:
-            en_us: "Container Path: /app/public/icons"
-        - container: /data
-          description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /etc/localtime'
       ports:
-        - container: "7575"
+        - container: "8000"
           description:
-            en_us: "Container Port: 7575"
-
+            en_us: 'Container Port: 8000'
   big-bear-project-management-db:
     image: mysql:5.7
     container_name: big-bear-project-management-db
-
     environment:
       - MYSQL_DATABASE=project_management
       - MYSQL_USER=project_management
       - MYSQL_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
       - MYSQL_ROOT_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
-
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     restart: unless-stopped
-
     networks:
       - big_bear_project_management_network
-
     healthcheck:
-      test:
-        [
-          "CMD",
-          "mysqladmin",
-          "ping",
-          "-h",
-          "localhost",
-          "-p${MYSQL_ROOT_PASSWORD}",
-        ]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD}"]
       interval: 20s
       start_period: 10s
       timeout: 10s
-
     x-casaos:
+      envs:
+        - container: MYSQL_DATABASE
+          description:
+            en_us: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_USER
+          description:
+            en_us: 'Container Variable: MYSQL_USER'
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: 'Container Variable: MYSQL_PASSWORD'
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
-      ports:
-        - container: "3306"
-          description:
-            en_us: "Container Port: 3306"
-
+            en_us: 'Container Path: /var/lib/mysql'
 networks:
   big_bear_project_management_network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-project-management
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: An open source Project management tool based on Laravel and Filament
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Project Management
-  # Developer's name or identifier
-  developer: "eloufirhatim"
-  # Author of this configuration
+  # Developer's information
+  developer: eloufirhatim
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/project-management/logo.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Project Management
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8000"
