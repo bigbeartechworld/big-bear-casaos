@@ -2,7 +2,6 @@
 
 # Name of the big-bear-homepage application
 name: big-bear-homepage
-
 # Service definitions for the big-bear-homepage application
 services:
   # Service name: app
@@ -10,62 +9,56 @@ services:
   app:
     # Image to be used for the container
     image: ghcr.io/gethomepage/homepage:v1.5.0
-
     # Name of the container instance
     container_name: homepage
-
     # Port mapping between host and container
     ports:
       - 3000:3000 # Maps port 3000 of the host to port 3000 of the container
-
     # Mount points for volumes (persistent storage)
     volumes:
       # Maps local config directory to the config directory inside the container
       # Ensure the local config directory is created before starting the container
       - /DATA/AppData/$AppID/config:/app/config
-
       # Maps the Docker socket from the host to the container
       # This allows the container to communicate with the Docker daemon on the host
       - /var/run/docker.sock:/var/run/docker.sock
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /app/config
           description:
-            en_us: "Container Path: /app/config"
+            en_us: 'Container Path: /app/config'
         - container: /var/run/docker.sock
           description:
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 3000'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Homepage
-  # Developer's name or identifier
-  developer: "gethomepage"
-  # Author of this configuration
+  # Developer's information
+  developer: gethomepage
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: "https://cdn.jsdelivr.net/gh/selfhst/icons/png/homepage.png"
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/homepage.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Homepage
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "3000"
