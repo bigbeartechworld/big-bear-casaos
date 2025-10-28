@@ -1,8 +1,7 @@
 {
   "id": "authentik",
-  "version": "2025.10.0",
+  "version": "2025.8.4",
   "image": "ghcr.io/goauthentik/server",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

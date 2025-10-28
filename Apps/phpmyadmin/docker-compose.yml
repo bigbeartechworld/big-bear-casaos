@@ -2,80 +2,70 @@
 
 # Name of the big-bear-phpmyadmin application
 name: big-bear-phpmyadmin
-
 # Service definitions for the big-bear-phpmyadmin application
 services:
   # Service name: phpmyadmin
   phpmyadmin:
     # Docker image to be used for this service
     image: phpmyadmin/phpmyadmin:5.2.3
-
     # Name of the container once it's up and running
     container_name: big-bear-phpmyadmin
-
     # Environment variables passed to the service
     environment:
       # Host of the database server
       PMA_HOST: "[YOUR-CASAOS-IP]"
-
       # Port of the database server
       PMA_PORT: "3306"
-
       # Username to connect to the database
       PMA_USER: "bigbear"
-
       # Password to connect to the database
       PMA_PASSWORD: "password"
-
     # Port mapping: map host's port 8080 to container's port 80
     ports:
       - "8080:80"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: PMA_HOST
           description:
-            en_us: "Host of the database server"
+            en_us: 'Container Variable: PMA_HOST'
         - container: PMA_PORT
           description:
-            en_us: "Port of the database server"
+            en_us: 'Container Variable: PMA_PORT'
         - container: PMA_USER
           description:
-            en_us: "Username to connect to the database"
+            en_us: 'Container Variable: PMA_USER'
         - container: PMA_PASSWORD
           description:
-            en_us: "Password to connect to the database"
+            en_us: 'Container Variable: PMA_PASSWORD'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 80'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: phpmyadmin
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: phpMyAdmin - A web interface for MySQL and MariaDB.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: phpMyAdmin
-  # Developer's name or identifier
-  developer: "phpMyAdmin"
-  # Author of this configuration
+  # Developer's information
+  developer: phpMyAdmin
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/phpmyadmin.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: phpMyAdmin
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"

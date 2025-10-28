@@ -1,5 +1,4 @@
 name: big-bear-jellyseerr # Name of the compose project
-
 services:
   app:
     image: fallenbagel/jellyseerr:2.7.3 # Image to use for the jellyseerr service
@@ -12,49 +11,47 @@ services:
       - TZ=$TZ # Sets the timezone, using host's timezone variable
     restart: unless-stopped # Service will restart unless it is explicitly stopped
     network_mode: bridge # Uses bridge network mode
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: LOG_LEVEL
           description:
-            en_us: Log level
+            en_us: 'Container Variable: LOG_LEVEL'
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /app/config
           description:
-            en_us: "Container Path: /app/config"
+            en_us: 'Container Path: /app/config'
       ports:
         - container: "5055"
           description:
-            en_us: "Container Port: 5055"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 5055'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers!
-  # Developer's name or identifier
-  developer: "Fallenbagel"
-  # Author of this configuration
+  # Developer's information
+  developer: Fallenbagel
+  # Author of this particular configuration
   author: BigBearCommunity
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyseerr.png
-  # Thumbnail image
-  thumbnail: "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg"
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg
+  # Title for the application
   title:
-    # Title in English
     en_us: Jellyseerr
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "5055"

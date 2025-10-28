@@ -2,7 +2,6 @@
 
 # Name of the big-bear-crafty application
 name: big-bear-crafty
-
 # Service definitions for the big-bear-crafty application
 services:
   # Service name: big-bear-crafty
@@ -10,24 +9,19 @@ services:
   big-bear-crafty:
     # Name of the container
     container_name: big-bear-crafty
-
     # Image to be used for the container
     image: registry.gitlab.com/crafty-controller/crafty-4:4.5.5
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - TZ=UTC
-
     # Ports mapping between host and container HOST:CONTAINER
     ports:
       - 8443:8443 # Web UI
       - 8123:8123
       - 19132:19132/udp
       - 25500-25600:25500-25600
-
     # Volumes mapping between host and container
     volumes:
       - /DATA/AppData/$AppID/data/backups:/crafty/backups
@@ -35,75 +29,70 @@ services:
       - /DATA/AppData/$AppID/data/servers:/crafty/servers
       - /DATA/AppData/$AppID/data/config:/crafty/app/config
       - /DATA/AppData/$AppID/data/import:/crafty/import
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /crafty/backups
           description:
-            en_us: "Container Path: /crafty/backups"
+            en_us: 'Container Path: /crafty/backups'
         - container: /crafty/logs
           description:
-            en_us: "Container Path: /crafty/logs"
+            en_us: 'Container Path: /crafty/logs'
         - container: /crafty/servers
           description:
-            en_us: "Container Path: /crafty/servers"
+            en_us: 'Container Path: /crafty/servers'
         - container: /crafty/app/config
           description:
-            en_us: "Container Path: /crafty/app/config"
+            en_us: 'Container Path: /crafty/app/config'
         - container: /crafty/import
           description:
-            en_us: "Container Path: /crafty/import"
+            en_us: 'Container Path: /crafty/import'
       ports:
         - container: "8443"
           description:
-            en_us: "Container Port: 8443"
+            en_us: 'Container Port: 8443'
         - container: "8123"
           description:
-            en_us: "Container Port: 8123"
+            en_us: 'Container Port: 8123'
         - container: "19132"
           description:
-            en_us: "Container Port: 19132"
-        - container: "25500-25600"
+            en_us: 'Container Port: 19132'
+        - container: 25500-25600
           description:
-            en_us: "Container Port: 25500-25600"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 25500-25600'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-crafty
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Crafty 4 is the next iteration of our Minecraft Server Wrapper / Controller / Launcher.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Crafty Controller
-  # Developer's name or identifier
-  developer: "crafty-controller"
-  # Author of this configuration
+  # Developer's information
+  developer: crafty-controller
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/crafty-controller.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Crafty Controller
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8443"
-  # Scheme used (https)
-  scheme: https
-  # Tips for the application
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Before you install Crafty Controller, you need to read the https://community.bigbeartechworld.com/t/added-crafty-controller-to-bigbearcasaos/1013#instructions-3.
+  # Title for the application
+  title:
+    en_us: Crafty Controller
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8443"

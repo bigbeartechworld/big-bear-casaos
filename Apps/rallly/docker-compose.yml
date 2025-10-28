@@ -2,7 +2,6 @@
 
 # Name of the big-bear-rallly application
 name: big-bear-rallly
-
 # Definition of services required for the big-bear-rallly application
 services:
   # Main application service definition
@@ -26,58 +25,55 @@ services:
       - SMTP_PWD=
       - SMTP_TLS_ENABLED=
       - ALLOWED_EMAILS= # Specify allowed emails if needed
-
     ports:
       - "3000:3000" # Maps port 3000 on the host to port 3000 on the container
-
     networks:
       - big_bear_rally_network # Connects the container to the specified network
-
     depends_on:
       big-bear-rallly-db:
         condition: service_healthy # Ensures the DB service is healthy before starting
-
-    # CasaOS specific configurations for user interface
     x-casaos:
       envs:
-        # Detailed descriptions for environment variables to display in CasaOS UI
         - container: DATABASE_URL
           description:
-            en_us: "Database URL: postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly"
+            en_us: 'Container Variable: DATABASE_URL'
         - container: SECRET_PASSWORD
           description:
-            en_us: "Secret password for application security"
+            en_us: 'Container Variable: SECRET_PASSWORD'
         - container: NEXT_PUBLIC_BASE_URL
           description:
-            en_us: "Frontend URL: http"
+            en_us: 'Container Variable: NEXT_PUBLIC_BASE_URL'
         - container: NOREPLY_EMAIL
           description:
-            en_us: "Email used for sending no-reply messages"
+            en_us: 'Container Variable: NOREPLY_EMAIL'
         - container: SUPPORT_EMAIL
           description:
-            en_us: "Support contact email"
+            en_us: 'Container Variable: SUPPORT_EMAIL'
         - container: SMTP_HOST
           description:
-            en_us: "SMTP server host"
+            en_us: 'Container Variable: SMTP_HOST'
         - container: SMTP_PORT
           description:
-            en_us: "SMTP server port"
+            en_us: 'Container Variable: SMTP_PORT'
         - container: SMTP_SECURE
           description:
-            en_us: "SMTP server security"
+            en_us: 'Container Variable: SMTP_SECURE'
         - container: SMTP_USER
           description:
-            en_us: "SMTP server username"
+            en_us: 'Container Variable: SMTP_USER'
         - container: SMTP_PWD
           description:
-            en_us: "SMTP server password"
+            en_us: 'Container Variable: SMTP_PWD'
         - container: SMTP_TLS_ENABLED
           description:
-            en_us: "SMTP server TLS enabled"
+            en_us: 'Container Variable: SMTP_TLS_ENABLED'
         - container: ALLOWED_EMAILS
           description:
-            en_us: "Allowed emails for the application"
-
+            en_us: 'Container Variable: ALLOWED_EMAILS'
+      ports:
+        - container: "3000"
+          description:
+            en_us: 'Container Port: 3000'
   # Database service for the application
   big-bear-rallly-db:
     container_name: big-bear-rallly-db # Container name for the database service
@@ -96,44 +92,55 @@ services:
       interval: 5s # This specifies how often the health check command should be run. In your configuration, it’s set to every 5 seconds (5s). This means Docker will execute the pg_isready command every 5 seconds to check if the database server is up and ready to accept connections.
       timeout: 5s # This is the maximum time allowed for the health check command to run. If the command takes longer than this time to complete, it is considered a failure. Here, the timeout is also set to 5 seconds.
       retries: 5 # This specifies the number of consecutive failures required to consider the container as unhealthy. In your case, the pg_isready command must fail 5 consecutive times before Docker marks the container as unhealthy.
-    # CasaOS specific configurations for user interface
     x-casaos:
       envs:
-        # Detailed descriptions for environment variables to display in CasaOS UI
         - container: POSTGRES_PASSWORD
           description:
-            en_us: "Database password"
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: "Database name"
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: "Database user"
-
+            en_us: 'Container Variable: POSTGRES_USER'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: 'Container Path: /var/lib/postgresql/data'
 # Network definitions for the application
 networks:
   big_bear_rally_network:
     driver: bridge # Uses bridge network driver
-
-# Additional CasaOS specific configuration
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm64 # Supported CPU architectures
-  main: big-bear-rallly # Main service of the application
+    - arm64
+  # Main service for this application
+  main: big-bear-rallly
+  # Detailed description for the application
   description:
-    en_us: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier. # Application description
+    en_us: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.
+  # Brief tagline for the application
   tagline:
-    en_us: Rallly # Short tagline or slogan
-  developer: "lukevella" # Developer or maintainer of the application
-  author: BigBearTechWorld # The author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/rallly.png # Icon URL
-  thumbnail: "" # Thumbnail image URL (currently empty)
-  title:
-    en_us: Rallly # Title of the application in English
-  category: BigBearCasaOS # Category under which the app is listed
-  port_map: "3000" # Port mapping information for user reference
-  tips: # Tips or instructions for the user before installation
+    en_us: Rallly
+  # Developer's information
+  developer: lukevella
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/rallly.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3
+  # Title for the application
+  title:
+    en_us: Rallly
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"
