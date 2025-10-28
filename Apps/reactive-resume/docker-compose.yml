@@ -2,7 +2,6 @@
 
 # Name of the big-bear-reactive-resume application
 name: big-bear-reactive-resume
-
 # Service definitions for the big-bear-reactive-resume application
 services:
   # Main application
@@ -23,22 +22,17 @@ services:
       # -- Environment Variables --
       PORT: "3000"
       NODE_ENV: "production"
-
       # -- URLs --
       PUBLIC_URL: "http://[CASAOS_IP]:3000"
       STORAGE_URL: "http://[CASAOS_IP]:9000/default"
-
       # -- Printer (Chrome) --
       CHROME_TOKEN: "chrome_token"
       CHROME_URL: "ws://chrome:3000"
-
       # -- Database (Postgres) --
       DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/postgres"
-
       # -- Auth --
       ACCESS_TOKEN_SECRET: "access_token_secret"
       REFRESH_TOKEN_SECRET: "refresh_token_secret"
-
       # -- Emails --
       MAIL_FROM: "noreply@localhost"
       # SMTP_URL: smtp://user:pass@smtp:587 # Optional
@@ -51,30 +45,87 @@ services:
       STORAGE_ACCESS_KEY: "minioadmin"
       STORAGE_SECRET_KEY: "minioadmin"
       STORAGE_USE_SSL: "false"
-
       # -- Cache (Redis) --
       REDIS_URL: "redis://default:password@redis:6379"
-
       # -- Sentry --
       # VITE_SENTRY_DSN: https://id.sentry.io # Optional
+    x-casaos:
+      envs:
+        - container: PORT
+          description:
+            en_us: 'Container Variable: PORT'
+        - container: NODE_ENV
+          description:
+            en_us: 'Container Variable: NODE_ENV'
+        - container: PUBLIC_URL
+          description:
+            en_us: 'Container Variable: PUBLIC_URL'
+        - container: STORAGE_URL
+          description:
+            en_us: 'Container Variable: STORAGE_URL'
+        - container: CHROME_TOKEN
+          description:
+            en_us: 'Container Variable: CHROME_TOKEN'
+        - container: CHROME_URL
+          description:
+            en_us: 'Container Variable: CHROME_URL'
+        - container: DATABASE_URL
+          description:
+            en_us: 'Container Variable: DATABASE_URL'
+        - container: ACCESS_TOKEN_SECRET
+          description:
+            en_us: 'Container Variable: ACCESS_TOKEN_SECRET'
+        - container: REFRESH_TOKEN_SECRET
+          description:
+            en_us: 'Container Variable: REFRESH_TOKEN_SECRET'
+        - container: MAIL_FROM
+          description:
+            en_us: 'Container Variable: MAIL_FROM'
+        - container: STORAGE_ENDPOINT
+          description:
+            en_us: 'Container Variable: STORAGE_ENDPOINT'
+        - container: STORAGE_PORT
+          description:
+            en_us: 'Container Variable: STORAGE_PORT'
+        - container: STORAGE_REGION
+          description:
+            en_us: 'Container Variable: STORAGE_REGION'
+        - container: STORAGE_BUCKET
+          description:
+            en_us: 'Container Variable: STORAGE_BUCKET'
+        - container: STORAGE_ACCESS_KEY
+          description:
+            en_us: 'Container Variable: STORAGE_ACCESS_KEY'
+        - container: STORAGE_SECRET_KEY
+          description:
+            en_us: 'Container Variable: STORAGE_SECRET_KEY'
+        - container: STORAGE_USE_SSL
+          description:
+            en_us: 'Container Variable: STORAGE_USE_SSL'
+        - container: REDIS_URL
+          description:
+            en_us: 'Container Variable: REDIS_URL'
+      ports:
+        - container: "3000"
+          description:
+            en_us: 'Container Port: 3000'
+  # -- Crowdin (Optional) --
+  # CROWDIN_PROJECT_ID:
+  # CROWDIN_PERSONAL_TOKEN:
 
-      # -- Crowdin (Optional) --
-      # CROWDIN_PROJECT_ID:
-      # CROWDIN_PERSONAL_TOKEN:
+  # -- Email (Optional) --
+  # DISABLE_EMAIL_AUTH: true
+  # VITE_DISABLE_SIGNUPS: true
 
-      # -- Email (Optional) --
-      # DISABLE_EMAIL_AUTH: true
-      # VITE_DISABLE_SIGNUPS: true
+  # -- GitHub (Optional) --
+  # GITHUB_CLIENT_ID: "github_client_id"
+  # GITHUB_CLIENT_SECRET: "github_client_secret"
+  # GITHUB_CALLBACK_URL: "http://[CASAOS_IP]:3000/api/auth/github/callback"
 
-      # -- GitHub (Optional) --
-      # GITHUB_CLIENT_ID: "github_client_id"
-      # GITHUB_CLIENT_SECRET: "github_client_secret"
-      # GITHUB_CALLBACK_URL: "http://[CASAOS_IP]:3000/api/auth/github/callback"
-
-      # -- Google (Optional) --
-      # GOOGLE_CLIENT_ID: "google_client_id"
-      # GOOGLE_CLIENT_SECRET: "google_client_secret"
-      # GOOGLE_CALLBACK_URL: "http://[CASAOS_IP]:3000/api/auth/google/callback"
+  # -- Google (Optional) --
+  # GOOGLE_CLIENT_ID: "google_client_id"
+  # GOOGLE_CLIENT_SECRET: "google_client_secret"
+  # GOOGLE_CALLBACK_URL: "http://[CASAOS_IP]:3000/api/auth/google/callback"
 
   # Database (Postgres)
   postgres:
@@ -82,7 +133,7 @@ services:
     image: postgres:15-alpine
     restart: unless-stopped
     volumes:
-      - /DATA/AppData/$AppID/pg_data:/var/lib/postgresql/data
+      - /DATA/AppData/$AppID/pg/data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: "postgres"
       POSTGRES_USER: "postgres"
@@ -94,7 +145,21 @@ services:
       retries: 5
     networks:
       - reactive-resume-network
-
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_us: 'Container Variable: POSTGRES_DB'
+        - container: POSTGRES_USER
+          description:
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: 'Container Path: /var/lib/postgresql/data'
   # Storage (for image uploads)
   minio:
     container_name: big-bear-reactive-resume-minio
@@ -104,13 +169,28 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - /DATA/AppData/$AppID/minio_data:/data
+      - /DATA/AppData/$AppID/minio/data:/data
     environment:
       MINIO_ROOT_USER: "minioadmin"
       MINIO_ROOT_PASSWORD: "minioadmin"
     networks:
       - reactive-resume-network
-
+    x-casaos:
+      envs:
+        - container: MINIO_ROOT_USER
+          description:
+            en_us: 'Container Variable: MINIO_ROOT_USER'
+        - container: MINIO_ROOT_PASSWORD
+          description:
+            en_us: 'Container Variable: MINIO_ROOT_PASSWORD'
+      volumes:
+        - container: /data
+          description:
+            en_us: 'Container Path: /data'
+      ports:
+        - container: "9000"
+          description:
+            en_us: 'Container Port: 9000'
   # Chrome Browser (for printing and previews)
   chrome:
     container_name: big-bear-reactive-resume-chrome
@@ -122,7 +202,17 @@ services:
       PRE_REQUEST_HEALTH_CHECK: "true"
     networks:
       - reactive-resume-network
-
+    x-casaos:
+      envs:
+        - container: TOKEN
+          description:
+            en_us: 'Container Variable: TOKEN'
+        - container: EXIT_ON_HEALTH_FAILURE
+          description:
+            en_us: 'Container Variable: EXIT_ON_HEALTH_FAILURE'
+        - container: PRE_REQUEST_HEALTH_CHECK
+          description:
+            en_us: 'Container Variable: PRE_REQUEST_HEALTH_CHECK'
   # Redis (for cache & server session management)
   redis:
     container_name: big-bear-reactive-resume-redis
@@ -131,43 +221,41 @@ services:
     command: ["redis-server", "--requirepass", "password"]
     networks:
       - reactive-resume-network
-
 # Networks used by the application
 networks:
   # Define the network for AdGuard Home
   reactive-resume-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
-    en_us: "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
+    en_us: A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
-    en_us: "A free and open-source resume builder"
-  # Developer's name or identifier
-  developer: "AmruthPillai"
-  # Author of this configuration
+    en_us: A free and open-source resume builder
+  # Developer's information
+  developer: AmruthPillai
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/reactive-resume/logo.png"
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/reactive-resume/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: "Reactive Resume"
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "3000"
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Change [CASAOS_IP] to your CasaOS IP address. In the environment variables.
+  # Title for the application
+  title:
+    en_us: Reactive Resume
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"

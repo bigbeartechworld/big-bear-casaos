@@ -2,7 +2,6 @@
 
 # Name of the big-bear-diun application
 name: big-bear-diun
-
 # Service definitions for the big-bear-diun application
 services:
   # Service name: big-bear-diun
@@ -10,16 +9,12 @@ services:
   big-bear-diun:
     # Name of the container
     container_name: big-bear-diun
-
     # Image to be used for the container
     image: crazymax/diun:4.30.0
-
     # Command to run inside the container
     command: ["serve"]
-
     # Container restart policy
     restart: always
-
     # Environment variables for the container
     environment:
       TZ: "UTC"
@@ -27,64 +22,61 @@ services:
       DIUN_WATCH_SCHEDULE: "0 */6 * * *"
       DIUN_WATCH_JITTER: "30s"
       DIUN_PROVIDERS_DOCKER: "true"
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/data:/data
       - /var/run/docker.sock:/var/run/docker.sock
-
     labels:
       - diun.enable=true
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
         - container: DIUN_WATCH_WORKERS
           description:
-            en_us: Number of workers
+            en_us: 'Container Variable: DIUN_WATCH_WORKERS'
         - container: DIUN_WATCH_SCHEDULE
           description:
-            en_us: Watch schedule
+            en_us: 'Container Variable: DIUN_WATCH_SCHEDULE'
         - container: DIUN_WATCH_JITTER
           description:
-            en_us: Watch jitter
+            en_us: 'Container Variable: DIUN_WATCH_JITTER'
         - container: DIUN_PROVIDERS_DOCKER
           description:
-            en_us: Enable Docker provider
+            en_us: 'Container Variable: DIUN_PROVIDERS_DOCKER'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /data'
         - container: /var/run/docker.sock
           description:
-            en_us: "Container Path: /var/run/docker.sock"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /var/run/docker.sock'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-diun
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Docker Image Update Notifier is a CLI application written in Go and delivered as a single executable (and a Docker image) to receive notifications when a Docker image is updated on a Docker registry.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Docker Image Update Notifier
-  # Developer's name or identifier
-  developer: "crazymax"
-  # Author of this configuration
+  # Developer's information
+  developer: crazymax
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/diun.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: DIUN
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: ""

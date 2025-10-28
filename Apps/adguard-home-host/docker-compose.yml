@@ -2,7 +2,6 @@
 
 # Application Name
 name: big-bear-adguard-home-host
-
 # Services used in the application
 services:
   # The `app` service for the adguard home host application
@@ -11,43 +10,27 @@ services:
     container_name: big-bear-adguard-home-host
     # Docker image to be used
     image: adguard/adguardhome:v0.107.68
-
     # Volume mappings for the service
     volumes:
       - "/DATA/AppData/$AppID/data/work:/opt/adguardhome/work" # Map data work directory
       - "/DATA/AppData/$AppID/data/conf:/opt/adguardhome/conf" # Map configuration directory
     restart: unless-stopped
-
     # Define the networks section
     network_mode: host
-
-    # CasaOS specific configuration for the app service
     x-casaos:
       volumes:
         - container: /opt/adguardhome/work
           description:
-            en_us: "Container Path: /opt/adguardhome/work"
+            en_us: 'Container Path: /opt/adguardhome/work'
         - container: /opt/adguardhome/conf
           description:
-            en_us: "Container Path: /opt/adguardhome/conf"
-      ports:
-        - container: "53"
-          description:
-            en_us: "Container Port: 53"
-        - container: "3000"
-          description:
-            en_us: "Container Port: 3000"
-        - container: "80"
-          description:
-            en_us: "Container Port: 80"
-
-# CasaOS global application configuration
+            en_us: 'Container Path: /opt/adguardhome/conf'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-    - arm
+    - armv7
   # Main service for this application
   main: big-bear-adguard-home-host
   # Detailed description for the application
@@ -62,21 +45,14 @@ x-casaos:
   tagline:
     en_us: Network Mode is host. Network-wide ads & trackers blocking DNS server.
   # Developer's information
-  developer: "AdGuardTeam"
+  developer: AdGuardTeam
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/adguard-home.png
   # Thumbnail image for the application (if any)
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/thumbnail.png
-  # Title for the application
-  title:
-    en_us: AdGuard Home (HOST)
-  # Category under which the application falls
-  category: BigBearCasaOS
-  # Default port mapping for the application
-  port_map: "80"
-  # This is shown before installing
+  # Installation tips
   tips:
     before_install:
       en_us: |
@@ -87,3 +63,10 @@ x-casaos:
         ```
 
         After running this script, you need to restart the container.
+  # Title for the application
+  title:
+    en_us: AdGuard Home (HOST)
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "80"

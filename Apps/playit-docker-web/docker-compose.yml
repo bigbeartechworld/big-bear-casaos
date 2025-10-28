@@ -2,7 +2,6 @@
 
 # Name of the big-bear-playit-docker-web application
 name: big-bear-playit-docker-web
-
 # Service definitions for the big-bear-playit-docker-web application
 services:
   # Service name: big-bear-playit-docker-web
@@ -10,69 +9,57 @@ services:
   big-bear-playit-docker-web:
     # Name of the container
     container_name: big-bear-playit-docker-web
-
     # Image to be used for the container
     image: wisdomsky/playit-docker-web:1.1
-
     # Container restart policy
     restart: unless-stopped
-
     # Network mode
     network_mode: host
-
     # Environment variables for the container
     environment:
       - WEBUI_PORT=8008
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/config:/config
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: WEBUI_PORT
           description:
-            en_us: "Container Environment Variable: WEBUI_PORT"
+            en_us: 'Container Variable: WEBUI_PORT'
       volumes:
         - container: /config
           description:
-            en_us: "Container Path: /config"
-      ports:
-        - container: "8008"
-          description:
-            en_us: "Container Port: 8008"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /config'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-playit-docker-web
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Playit.gg is a global proxy that allows anyone to host a server without port forwarding.
-  # Developer's name or identifier
-  developer: "wisdomsky"
-  # Author of this configuration
+  # Developer's information
+  developer: wisdomsky
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/playit-docker-web/logo.png
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/playit-docker-web/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Playit Docker Web
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8008"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-playit-docker-web-to-bigbearcasaos/2276?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Playit Docker Web
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8008"

@@ -1,6 +1,5 @@
 # Name of the big-bear-morphos application
 name: big-bear-morphos
-
 # Service definitions for the big-bear-morphos application
 services:
   # Main service configuration for the morphos application
@@ -8,23 +7,18 @@ services:
   big-bear-morphos:
     # Name of the container
     container_name: big-bear-morphos
-
     # Image to be used for the container specifies the btop version and source
     image: ghcr.io/danvergara/morphos-server:0.6.0
-
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
-
     # Volume mappings required for system integration
     # These mounts allow the container to interact with the host system
     volumes:
       # Temporary storage for morphos
       - /DATA/AppData/$AppID/tmp:/tmp
-
     # Map port 8080 on the host to port 8080 on the container
     ports:
       - "8080:8080"
-
     # Healthcheck configuration for the morphos application
     healthcheck:
       test: timeout 10s bash -c ':> /dev/tcp/127.0.0.1/8080' || exit 1
@@ -32,47 +26,54 @@ services:
       retries: 3
       start_period: 20s
       timeout: 30s
-
-    # CasaOS-specific configuration metadata
     x-casaos:
       volumes:
         - container: /tmp
           description:
-            en_us: "Container Path: /tmp"
+            en_us: 'Container Path: /tmp'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# Application metadata for CasaOS integration
-# This section provides information for the CasaOS app store and installation process
+            en_us: 'Container Port: 8080'
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Main service for this application
   main: big-bear-morphos
+  # Detailed description for the application
   description:
     en_us: Today we are forced to rely on third party services to convert files to other formats. This is a serious threat to our privacy, if we use such services to convert files with highly sensitive personal data. It can be used against us, sooner or later. Morphos server aims to solve the problem mentioned above, by providing a self-hosted server to convert files privately. The project provides an user-friendly web UI. For now, Morphos only supports images. Documents will be added soon.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-6.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-7.png
+  # Brief tagline for the application
   tagline:
     en_us: Self-hosted file converter server
-  developer: "danvergara"
+  # Developer's information
+  developer: danvergara
+  # Author of this particular configuration
   author: BigBearTechWorld
-  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/logo.png"
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-5.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-6.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/screenshot-7.png
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/morphos/thumbnail.png"
-  title:
-    en_us: Morphos
-  category: BigBearCasaOS
-  port_map: "8080"
-  # Installation instructions and documentation
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/morphos/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/morphos/thumbnail.png
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-morphos-to-bigbearcasaos/3160?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Morphos
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"

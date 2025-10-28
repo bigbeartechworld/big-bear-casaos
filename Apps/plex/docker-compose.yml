@@ -2,7 +2,6 @@
 
 # Name of the big-bear-plex application
 name: big-bear-plex
-
 # Service definitions for the big-bear-plex application
 services:
   # Service name: big-bear-plex
@@ -10,69 +9,75 @@ services:
   big-bear-plex:
     # Name of the container
     container_name: big-bear-plex
-
     # Image to be used for the container
     image: linuxserver/plex:1.42.2
-
     environment:
       - PUID=1000 # specify the user id
       - PGID=1000 # specify the group id
       - TZ=Etc/UTC # specify a timezone to use.
       - VERSION=docker # Set whether to update plex or not.
       - PLEX_CLAIM= #optional Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.
-
     # Container restart policy
     restart: unless-stopped
-
     # Network mode for the container
     network_mode: host
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/config:/config
       - /DATA/AppData/$AppID/tv:/tv
       - /DATA/AppData/$AppID/movies:/movies
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_us: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: VERSION
+          description:
+            en_us: 'Container Variable: VERSION'
+        - container: PLEX_CLAIM
+          description:
+            en_us: 'Container Variable: PLEX_CLAIM'
       volumes:
         - container: /config
           description:
-            en_us: "Configuration files"
+            en_us: 'Container Path: /config'
         - container: /tv
           description:
-            en_us: "TV Shows"
+            en_us: 'Container Path: /tv'
         - container: /movies
           description:
-            en_us: "Movies"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /movies'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-plex
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Stream Movies & TV Shows
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Stream Movies & TV Shows
-  # Developer's name or identifier
-  developer: "plexinc"
-  # Author of this configuration
+  # Developer's information
+  developer: plexinc
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/plex.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Plex
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Index file for the application
-  index: /web/index.html
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "32400"

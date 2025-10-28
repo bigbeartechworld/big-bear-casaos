@@ -3,6 +3,5 @@
   "version": "9.1.1",
   "image": "keyfactor/ejbca-ce",
   "youtube": "",
-  "docs_link": "https://doc.primekey.com/ejbca/ejbca-introduction",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": "https://doc.primekey.com/ejbca/ejbca-introduction"
 }

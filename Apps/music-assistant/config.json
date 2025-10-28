@@ -1,8 +1,7 @@
 {
   "id": "music-assistant",
-  "version": "2.6.1",
+  "version": "2.6.0",
   "image": "ghcr.io/music-assistant/server",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

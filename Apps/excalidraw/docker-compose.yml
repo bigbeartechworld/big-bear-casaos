@@ -2,7 +2,6 @@
 
 # Application Name
 name: big-bear-excalidraw
-
 # Services used in the application
 services:
   # The `app` service for the excalidraw application
@@ -16,14 +15,11 @@ services:
     # Port mappings for the service
     ports:
       - "8000:80"
-    # CasaOS specific configuration for the app service
     x-casaos:
       ports:
-        - container: "8000"
+        - container: "80"
           description:
-            en_us: "Container Port: 8000"
-
-# CasaOS global application configuration
+            en_us: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
@@ -37,11 +33,11 @@ x-casaos:
   tagline:
     en_us: Virtual whiteboard for sketching hand-drawn like diagrams
   # Developer's information
-  developer: "excalidraw"
+  developer: excalidraw
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/excalidraw/logo.png
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/excalidraw/logo.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
