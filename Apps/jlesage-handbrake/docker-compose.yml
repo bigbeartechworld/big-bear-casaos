@@ -1,5 +1,4 @@
 name: big-bear-jlesage-handbrake # Name of the CasaOS application
-
 services:
   big-bear-jlesage-handbrake:
     container_name: big-bear-jlesage-handbrake # Name of the Docker container
@@ -9,55 +8,62 @@ services:
     environment:
       - VNC_PASSWORD=casaos # Set the VNC password to 'casaos'
     volumes:
-      - /DATA/AppData/$AppID/config:/config:rw
-      - /DATA/AppData/$AppID/storage:/storage:ro
-      - /DATA/AppData/$AppID/watch:/watch:rw
-      - /DATA/AppData/$AppID/output:/output:rw
-
-    x-casaos: # CasaOS specific configuration for the brave service
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/storage:/storage
+      - /DATA/AppData/$AppID/watch:/watch
+      - /DATA/AppData/$AppID/output:/output
+    x-casaos:
       envs:
         - container: VNC_PASSWORD
           description:
-            en_us: VNC Password # Description for the VNC password environment variable
-      ports:
-        - container: "5800"
-          description:
-            en_us: "Container Port: 5800"
+            en_us: 'Container Variable: VNC_PASSWORD'
       volumes:
         - container: /config
           description:
-            en_us: "Container Path: /config"
+            en_us: 'Container Path: /config'
         - container: /storage
           description:
-            en_us: "Container Path: /storage"
+            en_us: 'Container Path: /storage'
         - container: /watch
           description:
-            en_us: "Container Path: /watch"
+            en_us: 'Container Path: /watch'
         - container: /output
           description:
-            en_us: "Container Path: /output"
-
-# Global CasaOS specific configuration
+            en_us: 'Container Path: /output'
+      ports:
+        - container: "5800"
+          description:
+            en_us: 'Container Port: 5800'
 x-casaos:
-  architectures: # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: big-bear-jlesage-handbrake # Specifies the main service of the application
+  # Main service for this application
+  main: big-bear-jlesage-handbrake
+  # Detailed description for the application
   description:
-    en_us: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client. # Description in English
+    en_us: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
+  # Brief tagline for the application
   tagline:
-    en_us: This project implements a Docker container for Handbrake. # Short description or tagline in English
-  developer: "jlesage" # Developer's name or identifier (currently empty)
-  author: BigBearTechWorld # Author of this Docker Compose configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/handbrake.png # Icon URL for the application
-  thumbnail: "" # Thumbnail image URL
-  title:
-    en_us: Jlesage Handbrake # Title in English
-  category: BigBearCasaOS # Category of the application
-  port_map: "5800" # Port mapping information for the service
-  scheme: http # Scheme for the service
-  # Installation instructions and documentation
+    en_us: This project implements a Docker container for Handbrake.
+  # Developer's information
+  developer: jlesage
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/handbrake.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-jlesage-handbrake-to-bigbearcasaos/2956?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Jlesage Handbrake
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "5800"

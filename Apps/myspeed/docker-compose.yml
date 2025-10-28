@@ -2,7 +2,6 @@
 
 # Name of the big-bear-myspeed application
 name: big-bear-myspeed
-
 # Service definitions for the big-bear-myspeed application
 services:
   # Service name: app
@@ -14,42 +13,40 @@ services:
     volumes:
       - /DATA/AppData/$AppID/data:/myspeed/data # Mount host directory to container directory
     restart: unless-stopped # Restart policy for the service
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /myspeed/data
           description:
-            en_us: "Container Path: /myspeed/data" # Description of the volume
+            en_us: 'Container Path: /myspeed/data'
       ports:
         - container: "5216"
           description:
-            en_us: "Container Port: 5216" # Description of the port
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 5216'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: MySpeed is a speed test analysis software that records your internet speed for up to 30 days.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: A speed test analysis software that shows your internet speed for up to 30 days
-  # Developer's name or identifier
-  developer: "gnmyt"
-  # Author of this configuration
+  # Developer's information
+  developer: gnmyt
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/myspeed/logo.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: MySpeed
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "5216"

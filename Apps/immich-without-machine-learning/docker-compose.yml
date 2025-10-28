@@ -1,6 +1,5 @@
 # Configuration for big-bear-immich-without-machine-learning setup
 name: big-bear-immich-without-machine-learning
-
 # Service definitions for the big-bear-immich-without-machine-learning application
 services:
   # Main Immich Server service configuration
@@ -25,42 +24,39 @@ services:
       - redis
       - database
     restart: unless-stopped # Policy to restart unless stopped
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: DB_HOSTNAME
           description:
-            en_us: "Database Hostname"
+            en_us: 'Container Variable: DB_HOSTNAME'
         - container: DB_USERNAME
           description:
-            en_us: "Database Username"
+            en_us: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: "Database Password"
+            en_us: 'Container Variable: DB_PASSWORD'
         - container: DB_DATABASE_NAME
           description:
-            en_us: "Database Name"
+            en_us: 'Container Variable: DB_DATABASE_NAME'
         - container: DB_PORT
           description:
-            en_us: "Database Port"
+            en_us: 'Container Variable: DB_PORT'
         - container: REDIS_HOSTNAME
           description:
-            en_us: "Redis Hostname"
+            en_us: 'Container Variable: REDIS_HOSTNAME'
       volumes:
         - container: /usr/src/app/upload
           description:
-            en_us: "Container Path: /usr/src/app/upload"
+            en_us: 'Container Path: /usr/src/app/upload'
       ports:
         - container: "2283"
           description:
-            en_us: "Container Port: 2283"
-
+            en_us: 'Container Port: 2283'
   # Configuration for Redis service
   redis:
     container_name: immich-redis # Name of the running container
     image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f # patched for CVE-2025-49844
     restart: always # Policy to always restart the container if it stops
-
   # Configuration for Database service
   database:
     container_name: immich-postgres # Name of the running container
@@ -75,45 +71,49 @@ services:
     volumes: # Mounting directories for persistent data storage
       - /DATA/AppData/big-bear-immich/pgdata:/var/lib/postgresql/data
     restart: always # Policy to always restart the container if it stops
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: "Database Password"
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: "Database Username"
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: "Database Name"
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: PG_DATA
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: 'Container Variable: PG_DATA'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /var/lib/postgresql/data'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: immich-server # Main service of the application
-  description: # Description in different languages
+  # Main service for this application
+  main: immich-server
+  # Detailed description for the application
+  description:
     en_us: Self-hosted photo and video storage. This does not include the machine learning part.
-  tagline: # Short description or tagline in different languages
+  # Brief tagline for the application
+  tagline:
     en_us: Immich without machine learning
-  developer: "immich" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
+  # Developer's information
+  developer: immich
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/immich.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Title of the application in English
+  # Title for the application
   title:
     en_us: Immich without machine learning
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "2283"

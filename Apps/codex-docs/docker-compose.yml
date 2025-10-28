@@ -1,6 +1,5 @@
 # Configuration for big-bear-codex-docs setup
 name: big-bear-codex-docs
-
 # Service definitions for the big-bear-codex-docs application
 services:
   app:
@@ -11,37 +10,46 @@ services:
       - /DATA/AppData/$AppID/uploads:/usr/src/app/uploads
       - /DATA/AppData/$AppID/db:/usr/src/app/db
       - /DATA/AppData/$AppID/codex-docs-config.local.yaml:/usr/src/app/docs-config.yaml
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /usr/src/app/uploads
           description:
-            en_us: "Container Path: /usr/src/app/uploads"
+            en_us: 'Container Path: /usr/src/app/uploads'
         - container: /usr/src/app/db
           description:
-            en_us: "Container Path: /usr/src/app/db"
+            en_us: 'Container Path: /usr/src/app/db'
         - container: /usr/src/app/docs-config.yaml
           description:
-            en_us: "Container Path: /usr/src/app/docs-config.yaml"
+            en_us: 'Container Path: /usr/src/app/docs-config.yaml'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 3000'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: app # Main service of the application
+  # Main service for this application
+  main: app
+  # Detailed description for the application
   description:
-    en_us: CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content. # Description in English
+    en_us: CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content.
+  # Brief tagline for the application
   tagline:
-    en_us: CodeX Docs # Short description or tagline in English
-  developer: "" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/codex-docs/logo.jpg # Icon for the application
-  thumbnail: "" # Thumbnail image (currently empty)
+    en_us: CodeX Docs
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/codex-docs/logo.jpg
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
   title:
-    en_us: CodeX Docs # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "3000" # Port mapping information
+    en_us: CodeX Docs
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"
