@@ -2,7 +2,6 @@
 
 # Name of the big-bear-watchyourlan application
 name: big-bear-watchyourlan
-
 # Service definitions for the big-bear-watchyourlan application
 services:
   # Service name: big-bear-watchyourlan
@@ -10,65 +9,57 @@ services:
   big-bear-watchyourlan:
     # Name of the container
     container_name: big-bear-watchyourlan
-
     # Image to be used for the container
     image: aceberg/watchyourlan:2.1.4
-
     # Environment variables to be used for the container
     environment:
       - IFACES="eth0"
       - TZ="UTC"
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/big-bear-watchyourlan/data directory to /data/WatchYourLAN inside the container
       - /DATA/AppData/$AppID/data:/data/WatchYourLAN
-
     # Network mode to be used for the container
     network_mode: host
-
-    x-casaos: # CasaOS specific configuration
-      env:
+    x-casaos:
+      envs:
         - container: IFACES
           description:
-            en_us: "Interfaces to monitor"
+            en_us: 'Container Variable: IFACES'
         - container: TZ
           description:
-            en_us: "Timezone"
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /data/WatchYourLAN
           description:
-            en_us: "Container Path: /data/WatchYourLAN"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /data/WatchYourLAN'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-watchyourlan
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: WatchYourLAN
-  # Developer's name or identifier
-  developer: "ajnart"
-  # Author of this configuration
+  # Developer's information
+  developer: ajnart
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/watchyourlan.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: WatchYourLAN
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8840"

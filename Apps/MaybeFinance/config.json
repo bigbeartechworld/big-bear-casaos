@@ -1,8 +1,7 @@
 {
-    "id": "MaybeFinance",
-    "version": "sha-347c0a790693031fdd3b32792b5b6792693d1805",
-    "image": "ghcr.io/maybe-finance/maybe",
-    "youtube": "",
-    "docs_link": "",
-    "big_bear_cosmos_youtube": ""
-  }
+  "id": "maybe-finance",
+  "version": "sha-347c0a790693031fdd3b32792b5b6792693d1805",
+  "image": "ghcr.io/maybe-finance/maybe",
+  "youtube": "",
+  "docs_link": ""
+}

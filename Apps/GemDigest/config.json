@@ -1,8 +1,7 @@
 {
-    "id": "GemDigest",
-    "version": "1.0",
-    "image": "piero24/gemdigest",
-    "youtube": "",
-    "docs_link": "",
-    "big_bear_cosmos_youtube": ""
-  }
+  "id": "gemdigest",
+  "version": "1.0",
+  "image": "piero24/gemdigest",
+  "youtube": "",
+  "docs_link": ""
+}

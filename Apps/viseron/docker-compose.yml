@@ -2,7 +2,6 @@
 
 # Name of the big-bear-viseron application
 name: big-bear-viseron
-
 # Service definitions for the big-bear-viseron application
 services:
   # Service name: big-bear-viseron
@@ -10,98 +9,89 @@ services:
   big-bear-viseron:
     # Name of the container
     container_name: big-bear-viseron
-
     # Image to be used for the container
     image: roflcoopter/viseron:3.3.1
-
     # Container restart policy
     restart: unless-stopped
-
     # Shared memory size
     shm_size: "1024mb"
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/segments:/segments
       - /DATA/AppData/$AppID/snapshots:/snapshots
       - /DATA/AppData/$AppID/thumbnails:/thumbnails
-      - /DATA/AppData/$AppID/event_clips:/event_clips
+      - /DATA/AppData/$AppID/event/clips:/event_clips
       - /DATA/AppData/$AppID/config:/config
       - /etc/localtime:/etc/localtime:ro
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8888 of the host to port 8888 of the container
       - "8888:8888"
-
     # Environment variables
     environment:
       - PUID=1000
       - PGID=1000
-
     x-casaos:
       envs:
         - container: PUID
           description:
-            en_us: "Container Environment Variable: PUID"
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: "Container Environment Variable: PGID"
+            en_us: 'Container Variable: PGID'
       volumes:
         - container: /segments
           description:
-            en_us: "Container Path: /segments"
+            en_us: 'Container Path: /segments'
         - container: /snapshots
           description:
-            en_us: "Container Path: /snapshots"
+            en_us: 'Container Path: /snapshots'
         - container: /thumbnails
           description:
-            en_us: "Container Path: /thumbnails"
+            en_us: 'Container Path: /thumbnails'
         - container: /event_clips
           description:
-            en_us: "Container Path: /event_clips"
+            en_us: 'Container Path: /event_clips'
         - container: /config
           description:
-            en_us: "Container Path: /config"
+            en_us: 'Container Path: /config'
         - container: /etc/localtime
           description:
-            en_us: "Container Path: /etc/localtime"
+            en_us: 'Container Path: /etc/localtime'
       ports:
         - container: "8888"
           description:
-            en_us: "Container Port: 8888"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8888'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-viseron
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Viseron is a self-hosted, local only NVR and AI Computer Vision software
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Viseron
-  # Developer's name or identifier
-  developer: "roflcoopter"
-  # Author of this configuration
+  # Developer's information
+  developer: roflcoopter
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/viseron/logo.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Viseron
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8888"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-viseron-to-bigbearcasaos/2134?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Viseron
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8888"

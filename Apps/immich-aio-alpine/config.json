@@ -3,6 +3,5 @@
   "version": "2.0.0-alpine",
   "image": "ghcr.io/imagegenius/immich",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

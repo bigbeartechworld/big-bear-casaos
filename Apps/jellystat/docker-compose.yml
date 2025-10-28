@@ -2,7 +2,6 @@
 
 # Name of the big-bear-jellystat application
 name: big-bear-jellystat
-
 # Service definitions for the big-bear-jellystat application
 services:
   # Service name: big-bear-jellystat
@@ -10,42 +9,50 @@ services:
   big-bear-jellystat:
     # Name of the container
     container_name: big-bear-jellystat
-
     # Image to be used for the container
     image: cyfershepard/jellystat:1.1.6
-
     # Container restart policy
     restart: unless-stopped
-
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=8a23ad09-61cf-4178-a783-6d4586496e3a
       - POSTGRES_IP=big-bear-jellystat-db
       - POSTGRES_PORT=5432
       - JWT_SECRET="my-secret-jwt-key"
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/backup-data:/app/backend/backup-data
-
     # Ports mapping between host and container
     ports:
       # Mapping port 3000 of the host to port 3000 of the container
       - "3000:3000"
-
     networks:
       - big-bear-jellystat-network
-
-    x-casaos: # CasaOS specific configuration
-      volumes:
-        - container: /DATA/AppData/$AppID/postgres-data
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
           description:
-            en_us: "Container Path: /DATA/AppData/$AppID/postgres-data"
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_IP
+          description:
+            en_us: 'Container Variable: POSTGRES_IP'
+        - container: POSTGRES_PORT
+          description:
+            en_us: 'Container Variable: POSTGRES_PORT'
+        - container: JWT_SECRET
+          description:
+            en_us: 'Container Variable: JWT_SECRET'
+      volumes:
+        - container: /app/backend/backup-data
+          description:
+            en_us: 'Container Path: /app/backend/backup-data'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
+            en_us: 'Container Port: 3000'
   big-bear-jellystat-db:
     container_name: big-bear-jellystat-db
     image: postgres:15.2
@@ -61,49 +68,46 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: "Container Environment Variable: POSTGRES_DB"
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: "Container Environment Variable: POSTGRES_USER"
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: "Container Environment Variable: POSTGRES_PASSWORD"
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
-        - container: /DATA/AppData/$AppID/postgres-data
+        - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /DATA/AppData/$AppID/postgres-data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
 networks:
   big-bear-jellystat-network:
     name: big-bear-jellystat-network
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-jellystat
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Jellystat
-  # Developer's name or identifier
-  developer: "cyfershepard"
-  # Author of this configuration
+  # Developer's information
+  developer: cyfershepard
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellystat.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Jellystat
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "3000"

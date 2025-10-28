@@ -2,139 +2,95 @@
 
 # Name of the OpenVPN-AS application
 name: big-bear-openvpn-as
-
 # Service definitions for the OpenVPN application
 services:
   # Service name: app
   # The `app` service definition
   big-bear-openvpn-as:
     # Name of the container
-    container_name:
-      big-bear-openvpn-as
-
-      # Image to be used for the container
+    container_name: big-bear-openvpn-as
+    # Image to be used for the container
     image: openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22
-
     # Container restart policy
     restart: unless-stopped
-
     # Privileged mode for the container
     privileged: true
-
     # Capabilities to be added to the container
     cap_add:
       - NET_ADMIN
-
     # Environment variables for the container
     environment:
       - PGID=1000
-
       - PUID=1000
-
       # Timezone for the container
       - TZ=Europe/Rome
-
     # Hostname for the container
     hostname: OpenVPN
-
     # Labels for the container
     labels:
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/openvpn.png
-
     # Ports to be exposed by the container
     ports:
       # Mapping port 943 of the host to port 943 of the container
       - "943:943/tcp"
-
       # Mapping port 443 of the host to port 443 of the container
       - "443:443/tcp"
-
       # Mapping port 1194 of the host to port 1194 of the container
       - "1194:1194/udp"
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local OpenVPN/data directory to /openvpn inside the container
       - /DATA/AppData/$AppID/data:/openvpn
-
-    # CasaOS specific configuration
+    network_mode: bridge
     x-casaos:
-      ports:
-        - container: "943"
+      envs:
+        - container: PGID
           description:
-            en_us: "Container Port: 943"
-
-        - container: "443"
+            en_us: 'Container Variable: PGID'
+        - container: PUID
           description:
-            en_us: "Container Port: 443"
-
-        - container: "1194"
+            en_us: 'Container Variable: PUID'
+        - container: TZ
           description:
-            en_us: "Container Port: 1194"
-
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /openvpn
           description:
-            en_us: "Container Path: /openvpn"
-
-    network_mode: bridge
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /openvpn'
+      ports:
+        - container: "943"
+          description:
+            en_us: 'Container Port: 943'
+        - container: "443"
+          description:
+            en_us: 'Container Port: 443'
+        - container: "1194"
+          description:
+            en_us: 'Container Port: 1194'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    #- arm64
-
-  # Author of this configuration
-  author: BigBearCommunity
-
-  # Application category
-  category: BigBearCasaOS
-
-  description:
-    # Description in English
-    en_us: OpenVPN is an open-source commercial software that implements virtual
-      private network (VPN) techniques to create secure point-to-point or
-      site-to-site connections in routed or bridged configurations and remote
-      access facilities.
-
-  # Developer's name or identifier
-  developer: "openvpn"
-
-  # Icon for the application
-  icon: https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png
-
-  # Application index
-  index: /admin
-
-  # Application information
-  is_uncontrolled: false
-
-  # Main service of the application
+  # Main service for this application
   main: big-bear-openvpn-as
-
-  # Port mapping information
-  port_map: "943"
-
-  scheme: https
-
-  store_app_id: big-bear-openvpn-as
-
+  # Detailed description for the application
+  description:
+    en_us: OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
-    en_us: OpenVPN is an open-source commercial software that implements virtual
-      private network (VPN).
-
-  # Thumbnail image (currently empty)
+    en_us: OpenVPN is an open-source commercial software that implements virtual private network (VPN).
+  # Developer's information
+  developer: openvpn
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-
-  tips:
-    custom: |-
-      Username: `openvpn`
-      Password: `You can find you first time password in the log of the container`
-
+  # Title for the application
   title:
-    # Title in English
-    custom: ""
     en_us: OpenVPN
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "943"

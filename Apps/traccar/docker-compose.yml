@@ -2,7 +2,6 @@
 
 # Name of the big-bear-traccar application
 name: big-bear-traccar
-
 # Service definitions for the big-bear-traccar application
 services:
   # Service name: app
@@ -11,58 +10,56 @@ services:
     container_name: traccar # Name of the container that will be created
     hostname: traccar # Hostname of the container
     restart: unless-stopped # Restart policy. The container will restart unless it's explicitly stopped.
-
     ports: # Ports mapping from the host to the container
       - "8080:8082" # Maps port 8080 on the host to port 8082 in the container
       - "5000-5150:5000-5150" # Maps ports range 5000-5150 on the host to the same range in the container for TCP
       - "5000-5150:5000-5150/udp" # Maps ports range 5000-5150 on the host to the same range in the container for UDP
-
     volumes: # Defines volume mounts for the container
-      - "/DATA/AppData/$AppID/logs:/opt/traccar/logs:rw" # Mounts the logs directory from the host to the container with read and write permissions
-      - "/DATA/AppData/$AppID/traccar.xml:/opt/traccar/conf/traccar.xml:ro" # Mounts the traccar.xml config file from the host to the container with read-only permissions
-
-    x-casaos: # CasaOS specific configuration
+      - "/DATA/AppData/$AppID/logs:/opt/traccar/logs" # Mounts the logs directory from the host to the container with read and write permissions
+      - "/DATA/AppData/$AppID/traccar.xml:/opt/traccar/conf/traccar.xml" # Mounts the traccar.xml config file from the host to the container with read-only permissions
+    x-casaos:
       volumes:
         - container: /opt/traccar/logs
           description:
-            en_us: "Container Path: /opt/traccar/logs"
+            en_us: 'Container Path: /opt/traccar/logs'
         - container: /opt/traccar/conf/traccar.xml
           description:
-            en_us: "Container Path: /opt/traccar/conf/traccar.xml"
+            en_us: 'Container Path: /opt/traccar/conf/traccar.xml'
       ports:
         - container: "8082"
           description:
-            en_us: "Container Port: 8082"
-        - container: "5000-5150"
+            en_us: 'Container Port: 8082'
+        - container: 5000-5150
           description:
-            en_us: "Container Port: 5000-5150"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 5000-5150'
+        - container: 5000-5150
+          description:
+            en_us: 'Container Port: 5000-5150'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Traccar GPS Tracking System in Docker image.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Traccar
-  # Developer's name or identifier
-  developer: "traccar"
-  # Author of this configuration
+  # Developer's information
+  developer: traccar
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/traccar.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Traccar
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"
