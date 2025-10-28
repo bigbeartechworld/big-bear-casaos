@@ -2,7 +2,6 @@
 
 # Name of the big-bear-octoprint application
 name: big-bear-octoprint
-
 # Service definitions for the big-bear-octoprint application
 services:
   # Service name: app
@@ -10,21 +9,16 @@ services:
   app:
     # Name of the container
     container_name: octoprint
-
     # Image to be used for the container
     image: octoprint/octoprint:1.11.3
-
     # Container restart policy
     restart: unless-stopped
-
     # devices:
     # use `python -m serial.tools.miniterm` to see what the name is of the printer, this requires pyserial
     #  - /dev/ttyACM0:/dev/ttyACM0
     #  - /dev/video0:/dev/video0
-
     volumes:
       - /DATA/AppData/$AppID/octoprint:/octoprint
-
     # uncomment the lines below to ensure camera streaming is enabled when
     # you add a video device
     #environment:
@@ -34,43 +28,40 @@ services:
     ports:
       # Mapping port 7575 of the host to port 7575 of the container
       - "1080:80"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /octoprint
           description:
-            en_us: "Container Path: /octoprint"
+            en_us: 'Container Path: /octoprint'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 80'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: OctoPrint is the snappy web interface for your 3D printer!
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: OctoPrint
-  # Developer's name or identifier
-  developer: "octoprint"
-  # Author of this configuration
+  # Developer's information
+  developer: octoprint
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/octoprint.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: OctoPrint
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "1080"

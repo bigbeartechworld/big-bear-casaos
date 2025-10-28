@@ -4,7 +4,6 @@
 
 # Name of the big-bear-casaos-user-management application
 name: big-bear-casaos-user-management
-
 # Service definitions for the big-bear-casaos-user-management application
 services:
   # Main service configuration for the CasaOS User Management application
@@ -12,16 +11,12 @@ services:
   big-bear-casaos-user-management:
     # Name of the container
     container_name: big-bear-casaos-user-management
-
     # Image to be used for the container specifies the btop version and source
     image: bigbeartechworld/big-bear-casaos-user-management:0.1.1
-
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
-
     # Run the container in privileged mode to allow access to system metrics
     privileged: true
-
     # Environment variables for service configuration
     # These settings control the Flask application behavior and default admin credentials
     environment:
@@ -33,7 +28,6 @@ services:
       - ADMIN_USERNAME=casaos
       # Specifies the admin password for the service
       - ADMIN_PASSWORD=casaos
-
     # Volume mappings required for system integration
     # These mounts allow the container to interact with the host system
     volumes:
@@ -45,79 +39,83 @@ services:
       - /run/systemd/system:/run/systemd/system
       # D-Bus socket for system communication and service discovery
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
-
     # Map port 5000 on the host to port 5000 on the container
     ports:
       - "5000:5000"
-
     # Additional container capabilities
     cap_add:
       # Required for system administration tasks within the container
       - SYS_ADMIN
-
     # Security options for container runtime
     security_opt:
       # Allows necessary system calls for full functionality
       - seccomp:unconfined
-
-    # CasaOS-specific configuration metadata
     x-casaos:
       envs:
-        - container: "FLASK_APP"
+        - container: FLASK_APP
           description:
-            en_us: "Sets the Flask application entry point"
-        - container: "FLASK_ENV"
+            en_us: 'Container Variable: FLASK_APP'
+        - container: FLASK_ENV
           description:
-            en_us: "Configures Flask to run in production mode"
-        - container: "ADMIN_USERNAME"
+            en_us: 'Container Variable: FLASK_ENV'
+        - container: ADMIN_USERNAME
           description:
-            en_us: "Specifies the admin username for the service"
-        - container: "ADMIN_PASSWORD"
+            en_us: 'Container Variable: ADMIN_USERNAME'
+        - container: ADMIN_PASSWORD
           description:
-            en_us: "Specifies the admin password for the service"
+            en_us: 'Container Variable: ADMIN_PASSWORD'
       volumes:
-        - container: /sys/fs/cgroup:ro
+        - container: /sys/fs/cgroup
           description:
-            en_us: "Container Path: /sys/fs/cgroup:ro"
+            en_us: 'Container Path: /sys/fs/cgroup'
         - container: /var/lib/casaos/db
           description:
-            en_us: "Container Path: /var/lib/casaos/db"
+            en_us: 'Container Path: /var/lib/casaos/db'
         - container: /run/systemd/system
           description:
-            en_us: "Container Path: /run/systemd/system"
+            en_us: 'Container Path: /run/systemd/system'
         - container: /var/run/dbus/system_bus_socket
           description:
-            en_us: "Container Path: /var/run/dbus/system_bus_socket"
+            en_us: 'Container Path: /var/run/dbus/system_bus_socket'
       ports:
         - container: "5000"
           description:
-            en_us: "Container Port: 5000"
-
-# Application metadata for CasaOS integration
-# This section provides information for the CasaOS app store and installation process
+            en_us: 'Container Port: 5000'
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Main service for this application
   main: big-bear-casaos-user-management
+  # Detailed description for the application
   description:
     en_us: Manage users in CasaOS
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/big-bear-casaos-user-management/screenshots/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/big-bear-casaos-user-management/screenshots/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/big-bear-casaos-user-management/screenshots/screenshot-3.png
+  # Brief tagline for the application
   tagline:
     en_us: Manage users in CasaOS
-  developer: "bigbeartechworld"
+  # Developer's information
+  developer: bigbeartechworld
+  # Author of this particular configuration
   author: BigBearTechWorld
-  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg"
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/thumbnail-v2.png"
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/screenshot-3.png
-  title:
-    en_us: Big Bear CasaOS User Management
-  category: BigBearCasaOS
-  port_map: "5000"
-  # Installation instructions and documentation
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/big-bear-casaos-user-management/thumbnail-v2.png
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-big-bear-casaos-user-management-to-bigbearcasaos/2227#p-4191-quick-start-3
+  # Title for the application
+  title:
+    en_us: Big Bear CasaOS User Management
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "5000"

@@ -2,7 +2,6 @@
 
 # Name of the big-bear-homer application
 name: big-bear-homer
-
 # Service definitions for the big-bear-homer application
 services:
   # Service name: app
@@ -10,68 +9,61 @@ services:
   app:
     # Specifies the Docker image to be used for the service
     image: b4bz/homer:v25.10.1
-
     # Assigns a name to the container created from this service definition
     container_name: homer
-
     # Binds the container's volumes to host directories or named volumes
     # In this case, bind-mounts `/DATA/AppData/$AppID/assets` from the host to `/www/assets` inside the container
     volumes:
       - /DATA/AppData/$AppID/assets:/www/assets
-
     # Maps the container's ports to the host's ports
     # In this case, it maps port 8080 inside the container to port 8080 on the host
     ports:
       - 8080:8080
-
     # Specifies the user and group ID under which the container will run
     # The default is user ID 1000 and group ID 1000
     user: 1000:1000 # default
-
     # Sets environment variables for the container
     # In this case, the `INIT_ASSETS` variable is set to 1 (which is the default value)
     environment:
       - INIT_ASSETS=1 # default
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: INIT_ASSETS
           description:
-            en_us: "Initialize assets"
+            en_us: 'Container Variable: INIT_ASSETS'
       volumes:
         - container: /www/assets
           description:
-            en_us: "Container Path: /www/assets"
+            en_us: 'Container Path: /www/assets'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: A dead simple static HOMepage for your servER to keep your services on hand, from a simple yaml configuration file.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Homer
-  # Developer's name or identifier
-  developer: "bastienwirtz"
-  # Author of this configuration
+  # Developer's information
+  developer: bastienwirtz
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/homer.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Homer
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"

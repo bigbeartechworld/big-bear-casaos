@@ -2,7 +2,6 @@
 
 # Name of the big-bear-docmost application
 name: big-bear-docmost
-
 # Service definitions for the big-bear-docmost application
 services:
   # Service name: big-bear-docmost
@@ -10,64 +9,49 @@ services:
   big-bear-docmost:
     # Name of the container
     container_name: big-bear-docmost
-
     # Image to be used for the container
     image: docmost/docmost:0.23.2
-
     # Container restart policy
     restart: unless-stopped
-
     environment:
       - APP_URL=http://localhost:3000
       - APP_SECRET=d4e8f3c3-72b9-4003-be4c-168f13024853
       - DATABASE_URL=postgresql://docmost:ea9dee39-c390-4a88-be39-8034f4bb9b82@big-bear-docmost-db:5432/docmost?schema=public
       - REDIS_URL=redis://big-bear-docmost-redis:6379/0
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/data/storage:/app/data/storage
-
     # Ports mapping between host and container
     ports:
       # Mapping port 3000 of the host to port 3000 of the container
       - "3000:3000"
-
     networks:
       - big-bear-docmost-network
-
     depends_on:
       - big-bear-docmost-db
       - big-bear-docmost-redis
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: APP_URL
           description:
-            en_us: "Container Environment Variable: APP_URL"
+            en_us: 'Container Variable: APP_URL'
         - container: APP_SECRET
           description:
-            en_us: "Container Environment Variable: APP_SECRET"
+            en_us: 'Container Variable: APP_SECRET'
         - container: DATABASE_URL
           description:
-            en_us: "Container Environment Variable: DATABASE_URL"
+            en_us: 'Container Variable: DATABASE_URL'
         - container: REDIS_URL
           description:
-            en_us: "Container Environment Variable: REDIS_URL"
+            en_us: 'Container Variable: REDIS_URL'
       volumes:
-        - container: /app/data/configs
+        - container: /app/data/storage
           description:
-            en_us: "Container Path: /app/data/configs"
-        - container: /app/public/icons
-          description:
-            en_us: "Container Path: /app/public/icons"
-        - container: /data
-          description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /app/data/storage'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
+            en_us: 'Container Port: 3000'
   big-bear-docmost-db:
     container_name: big-bear-docmost-db
     image: postgres:16-alpine
@@ -84,18 +68,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: "Container Environment Variable: POSTGRES_DB"
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: "Container Environment Variable: POSTGRES_USER"
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: "Container Environment Variable: POSTGRES_PASSWORD"
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
   big-bear-docmost-redis:
     container_name: big-bear-docmost-redis
     image: redis:7.2.11-alpine@sha256:b19a2cb55412c26e0c3725011ac04397eba5cb0d7f090f739cbbce8dc97f8e60
@@ -108,43 +91,40 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-
+            en_us: 'Container Path: /data'
 networks:
   big-bear-docmost-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-docmost
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Docmost is an open-source alternative to the likes of Notion and Confluence. Whether you're managing a wiki, a knowledge base, or extensive project documentation, Docmost provides the tools you need to create, collaborate, and share knowledge effortlessly.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Docmost
-  # Developer's name or identifier
-  developer: "docmost"
-  # Author of this configuration
+  # Developer's information
+  developer: docmost
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/docmost/logo.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Docmost
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "3000"
-  # Tips for the application
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this: https://community.bigbeartechworld.com/t/added-docmost-to-bigbearcasaos/1724#p-3266-documentation-3
+  # Title for the application
+  title:
+    en_us: Docmost
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"

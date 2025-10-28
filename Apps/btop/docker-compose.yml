@@ -2,7 +2,6 @@
 
 # Name of the big-bear-btop application
 name: big-bear-btop
-
 # Service definitions for the big-bear-btop application
 services:
   # Service name: big-bear-btop
@@ -10,22 +9,17 @@ services:
   big-bear-btop:
     # Name of the container
     container_name: big-bear-btop
-
     # Image to be used for the container specifies the btop version and source
     image: bigbeartechworld/big-bear-btop:0.1.5
-
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
-
     # Run the container in privileged mode to allow access to system metrics
     privileged: true
-
     # Environment variables for authentication
     environment:
       - GOTTY_AUTH_USER=bigbear
       - GOTTY_AUTH_PASS=password
       - GOTTY_AUTH_ENABLED=true
-
     # Mount necessary volumes for accessing system information
     volumes:
       # Mount the host's /proc directory to the container's /proc directory
@@ -38,62 +32,70 @@ services:
       - /etc/localtime:/etc/localtime:ro
       # Mount a local directory for persisting btop configuration files
       - /DATA/AppData/$AppID/config:/root/.config/btop
-
     # Map port 7681 on the host to port 7681 on the container
     ports:
       - "7681:7681"
-
-    # CasaOS specific configuration for volume and port descriptions
     x-casaos:
       envs:
         - container: GOTTY_AUTH_USER
           description:
-            en_us: "Container Environment Variable: GOTTY_AUTH_USER"
+            en_us: 'Container Variable: GOTTY_AUTH_USER'
         - container: GOTTY_AUTH_PASS
           description:
-            en_us: "Container Environment Variable: GOTTY_AUTH_PASS"
+            en_us: 'Container Variable: GOTTY_AUTH_PASS'
         - container: GOTTY_AUTH_ENABLED
           description:
-            en_us: "Container Environment Variable: GOTTY_AUTH_ENABLED"
+            en_us: 'Container Variable: GOTTY_AUTH_ENABLED'
       volumes:
         - container: /proc
           description:
-            en_us: "Container Path: /proc"
+            en_us: 'Container Path: /proc'
         - container: /sys
           description:
-            en_us: "Container Path: /sys"
+            en_us: 'Container Path: /sys'
         - container: /dev
           description:
-            en_us: "Container Path: /dev"
+            en_us: 'Container Path: /dev'
         - container: /etc/localtime
           description:
-            en_us: "Container Path: /etc/localtime"
+            en_us: 'Container Path: /etc/localtime'
         - container: /root/.config/btop
           description:
-            en_us: "Container Path: /root/.config/btop"
+            en_us: 'Container Path: /root/.config/btop'
       ports:
         - container: "7681"
-
-# CasaOS specific application metadata and configurations
+          description:
+            en_us: 'Container Port: 7681'
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Main service for this application
   main: big-bear-btop
+  # Detailed description for the application
   description:
     en_us: A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop
+  # Brief tagline for the application
   tagline:
     en_us: A monitor of resources
-  developer: "bigbeartechworld"
+  # Developer's information
+  developer: bigbeartechworld
+  # Author of this particular configuration
   author: BigBearTechWorld
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    en_us: btop
-  category: BigBearCasaOS
-  port_map: "7681"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-btop-to-bigbearcasaos/1240?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: btop
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "7681"
