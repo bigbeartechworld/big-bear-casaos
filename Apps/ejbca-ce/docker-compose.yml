@@ -2,7 +2,6 @@
 
 # Name of the big-bear-ejbca-ce application
 name: big-bear-ejbca-ce
-
 # Service definitions for the big-bear-ejbca-ce application
 services:
   # Service name: app
@@ -10,76 +9,60 @@ services:
   big-bear-ejbca-ce:
     # Name of the container
     container_name: big-bear-ejbca-ce
-
     # Image to be used for the container
     image: keyfactor/ejbca-ce:9.1.1
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local ejbca-ce/persistent directory to /mnt/persistent inside the container
       - /DATA/AppData/$AppID/persistent:/mnt/persistent
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 8080 of the container
       - "8080:8080"
-
       # Mapping port 8443 of the host to port 8443 of the container
       - "8443:8443"
-
     # Environment variables
     environment:
       - TLS_SETUP_ENABLED=simple
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TLS_SETUP_ENABLED
           description:
-            en_us: Controls Admin UI access
+            en_us: 'Container Variable: TLS_SETUP_ENABLED'
       volumes:
         - container: /mnt/persistent
           description:
-            en_us: "Container Path: /mnt/persistent"
+            en_us: 'Container Path: /mnt/persistent'
       ports:
         - container: "8080"
           description:
-            en_us: "EJBCA Admin GUI"
+            en_us: 'Container Port: 8080'
         - container: "8443"
           description:
-            en_us: "EJBCA Admin GUI"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8443'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-
-  # Main service of the application
+  # Main service for this application
   main: big-bear-ejbca-ce
-
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: The open-source public key infrastructure (PKI) and certificate authority (CA) software EJBCA is one of the longest running CA software projects. EJBCA covers all your needs - from certificate enrollment, via certificate management, to certificate validation.
-
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: The open-source public key infrastructure (PKI) and certificate authority (CA)
-
-  # Developer's name or identifier
-  developer: "Keyfactor"
-
-  # Author of this configuration
+  # Developer's information
+  developer: Keyfactor
+  # Author of this particular configuration
   author: BigBearCommunity
-
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/Keyfactor/ejbca-ce/.github/images/community-ejbca-icon.png
-
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-
+  # Installation tips
   tips:
     before_install:
       en_us: |
@@ -87,17 +70,10 @@ x-casaos:
         Default admin URL: https://<host/ip>:8443/ejbca/adminweb
         Default HTTP port: 8080
         For more information on custom setup visit: https://github.com/Keyfactor/ejbca-ce
-
-  # Application Title
+  # Title for the application
   title:
-    # Title in English
     en_us: EJBCA Community
-
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8443"
-
-  # Application scheme
-  scheme: https

@@ -2,7 +2,6 @@
 
 # Name of the big-bear-dashy application
 name: big-bear-dashy
-
 # Service definitions for the dashy application
 services:
   # Service name: big-bear-dashy
@@ -29,48 +28,45 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: NODE_ENV
           description:
-            en_us: Node environment
+            en_us: 'Container Variable: NODE_ENV'
       volumes:
         - container: /app/public
           description:
-            en_us: "Container Path: /app/public"
+            en_us: 'Container Path: /app/public'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-dashy
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Dashy helps you organize your self-hosted services by making them accessible from a single place
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Dashy
-  # Developer's name or identifier
-  developer: "Lissy93"
-  # Author of this configuration
+  # Developer's information
+  developer: Lissy93
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dashy.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Dashy
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "4000"

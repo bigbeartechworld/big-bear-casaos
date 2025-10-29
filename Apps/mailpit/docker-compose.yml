@@ -1,6 +1,5 @@
 # Configuration for big-bear-mailpit setup
 name: big-bear-mailpit
-
 # Service definitions for the big-bear-mailpit application
 services:
   # Service name: app
@@ -15,34 +14,47 @@ services:
     ports: # Ports to expose for the app service
       - "8025:8025"
       - "1025:1025"
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /data'
       ports:
         - container: "8025"
           description:
-            en_us: "Container Port: 8025"
-# CasaOS specific configuration
+            en_us: 'Container Port: 8025'
+        - container: "1025"
+          description:
+            en_us: 'Container Port: 1025'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: app # Main service of the application
-  description: # Description of the application in various languages
-    en_us: Mailpit is a multi-platform email testing tool & API for developers. # Description in English
-  tagline: # Short description or tagline for the application in various languages
-    en_us: Mailpit # Tagline in English
-  developer: "axllent" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/mailpit/logo.png # Icon for the application
-  thumbnail: "https://github.com/axllent/mailpit/blob/develop/docs/screenshot.png" # Thumbnail image for the application
-  title: # Title of the application in various languages
-    en_us: Mailpit # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "8025" # Port mapping information
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: Mailpit is a multi-platform email testing tool & API for developers.
+  # Brief tagline for the application
+  tagline:
+    en_us: Mailpit
+  # Developer's information
+  developer: axllent
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/mailpit/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://github.com/axllent/mailpit/blob/develop/docs/screenshot.png
+  # Title for the application
+  title:
+    en_us: Mailpit
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8025"

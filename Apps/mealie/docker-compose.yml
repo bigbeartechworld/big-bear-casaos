@@ -2,7 +2,6 @@
 
 # Name of the big-bear-mealie application
 name: big-bear-mealie
-
 # Service definitions for the big-bear-mealie application
 services:
   # Service name: app
@@ -10,64 +9,57 @@ services:
   app:
     # Name of the container
     container_name: big-bear-mealie
-
     # Image to be used for the container
     image: hkotel/mealie:v3.3.2
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /app/data directory to /DATA/AppData/$AppID/data inside the container
       - /DATA/AppData/$AppID/data:/app/data
-
     # Ports mapping between host and container
     ports:
       # Mapping port 7575 of the host to port 9000 of the container
       - "9925:9000"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /app/data
           description:
-            en_us: "Container Path: /app/data"
+            en_us: 'Container Path: /app/data'
       ports:
         - container: "9000"
           description:
-            en_us: "Container Port: 9000"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 9000'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family. Easily add recipes into your database by providing the url and mealie will automatically import the relevant data or add a family recipe with the UI editor
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Mealie
-  # Developer's name or identifier
-  developer: "mealie-recipes"
-  # Author of this configuration
+  # Developer's information
+  developer: mealie-recipes
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/mealie.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Mealie
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "9925"
-  # Tips for the application
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this: https://community.bigbeartechworld.com/t/added-mealie-to-bigbearcasaos/587
+  # Title for the application
+  title:
+    en_us: Mealie
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "9925"

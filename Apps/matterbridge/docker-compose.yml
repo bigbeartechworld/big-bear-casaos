@@ -2,7 +2,6 @@
 
 # Application Name
 name: big-bear-matterbridge
-
 # Services used in the application
 services:
   # The `big-bear-matterbridge` service for the Matterbridge application
@@ -19,23 +18,20 @@ services:
     volumes:
       - /DATA/AppData/$AppID/Matterbridge:/root/Matterbridge
       - /DATA/AppData/$AppID/.matterbridge:/root/.matterbridge
-    # CasaOS specific configuration for the big-bear-matterbridge service
     x-casaos:
       volumes:
         - container: /root/Matterbridge
           description:
-            en_us: "Container Path: /root/Matterbridge (Plugin directory)"
+            en_us: 'Container Path: /root/Matterbridge'
         - container: /root/.matterbridge
           description:
-            en_us: "Container Path: /root/.matterbridge (Storage directory)"
-
-# CasaOS global application configuration
+            en_us: 'Container Path: /root/.matterbridge'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-    - arm
+    - armv7
   # Main service for this application
   main: big-bear-matterbridge
   # Detailed description for the application
@@ -45,13 +41,18 @@ x-casaos:
   tagline:
     en_us: Matter plugin manager for smart home devices
   # Developer's information
-  developer: "Luligu"
+  developer: Luligu
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/matterbridge.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |
+        Before you install read this: https://community.bigbeartechworld.com/t/added-matterbridge-to-bigbearcasaos/5072#p-7704-documentation-2
   # Title for the application
   title:
     en_us: Matterbridge
@@ -59,7 +60,3 @@ x-casaos:
   category: BigBearCasaOS
   # Default port mapping for the application
   port_map: "8283"
-  tips:
-    before_install:
-      en_us: |
-        Before you install read this: https://community.bigbeartechworld.com/t/added-matterbridge-to-bigbearcasaos/5072#p-7704-documentation-2

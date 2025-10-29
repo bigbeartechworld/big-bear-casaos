@@ -1,6 +1,5 @@
 # Configuration for big-bear-mind setup
 name: big-bear-mind
-
 # Service definitions for the big-bear-mind application
 services:
   app:
@@ -12,36 +11,45 @@ services:
       - "/DATA/AppData/$AppID/db:/app/db"
     ports:
       - "8080:8080"
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /app/db
           description:
-            en_us: "Container Path: /app/db"
+            en_us: 'Container Path: /app/db'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-  main: app # Main service of the application
+  # Main service for this application
+  main: app
+  # Detailed description for the application
   description:
-    en_us: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it! # Description in English
+    en_us: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!
+  # Brief tagline for the application
   tagline:
-    en_us: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it! # Short description or tagline in English
-  developer: "Casvt" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://i.imgur.com/UgjalkK.png # Icon for the application
-  thumbnail: "" # Thumbnail image (currently empty)
+    en_us: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!
+  # Developer's information
+  developer: Casvt
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://i.imgur.com/UgjalkK.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
   title:
-    en_us: MIND # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "8080" # Port mapping information
+    en_us: MIND
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"

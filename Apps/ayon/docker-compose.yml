@@ -2,7 +2,6 @@
 
 # Name of the big-bear-ayon application
 name: big-bear-ayon
-
 # Service definitions for the big-bear-ayon application
 services:
   # Service name: big-bear-ayon
@@ -10,60 +9,49 @@ services:
   big-bear-ayon:
     # Name of the container
     container_name: big-bear-ayon
-
     # Image to be used for the container
     image: ynput/ayon:1.3.6-20240823
-
     # Container restart policy
     restart: unless-stopped
-
     # Healthcheck configuration to ensure the service is running properly
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/api/info"]
       interval: 10s
       timeout: 2s
       retries: "3"
-
     # Volumes to be mounted to the container
     volumes:
       - "/DATA/AppData/$AppID/addons:/addons"
       - "/DATA/AppData/$AppID/storage:/storage"
-
       # comment out the following line on Windows
       - "/etc/localtime:/etc/localtime:ro"
-
     # Ports mapping between host and container
     ports:
       # Mapping port 5000 of the host to port 5000 of the container
       - "5000:5000"
-
     expose: ["5000"]
-
     networks:
       - big-bear-ayon-network
-
     depends_on:
       postgres:
         condition: service_healthy
       redis:
         condition: service_started
-
-    x-casaos: # CasaOS specific configuration
-      volumes: # Volume mappings for the service
+    x-casaos:
+      volumes:
         - container: /addons
           description:
-            en_us: "Container Path: /addons"
+            en_us: 'Container Path: /addons'
         - container: /storage
           description:
-            en_us: "Container Path: /storage"
-        - container: /backend
+            en_us: 'Container Path: /storage'
+        - container: /etc/localtime
           description:
-            en_us: "Container Path: /backend"
-      ports: # Port mappings for the service
+            en_us: 'Container Path: /etc/localtime'
+      ports:
         - container: "5000"
           description:
-            en_us: "Container Port: 5000"
-
+            en_us: 'Container Port: 5000'
   # Service definition for the PostgreSQL database
   postgres:
     image: postgres:15-alpine
@@ -80,18 +68,24 @@ services:
       interval: 10s
       timeout: 5s
       retries: "5"
-
     expose: ["5432"]
-
     networks:
       - big-bear-ayon-network
-
     x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_us: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
   # Service definition for the Redis database
   redis:
     image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
@@ -107,42 +101,38 @@ services:
     expose: ["6379"]
     networks:
       - big-bear-ayon-network
-
     x-casaos:
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-
+            en_us: 'Container Path: /data'
 networks:
   big-bear-ayon-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-ayon
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: This is the official Docker-based deployment for the Ayon Server. Ayon is a robust tool designed to manage and automate workflows in the animation and visual effects industries.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Ayon
-  # Developer's name or identifier
-  developer: "ynput"
-  # Author of this configuration
+  # Developer's information
+  developer: ynput
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/ayon/logo.png
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/ayon/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Ayon
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "5000"

@@ -1,32 +1,25 @@
 # Docker-compose configuration for Omada Controller.
 
 name: big-bear-omada-controller # Name of the configuration.
-
 # Define the services that run in the Docker environment.
 services:
   # The name of the service being configured.
   app:
     container_name: big-bear-omada-controller # The name of the container.
-
     # The Docker image used for the service.
     image: mbentley/omada-controller:5.15
-
     # Restart policy for the container. "unless-stopped" means the container will always restart unless manually stopped.
     restart: unless-stopped
-
     # Set limits on system-level resources for the container.
     ulimits:
       # Set limits on the number of open file descriptors for the container.
       nofile:
         soft: 4096 # Suggested maximum number of open file descriptors.
         hard: 8192 # Absolute maximum number of open file descriptors.
-
     # Time for a graceful shutdown before the container is forcefully stopped.
     stop_grace_period: 60s
-
     # Sets the network mode for the container. "host" means the container shares the host's network stack.
     network_mode: host
-
     # Environment variables for the container.
     environment:
       # Various ports and configurations for the Omada Controller.
@@ -34,13 +27,11 @@ services:
       # User and Group IDs for running the container.
       - PUID=508
       - PGID=508
-
       # Define ports for management and user portal access.
       - MANAGE_HTTP_PORT=8088
       - MANAGE_HTTPS_PORT=8043
       - PORTAL_HTTP_PORT=8088
       - PORTAL_HTTPS_PORT=8843
-
       # Ports for app and device discovery, as well as different versions of protocols.
       - PORT_APP_DISCOVERY=27001
       - PORT_ADOPT_V1=29812
@@ -48,118 +39,106 @@ services:
       - PORT_MANAGER_V1=29811
       - PORT_MANAGER_V2=29814
       - PORT_DISCOVERY=29810
-
       # Configuration for displaying logs.
       - SHOW_SERVER_LOGS=true
       - SHOW_MONGODB_LOGS=false
-
       # SSL certificate and key names for secure connections.
       - SSL_CERT_NAME=tls.crt
       - SSL_KEY_NAME=tls.key
-
       # Timezone for the container.
       - TZ=Etc/UTC
-
     # Define volume mappings between the host and the container.
     volumes:
       # Mapping for data storage.
       - /DATA/AppData/$AppID/data:/opt/tplink/EAPController/data
-
       # Mapping for log storage.
       - /DATA/AppData/$AppID/logs:/opt/tplink/EAPController/logs
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: PUID
           description:
-            en_us: Process UID
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: Process GID
+            en_us: 'Container Variable: PGID'
         - container: MANAGE_HTTP_PORT
           description:
-            en_us: Management HTTP Port
+            en_us: 'Container Variable: MANAGE_HTTP_PORT'
         - container: MANAGE_HTTPS_PORT
           description:
-            en_us: Management HTTPS Port
+            en_us: 'Container Variable: MANAGE_HTTPS_PORT'
         - container: PORTAL_HTTP_PORT
           description:
-            en_us: User Portal HTTP Port
+            en_us: 'Container Variable: PORTAL_HTTP_PORT'
         - container: PORTAL_HTTPS_PORT
           description:
-            en_us: User Portal HTTPS Port
+            en_us: 'Container Variable: PORTAL_HTTPS_PORT'
         - container: PORT_APP_DISCOVERY
           description:
-            en_us: App Discovery Port
+            en_us: 'Container Variable: PORT_APP_DISCOVERY'
         - container: PORT_ADOPT_V1
           description:
-            en_us: Adopt V1 Port
+            en_us: 'Container Variable: PORT_ADOPT_V1'
         - container: PORT_UPGRADE_V1
           description:
-            en_us: Upgrade V1 Port
+            en_us: 'Container Variable: PORT_UPGRADE_V1'
         - container: PORT_MANAGER_V1
           description:
-            en_us: Manager V1 Port
+            en_us: 'Container Variable: PORT_MANAGER_V1'
         - container: PORT_MANAGER_V2
           description:
-            en_us: Manager V2 Port
+            en_us: 'Container Variable: PORT_MANAGER_V2'
         - container: PORT_DISCOVERY
           description:
-            en_us: Discovery Port
+            en_us: 'Container Variable: PORT_DISCOVERY'
         - container: SHOW_SERVER_LOGS
           description:
-            en_us: Show Server Logs
+            en_us: 'Container Variable: SHOW_SERVER_LOGS'
         - container: SHOW_MONGODB_LOGS
           description:
-            en_us: Show MongoDB Logs
+            en_us: 'Container Variable: SHOW_MONGODB_LOGS'
         - container: SSL_CERT_NAME
           description:
-            en_us: SSL Certificate Name
+            en_us: 'Container Variable: SSL_CERT_NAME'
         - container: SSL_KEY_NAME
           description:
-            en_us: SSL Key Name
+            en_us: 'Container Variable: SSL_KEY_NAME'
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /opt/tplink/EAPController/data
           description:
-            en_us: "Container Path: /opt/tplink/EAPController/data"
+            en_us: 'Container Path: /opt/tplink/EAPController/data'
         - container: /opt/tplink/EAPController/logs
           description:
-            en_us: "Container Path: /opt/tplink/EAPController/logs"
-
-# Additional metadata for CasaOS integration.
+            en_us: 'Container Path: /opt/tplink/EAPController/logs'
 x-casaos:
-  # Architectures supported by the container image.
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-
-  # Main service for CasaOS.
+  # Main service for this application
   main: app
-
-  # Descriptions and display texts for CasaOS dashboard.
+  # Detailed description for the application
   description:
     en_us: Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware
+  # Brief tagline for the application
   tagline:
     en_us: TP-Link Omada Controller
-
-  # Developer and author details.
+  # Developer's information
   developer: ""
+  # Author of this particular configuration
   author: BigBearTechWorld
-
-  # Icons and thumbnails for CasaOS dashboard.
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/omada.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-
-  # Title for the CasaOS dashboard.
+  # Title for the application
   title:
     en_us: TP-Link Omada Controller
-
-  # Category for the CasaOS dashboard.
+  # Category under which the application falls
   category: BigBearCasaOS
-
-  # Port mapping information for CasaOS.
+  # Default port mapping for the application
   port_map: "8088"

@@ -1,6 +1,5 @@
 # Name of the service
 name: big-bear-mumble-server
-
 # Service configurations
 services:
   # Main application service
@@ -17,37 +16,38 @@ services:
     ports:
       - 64738:64738 # TCP port mapping
       - 64738:64738/udp # UDP port mapping
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       ports:
         - container: "64738"
           description:
-            en_us: "Container Port: 64738"
-
-# Additional metadata for CasaOS
+            en_us: 'Container Port: 64738'
+        - container: "64738"
+          description:
+            en_us: 'Container Port: 64738'
 x-casaos:
-  # Supported architectures
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-  # Main service for CasaOS
+  # Main service for this application
   main: app
-  # Description in English
+  # Detailed description for the application
   description:
     en_us: Mumble is a free, open source, low latency, high quality voice chat application.
-  # Tagline for the application
+  # Brief tagline for the application
   tagline:
     en_us: Mumble Server
-  # Developer's name (empty in this case)
+  # Developer's information
   developer: ""
-  # Author's name
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon URL
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/mumble.png
-  # Thumbnail (empty in this case)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Title in English
+  # Title for the application
   title:
     en_us: Mumble Server
-  # Category for CasaOS
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "64738"
