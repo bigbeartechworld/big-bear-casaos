@@ -4,9 +4,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 
 | Application | YouTube Video |
 | --- | --- |
-| GemDigest |  |
-| Homepage |  |
-| MaybeFinance |  |
 | adguard-home-host |  |
 | anse |  |
 | appsmith |  |
@@ -38,6 +35,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | financial-freedom |  |
 | flcontainers-guacamole |  |
 | flowise |  |
+| gem-digest |  |
 | gitea-mirror |  |
 | gluetun |  |
 | goaway |  |
@@ -45,6 +43,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | healthchecks |  |
 | homarr-v1 |  |
 | homebridge |  |
+| homepage |  |
 | homer |  |
 | immich-aio-alpine |  |
 | immich-kiosk |  |
@@ -64,6 +63,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | ls-adguardhome-sync |  |
 | lyrionmusicserver |  |
 | matterbridge |  |
+| maybe-finance |  |
 | microbin |  |
 | mind |  |
 | minio |  |
