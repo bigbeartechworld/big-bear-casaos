@@ -1,6 +1,5 @@
 # Name of the configuration: big-bear-flcontainers-guacamole
 name: big-bear-flcontainers-guacamole
-
 # Define the services required for the application
 services:
   # app service configuration
@@ -18,46 +17,43 @@ services:
     # Map port 8080 on the host to port 8080 on the container
     ports:
       - 8080:8080
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - container: TZ
+        - container: tz
           description:
-            en_us: User Timezone
+            en_us: 'Container Variable: tz'
         - container: EXTENSIONS
           description:
-            en_us: Extensions to be enabled
+            en_us: 'Container Variable: EXTENSIONS'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
-  # Application description in English
+  # Detailed description for the application
   description:
     en_us: A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.
-  # Short description or tagline in English
+  # Brief tagline for the application
   tagline:
     en_us: Fully packaged Multi-Arch Guacamole.
-  # Developer's name or identifier (currently empty)
+  # Developer's information
   developer: ""
-  # Author of this configuration
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/apache-guacamole.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Title of the application in English
+  # Title for the application
   title:
     en_us: FlContainers Guacamole
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"

@@ -2,7 +2,6 @@
 
 # Name of the big-bear-pihole application
 name: big-bear-pihole
-
 # Service definitions for the big-bear-pihole application
 services:
   # Service name: app
@@ -10,26 +9,20 @@ services:
   app:
     # Name of the container
     container_name: big-bear-pihole
-
     # Image to be used for the container
     image: pihole/pihole:2025.10.0
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       TZ: "UTC"
       FTLCONF_webserver_api_password: "your_password"
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/$AppID/etc directory to /etc/pihole/ inside the container
       - /DATA/AppData/$AppID/etc:/etc/pihole/
-
       # Mounting the local /DATA/AppData/$AppID/dnsmasq.d directory to /etc/dnsmasq.d inside the container
       - /DATA/AppData/$AppID/dnsmasq.d:/etc/dnsmasq.d/
-
     # Ports mapping between host and container
     ports:
       - "53:53/tcp"
@@ -37,69 +30,72 @@ services:
       - "67:67/udp"
       - "8080:80/tcp"
       - "10443:443/tcp"
-
     # Define the networks section
     networks:
       # Define the pihole-network
       - pihole-network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: FTLCONF_webserver_api_password
+          description:
+            en_us: 'Container Variable: FTLCONF_webserver_api_password'
       volumes:
-        - container: /etc/pihole
+        - container: /etc/pihole/
           description:
-            en_us: "Container Path: /etc/pihole"
-        - container: /etc/dnsmasq.d
+            en_us: 'Container Path: /etc/pihole/'
+        - container: /etc/dnsmasq.d/
           description:
-            en_us: "Container Path: /etc/dnsmasq.d"
+            en_us: 'Container Path: /etc/dnsmasq.d/'
       ports:
         - container: "53"
           description:
-            en_us: "Container Port: 53"
+            en_us: 'Container Port: 53'
+        - container: "53"
+          description:
+            en_us: 'Container Port: 53'
         - container: "67"
           description:
-            en_us: "Container Port: 67"
+            en_us: 'Container Port: 67'
         - container: "80"
           description:
-            en_us: "Container Port: 80"
+            en_us: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: "Container Port: 443"
-
+            en_us: 'Container Port: 443'
 # Define the networks section
 networks:
   # Define the pihole-network
   pihole-network:
     # Set the driver to bridge
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: A black hole for Internet advertisements
-  # Developer's name or identifier
-  developer: "pi-hole.net"
-  # Author of this configuration
+  # Developer's information
+  developer: pi-hole.net
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/pi-hole.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Pi-hole
-  # Go to /admin to access the application
-  index: /admin
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"

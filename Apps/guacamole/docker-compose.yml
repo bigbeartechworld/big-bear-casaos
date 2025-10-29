@@ -1,6 +1,5 @@
 # Name of the configuration: big-bear-guacamole
 name: big-bear-guacamole
-
 # Define the services required for the application
 services:
   # guacd service configuration
@@ -9,7 +8,6 @@ services:
     image: guacamole/guacd:1.6.0
     # Restart policy for the container
     restart: always
-
   # app service configuration
   app:
     image: guacamole/guacamole:1.6.0
@@ -27,29 +25,27 @@ services:
     # Map port 8090 on the host to port 8080 on the container
     ports:
       - 8090:8080
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: GUACD_HOSTNAME
           description:
-            en_us: Guacd hostname
+            en_us: 'Container Variable: GUACD_HOSTNAME'
         - container: MYSQL_HOSTNAME
           description:
-            en_us: MySQL hostname
+            en_us: 'Container Variable: MYSQL_HOSTNAME'
         - container: MYSQL_DATABASE
           description:
-            en_us: MySQL database
+            en_us: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: MySQL user
+            en_us: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: MySQL password
+            en_us: 'Container Variable: MYSQL_PASSWORD'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
+            en_us: 'Container Port: 8080'
   # mysql service configuration
   mysql:
     image: mysql:5.7
@@ -63,54 +59,48 @@ services:
     # Volume mapping for persistent storage
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: MySQL root password
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: MySQL database
+            en_us: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: MySQL user
+            en_us: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: MySQL password
+            en_us: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
-      ports:
-        - container: "3306"
-          description:
-            en_us: "Container Port: 3306"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /var/lib/mysql'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-  # Main service of the application
+  # Main service for this application
   main: app
-  # Application description in English
+  # Detailed description for the application
   description:
     en_us: Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.
-  # Short description or tagline in English
+  # Brief tagline for the application
   tagline:
     en_us: Guacamole
-  # Developer's name or identifier (currently empty)
+  # Developer's information
   developer: ""
-  # Author of this configuration
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/guacamole.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Title of the application in English
+  # Title for the application
   title:
     en_us: Guacamole
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8090"

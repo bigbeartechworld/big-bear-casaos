@@ -2,7 +2,6 @@
 
 # Name of the big-bear-plant-it application
 name: big-bear-plant-it
-
 # Service definitions for the big-bear-plant-it application
 services:
   # Service name: big-bear-plant-it
@@ -10,13 +9,10 @@ services:
   big-bear-plant-it:
     # Name of the container
     container_name: big-bear-plant-it
-
     # Image to be used for the container
     image: msdeluise/plant-it-server:0.10.0
-
     # Container restart policy
     restart: unless-stopped
-
     environment:
       # MySQL database host
       - MYSQL_HOST=big-bear-plant-it-db
@@ -56,45 +52,94 @@ services:
       - SSL_ENABLED=false
       # Path to SSL certificates
       - CERTIFICATE_PATH=/certificates/
-
     # Volumes to be mounted to the container
     volumes:
       # Volume for uploads
       - "/DATA/AppData/$AppID/upload-dir:/upload-dir"
       # Volume for SSL certificates
       - "/DATA/AppData/$AppID/certificates:/certificates"
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 8080 of the container
       - "8080:8080"
       # Mapping port 3000 of the host to port 3000 of the container
       - "3000:3000"
-
     networks:
       # Network definition
       - big_bear_plant_it_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: MYSQL_HOST
+          description:
+            en_us: 'Container Variable: MYSQL_HOST'
+        - container: MYSQL_PORT
+          description:
+            en_us: 'Container Variable: MYSQL_PORT'
+        - container: MYSQL_USERNAME
+          description:
+            en_us: 'Container Variable: MYSQL_USERNAME'
+        - container: MYSQL_PSW
+          description:
+            en_us: 'Container Variable: MYSQL_PSW'
+        - container: MYSQL_DATABASE
+          description:
+            en_us: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+        - container: JWT_SECRET
+          description:
+            en_us: 'Container Variable: JWT_SECRET'
+        - container: JWT_EXP
+          description:
+            en_us: 'Container Variable: JWT_EXP'
+        - container: USERS_LIMIT
+          description:
+            en_us: 'Container Variable: USERS_LIMIT'
+        - container: UPLOAD_DIR
+          description:
+            en_us: 'Container Variable: UPLOAD_DIR'
+        - container: API_PORT
+          description:
+            en_us: 'Container Variable: API_PORT'
+        - container: TREFLE_KEY
+          description:
+            en_us: 'Container Variable: TREFLE_KEY'
+        - container: LOG_LEVEL
+          description:
+            en_us: 'Container Variable: LOG_LEVEL'
+        - container: ALLOWED_ORIGINS
+          description:
+            en_us: 'Container Variable: ALLOWED_ORIGINS'
+        - container: CACHE_TTL
+          description:
+            en_us: 'Container Variable: CACHE_TTL'
+        - container: CACHE_HOST
+          description:
+            en_us: 'Container Variable: CACHE_HOST'
+        - container: CACHE_PORT
+          description:
+            en_us: 'Container Variable: CACHE_PORT'
+        - container: SSL_ENABLED
+          description:
+            en_us: 'Container Variable: SSL_ENABLED'
+        - container: CERTIFICATE_PATH
+          description:
+            en_us: 'Container Variable: CERTIFICATE_PATH'
       volumes:
-        # Description for the upload directory volume
         - container: /upload-dir
           description:
-            en_us: "Container Path: /upload-dir"
-        # Description for the certificates volume
+            en_us: 'Container Path: /upload-dir'
         - container: /certificates
           description:
-            en_us: "Container Path: /certificates"
+            en_us: 'Container Path: /certificates'
       ports:
-        # Description for port 8080
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-        # Description for port 3000
+            en_us: 'Container Port: 8080'
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
+            en_us: 'Container Port: 3000'
   # Service definition for the database
   big-bear-plant-it-db:
     # Name of the database container
@@ -118,17 +163,21 @@ services:
       # Network definition
       - big_bear_plant_it_network
     x-casaos:
+      envs:
+        - container: MYSQL_DATABASE
+          description:
+            en_us: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
-        # Description for the MySQL data volume
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
+            en_us: 'Container Path: /var/lib/mysql'
       ports:
-        # Description for port 3306
         - container: "3306"
           description:
-            en_us: "Container Port: 3306"
-
+            en_us: 'Container Port: 3306'
   # Service definition for the cache
   big-bear-plant-it-cache:
     # Name of the cache container
@@ -140,55 +189,41 @@ services:
     networks:
       # Network definition
       - big_bear_plant_it_network
-    x-casaos:
-      volumes:
-        # Description for the Redis data volume
-        - container: /data
-          description:
-            en_us: "Container Path: /data"
-      ports:
-        # Description for port 6379
-        - container: "6379"
-          description:
-            en_us: "Container Port: 6379"
-
 # Network configuration
 networks:
   # Network definition
   big_bear_plant_it_network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-plant-it
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Plant-it is a self-hosted gardening companion app. Useful for keeping track of plant care, receiving notifications about when to water plants, uploading plant images, and more.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Self-hosted, open source gardening companion app
-  # Developer's name or identifier
-  developer: "msdeluise"
-  # Author of this configuration
+  # Developer's information
+  developer: msdeluise
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/plant-it/logo.png
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/plant-it/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Plant-it
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "3000"
-  # Tips for the application
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Before installing read this: https://community.bigbeartechworld.com/t/added-plant-it-to-bigbearcasaos/1297#documentation-3
+  # Title for the application
+  title:
+    en_us: Plant-it
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"

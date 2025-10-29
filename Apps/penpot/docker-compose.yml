@@ -2,7 +2,6 @@
 
 # Name of the big-bear-penpot application
 name: big-bear-penpot
-
 # Service definitions for the big-bear-penpot application
 services:
   # Service name: app
@@ -10,66 +9,52 @@ services:
   penpot-frontend:
     # Name of the container
     container_name: big-bear-penpot-frontend
-
     # Image to be used for the container
     image: penpotapp/frontend:2.10.1
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/$AppID/assets directory to /opt/data/assets inside the container
       - /DATA/AppData/$AppID/assets:/opt/data/assets
-
     # Ports mapping between host and container
     ports:
       # Mapping port 9001 of the host to port 8080 of the container
       - "9001:8080"
-
     # Other services that this service depends on
     depends_on:
       - penpot-backend
       - penpot-exporter
-
     # Networks to be attached to the container
     networks:
       - big-bear-penpot-network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /opt/data/assets
           description:
-            en_us: "Local Assets directory"
+            en_us: 'Container Path: /opt/data/assets'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
+            en_us: 'Container Port: 8080'
   # Definition for penpot-backend service
   penpot-backend:
     # Docker image for the service
     image: penpotapp/backend:2.10.1
-
     # Name of the container
     container_name: big-bear-penpot-backend
-
     # Restart policy for the container
     restart: unless-stopped
-
     # Volumes to mount to the container
     volumes:
       - /DATA/AppData/$AppID/assets:/opt/data/assets
-
     # Dependencies for the service
     depends_on:
       - penpot-postgres
       - penpot-redis
-
     # Networks to connect the container to
     networks:
       - big-bear-penpot-network
-
     # Environment variables for the service
     environment:
       - PENPOT_FLAGS=enable-registration enable-login-with-password disable-email-verification disable-secure-session-cookies
@@ -82,45 +67,42 @@ services:
       - PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
       - PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
       - PENPOT_TELEMETRY_ENABLED=false
-
-    # Set casaos specific configuration
     x-casaos:
       envs:
         - container: PENPOT_FLAGS
           description:
-            en_us: "Flags"
+            en_us: 'Container Variable: PENPOT_FLAGS'
         - container: PENPOT_SECRET_KEY
           description:
-            en_us: "Secret Key"
+            en_us: 'Container Variable: PENPOT_SECRET_KEY'
         - container: PENPOT_PUBLIC_URI
           description:
-            en_us: "Public URI"
+            en_us: 'Container Variable: PENPOT_PUBLIC_URI'
         - container: PENPOT_DATABASE_URI
           description:
-            en_us: "Database URI"
+            en_us: 'Container Variable: PENPOT_DATABASE_URI'
         - container: PENPOT_DATABASE_USERNAME
           description:
-            en_us: "Database Username"
+            en_us: 'Container Variable: PENPOT_DATABASE_USERNAME'
         - container: PENPOT_DATABASE_PASSWORD
           description:
-            en_us: "Database Password"
+            en_us: 'Container Variable: PENPOT_DATABASE_PASSWORD'
         - container: PENPOT_REDIS_URI
           description:
-            en_us: "Redis URI"
+            en_us: 'Container Variable: PENPOT_REDIS_URI'
         - container: PENPOT_ASSETS_STORAGE_BACKEND
           description:
-            en_us: "Assets Storage Backend"
+            en_us: 'Container Variable: PENPOT_ASSETS_STORAGE_BACKEND'
         - container: PENPOT_STORAGE_ASSETS_FS_DIRECTORY
           description:
-            en_us: "Assets Storage Directory"
+            en_us: 'Container Variable: PENPOT_STORAGE_ASSETS_FS_DIRECTORY'
         - container: PENPOT_TELEMETRY_ENABLED
           description:
-            en_us: "Telemetry"
+            en_us: 'Container Variable: PENPOT_TELEMETRY_ENABLED'
       volumes:
         - container: /opt/data/assets
           description:
-            en_us: "Local Assets directory"
-
+            en_us: 'Container Path: /opt/data/assets'
   # Define the penpot-exporter service
   penpot-exporter:
     # Use the penpotapp/exporter:1.19.3 Docker image
@@ -138,16 +120,14 @@ services:
       - PENPOT_PUBLIC_URI=http://big-bear-penpot-frontend:8080
       # Set the PENPOT_REDIS_URI environment variable
       - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
-
     x-casaos:
       envs:
         - container: PENPOT_PUBLIC_URI
           description:
-            en_us: "Public URI"
+            en_us: 'Container Variable: PENPOT_PUBLIC_URI'
         - container: PENPOT_REDIS_URI
           description:
-            en_us: "Redis URI"
-
+            en_us: 'Container Variable: PENPOT_REDIS_URI'
   # Define the PostgreSQL service for Penpot
   penpot-postgres:
     image: postgres:14
@@ -164,22 +144,24 @@ services:
       - POSTGRES_DB=penpot # Set the name of the database
       - POSTGRES_USER=bigbear # Set the username for the database
       - POSTGRES_PASSWORD=casaos # Set the password for the database
-
     x-casaos:
       envs:
         - container: POSTGRES_INITDB_ARGS
           description:
-            en_us: "Initialize Database"
+            en_us: 'Container Variable: POSTGRES_INITDB_ARGS'
         - container: POSTGRES_DB
           description:
-            en_us: "Database Name"
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: "Database Username"
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: "Database Password"
-
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: 'Container Path: /var/lib/postgresql/data'
   # Define the Redis service for Penpot
   penpot-redis:
     image: redis:7.4.6@sha256:d7432711a2a5c99c2e9dd0e006061cd274d7cb7a9e77f07ffe2ea99e21244677
@@ -187,7 +169,6 @@ services:
     restart: unless-stopped
     networks:
       - big-bear-penpot-network
-
   # Define the penpot-mailcatch service
   penpot-mailcatch:
     image: sj26/mailcatcher:latest
@@ -198,40 +179,42 @@ services:
       - "1080:1080" # Map port 1080 for the web interface
     networks:
       - big-bear-penpot-network # Connect to the big-bear-penpot-network
-
+    x-casaos:
+      ports:
+        - container: "1080"
+          description:
+            en_us: 'Container Port: 1080'
 # Define the networks section
 networks:
   # Define the penpot-network
   big-bear-penpot-network:
     # Set the driver to bridge
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: penpot-frontend
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Bring Design Freedom to your Product Team
-  # Developer's name or identifier
-  developer: "penpotapp"
-  # Author of this configuration
+  # Developer's information
+  developer: penpotapp
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/penpot/logo.jpg"
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/penpot/logo.jpg
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Penpot
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "9001"

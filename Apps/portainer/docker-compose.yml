@@ -1,6 +1,5 @@
 # Configuration for big-bear-portainer setup
 name: big-bear-portainer
-
 # Service definitions for the big-bear-portainer application
 services:
   # Main Portainer service configuration
@@ -16,45 +15,48 @@ services:
       - /DATA/AppData/$AppID/data:/data # Bind mount for Docker volumes
       - /var/run/docker.sock:/var/run/docker.sock # Bind mount for Docker socket
     x-casaos:
-      ports:
-        - container: "8000"
-          description:
-            en_us: "Container: 8000" # Description for the port
-        - container: "9000"
-          description:
-            en_us: "Container: 9000" # Description for the port
-        - container: "9443"
-          description:
-            en_us: "Container: 9443" # Description for the port
       volumes:
         - container: /data
           description:
-            en_us: Access to Portainer data # Description for Portainer data volume
+            en_us: 'Container Path: /data'
         - container: /var/run/docker.sock
           description:
-            en_us: Access to Docker socket # Description for Docker socket volume
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /var/run/docker.sock'
+      ports:
+        - container: "8000"
+          description:
+            en_us: 'Container Port: 8000'
+        - container: "9000"
+          description:
+            en_us: 'Container Port: 9000'
+        - container: "9443"
+          description:
+            en_us: 'Container Port: 9443'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: app # Main service of the application
-  description: # Description in different languages
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
     en_us: Irrespective of your industry, orchestration platform, or computing device, Portainer is the most versatile container management software that simplifies your secure adoption of containers with remarkable speed.
-  tagline: # Short description or tagline in different languages
+  # Brief tagline for the application
+  tagline:
     en_us: Portainer
-  developer: "portainer" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
+  # Developer's information
+  developer: portainer
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/portainer.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Title of the application in English
+  # Title for the application
   title:
     en_us: Portainer
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping for the application
+  # Default port mapping for the application
   port_map: "9443"
-  # URL scheme for the application
-  scheme: https
