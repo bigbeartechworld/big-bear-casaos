@@ -2,7 +2,6 @@
 
 # Name of the big-bear-genmon application
 name: big-bear-genmon
-
 # Service definitions for the big-bear-genmon application
 services:
   # Service name: big-bear-genmon
@@ -10,77 +9,76 @@ services:
   big-bear-genmon:
     # Name of the container
     container_name: big-bear-genmon
-
     # Image to be used for the container
     image: bigbeartechworld/big-bear-genmon:1.19.06
-
     # Environment variables to set inside the container
     environment:
       - TZ=America/Chicago # Set the timezone to 'America/Chicago'
-
     # Ports to expose, mapping the host port to the container port
     ports:
       - "20022:22" # Map TCP port 22 in the container to port 20022 on the host
       - "38443:443" # Map TCP port 443 in the container to port 38443 on the host
       - "8000:8000" # Map TCP port 8000 in the container to port 8000 on the host
-
     # Define the restart policy for the service container
     restart: unless-stopped # Restart the container unless it is explicitly stopped
-
     # Mount host paths or named volumes into the container
     volumes:
-      - /DATA/AppData/$AppID/git_genmon:/git/genmon # Mount a named volume 'big_bear_genmon_data' to store data persistently at /git/genmon in the container (this is the default location)
-      - /DATA/AppData/$AppID/etc_genmon:/etc/genmon # Mount a named volume 'big_bear_genmon_config' to store configuration files persistently at /etc/genmon in the container
-      - /DATA/AppData/$AppID/var_log:/var/log # Mount a named volume 'big_bear_genmon_logs' to store logs persistently at /var/log in the container
-
-    x-casaos: # CasaOS specific configuration
+      - /DATA/AppData/$AppID/git/genmon:/git/genmon # Mount a named volume 'big_bear_genmon_data' to store data persistently at /git/genmon in the container (this is the default location)
+      - /DATA/AppData/$AppID/etc/genmon:/etc/genmon # Mount a named volume 'big_bear_genmon_config' to store configuration files persistently at /etc/genmon in the container
+      - /DATA/AppData/$AppID/var/log:/var/log # Mount a named volume 'big_bear_genmon_logs' to store logs persistently at /var/log in the container
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /git/genmon
           description:
-            en_us: "Container Path: /git/genmon"
+            en_us: 'Container Path: /git/genmon'
         - container: /etc/genmon
           description:
-            en_us: "Container Path: /etc/genmon"
+            en_us: 'Container Path: /etc/genmon'
         - container: /var/log
           description:
-            en_us: "Container Path: /var/log"
+            en_us: 'Container Path: /var/log'
       ports:
         - container: "22"
           description:
-            en_us: "Container Port: 22"
+            en_us: 'Container Port: 22'
         - container: "443"
           description:
-            en_us: "Container Port: 443"
+            en_us: 'Container Port: 443'
         - container: "8000"
           description:
-            en_us: "Container Port: 8000"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8000'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-genmon
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Generac (and other models) Generator Monitoring using a Raspberry Pi and WiFi
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/genmon/screenshots/screenshot1.png
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Genmon
-  # Developer's name or identifier
-  developer: "bigbeartechworld"
-  # Author of this configuration
+  # Developer's information
+  developer: bigbeartechworld
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/genmon/logo.jpeg
-  # Thumbnail image
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/genmon/screenshot1.png"
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/genmon/logo.jpeg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/genmon/screenshot1.png
+  # Title for the application
   title:
-    # Title in English
     en_us: Genmon
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8000"

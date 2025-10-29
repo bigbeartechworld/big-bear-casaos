@@ -19,44 +19,62 @@ services:
     ports:
       - "8080:8443" # Expose code-server's port 8080 on the host's port 8080
     restart: always # Policy to restart the container if it stops unexpectedly
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - container: PASSWORD
-          description:
-            en_us: "Password to access code-server"
         - container: PUID
           description:
-            en_us: "User ID under which code-server will run"
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: "Group ID under which code-server will run"
+            en_us: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: PASSWORD
+          description:
+            en_us: 'Container Variable: PASSWORD'
+        - container: SUDO_PASSWORD
+          description:
+            en_us: 'Container Variable: SUDO_PASSWORD'
+        - container: DEFAULT_WORKSPACE
+          description:
+            en_us: 'Container Variable: DEFAULT_WORKSPACE'
       volumes:
         - container: /config
           description:
-            en_us: "config dir"
+            en_us: 'Container Path: /config'
         - container: /projects
           description:
-            en_us: "project dir"
+            en_us: 'Container Path: /projects'
       ports:
-        - container: "8080"
+        - container: "8443"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8443'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: app # Main service of the application
+  # Main service for this application
+  main: app
+  # Detailed description for the application
   description:
-    en_us: Run VS Code on any machine anywhere and access it in the browser. # Description in English
+    en_us: Run VS Code on any machine anywhere and access it in the browser.
+  # Brief tagline for the application
   tagline:
-    en_us: Code Server # Short description or tagline in English
-  developer: "" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/coder.png # Icon for the application
-  thumbnail: "" # Thumbnail image (currently empty)
+    en_us: Code Server
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/coder.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
   title:
-    en_us: Code Server # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "8080" # Port mapping information
+    en_us: Code Server
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"

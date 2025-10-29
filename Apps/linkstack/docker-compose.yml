@@ -2,7 +2,6 @@
 
 # Name of the LinkStack application
 name: big-bear-linkstack
-
 # Service definitions for the LinkStack application
 services:
   # Service name: big-bear-linkstack
@@ -31,60 +30,68 @@ services:
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/data:/data
-
     entrypoint: "/bin/sh"
-
     # uncomment this after first start
     # to prevent the installing dialog coming up
     # if the container is recreated
     # rm /htdocs/INSTALLING
-    command:
-      [
-        "-c",
-        "cp -n -r /htdocs/database/ /data/database; cp -n /htdocs/.env /data/.env; cp -n -r /htdocs/littlelink/images /data/images; cp -n -r /htdocs/themes /data/themes; cp -n -r /htdocs/img /data/img; chown -R apache:apache /data; rm -rf /htdocs/database/; rm /htdocs/.env; rm -rf /htdocs/littlelink/images; rm -rf /htdocs/themes; rm -rf /htdocs/img; sed -i 's/FORCE_HTTPS=false/FORCE_HTTPS=true/g' /data/.env; ln -s /data/database /htdocs/database; ln -s /data/.env /htdocs/.env; ln -s /data/images /htdocs/littlelink/images; ln -s /data/themes /htdocs/themes; ln -s /data/img/ /htdocs/img; cd /htdocs; php artisan migrate --force; exec /usr/local/bin/docker-entrypoint.sh server",
-      ]
-
-    # CasaOS specific configuration for this service
+    command: ["-c", "cp -n -r /htdocs/database/ /data/database; cp -n /htdocs/.env /data/.env; cp -n -r /htdocs/littlelink/images /data/images; cp -n -r /htdocs/themes /data/themes; cp -n -r /htdocs/img /data/img; chown -R apache:apache /data; rm -rf /htdocs/database/; rm /htdocs/.env; rm -rf /htdocs/littlelink/images; rm -rf /htdocs/themes; rm -rf /htdocs/img; sed -i 's/FORCE_HTTPS=false/FORCE_HTTPS=true/g' /data/.env; ln -s /data/database /htdocs/database; ln -s /data/.env /htdocs/.env; ln -s /data/images /htdocs/littlelink/images; ln -s /data/themes /htdocs/themes; ln -s /data/img/ /htdocs/img; cd /htdocs; php artisan migrate --force; exec /usr/local/bin/docker-entrypoint.sh server"]
     x-casaos:
+      envs:
+        - container: HTTP_SERVER_NAME
+          description:
+            en_us: 'Container Variable: HTTP_SERVER_NAME'
+        - container: HTTPS_SERVER_NAME
+          description:
+            en_us: 'Container Variable: HTTPS_SERVER_NAME'
+        - container: SERVER_ADMIN
+          description:
+            en_us: 'Container Variable: SERVER_ADMIN'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: PHP_MEMORY_LIMIT
+          description:
+            en_us: 'Container Variable: PHP_MEMORY_LIMIT'
+        - container: UPLOAD_MAX_FILESIZE
+          description:
+            en_us: 'Container Variable: UPLOAD_MAX_FILESIZE'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data - LinkStack data directory"
+            en_us: 'Container Path: /data'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80 - HTTP"
+            en_us: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: "Container Port: 443 - HTTPS"
-
-# CasaOS specific configuration for the entire application
+            en_us: 'Container Port: 443'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-linkstack
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: LinkStack is a link-in-bio tool that allows you to create a personalized and easily customizable page that houses all the important links you want to share with your audience.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Your all-in-one link sharing solution
-  # Developer's name or identifier
-  developer: "LinkStackOrg"
-  # Author of this configuration
+  # Developer's information
+  developer: LinkStackOrg
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application (replace with actual LinkStack icon URL if available)
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/linkstack.png
-  # Thumbnail image (currently empty, replace if available)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: LinkStack
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "10443"
-  scheme: https
