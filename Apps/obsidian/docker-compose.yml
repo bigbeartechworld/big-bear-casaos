@@ -2,7 +2,6 @@
 
 # Name of the big-bear-obsidian application
 name: big-bear-obsidian
-
 # Service definitions for the big-bear-obsidian application
 services:
   # Service name: big-bear-obsidian
@@ -10,67 +9,69 @@ services:
   big-bear-obsidian:
     # Name of the container
     container_name: big-bear-obsidian
-
     # Image to be used for the container
     image: linuxserver/obsidian:1.9.14
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/config:/config
-
     # Ports mapping between host and container
     ports:
       - 3000:3000
       - 3001:3001
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_us: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /config
           description:
-            en_us: "Container Path: /config"
+            en_us: 'Container Path: /config'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
+            en_us: 'Container Port: 3000'
         - container: "3001"
           description:
-            en_us: "Container Port: 3001"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 3001'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-obsidian
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Obsidian is a note-taking app that lets you create, link, and organize your notes on your device, with hundreds of plugins and themes to customize your workflow. You can also publish your notes online, access them offline, and sync them securely with end-to-end encryption.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Obsidian
-  # Developer's name or identifier
-  developer: "obsidianmd"
-  # Author of this configuration
+  # Developer's information
+  developer: obsidianmd
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/obsidian.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Obsidian
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "3000"

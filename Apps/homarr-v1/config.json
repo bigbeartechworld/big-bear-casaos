@@ -3,6 +3,5 @@
   "version": "1.43.0",
   "image": "ghcr.io/homarr-labs/homarr",
   "youtube": "",
-  "docs_link": "https://homarr.dev/docs",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": "https://homarr.dev/docs"
 }

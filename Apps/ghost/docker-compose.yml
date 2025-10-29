@@ -2,7 +2,6 @@
 
 # Application Name
 name: big-bear-ghost
-
 # Services used in the application
 services:
   # The `app` service for the Ghost application
@@ -10,7 +9,7 @@ services:
     # Name of the container
     container_name: big-bear-ghost
     # Docker image to be used
-    image: ghost:6.5.3-alpine
+    image: ghost:6.5.0-alpine
     # Restart policy for the service
     restart: on-failure
     # Networks used by the service
@@ -36,36 +35,34 @@ services:
     # Dependencies for the service
     depends_on:
       - db
-    # CasaOS specific configuration for the app service
     x-casaos:
       envs:
         - container: database__client
           description:
-            en_us: Database client
+            en_us: 'Container Variable: database__client'
         - container: database__connection__host
           description:
-            en_us: Database host
+            en_us: 'Container Variable: database__connection__host'
         - container: database__connection__user
           description:
-            en_us: Database user
+            en_us: 'Container Variable: database__connection__user'
         - container: database__connection__password
           description:
-            en_us: Database password
+            en_us: 'Container Variable: database__connection__password'
         - container: database__connection__database
           description:
-            en_us: Database name
+            en_us: 'Container Variable: database__connection__database'
         - container: url
           description:
-            en_us: Ghost URL
+            en_us: 'Container Variable: url'
       volumes:
         - container: /var/lib/ghost/content
           description:
-            en_us: "Container Path: /var/lib/ghost/content"
+            en_us: 'Container Path: /var/lib/ghost/content'
       ports:
         - container: "2368"
           description:
-            en_us: "Container Port: 2368"
-
+            en_us: 'Container Port: 2368'
   # The `db` service for database (MySQL in this case)
   db:
     # Container name
@@ -86,33 +83,29 @@ services:
     # Networks used by the service
     networks:
       - ghost-network
-    # CasaOS specific configuration for the db service
     x-casaos:
       envs:
-        - container: MYSQL_ROOT_PASSWORD
-          description:
-            en_us: MySQL root password
         - container: MYSQL_USER
           description:
-            en_us: MySQL user
-        - container: MYSQL_PASSWORD
-          description:
-            en_us: MySQL password
+            en_us: 'Container Variable: MYSQL_USER'
         - container: MYSQL_DATABASE
           description:
-            en_us: MySQL database
+            en_us: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_PASSWORD
+          description:
+            en_us: 'Container Variable: MYSQL_PASSWORD'
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
-
+            en_us: 'Container Path: /var/lib/mysql'
 # Networks used by the application
 networks:
   # Define the network for AdGuard Home
   ghost-network:
     driver: bridge
-
-# CasaOS global application configuration
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
@@ -127,13 +120,18 @@ x-casaos:
   tagline:
     en_us: Ghost is a free and open source blogging platform
   # Developer's information
-  developer: "ghost"
+  developer: ghost
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ghost.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |
+        Update the url environment variable to reflect your CasaOS IP address.
   # Title for the application
   title:
     en_us: Ghost
@@ -141,7 +139,3 @@ x-casaos:
   category: BigBearCasaOS
   # Default port mapping for the application
   port_map: "2368"
-  tips:
-    before_install:
-      en_us: |
-        Update the url environment variable to reflect your CasaOS IP address.

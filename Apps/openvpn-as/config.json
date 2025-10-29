@@ -1,8 +1,7 @@
 {
-    "id": "openvpn-as",
-    "version": "2.13.1-d8cdeb9c-Ubuntu22",
-    "image": "openvpn/openvpn-as",
-    "youtube": "",
-    "docs_link": "",
-    "big_bear_cosmos_youtube": ""
-  }
+  "id": "openvpn-as",
+  "version": "2.13.1-d8cdeb9c-Ubuntu22",
+  "image": "openvpn/openvpn-as",
+  "youtube": "",
+  "docs_link": ""
+}

@@ -2,7 +2,6 @@
 
 # Name of the big-bear-retroarch-web application
 name: big-bear-retroarch-web
-
 # Service definitions for the big-bear-retroarch-web application
 services:
   # Service name: big-bear-retroarch-web
@@ -10,62 +9,56 @@ services:
   big-bear-retroarch-web:
     # Name of the container
     container_name: big-bear-retroarch-web
-
     # Image to be used for the container
     image: inglebard/retroarch-web:latest
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - ROOT_WWW_PATH="/var/www/html"
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 80 of the container
       - "8080:80"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - container: "ROOT_WWW_PATH"
+        - container: ROOT_WWW_PATH
           description:
-            en_us: "ROOT_WWW_PATH"
+            en_us: 'Container Variable: ROOT_WWW_PATH'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 80'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-retroarch-web
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Online retro games emulator.The RetroArch Web Player is RetroArch compiled through Emscripten.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: RetroArch Web Player
-  # Developer's name or identifier
-  developer: "inglebard"
-  # Author of this configuration
+  # Developer's information
+  developer: inglebard
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/retroarch-web/logo.png
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/retroarch-web/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: RetroArch
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8080"
-  tips: # Tips or instructions for the user before installation
+  # Installation tips
+  tips:
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-retroarch-web-player-to-bigbearcasaos/2002?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: RetroArch
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"

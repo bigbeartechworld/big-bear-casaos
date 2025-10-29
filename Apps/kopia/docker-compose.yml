@@ -2,7 +2,6 @@
 
 # Name of the big-bear-kopia application
 name: big-bear-kopia
-
 # Service definitions for the big-bear-kopia application
 services:
   # Service name: big-bear-kopia
@@ -10,13 +9,10 @@ services:
   big-bear-kopia:
     # Name of the container
     container_name: big-bear-kopia
-
     # Image to be used for the container
     image: ghcr.io/thespad/kopia-server:v0.17.0-spad3
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables for the container
     environment:
       - PUID=0
@@ -27,77 +23,94 @@ services:
       - KOPIA_UI_PASSWORD=casaos
       - KOPIA_PASSWORD=casaos # Repository password
       - REFRESH_INTERVAL= # Optional
-
     volumes:
       - /DATA/AppData/$AppID/config:/config
-      - /DATA/AppData/$AppID/home:/backups/home:ro # Optional
+      - /DATA/AppData/$AppID/home:/backups/home # Optional
       - /var/lib/docker/volumes:/backups/docker:ro # Optional
       - /DATA/AppData/$AppID/repository:/repository # Optional
       - /tmp:/tmp:shared # Optional
       - /var/run/docker.sock:/var/run/docker.sock:ro # Optional
-
     # Ports mapping between host and container
     ports:
       # Mapping port 51515 of the host to port 51515 of the container
       - "51515:51515"
-
     # Additional capabilities to be added to the container
     cap_add:
       - SYS_ADMIN # Optional
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_us: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: KOPIA_HTTPS
+          description:
+            en_us: 'Container Variable: KOPIA_HTTPS'
+        - container: KOPIA_UI_USERNAME
+          description:
+            en_us: 'Container Variable: KOPIA_UI_USERNAME'
+        - container: KOPIA_UI_PASSWORD
+          description:
+            en_us: 'Container Variable: KOPIA_UI_PASSWORD'
+        - container: KOPIA_PASSWORD
+          description:
+            en_us: 'Container Variable: KOPIA_PASSWORD'
+        - container: REFRESH_INTERVAL
+          description:
+            en_us: 'Container Variable: REFRESH_INTERVAL'
       volumes:
         - container: /config
           description:
-            en_us: "Container Path: /config"
+            en_us: 'Container Path: /config'
         - container: /backups/home
           description:
-            en_us: "Container Path: /backups/home"
+            en_us: 'Container Path: /backups/home'
         - container: /backups/docker
           description:
-            en_us: "Container Path: /backups/docker"
+            en_us: 'Container Path: /backups/docker'
         - container: /repository
           description:
-            en_us: "Container Path: /repository"
+            en_us: 'Container Path: /repository'
         - container: /tmp
           description:
-            en_us: "Container Path: /tmp"
+            en_us: 'Container Path: /tmp'
         - container: /var/run/docker.sock
           description:
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "51515"
           description:
-            en_us: "Container Port: 51515"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 51515'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-kopia
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Kopia is a fast and secure open-source backup/restore tool that allows you to create encrypted snapshots of your data and save the snapshots to remote or cloud storage of your choice, to network-attached storage or server, or locally on your machine.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Kopia
-  # Developer's name or identifier
-  developer: "thespad"
-  # Author of this configuration
+  # Developer's information
+  developer: thespad
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/kopia.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Kopia
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "51515"
-  # Scheme used (https)
-  scheme: https

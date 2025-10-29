@@ -3,6 +3,5 @@
   "version": "0.12.6-rocm",
   "image": "ollama/ollama",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

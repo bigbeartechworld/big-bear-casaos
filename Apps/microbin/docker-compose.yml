@@ -2,7 +2,6 @@
 
 # Name of the big-bear-microbin application
 name: big-bear-microbin
-
 # Service definitions for the big-bear-microbin application
 services:
   # Service name: big-bear-microbin
@@ -102,170 +101,167 @@ services:
       - /DATA/AppData/$AppID/data:/app/microbin_data
     # Name of the container
     container_name: "big-bear-microbin"
-    # CasaOS specific service-level configuration
     x-casaos:
-      volumes:
-        - container: /app/microbin_data
-          description:
-            en_us: "Container Path: /app/microbin_data for Microbin data storage"
-      ports:
-        - container: "8080"
-          description:
-            en_us: "Container Port: 8080 (web interface)"
       envs:
         - container: MICROBIN_ADMIN_USERNAME
           description:
-            en_us: "Admin username for /admin/."
+            en_us: 'Container Variable: MICROBIN_ADMIN_USERNAME'
         - container: MICROBIN_ADMIN_PASSWORD
           description:
-            en_us: "Admin password for /admin/."
+            en_us: 'Container Variable: MICROBIN_ADMIN_PASSWORD'
         - container: MICROBIN_EDITABLE
           description:
-            en_us: "Allow editing of pastas."
+            en_us: 'Container Variable: MICROBIN_EDITABLE'
         - container: MICROBIN_FOOTER_TEXT
           description:
-            en_us: "Custom footer text."
+            en_us: 'Container Variable: MICROBIN_FOOTER_TEXT'
         - container: MICROBIN_HIDE_HEADER
           description:
-            en_us: "Hide header bar."
+            en_us: 'Container Variable: MICROBIN_HIDE_HEADER'
         - container: MICROBIN_HIDE_FOOTER
           description:
-            en_us: "Hide footer bar."
+            en_us: 'Container Variable: MICROBIN_HIDE_FOOTER'
         - container: MICROBIN_HIDE_LOGO
           description:
-            en_us: "Hide Microbin logo."
+            en_us: 'Container Variable: MICROBIN_HIDE_LOGO'
         - container: MICROBIN_NO_LISTING
           description:
-            en_us: "Disable /pastalist endpoint."
+            en_us: 'Container Variable: MICROBIN_NO_LISTING'
         - container: MICROBIN_HIGHLIGHTSYNTAX
           description:
-            en_us: "Enable syntax highlighting."
+            en_us: 'Container Variable: MICROBIN_HIGHLIGHTSYNTAX'
         - container: MICROBIN_PORT
           description:
-            en_us: "Port Microbin listens on."
+            en_us: 'Container Variable: MICROBIN_PORT'
         - container: MICROBIN_BIND
           description:
-            en_us: "Bind address for Microbin."
+            en_us: 'Container Variable: MICROBIN_BIND'
         - container: MICROBIN_PRIVATE
           description:
-            en_us: "Enable private pastas."
+            en_us: 'Container Variable: MICROBIN_PRIVATE'
         - container: MICROBIN_PURE_HTML
           description:
-            en_us: "Use minimal HTML, disables main CSS."
+            en_us: 'Container Variable: MICROBIN_PURE_HTML'
         - container: MICROBIN_DATA_DIR
           description:
-            en_us: "Data directory inside the container."
+            en_us: 'Container Variable: MICROBIN_DATA_DIR'
         - container: MICROBIN_JSON_DB
           description:
-            en_us: "Store data in JSON instead of SQLite."
+            en_us: 'Container Variable: MICROBIN_JSON_DB'
         - container: MICROBIN_PUBLIC_PATH
           description:
-            en_us: "Public path prefix for reverse proxy."
+            en_us: 'Container Variable: MICROBIN_PUBLIC_PATH'
         - container: MICROBIN_SHORT_PATH
           description:
-            en_us: "Shorten URLs."
+            en_us: 'Container Variable: MICROBIN_SHORT_PATH'
         - container: MICROBIN_UPLOADER_PASSWORD
           description:
-            en_us: "Password for uploading in read-only mode."
+            en_us: 'Container Variable: MICROBIN_UPLOADER_PASSWORD'
         - container: MICROBIN_READONLY
           description:
-            en_us: "Enable read-only mode."
+            en_us: 'Container Variable: MICROBIN_READONLY'
         - container: MICROBIN_SHOW_READ_STATS
           description:
-            en_us: "Show read count on pastas."
+            en_us: 'Container Variable: MICROBIN_SHOW_READ_STATS'
         - container: MICROBIN_TITLE
           description:
-            en_us: "Custom title in navigation bar."
+            en_us: 'Container Variable: MICROBIN_TITLE'
         - container: MICROBIN_THREADS
           description:
-            en_us: "Number of worker threads."
+            en_us: 'Container Variable: MICROBIN_THREADS'
         - container: MICROBIN_GC_DAYS
           description:
-            en_us: "Days before unused pastas are deleted."
+            en_us: 'Container Variable: MICROBIN_GC_DAYS'
         - container: MICROBIN_ENABLE_BURN_AFTER
           description:
-            en_us: "Enable burn-after-reading."
+            en_us: 'Container Variable: MICROBIN_ENABLE_BURN_AFTER'
         - container: MICROBIN_DEFAULT_BURN_AFTER
           description:
-            en_us: "Default burn-after value."
+            en_us: 'Container Variable: MICROBIN_DEFAULT_BURN_AFTER'
         - container: MICROBIN_WIDE
           description:
-            en_us: "Use wider UI."
+            en_us: 'Container Variable: MICROBIN_WIDE'
         - container: MICROBIN_QR
           description:
-            en_us: "Enable QR code generation."
+            en_us: 'Container Variable: MICROBIN_QR'
         - container: MICROBIN_ETERNAL_PASTA
           description:
-            en_us: "Enable 'never expire' option."
+            en_us: 'Container Variable: MICROBIN_ETERNAL_PASTA'
         - container: MICROBIN_ENABLE_READONLY
           description:
-            en_us: "Enable read-only uploads."
+            en_us: 'Container Variable: MICROBIN_ENABLE_READONLY'
         - container: MICROBIN_DEFAULT_EXPIRY
           description:
-            en_us: "Default expiry for pastas."
+            en_us: 'Container Variable: MICROBIN_DEFAULT_EXPIRY'
         - container: MICROBIN_NO_FILE_UPLOAD
           description:
-            en_us: "Disable file uploads."
+            en_us: 'Container Variable: MICROBIN_NO_FILE_UPLOAD'
         - container: MICROBIN_CUSTOM_CSS
           description:
-            en_us: "URL for custom CSS."
+            en_us: 'Container Variable: MICROBIN_CUSTOM_CSS'
         - container: MICROBIN_HASH_IDS
           description:
-            en_us: "Use hash IDs for URLs."
+            en_us: 'Container Variable: MICROBIN_HASH_IDS'
         - container: MICROBIN_ENCRYPTION_CLIENT_SIDE
           description:
-            en_us: "Enable client-side encryption."
+            en_us: 'Container Variable: MICROBIN_ENCRYPTION_CLIENT_SIDE'
         - container: MICROBIN_ENCRYPTION_SERVER_SIDE
           description:
-            en_us: "Enable server-side encryption."
+            en_us: 'Container Variable: MICROBIN_ENCRYPTION_SERVER_SIDE'
         - container: MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB
           description:
-            en_us: "Max file size with encryption."
+            en_us: 'Container Variable: MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB'
         - container: MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB
           description:
-            en_us: "Max file size without encryption."
+            en_us: 'Container Variable: MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB'
         - container: MICROBIN_DISABLE_UPDATE_CHECKING
           description:
-            en_us: "Disable update checking."
+            en_us: 'Container Variable: MICROBIN_DISABLE_UPDATE_CHECKING'
         - container: MICROBIN_DISABLE_TELEMETRY
           description:
-            en_us: "Disable telemetry."
+            en_us: 'Container Variable: MICROBIN_DISABLE_TELEMETRY'
         - container: MICROBIN_LIST_SERVER
           description:
-            en_us: "List server publicly."
-
-# CasaOS specific configuration
+            en_us: 'Container Variable: MICROBIN_LIST_SERVER'
+      volumes:
+        - container: /app/microbin_data
+          description:
+            en_us: 'Container Path: /app/microbin_data'
+      ports:
+        - container: "8080"
+          description:
+            en_us: 'Container Port: 8080'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-microbin
-  # Tagline for the application
+  # Detailed description for the application
+  description:
+    en_us: Self-hosted, encrypted pastebin alternative with configurable features.
+  # Brief tagline for the application
   tagline:
     en_us: Pastebin alternative with encryption
-  # Developer's name or identifier
-  developer: "danielszabo99"
-  # Author of this configuration
+  # Developer's information
+  developer: danielszabo99
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Application category
-  category: BigBearCasaOS
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/szabodanika/microbin@v2.0.4/templates/assets/logo-square.png
-  # Port mapping information
-  port_map: "8888"
-  # Scheme used by the application
-  scheme: http
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
   tips:
     before_install:
       en_us: |
         For a full list of Microbin environment variables and their meanings, see:
         https://github.com/szabodanika/microbin/blob/master/.env
-
+  # Title for the application
   title:
-    # Title in English
     en_us: Microbin
-  description:
-    # Description in English
-    en_us: Self-hosted, encrypted pastebin alternative with configurable features.
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8888"
