@@ -2,7 +2,6 @@
 
 # Name of the big-bear-unifi-network-application application
 name: big-bear-unifi-network-application
-
 # Service definitions for the big-bear-homarr application
 services:
   # MongoDB database for the application
@@ -11,26 +10,24 @@ services:
     container_name: big-bear-unifi-db
     volumes:
       - /DATA/AppData/$AppID/db/data:/data/db # MongoDB data persistence
-      - /DATA/AppData/$AppID/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - /DATA/AppData/$AppID/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
     ports:
       - 27017:27017 # MongoDB default port
     networks: # Networks to join
       - unifi-nework-application-network
     restart: unless-stopped # Restart policy
-
     x-casaos:
       volumes:
         - container: /data/db
           description:
-            en_us: "Container Path: /data/db"
+            en_us: 'Container Path: /data/db'
         - container: /docker-entrypoint-initdb.d/init-mongo.js
           description:
-            en_us: "Container Path: /docker-entrypoint-initdb.d/init-mongo.js"
+            en_us: 'Container Path: /docker-entrypoint-initdb.d/init-mongo.js'
       ports:
         - container: "27017"
           description:
-            en_us: "Container Port: 27017"
-
+            en_us: 'Container Port: 27017'
   # Main application service
   app: # Name of the service
     image: linuxserver/unifi-network-application:9.5.21 # Docker image to use
@@ -65,116 +62,111 @@ services:
       - unifi-nework-application-network
     depends_on:
       - unifi-db
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: PUID
           description:
-            en_us: "User ID"
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: "Group ID"
+            en_us: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: "Timezone"
+            en_us: 'Container Variable: TZ'
         - container: MONGO_HOST
           description:
-            en_us: "MongoDB host"
+            en_us: 'Container Variable: MONGO_HOST'
         - container: MONGO_USER
           description:
-            en_us: "MongoDB username"
+            en_us: 'Container Variable: MONGO_USER'
         - container: MONGO_PASS
           description:
-            en_us: "MongoDB password"
+            en_us: 'Container Variable: MONGO_PASS'
         - container: MONGO_PORT
           description:
-            en_us: "MongoDB port"
+            en_us: 'Container Variable: MONGO_PORT'
         - container: MONGO_DBNAME
           description:
-            en_us: "MongoDB database name"
+            en_us: 'Container Variable: MONGO_DBNAME'
         - container: MEM_LIMIT
           description:
-            en_us: "Memory limit for the container"
+            en_us: 'Container Variable: MEM_LIMIT'
         - container: MEM_STARTUP
           description:
-            en_us: "Memory to allocate on container startup"
+            en_us: 'Container Variable: MEM_STARTUP'
         - container: MONGO_TLS
           description:
-            en_us: "MongoDB TLS setting"
+            en_us: 'Container Variable: MONGO_TLS'
         - container: MONGO_AUTHSOURCE
           description:
-            en_us: "MongoDB authentication source"
+            en_us: 'Container Variable: MONGO_AUTHSOURCE'
       volumes:
         - container: /config
           description:
-            en_us: "Container Path: /config"
+            en_us: 'Container Path: /config'
       ports:
         - container: "8443"
           description:
-            en_us: "Container Port: 8443"
-        - container: "3478/udp"
+            en_us: 'Container Port: 8443'
+        - container: "3478"
           description:
-            en_us: "Container Port: 3478/udp"
-        - container: "10001/udp"
+            en_us: 'Container Port: 3478'
+        - container: "10001"
           description:
-            en_us: "Container Port: 10001/udp"
+            en_us: 'Container Port: 10001'
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-        - container: "1900/udp"
+            en_us: 'Container Port: 8080'
+        - container: "1900"
           description:
-            en_us: "Container Port: 1900/udp"
+            en_us: 'Container Port: 1900'
         - container: "8843"
           description:
-            en_us: "Container Port: 8843"
+            en_us: 'Container Port: 8843'
         - container: "8880"
           description:
-            en_us: "Container Port: 8880"
+            en_us: 'Container Port: 8880'
         - container: "6789"
           description:
-            en_us: "Container Port: 6789"
-        - container: "5514/udp"
+            en_us: 'Container Port: 6789'
+        - container: "5514"
           description:
-            en_us: "Container Port: 5514/udp"
-
+            en_us: 'Container Port: 5514'
 # Networks used by the application
 networks:
   # Define the network for AdGuard Home
   unifi-nework-application-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: The Unifi-network-application
-  # Developer's name or identifier
-  developer: "Ubiquiti"
-  # Author of this configuration
+  # Developer's information
+  developer: Ubiquiti
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ubiquiti-unifi.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Unifi Network Application
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8443"
-  # Application scheme
-  scheme: https # Scheme for the service
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-unifi-network-application-to-bigbearcasaos/487
+  # Title for the application
+  title:
+    en_us: Unifi Network Application
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8443"

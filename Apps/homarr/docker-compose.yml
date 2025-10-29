@@ -2,7 +2,6 @@
 
 # Name of the big-bear-homarr application
 name: big-bear-homarr
-
 # Service definitions for the big-bear-homarr application
 services:
   # Service name: app
@@ -10,74 +9,67 @@ services:
   app:
     # Name of the container
     container_name: homarr
-
     # Image to be used for the container
     image: ghcr.io/ajnart/homarr:0.16.0
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local homarr/configs directory to /app/data/configs inside the container
       - /DATA/AppData/$AppID/configs:/app/data/configs
-
       # Mounting the local homarr/icons directory to /app/public/icons inside the container
       - /DATA/AppData/$AppID/icons:/app/public/icons
-
       # Mounting the local homarr/dat directory to /data inside the container
       - /DATA/AppData/$AppID/data:/data
-
       # Mounting docker.sock to allow docker management via Homarr
       - /var/run/docker.sock:/var/run/docker.sock
-
     # Ports mapping between host and container
     ports:
       # Mapping port 7575 of the host to port 7575 of the container
       - "7575:7575"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /app/data/configs
           description:
-            en_us: "Container Path: /app/data/configs"
+            en_us: 'Container Path: /app/data/configs'
         - container: /app/public/icons
           description:
-            en_us: "Container Path: /app/public/icons"
+            en_us: 'Container Path: /app/public/icons'
         - container: /data
           description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /data'
+        - container: /var/run/docker.sock
+          description:
+            en_us: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "7575"
           description:
-            en_us: "Container Port: 7575"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 7575'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Homarr
-  # Developer's name or identifier
-  developer: "ajnart"
-  # Author of this configuration
+  # Developer's information
+  developer: ajnart
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/homarr.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Homarr
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "7575"

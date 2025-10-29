@@ -2,7 +2,6 @@
 
 # Name of the big-bear-uptime-kuma application
 name: big-bear-uptime-kuma
-
 # Service definitions for the big-bear-uptime-kuma application
 services:
   # Service name: app
@@ -20,43 +19,40 @@ services:
       - "3001:3001" # <Host Port>:<Container Port>
     # Restart policy: Always restart the container if it stops
     restart: always
-    # CasaOS specific configuration for better integration
     x-casaos:
       volumes:
         - container: /app/data
           description:
-            en_us: "Container Path: /app/data"
+            en_us: 'Container Path: /app/data'
       ports:
         - container: "3001"
           description:
-            en_us: "Container Port: 3001"
-
-# CasaOS specific configuration to enhance application management within CasaOS
+            en_us: 'Container Port: 3001'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Identifying the main service of the application
+  # Main service for this application
   main: app
-  # Descriptive text for the application, providing insights into its functionality
+  # Detailed description for the application
   description:
     en_us: A fancy self-hosted monitoring tool
-  # A concise tagline describing the application
+  # Brief tagline for the application
   tagline:
     en_us: A fancy self-hosted monitoring tool
-  # Developer's name or identifier for credit and reference
-  developer: "louislam"
-  # Author of this configuration file for tracking and support
+  # Developer's information
+  developer: louislam
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon URL for the application, used for visual identification in UIs
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/uptime-kuma.png
-  # Placeholder for thumbnail image (can be updated later)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Application title in English, used for display purposes
+  # Title for the application
   title:
     en_us: Uptime Kuma
-  # Application category to classify the app within CasaOS
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information, useful for network configuration and access
+  # Default port mapping for the application
   port_map: "3001"

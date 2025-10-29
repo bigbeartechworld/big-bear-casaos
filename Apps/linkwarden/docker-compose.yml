@@ -2,7 +2,6 @@
 
 # Name of the big-bear-linkwarden application
 name: big-bear-linkwarden
-
 # Service definitions for the big-bear-linkwarden application
 services:
   # Service name: linkwarden
@@ -10,43 +9,48 @@ services:
   linkwarden:
     # Name of the container
     container_name: big-bear-linkwarden
-
     # Image to be used for the container
     image: ghcr.io/linkwarden/linkwarden:v2.13.1
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/data/linkwarden:/data/data
-
     # Environment variables
     environment:
       - DATABASE_URL=postgresql://casaos:casaospassword@big-bear-linkwarden-db:5432/big-bear-linkwarden
       - NEXTAUTH_SECRET=7e2d8797-dc20-422a-9a68-44b958bd33c0
       - NEXTAUTH_URL=http://localhost/api/v1/auth
       - NEXT_PUBLIC_DISABLE_REGISTRATION=
-
     # Ports mapping between host and container
     ports:
       # Mapping port 3000 of the host to port 3000 of the container
       - "3000:3000"
-
     # Networks to be attached to the container
     networks:
       - linkwarden_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: DATABASE_URL
+          description:
+            en_us: 'Container Variable: DATABASE_URL'
+        - container: NEXTAUTH_SECRET
+          description:
+            en_us: 'Container Variable: NEXTAUTH_SECRET'
+        - container: NEXTAUTH_URL
+          description:
+            en_us: 'Container Variable: NEXTAUTH_URL'
+        - container: NEXT_PUBLIC_DISABLE_REGISTRATION
+          description:
+            en_us: 'Container Variable: NEXT_PUBLIC_DISABLE_REGISTRATION'
       volumes:
         - container: /data/data
           description:
-            en_us: "Container Path: /data/data"
+            en_us: 'Container Path: /data/data'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
+            en_us: 'Container Port: 3000'
   # Postgres database
   linkwarden-db:
     # Name of the container
@@ -66,56 +70,52 @@ services:
     # Networks to be attached
     networks:
       - linkwarden_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: Database user
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: Database type
+            en_us: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
 # Networks to be created
 networks:
   # Network name
   linkwarden_network:
     # Set the driver to bridge
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: linkwarden
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: ⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Linkwarden
-  # Developer's name or identifier
-  developer: "linkwarden"
-  # Author of this configuration
+  # Developer's information
+  developer: linkwarden
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/linkwarden.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Linkwarden
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "3000"

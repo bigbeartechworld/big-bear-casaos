@@ -2,7 +2,6 @@
 
 # Name of the big-bear-lobe-chat application
 name: big-bear-lobe-chat
-
 # Service definitions for the big-bear-lobe-chat application
 services:
   # Service name: big-bear-lobe-chat
@@ -10,77 +9,71 @@ services:
   big-bear-lobe-chat:
     # Name of the container
     container_name: big-bear-lobe-chat
-
     # Image to be used for the container
-    image: lobehub/lobe-chat:1.142.0
-
+    image: lobehub/lobe-chat:1.141.10
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables for the container
     environment:
       - OPENAI_API_KEY=""
       - OPENAI_PROXY_URL=""
       - CUSTOM_MODELS=""
       - ACCESS_CODE=""
-
     # Ports mapping between host and container
     ports:
       # Mapping port 3210 of the host to port 3210 of the container
       - "3210:3210"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: OPENAI_API_KEY
           description:
-            en_us: "OpenAI API Key"
+            en_us: 'Container Variable: OPENAI_API_KEY'
         - container: OPENAI_PROXY_URL
           description:
-            en_us: "OpenAI Proxy URL"
+            en_us: 'Container Variable: OPENAI_PROXY_URL'
         - container: CUSTOM_MODELS
           description:
-            en_us: "Custom Models"
+            en_us: 'Container Variable: CUSTOM_MODELS'
         - container: ACCESS_CODE
           description:
-            en_us: "Access Code"
+            en_us: 'Container Variable: ACCESS_CODE'
       ports:
         - container: "3210"
           description:
-            en_us: "Container Port: 3210"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 3210'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-lobe-chat
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: LobeChat is a open-source, extensible (Function Calling), high-performance chatbot framework. It supports one-click free deployment of your private ChatGPT/LLM web application.
-  tagline:
-    # Short description or tagline in English
-    en_us: LobeChat
-  # Developer's name or identifier
-  developer: "lobehub"
-  # Author of this configuration
-  author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/lobe-chat.png
-  # Thumbnail image (currently empty)
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@main/Apps/lobe-chat/thumbnail.png"
+  # Screenshot links for the application
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@main/Apps/lobe-chat/screenshot-1.png
-  title:
-    # Title in English
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/lobe-chat/screenshots/screenshot-1.png
+  # Brief tagline for the application
+  tagline:
     en_us: LobeChat
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "3210"
-  # Tips
+  # Developer's information
+  developer: lobehub
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/lobe-chat.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@main/Apps/lobe-chat/thumbnail.png
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-lobe-chat-to-bigbearcasaos/2453?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: LobeChat
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3210"

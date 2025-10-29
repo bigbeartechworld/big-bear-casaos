@@ -2,7 +2,6 @@
 
 # Name of the big-bear-joplin application
 name: big-bear-joplin
-
 # Service definitions for the big-bear-joplin application
 services:
   # Configuration for the Joplin server service
@@ -10,7 +9,6 @@ services:
     container_name: big-bear-joplin # The name of the Docker container for easy reference.
     image: joplin/server:3.4.3 # Docker image to use, specifying version.
     restart: unless-stopped # Policy to automatically restart the container unless manually stopped.
-
     # Environment variables for the Joplin server, configuring database connection and application settings.
     environment:
       - APP_PORT=22300 # Port the Joplin server listens on.
@@ -22,51 +20,46 @@ services:
       - POSTGRES_PORT=5432 # Port for connecting to the PostgreSQL database.
       - POSTGRES_HOST=big-bear-joplin-db # Hostname of the PostgreSQL database container.
       - MAX_TIME_DRIFT=0 # Maximum allowed time drift for synchronization.
-
     # Ports mapping from host to container, for network access to the Joplin server.
     ports:
       - "22300:22300" # Maps port 22300 on the host to port 22300 on the container.
-
     networks:
       - big_bear_joplin_network # Connects the container to a defined network for inter-container communication.
-
     depends_on:
       - big-bear-joplin-db # Specifies the database service as a dependency for the Joplin server.
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - name: APP_PORT
+        - container: APP_PORT
           description:
-            en_us: "Application Port: 22300"
-        - name: APP_BASE_URL
+            en_us: 'Container Variable: APP_PORT'
+        - container: APP_BASE_URL
           description:
-            en_us: "Application Base URL"
-        - name: DB_CLIENT
+            en_us: 'Container Variable: APP_BASE_URL'
+        - container: DB_CLIENT
           description:
-            en_us: "Database Client: pg"
-        - name: POSTGRES_PASSWORD
+            en_us: 'Container Variable: DB_CLIENT'
+        - container: POSTGRES_PASSWORD
           description:
-            en_us: "Postgres Password: 27a1d42a-a15d-43dd-903c-2a73538647fe"
-        - name: POSTGRES_USER
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_USER
           description:
-            en_us: "Postgres User: bigbear"
-        - name: POSTGRES_DATABASE
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_DATABASE
           description:
-            en_us: "Postgres Database: joplin"
-        - name: POSTGRES_PORT
+            en_us: 'Container Variable: POSTGRES_DATABASE'
+        - container: POSTGRES_PORT
           description:
-            en_us: "Postgres Port: 5432"
-        - name: POSTGRES_HOST
+            en_us: 'Container Variable: POSTGRES_PORT'
+        - container: POSTGRES_HOST
           description:
-            en_us: "Postgres Host: big-bear-joplin-db"
-        - name: MAX_TIME_DRIFT
+            en_us: 'Container Variable: POSTGRES_HOST'
+        - container: MAX_TIME_DRIFT
           description:
-            en_us: "Max Time Drift: 0"
+            en_us: 'Container Variable: MAX_TIME_DRIFT'
       ports:
         - container: "22300"
           description:
-            en_us: "Container Port: 22300"
-
+            en_us: 'Container Port: 22300'
   # Configuration for the PostgreSQL database service used by Joplin
   big-bear-joplin-db:
     container_name: big-bear-joplin-db # Name of the database container.
@@ -78,66 +71,57 @@ services:
       - POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe # Database password, matching the Joplin server configuration.
       - POSTGRES_USER=bigbear # Username for the database, intended for CasaOS usage.
       - POSTGRES_DB=joplin # Specifies the database used for storing Joplin data.
-
     networks:
       - big_bear_joplin_network # Ensures database container is on the same network as the Joplin server.
-
     x-casaos:
       envs:
-        - name: POSTGRES_PASSWORD
+        - container: POSTGRES_PASSWORD
           description:
-            en_us: "Postgres Password: 27a1d42a-a15d-43dd-903c-2a73538647fe"
-        - name: POSTGRES_USER
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_USER
           description:
-            en_us: "Postgres User: casaos"
-        - name: POSTGRES_DB
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_DB
           description:
-            en_us: "Postgres Database: joplin"
+            en_us: 'Container Variable: POSTGRES_DB'
       volumes:
-        - container: "/var/lib/postgresql/data"
+        - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Volume: /var/lib/postgresql/data"
-      ports:
-        - container: "5432"
-          description:
-            en_us: "Container Port: 5432"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
 # Network configuration for the services to communicate internally.
 networks:
   big_bear_joplin_network:
     driver: bridge # Uses a bridge network for inter-container communication.
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-joplin
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Note taking and to-do application with synchronisation
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: joplin
-  # Developer's name or identifier
-  developer: "joplin"
-  # Author of this configuration
+  # Developer's information
+  developer: joplin
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/joplin.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: joplin
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "22300"
-  # Tips in English
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-joplin-server-to-bigbearcasaos/800?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: joplin
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "22300"

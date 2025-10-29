@@ -1,6 +1,5 @@
 # big-bear-scrypted configuration
 name: big-bear-scrypted
-
 # Services section that specifies how the different services should be run
 services:
   # This is the main app service for Scrypted
@@ -25,19 +24,18 @@ services:
     labels:
       # Watchtower label for Scrypted
       - "com.centurylinklabs.watchtower.scope=scrypted"
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION
           description:
-            en_us: Scrypted webhook update authorization
+            en_us: 'Container Variable: SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION'
         - container: SCRYPTED_WEBHOOK_UPDATE
           description:
-            en_us: Scrypted webhook update URL
+            en_us: 'Container Variable: SCRYPTED_WEBHOOK_UPDATE'
       volumes:
         - container: /server/volume
           description:
-            en_us: "Container Path: /server/volume"
-
+            en_us: 'Container Path: /server/volume'
   # This service manages automatic updates for Scrypted using Watchtower
   watchtower:
     environment:
@@ -59,51 +57,54 @@ services:
       # Mapping the auto-update port; it should match the one in the URL above
       - 10444:8080
     command: --interval 3600 --cleanup --scope scrypted # Command to run watchtower with specified options
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: WATCHTOWER_HTTP_API_TOKEN
           description:
-            en_us: Watchtower HTTP API token
+            en_us: 'Container Variable: WATCHTOWER_HTTP_API_TOKEN'
         - container: WATCHTOWER_HTTP_API_UPDATE
           description:
-            en_us: Watchtower HTTP API update
+            en_us: 'Container Variable: WATCHTOWER_HTTP_API_UPDATE'
         - container: WATCHTOWER_SCOPE
           description:
-            en_us: Watchtower HTTP API scope
+            en_us: 'Container Variable: WATCHTOWER_SCOPE'
         - container: WATCHTOWER_HTTP_API_PERIODIC_POLLS
           description:
-            en_us: Watchtower HTTP API periodic polls
+            en_us: 'Container Variable: WATCHTOWER_HTTP_API_PERIODIC_POLLS'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-  main: scrypted # Main service of the application
-  description: # Description in different languages
+  # Main service for this application
+  main: scrypted
+  # Detailed description for the application
+  description:
     en_us: Scrypted is an open source video integration platform. Using various Plugins, Scrypted can receive streams from a range of cameras and send them to other platforms (HomeKit, Google Home, Alexa, Home Assistant).
-  tagline: # Short description or tagline in different languages
+  # Brief tagline for the application
+  tagline:
     en_us: Scrypted
-  developer: "koush" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
+  # Developer's information
+  developer: koush
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/scrypted.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Title of the application in English
+  # Title for the application
   title:
     en_us: Scrypted
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "10443"
-  scheme: https

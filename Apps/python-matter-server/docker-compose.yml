@@ -1,78 +1,58 @@
 # big-bear-python-matter-server Configuration
 name: big-bear-python-matter-server
-
 # Defining the services for this configuration
 services:
   app:
     # Docker image used for the service
     image: ghcr.io/home-assistant-libs/python-matter-server:8.1.0
-
     # Container name for the service
     container_name: matter-server
-
     # Restart policy for the container
     restart: unless-stopped
-
     # Required to make mDNS work correctly
     network_mode: host
-
     security_opt:
       # Necessary for accessing Bluetooth via dbus
       - apparmor:unconfined
-
     volumes:
       # Map the data directory from the host to the container
       # Make sure to create an .env file that sets the USERDIR environment variable
       - /DATA/AppData/$AppID/data:/data/
-
       # Map the dbus directory from the host to the container in read-only mode
       - /run/dbus:/run/dbus:ro
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
-        - container: /data
+        - container: /data/
           description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /data/'
         - container: /run/dbus
           description:
-            en_us: "Container Path: /run/dbus"
-
-# CasaOS specific configuration
+            en_us: 'Container Path: /run/dbus'
 x-casaos:
-  # Architectures supported by this service
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-
-  # Main service for this configuration
+  # Main service for this application
   main: app
-
-  # Description of the project in English
+  # Detailed description for the application
   description:
     en_us: This project implements a Matter Controller Server over WebSockets using the official Matter (formerly CHIP) SDK as a base and provides both a server and client implementation. The goal of this project is primary to have Matter support in Home Assistant but its universal approach makes it suitable to be used in other projects too.
-
-  # Short tagline for the project
+  # Brief tagline for the application
   tagline:
     en_us: Python Matter Server
-
-  # Developer information (currently empty)
+  # Developer's information
   developer: ""
-
-  # Author information
+  # Author of this particular configuration
   author: BigBearTechWorld
-
-  # Icon URL for the project
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/python-matter-server/logo.png
-
-  # Thumbnail for the project (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/python-matter-server/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-
-  # Title for the project in English
+  # Title for the application
   title:
     en_us: Python Matter Server
-
-  # Category information for the project
+  # Category under which the application falls
   category: BigBearCasaOS
-
-  # Port mapping for the service
+  # Default port mapping for the application
   port_map: "5080"

@@ -2,7 +2,6 @@
 
 # Application Name
 name: big-bear-2fauth
-
 # Services used in the application
 services:
   # The `app` service for the 2fauth application
@@ -24,22 +23,19 @@ services:
     # Environment variables for the service
     environment:
       - APP_URL=http://[CHANGE_TO_LAN_IP]:8000
-    # CasaOS specific configuration for the app service
     x-casaos:
       envs:
-        - name: APP_URL
+        - container: APP_URL
           description:
-            en_us: "Application URL"
+            en_us: 'Container Variable: APP_URL'
       volumes:
         - container: /2fauth
           description:
-            en_us: "Container Path: /2fauth"
+            en_us: 'Container Path: /2fauth'
       ports:
         - container: "8000"
           description:
-            en_us: "Container Port: 8000"
-
-# CasaOS global application configuration
+            en_us: 'Container Port: 8000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
@@ -54,7 +50,7 @@ x-casaos:
   tagline:
     en_us: A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
   # Developer's information
-  developer: "bubka"
+  developer: bubka
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application

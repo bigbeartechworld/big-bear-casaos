@@ -1,93 +1,90 @@
 # big-bear-ntfy application configuration
 name: big-bear-ntfy
-
 # Services associated with the big-bear-ntfy application
 services:
   # Main application service configuration
   app:
     # Docker image to be used for the service
     image: binwiederhier/ntfy:v2.14.0
-
     # Command to run inside the container
     command:
       - serve
-
     # Environment variables for the service
     environment:
       - TZ=UTC
-
     # Port configurations for the service
     ports:
       - target: 80 # Container port
         published: "7200" # Host port
         protocol: tcp # Protocol type
-
     # Restart policy for the service
     restart: unless-stopped
-
     # Volumes to be mounted inside the container
     volumes:
       - type: bind
-        source: /DATA/AppData/$AppID/cache
+        source: ntfysh_cache
         target: /var/cache/ntfy
       - type: bind
-        source: /DATA/AppData/$AppID/config
+        source: ntfysh_config
         target: /etc/ntfy
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       volumes:
-        - container: /var/cache/ntfy
+        - container: ' bind'
           description:
-            en_us: "Container Path: /var/cache/ntfy"
-        - container: /etc/ntfy
+            en_us: 'Container Path:  bind'
+        - container: ' ntfysh_cache'
           description:
-            en_us: "Container Path: /etc/ntfy"
+            en_us: 'Container Path:  ntfysh_cache'
+        - container: ' /var/cache/ntfy'
+          description:
+            en_us: 'Container Path:  /var/cache/ntfy'
+        - container: ' bind'
+          description:
+            en_us: 'Container Path:  bind'
+        - container: ' ntfysh_config'
+          description:
+            en_us: 'Container Path:  ntfysh_config'
+        - container: ' /etc/ntfy'
+          description:
+            en_us: 'Container Path:  /etc/ntfy'
       ports:
-        - container: "80"
+        - container: ' 80 # Container port'
           description:
-            en_us: "Container Port: 80"
-
-# CasaOS specific configuration
+            en_us: 'Container Port:  80 # Container port'
+        - null
+        - container: ' tcp # Protocol type'
+          description:
+            en_us: 'Container Port:  tcp # Protocol type'
 x-casaos:
-  # Supported architectures for the service
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm
+    - armv7
     - arm64
-
-  # Main service name for CasaOS
+  # Main service for this application
   main: app
-
-  # Description of the application in English
+  # Detailed description for the application
   description:
     en_us: ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
-
-  # Short tagline or slogan of the application in English
+  # Brief tagline for the application
   tagline:
     en_us: A simple HTTP-based pub-sub notification service
-
-  # Developer of the application (currently empty)
+  # Developer's information
   developer: ""
-
-  # Author name
+  # Author of this particular configuration
   author: BigBearTechWorld
-
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ntfy.png
-
-  # Thumbnail or screenshot URL for the application
+  # Thumbnail image for the application (if any)
   thumbnail: https://ntfy.sh/_next/static/media/screenshot-web-3.de6f19af.png
-
-  # Title of the application in English
+  # Title for the application
   title:
     en_us: Ntfy.sh
-
-  # Category of the application
+  # Category under which the application falls
   category: BigBearCasaOS
-
-  # Default port mapping for CasaOS
+  # Default port mapping for the application
   port_map: "7200"
