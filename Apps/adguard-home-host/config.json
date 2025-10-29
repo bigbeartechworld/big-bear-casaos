@@ -1,8 +1,7 @@
 {
   "id": "adguard-home-host",
-  "version": "0.107.68",
+  "version": "v0.107.68",
   "image": "adguard/adguardhome",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

@@ -2,7 +2,6 @@
 
 # Name of the big-bear-healthchecks application
 name: big-bear-healthchecks
-
 # Service definitions for the big-bear-healthchecks application
 services:
   # Service name: big-bear-healthchecks
@@ -10,13 +9,10 @@ services:
   big-bear-healthchecks:
     # Name of the container
     container_name: big-bear-healthchecks
-
     # Image to be used for the container
     image: linuxserver/healthchecks:3.11.20250828
-
     # Container restart policy
     restart: unless-stopped
-
     environment:
       - PUID=1000
       - PGID=1000
@@ -40,124 +36,119 @@ services:
       - RP_ID= #optional
       - SECRET_KEY="b2ea4094-c950-4890-b85f-301d8a777af2" #optional
       - SITE_LOGO_URL= #optional
-
     # Volumes to be mounted to the container
     volumes:
       - /DATA/AppData/$AppID/config:/config
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8000 of the host to port 8000 of the container
       - "8000:8000"
       # Mapping port 2525 of the host to port 2525 of the container
       - "2525:2525"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: PUID
           description:
-            en_us: Process UID
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: Process GID
+            en_us: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
         - container: SITE_ROOT
           description:
-            en_us: Site root
+            en_us: 'Container Variable: SITE_ROOT'
         - container: SITE_NAME
           description:
-            en_us: Site name
+            en_us: 'Container Variable: SITE_NAME'
         - container: SUPERUSER_EMAIL
           description:
-            en_us: Superuser email
+            en_us: 'Container Variable: SUPERUSER_EMAIL'
         - container: SUPERUSER_PASSWORD
           description:
-            en_us: Superuser password
+            en_us: 'Container Variable: SUPERUSER_PASSWORD'
         - container: ALLOWED_HOSTS
           description:
-            en_us: Allowed hosts
+            en_us: 'Container Variable: ALLOWED_HOSTS'
         - container: APPRISE_ENABLED
           description:
-            en_us: Apprise enabled
+            en_us: 'Container Variable: APPRISE_ENABLED'
         - container: CSRF_TRUSTED_ORIGINS
           description:
-            en_us: CSRF trusted origins
+            en_us: 'Container Variable: CSRF_TRUSTED_ORIGINS'
         - container: DEBUG
           description:
-            en_us: Debug
+            en_us: 'Container Variable: DEBUG'
         - container: DEFAULT_FROM_EMAIL
           description:
-            en_us: Default from email
+            en_us: 'Container Variable: DEFAULT_FROM_EMAIL'
         - container: EMAIL_HOST
           description:
-            en_us: Email host
+            en_us: 'Container Variable: EMAIL_HOST'
         - container: EMAIL_PORT
           description:
-            en_us: Email port
+            en_us: 'Container Variable: EMAIL_PORT'
         - container: EMAIL_HOST_USER
           description:
-            en_us: Email host user
+            en_us: 'Container Variable: EMAIL_HOST_USER'
         - container: EMAIL_HOST_PASSWORD
           description:
-            en_us: Email host password
+            en_us: 'Container Variable: EMAIL_HOST_PASSWORD'
         - container: EMAIL_USE_TLS
           description:
-            en_us: Email use TLS
+            en_us: 'Container Variable: EMAIL_USE_TLS'
         - container: INTEGRATIONS_ALLOW_PRIVATE_IPS
           description:
-            en_us: Integrations allow private IPs
+            en_us: 'Container Variable: INTEGRATIONS_ALLOW_PRIVATE_IPS'
         - container: PING_EMAIL_DOMAIN
           description:
-            en_us: Ping email domain
+            en_us: 'Container Variable: PING_EMAIL_DOMAIN'
         - container: RP_ID
           description:
-            en_us: RP ID
+            en_us: 'Container Variable: RP_ID'
         - container: SECRET_KEY
           description:
-            en_us: Secret key
+            en_us: 'Container Variable: SECRET_KEY'
         - container: SITE_LOGO_URL
           description:
-            en_us: Site logo URL
+            en_us: 'Container Variable: SITE_LOGO_URL'
       volumes:
         - container: /config
           description:
-            en_us: "Container Path: /config"
+            en_us: 'Container Path: /config'
       ports:
         - container: "8000"
           description:
-            en_us: "Container Port: 8000"
+            en_us: 'Container Port: 8000'
         - container: "2525"
           description:
-            en_us: "Container Port: 2525"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 2525'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-healthchecks
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Healthchecks
-  # Developer's name or identifier
-  developer: "linuxserver"
-  # Author of this configuration
+  # Developer's information
+  developer: linuxserver
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/healthchecks.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Healthchecks
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8000"

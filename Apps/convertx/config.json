@@ -1,8 +1,7 @@
 {
   "id": "convertx",
-  "version": "0.15.1",
+  "version": "v0.15.1",
   "image": "ghcr.io/c4illin/convertx",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

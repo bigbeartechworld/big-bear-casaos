@@ -1,8 +1,7 @@
 {
   "id": "tailscale",
-  "version": "1.88.4",
+  "version": "v1.88.4",
   "image": "tailscale/tailscale",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

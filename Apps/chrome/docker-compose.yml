@@ -1,5 +1,4 @@
 name: big-bear-chrome # Name of the CasaOS application
-
 services:
   chrome:
     container_name: big-bear-chrome # Name of the Docker container
@@ -10,39 +9,54 @@ services:
       - VNC_PW=casaos # Set the VNC password to 'casaos'
       - LAUNCH_URL=https://community.bigbeartechworld.com/ # Set the default URL to Big Bear Tech World
     shm_size: 512m # Allocate 512 MB of shared memory
-
     volumes:
       - /DATA/AppData/$AppID/Downloads:/home/kasm-user/Downloads # Mount the host directory to the container's Downloads directory
-
-    x-casaos: # CasaOS specific configuration for the brave service
+    x-casaos:
       envs:
         - container: VNC_PW
           description:
-            en_us: VNC Password # Description for the VNC password environment variable
+            en_us: 'Container Variable: VNC_PW'
         - container: LAUNCH_URL
           description:
-            en_us: Launch URL # Description for the launch URL environment variable
-
-# Global CasaOS specific configuration
+            en_us: 'Container Variable: LAUNCH_URL'
+      volumes:
+        - container: /home/kasm-user/Downloads
+          description:
+            en_us: 'Container Path: /home/kasm-user/Downloads'
+      ports:
+        - container: "6901"
+          description:
+            en_us: 'Container Port: 6901'
 x-casaos:
-  architectures: # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: chrome # Specifies the main service of the application
+  # Main service for this application
+  main: chrome
+  # Detailed description for the application
   description:
-    en_us: This Image contains a browser-accessible version of chrome. # Description in English
+    en_us: This Image contains a browser-accessible version of chrome.
+  # Brief tagline for the application
   tagline:
-    en_us: chrome # Short description or tagline in English
-  developer: "kasmweb" # Developer's name or identifier (currently empty)
-  author: BigBearTechWorld # Author of this Docker Compose configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/google-chrome.png # Icon URL for the application
-  thumbnail: "" # Thumbnail image URL
-  title:
-    en_us: chrome # Title in English
-  category: BigBearCasaOS # Category of the application
-  port_map: "6902" # Port mapping information for the service
-  scheme: https # Scheme for the service
+    en_us: chrome
+  # Developer's information
+  developer: kasmweb
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/google-chrome.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Username: kasm_user
+  # Title for the application
+  title:
+    en_us: chrome
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "6902"

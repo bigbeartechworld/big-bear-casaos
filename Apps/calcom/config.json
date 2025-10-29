@@ -1,8 +1,7 @@
 {
   "id": "calcom",
-  "version": "5.8.2",
+  "version": "v5.8.2",
   "image": "calcom/cal.com",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

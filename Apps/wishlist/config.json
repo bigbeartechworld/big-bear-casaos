@@ -1,8 +1,7 @@
 {
   "id": "wishlist",
-  "version": "0.51.1",
+  "version": "v0.51.1",
   "image": "ghcr.io/cmintey/wishlist",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }
