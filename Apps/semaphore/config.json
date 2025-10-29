@@ -1,8 +1,7 @@
 {
   "id": "semaphore",
-  "version": "2.16.34",
+  "version": "v2.16.34",
   "image": "semaphoreui/semaphore",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

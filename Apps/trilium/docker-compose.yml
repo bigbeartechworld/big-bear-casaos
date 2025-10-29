@@ -2,7 +2,6 @@
 
 # Name of the big-bear-trilium application
 name: big-bear-trilium
-
 # Service definitions for the big-bear-trilium application
 services:
   # Service name: app
@@ -10,63 +9,59 @@ services:
   app:
     # Name of the container
     container_name: big-bear-trilium
-
     # Image to be used for the container
     image: triliumnext/trilium:v0.99.3
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - TRILIUM_DATA_DIR=/home/node/trilium-data
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/$AppID/data directory to /home/node/trilium-data inside the container
       - /DATA/AppData/$AppID/data:/home/node/trilium-data
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 8080 of the container
       - "8080:8080"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: TRILIUM_DATA_DIR
+          description:
+            en_us: 'Container Variable: TRILIUM_DATA_DIR'
       volumes:
         - container: /home/node/trilium-data
           description:
-            en_us: "Container Path: /home/node/trilium-data"
+            en_us: 'Container Path: /home/node/trilium-data'
       ports:
         - container: "8080"
           description:
-            en_us: "Exposed port for the server"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Build your personal knowledge base with Trilium Notes
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Build your personal knowledge base with Trilium Notes
-  # Developer's name or identifier
-  developer: "TriliumNext"
-  # Author of this configuration
+  # Developer's information
+  developer: TriliumNext
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/trilium-notes.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Trilium
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"

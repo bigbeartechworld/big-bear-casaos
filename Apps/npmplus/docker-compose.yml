@@ -2,7 +2,6 @@
 
 # Name of the big-bear-npmplus application
 name: big-bear-npmplus
-
 # Service definitions for the big-bear-npmplus application
 services:
   # Service name: big-bear-npmplus
@@ -10,60 +9,52 @@ services:
   big-bear-npmplus:
     # Name of the container
     container_name: big-bear-npmplus
-
     # Image to be used for the container
     image: zoeyvid/npmplus:449
-
     # Container restart policy
     restart: unless-stopped
-
     # Network mode for the container
     network_mode: host
-
     environment:
       - "TZ=America/Chicago" # Required for the container to function properly
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/$AppID/data directory to /data inside the container
       - "/DATA/AppData/$AppID/data:/data"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - container: TZ # TZ environment variable
-          description: # Description for the TZ environment variable
-            en_us: Timezone # Description for the TZ environment variable
-      volumes: # Volume mappings for the service
-        - container: /data # Volume mapping for the /data directory
-          description: # Description for the volume
-            en_us: "Container Path: /data" # Description for the volume
-
-# CasaOS specific configuration
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+      volumes:
+        - container: /data
+          description:
+            en_us: 'Container Path: /data'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-npmplus
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Docker container for managing Nginx proxy hosts with a simple, powerful interface
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: NPMPlus
-  # Developer's name or identifier
-  developer: "zoeyvid"
-  # Author of this configuration
+  # Developer's information
+  developer: zoeyvid
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nginx-proxy-manager.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: NPMPlus
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "81"

@@ -1,8 +1,7 @@
 {
   "id": "jlesage-handbrake",
-  "version": "25.10.1",
+  "version": "v25.10.1",
   "image": "jlesage/handbrake",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }
