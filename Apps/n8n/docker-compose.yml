@@ -24,24 +24,34 @@ services:
     depends_on:
       db-n8n:
         condition: service_healthy # Ensure DB is healthy before starting app
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        # Environment variables for CasaOS UI
         - container: DB_TYPE
           description:
-            en_us: "Database type: postgresdb"
-        # More environment variable descriptions...
+            en_us: 'Container Variable: DB_TYPE'
+        - container: DB_POSTGRESDB_DATABASE
+          description:
+            en_us: 'Container Variable: DB_POSTGRESDB_DATABASE'
+        - container: DB_POSTGRESDB_HOST
+          description:
+            en_us: 'Container Variable: DB_POSTGRESDB_HOST'
+        - container: DB_POSTGRESDB_PORT
+          description:
+            en_us: 'Container Variable: DB_POSTGRESDB_PORT'
+        - container: DB_POSTGRESDB_USER
+          description:
+            en_us: 'Container Variable: DB_POSTGRESDB_USER'
+        - container: DB_POSTGRESDB_PASSWORD
+          description:
+            en_us: 'Container Variable: DB_POSTGRESDB_PASSWORD'
       volumes:
-        # Volume mapping descriptions for CasaOS UI
         - container: /home/node/.n8n
           description:
-            en_us: "Container Path: /home/node/.n8n"
+            en_us: 'Container Path: /home/node/.n8n'
       ports:
-        # Port configuration descriptions for CasaOS UI
         - container: "5678"
           description:
-            en_us: "Container Port: 5678"
-
+            en_us: 'Container Port: 5678'
   # Database service configuration
   db-n8n:
     container_name: db-n8n # Name of the database container
@@ -61,46 +71,46 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        # Environment variables for CasaOS UI
         - container: POSTGRES_PASSWORD
           description:
-            en_us: "Database password: bigbearcasaos"
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: "Database user: bigbearcasaos"
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: "Database type: postgresdb"
-        # More environment variable descriptions...
+            en_us: 'Container Variable: POSTGRES_DB'
       volumes:
-        # Volume mapping descriptions for CasaOS UI
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: 'Container Path: /var/lib/postgresql/data'
         - container: /docker-entrypoint-initdb.d/init-data.sh
           description:
-            en_us: "Container Path: /docker-entrypoint-initdb.d/init-data.sh"
-
-# CasaOS specific top-level configuration
+            en_us: 'Container Path: /docker-entrypoint-initdb.d/init-data.sh'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: app # Main service of the application
+  # Main service for this application
+  main: app
+  # Detailed description for the application
   description:
-    en_us: Free and open fair-code licensed node based Workflow Automation Tool. # Description in English
+    en_us: Free and open fair-code licensed node based Workflow Automation Tool.
+  # Brief tagline for the application
   tagline:
-    en_us: Workflow automation tool # Short description or tagline in English
-  developer: "n8n" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/n8n.png # Icon URL
-  thumbnail: "" # Thumbnail image URL (empty if not available)
-  title:
-    en_us: n8n # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "5678" # Port mapping information
+    en_us: Workflow automation tool
+  # Developer's information
+  developer: n8n
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/n8n.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
   tips:
     before_install:
       en_us: |
@@ -109,3 +119,10 @@ x-casaos:
         ```
         bash -c "$(wget -qLO - https://raw.githubusercontent.com/bigbeartechworld/big-bear-scripts/master/generate-n8n-init-data/run.sh)"
         ```
+  # Title for the application
+  title:
+    en_us: n8n
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "5678"

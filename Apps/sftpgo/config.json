@@ -1,8 +1,7 @@
 {
   "id": "sftpgo",
-  "version": "2.7",
+  "version": "v2.7",
   "image": "drakkan/sftpgo",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

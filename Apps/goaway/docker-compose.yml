@@ -2,7 +2,6 @@
 
 # Application Name
 name: big-bear-goaway
-
 # Services used in the application
 services:
   # The `big-bear-goaway` service for the goaway application
@@ -27,26 +26,21 @@ services:
     cap_add:
       - NET_BIND_SERVICE
       - NET_RAW
-    # CasaOS specific configuration for the app service
     x-casaos:
       volumes:
         - container: /app/config
           description:
-            en_us: "Container Path: /app/config"
+            en_us: 'Container Path: /app/config'
       ports:
         - container: "53"
           description:
-            en_us: "Container Port: 53 (DNS)"
-          protocol: udp
+            en_us: 'Container Port: 53'
         - container: "53"
           description:
-            en_us: "Container Port: 53 (DNS)"
-          protocol: tcp
+            en_us: 'Container Port: 53'
         - container: "8080"
           description:
-            en_us: "Container Port: 8080 (Web Dashboard)"
-
-# CasaOS global application configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
@@ -61,13 +55,19 @@ x-casaos:
   tagline:
     en_us: Lightweight DNS sinkhole for blocking ads and trackers
   # Developer's information
-  developer: "pommee"
+  developer: pommee
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/goaway.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |
+        Visit the community post for setup instructions and community support:
+        https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085
   # Title for the application
   title:
     en_us: GoAway
@@ -75,9 +75,3 @@ x-casaos:
   category: BigBearCasaOS
   # Default port mapping for the application
   port_map: "8080"
-  # This is shown before installing
-  tips:
-    before_install:
-      en_us: |
-        Visit the community post for setup instructions and community support:
-        https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085

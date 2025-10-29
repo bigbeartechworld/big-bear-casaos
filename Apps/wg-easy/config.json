@@ -1,8 +1,7 @@
 {
   "id": "wg-easy",
-  "version": "14",
+  "version": "15",
   "image": "ghcr.io/wg-easy/wg-easy",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

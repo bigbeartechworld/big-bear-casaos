@@ -1,8 +1,7 @@
 {
   "id": "libretranslate",
-  "version": "1.7.3",
+  "version": "v1.7.3",
   "image": "libretranslate/libretranslate",
   "youtube": "https://youtu.be/VJ5DrsuJ3oA",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

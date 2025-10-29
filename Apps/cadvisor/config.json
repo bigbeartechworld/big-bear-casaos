@@ -1,8 +1,7 @@
 {
   "id": "cadvisor",
-  "version": "0.52.1",
+  "version": "v0.52.1",
   "image": "gcr.io/cadvisor/cadvisor",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

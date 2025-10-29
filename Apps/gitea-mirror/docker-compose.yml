@@ -5,7 +5,6 @@
 
 # Name of the big-bear-gitea-mirror application
 name: big-bear-gitea-mirror
-
 # Service definitions for the big-bear-gitea-mirror application
 services:
   # Service name: big-bear-gitea-mirror
@@ -13,23 +12,18 @@ services:
   big-bear-gitea-mirror:
     # Name of the container
     container_name: big-bear-gitea-mirror
-
     # Image to be used for the container
     image: ghcr.io/raylabshq/gitea-mirror:v3.8.10
-
     # Container restart policy
     restart: unless-stopped
-
     # Ports mapping between host and container
     ports:
       # Mapping port 4321 of the host to port 4321 of the container
       - "4321:4321"
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local data directory to the container
       - /DATA/AppData/$AppID/data:/app/data
-
     # Environment variables for the container
     environment:
       - NODE_ENV=production
@@ -44,90 +38,79 @@ services:
       # - GITEA_URL=your-gitea-url
       # - GITEA_TOKEN=your-gitea-token
       # - GITEA_USERNAME=your-gitea-username
-
     # Health check configuration
     healthcheck:
-      test:
-        [
-          "CMD",
-          "wget",
-          "--no-verbose",
-          "--tries=3",
-          "--spider",
-          "http://localhost:4321/api/health",
-        ]
+      test: ["CMD", "wget", "--no-verbose", "--tries=3", "--spider", "http://localhost:4321/api/health"]
       interval: 30s
       timeout: 10s
       retries: 5
       start_period: 30s
-
-    # CasaOS specific configuration for this service
     x-casaos:
       envs:
         - container: NODE_ENV
           description:
-            en_us: "Node Environment: production"
+            en_us: 'Container Variable: NODE_ENV'
+        - container: DATABASE_URL
+          description:
+            en_us: 'Container Variable: DATABASE_URL'
         - container: HOST
           description:
-            en_us: "Host Interface: 0.0.0.0"
+            en_us: 'Container Variable: HOST'
         - container: PORT
           description:
-            en_us: "Application Port: 4321"
+            en_us: 'Container Variable: PORT'
         - container: BETTER_AUTH_URL
           description:
-            en_us: "Better Auth URL for authentication"
+            en_us: 'Container Variable: BETTER_AUTH_URL'
         - container: BETTER_AUTH_SECRET
           description:
-            en_us: "Secret key for Better Auth authentication (change in production)"
+            en_us: 'Container Variable: BETTER_AUTH_SECRET'
       volumes:
         - container: /app/data
           description:
-            en_us: "Container Path: /app/data"
+            en_us: 'Container Path: /app/data'
       ports:
         - container: "4321"
           description:
-            en_us: "Container Port: 4321"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 4321'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-gitea-mirror
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It features a user-friendly interface to sync public, private, or starred GitHub repos, mirror entire organizations with structure preservation, and optionally mirror issues and labels. The application includes smart filtering, detailed logs, and scheduled automatic mirroring.
-  tagline:
-    # Short description or tagline in English
-    en_us: Mirror GitHub repositories to Gitea
-  # Developer's name or identifier
-  developer: "raylabs.io"
-  # Author of this configuration
-  author: "RayLabs HQ"
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/logo-new.png
-  # Thumbnail image
-  thumbnail: "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/1.png"
-  title:
-    # Title in English
-    en_us: Gitea Mirror
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "4321"
-  # Screenshot links
+  # Screenshot links for the application
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/1.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/2.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/3.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/4.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/5.png
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/gitea-mirror/6.png
-
-  # Tips for installation
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/3.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/4.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/5.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/6.png
+  # Brief tagline for the application
+  tagline:
+    en_us: Mirror GitHub repositories to Gitea
+  # Developer's information
+  developer: raylabs.io
+  # Author of this particular configuration
+  author: RayLabs HQ
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/logo-new.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/1.png
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Gitea Mirror
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "4321"

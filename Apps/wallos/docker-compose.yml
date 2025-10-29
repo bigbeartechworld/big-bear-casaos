@@ -2,7 +2,6 @@
 
 # Name of the big-bear-wallos application
 name: big-bear-wallos
-
 # Service definitions for the big-bear-wallos application
 services:
   # Service name: big-bear-wallos
@@ -10,78 +9,69 @@ services:
   big-bear-wallos:
     # Name of the container
     container_name: big-bear-wallos
-
     # Image to be used for the container
     image: bellamy/wallos:4.5.0
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables for the container
     environment:
       TZ: "UTC" # Sets the time zone inside the container to Coordinated Universal Time (UTC).
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local /DATA/AppData/big-bear-wallos/db directory to /var/www/html/db inside the container
       - /DATA/AppData/$AppID/db:/var/www/html/db
-
       # Mounting the local /DATA/AppData/big-bear-wallos/logos directory to /var/www/html/images/uploads/logos inside the container
       - /DATA/AppData/$AppID/logos:/var/www/html/images/uploads/logos
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8282 of the host to port 80 of the container
       - "8282:80"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: "Container Environment Variable: TZ"
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /var/www/html/db
           description:
-            en_us: "Container Path: /var/www/html/db"
+            en_us: 'Container Path: /var/www/html/db'
         - container: /var/www/html/images/uploads/logos
           description:
-            en_us: "Container Path: /var/www/html/images/uploads/logos"
+            en_us: 'Container Path: /var/www/html/images/uploads/logos'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 80'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-wallos
+  # Detailed description for the application
   description:
-    # Description in English
-    en_us: "Wallos: Open-Source Personal Subscription Tracker"
+    en_us: 'Wallos: Open-Source Personal Subscription Tracker'
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Wallos
-  # Developer's name or identifier
-  developer: "bellamy"
-  # Author of this configuration
+  # Developer's information
+  developer: bellamy
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallos.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: Wallos
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8282"
-  # Tips
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-wallos-to-bigbearcasaos/2139?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: Wallos
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8282"

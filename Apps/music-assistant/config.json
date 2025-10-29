@@ -3,6 +3,5 @@
   "version": "2.6.1",
   "image": "ghcr.io/music-assistant/server",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }
