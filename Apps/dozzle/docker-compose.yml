@@ -2,7 +2,6 @@
 
 # Name of the big-bear-dozzle application
 name: big-bear-dozzle
-
 # Service definitions for the big-bear-dozzle application
 services:
   # Service name: app
@@ -10,59 +9,52 @@ services:
   app:
     # Name of the container
     container_name: big-bear-dozzle
-
     # Image to be used for the container
     image: amir20/dozzle:v8.14.6
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting docker.sock to allow docker management via the container
       - /var/run/docker.sock:/var/run/docker.sock
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8888 of the host to port 8080 of the container
       - "8888:8080"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Dozzle is a real-time log viewer for docker containers.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Dozzle is a real-time log viewer for docker containers.
-  # Developer's name or identifier
-  developer: "amir20"
-  # Author of this configuration
+  # Developer's information
+  developer: amir20
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/dozzle/logo.png
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/dozzle/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Dozzle
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8888"

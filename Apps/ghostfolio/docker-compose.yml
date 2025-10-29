@@ -2,7 +2,6 @@
 
 # Name of the Ghostfolio application stack
 name: big-bear-ghostfolio
-
 # Definitions of services within the Ghostfolio application stack
 services:
   # Service definition for the Ghostfolio application
@@ -24,62 +23,57 @@ services:
       REDIS_HOST: big-bear-ghostfolio-redis
       REDIS_PASSWORD: casaosredispassword
       REDIS_PORT: "6379"
-
     ports:
       - "3333:3333" # Maps port 3333 on the host to port 3333 on the container
-
     depends_on: # Dependency definitions ensuring database and Redis are ready
       big-bear-ghostfolio-db:
         condition: service_healthy
       big-bear-ghostfolio-redis:
         condition: service_healthy
-
     networks:
       - big_bear_ghostfolio_network # Connects the service to the defined network
-
-    x-casaos: # CasaOS-specific configuration for easier management
+    x-casaos:
       envs:
         - container: NODE_ENV
           description:
-            en_us: "Environment: production"
+            en_us: 'Container Variable: NODE_ENV'
         - container: HOST
           description:
-            en_us: "Container Interface: 0.0.0.0"
+            en_us: 'Container Variable: HOST'
         - container: PORT
           description:
-            en_us: "Container Port: 3333"
+            en_us: 'Container Variable: PORT'
         - container: ACCESS_TOKEN_SALT
           description:
-            en_us: "Access Token Salt: 5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4"
+            en_us: 'Container Variable: ACCESS_TOKEN_SALT'
         - container: DATABASE_URL
           description:
-            en_us: "Database URL: postgresql://ghostfolio:casaospassword@big-bear-ghostfolio-db:5432/ghostfolio?sslmode=prefer"
+            en_us: 'Container Variable: DATABASE_URL'
         - container: JWT_SECRET_KEY
           description:
-            en_us: "JWT Secret Key: 534e820d-da30-4dd3-baf9-0511847c478a"
+            en_us: 'Container Variable: JWT_SECRET_KEY'
         - container: POSTGRES_DB
           description:
-            en_us: "Database Type: ghostfolio"
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: "Database User: ghostfolio"
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: "Database Password: casaospassword"
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: REDIS_HOST
           description:
-            en_us: "Redis Host: big-bear-ghostfolio-redis"
+            en_us: 'Container Variable: REDIS_HOST'
         - container: REDIS_PASSWORD
           description:
-            en_us: "Redis Password: casaosredispassword"
+            en_us: 'Container Variable: REDIS_PASSWORD'
         - container: REDIS_PORT
           description:
-            en_us: "Redis Port: 6379"
+            en_us: 'Container Variable: REDIS_PORT'
       ports:
         - container: "3333"
           description:
-            en_us: "Container Port: 3333"
-
+            en_us: 'Container Port: 3333'
   # PostgreSQL database service for Ghostfolio
   big-bear-ghostfolio-db:
     container_name: big-bear-ghostfolio-db
@@ -99,26 +93,24 @@ services:
       - /DATA/AppData/$AppID/data/db:/var/lib/postgresql/data
     networks:
       - big_bear_ghostfolio_network # Connects the service to the defined network
-
-    x-casaos: # CasaOS-specific configurations for database service
+    x-casaos:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: Database type
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: Database user
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
         - container: PGDATA
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: 'Container Variable: PGDATA'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
+            en_us: 'Container Path: /var/lib/postgresql/data'
   # Redis service for Ghostfolio, used for caching and session storage
   big-bear-ghostfolio-redis:
     container_name: big-bear-ghostfolio-redis
@@ -126,6 +118,7 @@ services:
     restart: unless-stopped
     command: >
       --requirepass casaosredispassword
+
     healthcheck: # Health check to ensure Redis service is ready
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -136,37 +129,40 @@ services:
       - /DATA/AppData/$AppID/data/redis:/data
     networks:
       - big_bear_ghostfolio_network # Connects the service to the defined network
-
-    x-casaos: # CasaOS-specific configurations for Redis service
+    x-casaos:
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
-      ports:
-        - container: "6379"
-          description:
-            en_us: "Container Port: 6379"
-
+            en_us: 'Container Path: /data'
 # Network definition for inter-service communication
 networks:
   big_bear_ghostfolio_network:
     driver: bridge # Uses a bridge network for container communication
-
-# CasaOS specific global configuration for the application
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
-    - arm64 # Supported CPU architectures
-  main: big-bear-ghostfolio # Specifies the main service within the application
+    - arm64
+  # Main service for this application
+  main: big-bear-ghostfolio
+  # Detailed description for the application
   description:
-    en_us: Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript 🤍
+    en_us: "Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript \U0001F90D"
+  # Brief tagline for the application
   tagline:
-    en_us: Ghostfolio # Short description or tagline
-  developer: "ghostfolio" # Developer name or identifier
-  author: BigBearTechWorld # Configuration author
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ghostfolio.png # Application icon URL
-  thumbnail: "" # Thumbnail image URL (empty if not available)
+    en_us: Ghostfolio
+  # Developer's information
+  developer: ghostfolio
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ghostfolio.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
   title:
-    en_us: Ghostfolio # Application title in English
-  category: BigBearCasaOS # Application category for organization
-  port_map: "3333" # Port mapping information for external access
+    en_us: Ghostfolio
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3333"

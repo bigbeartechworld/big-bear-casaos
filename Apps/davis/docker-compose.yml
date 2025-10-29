@@ -2,7 +2,6 @@
 
 # Name of the big-bear-davis application
 name: big-bear-davis
-
 # Service definitions for the big-bear-davis application
 services:
   # Service name: big-bear-davis
@@ -10,13 +9,10 @@ services:
   big-bear-davis:
     # Name of the container
     container_name: big-bear-davis
-
     # Image to be used for the container
     image: ghcr.io/tchapi/davis-standalone:5.2.0
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables to be set in the container
     environment:
       - APP_ENV=prod
@@ -35,73 +31,68 @@ services:
       - WEBDAV_HOMES_DIR=
       - INVITE_FROM_ADDRESS=
       - APP_TIMEZONE=UTC
-
     # Ports to be exposed from the container
     ports:
       - 9000:9000
-
     networks:
       - big-bear-davis-network
-
     depends_on:
       - big-bear-davis-mysql
       - big-bear-davis-mailpit
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        - container: "APP_ENV"
+        - container: APP_ENV
           description:
-            en_us: "APP_ENV"
-        - container: "DATABASE_DRIVER"
+            en_us: 'Container Variable: APP_ENV'
+        - container: DATABASE_DRIVER
           description:
-            en_us: "DATABASE_DRIVER"
-        - container: "DATABASE_URL"
+            en_us: 'Container Variable: DATABASE_DRIVER'
+        - container: DATABASE_URL
           description:
-            en_us: "DATABASE_URL"
-        - container: "MAILER_DSN"
+            en_us: 'Container Variable: DATABASE_URL'
+        - container: MAILER_DSN
           description:
-            en_us: "MAILER_DSN"
-        - container: "ADMIN_LOGIN"
+            en_us: 'Container Variable: MAILER_DSN'
+        - container: ADMIN_LOGIN
           description:
-            en_us: "ADMIN_LOGIN"
-        - container: "ADMIN_PASSWORD"
+            en_us: 'Container Variable: ADMIN_LOGIN'
+        - container: ADMIN_PASSWORD
           description:
-            en_us: "ADMIN_PASSWORD"
-        - container: "AUTH_REALM"
+            en_us: 'Container Variable: ADMIN_PASSWORD'
+        - container: AUTH_REALM
           description:
-            en_us: "AUTH_REALM"
-        - container: "AUTH_METHOD"
+            en_us: 'Container Variable: AUTH_REALM'
+        - container: AUTH_METHOD
           description:
-            en_us: "AUTH_METHOD"
-        - container: "CALDAV_ENABLED"
+            en_us: 'Container Variable: AUTH_METHOD'
+        - container: CALDAV_ENABLED
           description:
-            en_us: "CALDAV_ENABLED"
-        - container: "CARDDAV_ENABLED"
+            en_us: 'Container Variable: CALDAV_ENABLED'
+        - container: CARDDAV_ENABLED
           description:
-            en_us: "CARDDAV_ENABLED"
-        - container: "WEBDAV_ENABLED"
+            en_us: 'Container Variable: CARDDAV_ENABLED'
+        - container: WEBDAV_ENABLED
           description:
-            en_us: "WEBDAV_ENABLED"
-        - container: "WEBDAV_TMP_DIR"
+            en_us: 'Container Variable: WEBDAV_ENABLED'
+        - container: WEBDAV_TMP_DIR
           description:
-            en_us: "WEBDAV_TMP_DIR"
-        - container: "WEBDAV_PUBLIC_DIR"
+            en_us: 'Container Variable: WEBDAV_TMP_DIR'
+        - container: WEBDAV_PUBLIC_DIR
           description:
-            en_us: "WEBDAV_PUBLIC_DIR"
-        - container: "WEBDAV_HOMES_DIR"
+            en_us: 'Container Variable: WEBDAV_PUBLIC_DIR'
+        - container: WEBDAV_HOMES_DIR
           description:
-            en_us: "WEBDAV_HOMES_DIR"
-        - container: "INVITE_FROM_ADDRESS"
+            en_us: 'Container Variable: WEBDAV_HOMES_DIR'
+        - container: INVITE_FROM_ADDRESS
           description:
-            en_us: "INVITE_FROM_ADDRESS"
-        - container: "APP_TIMEZONE"
+            en_us: 'Container Variable: INVITE_FROM_ADDRESS'
+        - container: APP_TIMEZONE
           description:
-            en_us: "APP_TIMEZONE"
+            en_us: 'Container Variable: APP_TIMEZONE'
       ports:
         - container: "9000"
           description:
-            en_us: "Container Port: 9000"
-
+            en_us: 'Container Port: 9000'
   # Service name: big-bear-davis-mailpit
   big-bear-davis-mailpit:
     container_name: big-bear-davis-mailpit # Container name for the app service
@@ -116,20 +107,22 @@ services:
       - "1025:1025"
     networks:
       - big-bear-davis-network
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: "Container Path: /data"
+            en_us: 'Container Path: /data'
       ports:
         - container: "8025"
           description:
-            en_us: "Container Port: 8025"
-
+            en_us: 'Container Port: 8025'
+        - container: "1025"
+          description:
+            en_us: 'Container Port: 1025'
   # Service name: big-bear-mysql
   big-bear-davis-mysql:
     container_name: big-bear-davis-mysql
@@ -141,66 +134,59 @@ services:
       - MYSQL_PASSWORD=0c9d2acc-d4f3-423c-8361-86f35cdd3eb2
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
-
     networks:
       - big-bear-davis-network
-
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       retries: 5
       timeout: 5s
-
-    # CasaOS specific configuration
     x-casaos:
       envs:
-        - container: "MYSQL_ROOT_PASSWORD"
+        - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: "MYSQL_ROOT_PASSWORD"
-        - container: "MYSQL_DATABASE"
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+        - container: MYSQL_DATABASE
           description:
-            en_us: "MYSQL_DATABASE"
-        - container: "MYSQL_USER"
+            en_us: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_USER
           description:
-            en_us: "MYSQL_USER"
-        - container: "MYSQL_PASSWORD"
+            en_us: 'Container Variable: MYSQL_USER'
+        - container: MYSQL_PASSWORD
           description:
-            en_us: "MYSQL_PASSWORD"
+            en_us: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "MariaDB Data Volume"
-
+            en_us: 'Container Path: /var/lib/mysql'
 networks:
   big-bear-davis-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-davis
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: A simple, fully translatable admin interface for sabre/dav based on Symfony 5 and Bootstrap 5, initially inspired by Baïkal. Provides user edition, calendar creation and sharing, and address book creation. The interface is simple and straightforward, responsive, and provides a light and a dark mode.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Davis
-  # Developer's name or identifier
-  developer: "tchapi"
-  # Author of this configuration
+  # Developer's information
+  developer: tchapi
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/davis/logo.png
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/davis/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Davis
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "9000"
