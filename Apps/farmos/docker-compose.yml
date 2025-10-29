@@ -2,7 +2,6 @@
 
 # Name of the big-bear-farmos application
 name: big-bear-farmos
-
 # Service definitions for the big-bear-farmos application
 services:
   # Service name: big-bear-farmos
@@ -10,36 +9,29 @@ services:
   big-bear-farmos:
     # Name of the container
     container_name: big-bear-farmos
-
     # Image to be used for the container
     image: farmos/farmos:3.4.5
-
     # Container restart policy
     restart: unless-stopped
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local homarr/configs directory to /app/data/configs inside the container
       - /DATA/AppData/$AppID/sites:/opt/drupal/web/sites
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 80 of the container
       - "8080:80"
-
     networks:
       - big-bear-farmos-network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       volumes:
         - container: /opt/drupal/web/sites
           description:
-            en_us: "Container Path: /opt/drupal/web/sites"
+            en_us: 'Container Path: /opt/drupal/web/sites'
       ports:
-        - container: "8080"
+        - container: "80"
           description:
-            en_us: "Container Port: 8080"
-
+            en_us: 'Container Port: 80'
   # MariaDB database service configuration for FarmOS
   big-bear-farmos-db:
     # Specify the container name
@@ -70,71 +62,68 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-
     # Connect to the FarmOS network
     networks:
       - big-bear-farmos-network
-
-    # CasaOS specific configuration for UI
     x-casaos:
-      # Environment variable descriptions for the UI
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: "Root Password"
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: "Database Name"
+            en_us: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: "Database User"
+            en_us: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: "Database Password"
-      # Volume mount point description for the UI
+            en_us: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
-
+            en_us: 'Container Path: /var/lib/mysql'
+      ports:
+        - container: "3306"
+          description:
+            en_us: 'Container Port: 3306'
 networks:
   big-bear-farmos-network:
     name: big-bear-farmos-network
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-farmos
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: farmOS is a web-based application for farm management, planning, and record keeping. It is developed by a community of volunteers and aims to provide a standard platform for farmers, developers, and researchers to build upon.
-  tagline:
-    # Short description or tagline in English
-    en_us: A web-based farm record keeping application.
-  # Developer's name or identifier
-  developer: "farmOS"
-  # Author of this configuration
-  author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/farmos/logo.jpeg
-  # Thumbnail image (currently empty)
-  thumbnail: ""
+  # Screenshot links for the application
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/farmos/screenshot-1.png
-  title:
-    # Title in English
-    en_us: FarmOS
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "8080"
-  # Installation instructions and documentation
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/farmos/screenshots/screenshot-1.png
+  # Brief tagline for the application
+  tagline:
+    en_us: A web-based farm record keeping application.
+  # Developer's information
+  developer: farmOS
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/farmos/logo.jpeg
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
   tips:
     before_install:
       en_us: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-farmos-to-bigbearcasaos/2334?u=dragonfire1119
+  # Title for the application
+  title:
+    en_us: FarmOS
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"

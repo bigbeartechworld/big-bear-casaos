@@ -2,7 +2,6 @@
 
 # Name of the big-bear-adguard-home-sync application
 name: big-bear-ls-adguard-home-sync
-
 # Service definitions for the big-bear-adguard-home-sync application
 services:
   # Service name: big-bear-ls-adguard-home-sync
@@ -10,13 +9,10 @@ services:
   big-bear-ls-adguard-home-sync:
     # Name of the container
     container_name: big-bear-ls-adguard-home-sync
-
     # Image to be used for the container
     image: linuxserver/adguardhome-sync:0.8.2
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables
     environment:
       - PUID=1000
@@ -32,93 +28,88 @@ services:
       - CRON="0 */2 * * *"
       - RUN_ON_START=true
       - API_PORT=8080
-
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local adguard-home-sync/config directory to /config inside the container
       - /DATA/AppData/$AppID/config:/config
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 8080 of the container
       - "8080:8080"
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: PUID
           description:
-            en_us: "PUID"
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: "PGID"
+            en_us: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: "TZ"
+            en_us: 'Container Variable: TZ'
         - container: LOG_LEVEL
           description:
-            en_us: "LOG_LEVEL"
+            en_us: 'Container Variable: LOG_LEVEL'
         - container: ORIGIN_URL
           description:
-            en_us: "ORIGIN_URL"
+            en_us: 'Container Variable: ORIGIN_URL'
         - container: ORIGIN_USERNAME
           description:
-            en_us: "ORIGIN_USERNAME"
+            en_us: 'Container Variable: ORIGIN_USERNAME'
         - container: ORIGIN_PASSWORD
           description:
-            en_us: "ORIGIN_PASSWORD"
+            en_us: 'Container Variable: ORIGIN_PASSWORD'
         - container: REPLICA_URL
           description:
-            en_us: "REPLICA_URL"
+            en_us: 'Container Variable: REPLICA_URL'
         - container: REPLICA_USERNAME
           description:
-            en_us: "REPLICA_USERNAME"
+            en_us: 'Container Variable: REPLICA_USERNAME'
         - container: REPLICA_PASSWORD
           description:
-            en_us: "REPLICA_PASSWORD"
+            en_us: 'Container Variable: REPLICA_PASSWORD'
         - container: CRON
           description:
-            en_us: "CRON"
+            en_us: 'Container Variable: CRON'
         - container: RUN_ON_START
           description:
-            en_us: "RUN_ON_START"
+            en_us: 'Container Variable: RUN_ON_START'
         - container: API_PORT
           description:
-            en_us: "API_PORT"
+            en_us: 'Container Variable: API_PORT'
       volumes:
         - container: /config
           description:
-            en_us: "Container Path: /config"
+            en_us: 'Container Path: /config'
       ports:
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8080'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-ls-adguard-home-sync
+  # Detailed description for the application
   description:
-    # Description in English
-    en_us: 🛡️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version.
+    en_us: "\U0001F6E1️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version."
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: LS Adguard Home Sync
-  # Developer's name or identifier
-  developer: "bakito"
-  # Author of this configuration
+  # Developer's information
+  developer: bakito
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/adguard-home.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: LS Adguard Home Sync
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"

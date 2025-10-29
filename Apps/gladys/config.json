@@ -1,8 +1,7 @@
 {
   "id": "gladys",
-  "version": "4.64.0",
+  "version": "v4.64.0",
   "image": "gladysassistant/gladys",
   "youtube": "https://youtu.be/l4GPomJMIT0",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

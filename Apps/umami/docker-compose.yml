@@ -1,6 +1,5 @@
 # Name of the application
 name: big-bear-umami
-
 # List of services that this application uses
 services:
   # Main service for the Umami application
@@ -16,22 +15,21 @@ services:
       db:
         condition: service_healthy
     restart: always # Restart policy
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: DATABASE_URL
           description:
-            en_us: Database URL
+            en_us: 'Container Variable: DATABASE_URL'
         - container: DATABASE_TYPE
           description:
-            en_us: Database type
+            en_us: 'Container Variable: DATABASE_TYPE'
         - container: APP_SECRET
           description:
-            en_us: Application secret
+            en_us: 'Container Variable: APP_SECRET'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
+            en_us: 'Container Port: 3000'
   # Database service for the Umami application
   db:
     image: postgres:15-alpine # Docker image for the PostgreSQL database
@@ -47,58 +45,46 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: Database name
+            en_us: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: Database user
+            en_us: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: Database password
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Container Path: /var/lib/postgresql/data"
-
-# CasaOS specific configuration for the application
+            en_us: 'Container Path: /var/lib/postgresql/data'
 x-casaos:
-  # List of architectures that this application supports
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-
-  # Indicates the main service for this application within the services list
+  # Main service for this application
   main: app
-
-  # Provides a detailed description of the application
+  # Detailed description for the application
   description:
     en_us: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
-
-  # Provides a short and catchy tagline for the application
+  # Brief tagline for the application
   tagline:
     en_us: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
-
-  # Name of the developer or organization that developed the application
-  developer: "umami-software"
-
-  # Indicates the person or organization responsible for creating this configuration
+  # Developer's information
+  developer: umami-software
+  # Author of this particular configuration
   author: BigBearTechWorld
-
-  # URL pointing to the icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/umami.png
-
-  # URL pointing to a thumbnail image representing the application
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-
-  # Provides a title for the application
+  # Title for the application
   title:
     en_us: Umami
-
-  # Specifies the category under which the application falls
+  # Category under which the application falls
   category: BigBearCasaOS
-
-  # Specifies the port on which the application is accessible
+  # Default port mapping for the application
   port_map: "3000"

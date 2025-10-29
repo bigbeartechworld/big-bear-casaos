@@ -1,8 +1,7 @@
 {
   "id": "filebrowser",
-  "version": "2.44.2-s6",
+  "version": "v2.44.2-s6",
   "image": "filebrowser/filebrowser",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

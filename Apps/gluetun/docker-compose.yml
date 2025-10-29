@@ -1,16 +1,13 @@
 # Configuration for big-bear-gluetun setup
 name: big-bear-gluetun
-
 # Service definitions for the big-bear-gluetun application
 services:
   # Main Portainer Agent Server service configuration
   gluetun:
     # This configuration is for the 'qmcgaw/gluetun' Docker image, a versatile VPN client in a Docker container.
     image: qmcgaw/gluetun:v3.40.0
-
     # Assign a name to this container instance.
     container_name: gluetun
-
     # Uncomment the following line if you want to allow external containers to connect to this one.
     # For more details, refer to the provided link.
     # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md#external-container-to-gluetun
@@ -18,21 +15,17 @@ services:
     # Grant the container specific capabilities, allowing it to perform actions typically restricted.
     cap_add:
       - NET_ADMIN # This allows the container to perform network operations.
-
     # Map devices from the host to the container.
     devices:
       - /dev/net/tun:/dev/net/tun # Map the TUN device, required for VPNs.
-
     # Expose and map specific ports from the container to the host.
     ports:
       - 8888:8888/tcp # HTTP proxy port mapping.
       - 8388:8388/tcp # Shadowsocks TCP port mapping.
       - 8388:8388/udp # Shadowsocks UDP port mapping.
-
     # Map volumes from the host to the container.
     volumes:
       - /DATA/AppData/$AppID/data:/gluetun # Map the data directory.
-
     # Define environment variables for the container.
     environment:
       # Specify the VPN service provider.
@@ -51,41 +44,70 @@ services:
       # For more details, refer to the provided link.
       # See https://github.com/qdm12/gluetun-wiki/blob/main/setup/servers.md#update-the-vpn-servers-list
       - UPDATER_PERIOD=
-
     x-casaos:
+      envs:
+        - container: VPN_SERVICE_PROVIDER
+          description:
+            en_us: 'Container Variable: VPN_SERVICE_PROVIDER'
+        - container: VPN_TYPE
+          description:
+            en_us: 'Container Variable: VPN_TYPE'
+        - container: OPENVPN_USER
+          description:
+            en_us: 'Container Variable: OPENVPN_USER'
+        - container: OPENVPN_PASSWORD
+          description:
+            en_us: 'Container Variable: OPENVPN_PASSWORD'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: UPDATER_PERIOD
+          description:
+            en_us: 'Container Variable: UPDATER_PERIOD'
+      volumes:
+        - container: /gluetun
+          description:
+            en_us: 'Container Path: /gluetun'
       ports:
         - container: "8888"
           description:
-            en_us: "HTTP Proxy" # Description for the port
+            en_us: 'Container Port: 8888'
         - container: "8388"
           description:
-            en_us: "Shadowsocks" # Description for the port
-      volumes:
-        - container: /dev/net/tun
+            en_us: 'Container Port: 8388'
+        - container: "8388"
           description:
-            en_us: Tun # Description for Tun volume
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 8388'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: gluetun # Main service of the application
-  description: # Description in different languages
+  # Main service for this application
+  main: gluetun
+  # Detailed description for the application
+  description:
     en_us: Lightweight swiss-knife-like VPN client to multiple VPN service providers
-  tagline: # Short description or tagline in different languages
+  # Brief tagline for the application
+  tagline:
     en_us: Gluetun
-  developer: "portainer" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
+  # Developer's information
+  developer: portainer
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/gluetun.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  # Title of the application in English
-  title:
-    en_us: Gluetun
-  # Application category
-  category: BigBearCasaOS
+  # Installation tips
   tips:
     before_install:
       en_us: |
         You will need to configure the providers in the environment variables. See: [BigBearCasaOS Gluetun Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)
+  # Title for the application
+  title:
+    en_us: Gluetun
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: ""

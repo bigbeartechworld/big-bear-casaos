@@ -2,7 +2,6 @@
 
 # Name of the big-bear-monica application
 name: big-bear-monica
-
 # Service definitions for the big-bear-monica application
 services:
   # Service name: big-bear-monica
@@ -10,41 +9,46 @@ services:
   big-bear-monica:
     # Name of the container
     container_name: big-bear-monica
-
     # Image to be used for the container
     image: monica:4.1.2
-
     # Container restart policy
     restart: unless-stopped
-
     environment:
       - APP_KEY=80356f7073c4f7834187b25a9d32cd2a
       - DB_HOST=big-bear-monica-db
       - DB_USERNAME=usermonica
       - DB_PASSWORD=passwordmonica
-
     volumes:
       - /DATA/AppData/$AppID/storage:/var/www/html/storage
-
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 80 of the container
       - "8080:80"
-
     # Networks to be attached to the container
     networks:
       - big_bear_monica_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
+      envs:
+        - container: APP_KEY
+          description:
+            en_us: 'Container Variable: APP_KEY'
+        - container: DB_HOST
+          description:
+            en_us: 'Container Variable: DB_HOST'
+        - container: DB_USERNAME
+          description:
+            en_us: 'Container Variable: DB_USERNAME'
+        - container: DB_PASSWORD
+          description:
+            en_us: 'Container Variable: DB_PASSWORD'
       volumes:
         - container: /var/www/html/storage
           description:
-            en_us: "Container Path: /var/www/html/storage"
+            en_us: 'Container Path: /var/www/html/storage'
       ports:
-        - container: "7575"
+        - container: "80"
           description:
-            en_us: "Container Port: 7575"
-
+            en_us: 'Container Port: 80'
   # Database service for monica
   big-bear-monica-db:
     image: mariadb:10.6.11
@@ -60,60 +64,56 @@ services:
     restart: unless-stopped
     networks:
       - big_bear_monica_network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
         - container: MARIADB_RANDOM_ROOT_PASSWORD
           description:
-            en_us: MariaDB random root password
+            en_us: 'Container Variable: MARIADB_RANDOM_ROOT_PASSWORD'
         - container: MARIADB_DATABASE
           description:
-            en_us: MariaDB database
+            en_us: 'Container Variable: MARIADB_DATABASE'
         - container: MARIADB_USER
           description:
-            en_us: MariaDB user
+            en_us: 'Container Variable: MARIADB_USER'
         - container: MARIADB_PASSWORD
           description:
-            en_us: MariaDB password
+            en_us: 'Container Variable: MARIADB_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
-
+            en_us: 'Container Path: /var/lib/mysql'
 # Networks used by the application
 networks:
   big_bear_monica_network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-monica
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Monica is an open-source web application to organize and record your interactions with your loved ones. We call it a PRM, or Personal Relationship Management. Think of it as a CRM (a popular tool used by sales teams in the corporate world) for your friends or family.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: A Personal Relationship Management tool to help you document your social life.
-  # Developer's name or identifier
-  developer: "monica"
-  # Author of this configuration
+  # Developer's information
+  developer: monica
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/monica.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Monica
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "8080"

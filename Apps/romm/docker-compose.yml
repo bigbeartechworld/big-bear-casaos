@@ -2,7 +2,6 @@
 
 # Name of the big-bear-romm application
 name: big-bear-romm
-
 # Service definitions for the big-bear-romm application
 services:
   # Service name: big-bear-romm
@@ -44,84 +43,82 @@ services:
     restart: "unless-stopped"
     networks:
       - big-bear-romm-network # Use the big-bear-romm-network network
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
-        # Environment variables for CasaOS
         - container: DB_HOST
           description:
-            en_us: "Database Host: romm_db"
+            en_us: 'Container Variable: DB_HOST'
         - container: DB_PORT
           description:
-            en_us: "Database Port: 3306"
+            en_us: 'Container Variable: DB_PORT'
         - container: DB_USER
           description:
-            en_us: "Database User: romm-user"
+            en_us: 'Container Variable: DB_USER'
         - container: DB_NAME
           description:
-            en_us: "Database Name: romm"
+            en_us: 'Container Variable: DB_NAME'
         - container: DB_PASSWD
           description:
-            en_us: "Database Password: casaos"
-        - container: IGDB_CLIENT_ID
-          description:
-            en_us: "IGDB Client ID (Optional): Generate an ID and SECRET in IGDB"
-        - container: IGDB_CLIENT_SECRET
-          description:
-            en_us: "IGDB Client Secret (Optional): https://api-docs.igdb.com/#account-creation"
-        - container: MOBYGAMES_API_KEY
-          description:
-            en_us: "MobyGames API Key (Optional): Generate at https://www.mobygames.com/info/api/"
-        - container: STEAMGRIDDB_API_KEY
-          description:
-            en_us: "SteamGridDB API Key (Optional): See https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-        - container: SCREENSCRAPER_USER
-          description:
-            en_us: "ScreenScraper User (Optional): ScreenScraper username"
-        - container: SCREENSCRAPER_PASSWORD
-          description:
-            en_us: "ScreenScraper Password (Optional): ScreenScraper password"
-        - container: RETROACHIEVEMENTS_API_KEY
-          description:
-            en_us: "RetroAchievements API Key (Optional): RetroAchievements API key"
-        - container: HASHEOUS_API_ENABLED
-          description:
-            en_us: "Hasheous API Enabled (Optional): Enable Hasheous API integration"
+            en_us: 'Container Variable: DB_PASSWD'
         - container: ROMM_AUTH_SECRET_KEY
           description:
-            en_us: "Authentication Secret Key: <secret key>"
+            en_us: 'Container Variable: ROMM_AUTH_SECRET_KEY'
+        - container: IGDB_CLIENT_ID
+          description:
+            en_us: 'Container Variable: IGDB_CLIENT_ID'
+        - container: IGDB_CLIENT_SECRET
+          description:
+            en_us: 'Container Variable: IGDB_CLIENT_SECRET'
+        - container: MOBYGAMES_API_KEY
+          description:
+            en_us: 'Container Variable: MOBYGAMES_API_KEY'
+        - container: STEAMGRIDDB_API_KEY
+          description:
+            en_us: 'Container Variable: STEAMGRIDDB_API_KEY'
+        - container: SCREENSCRAPER_USER
+          description:
+            en_us: 'Container Variable: SCREENSCRAPER_USER'
+        - container: SCREENSCRAPER_PASSWORD
+          description:
+            en_us: 'Container Variable: SCREENSCRAPER_PASSWORD'
+        - container: RETROACHIEVEMENTS_API_KEY
+          description:
+            en_us: 'Container Variable: RETROACHIEVEMENTS_API_KEY'
+        - container: HASHEOUS_API_ENABLED
+          description:
+            en_us: 'Container Variable: HASHEOUS_API_ENABLED'
         - container: ENABLE_RESCAN_ON_FILESYSTEM_CHANGE
           description:
-            en_us: "Rescan On Filesystem Change: true"
+            en_us: 'Container Variable: ENABLE_RESCAN_ON_FILESYSTEM_CHANGE'
         - container: ENABLE_SCHEDULED_RESCAN
           description:
-            en_us: "Scheduled Rescan: true"
+            en_us: 'Container Variable: ENABLE_SCHEDULED_RESCAN'
         - container: ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB
           description:
-            en_us: "Scheduled Update Switch TitleDB: true"
+            en_us: 'Container Variable: ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB'
       volumes:
-        # Volume mappings for CasaOS
         - container: /romm/resources
           description:
-            en_us: "Container Path: /romm/resources"
+            en_us: 'Container Path: /romm/resources'
+        - container: /redis-data
+          description:
+            en_us: 'Container Path: /redis-data'
         - container: /romm/library
           description:
-            en_us: "Container Path: /romm/library"
+            en_us: 'Container Path: /romm/library'
         - container: /romm/assets
           description:
-            en_us: "Container Path: /romm/assets"
+            en_us: 'Container Path: /romm/assets'
         - container: /romm/config
           description:
-            en_us: "Container Path: /romm/config"
+            en_us: 'Container Path: /romm/config'
         - container: /romm/logs
           description:
-            en_us: "Container Path: /romm/logs"
+            en_us: 'Container Path: /romm/logs'
       ports:
-        # Port mappings for CasaOS
         - container: "8080"
           description:
-            en_us: "Container Port: 8080"
-
+            en_us: 'Container Port: 8080'
   # MariaDB service for rommdb
   big-bear-rommdb:
     image: mariadb:latest
@@ -138,68 +135,54 @@ services:
     restart: "unless-stopped"
     networks:
       - big-bear-romm-network # Use the big-bear-romm-network network
-
     x-casaos:
       envs:
-        # Environment variables for CasaOS
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: "MySQL root password: casaos"
+            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: "MySQL database: romm"
+            en_us: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: "MySQL user: romm-user"
+            en_us: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: "MySQL password: casaos"
+            en_us: 'Container Variable: MYSQL_PASSWORD'
       volumes:
-        # Volume mappings for CasaOS
         - container: /var/lib/mysql
           description:
-            en_us: "Container Path: /var/lib/mysql"
+            en_us: 'Container Path: /var/lib/mysql'
       ports:
-        # Port mappings for CasaOS
         - container: "3306"
           description:
-            en_us: "Container Port: 3306"
-
+            en_us: 'Container Port: 3306'
 # Network definitions for the big-bear-romm application
 networks:
   big-bear-romm-network:
     driver: bridge
-
-# CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-romm
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: ROM manager for organizing, enriching, and playing retro games, with support for 400+ platforms.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: RomM
-  # Developer's name or identifier
-  developer: "RomM Team"
-  # Author of this configuration
+  # Developer's information
+  developer: RomM Team
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/romm.png
-  # Thumbnail image (currently empty)
+  # Thumbnail image for the application (if any)
   thumbnail: ""
-  title:
-    # Title in English
-    en_us: RomM
-  # Application category
-  category: BigBearCasaOS
-  # Port mapping information
-  port_map: "1080"
-  # This is shown before installing
+  # Installation tips
   tips:
     before_install:
       en_us: |
@@ -210,3 +193,10 @@ x-casaos:
         ```
 
         After running this script, you need to restart the container.
+  # Title for the application
+  title:
+    en_us: RomM
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "1080"

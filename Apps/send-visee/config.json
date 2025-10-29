@@ -1,8 +1,7 @@
 {
   "id": "send-visee",
-  "version": "3.4.27",
+  "version": "v3.4.27",
   "image": "registry.gitlab.com/timvisee/send",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }
