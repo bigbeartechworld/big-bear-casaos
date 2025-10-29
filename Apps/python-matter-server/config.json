@@ -3,6 +3,5 @@
   "version": "8.1.0",
   "image": "ghcr.io/home-assistant-libs/python-matter-server",
   "youtube": "",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

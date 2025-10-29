@@ -1,8 +1,7 @@
 {
   "id": "speedtest-tracker",
-  "version": "1.6.9",
+  "version": "1.6.8",
   "image": "linuxserver/speedtest-tracker",
   "youtube": "https://youtu.be/TLjS8xNNwis",
-  "docs_link": "",
-  "big_bear_cosmos_youtube": ""
+  "docs_link": ""
 }

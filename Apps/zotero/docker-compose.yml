@@ -2,7 +2,6 @@
 
 # Name of the big-bear-zotero application
 name: big-bear-zotero
-
 # Service definitions for the big-bear-zotero application
 services:
   # Service name: big-bear-zotero
@@ -10,74 +9,65 @@ services:
   big-bear-zotero:
     # Name of the container
     container_name: big-bear-zotero
-
     # Image to be used for the container
     image: linuxserver/zotero:7.0.20240809
-
     # Container restart policy
     restart: unless-stopped
-
     # Environment variables for the container
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-
     # Ports mapping between host and container
     ports:
       - 3000:3000
       - 3001:3001
-
     security_opt:
       - seccomp:unconfined #optional
-
     shm_size: "1gb" #optional
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: PUID
           description:
-            en_us: Process UID
+            en_us: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: Process GID
+            en_us: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: Timezone
+            en_us: 'Container Variable: TZ'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
+            en_us: 'Container Port: 3000'
         - container: "3001"
           description:
-            en_us: "Container Port: 3001"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 3001'
 x-casaos:
-  # Supported CPU architectures for the application
+  # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
+  # Main service for this application
   main: big-bear-zotero
+  # Detailed description for the application
   description:
-    # Description in English
     en_us: Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.
+  # Brief tagline for the application
   tagline:
-    # Short description or tagline in English
     en_us: Zotero
-  # Developer's name or identifier
-  developer: "linuxserver"
-  # Author of this configuration
+  # Developer's information
+  developer: linuxserver
+  # Author of this particular configuration
   author: BigBearTechWorld
-  # Icon for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos/Apps/zotero/logo.png
-  # Thumbnail image (currently empty)
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/zotero/logo.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
-    # Title in English
     en_us: Zotero
-  # Application category
+  # Category under which the application falls
   category: BigBearCasaOS
-  # Port mapping information
+  # Default port mapping for the application
   port_map: "3000"

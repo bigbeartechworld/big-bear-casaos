@@ -1,62 +1,65 @@
 # Configuration for big-bear-baserow setup
 name: big-bear-baserow
-
 # Service definitions for the big-bear-baserow application
 services:
   # Service name: app
   app:
     # Set the name of the Docker container.
     container_name: baserow
-
     # Use the specified Docker image for Baserow and specify its version.
     image: baserow/baserow:1.35.3
-
     # Set environment variables for Baserow.
     environment:
       # Set the your CASA OS IP for Baserow to use.
       BASEROW_PUBLIC_URL: "http://[YOUR_CASAOS_IP]:7350"
-
     # Map ports from the host machine to the Baserow container.
     ports:
       - "7350:80" # Map port 7300 on the host to port 80 in the container.
       - "7351:443" # Map port 7301 on the host to port 443 in the container.
-
     # Define volumes to persist data between container restarts.
     volumes:
       - /DATA/AppData/$AppID/data:/baserow/data
-
-    x-casaos: # CasaOS specific configuration
+    x-casaos:
       envs:
         - container: BASEROW_PUBLIC_URL
           description:
-            en_us: Baserow Public URL
+            en_us: 'Container Variable: BASEROW_PUBLIC_URL'
       volumes:
         - container: /baserow/data
           description:
-            en_us: "Container Path: /baserow/data"
+            en_us: 'Container Path: /baserow/data'
       ports:
         - container: "80"
           description:
-            en_us: "Container Port: 80"
+            en_us: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: "Container Port: 443"
-
-# CasaOS specific configuration
+            en_us: 'Container Port: 443'
 x-casaos:
-  architectures: # Supported CPU architectures
+  # Supported CPU architectures for this application
+  architectures:
     - amd64
     - arm64
-  main: app # Main service of the application
+  # Main service for this application
+  main: app
+  # Detailed description for the application
   description:
-    en_us: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser. # Description in English
+    en_us: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.
+  # Brief tagline for the application
   tagline:
-    en_us: Baserow # Short description or tagline in English
-  developer: "" # Developer's name or identifier
-  author: BigBearTechWorld # Author of this configuration
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/baserow.png # Icon for the application
-  thumbnail: "https://github.com/bram2w/baserow/raw/master/docs/assets/screenshot.png" # Thumbnail image (currently empty)
+    en_us: Baserow
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/baserow.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://github.com/bram2w/baserow/raw/master/docs/assets/screenshot.png
+  # Title for the application
   title:
-    en_us: Baserow # Title in English
-  category: BigBearCasaOS # Application category
-  port_map: "7350" # Port mapping information
+    en_us: Baserow
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "7350"

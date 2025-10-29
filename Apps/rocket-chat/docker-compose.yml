@@ -3,7 +3,6 @@
 # Application Name
 # This sets the name of the Rocket.Chat application.
 name: big-bear-rocket-chat
-
 # Service definitions
 # Defining the services required for the Rocket.Chat application.
 services:
@@ -13,49 +12,42 @@ services:
     # Container name
     # This names the Docker container for easy reference.
     container_name: big-bear-rocket-chat
-
     # Docker Image
     # Specifies the Docker image to use for Rocket.Chat.
     image: rocket.chat:6.13.1
-
     # Restart Policy
     # Determines how the container should be handled if it stops.
     restart: unless-stopped
-
     # Environment variables
     # These variables are used by Rocket.Chat for its configuration.
     environment:
       MONGO_OPLOG_URL: mongodb://db:27017/local
       ROOT_URL: http://localhost:3000
-
     # Port Mappings
     # Maps ports from the container to the host system.
     ports:
       - "3000:3000" # HostPort:ContainerPort
-
     # Dependencies
     # Specifies other services that this service depends on.
     depends_on:
       db:
         condition: service_healthy
-
     # Networks
     # Assigns the app service to a network.
     networks:
       - rocketchat-net
-
-    # CasaOS specific configurations
-    # These settings are specific to the CasaOS system.
     x-casaos:
       envs:
         - container: MONGO_OPLOG_URL
           description:
-            en_us: "Database URL: mongodb://db:27017/local"
+            en_us: 'Container Variable: MONGO_OPLOG_URL'
+        - container: ROOT_URL
+          description:
+            en_us: 'Container Variable: ROOT_URL'
       ports:
         - container: "3000"
           description:
-            en_us: "Container Port: 3000"
-
+            en_us: 'Container Port: 3000'
   # Service: db
   # This service runs the MongoDB database used by Rocket.Chat.
   db:
@@ -64,7 +56,6 @@ services:
     volumes:
       # Persistent storage for MongoDB
       - /DATA/AppData/$AppID/db:/data/db
-
     # Health Check
     # Checks the health of the MongoDB service.
     healthcheck:
@@ -73,38 +64,43 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-
     # Networks
     networks:
       - rocketchat-net
-
-    # CasaOS specific configurations for volumes
     x-casaos:
       volumes:
         - container: /data/db
           description:
-            en_us: "Container Path: /data/db"
-
+            en_us: 'Container Path: /data/db'
 # Networks
 # Defines the network configurations used by the services.
 networks:
   rocketchat-net:
     driver: bridge
-
-# CasaOS specific global configurations
 x-casaos:
+  # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Main service for this application
   main: app
+  # Detailed description for the application
   description:
     en_us: Rocket.Chat is an open-source fully customizable communications platform [...]
+  # Brief tagline for the application
   tagline:
     en_us: The communications platform that puts data protection first.
-  developer: "rocket.chat"
+  # Developer's information
+  developer: rocket.chat
+  # Author of this particular configuration
   author: BigBearTechWorld
+  # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/rocket-chat.png
+  # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Title for the application
   title:
     en_us: Rocket.Chat
+  # Category under which the application falls
   category: BigBearCasaOS
+  # Default port mapping for the application
   port_map: "3000"
