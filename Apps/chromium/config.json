@@ -1,7 +1,7 @@
 {
   "id": "chromium",
-  "version": "1.15.0-rolling",
-  "image": "kasmweb/chromium",
+  "version": "version-6ae43f81",
+  "image": "lscr.io/linuxserver/chromium",
   "youtube": "https://youtu.be/ziy4c4n7KnU",
   "docs_link": ""
 }

@@ -2,31 +2,43 @@ name: big-bear-chromium # Name of the CasaOS application
 services:
   chromium:
     container_name: big-bear-chromium # Name of the Docker container
-    image: kasmweb/chromium:1.15.0-rolling # Docker image for the chromium browser
+    image: linuxserver/chromium:version-6ae43f81 # Docker image for the chromium browser
     ports:
-      - "6902:6901" # Expose port 6901 for VNC access
+      - "3000:3000" # Expose port 3000 for HTTP VNC access
+      - "3001:3001" # Expose port 3001 for HTTPS VNC access
     environment:
-      - VNC_PW=casaos # Set the VNC password to 'casaos'
-      - LAUNCH_URL=https://community.bigbeartechworld.com/ # Set the default URL to Big Bear Tech World
-    shm_size: 512m # Allocate 512 MB of shared memory
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - CHROME_CLI=https://community.bigbeartechworld.com/ # Set the default URL to Big Bear Tech World
+    shm_size: 1gb # Allocate 1 GB of shared memory
     volumes:
-      - /DATA/AppData/$AppID/Downloads:/home/kasm-user/Downloads # Mount the host directory to the container's Downloads directory
+      - /DATA/AppData/$AppID/config:/config # Mount the config directory for persistent data
     x-casaos:
       envs:
-        - container: VNC_PW
+        - container: PUID
           description:
-            en_us: 'Container Variable: VNC_PW'
-        - container: LAUNCH_URL
+            en_us: 'Container Variable: PUID'
+        - container: PGID
           description:
-            en_us: 'Container Variable: LAUNCH_URL'
+            en_us: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: CHROME_CLI
+          description:
+            en_us: 'Container Variable: CHROME_CLI'
       volumes:
-        - container: /home/kasm-user/Downloads
+        - container: /config
           description:
-            en_us: 'Container Path: /home/kasm-user/Downloads'
+            en_us: 'Container Path: /config'
       ports:
-        - container: "6901"
+        - container: "3000"
           description:
-            en_us: 'Container Port: 6901'
+            en_us: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_us: 'Container Port: 3001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
@@ -41,7 +53,7 @@ x-casaos:
   tagline:
     en_us: chromium
   # Developer's information
-  developer: kasmweb
+  developer: linuxserver
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
@@ -52,11 +64,11 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        Username: kasm_user
+        Access the browser at http://your-server:3000 or https://your-server:3001
   # Title for the application
   title:
     en_us: chromium
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
-  port_map: "6902"
+  port_map: "3000"
