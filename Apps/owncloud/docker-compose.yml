@@ -29,7 +29,7 @@ services:
       - OWNCLOUD_REDIS_HOST=big-bear-owncloud-redis
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/data directory to /mnt/data inside the container
+      # Mounting the local owncloud_data directory to /mnt/data inside the container
       - /DATA/AppData/$AppID/data:/mnt/data
     # Ports mapping between host and container
     ports:

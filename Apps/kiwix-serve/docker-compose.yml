@@ -17,7 +17,7 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/zim directory to /data inside the container
+      # Mounting the local kiwix-serve_zim directory to /data inside the container
       - /DATA/AppData/$AppID/zim:/data
     # Ports mapping between host and container
     ports:

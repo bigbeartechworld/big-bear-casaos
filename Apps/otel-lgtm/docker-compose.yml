@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/data directory to /data inside the container
+      # Mounting the local otel-lgtm_data directory to /data inside the container
       - type: bind
         source: otel-lgtm_data
         target: /data
@@ -43,9 +43,9 @@ services:
       - big-bear-otel-lgtm
     x-casaos:
       volumes:
-        - container: '# Mounting the local /DATA/AppData/$AppID/data directory to /data inside the container'
+        - container: '# Mounting the local otel-lgtm_data directory to /data inside the container'
           description:
-            en_us: 'Container Path: # Mounting the local /DATA/AppData/$AppID/data directory to /data inside the container'
+            en_us: 'Container Path: # Mounting the local otel-lgtm_data directory to /data inside the container'
         - container: ' bind'
           description:
             en_us: 'Container Path:  bind'
