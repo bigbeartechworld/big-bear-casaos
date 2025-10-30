@@ -13,7 +13,7 @@ services:
     image: piero24/gemdigest:1.0
     # Mount local directory to the container's /home/dev directory
     volumes:
-      - /DATA/AppData/$AppID/extra/configs:/gem_digest_bot/extra_configs
+      - /DATA/AppData/$AppID/GemDigest/extra/configs:/gem_digest_bot/extra_configs
     # Environment variables with default values
     environment:
       TELEGRAM_API_KEY: TELEGRAM_API_KEY

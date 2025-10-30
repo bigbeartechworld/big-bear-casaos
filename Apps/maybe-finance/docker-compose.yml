@@ -22,7 +22,7 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local maybe/pp-storage directory to /rails/storage inside the container
-      - /DATA/AppData/$AppID/app-storage:/rails/storage
+      - /DATA/AppData/$AppID/MaybeFinance/app-storage:/rails/storage
     # Ports mapping between host and container
     ports:
       # Mapping port 4000 of the host to port 3000 of the container
@@ -109,7 +109,7 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local maybe/postgres-data directory to /var/lib/postgresql/data inside the container
-      - /DATA/AppData/$AppID/postgres-data:/var/lib/postgresql/data
+      - /DATA/AppData/$AppID/MaybeFinance/postgres-data:/var/lib/postgresql/data
     # Environment variables
     environment:
       # Name of the database to create
@@ -159,7 +159,7 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local maybe/redis-data directory to /data inside the container
-      - /DATA/AppData/$AppID/redis-data:/data
+      - /DATA/AppData/$AppID/MaybeFinance/redis-data:/data
     # Health check configuration for the Redis service
     healthcheck:
       # Command to check if Redis is ready and responds with exactly "PONG"

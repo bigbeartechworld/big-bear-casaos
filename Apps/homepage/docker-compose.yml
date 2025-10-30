@@ -18,7 +18,7 @@ services:
     volumes:
       # Maps local config directory to the config directory inside the container
       # Ensure the local config directory is created before starting the container
-      - /DATA/AppData/$AppID/config:/app/config
+      - /DATA/AppData/$AppID/Homepage/config:/app/config
       # Maps the Docker socket from the host to the container
       # This allows the container to communicate with the Docker daemon on the host
       - /var/run/docker.sock:/var/run/docker.sock

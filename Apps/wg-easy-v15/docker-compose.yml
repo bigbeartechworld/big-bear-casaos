@@ -37,7 +37,7 @@ services:
       - net.ipv6.conf.default.forwarding=1
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/data directory to /etc/wireguard inside the container
+      # Mounting the local wg-easy-v15_data directory to /etc/wireguard inside the container
       - /DATA/AppData/$AppID/data:/etc/wireguard
     # Ports mapping between host and container
     ports:
