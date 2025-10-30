@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/data directory to /app/data inside the container
+      # Mounting the local nexterm_data directory to /app/data inside the container
       - /DATA/AppData/$AppID/data:/app/data
     # Ports mapping between host and container
     ports:

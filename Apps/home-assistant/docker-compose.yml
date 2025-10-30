@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/config directory to /config inside the container
+      # Mounting the local home-assistant_config directory to /config inside the container
       - /DATA/AppData/$AppID/config:/config
       # Mounting the local /etc/localtime to /etc/localtime inside the container
       - /etc/localtime:/etc/localtime:ro

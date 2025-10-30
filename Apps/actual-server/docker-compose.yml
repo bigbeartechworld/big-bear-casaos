@@ -7,7 +7,7 @@ services:
     image: actualbudget/actual-server:25.10.0 # The Docker image to use (latest version of actual-server)
     container_name: actual-server # Name of the container instance
     volumes:
-      - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
+      - /DATA/AppData/$AppID:/data # Mounting the data volume
     ports:
       - "5006:5006" # Expose actual-server's port 5006 on the host's port 5006
     restart: unless-stopped # Policy to restart the container if it stops unexpectedly
