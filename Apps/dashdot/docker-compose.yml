@@ -1,22 +1,17 @@
-# Configuration for big-bear-dashdot setup
-
-# Name of the big-bear-dashdot application
 name: big-bear-dashdot
-# Service definitions for the dashdot application
 services:
-  # Service definition for the main application
   app:
-    image: mauricenino/dashdot:6.2.0 # Image to be used for this service
+    image: mauricenino/dashdot:6.2.0
     ports:
-      - "3001:3001" # Port 3001 on the host is mapped to port 3001 in the container
+      - "3001:3001"
     volumes:
-      - /DATA/AppData/$AppID:/mnt/host# Mounting the local dashdot directory to /mnt/host inside the container
-    privileged: true # Runs the container in privileged mode, allowing it access to host devices
+      - /DATA/AppData/$AppID:/mnt/host
+    privileged: true
     x-casaos:
       volumes:
-        - container: /mnt/host# Mounting the local dashdot directory to /mnt/host inside the container
+        - container: /mnt/host
           description:
-            en_us: 'Container Path: /mnt/host# Mounting the local dashdot directory to /mnt/host inside the container'
+            en_us: 'Container Path: /mnt/host'
       ports:
         - container: "3001"
           description:

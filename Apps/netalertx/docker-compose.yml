@@ -17,9 +17,9 @@ services:
     privileged: true
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/config directory to /app/config inside the container
+      # Mounting the local netalertx_config directory to /app/config inside the container
       - /DATA/AppData/$AppID/config:/app/config
-      # Mounting the local /DATA/AppData/$AppID/db directory to /app/db inside the container
+      # Mounting the local netalertx_db directory to /app/db inside the container
       - /DATA/AppData/$AppID/db:/app/db
     # Environment variables
     environment:

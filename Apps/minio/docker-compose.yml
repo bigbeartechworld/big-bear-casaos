@@ -1,21 +1,22 @@
-# Configuration for big-bear-minio setup
 name: big-bear-minio
-# Service definitions for the big-bear-minio application
 services:
-  # Service name: app
   app:
-    image: bigbeartechworld/big-bear-minio:RELEASE.2025-10-15T17-29-55Z # The Docker image to use (latest version of minio)
-    container_name: big-bear-minio # Name of the container instance
+    image: bigbeartechworld/big-bear-minio:RELEASE.2025-10-15T17-29-55Z
+    container_name: big-bear-minio
     volumes:
-      - /DATA/AppData/$AppID:/data # Mounting the project directory inside the container
+      - /DATA/AppData/$AppID:/data
     ports:
-      - "9010:9000" # Expose minio's port 9000 on the host's port 9010
-      - "9011:9001" # Expose minio web console's port 9001 on the host's port 9011
+      - "9010:9000"
+      - "9011:9001"
     environment:
-      MINIO_ROOT_PASSWORD: "minioadmin"
-      MINIO_ROOT_USER: "minioadmin"
-    restart: unless-stopped # Policy to restart the container if it stops unexpectedly
-    command: ["server", "--console-address", ":9001", "/data"]
+      MINIO_ROOT_PASSWORD: minioadmin
+      MINIO_ROOT_USER: minioadmin
+    restart: unless-stopped
+    command:
+      - server
+      - "--console-address"
+      - ":9001"
+      - /data
     x-casaos:
       envs:
         - container: MINIO_ROOT_PASSWORD

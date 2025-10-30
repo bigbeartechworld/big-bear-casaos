@@ -19,7 +19,7 @@ services:
       - "TZ=America/Chicago" # Required for the container to function properly
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/data directory to /data inside the container
+      # Mounting the local npmplus_data directory to /data inside the container
       - "/DATA/AppData/$AppID/data:/data"
     x-casaos:
       envs:

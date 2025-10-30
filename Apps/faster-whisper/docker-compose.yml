@@ -23,7 +23,7 @@ services:
       - WHISPER_LANG=en #optional
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local /DATA/AppData/$AppID/config directory to /config inside the container
+      # Mounting the local faster-whisper_config directory to /config inside the container
       - /DATA/AppData/$AppID/config:/config
     # Ports mapping between host and container
     ports:
