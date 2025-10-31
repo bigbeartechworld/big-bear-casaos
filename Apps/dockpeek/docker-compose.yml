@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-dockpeek
     # Image to be used for the container
-    image: ghcr.io/dockpeek/dockpeek:v1.7.0
+    image: ghcr.io/dockpeek/dockpeek:v1.7.1
     # Environment variables
     environment:
       # Secret key for the application (change this)
