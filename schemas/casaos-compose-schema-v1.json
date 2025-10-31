@@ -1,0 +1,463 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/bigbeartechworld/big-bear-casaos/schemas/casaos-compose-schema-v1.json",
+  "title": "CasaOS Docker Compose Schema",
+  "description": "JSON Schema for validating CasaOS docker-compose.yml files with x-casaos extensions",
+  "type": "object",
+  "required": ["name", "services", "x-casaos"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Application name (should start with big-bear-)",
+      "pattern": "^big-bear-[a-z0-9-]+$"
+    },
+    "services": {
+      "type": "object",
+      "description": "Docker Compose services",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-zA-Z0-9_-]+$": {
+          "type": "object",
+          "required": ["image"],
+          "properties": {
+            "container_name": {
+              "type": "string",
+              "description": "Container name"
+            },
+            "image": {
+              "type": "string",
+              "description": "Docker image with optional tag"
+            },
+            "restart": {
+              "type": "string",
+              "enum": ["no", "always", "on-failure", "unless-stopped"],
+              "description": "Restart policy"
+            },
+            "network_mode": {
+              "type": "string",
+              "description": "Network mode (bridge, host, none, etc.)"
+            },
+            "ports": {
+              "type": "array",
+              "description": "Port mappings",
+              "items": {
+                "type": "string",
+                "pattern": "^[0-9]+:[0-9]+(/tcp|/udp)?$"
+              }
+            },
+            "volumes": {
+              "type": "array",
+              "description": "Volume mappings",
+              "items": {
+                "type": "string"
+              }
+            },
+            "environment": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "description": "Environment variables as array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "object",
+                  "description": "Environment variables as object",
+                  "additionalProperties": {
+                    "type": ["string", "number", "boolean"]
+                  }
+                }
+              ]
+            },
+            "command": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ],
+              "description": "Command to run"
+            },
+            "depends_on": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                      "condition": {
+                        "type": "string",
+                        "enum": ["service_started", "service_healthy", "service_completed_successfully"]
+                      }
+                    }
+                  }
+                }
+              ],
+              "description": "Service dependencies"
+            },
+            "networks": {
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              ],
+              "description": "Networks to connect to"
+            },
+            "labels": {
+              "type": "object",
+              "description": "Container labels",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "privileged": {
+              "type": "boolean",
+              "description": "Run container in privileged mode"
+            },
+            "cap_add": {
+              "type": "array",
+              "description": "Add Linux capabilities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "cap_drop": {
+              "type": "array",
+              "description": "Drop Linux capabilities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "security_opt": {
+              "type": "array",
+              "description": "Security options",
+              "items": {
+                "type": "string"
+              }
+            },
+            "healthcheck": {
+              "type": "object",
+              "description": "Health check configuration",
+              "properties": {
+                "test": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "interval": {
+                  "type": "string"
+                },
+                "timeout": {
+                  "type": "string"
+                },
+                "retries": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "start_period": {
+                  "type": "string"
+                }
+              }
+            },
+            "expose": {
+              "type": "array",
+              "description": "Expose ports without publishing",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              }
+            },
+            "x-casaos": {
+              "$ref": "#/definitions/service-x-casaos"
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    },
+    "networks": {
+      "type": "object",
+      "description": "Network definitions",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "external": {
+            "type": "boolean"
+          },
+          "driver": {
+            "type": "string"
+          },
+          "driver_opts": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "volumes": {
+      "type": "object",
+      "description": "Named volume definitions (should be converted to bind mounts for CasaOS)",
+      "additionalProperties": {
+        "type": ["object", "null"]
+      }
+    },
+    "x-casaos": {
+      "$ref": "#/definitions/global-x-casaos"
+    }
+  },
+  "definitions": {
+    "global-x-casaos": {
+      "type": "object",
+      "description": "Global CasaOS metadata",
+      "required": ["architectures", "main", "description", "tagline", "developer", "author", "icon", "title", "category", "port_map"],
+      "properties": {
+        "architectures": {
+          "type": "array",
+          "description": "Supported CPU architectures",
+          "items": {
+            "type": "string",
+            "enum": ["amd64", "arm64", "armv7", "armv6", "386", "ppc64le", "s390x"]
+          },
+          "minItems": 1
+        },
+        "main": {
+          "type": "string",
+          "description": "Main service name"
+        },
+        "description": {
+          "type": "object",
+          "description": "Detailed description in multiple languages",
+          "required": ["en_us"],
+          "properties": {
+            "en_us": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "screenshot_link": {
+          "type": "array",
+          "description": "Screenshot URLs",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "tagline": {
+          "type": "object",
+          "description": "Brief tagline in multiple languages",
+          "required": ["en_us"],
+          "properties": {
+            "en_us": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "developer": {
+          "type": "string",
+          "description": "Developer name",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "description": "Author of this configuration",
+          "minLength": 1
+        },
+        "icon": {
+          "type": "string",
+          "description": "Icon URL",
+          "format": "uri"
+        },
+        "thumbnail": {
+          "type": "string",
+          "description": "Thumbnail URL (can be empty string)"
+        },
+        "tips": {
+          "type": "object",
+          "description": "Installation tips",
+          "properties": {
+            "before_install": {
+              "type": "object",
+              "description": "Tips to show before installation",
+              "properties": {
+                "en_us": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "title": {
+          "type": "object",
+          "description": "Application title in multiple languages",
+          "required": ["en_us"],
+          "properties": {
+            "en_us": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "type": "string",
+          "description": "Application category",
+          "minLength": 1
+        },
+        "port_map": {
+          "type": "string",
+          "description": "Default port mapping as string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "service-x-casaos": {
+      "type": "object",
+      "description": "Service-level CasaOS metadata",
+      "properties": {
+        "envs": {
+          "type": "array",
+          "description": "Environment variable descriptions",
+          "items": {
+            "type": "object",
+            "required": ["container", "description"],
+            "properties": {
+              "container": {
+                "type": "string",
+                "description": "Environment variable name"
+              },
+              "description": {
+                "type": "object",
+                "required": ["en_us"],
+                "properties": {
+                  "en_us": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "volumes": {
+          "type": "array",
+          "description": "Volume descriptions",
+          "items": {
+            "type": "object",
+            "required": ["container", "description"],
+            "properties": {
+              "container": {
+                "type": "string",
+                "description": "Container path"
+              },
+              "description": {
+                "type": "object",
+                "required": ["en_us"],
+                "properties": {
+                  "en_us": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "ports": {
+          "type": "array",
+          "description": "Port descriptions",
+          "items": {
+            "type": "object",
+            "required": ["container", "description"],
+            "properties": {
+              "container": {
+                "type": "string",
+                "description": "Container port number"
+              },
+              "description": {
+                "type": "object",
+                "required": ["en_us"],
+                "properties": {
+                  "en_us": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "protocol": {
+                "type": "string",
+                "enum": ["tcp", "udp"],
+                "description": "Port protocol"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
