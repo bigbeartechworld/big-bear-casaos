@@ -31,7 +31,6 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-    - armv7
   # Main service for this application
   main: big-bear-matterbridge
   # Detailed description for the application

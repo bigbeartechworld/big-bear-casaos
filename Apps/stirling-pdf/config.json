@@ -1,7 +1,7 @@
 {
   "id": "stirling-pdf",
   "version": "1.5.0",
-  "image": "stirlingpdf/stirlingpdf",
+  "image": "stirlingtools/stirling-pdf",
   "youtube": "https://youtu.be/ZoPSPDvOPdo",
   "docs_link": "https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3"
 }

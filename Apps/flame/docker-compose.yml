@@ -73,7 +73,6 @@ x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
-    - armv7
     - arm64
   # Main service for this application
   main: app
@@ -84,7 +83,7 @@ x-casaos:
   tagline:
     en_us: Flame is a self-hosted startpage for your server. Manage your apps and bookmarks effortlessly with built-in editors.
   # Developer's information
-  developer: ""
+  developer: pawelmalak
   # Author of this particular configuration
   author: BigBearCommunity
   # Icon URL for the application

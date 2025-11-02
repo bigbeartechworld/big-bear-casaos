@@ -1,7 +1,7 @@
 {
   "id": "appsmith",
   "version": "v1.73.1",
-  "image": "appsmith/appsmith-ee",
+  "image": "appsmith/appsmith-ce",
   "youtube": "",
   "docs_link": ""
 }

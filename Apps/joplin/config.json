@@ -1,7 +1,7 @@
 {
   "id": "joplin",
   "version": "3.4.3",
-  "image": "joplin/server:3.3.13",
+  "image": "joplin/server",
   "youtube": "https://youtu.be/FjVyg0X-_zc",
   "docs_link": ""
 }
