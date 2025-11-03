@@ -34,7 +34,7 @@ x-casaos:
   tagline:
     en_us: Local-first OpenSource Budget tool
   # Developer's information
-  developer: ""
+  developer: actualbudget
   # Author of this particular configuration
   author: BigBearCommunity
   # Icon URL for the application

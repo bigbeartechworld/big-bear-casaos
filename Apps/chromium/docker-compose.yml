@@ -71,4 +71,4 @@ x-casaos:
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
-  port_map: "3000"
+  port_map: "6902"
