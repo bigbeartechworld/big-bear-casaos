@@ -40,7 +40,6 @@ x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
-    - armv7
     - arm64
   # Main service for this application
   main: app

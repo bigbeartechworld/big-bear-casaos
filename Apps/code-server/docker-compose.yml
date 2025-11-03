@@ -64,7 +64,7 @@ x-casaos:
   tagline:
     en_us: Code Server
   # Developer's information
-  developer: ""
+  developer: linuxserver
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
