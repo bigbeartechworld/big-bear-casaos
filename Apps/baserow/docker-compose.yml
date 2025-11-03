@@ -49,7 +49,7 @@ x-casaos:
   tagline:
     en_us: Baserow
   # Developer's information
-  developer: ""
+  developer: baserow
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application

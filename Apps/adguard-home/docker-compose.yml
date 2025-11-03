@@ -9,7 +9,7 @@ services:
     # Name of the container
     container_name: adguard-home
     # Docker image to be used
-    image: adguard/adguardhome:v0.107.68
+    image: adguard/adguardhome:v0.107.69
     # Resources for the service
     deploy:
       resources:
@@ -56,7 +56,6 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-    - armv7
   # Main service for this application
   main: app
   # Detailed description for the application

@@ -63,7 +63,6 @@ x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
-    - armv7
     - arm64
   # Main service for this application
   main: app
@@ -74,7 +73,7 @@ x-casaos:
   tagline:
     en_us: A simple HTTP-based pub-sub notification service
   # Developer's information
-  developer: ""
+  developer: binwiederhier
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
