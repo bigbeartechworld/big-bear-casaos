@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-ollama-nvidia
     # Image to be used for the container
-    image: ollama/ollama:0.12.7
+    image: ollama/ollama:0.12.9
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
