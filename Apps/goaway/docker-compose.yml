@@ -9,7 +9,7 @@ services:
     # Name of the container
     container_name: big-bear-goaway
     # Docker image to be used
-    image: pommee/goaway:0.62.11
+    image: pommee/goaway:0.62.12
     # Restart policy for the service
     restart: unless-stopped
     # Port mappings for the service
