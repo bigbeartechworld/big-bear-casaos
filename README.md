@@ -270,7 +270,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.6.9 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.6.10 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | stalwart-mail | stalwartlabs/stalwart | v0.14.1 |  |  |
 | stirling-pdf | stirlingtools/stirling-pdf | 1.5.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 2.0 |  |  |
