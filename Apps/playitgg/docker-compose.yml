@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: playitgg
     # Image to be used for the container
-    image: dysta/playitgg:1.1.0
+    image: dysta/playitgg:1.2.0
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
