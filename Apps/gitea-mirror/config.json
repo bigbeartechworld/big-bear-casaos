@@ -1,6 +1,6 @@
 {
   "id": "gitea-mirror",
-  "version": "v3.9.0",
+  "version": "v3.9.2",
   "image": "ghcr.io/raylabshq/gitea-mirror",
   "youtube": "",
   "docs_link": "https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6"
