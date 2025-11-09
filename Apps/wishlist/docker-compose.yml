@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-wishlist
     # Image to be used for the container specifies the wishlist version and source
-    image: ghcr.io/cmintey/wishlist:v0.53.0
+    image: ghcr.io/cmintey/wishlist:v0.53.1
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Environment variables for service configuration
