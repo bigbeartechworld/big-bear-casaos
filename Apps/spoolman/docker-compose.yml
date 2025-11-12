@@ -1,0 +1,65 @@
+name: big-bear-spoolman # Name of the compose project
+services:
+  app:
+    image: ghcr.io/donkie/spoolman:0.22.1 # Image to use for the spoolman service
+    ports:
+      - "7912:8000" # Maps port 7912 on the host to port 8000 on the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/home/app/.local/share/spoolman # Binds a volume from host to container for data storage
+    environment:
+      - TZ=$TZ # Sets the timezone, using host's timezone variable
+      - SPOOLMAN_DB_TYPE=sqlite # Database type (sqlite, mysql, postgres, cockroachdb)
+      - SPOOLMAN_LOGGING_LEVEL=INFO # Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+      - SPOOLMAN_AUTOMATIC_BACKUP=TRUE # Enable automatic nightly backups for SQLite
+    restart: unless-stopped # Service will restart unless it is explicitly stopped
+    network_mode: bridge # Uses bridge network mode
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: SPOOLMAN_DB_TYPE
+          description:
+            en_us: 'Container Variable: SPOOLMAN_DB_TYPE'
+        - container: SPOOLMAN_LOGGING_LEVEL
+          description:
+            en_us: 'Container Variable: SPOOLMAN_LOGGING_LEVEL'
+        - container: SPOOLMAN_AUTOMATIC_BACKUP
+          description:
+            en_us: 'Container Variable: SPOOLMAN_AUTOMATIC_BACKUP'
+      volumes:
+        - container: /home/app/.local/share/spoolman
+          description:
+            en_us: 'Container Path: /home/app/.local/share/spoolman'
+      ports:
+        - container: "8000"
+          description:
+            en_us: 'Container Port: 8000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: Keep track of your inventory of 3D-printer filament spools. Spoolman is a self-hosted web service designed to help you efficiently manage your 3D printer filament spools and monitor their usage.
+  # Brief tagline for the application
+  tagline:
+    en_us: Filament spool inventory management for 3D printing
+  # Developer's information
+  developer: Donkie
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/spoolman.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/spoolman/screenshots-1.png
+  # Title for the application
+  title:
+    en_us: Spoolman
+  # Category under which the application falls
+  category: Utilities
+  # Default port mapping for the application
+  port_map: "7912"
