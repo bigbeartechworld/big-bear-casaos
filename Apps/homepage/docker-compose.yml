@@ -8,7 +8,7 @@ services:
   # The `app` service definition
   app:
     # Image to be used for the container
-    image: ghcr.io/gethomepage/homepage:v1.6.1
+    image: ghcr.io/gethomepage/homepage:v1.7.0
     # Name of the container instance
     container_name: homepage
     # Port mapping between host and container

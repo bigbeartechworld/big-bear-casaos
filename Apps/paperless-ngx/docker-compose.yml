@@ -33,6 +33,7 @@ services:
       - /DATA/AppData/$AppID/paperless/media:/usr/src/paperless/media
       - /DATA/AppData/$AppID/paperless/export:/usr/src/paperless/export
       - /DATA/AppData/$AppID/paperless/consume:/usr/src/paperless/consume
+      - /DATA/AppData/$AppID/paperless/tmp:/tmp
     # Ports mapping between host and container
     ports:
       # Mapping port 8000 of the host to port 8000 of the container
@@ -93,6 +94,9 @@ services:
         - container: /usr/src/paperless/consume
           description:
             en_us: 'Container Path: /usr/src/paperless/consume'
+        - container: /tmp
+          description:
+            en_us: 'Container Path: /tmp'
       ports:
         - container: "8000"
           description:
@@ -170,10 +174,18 @@ services:
     container_name: big-bear-paperless-ngx-tika
     image: apache/tika:3.2.3.0
     restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/tika/tmp:/tmp
     # The Tika service is connected to the big-bear-paperless-ngx-network
     # network.
     networks:
       - big-bear-paperless-ngx-network
+    x-casaos:
+      volumes:
+        - container: /tmp
+          description:
+            en_us: 'Container Path: /tmp'
 # Define a network for the paperless-ngx services to communicate with
 # each other. This network is a bridge network, which means that it is
 # not isolated from the host's network stack.
