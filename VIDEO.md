@@ -118,6 +118,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | send-visee |  |
 | sftpgo |  |
 | spacedrive |  |
+| spoolman |  |
 | stalwart-mail |  |
 | syncthing |  |
 | tailscale |  |
