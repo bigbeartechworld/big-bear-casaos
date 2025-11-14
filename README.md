@@ -262,7 +262,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | readeck | codeberg.org/readeck/readeck | 0.20.4 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 4.3.2 |  | [Docs](https://github.com/rommapp/romm/wiki) |
+| romm | rommapp/romm | 4.4.0 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | v0.144.1-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
