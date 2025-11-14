@@ -1,6 +1,6 @@
 {
   "id": "music-assistant",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "image": "ghcr.io/music-assistant/server",
   "youtube": "",
   "docs_link": ""
