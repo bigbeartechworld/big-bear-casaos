@@ -84,7 +84,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearCommunity
   # Icon URL for the application
-  icon: https://static-00.iconduck.com/assets.00/openvpn-icon-512x512-nmf6geqm.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/openvpn.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
