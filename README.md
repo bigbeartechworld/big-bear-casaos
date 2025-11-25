@@ -90,26 +90,26 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
-| 2fauth | 2fauth/2fauth | 5.6.0 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
+| 2fauth | 2fauth/2fauth | 5.6.1 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
 | actual-server | actualbudget/actual-server | 25.11.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | v0.107.69 |  |  |
 | adguard-home | adguard/adguardhome | v0.107.69 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
 | appsmith | appsmith/appsmith-ce | v1.73.1 |  |  |
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.30.0 |  |  |
-| authentik | ghcr.io/goauthentik/server | 2025.10.1 |  |  |
+| authentik | ghcr.io/goauthentik/server | 2025.10.2 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | baserow | baserow/baserow | 1.35.3 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
-| beaverhabits | daya0576/beaverhabits | 0.7.3 |  |  |
+| beaverhabits | daya0576/beaverhabits | 0.7.4 |  |  |
 | beszel | henrygd/beszel | 0.16.1 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 25.11.20251109 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.23.26 |  |  |
+| budibase | budibase/budibase | 3.23.28 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.52.1 |  |  |
-| calcom | calcom/cal.com | v5.9.2 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.51.1 |  |  |
+| calcom | calcom/cal.com | v5.9.3 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.51.3 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | lscr.io/linuxserver/chromium | version-6ae43f81 | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -119,7 +119,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | composetoolbox | ghcr.io/bluegoosemedia/composetoolbox | latest |  | [Docs](https://github.com/bluegoosemedia/composetoolbox) |
 | convertx | ghcr.io/c4illin/convertx | v0.15.1 |  |  |
 | coolify | ghcr.io/coollabsio/coolify | 4.0.0-beta.434 | [YouTube Video](https://youtu.be/IZ-vOuMR4Kc) |  |
-| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.5.5 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
+| crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.6.1 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.19.4 |  |  |
 | dashdot | mauricenino/dashdot | 6.2.0 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
@@ -140,7 +140,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.4 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
 | filebrowser | filebrowser/filebrowser | v2.48.2-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
-| firefox | lscr.io/linuxserver/firefox | 1144.0.2 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
+| firefox | lscr.io/linuxserver/firefox | 1145.0.1 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.6.0 |  |  |
 | flowise | flowiseai/flowise | 3.0.11 |  |  |
@@ -149,12 +149,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.06 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.8.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.217.1 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.218.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.9.2 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | v4.65.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.3.0.8-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.40.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
-| goaway | pommee/goaway | 0.62.18 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
+| goaway | pommee/goaway | 0.62.19 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 2.7.3 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 3.11.20250828 |  |  |
@@ -167,9 +167,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ihatemoney | ihatemoney/ihatemoney | 6.1.5 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 2.0.0-alpine |  |  |
 | immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.27.1 |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.2.3 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | v2.2.3 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.12.31 |  |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.3.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | v2.3.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.12.34 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.6 |  |  |
@@ -203,7 +203,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.6.3 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 1.121.2 |  |  |
+| n8n | n8nio/n8n | 1.122.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 25.10.1 |  |  |
@@ -230,8 +230,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.11.17 |  |  |
 | owncloud | owncloud/server | 10.16.0 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.19.6 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.63.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.0 |  |  |
+| passwordpusher | pglombardo/pwpush | 1.63.4 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.11.1 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
@@ -251,15 +251,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pocketid | ghcr.io/pocket-id/pocket-id | v1.15 |  | [Docs](https://pocket-id.org/docs/introduction) |
 | portainer-agent | portainer/agent | 2.35.0 |  |  |
 | portainer | portainer/portainer-ce | 2.35.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
-| portracker | mostafawahied/portracker | 1.1 |  |  |
+| portracker | mostafawahied/portracker | 1.2 |  |  |
 | poste-io | analogic/poste.io | 2.5.7 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.11.11 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.11.13 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
-| rallly | lukevella/rallly | 4.5.4 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
+| rallly | lukevella/rallly | 4.5.5 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | reactive-resume | amruthpillai/reactive-resume | v4.5.5 |  |  |
-| readeck | codeberg.org/readeck/readeck | 0.20.4 |  |  |
+| readeck | codeberg.org/readeck/readeck | 0.21.2 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
 | romm | rommapp/romm | 4.4.1 |  | [Docs](https://github.com/rommapp/romm/wiki) |
@@ -276,19 +276,19 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | stirling-pdf | stirlingtools/stirling-pdf | 1.5.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | v1.90.8 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 2.3.3 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.30.12 |  |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 2.3.5 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
+| tianji | moonrailgun/tianji | 1.30.15 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.0 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.10-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.99.5 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.86 |  |  |
-| tugtainer | quenary/tugtainer | 1.12.0 |  |  |
+| tugtainer | quenary/tugtainer | v1.12.2 |  |  |
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
 | umbrel-os | dockurr/umbrel | 1.4.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 9.5.21 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unifi-network-application | linuxserver/unifi-network-application | 9.5.21 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| upsnap | ghcr.io/seriousm4x/upsnap | 5.2.3 |  |  |
+| upsnap | ghcr.io/seriousm4x/upsnap | 5.2.4 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 2 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vikunja | vikunja/vikunja | 0.24.6 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.3.1 |  |  |
@@ -299,7 +299,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | wg-easy-v15 | ghcr.io/wg-easy/wg-easy | 15 |  |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 15 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
-| wishlist | ghcr.io/cmintey/wishlist | v0.53.2 |  |  |
+| wishlist | ghcr.io/cmintey/wishlist | v0.54.2 |  |  |
 | wordpress | wordpress | 6.8.3 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | write-freely | nephatrine/write-freely | 0.16 |  |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 2.6.3 |  |  |
