@@ -60,10 +60,10 @@ services:
       - "/DATA/AppData/$AppID/certificates:/certificates"
     # Ports mapping between host and container
     ports:
-      # Mapping port 8080 of the host to port 8080 of the container
-      - "8080:8080"
       # Mapping port 3000 of the host to port 3000 of the container
       - "3000:3000"
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
     networks:
       # Network definition
       - big_bear_plant_it_network
@@ -134,12 +134,12 @@ services:
           description:
             en_us: 'Container Path: /certificates'
       ports:
-        - container: "8080"
-          description:
-            en_us: 'Container Port: 8080'
         - container: "3000"
           description:
             en_us: 'Container Port: 3000'
+        - container: "8080"
+          description:
+            en_us: 'Container Port: 8080'
   # Service definition for the database
   big-bear-plant-it-db:
     # Name of the database container
