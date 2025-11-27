@@ -1,0 +1,52 @@
+# Configuration for vert setup
+
+# Name of the big-bear-vert application
+name: big-bear-vert
+# Service definitions for the big-bear-vert application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-vert
+    # Image to be used for the container
+    image: ghcr.io/vert-sh/vert:sha-a1b0b15
+    # Container restart policy
+    restart: unless-stopped
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 3030 of the host to port 80 of the container
+      - "3030:80"
+    x-casaos:
+      ports:
+        - container: "80"
+          description:
+            en_us: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud. Convert images, audio, documents, and video with support for over 250+ file formats. No file or file size limits.
+  # Brief tagline for the application
+  tagline:
+    en_us: The next-generation file converter. Open source, fully local and free forever.
+  # Developer's information
+  developer: VERT-sh
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/vert.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: VERT
+  # Category under which the application falls
+  category: BigBearUniversalApps
+  # Default port mapping for the application
+  port_map: "3030"
