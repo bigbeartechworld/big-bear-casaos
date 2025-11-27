@@ -1,0 +1,7 @@
+{
+  "id": "vert",
+  "version": "sha-a1b0b15",
+  "image": "ghcr.io/vert-sh/vert",
+  "youtube": "",
+  "docs_link": "https://github.com/VERT-sh/VERT/blob/main/docs/DOCKER.md"
+}
