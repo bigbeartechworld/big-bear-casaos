@@ -106,9 +106,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.11.20251109 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.23.30 |  |  |
+| budibase | budibase/budibase | 3.23.31 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.52.1 |  |  |
-| calcom | calcom/cal.com | v5.9.5 |  |  |
+| calcom | calcom/cal.com | v5.9.6 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.51.3 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -169,7 +169,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.28.0 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.3.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | v2.3.1 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.12.35 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.12.36 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.6 |  |  |
@@ -224,7 +224,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.13.0-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.13.0 |  |  |
 | ollama-nvidia | ollama/ollama | 0.13.0 |  |  |
-| onedev | 1dev/server | 13.1.0 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 13.1.2 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
@@ -249,8 +249,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plex-nvidia | linuxserver/plex | 1.42.2 |  |  |
 | plex | linuxserver/plex | 1.42.2 |  |  |
 | pocketid | ghcr.io/pocket-id/pocket-id | v1.15 |  | [Docs](https://pocket-id.org/docs/introduction) |
-| portainer-agent | portainer/agent | 2.35.0 |  |  |
-| portainer | portainer/portainer-ce | 2.35.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
+| portainer-agent | portainer/agent | 2.36.0 |  |  |
+| portainer | portainer/portainer-ce | 2.36.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | portracker | mostafawahied/portracker | 1.2 |  |  |
 | poste-io | analogic/poste.io | 2.5.7 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
