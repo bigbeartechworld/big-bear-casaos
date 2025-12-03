@@ -1,0 +1,102 @@
+# Configuration for PsiTransfer setup
+
+# Name of the big-bear-psitransfer application
+name: big-bear-psitransfer
+# Service definitions for the big-bear-psitransfer application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Image to be used for the container
+    image: psitrax/psitransfer:v2.3.0
+    # Name of the container
+    container_name: big-bear-psitransfer
+    # Run as UID 1000 (node user) to match the image's default user
+    user: "1000:1000"
+    # Environment variables
+    environment:
+      # Admin password for /admin page (leave empty to disable)
+      PSITRANSFER_ADMIN_PASS: ""
+      # Upload password (leave empty to allow public uploads)
+      PSITRANSFER_UPLOAD_PASS: ""
+      # Make bucket password mandatory
+      PSITRANSFER_REQUIRE_BUCKET_PASSWORD: "false"
+      # Maximum file size in bytes (empty = no limit)
+      PSITRANSFER_MAX_FILE_SIZE: ""
+      # Maximum bucket size in bytes (empty = no limit)
+      PSITRANSFER_MAX_BUCKET_SIZE: ""
+      # Default retention time in seconds (604800 = 1 week)
+      PSITRANSFER_DEFAULT_RETENTION: "604800"
+      # Maximum age for files in seconds (6480000 = 75 days)
+      PSITRANSFER_MAX_AGE: "6480000"
+    # Ports mapping between host and container
+    ports:
+      - "3000:3000"
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    # Container restart policy
+    restart: unless-stopped
+    x-casaos:
+      envs:
+        - container: PSITRANSFER_ADMIN_PASS
+          description:
+            en_us: 'Container Variable: PSITRANSFER_ADMIN_PASS'
+        - container: PSITRANSFER_UPLOAD_PASS
+          description:
+            en_us: 'Container Variable: PSITRANSFER_UPLOAD_PASS'
+        - container: PSITRANSFER_REQUIRE_BUCKET_PASSWORD
+          description:
+            en_us: 'Container Variable: PSITRANSFER_REQUIRE_BUCKET_PASSWORD'
+        - container: PSITRANSFER_MAX_FILE_SIZE
+          description:
+            en_us: 'Container Variable: PSITRANSFER_MAX_FILE_SIZE'
+        - container: PSITRANSFER_MAX_BUCKET_SIZE
+          description:
+            en_us: 'Container Variable: PSITRANSFER_MAX_BUCKET_SIZE'
+        - container: PSITRANSFER_DEFAULT_RETENTION
+          description:
+            en_us: 'Container Variable: PSITRANSFER_DEFAULT_RETENTION'
+        - container: PSITRANSFER_MAX_AGE
+          description:
+            en_us: 'Container Variable: PSITRANSFER_MAX_AGE'
+      volumes:
+        - container: /data
+          description:
+            en_us: 'Container Path: /data'
+      ports:
+        - container: "3000"
+          description:
+            en_us: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: PsiTransfer is a simple open source self-hosted file sharing solution. It's an alternative to paid services like Dropbox and WeTransfer. Features include no accounts or logins required, mobile friendly responsive interface, support for many and very big files with resumable uploads and downloads, expiring upload buckets, one-time downloads, password protected downloads, and admin dashboard.
+  # Brief tagline for the application
+  tagline:
+    en_us: Simple self-hosted file sharing solution
+  # Developer's information
+  developer: psi-4ward
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/psitransfer.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/psi-4ward/psitransfer@master/docs/psitransfer.gif
+  # Installation tips
+  tips:
+    before_install:
+      en_us: 'Read more here: https://community.bigbeartechworld.com/t/added-psitransfer-to-bigbearuniversal-apps/5142#p-7883-documentation-5'
+  # Title for the application
+  title:
+    en_us: PsiTransfer
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"
