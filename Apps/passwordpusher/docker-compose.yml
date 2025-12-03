@@ -10,7 +10,7 @@ services:
     # Name of the container (Docker does not have to generate a random name)
     container_name: big-bear-pwpush
     # Image to be used for the container
-    image: pglombardo/pwpush:1.63.5
+    image: pglombardo/pwpush:1.63.6
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container
