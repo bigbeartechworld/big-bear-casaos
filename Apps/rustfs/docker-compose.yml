@@ -1,0 +1,91 @@
+name: big-bear-rustfs
+services:
+  app:
+    image: rustfs/rustfs:1.0.0-alpha.71
+    container_name: rustfs
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /DATA/AppData/$AppID/logs:/logs
+    environment:
+      - RUSTFS_ACCESS_KEY=bigbear
+      - RUSTFS_SECRET_KEY=f1805acc-55a7-4964-849a-8076b3e1cfdf
+      - RUSTFS_CONSOLE_ENABLE=true
+      - RUSTFS_ADDRESS=0.0.0.0:9000
+      - RUSTFS_CONSOLE_ADDRESS=0.0.0.0:9001
+      - TZ=UTC
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "sh", "-c", "curl -f http://localhost:9000/health && curl -f http://localhost:9001/rustfs/console/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    x-casaos:
+      envs:
+        - container: RUSTFS_ACCESS_KEY
+          description:
+            en_us: 'Container Variable: RUSTFS_ACCESS_KEY'
+        - container: RUSTFS_SECRET_KEY
+          description:
+            en_us: 'Container Variable: RUSTFS_SECRET_KEY'
+        - container: RUSTFS_CONSOLE_ENABLE
+          description:
+            en_us: 'Container Variable: RUSTFS_CONSOLE_ENABLE'
+        - container: RUSTFS_ADDRESS
+          description:
+            en_us: 'Container Variable: RUSTFS_ADDRESS'
+        - container: RUSTFS_CONSOLE_ADDRESS
+          description:
+            en_us: 'Container Variable: RUSTFS_CONSOLE_ADDRESS'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+      volumes:
+        - container: /data
+          description:
+            en_us: 'Container Path: /data'
+        - container: /logs
+          description:
+            en_us: 'Container Path: /logs'
+      ports:
+        - container: "9000"
+          description:
+            en_us: 'Container Port: 9000'
+        - container: "9001"
+          description:
+            en_us: 'Container Port: 9001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: RustFS is a high-performance, distributed object storage system built in Rust. It combines the simplicity of MinIO with the memory safety and raw performance of Rust. It offers full S3 compatibility, is completely open-source under Apache 2.0 license, and is optimized for data lakes, AI, and big data workloads.
+  # Brief tagline for the application
+  tagline:
+    en_us: High-performance S3-compatible object storage built in Rust
+  # Developer's information
+  developer: rustfs
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/rustfs.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: 'The container runs as non-root user (UID 10001). Ensure your data directories have correct ownership: chown -R 10001:10001 /path/to/data'
+  # Title for the application
+  title:
+    en_us: RustFS
+  # Category under which the application falls
+  category: Storage
+  # Default port mapping for the application
+  port_map: "9000"

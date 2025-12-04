@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-nexterm
     # Image to be used for the container
-    image: germannewsmaker/nexterm:1.0.5-OPEN-PREVIEW
+    image: germannewsmaker/nexterm:1.0.6-OPEN-PREVIEW
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
