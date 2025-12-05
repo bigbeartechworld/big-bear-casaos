@@ -35,7 +35,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | financial-freedom |  |
 | flcontainers-guacamole |  |
 | flowise |  |
-| gem-digest |  |
 | gemdigest |  |
 | gitea-mirror |  |
 | gluetun |  |
@@ -113,6 +112,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | retroarch-web |  |
 | rocket-chat |  |
 | romm |  |
+| rustfs |  |
 | scrutiny |  |
 | seafile |  |
 | semaphore |  |
