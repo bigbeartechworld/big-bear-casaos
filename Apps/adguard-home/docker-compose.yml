@@ -9,7 +9,7 @@ services:
     # Name of the container
     container_name: adguard-home
     # Docker image to be used
-    image: adguard/adguardhome:v0.107.69
+    image: adguard/adguardhome:v0.107.70
     # Resources for the service
     deploy:
       resources:

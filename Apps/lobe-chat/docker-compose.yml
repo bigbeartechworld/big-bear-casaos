@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-lobe-chat
     # Image to be used for the container
-    image: lobehub/lobe-chat:1.143.1
+    image: lobehub/lobe-chat:1.143.2
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container
