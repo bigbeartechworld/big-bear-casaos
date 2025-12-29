@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-erugo
     # Image to be used for the container
-    image: wardy784/erugo:0.1.1
+    image: wardy784/erugo:0.2.2
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

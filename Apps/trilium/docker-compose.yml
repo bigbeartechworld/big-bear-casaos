@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-trilium
     # Image to be used for the container
-    image: triliumnext/trilium:v0.100.0
+    image: triliumnext/trilium:v0.101.1
     # Container restart policy
     restart: unless-stopped
     # Environment variables
