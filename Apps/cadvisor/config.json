@@ -1,6 +1,6 @@
 {
   "id": "cadvisor",
-  "version": "v0.52.1",
+  "version": "v0.55.1",
   "image": "gcr.io/cadvisor/cadvisor",
   "youtube": "",
   "docs_link": ""
