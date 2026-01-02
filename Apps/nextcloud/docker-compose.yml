@@ -10,7 +10,7 @@ services:
     # Define the container name
     container_name: nextcloud
     # Use the nextcloud image from the official Docker Hub
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.12
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:32.0.3
     # Restart the container unless stopped
     restart: unless-stopped
     # Map port 7580 on the host to port 80 on the container
@@ -140,7 +140,7 @@ services:
           description:
             en_us: 'Container Path: /data'
   cron:
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:0.0.12
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:32.0.3
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html
