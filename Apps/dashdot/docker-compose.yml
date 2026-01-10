@@ -1,7 +1,7 @@
 name: big-bear-dashdot
 services:
   app:
-    image: mauricenino/dashdot:6.2.0
+    image: mauricenino/dashdot:6.2.4
     ports:
       - "3001:3001"
     volumes:
