@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-kavita
     # Image to be used for the container
-    image: jvmilazz0/kavita:0.8.8
+    image: jvmilazz0/kavita:0.8.9
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
