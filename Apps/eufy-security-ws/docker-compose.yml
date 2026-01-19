@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-eufy-security-ws
     # Image to be used for the container
-    image: bropat/eufy-security-ws:1.9.7
+    image: bropat/eufy-security-ws:1.9.8
     # Environment variables for the container
     environment:
       USERNAME: "[EUFY_USERNAME]"
