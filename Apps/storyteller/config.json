@@ -1,0 +1,7 @@
+{
+  "id": "storyteller",
+  "version": "web-v2.6.0-experimental.14",
+  "image": "registry.gitlab.com/storyteller-platform/storyteller",
+  "youtube": "",
+  "docs_link": "https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting"
+}

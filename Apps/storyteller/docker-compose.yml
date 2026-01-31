@@ -1,0 +1,70 @@
+name: big-bear-storyteller
+services:
+  app:
+    image: registry.gitlab.com/storyteller-platform/storyteller:web-v2.6.0-experimental.14
+    container_name: big-bear-storyteller
+    ports:
+      - "8015:8001"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    environment:
+      - STORYTELLER_SECRET_KEY=${STORYTELLER_SECRET_KEY}
+      - STORYTELLER_LOG_LEVEL=${STORYTELLER_LOG_LEVEL:-info}
+      - STORYTELLER_DATA_DIR=${STORYTELLER_DATA_DIR:-/data}
+      - TZ=${TZ:-UTC}
+    restart: unless-stopped
+    network_mode: bridge
+    x-casaos:
+      envs:
+        - container: STORYTELLER_SECRET_KEY
+          description:
+            en_us: 'Container Variable: STORYTELLER_SECRET_KEY'
+        - container: STORYTELLER_LOG_LEVEL
+          description:
+            en_us: 'Container Variable: STORYTELLER_LOG_LEVEL'
+        - container: STORYTELLER_DATA_DIR
+          description:
+            en_us: 'Container Variable: STORYTELLER_DATA_DIR'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+      volumes:
+        - container: /data
+          description:
+            en_us: 'Container Path: /data'
+      ports:
+        - container: "8001"
+          description:
+            en_us: 'Container Port: 8001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: Storyteller is a self-hosted platform for ebook reading and library management. It supports multiple ebook formats including EPUB, PDF, and MOBI. Features include a modern web-based reader, library organization, metadata management, and multi-user support. Built with Django and includes optional Readium reader integration for enhanced reading experience.
+  # Brief tagline for the application
+  tagline:
+    en_us: Self-hosted ebook reading platform
+  # Developer's information
+  developer: storyteller-platform
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/storyteller.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: 'Generate a secure secret key using: openssl rand -base64 32'
+  # Title for the application
+  title:
+    en_us: Storyteller
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8015"
