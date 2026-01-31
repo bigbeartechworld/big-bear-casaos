@@ -1,0 +1,139 @@
+name: big-bear-openclaw
+services:
+  big-bear-openclaw:
+    image: ghcr.io/openclaw/openclaw:2026.1.29
+    container_name: big-bear-openclaw
+    environment:
+      - HOME=/home/node
+      - TERM=xterm-256color
+      - "OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:?Gateway token required. Generate with: openssl rand -hex 32}"
+      - CLAUDE_AI_SESSION_KEY=${CLAUDE_AI_SESSION_KEY:-}
+      - CLAUDE_WEB_SESSION_KEY=${CLAUDE_WEB_SESSION_KEY:-}
+      - CLAUDE_WEB_COOKIE=${CLAUDE_WEB_COOKIE:-}
+    volumes:
+      - /DATA/AppData/$AppID/config:/home/node/.openclaw
+      - /DATA/AppData/$AppID/workspace:/home/node/.openclaw/workspace
+    ports:
+      - "18789:18789"
+      - "18790:18790"
+    init: true
+    restart: unless-stopped
+    network_mode: bridge
+    command: ["node", "dist/index.js", "gateway", "--bind", "lan", "--port", "18789"]
+    x-casaos:
+      envs:
+        - container: HOME
+          description:
+            en_us: 'Container Variable: HOME'
+        - container: TERM
+          description:
+            en_us: 'Container Variable: TERM'
+        - container: OPENCLAW_GATEWAY_TOKEN
+          description:
+            en_us: 'Container Variable: OPENCLAW_GATEWAY_TOKEN'
+        - container: CLAUDE_AI_SESSION_KEY
+          description:
+            en_us: 'Container Variable: CLAUDE_AI_SESSION_KEY'
+        - container: CLAUDE_WEB_SESSION_KEY
+          description:
+            en_us: 'Container Variable: CLAUDE_WEB_SESSION_KEY'
+        - container: CLAUDE_WEB_COOKIE
+          description:
+            en_us: 'Container Variable: CLAUDE_WEB_COOKIE'
+      volumes:
+        - container: /home/node/.openclaw
+          description:
+            en_us: 'Container Path: /home/node/.openclaw'
+        - container: /home/node/.openclaw/workspace
+          description:
+            en_us: 'Container Path: /home/node/.openclaw/workspace'
+      ports:
+        - container: "18789"
+          description:
+            en_us: 'Container Port: 18789'
+        - container: "18790"
+          description:
+            en_us: 'Container Port: 18790'
+  big-bear-openclaw-cli:
+    image: ghcr.io/openclaw/openclaw:2026.1.29
+    container_name: big-bear-openclaw-cli
+    environment:
+      - HOME=/home/node
+      - TERM=xterm-256color
+      - BROWSER=echo
+      - "OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:?Gateway token required. Generate with: openssl rand -hex 32}"
+      - CLAUDE_AI_SESSION_KEY=${CLAUDE_AI_SESSION_KEY:-}
+      - CLAUDE_WEB_SESSION_KEY=${CLAUDE_WEB_SESSION_KEY:-}
+      - CLAUDE_WEB_COOKIE=${CLAUDE_WEB_COOKIE:-}
+    volumes:
+      - /DATA/AppData/$AppID/config:/home/node/.openclaw
+      - /DATA/AppData/$AppID/workspace:/home/node/.openclaw/workspace
+    init: true
+    stdin_open: true
+    tty: true
+    network_mode: bridge
+    entrypoint: ["node", "dist/index.js"]
+    profiles:
+      - tools
+    x-casaos:
+      envs:
+        - container: HOME
+          description:
+            en_us: 'Container Variable: HOME'
+        - container: TERM
+          description:
+            en_us: 'Container Variable: TERM'
+        - container: BROWSER
+          description:
+            en_us: 'Container Variable: BROWSER'
+        - container: OPENCLAW_GATEWAY_TOKEN
+          description:
+            en_us: 'Container Variable: OPENCLAW_GATEWAY_TOKEN'
+        - container: CLAUDE_AI_SESSION_KEY
+          description:
+            en_us: 'Container Variable: CLAUDE_AI_SESSION_KEY'
+        - container: CLAUDE_WEB_SESSION_KEY
+          description:
+            en_us: 'Container Variable: CLAUDE_WEB_SESSION_KEY'
+        - container: CLAUDE_WEB_COOKIE
+          description:
+            en_us: 'Container Variable: CLAUDE_WEB_COOKIE'
+      volumes:
+        - container: /home/node/.openclaw
+          description:
+            en_us: 'Container Path: /home/node/.openclaw'
+        - container: /home/node/.openclaw/workspace
+          description:
+            en_us: 'Container Path: /home/node/.openclaw/workspace'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-openclaw
+  # Detailed description for the application
+  description:
+    en_us: OpenClaw is a self-hosted AI agent platform that provides Claude AI integration through a local gateway. It enables running AI assistants with local tool execution, file access, and workspace management. Features include WebSocket gateway, browser automation, and extensible command framework.
+  # Brief tagline for the application
+  tagline:
+    en_us: Self-hosted AI agent platform with Claude integration
+  # Developer's information
+  developer: openclaw
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: ""
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: 'Generate a secure gateway token using: openssl rand -hex 32. Set OPENCLAW_GATEWAY_TOKEN in your environment before starting.'
+  # Title for the application
+  title:
+    en_us: OpenClaw
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "18789"
