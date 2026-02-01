@@ -5,7 +5,7 @@ name: big-bear-dockhand
 # Service definitions for the big-bear-dockhand application
 services:
   # Service name: app
-  # The `app` service definition
+  # The main Dockhand application service
   app:
     # Name of the container
     container_name: big-bear-dockhand
@@ -15,8 +15,8 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /DATA/AppData/$AppID/data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock # Docker socket access
+      - /DATA/AppData/$AppID/data:/app/data # Application data
     # Ports mapping between host and container
     ports:
       - "3003:3000"
