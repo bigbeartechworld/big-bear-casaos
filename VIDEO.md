@@ -24,6 +24,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | dbgate |  |
 | diun |  |
 | docker-cron-restart-notifier |  |
+| dockhand |  |
 | dockpeek |  |
 | docmost |  |
 | ejbca-ce |  |
@@ -85,6 +86,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | ollama-nvidia |  |
 | onlyoffice |  |
 | open-webui |  |
+| openclaw |  |
 | openvpn-as |  |
 | otel-lgtm |  |
 | owncloud |  |
@@ -121,6 +123,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | spacedrive |  |
 | spoolman |  |
 | stalwart-mail |  |
+| storyteller |  |
 | syncthing |  |
 | tailscale |  |
 | tianji |  |
