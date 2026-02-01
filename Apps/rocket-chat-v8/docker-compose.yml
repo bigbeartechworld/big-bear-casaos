@@ -1,0 +1,108 @@
+# Configuration for Rocket.Chat v8 setup in a containerized environment
+# NOTE: Rocket.Chat v8 requires MongoDB 8.2+ and includes breaking changes from v6
+# For legacy v6 installations, use the 'rocket-chat' app instead
+
+# Application Name
+# This sets the name of the Rocket.Chat v8 application.
+name: big-bear-rocket-chat-v8
+# Service definitions
+# Defining the services required for the Rocket.Chat v8 application.
+services:
+  # Service: app
+  # This service is for the Rocket.Chat v8 application itself.
+  app:
+    # Container name
+    # This names the Docker container for easy reference.
+    container_name: big-bear-rocket-chat-v8
+    # Docker Image
+    # Specifies the Docker image to use for Rocket.Chat v8.
+    image: rocket.chat:8.0.1
+    # Restart Policy
+    # Determines how the container should be handled if it stops.
+    restart: unless-stopped
+    # Environment variables
+    # These variables are used by Rocket.Chat for its configuration.
+    environment:
+      MONGO_OPLOG_URL: mongodb://db:27017/local
+      ROOT_URL: http://localhost:3100
+    # Port Mappings
+    # Maps ports from the container to the host system.
+    ports:
+      - "3100:3000" # HostPort:ContainerPort (using 3100 to avoid conflicts with other apps)
+    # Dependencies
+    # Specifies other services that this service depends on.
+    depends_on:
+      db:
+        condition: service_healthy
+    # Networks
+    # Assigns the app service to a network.
+    networks:
+      - rocketchat-v8-net
+    x-casaos:
+      envs:
+        - container: MONGO_OPLOG_URL
+          description:
+            en_us: 'Container Variable: MONGO_OPLOG_URL'
+        - container: ROOT_URL
+          description:
+            en_us: 'Container Variable: ROOT_URL'
+      ports:
+        - container: "3000"
+          description:
+            en_us: 'Container Port: 3000'
+  # Service: db
+  # This service runs the MongoDB 8.2 database required by Rocket.Chat v8.
+  db:
+    image: mongo:8.2.0
+    container_name: big-bear-rocketchat-v8-db
+    volumes:
+      # Persistent storage for MongoDB
+      - /DATA/AppData/$AppID/db:/data/db
+    # Health Check
+    # Checks the health of the MongoDB service.
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Networks
+    networks:
+      - rocketchat-v8-net
+    x-casaos:
+      volumes:
+        - container: /data/db
+          description:
+            en_us: 'Container Path: /data/db'
+# Networks
+# Defines the network configurations used by the services.
+networks:
+  rocketchat-v8-net:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: 'Rocket.Chat v8 is an open-source fully customizable communications platform developed in JavaScript for organizations with high standards of data protection. This version requires MongoDB 8.2+ and includes significant updates including ABAC for private channels, Matrix federation support, and voice calling improvements. Note: This is a separate app from the legacy v6 version due to breaking changes including mandatory MongoDB 8.2+ upgrade, removal of multiple SMS providers (Twilio only), and elimination of built-in logging (requires Prometheus/Grafana).'
+  # Brief tagline for the application
+  tagline:
+    en_us: The communications platform that puts data protection first (v8).
+  # Developer's information
+  developer: rocket.chat
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/rocket-chat.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Rocket.Chat v8
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3100"
