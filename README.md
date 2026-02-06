@@ -108,7 +108,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
 | budibase | budibase/budibase | 3.27.2 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
-| calcom | calcom/cal.com | v6.1.9 |  |  |
+| calcom | calcom/cal.com | v6.1.10 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.51.4 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -157,7 +157,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | goaway | pommee/goaway | 0.63.5 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 2.8.0 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
-| healthchecks | linuxserver/healthchecks | 4.0.20260126 |  |  |
+| healthchecks | linuxserver/healthchecks | 4.0.20260202 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.48.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.0 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2025.12.5 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
@@ -185,7 +185,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
 | libredesk | libredesk/libredesk | v0.7.4-alpha |  |  |
-| libretranslate | libretranslate/libretranslate | v1.8.3 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
+| libretranslate | libretranslate/libretranslate | v1.8.4 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | v2.13.5 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | lobe-chat | lobehub/lobe-chat | 1.143.3 |  |  |
@@ -194,7 +194,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mailpit | axllent/mailpit | v1.29 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | matterbridge | luligu/matterbridge | 3.5.1 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
-| mealie | hkotel/mealie | v3.9.2 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
+| mealie | hkotel/mealie | v3.10.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | microbin | danielszabo99/microbin | 2.1.0 |  | [Docs](https://github.com/szabodanika/microbin) |
 | mind | mrcas/mind | v1.4.1 |  |  |
 | minio | bigbeartechworld/big-bear-minio | RELEASE.2025-10-15T17-29-55Z |  |  |
@@ -203,7 +203,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.7.2 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.6.2 |  |  |
+| n8n | n8nio/n8n | 2.7.0 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx | jokobsk/netalertx | 26.1.17 |  |  |
@@ -221,9 +221,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.11.5 |  |  |
 | octoprint | octoprint/octoprint | 1.11.6 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.15.3-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.15.3 |  |  |
-| ollama-nvidia | ollama/ollama | 0.15.3 |  |  |
+| ollama-amd | ollama/ollama | 0.15.4-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.15.4 |  |  |
+| ollama-nvidia | ollama/ollama | 0.15.4 |  |  |
 | onedev | 1dev/server | 14.1.1 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
@@ -260,7 +260,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.11.13 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rallly | lukevella/rallly | 4.6.3 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | v5.0.4 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v5.0.5 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.21.5 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat-v8 | rocket.chat | 8.0.1 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
