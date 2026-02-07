@@ -1,0 +1,84 @@
+# Configuration for filebrowser-quantum setup
+
+# Name of the big-bear-filebrowser-quantum application
+name: big-bear-filebrowser-quantum
+# Service definitions for the big-bear-filebrowser-quantum application
+services:
+  # Service name: app
+  # The main FileBrowser Quantum application service
+  app:
+    # Name of the container
+    container_name: big-bear-filebrowser-quantum
+    # Image to be used for the container
+    image: gtstef/filebrowser:1.1.2-stable
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables
+    environment:
+      - TZ=UTC
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/data:/home/filebrowser/data # Database and config
+      - /DATA/AppData/$AppID/srv:/srv # Served files
+    # Ports mapping between host and container
+    ports:
+      - "8700:80"
+    # Networks for the big-bear-filebrowser-quantum application
+    networks:
+      - big-bear-filebrowser-quantum-network
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+      volumes:
+        - container: /home/filebrowser/data
+          description:
+            en_us: 'Container Path: /home/filebrowser/data'
+        - container: /srv
+          description:
+            en_us: 'Container Path: /srv'
+      ports:
+        - container: "80"
+          description:
+            en_us: 'Container Port: 80'
+# Networks definition for the big-bear-filebrowser-quantum application
+networks:
+  big-bear-filebrowser-quantum-network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_us: A self-hosted web file manager forked from FileBrowser with advanced features including OIDC authentication, indexed search, office document previews, and multi-source support.
+  # Brief tagline for the application
+  tagline:
+    en_us: Advanced self-hosted web file manager
+  # Developer's information
+  developer: gtsteffaniak
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/gtsteffaniak/filebrowser@main/frontend/public/img/logo.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |-
+        **Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld
+        **Community Forum**: https://community.bigbeartechworld.com/t/added-filebrowser-quantum-to-bigbearuniversal-apps/5209?u=dragonfire1119
+
+        Default credentials are **admin / admin**. Please change the password after your first login.
+  # Title for the application
+  title:
+    en_us: FileBrowser Quantum
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8700"
