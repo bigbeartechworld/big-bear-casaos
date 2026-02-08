@@ -32,6 +32,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | eufy-security-ws |  |
 | farmos |  |
 | faster-whisper |  |
+| filebrowser-quantum |  |
 | filebrowser |  |
 | financial-freedom |  |
 | flcontainers-guacamole |  |
