@@ -8,8 +8,6 @@ services:
       - "8585:8585"
     volumes:
       - ./data:/app/data
-    environment:
-      - SECRET_KEY=your_secret_key_here
     restart: unless-stopped
 x-casaos:
   architectures:
