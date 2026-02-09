@@ -1,4 +1,3 @@
-
 name: big-bear-mqtt-antena
 services:
   mqtt-antena:
@@ -19,7 +18,7 @@ x-casaos:
   description:
     en_US: MQTT-Antena is a tool to manage MQTT messages.
   developer: fbossolan
-  icon: https://github.com/fbossolan/mqtt-antena/blob/main/src/static/img/logo.png?raw=true 
+  icon: https://github.com/fbossolan/mqtt-antena/blob/main/src/static/img/logo.png?raw=true
   tagline:
     en_US: A simple way to manage MQTT.
   title:
