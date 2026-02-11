@@ -7,7 +7,7 @@ services:
     # Name of the container
     container_name: pterodactyl-wings
     # Docker image to use for the container
-    image: ghcr.io/pterodactyl/wings:v1.11.13
+    image: ghcr.io/pterodactyl/wings:v1.12.1
     # Determines the restart policy. In this case, the container will always restart if it stops.
     restart: always
     # Maps the host's port 2022 to the container's port 2022

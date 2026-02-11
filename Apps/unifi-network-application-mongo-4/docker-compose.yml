@@ -6,7 +6,7 @@ name: big-bear-unifi-network-application-mongo-4
 services:
   # Main application service
   app: # Name of the service
-    image: linuxserver/unifi-network-application:10.0.162 # Docker image to use
+    image: linuxserver/unifi-network-application:10.1.84 # Docker image to use
     container_name: big-bear-unifi-network-application # Name for the created container
     environment: # Environmental variables for the container
       - PUID=1000 # User ID

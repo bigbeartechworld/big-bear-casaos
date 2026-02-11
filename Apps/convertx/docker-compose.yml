@@ -7,7 +7,7 @@ services:
     # Name of the container
     container_name: big-bear-convertx
     # Image to be used for the container
-    image: ghcr.io/c4illin/convertx:v0.16.1
+    image: ghcr.io/c4illin/convertx:v0.17.0
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Map port 3000 on the host to port 3000 on the container
