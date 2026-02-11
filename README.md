@@ -207,7 +207,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | n8n | n8nio/n8n | 2.7.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
-| netalertx | jokobsk/netalertx | 26.2.4 |  |  |
+| netalertx | jokobsk/netalertx | 26.2.6 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 32.0.5 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 32.0.3 |  |  |
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 32.0.3 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
@@ -222,9 +222,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.11.5 |  |  |
 | octoprint | octoprint/octoprint | 1.11.6 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.15.4-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.15.4 |  |  |
-| ollama-nvidia | ollama/ollama | 0.15.4 |  |  |
+| ollama-amd | ollama/ollama | 0.15.6-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.15.6 |  |  |
+| ollama-nvidia | ollama/ollama | 0.15.6 |  |  |
 | onedev | 1dev/server | 14.1.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
@@ -275,7 +275,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.13.7 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.13.8 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.22.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
 | stalwart-mail | stalwartlabs/stalwart | v0.15.4 |  |  |
 | stirling-pdf | stirlingtools/stirling-pdf | 2.4.5 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
