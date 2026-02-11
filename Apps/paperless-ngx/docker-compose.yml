@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-paperless-ngx
     # Image to be used for the container
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.3
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.6
     # Container restart policy
     restart: unless-stopped
     # environment variables
@@ -103,7 +103,7 @@ services:
             en_us: 'Container Port: 8000'
   big-bear-paperless-ngx-broker:
     container_name: big-bear-paperless-ngx-broker
-    image: docker.io/library/redis:8.4.0
+    image: docker.io/library/redis:8.6.0
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/redis:/data

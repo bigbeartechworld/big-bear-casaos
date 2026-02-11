@@ -1,7 +1,7 @@
 name: big-bear-spoolman # Name of the compose project
 services:
   app:
-    image: ghcr.io/donkie/spoolman:0.22.1 # Image to use for the spoolman service
+    image: ghcr.io/donkie/spoolman:0.23.1 # Image to use for the spoolman service
     ports:
       - "7912:8000" # Maps port 7912 on the host to port 8000 on the container
     volumes:

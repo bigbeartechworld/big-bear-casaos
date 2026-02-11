@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-home-assistant
     # Image to be used for the container
-    image: ghcr.io/home-assistant/home-assistant:2025.12.5
+    image: ghcr.io/home-assistant/home-assistant:2026.2.1
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

@@ -1,6 +1,6 @@
 {
   "id": "immich-kiosk",
-  "version": "0.29.1",
+  "version": "0.32.1",
   "image": "ghcr.io/damongolding/immich-kiosk",
   "youtube": "",
   "docs_link": ""

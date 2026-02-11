@@ -1,6 +1,6 @@
 {
   "id": "homarr-v1",
-  "version": "v1.48.0",
+  "version": "v1.53.0",
   "image": "ghcr.io/homarr-labs/homarr",
   "youtube": "",
   "docs_link": "https://homarr.dev/docs"
