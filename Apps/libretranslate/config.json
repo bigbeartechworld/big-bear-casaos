@@ -1,6 +1,6 @@
 {
   "id": "libretranslate",
-  "version": "v1.8.4",
+  "version": "v1.9.0",
   "image": "libretranslate/libretranslate",
   "youtube": "https://youtu.be/VJ5DrsuJ3oA",
   "docs_link": ""

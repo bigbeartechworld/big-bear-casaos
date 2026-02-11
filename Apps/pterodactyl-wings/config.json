@@ -1,6 +1,6 @@
 {
   "id": "pterodactyl-wings",
-  "version": "v1.11.13",
+  "version": "v1.12.1",
   "image": "ghcr.io/pterodactyl/wings",
   "youtube": "https://youtu.be/p_140cc6_1g",
   "docs_link": ""
