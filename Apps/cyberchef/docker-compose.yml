@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-cyberchef
     # Image to be used for the container
-    image: ghcr.io/gchq/cyberchef:10.22.0
+    image: ghcr.io/gchq/cyberchef:10.22.1
     # Container restart policy
     restart: unless-stopped
     # Ports mapping between host and container
