@@ -1,6 +1,6 @@
 {
   "id": "unifi-network-application",
-  "version": "10.1.84",
+  "version": "10.1.85",
   "image": "linuxserver/unifi-network-application",
   "youtube": "https://youtu.be/JCe-r_SHCe8",
   "docs_link": ""

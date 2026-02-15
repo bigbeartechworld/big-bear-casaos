@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-calcom
     # Image to be used for the container
-    image: calcom/cal.com:v6.1.15
+    image: calcom/cal.com:v6.1.16
     # Container restart policy
     restart: unless-stopped
     # Environment variables

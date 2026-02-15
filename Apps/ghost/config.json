@@ -1,6 +1,6 @@
 {
   "id": "ghost",
-  "version": "6.18.0-alpine",
+  "version": "6.18.2-alpine",
   "image": "ghost",
   "youtube": "https://youtu.be/oJZK9vH4W4Y",
   "docs_link": ""
