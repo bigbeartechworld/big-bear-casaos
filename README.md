@@ -106,9 +106,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.12.20251224 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.28.1 |  |  |
+| budibase | budibase/budibase | 3.28.2 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
-| calcom | calcom/cal.com | v6.1.15 |  |  |
+| calcom | calcom/cal.com | v6.1.16 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.52.9 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
@@ -124,7 +124,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashdot | mauricenino/dashdot | 6.2.4 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.1.0 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.3.0 |  |  |
-| dbgate | dbgate/dbgate | 7.0.4-alpine |  |  |
+| dbgate | dbgate/dbgate | 7.0.6-alpine |  |  |
 | diun | crazymax/diun | 4.31.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
@@ -149,7 +149,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.06 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 6.18.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 6.18.2-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.237.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.9.2 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | v4.67.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
@@ -159,7 +159,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gotify | gotify/server | 2.8.0 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 4.0.20260209 |  |  |
-| homarr-v1 | ghcr.io/homarr-labs/homarr | v1.53.0 |  | [Docs](https://homarr.dev/docs) |
+| homarr-v1 | ghcr.io/homarr-labs/homarr | v1.53.1 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.0 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2026.2.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
@@ -170,7 +170,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.32.1 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.5.6 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | v2.5.6 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.12.58 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.12.59 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.8 |  |  |
@@ -202,7 +202,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | morphos | ghcr.io/danvergara/morphos-server | 0.6.0 | [YouTube Video](https://youtu.be/dw7AEDbGqZY) |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
-| music-assistant | ghcr.io/music-assistant/server | 2.7.6 |  |  |
+| music-assistant | ghcr.io/music-assistant/server | 2.7.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | n8n | n8nio/n8n | 2.8.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
@@ -233,7 +233,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | otel-lgtm | grafana/otel-lgtm | 0.17.1 |  |  |
 | owncloud | owncloud/server | 10.16.0 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.6 |  |  |
-| passwordpusher | pglombardo/pwpush | 1.67.1 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
+| passwordpusher | pglombardo/pwpush | 1.67.2 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.13.2 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
@@ -254,7 +254,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | portainer-agent | portainer/agent | 2.38.1 |  |  |
 | portainer | portainer/portainer-ce | 2.38.1-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | portracker | mostafawahied/portracker | 1.3 |  |  |
-| poste-io | analogic/poste.io | 2.5.8 |  |  |
+| poste-io | analogic/poste.io | 2.5.9 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | psitransfer | psitrax/psitransfer | v2.4.0 |  | [Docs](https://github.com/psi-4ward/psitransfer/tree/master/docs) |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.12.0 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
@@ -282,8 +282,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | v1.94.1 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 2.5.0 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.31.11 |  |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 2.5.3 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
+| tianji | moonrailgun/tianji | 1.31.13 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.1 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.11-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.101.3 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
@@ -292,9 +292,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
 | umbrel-os | dockurr/umbrel | 1.4.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
-| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 10.1.84 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| unifi-network-application | linuxserver/unifi-network-application | 10.1.84 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| upsnap | ghcr.io/seriousm4x/upsnap | 5.2.7 |  |  |
+| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 10.1.85 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| unifi-network-application | linuxserver/unifi-network-application | 10.1.85 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| upsnap | ghcr.io/seriousm4x/upsnap | 5.2.8 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 2 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vert | ghcr.io/vert-sh/vert | sha-a1b0b15 |  | [Docs](https://github.com/VERT-sh/VERT/blob/main/docs/DOCKER.md) |
 | vikunja | vikunja/vikunja | 1.1.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
