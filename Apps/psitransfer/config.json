@@ -1,6 +1,6 @@
 {
   "id": "psitransfer",
-  "version": "v2.4.0",
+  "version": "v2.4.1",
   "image": "psitrax/psitransfer",
   "youtube": "",
   "docs_link": "https://github.com/psi-4ward/psitransfer/tree/master/docs"
