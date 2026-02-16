@@ -1,6 +1,6 @@
 {
   "id": "pterodactyl-panel",
-  "version": "v1.12.0",
+  "version": "v1.12.1",
   "image": "ghcr.io/pterodactyl/panel",
   "youtube": "https://youtu.be/p_140cc6_1g",
   "docs_link": ""
