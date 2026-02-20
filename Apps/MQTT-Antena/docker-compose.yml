@@ -1,0 +1,27 @@
+name: big-bear-mqtt-antena
+services:
+  mqtt-antena:
+    image: fbossolan/mqtt-antena:1.5.8
+    container_name: mqtt-antena
+    ports:
+      - "8585:8585"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: mqtt-antena
+  author: fbossolan
+  category: IOT
+  description:
+    en_US: MQTT-Antena is a tool to manage MQTT messages.
+  developer: fbossolan
+  icon: https://github.com/fbossolan/mqtt-antena/blob/main/src/static/img/logo.png?raw=true
+  tagline:
+    en_US: A simple way to manage MQTT.
+  title:
+    en_US: MQTT Antena
+  port_map: "8585"
+
