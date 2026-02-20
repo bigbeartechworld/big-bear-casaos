@@ -1,6 +1,6 @@
 {
   "id": "adguard-home-host",
-  "version": "v0.107.71",
+  "version": "v0.107.72",
   "image": "adguard/adguardhome",
   "youtube": "",
   "docs_link": ""

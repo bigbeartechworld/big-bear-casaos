@@ -9,7 +9,7 @@ services:
     # Name of the container
     container_name: big-bear-adguard-home-host
     # Docker image to be used
-    image: adguard/adguardhome:v0.107.71
+    image: adguard/adguardhome:v0.107.72
     # Volume mappings for the service
     volumes:
       - "/DATA/AppData/$AppID/data/work:/opt/adguardhome/work" # Map data work directory
