@@ -123,7 +123,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearCommunity
   # Icon URL for the application
-  icon: ""
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/openclaw.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Installation tips
