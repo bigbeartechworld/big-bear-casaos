@@ -1,44 +1,68 @@
-# Configuration for planka setup
+# Configuration for Planka v2 setup
 
-# NOTE: Planka v1 is in maintenance mode. For new features and security updates,
-# consider deploying the separate 'planka-v2' app.
+# PLANKA V2.0.1 - NEW DEPLOYMENT
+# ================================
+# This is a SEPARATE app from 'planka' (v1.26.3). They can coexist.
 #
-# Planka v2 includes:
-# - Enhanced security (SSRF protection)
-# - New features (user mentions, task linking)
-# - UI-based webhooks and SMTP configuration
-# - Unified data directory architecture
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Planka instances
+# - Uses modern v2 architecture with unified data directory
+# - Includes enhanced security (SSRF protection)
+# - Features: user mentions, task linking, webhooks UI, SMTP UI
 #
-# Migration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924
+# FOR MIGRATION FROM V1:
+# - Do NOT uninstall your existing 'planka' v1 app
+# - Deploy this as NEW app alongside v1
+# - Follow manual migration: https://docs.planka.cloud/docs/upgrade-to-v2/docker/
+# - Migration is ONE-WAY with NO ROLLBACK (create backups!)
+# - Requirements: Must be on v1 >= 1.26.2, subdomain hosting
+#
+# Migration steps (after deploying this app):
+# 1. Backup v1 database: docker compose -f apps/planka/docker-compose.yml exec big-bear-planka-postgres pg_dump -U postgres planka > backup.sql
+# 2. Stop v2 containers: docker compose -f apps/planka-v2/docker-compose.yml down
+# 3. Copy background images: docker compose -f apps/planka-v2/docker-compose.yml run --rm --user root big-bear-planka-v2 sh -c 'cp -av /app/public/project-background-images/. /app/public/background-images && chown -R node:node /app/public/background-images'
+# 4. Import v1 database to v2: docker compose -f apps/planka-v2/docker-compose.yml exec -T big-bear-planka-v2-postgres psql -U postgres planka < backup.sql
+# 5. Run database upgrade: docker compose -f apps/planka-v2/docker-compose.yml run --rm big-bear-planka-v2 npm run db:upgrade
+# 6. Migrate data structure: docker compose -f apps/planka-v2/docker-compose.yml run --rm big-bear-planka-v2 sh -c 'mkdir -p /app/data/protected /app/data/private && for folder in user-avatars background-images; do cp -av /app/public/$folder /app/data/protected; done && cp -av /app/private/attachments /app/data/private'
+# 7. Start v2: docker compose -f apps/planka-v2/docker-compose.yml up -d
+# 8. Verify migration success before removing v1
+#
+# Detailed migration: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924
 
-# Name of the big-bear-planka application
-name: big-bear-planka
-# Service definitions for the big-bear-planka application
+# Name of the big-bear-planka-v2 application
+name: big-bear-planka-v2
+# Service definitions for the big-bear-planka-v2 application
 services:
-  # Service name: big-bear-planka
-  # The `big-bear-planka` service definition
-  big-bear-planka:
+  # Service name: big-bear-planka-v2
+  # The `big-bear-planka-v2` service definition
+  big-bear-planka-v2:
     # Name of the container
-    container_name: big-bear-planka
+    container_name: big-bear-planka-v2
     # Image to be used for the container specifies the Planka version and source
-    image: ghcr.io/plankanban/planka:1.26.3
+    image: ghcr.io/plankanban/planka:2.0.1
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Volumes to be mounted to the container for persistent storage
     volumes:
+      # v2.0.0 Unified data directory (required)
+      - /DATA/AppData/$AppID/data:/app/data
+      # v2.0.0 Background images directory
+      - /DATA/AppData/$AppID/background-images:/app/public/background-images
+      # Legacy mount points (kept for migration compatibility)
       - /DATA/AppData/$AppID/user-avatars:/app/public/user-avatars
       - /DATA/AppData/$AppID/project-background-images:/app/public/project-background-images
       - /DATA/AppData/$AppID/attachments:/app/private/attachments
     # Ports mapping between host and container for network access
     ports:
-      # Mapping port 3000 of the host to port 1337 of the container
-      - "3000:1337"
+      # Mapping port 3001 of the host to port 1337 of the container
+      - "3001:1337"
     # Environment variables to be set in the container for application configuration
     environment:
-      - BASE_URL=http://[YOUR_CASAOS_LAN_IP]:3000
-      - DATABASE_URL=postgresql://postgres@big-bear-planka-postgres/planka
+      - BASE_URL=http://[YOUR_CASAOS_LAN_IP]:3001
+      - DATABASE_URL=postgresql://postgres@big-bear-planka-v2-postgres/planka
       - SECRET_KEY=notsecretkey
-      # - TRUST_PROXY=0
+      # v2.0.0 CHANGE: TRUST_PROXY now requires boolean strings (false/true) instead of numeric (0/1)
+      # - TRUST_PROXY=false
       # - TOKEN_EXPIRES_IN=365 # Token expiration in days
 
       # Additional environment variables for database and security configurations
@@ -52,24 +76,34 @@ services:
       - DEFAULT_ADMIN_PASSWORD=demo
       - DEFAULT_ADMIN_NAME=Demo Demo
       - DEFAULT_ADMIN_USERNAME=demo
-      # OpenID Connect (OIDC) configuration for authentication
-      # - OIDC_ISSUER=
-      # - OIDC_CLIENT_ID=
-      # - OIDC_CLIENT_SECRET=
-      # - OIDC_SCOPES=openid email profile
-      # - OIDC_ADMIN_ROLES=admin
-      # - OIDC_EMAIL_ATTRIBUTE=email
-      # - OIDC_NAME_ATTRIBUTE=name
-      # - OIDC_USERNAME_ATTRIBUTE=preferred_username
-      # - OIDC_ROLES_ATTRIBUTE=groups
-      # - OIDC_IGNORE_USERNAME=true
-      # - OIDC_IGNORE_ROLES=true
-      # - OIDC_ENFORCED=true
+      # v2.0.0 New optional configurations
+      # - DEFAULT_LANGUAGE=en-US # Default UI language
+      # - MAX_UPLOAD_FILE_SIZE=100000000 # Max file upload size in bytes (default: 100MB)
+      # - STORAGE_LIMIT=0 # Total storage limit in bytes (0 = unlimited)
+      # - ACTIVE_USERS_LIMIT=0 # Maximum active users (0 = unlimited)
+    # SSRF protection - blocks outgoing requests to these hosts
+    # - OUTGOING_BLOCKED_HOSTS=localhost,postgres
+    # - OUTGOING_PROXY= # HTTP proxy for outgoing requests
+    # - OUTGOING_PROXY_TLS_REJECT_UNAUTHORIZED=true
+
+    # OpenID Connect (OIDC) configuration for authentication
+    # - OIDC_ISSUER=
+    # - OIDC_CLIENT_ID=
+    # - OIDC_CLIENT_SECRET=
+    # - OIDC_SCOPES=openid email profile
+    # - OIDC_ADMIN_ROLES=admin
+    # - OIDC_EMAIL_ATTRIBUTE=email
+    # - OIDC_NAME_ATTRIBUTE=name
+    # - OIDC_USERNAME_ATTRIBUTE=preferred_username
+    # - OIDC_ROLES_ATTRIBUTE=groups
+    # - OIDC_IGNORE_USERNAME=true
+    # - OIDC_IGNORE_ROLES=true
+    # - OIDC_ENFORCED=true
     networks:
-      - big-bear-planka-network
+      - big-bear-planka-v2-network
     # Dependency on another service, ensuring it is healthy before starting
     depends_on:
-      big-bear-planka-postgres:
+      big-bear-planka-v2-postgres:
         condition: service_healthy
     x-casaos:
       envs:
@@ -95,6 +129,12 @@ services:
           description:
             en_us: 'Container Variable: DEFAULT_ADMIN_USERNAME'
       volumes:
+        - container: /app/data
+          description:
+            en_us: 'Container Path: /app/data'
+        - container: /app/public/background-images
+          description:
+            en_us: 'Container Path: /app/public/background-images'
         - container: /app/public/user-avatars
           description:
             en_us: 'Container Path: /app/public/user-avatars'
@@ -108,8 +148,8 @@ services:
         - container: "1337"
           description:
             en_us: 'Container Port: 1337'
-  # Service definition for the PostgreSQL database used by big-bear-planka
-  big-bear-planka-postgres:
+  # Service definition for the PostgreSQL database used by big-bear-planka-v2
+  big-bear-planka-v2-postgres:
     # Specifies the Docker image to use for the PostgreSQL database
     # Using version 14 of PostgreSQL, based on the lightweight Alpine Linux distribution
     image: postgres:14-alpine
@@ -130,7 +170,7 @@ services:
       # Note: This setting is not recommended for production environments due to security concerns
       - POSTGRES_HOST_AUTH_METHOD=trust
     networks:
-      - big-bear-planka-network
+      - big-bear-planka-v2-network
     # Healthcheck configuration to ensure the database service is running properly
     # Runs a command inside the container at specified intervals to check the health of the service
     healthcheck:
@@ -158,7 +198,7 @@ services:
           description:
             en_us: 'Container Path: /var/lib/postgresql/data'
 networks:
-  big-bear-planka-network:
+  big-bear-planka-v2-network:
     driver: bridge
 x-casaos:
   # Supported CPU architectures for this application
@@ -166,13 +206,13 @@ x-casaos:
     - amd64
     - arm64
   # Main service for this application
-  main: big-bear-planka
+  main: big-bear-planka-v2
   # Detailed description for the application
   description:
     en_us: The realtime kanban board for workgroups built with React and Redux.
   # Brief tagline for the application
   tagline:
-    en_us: Legacy v1 - Use Planka v2 for new installs.
+    en_us: Free open source kanban board for workgroups.
   # Developer's information
   developer: plankanban
   # Author of this particular configuration
@@ -184,11 +224,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: "\U0001F4CC Planka v1 Maintenance Mode\n\nThis is the stable v1.26.3 release. For new deployments, consider 'planka-v2' which includes:\n- Enhanced security (SSRF protection)\n- New features (user mentions, task linking)\n- UI-based webhooks and SMTP configuration\n\nExisting v1 users: Stay on v1 until ready to migrate. Migration requires manual data migration with no rollback.\n\nMigration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
+      en_us: "\U0001F195 PLANKA V2 - SEPARATE APP\n\nThis is a NEW app, separate from 'planka' (v1). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new Planka deployments\n✅ Modern v2 architecture with unified data directory\n✅ Enhanced security (SSRF protection)\n✅ New features: user mentions, task linking, webhooks UI, SMTP UI\n\nFOR V1 USERS:\n⚠️  Do NOT uninstall your 'planka' v1 app\n⚠️  Deploy this as a NEW app alongside v1\n⚠️  Migration is ONE-WAY with NO ROLLBACK\n⚠️  Requires manual data migration: https://docs.planka.cloud/docs/upgrade-to-v2/docker/\n⚠️  Must be on v1 >= 1.26.2, subdomain hosting required\n\nDetailed migration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
   # Title for the application
   title:
-    en_us: Planka (Legacy)
+    en_us: Planka v2
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
-  port_map: "3000"
+  port_map: "3001"
