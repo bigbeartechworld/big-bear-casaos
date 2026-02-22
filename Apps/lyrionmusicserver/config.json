@@ -1,6 +1,6 @@
 {
   "id": "lyrionmusicserver",
-  "version": "9.1.0",
+  "version": "9.2.0",
   "image": "lmscommunity/lyrionmusicserver",
   "youtube": "",
   "docs_link": ""

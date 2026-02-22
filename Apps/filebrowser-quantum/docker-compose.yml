@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-filebrowser-quantum
     # Image to be used for the container
-    image: gtstef/filebrowser:1.1.2-stable
+    image: gtstef/filebrowser:1.1.3-stable
     # Container restart policy
     restart: unless-stopped
     # Environment variables
