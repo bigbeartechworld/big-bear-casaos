@@ -1,0 +1,7 @@
+{
+  "id": "planka-v2",
+  "version": "2.0.1",
+  "image": "ghcr.io/plankanban/planka",
+  "youtube": "https://youtu.be/rsyU2cBbbSI",
+  "docs_link": "https://docs.planka.cloud/docs/upgrade-to-v2/docker/"
+}
