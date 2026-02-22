@@ -1,7 +1,7 @@
 name: big-bear-openclaw
 services:
   big-bear-openclaw:
-    image: ghcr.io/openclaw/openclaw:2026.2.19
+    image: ghcr.io/openclaw/openclaw:2026.2.21
     container_name: big-bear-openclaw
     environment:
       - HOME=/home/node
@@ -55,7 +55,7 @@ services:
           description:
             en_us: 'Container Port: 18790'
   big-bear-openclaw-cli:
-    image: ghcr.io/openclaw/openclaw:2026.2.19
+    image: ghcr.io/openclaw/openclaw:2026.2.21
     container_name: big-bear-openclaw-cli
     environment:
       - HOME=/home/node
