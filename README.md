@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 25.12.20251224 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.30.3 |  |  |
+| budibase | budibase/budibase | 3.30.5 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.1.16 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.53.6 |  |  |
@@ -131,16 +131,16 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dockhand | fnsys/dockhand | latest |  | [Docs](https://dockhand.pro/manual/) |
 | dockpeek | ghcr.io/dockpeek/dockpeek | v1.7.2 |  |  |
 | docmost | docmost/docmost | 0.25.3 |  |  |
-| dozzle | amir20/dozzle | v9.0.3 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | v10.0.4 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.3.7 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.2.15 |  |  |
-| eufy-security-ws | bropat/eufy-security-ws | 1.9.9 |  |  |
+| eufy-security-ws | bropat/eufy-security-ws | 2.0.1 |  |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
 | farmos | farmos/farmos | 3.5.1 |  |  |
 | faster-whisper | linuxserver/faster-whisper | 3.1.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.4 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
-| filebrowser-quantum | gtstef/filebrowser | 1.1.2-stable |  |  |
-| filebrowser | filebrowser/filebrowser | v2.59.0-s6 |  |  |
+| filebrowser-quantum | gtstef/filebrowser | 1.1.3-stable |  |  |
+| filebrowser | filebrowser/filebrowser | v2.60.0-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | lscr.io/linuxserver/firefox | 1147.0.4 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
@@ -186,7 +186,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kopia | ghcr.io/thespad/kopia-server | v0.17.0-spad3 |  |  |
 | lancache | lancachenet/monolithic | latest |  |  |
 | libredesk | libredesk/libredesk | v0.7.4-alpha |  |  |
-| libretranslate | libretranslate/libretranslate | v1.9.0 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
+| libretranslate | libretranslate/libretranslate | v1.9.3 | [YouTube Video](https://youtu.be/VJ5DrsuJ3oA) |  |
 | linkstack | linkstackorg/linkstack | V4 | [YouTube Video](https://youtu.be/1KgFlCsItro) |  |
 | linkwarden | ghcr.io/linkwarden/linkwarden | v2.13.5 | [YouTube Video](https://youtu.be/KZXZAi9Vjs4) |  |
 | lobe-chat | lobehub/lobe-chat | 1.143.3 |  |  |
@@ -232,7 +232,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.19.0 |  |  |
 | owncloud | owncloud/server | 10.16.1 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.7 |  |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.8 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.68.1 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.13.3 |  |  |
@@ -244,6 +244,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pihole | pihole/pihole | 2026.02.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | v1.13.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 16.2.0 |  |  |
+| planka-v2 | ghcr.io/plankanban/planka | 2.0.1 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) | [Docs](https://docs.planka.cloud/docs/upgrade-to-v2/docker/) |
 | planka | ghcr.io/plankanban/planka | 1.26.3 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) |  |
 | plant-it | msdeluise/plant-it-server | 0.10.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playit-docker-web | wisdomsky/playit-docker-web | 1.2 |  |  |
