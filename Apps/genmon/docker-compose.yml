@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-genmon
     # Image to be used for the container
-    image: bigbeartechworld/big-bear-genmon:1.19.06
+    image: bigbeartechworld/big-bear-genmon:1.19.08
     # Environment variables to set inside the container
     environment:
       - TZ=America/Chicago # Set the timezone to 'America/Chicago'
