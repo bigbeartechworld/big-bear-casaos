@@ -8,7 +8,7 @@ services:
     # Name of the container
     container_name: big-bear-nightscout
     # Image to be used for the container
-    image: nightscout/cgm-remote-monitor:15.0.3
+    image: nightscout/cgm-remote-monitor:15.0.5
     # Container restart policy
     restart: unless-stopped
     # Port mappings for the container

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-paperless-ngx
     # Image to be used for the container
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.8
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.9
     # Container restart policy
     restart: unless-stopped
     # environment variables
