@@ -1,6 +1,6 @@
 {
   "id": "nightscout",
-  "version": "15.0.5",
+  "version": "15.0.6",
   "image": "nightscout/cgm-remote-monitor",
   "youtube": "https://youtu.be/ty0F0lo9kSo",
   "docs_link": ""
