@@ -232,7 +232,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.19.1 |  |  |
 | owncloud | owncloud/server | 10.16.1 |  |  |
-| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.9 |  |  |
+| paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.10 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.69.1 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.13.3 |  |  |
