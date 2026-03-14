@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-netalertx
     # Image to be used for the container
-    image: jokobsk/netalertx:26.3.7
+    image: jokobsk/netalertx:25.11.29
     # Container restart policy
     restart: unless-stopped
     # Make the container privileged
@@ -56,10 +56,10 @@ x-casaos:
   main: big-bear-netalertx
   # Detailed description for the application
   description:
-    en_us: WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found.
+    en_us: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. NOTE: This is the legacy version (frozen at 25.11.29). For new installs, use NetAlertX v26 which has improved security and updated volume paths.'
   # Brief tagline for the application
   tagline:
-    en_us: NetAlertX
+    en_us: NetAlertX (Legacy)
   # Developer's information
   developer: jokobsk
   # Author of this particular configuration
@@ -70,7 +70,7 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: NetAlertX
+    en_us: NetAlertX (Legacy)
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application

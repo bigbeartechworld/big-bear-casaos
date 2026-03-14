@@ -1,0 +1,101 @@
+# Configuration for netalertx-v26 setup
+
+# Name of the big-bear-netalertx-v26 application
+name: big-bear-netalertx-v26
+# Service definitions for the big-bear-netalertx-v26 application
+services:
+  # Service name: big-bear-netalertx-v26
+  # The `big-bear-netalertx-v26` service definition
+  big-bear-netalertx-v26:
+    # Name of the container
+    container_name: big-bear-netalertx-v26
+    # Image to be used for the container
+    image: jokobsk/netalertx:26.3.7
+    # Container restart policy
+    restart: unless-stopped
+    # Drop all capabilities and add only what's needed
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+      - NET_BIND_SERVICE
+      - CHOWN
+      - SETUID
+      - SETGID
+    # Volumes to be mounted to the container
+    volumes:
+      # Mounting the local netalertx-v26_config directory to /data/config inside the container
+      - /DATA/AppData/$AppID/config:/data/config
+      # Mounting the local netalertx-v26_db directory to /data/db inside the container
+      - /DATA/AppData/$AppID/db:/data/db
+    # Tmpfs mount
+    tmpfs:
+      - /tmp
+    # Environment variables
+    environment:
+      - TZ=UTC
+      - PORT=8080
+      - PUID=1000
+      - PGID=1000
+      # ❗ DANGER ZONE BELOW - Setting ALWAYS_FRESH_INSTALL=true will delete the content of the /data/db & /data/config folders
+      - ALWAYS_FRESH_INSTALL=false
+    # Network mode for the container
+    network_mode: host
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+        - container: PORT
+          description:
+            en_us: 'Container Variable: PORT'
+        - container: PUID
+          description:
+            en_us: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_us: 'Container Variable: PGID'
+        - container: ALWAYS_FRESH_INSTALL
+          description:
+            en_us: 'Container Variable: ALWAYS_FRESH_INSTALL'
+      volumes:
+        - container: /data/config
+          description:
+            en_us: 'Container Path: /data/config'
+        - container: /data/db
+          description:
+            en_us: 'Container Path: /data/db'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-netalertx-v26
+  # Detailed description for the application
+  description:
+    en_us: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. WARNING: v26 has breaking changes from previous versions — volume paths changed from /app/config and /app/db to /data/config and /data/db. Existing data will NOT be migrated automatically. See the migration docs before upgrading.'
+  # Brief tagline for the application
+  tagline:
+    en_us: NetAlertX v26 (Latest)
+  # Developer's information
+  developer: jokobsk
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/pi-alert.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |
+        v26 has breaking volume path changes. If migrating from the legacy version, see https://docs.netalertx.com for migration instructions.
+  # Title for the application
+  title:
+    en_us: NetAlertX v26
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"
