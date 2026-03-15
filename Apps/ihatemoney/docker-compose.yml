@@ -104,7 +104,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ihatemoney.png
+  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ihatemoney.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
