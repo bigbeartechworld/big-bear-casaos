@@ -8,7 +8,6 @@ services:
     image: ghcr.io/pocket-id/pocket-id:v2.4 # Docker image to use for pocket-id
     restart: unless-stopped # Restart policy: Restart unless manually stopped
     cpu_shares: 90
-    command: []
     deploy:
       resources:
         limits:
@@ -28,8 +27,6 @@ services:
         protocol: tcp # Port mapping between host and container
     volumes:
       - /DATA/AppData/$AppID/data:/app/data
-    devices: []
-    cap_add: []
     network_mode: bridge
     privileged: false
     # Optional healthcheck
