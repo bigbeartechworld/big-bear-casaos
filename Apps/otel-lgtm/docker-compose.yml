@@ -10,17 +10,13 @@ services:
     # Name of the container
     container_name: big-bear-otel-lgtm
     # Image to be used for the container
-    image: grafana/otel-lgtm:0.20.0
+    image: grafana/otel-lgtm:0.21.0
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local otel-lgtm_data directory to /data inside the container
-      - type: bind
-        source: otel-lgtm_data
-        target: /data
-        bind:
-          create_host_path: true
+      - /DATA/AppData/$AppID/data:/data
     # Ports mapping between host and container
     ports:
       # Mapping port 3000 of the host to port 3000 of the container
@@ -43,61 +39,19 @@ services:
       - big-bear-otel-lgtm
     x-casaos:
       volumes:
-        - container: '# Mounting the local otel-lgtm_data directory to /data inside the container'
+        - container: /data
           description:
-            en_us: 'Container Path: # Mounting the local otel-lgtm_data directory to /data inside the container'
-        - container: ' bind'
-          description:
-            en_us: 'Container Path:  bind'
-        - container: ' otel-lgtm_data'
-          description:
-            en_us: 'Container Path:  otel-lgtm_data'
-        - container: ' /data'
-          description:
-            en_us: 'Container Path:  /data'
-        - container: ' true'
-          description:
-            en_us: 'Container Path:  true'
+            en_us: 'Container Path: /data'
       ports:
-        - container: '# Mapping port 3000 of the host to port 3000 of the container'
+        - container: "3000"
           description:
-            en_us: 'Container Port: # Mapping port 3000 of the host to port 3000 of the container'
-        - container: ' ingress'
+            en_us: 'Container Port: 3000'
+        - container: "4317"
           description:
-            en_us: 'Container Port:  ingress'
-        - container: ' 3000'
+            en_us: 'Container Port: 4317'
+        - container: "4318"
           description:
-            en_us: 'Container Port:  3000'
-        - null
-        - container: ' tcp'
-          description:
-            en_us: 'Container Port:  tcp'
-        - container: '# Mapping port 4317 of the host to port 4317 of the container  '
-          description:
-            en_us: 'Container Port: # Mapping port 4317 of the host to port 4317 of the container  '
-        - container: ' ingress'
-          description:
-            en_us: 'Container Port:  ingress'
-        - container: ' 4317'
-          description:
-            en_us: 'Container Port:  4317'
-        - null
-        - container: ' tcp'
-          description:
-            en_us: 'Container Port:  tcp'
-        - container: '# Mapping port 4318 of the host to port 4318 of the container  '
-          description:
-            en_us: 'Container Port: # Mapping port 4318 of the host to port 4318 of the container  '
-        - container: ' ingress'
-          description:
-            en_us: 'Container Port:  ingress'
-        - container: ' 4318'
-          description:
-            en_us: 'Container Port:  4318'
-        - null
-        - container: ' tcp'
-          description:
-            en_us: 'Container Port:  tcp'
+            en_us: 'Container Port: 4318'
 networks:
   big-bear-otel-lgtm:
     driver: bridge

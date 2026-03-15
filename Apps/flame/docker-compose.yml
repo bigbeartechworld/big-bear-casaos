@@ -21,9 +21,7 @@ services:
     # Specifies the storage volumes that the application should use
     volumes:
       # Mounts the application data directory from the host system to the container
-      - type: bind
-        source: flame_data
-        target: /app/data
+      - /DATA/AppData/$AppID/data:/app/data
       # Mounts the Docker socket from the host system to the container
       - type: bind
         source: /var/run/docker.sock
@@ -34,41 +32,16 @@ services:
           description:
             en_us: 'Container Variable: PASSWORD'
       volumes:
-        - container: '# Mounts the application data directory from the host system to the container'
+        - container: /app/data
           description:
-            en_us: 'Container Path: # Mounts the application data directory from the host system to the container'
-        - container: ' bind'
+            en_us: 'Container Path: /app/data'
+        - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path:  bind'
-        - container: ' flame_data'
-          description:
-            en_us: 'Container Path:  flame_data'
-        - container: ' /app/data'
-          description:
-            en_us: 'Container Path:  /app/data'
-        - container: '# Mounts the Docker socket from the host system to the container'
-          description:
-            en_us: 'Container Path: # Mounts the Docker socket from the host system to the container'
-        - container: ' bind'
-          description:
-            en_us: 'Container Path:  bind'
-        - container: ' /var/run/docker.sock'
-          description:
-            en_us: 'Container Path:  /var/run/docker.sock'
-        - container: ' /var/run/docker.sock'
-          description:
-            en_us: 'Container Path:  /var/run/docker.sock'
+            en_us: 'Container Path: /var/run/docker.sock'
       ports:
-        - container: '# Maps the container''s port (target) to the host''s port (published)'
+        - container: "5005"
           description:
-            en_us: 'Container Port: # Maps the container''s port (target) to the host''s port (published)'
-        - container: ' 5005'
-          description:
-            en_us: 'Container Port:  5005'
-        - null
-        - container: ' tcp'
-          description:
-            en_us: 'Container Port:  tcp'
+            en_us: 'Container Port: 5005'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:

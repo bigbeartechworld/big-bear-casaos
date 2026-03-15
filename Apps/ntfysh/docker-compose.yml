@@ -5,7 +5,7 @@ services:
   # Main application service configuration
   app:
     # Docker image to be used for the service
-    image: binwiederhier/ntfy:v2.18.0
+    image: binwiederhier/ntfy:v2.19.0
     # Command to run inside the container
     command:
       - serve
@@ -21,44 +21,24 @@ services:
     restart: unless-stopped
     # Volumes to be mounted inside the container
     volumes:
-      - type: bind
-        source: ntfysh_cache
-        target: /var/cache/ntfy
-      - type: bind
-        source: ntfysh_config
-        target: /etc/ntfy
+      - /DATA/AppData/$AppID/cache:/var/cache/ntfy
+      - /DATA/AppData/$AppID/config:/etc/ntfy
     x-casaos:
       envs:
         - container: TZ
           description:
             en_us: 'Container Variable: TZ'
       volumes:
-        - container: ' bind'
+        - container: /var/cache/ntfy
           description:
-            en_us: 'Container Path:  bind'
-        - container: ' ntfysh_cache'
+            en_us: 'Container Path: /var/cache/ntfy'
+        - container: /etc/ntfy
           description:
-            en_us: 'Container Path:  ntfysh_cache'
-        - container: ' /var/cache/ntfy'
-          description:
-            en_us: 'Container Path:  /var/cache/ntfy'
-        - container: ' bind'
-          description:
-            en_us: 'Container Path:  bind'
-        - container: ' ntfysh_config'
-          description:
-            en_us: 'Container Path:  ntfysh_config'
-        - container: ' /etc/ntfy'
-          description:
-            en_us: 'Container Path:  /etc/ntfy'
+            en_us: 'Container Path: /etc/ntfy'
       ports:
-        - container: ' 80 # Container port'
+        - container: "80"
           description:
-            en_us: 'Container Port:  80 # Container port'
-        - null
-        - container: ' tcp # Protocol type'
-          description:
-            en_us: 'Container Port:  tcp # Protocol type'
+            en_us: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
