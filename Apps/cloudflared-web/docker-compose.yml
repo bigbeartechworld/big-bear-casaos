@@ -24,6 +24,9 @@ services:
       - METRICS_PORT=60123
       - BASIC_AUTH_USER=admin
       - BASIC_AUTH_PASS=""
+    # Volumes for the service
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
     x-casaos:
       envs:
         - container: WEBUI_PORT
@@ -47,6 +50,10 @@ services:
         - container: BASIC_AUTH_PASS
           description:
             en_us: 'Container Variable: BASIC_AUTH_PASS'
+      volumes:
+        - container: /config
+          description:
+            en_us: 'Container Path: /config'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
