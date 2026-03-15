@@ -104,7 +104,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/big-bear-casaos-user-management/logo.jpg
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-docker-images/Apps/big-bear-casaos-user-management/logo.jpg
   # Thumbnail image for the application (if any)
   thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/big-bear-casaos-user-management/thumbnail-v2.png
   # Installation tips
