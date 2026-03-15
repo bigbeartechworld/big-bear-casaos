@@ -47,6 +47,6 @@ x-casaos:
   title:
     en_us: VERT
   # Category under which the application falls
-  category: BigBearUniversalApps
+  category: BigBearCasaOS
   # Default port mapping for the application
   port_map: "3030"
