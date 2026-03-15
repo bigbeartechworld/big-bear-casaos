@@ -74,6 +74,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | music-assistant |  |
 | n8n |  |
 | neko-firefox |  |
+| netalertx-v26 |  |
 | netalertx |  |
 | nextcloud-ls |  |
 | nextcloud-with-smbclient |  |
