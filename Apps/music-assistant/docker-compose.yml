@@ -15,9 +15,7 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      - type: bind
-        source: music-assistant_data
-        target: /data
+      - /DATA/AppData/$AppID/data:/data
     # Network mode for the container
     network_mode: host
     # Security options for container runtime
@@ -31,15 +29,9 @@ services:
       - DAC_READ_SEARCH
     x-casaos:
       volumes:
-        - container: ' bind'
+        - container: /data
           description:
-            en_us: 'Container Path:  bind'
-        - container: ' music-assistant_data'
-          description:
-            en_us: 'Container Path:  music-assistant_data'
-        - container: ' /data'
-          description:
-            en_us: 'Container Path:  /data'
+            en_us: 'Container Path: /data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:

@@ -27,9 +27,7 @@ services:
         published: "1411"
         protocol: tcp # Port mapping between host and container
     volumes:
-      - type: bind
-        source: pocketid_data
-        target: /app/data # Volume for persistent data
+      - /DATA/AppData/$AppID/data:/app/data
     devices: []
     cap_add: []
     network_mode: bridge
@@ -59,23 +57,13 @@ services:
           description:
             en_us: 'Container Variable: PGID'
       volumes:
-        - container: ' bind'
+        - container: /app/data
           description:
-            en_us: 'Container Path:  bind'
-        - container: ' pocketid_data'
-          description:
-            en_us: 'Container Path:  pocketid_data'
-        - container: ' /app/data # Volume for persistent data'
-          description:
-            en_us: 'Container Path:  /app/data # Volume for persistent data'
+            en_us: 'Container Path: /app/data'
       ports:
-        - container: ' 1411'
+        - container: "1411"
           description:
-            en_us: 'Container Port:  1411'
-        - null
-        - container: ' tcp # Port mapping between host and container'
-          description:
-            en_us: 'Container Port:  tcp # Port mapping between host and container'
+            en_us: 'Container Port: 1411'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
