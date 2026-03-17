@@ -1,6 +1,6 @@
 {
   "id": "openclaw",
-  "version": "2026.3.12",
+  "version": "2026.3.13-1",
   "image": "ghcr.io/openclaw/openclaw",
   "youtube": "",
   "docs_link": "https://docs.openclaw.ai/install/docker"
