@@ -109,7 +109,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | budibase | budibase/budibase | 3.34.1 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
-| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.54.5 |  |  |
+| changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.54.6 |  |  |
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | lscr.io/linuxserver/chromium | version-6ae43f81 | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
@@ -122,7 +122,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.10.2 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.22.1 |  |  |
 | dashdot | mauricenino/dashdot | 6.3.4 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
-| dashy | lissy93/dashy | 3.1.11 |  |  |
+| dashy | lissy93/dashy | 3.1.12 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.4.1 |  |  |
 | dbgate | dbgate/dbgate | 7.1.2-alpine |  |  |
 | diun | crazymax/diun | 4.31.0 |  |  |
@@ -130,8 +130,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | dockhand | fnsys/dockhand | latest |  | [Docs](https://dockhand.pro/manual/) |
 | dockpeek | ghcr.io/dockpeek/dockpeek | v1.7.2 |  |  |
-| docmost | docmost/docmost | 0.70.2 |  |  |
-| dozzle | amir20/dozzle | v10.1.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| docmost | docmost/docmost | 0.70.3 |  |  |
+| dozzle | amir20/dozzle | v10.1.2 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.3.7 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.2.15 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 2.1.0 |  |  |
@@ -167,7 +167,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | homer | b4bz/homer | v25.11.1 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 7.0.1 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 2.0.0-alpine |  |  |
-| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.33.3 |  |  |
+| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.34.0 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.5.6 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | v2.5.6 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | invoice-ninja | invoiceninja/invoiceninja | 5.13.1 |  |  |
@@ -214,22 +214,22 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 33.0.0 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
 | nexterm | germannewsmaker/nexterm | 1.0.9-OPEN-PREVIEW | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.6 | [YouTube Video](https://youtu.be/ty0F0lo9kSo) |  |
-| nocodb | nocodb/nocodb | 0.301.3 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
+| nocodb | nocodb/nocodb | 0.301.4 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 4.1.7 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.1 |  |  |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
-| ntfysh | binwiederhier/ntfy | v2.19.1 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
+| ntfysh | binwiederhier/ntfy | v2.19.2 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
 | obsidian | linuxserver/obsidian | 1.12.4 |  |  |
 | octoprint | octoprint/octoprint | 1.11.7 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.18.0-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.18.0 |  |  |
-| ollama-nvidia | ollama/ollama | 0.18.0 |  |  |
+| ollama-amd | ollama/ollama | 0.18.1-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.18.1 |  |  |
+| ollama-nvidia | ollama/ollama | 0.18.1 |  |  |
 | onedev | 1dev/server | 14.1.9 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
-| openclaw | ghcr.io/openclaw/openclaw | 2026.3.12 |  | [Docs](https://docs.openclaw.ai/install/docker) |
+| openclaw | ghcr.io/openclaw/openclaw | 2026.3.13-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.21.0 |  |  |
 | owncloud | owncloud/server | 10.16.1 |  |  |
@@ -263,7 +263,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.12.1 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rallly | lukevella/rallly | 4.7.4 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | v5.0.11 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v5.0.12 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.2 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat-v8 | rocket.chat | 8.0.1 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
