@@ -47,6 +47,7 @@ services:
       DB_HOST: "database" # Database host
       DB_PASSWORD: casaos # Database password
       DB_PORT: "3306" # Database port
+      DB_CONNECTION: "mariadb" # Use MariaDB connector to avoid mysql binary requirement (v1.12.0+)
     x-casaos:
       envs:
         - container: APP_URL
@@ -106,6 +107,9 @@ services:
         - container: DB_PORT
           description:
             en_us: 'Container Variable: DB_PORT'
+        - container: DB_CONNECTION
+          description:
+            en_us: 'Container Variable: DB_CONNECTION'
       volumes:
         - container: /app/var/
           description:
