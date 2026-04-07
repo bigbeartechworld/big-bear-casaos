@@ -91,7 +91,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 6.1.3 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
-| actual-server | actualbudget/actual-server | 26.3.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
+| actual-server | actualbudget/actual-server | 26.4.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | v0.107.73 |  |  |
 | adguard-home | adguard/adguardhome | v0.107.73 | [YouTube Video](https://youtu.be/7NGnCbxBf_U) | [Docs](https://github.com/AdguardTeam/AdGuardHome/wiki) |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
@@ -114,7 +114,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | lscr.io/linuxserver/chromium | version-6ae43f81 | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | cloudflared-web | wisdomsky/cloudflared-web | 2026.3.0 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) | [Docs](https://github.com/wisdomsky/cloudflared-web) |
-| code-server | linuxserver/code-server | 4.114.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.114.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | v2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | composetoolbox | ghcr.io/bluegoosemedia/composetoolbox | latest |  | [Docs](https://github.com/bluegoosemedia/composetoolbox) |
 | convertx | ghcr.io/c4illin/convertx | v0.17.0 |  |  |
@@ -150,7 +150,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.19.08 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.26.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.252.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.253.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.14.2 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | v4.72.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.5.3.2-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
@@ -207,7 +207,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | n8n | n8nio/n8n | 2.15.0 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
-| netalertx-v26 | jokobsk/netalertx | 26.3.15 |  | [Docs](https://docs.netalertx.com) |
+| netalertx-v26 | jokobsk/netalertx | 26.4.6 |  | [Docs](https://docs.netalertx.com) |
 | netalertx | jokobsk/netalertx | 25.11.29 |  |  |
 | nextcloud-ls | linuxserver/nextcloud | 33.0.2 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 33.0.0 |  |  |
