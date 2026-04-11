@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 26.03.20260315 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.35.3 |  |  |
+| budibase | budibase/budibase | 3.35.4 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.54.8 |  |  |
@@ -114,7 +114,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | lscr.io/linuxserver/chromium | version-6ae43f81 | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | cloudflared-web | wisdomsky/cloudflared-web | 2026.3.0 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) | [Docs](https://github.com/wisdomsky/cloudflared-web) |
-| code-server | linuxserver/code-server | 4.114.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.115.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | v2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | composetoolbox | ghcr.io/bluegoosemedia/composetoolbox | latest |  | [Docs](https://github.com/bluegoosemedia/composetoolbox) |
 | convertx | ghcr.io/c4illin/convertx | v0.17.0 |  |  |
@@ -122,9 +122,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.10.2 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 10.23.0 |  |  |
 | dashdot | mauricenino/dashdot | 6.3.4 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
-| dashy | lissy93/dashy | 3.2.10 |  |  |
+| dashy | lissy93/dashy | 3.2.11 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.4.1 |  |  |
-| dbgate | dbgate/dbgate | 7.1.6-alpine |  |  |
+| dbgate | dbgate/dbgate | 7.1.8-alpine |  |  |
 | diun | crazymax/diun | 4.31.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
@@ -149,9 +149,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.20.00 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 6.26.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 2.253.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
-| gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.14.2 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
+| ghost | ghost | 6.27.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghostfolio | ghostfolio/ghostfolio | 2.254.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.0 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | v4.72.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.5.3.2-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.41.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -159,7 +159,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gotify | gotify/server | 2.9.1 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 4.1.20260323 |  |  |
-| homarr-v1 | ghcr.io/homarr-labs/homarr | v1.58.1 |  | [Docs](https://homarr.dev/docs) |
+| homarr-v1 | ghcr.io/homarr-labs/homarr | v1.59.1 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2026.4.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
@@ -168,9 +168,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ihatemoney | ihatemoney/ihatemoney | 7.0.1 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 2.0.0-alpine |  |  |
 | immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.35.0 |  |  |
-| immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.7.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| immich | ghcr.io/immich-app/immich-server | v2.7.2 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.13.14 |  |  |
+| immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.7.4 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| immich | ghcr.io/immich-app/immich-server | v2.7.4 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.13.16 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.9 |  |  |
@@ -193,7 +193,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.9.0 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.2.0 |  |  |
 | mailpit | axllent/mailpit | v1.29 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
-| matterbridge | luligu/matterbridge | 3.7.2 |  |  |
+| matterbridge | luligu/matterbridge | 3.7.3 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
 | mealie | hkotel/mealie | v3.14.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
@@ -202,7 +202,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | morphos | ghcr.io/danvergara/morphos-server | 0.6.0 | [YouTube Video](https://youtu.be/dw7AEDbGqZY) |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
-| music-assistant | ghcr.io/music-assistant/server | 2.8.2 |  |  |
+| music-assistant | ghcr.io/music-assistant/server | 2.8.3 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | n8n | n8nio/n8n | 2.16.0 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
@@ -223,15 +223,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.12.7 |  |  |
 | octoprint | octoprint/octoprint | 1.11.7 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.20.3-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.20.3 |  |  |
-| ollama-nvidia | ollama/ollama | 0.20.3 |  |  |
+| ollama-amd | ollama/ollama | 0.20.5-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.20.5 |  |  |
+| ollama-nvidia | ollama/ollama | 0.20.5 |  |  |
 | onedev | 1dev/server | 14.1.9 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.4.7-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
-| otel-lgtm | grafana/otel-lgtm | 0.23.0 |  |  |
+| otel-lgtm | grafana/otel-lgtm | 0.24.0 |  |  |
 | owncloud | owncloud/server | 10.16.1 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.13 |  |  |
 | passwordpusher | pglombardo/pwpush | 1.69.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
@@ -263,7 +263,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.12.1 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rallly | lukevella/rallly | 4.8.1 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | v5.0.16 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v5.0.17 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.2 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat-v8 | rocket.chat | 8.0.1 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
@@ -273,7 +273,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | v0.144.1-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
-| semaphore | semaphoreui/semaphore | v2.17.33 |  |  |
+| semaphore | semaphoreui/semaphore | v2.17.35 |  |  |
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
@@ -284,7 +284,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | v1.96.5 |  |  |
-| tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.4 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
+| tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.5 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.31.20 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.2 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.12-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
