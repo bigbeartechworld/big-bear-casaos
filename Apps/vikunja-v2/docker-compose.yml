@@ -1,14 +1,33 @@
-# Configuration for big-bear-vikunja setup
+# Configuration for Vikunja v2 setup
 
-# Name of the big-bear-vikunja application
-name: big-bear-vikunja
-# Service definitions for the big-bear-vikunja application
+# VIKUNJA V2 - NEW DEPLOYMENT
+# ============================
+# This is a SEPARATE app from 'vikunja' (v1.x Legacy). They can coexist.
+#
+# Vikunja v2 is a major rewrite with:
+# - Rebuilt session-based authentication (replaces JWT-based auth)
+# - Typesense search removed (no longer supported)
+# - Changed API routes (/projects/:project/tasks)
+# - Restructured CLI commands under 'repair' parent
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Vikunja instances
+#
+# FOR MIGRATION FROM V1:
+# - Do NOT uninstall your existing 'vikunja' v1 app
+# - Deploy this as a NEW app alongside v1
+# - Migration is ONE-WAY - create backups before migrating
+# - See: https://vikunja.io/docs/api-login-session-migration/
+
+# Name of the big-bear-vikunja-v2 application
+name: big-bear-vikunja-v2
+# Service definitions for the big-bear-vikunja-v2 application
 services:
-  vikunja:
-    image: vikunja/vikunja:1.1.0
-    container_name: big-bear-vikunja
+  vikunja-v2:
+    image: vikunja/vikunja:2.3.0
+    container_name: big-bear-vikunja-v2
     ports:
-      - 8081:3456
+      - 8082:3456
     volumes:
       # Map container path to host path for files
       - /DATA/AppData/$AppID/files:/app/vikunja/files
@@ -16,17 +35,16 @@ services:
       # Set the Vikunja frontend URL, replace <your public frontend url with slash> with the actual URL
       VIKUNJA_SERVICE_PUBLICURL: http://<your public frontend url with slash>/
       # Vikunja API environment variables
-      VIKUNJA_DATABASE_HOST: vikunja-db
+      VIKUNJA_DATABASE_HOST: vikunja-v2-db
       VIKUNJA_DATABASE_PASSWORD: secret
       VIKUNJA_DATABASE_TYPE: mysql
       VIKUNJA_DATABASE_USER: vikunja
       VIKUNJA_DATABASE_DATABASE: vikunja
-      VIKUNJA_SERVICE_JWTSECRET: 4c2ad520-f177-425f-ab7f-64c5e2b1c2c8
     restart: unless-stopped
     depends_on:
-      - vikunja-db
+      - vikunja-v2-db
     networks:
-      - vikunja-network
+      - vikunja-v2-network
     x-casaos:
       envs:
         - container: VIKUNJA_SERVICE_PUBLICURL
@@ -47,9 +65,6 @@ services:
         - container: VIKUNJA_DATABASE_DATABASE
           description:
             en_us: 'Container Variable: VIKUNJA_DATABASE_DATABASE'
-        - container: VIKUNJA_SERVICE_JWTSECRET
-          description:
-            en_us: 'Container Variable: VIKUNJA_SERVICE_JWTSECRET'
       volumes:
         - container: /app/vikunja/files
           description:
@@ -58,9 +73,9 @@ services:
         - container: "3456"
           description:
             en_us: 'Container Port: 3456'
-  vikunja-db:
-    image: mariadb:10
-    container_name: vikunja-db
+  vikunja-v2-db:
+    image: mariadb:11
+    container_name: vikunja-v2-db
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
@@ -75,7 +90,7 @@ services:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     restart: unless-stopped
     networks:
-      - vikunja-network
+      - vikunja-v2-network
     x-casaos:
       envs:
         - container: MYSQL_ROOT_PASSWORD
@@ -95,7 +110,7 @@ services:
           description:
             en_us: 'Container Path: /var/lib/mysql'
 networks:
-  vikunja-network:
+  vikunja-v2-network:
     driver: bridge
 x-casaos:
   # Supported CPU architectures for this application
@@ -103,7 +118,7 @@ x-casaos:
     - amd64
     - arm64
   # Main service for this application
-  main: vikunja
+  main: vikunja-v2
   # Detailed description for the application
   description:
     en_us: The open-source, self-hostable to-do app. Organize everything, on all platforms.
@@ -118,10 +133,28 @@ x-casaos:
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/vikunja.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |-
+        NEW APP - VIKUNJA V2
+
+        This is a SEPARATE app from 'Vikunja (Legacy)' (v1.x). Both can run simultaneously.
+
+        Vikunja v2 is a major rewrite:
+        - Rebuilt session-based authentication (API clients may need updates)
+        - Typesense search removed
+        - Changed API routes
+
+        FOR MIGRATION FROM V1:
+        - Do NOT uninstall your existing Vikunja (Legacy) app
+        - Deploy this as a NEW app alongside v1
+        - Create backups before migrating
+        - See: https://vikunja.io/docs/api-login-session-migration/
   # Title for the application
   title:
-    en_us: Vikunja (Legacy)
+    en_us: Vikunja v2
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
-  port_map: "8081"
+  port_map: "8082"

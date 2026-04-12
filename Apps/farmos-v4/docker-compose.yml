@@ -1,28 +1,49 @@
-# Configuration for farmos setup
+# Configuration for FarmOS v4 setup
 
-# Name of the big-bear-farmos application
-name: big-bear-farmos
-# Service definitions for the big-bear-farmos application
+# FARMOS V4 - NEW DEPLOYMENT
+# ===========================
+# This is a SEPARATE app from 'farmos' (v3.x Legacy). They can coexist.
+#
+# FarmOS v4 requires:
+# - PHP 8.4 (Drupal 11)
+# - MariaDB 10.6+ (current legacy uses MariaDB 10)
+# - Mandatory upgrade path: must be on farmOS 3.x before upgrading to 4.x
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new FarmOS instances
+#
+# FOR MIGRATION FROM V3:
+# - Do NOT uninstall your existing 'farmos' v3 app
+# - Ensure you are on the latest farmOS 3.x first
+# - Upgrade your database to MariaDB 10.6+ before migrating data
+# - Create backups before any migration
+# - See: https://farmos.org/hosting/install/
+
+# Name of the big-bear-farmos-v4 application
+name: big-bear-farmos-v4
+# Service definitions for the big-bear-farmos-v4 application
 services:
-  # Service name: big-bear-farmos
-  # The `big-bear-farmos` service definition
-  big-bear-farmos:
+  # Service name: big-bear-farmos-v4
+  # The `big-bear-farmos-v4` service definition
+  big-bear-farmos-v4:
     # Name of the container
-    container_name: big-bear-farmos
+    container_name: big-bear-farmos-v4
     # Image to be used for the container
-    image: farmos/farmos:3.5.1
+    image: farmos/farmos:4.0.0
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      # Mounting the local homarr/configs directory to /app/data/configs inside the container
+      # Mounting the sites directory
       - /DATA/AppData/$AppID/sites:/opt/drupal/web/sites
     # Ports mapping between host and container
     ports:
-      # Mapping port 8080 of the host to port 80 of the container
-      - "8080:80"
+      # Mapping port 8083 of the host to port 80 of the container (8080=v3, 8081=vikunja, 8082=vikunja-v2)
+      - "8083:80"
+    depends_on:
+      - big-bear-farmos-v4-db
     networks:
-      - big-bear-farmos-network
+      - big-bear-farmos-v4-network
     x-casaos:
       volumes:
         - container: /opt/drupal/web/sites
@@ -32,18 +53,18 @@ services:
         - container: "80"
           description:
             en_us: 'Container Port: 80'
-  # MariaDB database service configuration for FarmOS
-  big-bear-farmos-db:
+  # MariaDB database service configuration for FarmOS v4
+  big-bear-farmos-v4-db:
     # Specify the container name
-    container_name: big-bear-farmos-db
-    # Use MariaDB version 10 image
-    image: mariadb:10
+    container_name: big-bear-farmos-v4-db
+    # Use MariaDB 10.6 image (minimum required for farmOS v4)
+    image: mariadb:10.6
     # Mount the database files to persist data
     volumes:
       - "/DATA/AppData/$AppID/db:/var/lib/mysql"
-    # Expose MariaDB port to host
+    # Expose MariaDB port to host (different from v3's 3306)
     ports:
-      - "3306:3306"
+      - "3307:3306"
     # Database environment configuration
     environment:
       # Root user password
@@ -62,9 +83,9 @@ services:
       interval: 1m
       timeout: 5s
       retries: 3
-    # Connect to the FarmOS network
+    # Connect to the FarmOS v4 network
     networks:
-      - big-bear-farmos-network
+      - big-bear-farmos-v4-network
     x-casaos:
       envs:
         - container: MYSQL_ROOT_PASSWORD
@@ -88,8 +109,8 @@ services:
           description:
             en_us: 'Container Port: 3306'
 networks:
-  big-bear-farmos-network:
-    name: big-bear-farmos-network
+  big-bear-farmos-v4-network:
+    name: big-bear-farmos-v4-network
     driver: bridge
 x-casaos:
   # Supported CPU architectures for this application
@@ -97,13 +118,10 @@ x-casaos:
     - amd64
     - arm64
   # Main service for this application
-  main: big-bear-farmos
+  main: big-bear-farmos-v4
   # Detailed description for the application
   description:
     en_us: farmOS is a web-based application for farm management, planning, and record keeping. It is developed by a community of volunteers and aims to provide a standard platform for farmers, developers, and researchers to build upon.
-  # Screenshot links for the application
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/farmos/screenshots/screenshot-1.png
   # Brief tagline for the application
   tagline:
     en_us: A web-based farm record keeping application.
@@ -112,18 +130,30 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/farmos/logo.jpeg
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/farmos-v4/logo.jpeg
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Installation tips
   tips:
     before_install:
-      en_us: |
-        Read this before installing: https://community.bigbeartechworld.com/t/added-farmos-to-bigbearcasaos/2334?u=dragonfire1119
+      en_us: |-
+        NEW APP - FARMOS V4
+
+        This is a SEPARATE app from 'FarmOS (Legacy)' (v3.x). Both can run simultaneously.
+
+        FarmOS v4 requires:
+        - PHP 8.4 (Drupal 11)
+        - MariaDB 10.6+ (this app uses MariaDB 10.6)
+
+        FOR MIGRATION FROM V3:
+        - You MUST be on the latest farmOS 3.x before upgrading
+        - Do NOT uninstall your existing FarmOS (Legacy) app
+        - Create backups before migrating
+        - See: https://farmos.org/hosting/install/
   # Title for the application
   title:
-    en_us: FarmOS (Legacy)
+    en_us: FarmOS v4
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
-  port_map: "8080"
+  port_map: "8083"
