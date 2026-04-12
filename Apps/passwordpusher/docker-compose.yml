@@ -120,7 +120,7 @@ x-casaos:
         Read this before installing: https://community.bigbeartechworld.com/t/added-password-pusher-to-bigbearcasaos/1508?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Password Pusher
+    en_us: Password Pusher (Legacy)
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application

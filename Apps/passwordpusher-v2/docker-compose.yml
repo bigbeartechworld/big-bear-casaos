@@ -1,0 +1,161 @@
+# Configuration for Password Pusher v2 setup
+
+# PASSWORD PUSHER V2 - NEW DEPLOYMENT
+# =====================================
+# This is a SEPARATE app from 'passwordpusher' (v1.x Legacy). They can coexist.
+#
+# Password Pusher v2 breaking changes:
+# - MySQL/MariaDB support dropped entirely (legacy uses MariaDB)
+# - Now uses PostgreSQL for persistence (or SQLite for ephemeral)
+# - `enable_logins` removed; use `allow_anonymous`, `disable_signups`, `disable_logins`
+# - URL/file/QR pushes now default to enabled
+# - Retrieval verification defaults to on
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Password Pusher instances
+#
+# FOR MIGRATION FROM V1:
+# - Do NOT uninstall your existing 'passwordpusher' v1 app
+# - Data migration from MariaDB to PostgreSQL is required
+# - See: https://docs.pwpush.com/docs/upgrading/
+
+# Name of the big-bear-pwpush-v2 application
+name: big-bear-pwpush-v2
+# Service definitions for the big-bear-pwpush-v2 application
+services:
+  # Service name: big-bear-pwpush-v2
+  # The `big-bear-pwpush-v2` service definition
+  big-bear-pwpush-v2:
+    # Name of the container
+    container_name: big-bear-pwpush-v2
+    # Image to be used for the container
+    image: pglombardo/pwpush:2.2.2
+    # Container restart policy
+    restart: unless-stopped
+    # Environment variables for the container
+    environment:
+      # PostgreSQL database connection string (v2 dropped MySQL/MariaDB support)
+      DATABASE_URL: "postgresql://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-v2-db:5432/passwordpusher_db"
+      # Password expiration settings
+      PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT: "1"
+      PWP__PW__EXPIRE_AFTER_VIEWS_MIN: "1"
+      PWP__PW__RETRIEVAL_STEP_DEFAULT: "true"
+      # v2.0: Replaces `enable_logins`; allow anonymous pushes and control signup/login
+      # PWP__ALLOW_ANONYMOUS: "true"
+      # PWP__DISABLE_SIGNUPS: "false"
+      # PWP__DISABLE_LOGINS: "false"
+    # Volumes to be mounted to the container
+    volumes:
+      # Storage volume
+      - /DATA/AppData/$AppID/storage:/opt/PasswordPusher/storage
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 5101 of the host to port 5100 of the container (different from v1's 5100)
+      - "5101:5100"
+    networks:
+      - big_bear_pwpush_v2_network
+    depends_on:
+      big-bear-pwpush-v2-db:
+        condition: service_healthy
+    x-casaos:
+      envs:
+        - container: DATABASE_URL
+          description:
+            en_us: 'Container Variable: DATABASE_URL'
+        - container: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT
+          description:
+            en_us: 'Container Variable: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT'
+        - container: PWP__PW__EXPIRE_AFTER_VIEWS_MIN
+          description:
+            en_us: 'Container Variable: PWP__PW__EXPIRE_AFTER_VIEWS_MIN'
+        - container: PWP__PW__RETRIEVAL_STEP_DEFAULT
+          description:
+            en_us: 'Container Variable: PWP__PW__RETRIEVAL_STEP_DEFAULT'
+      volumes:
+        - container: /opt/PasswordPusher/storage
+          description:
+            en_us: 'Container Path: /opt/PasswordPusher/storage'
+      ports:
+        - container: "5100"
+          description:
+            en_us: 'Container Port: 5100'
+  big-bear-pwpush-v2-db:
+    container_name: big-bear-pwpush-v2-db
+    # PostgreSQL required for v2 (MySQL/MariaDB no longer supported)
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: "pwpusher"
+      POSTGRES_PASSWORD: "6280144a-56af-486f-9088-ac7301399328"
+      POSTGRES_DB: "passwordpusher_db"
+    volumes:
+      - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pwpusher -d passwordpusher_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - big_bear_pwpush_v2_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_us: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: 'Container Path: /var/lib/postgresql/data'
+networks:
+  big_bear_pwpush_v2_network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-pwpush-v2
+  # Detailed description for the application
+  description:
+    en_us: Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.
+  # Brief tagline for the application
+  tagline:
+    en_us: Give your users the tools to be secure by default.
+  # Developer's information
+  developer: pglombardo
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/password-pusher.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |-
+        NEW APP - PASSWORD PUSHER V2
+
+        This is a SEPARATE app from 'Password Pusher (Legacy)' (v1.x). Both can run simultaneously.
+
+        Password Pusher v2 breaking changes:
+        - MySQL/MariaDB dropped entirely; now uses PostgreSQL
+        - 'enable_logins' removed; use 'allow_anonymous', 'disable_signups', 'disable_logins'
+        - URL/file/QR pushes now enabled by default
+
+        FOR MIGRATION FROM V1:
+        - Do NOT uninstall your existing Password Pusher (Legacy) app
+        - Data migration from MariaDB to PostgreSQL is required
+        - See: https://docs.pwpush.com/docs/upgrading/
+  # Title for the application
+  title:
+    en_us: Password Pusher v2
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "5101"
