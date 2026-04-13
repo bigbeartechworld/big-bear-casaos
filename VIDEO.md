@@ -30,6 +30,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | ejbca-ce |  |
 | erugo |  |
 | eufy-security-ws |  |
+| farmos-v4 |  |
 | farmos |  |
 | faster-whisper |  |
 | filebrowser-quantum |  |
