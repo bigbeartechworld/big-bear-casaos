@@ -1,14 +1,22 @@
-name: big-bear-jellyseerr # Name of the compose project
+name: big-bear-seerr # Name of the compose project
 services:
   app:
-    image: fallenbagel/jellyseerr:2.7.3 # Image to use for the jellyseerr service
+    image: ghcr.io/seerr-team/seerr:3.1.0 # Image to use for the seerr service
+    init: true # Enable init process
+    container_name: big-bear-seerr
     ports:
-      - "5055:5055" # Maps port 5055 on the host to port 5055 on the container
+      - "5056:5055" # Maps port 5056 on the host to port 5055 on the container
     volumes:
       - /DATA/AppData/$AppID/config:/app/config # Binds a volume from host to container for configuration
     environment:
       - LOG_LEVEL=debug # Sets the log level to debug
       - TZ=$TZ # Sets the timezone, using host's timezone variable
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
     restart: unless-stopped # Service will restart unless it is explicitly stopped
     network_mode: bridge # Uses bridge network mode
     x-casaos:
@@ -36,26 +44,22 @@ x-casaos:
   main: app
   # Detailed description for the application
   description:
-    en_us: 'Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers! Note: Jellyseerr is no longer actively maintained. New users should use Seerr instead.'
+    en_us: Seerr is a free and open source software application for managing requests for your media library. It is the successor to Overseerr and Jellyseerr, bringing support for Jellyfin, Plex, and Emby media servers.
   # Brief tagline for the application
   tagline:
-    en_us: Legacy media request manager - new users should use Seerr instead
+    en_us: Media request management for Jellyfin, Plex, and Emby
   # Developer's information
-  developer: Fallenbagel
+  developer: Seerr Team
   # Author of this particular configuration
   author: BigBearCommunity
   # Icon URL for the application
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyseerr.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/seerr.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg
-  # Installation tips
-  tips:
-    before_install:
-      en_us: Jellyseerr is no longer actively maintained. Consider installing Seerr instead, which is the official successor with automatic migration support.
+  thumbnail: ""
   # Title for the application
   title:
-    en_us: Jellyseerr (Legacy)
+    en_us: Seerr
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
-  port_map: "5055"
+  port_map: "5056"
