@@ -1,7 +1,7 @@
 {
   "id": "seerr",
   "version": "3.1.1",
-  "image": "ghcr.io/seerr-team/seerr",
+  "image": "seerr/seerr",
   "youtube": "",
   "docs_link": "https://docs.seerr.dev"
 }
