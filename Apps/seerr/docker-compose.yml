@@ -1,7 +1,7 @@
 name: big-bear-seerr # Name of the compose project
 services:
   app:
-    image: ghcr.io/seerr-team/seerr:3.1.1 # Image to use for the seerr service
+    image: seerr/seerr:v3.1.1 # Image to use for the seerr service
     init: true # Enable init process
     container_name: big-bear-seerr
     ports:
