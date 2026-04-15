@@ -1,6 +1,6 @@
 {
   "id": "seerr",
-  "version": "3.1.1",
+  "version": "v3.1.1",
   "image": "seerr/seerr",
   "youtube": "",
   "docs_link": "https://docs.seerr.dev"
