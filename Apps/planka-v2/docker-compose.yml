@@ -39,7 +39,7 @@ services:
     # Name of the container
     container_name: big-bear-planka-v2
     # Image to be used for the container specifies the Planka version and source
-    image: ghcr.io/plankanban/planka:2.0.1
+    image: ghcr.io/plankanban/planka:2.1.1
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Volumes to be mounted to the container for persistent storage
