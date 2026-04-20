@@ -13,6 +13,10 @@ services:
     image: ghcr.io/home-assistant/home-assistant:2026.4.3
     # Container restart policy
     restart: unless-stopped
+    # Required capabilities for Bluetooth management in Home Assistant Docker containers
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local home-assistant_config directory to /config inside the container
