@@ -99,7 +99,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | audiobookshelf | ghcr.io/advplyr/audiobookshelf | 2.33.2 |  |  |
 | authentik | ghcr.io/goauthentik/server | 2026.2.2 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
-| baserow | baserow/baserow | 2.2.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
+| baserow | baserow/baserow | 2.2.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beaverhabits | daya0576/beaverhabits | 0.9.0 |  |  |
 | beszel | henrygd/beszel | 0.18.7 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
@@ -124,7 +124,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashdot | mauricenino/dashdot | 6.3.4 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.3.1 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.4.1 |  |  |
-| dbgate | dbgate/dbgate | 7.1.8-alpine |  |  |
+| dbgate | dbgate/dbgate | 7.1.9-alpine |  |  |
 | diun | crazymax/diun | 4.31.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
@@ -152,7 +152,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | genmon | bigbeartechworld/big-bear-genmon | 1.20.00 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.30.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.255.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
-| gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
+| gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.5 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | v4.72.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.5.3.2-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.41.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -205,7 +205,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.5 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.18.0 |  |  |
+| n8n | n8nio/n8n | 2.18.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.4.6 |  | [Docs](https://docs.netalertx.com) |
@@ -264,7 +264,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.12.2 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.12.1 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
-| rallly | lukevella/rallly | 4.9.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
+| rallly | lukevella/rallly | 4.9.2 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | reactive-resume | amruthpillai/reactive-resume | v5.0.18 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.3 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
