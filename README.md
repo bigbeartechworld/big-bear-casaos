@@ -131,7 +131,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dockhand | fnsys/dockhand | latest |  | [Docs](https://dockhand.pro/manual/) |
 | dockpeek | ghcr.io/dockpeek/dockpeek | v1.7.2 |  |  |
 | docmost | docmost/docmost | 0.80.0 |  |  |
-| dozzle | amir20/dozzle | v10.4.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | v10.5.0 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.3.7 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.2.15 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 2.1.0 |  |  |
@@ -152,7 +152,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | genmon | bigbeartechworld/big-bear-genmon | 1.20.00 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.32.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.255.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
-| gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.5 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
+| gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.6 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | v4.72.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.5.3.2-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.41.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -293,10 +293,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | traccar | traccar/traccar | 6.12-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.102.2 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.87 |  |  |
-| tugtainer | quenary/tugtainer | v1.29.0 |  |  |
+| tugtainer | quenary/tugtainer | v1.29.1 |  |  |
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
-| umbrel-os | dockurr/umbrel | 1.4.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
+| umbrel-os | dockurr/umbrel | 1.5.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
 | unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 10.3.55 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unifi-network-application | linuxserver/unifi-network-application | 10.3.55 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | upsnap | ghcr.io/seriousm4x/upsnap | 5.3.2 |  |  |
@@ -306,7 +306,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | vikunja | vikunja/vikunja | 1.1.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.5.2 |  |  |
 | wallabag | wallabag/wallabag | 2.6.14 |  |  |
-| wallos | bellamy/wallos | 4.8.2 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
+| wallos | bellamy/wallos | 4.8.3 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 9.9.3 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.4 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
 | wg-easy-v15 | ghcr.io/wg-easy/wg-easy | 15 |  |  |
