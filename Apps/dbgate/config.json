@@ -1,6 +1,6 @@
 {
   "id": "dbgate",
-  "version": "7.1.9-alpine",
+  "version": "7.1.10-alpine",
   "image": "dbgate/dbgate",
   "youtube": "",
   "docs_link": ""
