@@ -124,7 +124,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashdot | mauricenino/dashdot | 6.3.4 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
 | dashy | lissy93/dashy | 3.3.1 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.4.1 |  |  |
-| dbgate | dbgate/dbgate | 7.1.10-alpine |  |  |
+| dbgate | dbgate/dbgate | 7.1.11-alpine |  |  |
 | diun | crazymax/diun | 4.31.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
@@ -162,7 +162,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | healthchecks | linuxserver/healthchecks | 4.2.20260504 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.60.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2026.4.4 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2026.5.0 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homepage | ghcr.io/gethomepage/homepage | v1.12.3 |  |  |
 | homer | b4bz/homer | v26.4.2 |  |  |
@@ -205,7 +205,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.20.0 |  |  |
+| n8n | n8nio/n8n | 2.20.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.5.4 |  | [Docs](https://docs.netalertx.com) |
@@ -216,7 +216,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nexterm | germannewsmaker/nexterm | 1.0.9-OPEN-PREVIEW | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.7 | [YouTube Video](https://youtu.be/ty0F0lo9kSo) |  |
 | nocodb | nocodb/nocodb | 0.301.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
-| node-red | nodered/node-red | 4.1.8 |  |  |
+| node-red | nodered/node-red | 4.1.9 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
 | ntfysh | binwiederhier/ntfy | v2.22.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
@@ -238,7 +238,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | passwordpusher-v2 | pglombardo/pwpush | 2.6.4 | [YouTube Video](https://youtu.be/U17LWqXfOmU) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
 | passwordpusher | pglombardo/pwpush | 1.69.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
-| penpot | penpotapp/frontend | 2.14.4 |  |  |
+| penpot | penpotapp/frontend | 2.14.5 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.3 |  |  |
@@ -288,7 +288,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | v1.96.5 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.9 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.31.23 |  |  |
+| tianji | moonrailgun/tianji | 1.31.24 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.2 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.13-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.102.2 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
