@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 26.03.20260315 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.37.4 |  |  |
+| budibase | budibase/budibase | 3.37.5 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.55.3 |  |  |
@@ -114,7 +114,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | lscr.io/linuxserver/chromium | version-6ae43f81 | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
 | cloudflared-web | wisdomsky/cloudflared-web | 2026.3.0 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) | [Docs](https://github.com/wisdomsky/cloudflared-web) |
-| code-server | linuxserver/code-server | 4.117.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.118.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | v2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | composetoolbox | ghcr.io/bluegoosemedia/composetoolbox | latest |  | [Docs](https://github.com/bluegoosemedia/composetoolbox) |
 | convertx | ghcr.io/c4illin/convertx | v0.17.0 |  |  |
@@ -196,7 +196,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mailpit | axllent/mailpit | v1.29 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | matterbridge | luligu/matterbridge | 3.7.7 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
-| mealie | hkotel/mealie | v3.16.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
+| mealie | hkotel/mealie | v3.17.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
 | mind | mrcas/mind | v1.4.1 |  |  |
 | minio | bigbeartechworld/big-bear-minio | RELEASE.2025-10-15T17-29-55Z |  |  |
@@ -205,7 +205,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.6 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.20.1 |  |  |
+| n8n | n8nio/n8n | 2.20.4 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.5.4 |  | [Docs](https://docs.netalertx.com) |
@@ -276,7 +276,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrypted | koush/scrypted | v0.144.1-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | seerr | seerr/seerr | v3.2.0 |  | [Docs](https://docs.seerr.dev) |
-| semaphore | semaphoreui/semaphore | v2.18.1 |  |  |
+| semaphore | semaphoreui/semaphore | v2.18.2 |  |  |
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
@@ -288,7 +288,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | v1.96.5 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.9 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.31.24 |  |  |
+| tianji | moonrailgun/tianji | 1.31.25 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.2 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.13-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.102.2 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
@@ -315,7 +315,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | wishlist | ghcr.io/cmintey/wishlist | v0.64.0 |  |  |
 | wordpress | wordpress | 6.9.4 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | write-freely | nephatrine/write-freely | 0.16 |  |  |
-| zigbee2mqtt | koenkk/zigbee2mqtt | 2.10.0 |  |  |
+| zigbee2mqtt | koenkk/zigbee2mqtt | 2.10.1 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.13 |  |  |
 | zotero | linuxserver/zotero | 9.0.20260417 |  |  |
 
