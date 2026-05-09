@@ -91,7 +91,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 6.1.3 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
-| actual-server | actualbudget/actual-server | 26.5.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
+| actual-server | actualbudget/actual-server | 26.5.2 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | v0.107.74 |  |  |
 | adguard-home | adguard/adguardhome | v0.107.74 | [YouTube Video](https://youtu.be/7NGnCbxBf_U) | [Docs](https://github.com/AdguardTeam/AdGuardHome/wiki) |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
@@ -162,16 +162,16 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | healthchecks | linuxserver/healthchecks | 4.2.20260504 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.60.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
-| home-assistant | ghcr.io/home-assistant/home-assistant | 2026.5.0 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
+| home-assistant | ghcr.io/home-assistant/home-assistant | 2026.5.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
 | homepage | ghcr.io/gethomepage/homepage | v1.12.3 |  |  |
 | homer | b4bz/homer | v26.4.2 |  |  |
 | ihatemoney | ihatemoney/ihatemoney | 7.0.1 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 2.0.0-alpine |  |  |
-| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.38.0 |  |  |
+| immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.38.1 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.7.5 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | v2.7.5 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.13.21 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.13.22 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.10 |  |  |
@@ -203,9 +203,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | monica | monica | 4.1.2 |  |  |
 | morphos | ghcr.io/danvergara/morphos-server | 0.6.0 | [YouTube Video](https://youtu.be/dw7AEDbGqZY) |  |
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
-| music-assistant | ghcr.io/music-assistant/server | 2.8.6 |  |  |
+| music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.20.4 |  |  |
+| n8n | n8nio/n8n | 2.20.6 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.5.4 |  | [Docs](https://docs.netalertx.com) |
@@ -216,7 +216,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nexterm | germannewsmaker/nexterm | 1.0.9-OPEN-PREVIEW | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.7 | [YouTube Video](https://youtu.be/ty0F0lo9kSo) |  |
 | nocodb | nocodb/nocodb | 0.301.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
-| node-red | nodered/node-red | 4.1.9 |  |  |
+| node-red | nodered/node-red | 4.1.10 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
 | ntfysh | binwiederhier/ntfy | v2.22.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
@@ -224,15 +224,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | obsidian | linuxserver/obsidian | 1.12.7 |  |  |
 | octoprint | octoprint/octoprint | 1.11.7 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| ollama-amd | ollama/ollama | 0.23.1-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.23.1 |  |  |
-| ollama-nvidia | ollama/ollama | 0.23.1 |  |  |
+| ollama-amd | ollama/ollama | 0.23.2-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.23.2 |  |  |
+| ollama-nvidia | ollama/ollama | 0.23.2 |  |  |
 | onedev | 1dev/server | 14.1.9 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
-| otel-lgtm | grafana/otel-lgtm | 0.27.0 |  |  |
+| otel-lgtm | grafana/otel-lgtm | 0.27.1 |  |  |
 | owncloud | owncloud/server | 10.16.2 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.15 |  |  |
 | passwordpusher-v2 | pglombardo/pwpush | 2.6.4 | [YouTube Video](https://youtu.be/U17LWqXfOmU) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
@@ -283,7 +283,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.14.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
 | stalwart-mail | stalwartlabs/stalwart | v0.16.4 |  |  |
-| stirling-pdf | stirlingtools/stirling-pdf | 2.10.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
+| stirling-pdf | stirlingtools/stirling-pdf | 2.10.1 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.0 |  |  |
 | tailscale | tailscale/tailscale | v1.96.5 |  |  |
