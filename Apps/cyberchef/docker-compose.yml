@@ -10,18 +10,18 @@ services:
     # Name of the container
     container_name: big-bear-cyberchef
     # Image to be used for the container
-    image: ghcr.io/gchq/cyberchef:10.24.0
+    image: ghcr.io/gchq/cyberchef:11.0.0
     # Container restart policy
     restart: unless-stopped
     # Ports mapping between host and container
     ports:
-      # Mapping port 8080 of the host to port 80 of the container
-      - "8080:80"
+      # Mapping port 8080 of the host to port 8080 of the container
+      - "8080:8080"
     x-casaos:
       ports:
-        - container: "80"
+        - container: "8080"
           description:
-            en_us: 'Container Port: 80'
+            en_us: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
