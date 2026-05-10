@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 26.03.20260315 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.5 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.37.5 |  |  |
+| budibase | budibase/budibase | 3.38.0 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.55.3 |  |  |
@@ -150,7 +150,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.20.00 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 6.36.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 6.37.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 2.255.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gladys | gladysassistant/gladys | v4.72.1 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
@@ -160,13 +160,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gotify | gotify/server | 2.9.1 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | healthchecks | linuxserver/healthchecks | 4.2.20260504 |  |  |
-| homarr-v1 | ghcr.io/homarr-labs/homarr | v1.60.0 |  | [Docs](https://homarr.dev/docs) |
+| homarr-v1 | ghcr.io/homarr-labs/homarr | v1.61.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2026.5.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
 | homebridge | homebridge/homebridge | 2024-05-02 |  |  |
-| homepage | ghcr.io/gethomepage/homepage | v1.12.3 |  |  |
+| homepage | ghcr.io/gethomepage/homepage | v1.13.0 |  |  |
 | homer | b4bz/homer | v26.4.2 |  |  |
-| ihatemoney | ihatemoney/ihatemoney | 7.0.1 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
+| ihatemoney | ihatemoney/ihatemoney | 7.1.1 | [YouTube Video](https://youtu.be/aHz0Vh-KbXw) |  |
 | immich-aio-alpine | ghcr.io/imagegenius/immich | 2.0.0-alpine |  |  |
 | immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.38.1 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v2.7.5 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
@@ -194,7 +194,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.9.0 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.2.0 |  |  |
 | mailpit | axllent/mailpit | v1.29 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
-| matterbridge | luligu/matterbridge | 3.7.7 |  |  |
+| matterbridge | luligu/matterbridge | 3.7.8 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
 | mealie | hkotel/mealie | v3.17.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
@@ -235,7 +235,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | otel-lgtm | grafana/otel-lgtm | 0.27.1 |  |  |
 | owncloud | owncloud/server | 10.16.2 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.15 |  |  |
-| passwordpusher-v2 | pglombardo/pwpush | 2.6.4 | [YouTube Video](https://youtu.be/U17LWqXfOmU) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
+| passwordpusher-v2 | pglombardo/pwpush | 2.6.5 | [YouTube Video](https://youtu.be/U17LWqXfOmU) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
 | passwordpusher | pglombardo/pwpush | 1.69.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.14.5 |  |  |
@@ -258,17 +258,17 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | portainer-agent | portainer/agent | 2.41.0 |  |  |
 | portainer | portainer/portainer-ce | 2.41.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | portracker | mostafawahied/portracker | 1.3 |  |  |
-| poste-io | analogic/poste.io | 2.5.11 |  |  |
+| poste-io | analogic/poste.io | 2.5.12 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | psitransfer | psitrax/psitransfer | v2.4.3 |  | [Docs](https://github.com/psi-4ward/psitransfer/tree/master/docs) |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.12.2 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.12.1 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rallly | lukevella/rallly | 4.10.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | v5.0.20 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v5.1.1 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.3 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
-| rocket-chat-v8 | rocket.chat | 8.4.0 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
+| rocket-chat-v8 | rocket.chat | 8.4.1 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
 | romm | rommapp/romm | 4.8.1 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | rustfs | rustfs/rustfs | 1.0.0-alpha.71 |  | [Docs](https://community.bigbeartechworld.com/t/added-rustfs-to-bigbearuniversal-apps/5143#p-7884-documentation-5) |
