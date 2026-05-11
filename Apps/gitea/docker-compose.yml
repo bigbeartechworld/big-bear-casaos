@@ -1,0 +1,81 @@
+name: big-bear-gitea
+services:
+  big-bear-gitea:
+    container_name: big-bear-gitea
+    image: gitea/gitea:1.26.1
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "2222:22"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__server__SSH_PORT=2222
+      # - GITEA__server__DOMAIN=git.example.com
+      # - GITEA__server__ROOT_URL=https://git.example.com/
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=3", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    x-casaos:
+      envs:
+        - container: USER_UID
+          description:
+            en_us: 'Container Variable: USER_UID'
+        - container: USER_GID
+          description:
+            en_us: 'Container Variable: USER_GID'
+        - container: GITEA__server__SSH_PORT
+          description:
+            en_us: 'Container Variable: GITEA__server__SSH_PORT'
+      volumes:
+        - container: /data
+          description:
+            en_us: 'Container Path: /data'
+        - container: /etc/timezone
+          description:
+            en_us: 'Container Path: /etc/timezone'
+        - container: /etc/localtime
+          description:
+            en_us: 'Container Path: /etc/localtime'
+      ports:
+        - container: "3000"
+          description:
+            en_us: 'Container Port: 3000'
+        - container: "22"
+          description:
+            en_us: 'Container Port: 22'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-gitea
+  # Detailed description for the application
+  description:
+    en_us: Gitea is a painless self-hosted all-in-one software development service. It includes Git hosting, code review, team collaboration, package registry, and CI/CD. It is similar to GitHub, Bitbucket and GitLab.
+  # Brief tagline for the application
+  tagline:
+    en_us: Self-hosted Git service
+  # Developer's information
+  developer: gitea
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/gitea.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Gitea
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"
