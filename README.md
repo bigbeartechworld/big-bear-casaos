@@ -122,6 +122,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | crafty | registry.gitlab.com/crafty-controller/crafty-4 | 4.10.4 | [YouTube Video](https://youtu.be/Vw4su8hT_7A) |  |
 | cyberchef | ghcr.io/gchq/cyberchef | 11.0.0 |  |  |
 | dashdot | mauricenino/dashdot | 6.3.4 | [YouTube Video](https://youtu.be/if_fyuX_5fU) |  |
+| dashy-v4 | lissy93/dashy | 4.0.8 |  | [Docs](https://github.com/Lissy93/dashy/blob/master/docs/changelog.md) |
 | dashy | lissy93/dashy | 3.3.1 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.4.1 |  |  |
 | dbgate | dbgate/dbgate | 7.1.11-alpine |  |  |
