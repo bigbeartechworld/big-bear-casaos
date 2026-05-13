@@ -1,0 +1,109 @@
+# Configuration for Dashy v4 setup
+
+# DASHY V4.0.8 - NEW DEPLOYMENT
+# ================================
+# This is a SEPARATE app from 'dashy' (v3.3.1). They can coexist.
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Dashy instances
+# - Uses v4 architecture with /app/user-data config directory
+# - Runs as non-root (uid/gid 1000)
+#
+# FOR MIGRATION FROM V3:
+# - Do NOT uninstall your existing 'dashy' v3 app
+# - Deploy this as NEW app alongside v3
+# - Copy your conf.yml: docker cp big-bear-dashy:/app/public/conf.yml ./conf.yml
+# - Place conf.yml in the new volume at /app/user-data/conf.yml
+# - Breaking changes: /app/public -> /app/user-data, healthcheck path updated
+# - Config schema changes: pageInfo.footerText -> pageInfo.footer
+#
+# Detailed migration: https://github.com/Lissy93/dashy/blob/master/docs/changelog.md
+
+# Name of the big-bear-dashy-v4 application
+name: big-bear-dashy-v4
+# Service definitions for the dashy-v4 application
+services:
+  # Service name: big-bear-dashy-v4
+  big-bear-dashy-v4:
+    # Image to be used for the app service
+    image: lissy93/dashy:4.0.8
+    # Name of the container
+    container_name: big-bear-dashy-v4
+    volumes:
+      - /DATA/AppData/$AppID/user-data:/app/user-data
+    # Ports mapping
+    ports:
+      - 4001:8080
+    # Set any environmental variables
+    environment:
+      - NODE_ENV=production
+    # Restart policy for the container
+    restart: unless-stopped
+    # Configure healthchecks for the service
+    healthcheck:
+      test: ["CMD", "node", "/app/services/healthcheck.js"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_us: 'Container Variable: NODE_ENV'
+      volumes:
+        - container: /app/user-data
+          description:
+            en_us: 'Container Path: /app/user-data'
+      ports:
+        - container: "8080"
+          description:
+            en_us: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-dashy-v4
+  # Detailed description for the application
+  description:
+    en_us: Dashy helps you organize your self-hosted services by making them accessible from a single place
+  # Brief tagline for the application
+  tagline:
+    en_us: Dashy v4
+  # Developer's information
+  developer: Lissy93
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dashy.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |-
+        NEW APP - DASHY V4
+
+        This is a NEW app, separate from 'dashy' (v3). Both can run simultaneously.
+
+        FOR NEW USERS:
+        - Install this app for new Dashy deployments
+        - v4 stores config at /app/user-data instead of /app/public
+        - Runs as non-root (uid/gid 1000)
+
+        FOR V3 USERS:
+        - Do NOT uninstall your 'dashy' v3 app
+        - Deploy this as a NEW app alongside v3
+        - Copy your conf.yml from v3: docker cp big-bear-dashy:/app/public/conf.yml ./conf.yml
+        - Note: pageInfo.footerText renamed to pageInfo.footer in v4
+
+        Detailed changelog: https://github.com/Lissy93/dashy/blob/master/docs/changelog.md
+  # Title for the application
+  title:
+    en_us: Dashy v4
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "4001"
