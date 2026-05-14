@@ -1,0 +1,48 @@
+name: big-bear-nova-dso-tracker
+services:
+  nova:
+    image: mrantonsg/nova-dso-tracker:5.9.0
+    container_name: big-bear-nova-dso-tracker
+    ports:
+      - "5001:5001"
+    volumes:
+      - /DATA/AppData/$AppID/instance:/app/instance
+    restart: unless-stopped
+    network_mode: bridge
+    x-casaos:
+      volumes:
+        - container: /app/instance
+          description:
+            en_us: 'Container Path: /app/instance'
+      ports:
+        - container: "5001"
+          description:
+            en_us: 'Container Port: 5001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: nova
+  # Detailed description for the application
+  description:
+    en_us: Nova DSO Tracker is a tool for astrophotographers to track Deep Space Objects, check observability, and manage imaging sessions.
+  # Brief tagline for the application
+  tagline:
+    en_us: Real-time tracking and planning for Deep Space Objects.
+  # Developer's information
+  developer: mrantonSG
+  # Author of this particular configuration
+  author: mrantonSG
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/nova-dso-tracker/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Nova DSO Tracker
+  # Category under which the application falls
+  category: Photography
+  # Default port mapping for the application
+  port_map: "5001"

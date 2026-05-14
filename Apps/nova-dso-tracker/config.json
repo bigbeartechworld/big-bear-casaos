@@ -1,0 +1,7 @@
+{
+  "id": "nova-dso-tracker",
+  "version": "5.9.0",
+  "image": "mrantonsg/nova-dso-tracker:5.9.0",
+  "youtube": "",
+  "docs_link": "https://nova-tracker.com"
+}
