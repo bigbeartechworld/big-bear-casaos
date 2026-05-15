@@ -83,6 +83,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | nextcloud-with-smbclient |  |
 | node-red |  |
 | note-mark-aio |  |
+| nova-dso-tracker |  |
 | npmplus |  |
 | obsidian |  |
 | odoo |  |
