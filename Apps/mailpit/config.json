@@ -1,6 +1,6 @@
 {
   "id": "mailpit",
-  "version": "v1.29",
+  "version": "v1.30",
   "image": "axllent/mailpit",
   "youtube": "https://youtu.be/2MY3S6csrVw",
   "docs_link": ""
