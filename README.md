@@ -142,7 +142,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | faster-whisper | linuxserver/faster-whisper | 3.1.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.4 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
 | filebrowser-quantum | gtstef/filebrowser | 1.3.2-stable |  |  |
-| filebrowser | filebrowser/filebrowser | v2.63.3-s6 |  |  |
+| filebrowser | filebrowser/filebrowser | v2.63.4-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | lscr.io/linuxserver/firefox | 1150.0.3 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
