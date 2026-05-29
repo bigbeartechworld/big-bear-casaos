@@ -132,7 +132,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dockhand | fnsys/dockhand | latest |  | [Docs](https://dockhand.pro/manual/) |
 | dockpeek | ghcr.io/dockpeek/dockpeek | v1.7.2 |  |  |
 | docmost | docmost/docmost | 0.90.0 |  |  |
-| dozzle | amir20/dozzle | v10.6.0 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | v10.6.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.3.7 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
 | erugo | wardy784/erugo | 0.2.15 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 2.1.0 |  |  |
@@ -152,16 +152,16 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 1.20.00 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.39.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.4.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.5.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 1.26.2 |  | [Docs](https://docs.gitea.com/) |
-| gladys | gladysassistant/gladys | v4.74.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
+| gladys | gladysassistant/gladys | v4.75.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.5.3.2-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.41.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | goaway | pommee/goaway | 0.63.15 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 2.9.1 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
-| healthchecks | linuxserver/healthchecks | 4.2.20260518 |  |  |
+| healthchecks | linuxserver/healthchecks | 4.2.20260525 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.61.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2026.5.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
@@ -198,7 +198,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mailpit | axllent/mailpit | v1.30 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | matterbridge | luligu/matterbridge | 3.7.10 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
-| mealie | hkotel/mealie | v3.18.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
+| mealie | hkotel/mealie | v3.19.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
 | mind | mrcas/mind | v1.4.1 |  |  |
 | minio | bigbeartechworld/big-bear-minio | RELEASE.2025-10-15T17-29-55Z |  |  |
@@ -207,7 +207,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.22.2 |  |  |
+| n8n | n8nio/n8n | 2.22.3 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.4 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.5.4 |  | [Docs](https://docs.netalertx.com) |
@@ -284,7 +284,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.14.2 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.14.3 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
 | stalwart-mail | stalwartlabs/stalwart | v0.16.6 |  |  |
 | stirling-pdf | stirlingtools/stirling-pdf | 2.11.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
