@@ -1,6 +1,6 @@
 {
   "id": "playit-docker-web",
-  "version": "1.2",
+  "version": "1.0.4",
   "image": "wisdomsky/playit-docker-web",
   "youtube": "",
   "docs_link": ""
