@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-playit-docker-web
     # Image to be used for the container
-    image: wisdomsky/playit-docker-web:1.0.4
+    image: wisdomsky/playit-docker-web:1.0.5
     # Container restart policy
     restart: unless-stopped
     # Network mode
