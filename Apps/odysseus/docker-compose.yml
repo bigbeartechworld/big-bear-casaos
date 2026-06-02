@@ -1,0 +1,260 @@
+# Configuration for odysseus setup
+
+# Name of the big-bear-odysseus application
+name: big-bear-odysseus
+# Service definitions for the big-bear-odysseus application
+services:
+  # Service name: big-bear-odysseus
+  # The main Odysseus AI workspace service
+  big-bear-odysseus:
+    # Name of the container
+    container_name: big-bear-odysseus
+    # Image to be used for the container
+    image: bigbeartechworld/big-bear-odysseus:2026.06.02
+    # Container restart policy
+    restart: unless-stopped
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 7000 of the host to port 7000 of the container
+      - "7000:7000"
+    environment:
+      # Process user ID
+      - PUID=1000
+      # Process group ID
+      - PGID=1000
+      # Require login to access the workspace
+      - AUTH_ENABLED=${AUTH_ENABLED:-true}
+      # Admin password (override via .env, default is insecure)
+      - ODYSSEUS_ADMIN_PASSWORD=${ODYSSEUS_ADMIN_PASSWORD:-changeme}
+      # SearXNG search instance URL
+      - SEARXNG_INSTANCE=http://searxng:8080
+      # ChromaDB host
+      - CHROMADB_HOST=chromadb
+      # ChromaDB port
+      - CHROMADB_PORT=8000
+    # Volumes to be mounted to the container
+    volumes:
+      # Application data
+      - /DATA/AppData/$AppID/data:/app/data
+      # Application logs
+      - /DATA/AppData/$AppID/logs:/app/logs
+    # Start order dependencies
+    depends_on:
+      searxng:
+        condition: service_healthy
+      chromadb:
+        condition: service_started
+    # Healthcheck for the Odysseus API
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - big_bear_odysseus_network
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_us: 'Container Variable: PGID'
+        - container: AUTH_ENABLED
+          description:
+            en_us: 'Container Variable: AUTH_ENABLED'
+        - container: ODYSSEUS_ADMIN_PASSWORD
+          description:
+            en_us: 'Container Variable: ODYSSEUS_ADMIN_PASSWORD'
+        - container: SEARXNG_INSTANCE
+          description:
+            en_us: 'Container Variable: SEARXNG_INSTANCE'
+        - container: CHROMADB_HOST
+          description:
+            en_us: 'Container Variable: CHROMADB_HOST'
+        - container: CHROMADB_PORT
+          description:
+            en_us: 'Container Variable: CHROMADB_PORT'
+      volumes:
+        - container: /app/data
+          description:
+            en_us: 'Container Path: /app/data'
+        - container: /app/logs
+          description:
+            en_us: 'Container Path: /app/logs'
+      ports:
+        - container: "7000"
+          description:
+            en_us: 'Container Port: 7000'
+  # Service name: chromadb
+  # Vector database for Odysseus
+  chromadb:
+    # Name of the container
+    container_name: big-bear-odysseus-chromadb
+    # Image to be used for the container
+    image: chromadb/chroma:1.5.9
+    # Container restart policy
+    restart: unless-stopped
+    environment:
+      # Disable anonymized telemetry
+      - ANONYMIZED_TELEMETRY=FALSE
+    # Volumes to be mounted to the container
+    volumes:
+      # ChromaDB persistence
+      - /DATA/AppData/$AppID/chromadb:/chroma/chroma
+    networks:
+      - big_bear_odysseus_network
+    x-casaos:
+      envs:
+        - container: ANONYMIZED_TELEMETRY
+          description:
+            en_us: 'Container Variable: ANONYMIZED_TELEMETRY'
+      volumes:
+        - container: /chroma/chroma
+          description:
+            en_us: 'Container Path: /chroma/chroma'
+  # Service name: searxng
+  # Web search backend; settings seeded into the named volume on first run
+  searxng:
+    # Name of the container
+    container_name: big-bear-odysseus-searxng
+    # Image to be used for the container
+    image: searxng/searxng:2026.6.2-e964708c0
+    # Container restart policy
+    restart: unless-stopped
+    # Inline entrypoint seeds settings.yml (secret + html/json formats) into the volume
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -eu
+        if [ ! -s /etc/searxng/settings.yml ]; then
+          secret="$${SEARXNG_SECRET:-}"
+          if [ -z "$$secret" ]; then
+            secret="$$(python -c 'import secrets; print(secrets.token_urlsafe(48))')"
+          fi
+          cat > /etc/searxng/settings.yml <<EOF
+        use_default_settings: true
+        server:
+          secret_key: "$$secret"
+        search:
+          formats:
+            - html
+            - json
+        EOF
+        fi
+        exec /usr/local/searxng/entrypoint.sh
+    environment:
+      # Base URL for SearXNG
+      - SEARXNG_BASE_URL=http://localhost:8080/
+      # Optional fixed secret (auto-generated if empty)
+      - SEARXNG_SECRET=${SEARXNG_SECRET:-}
+    # Volumes to be mounted to the container
+    volumes:
+      # SearXNG config persistence
+      - /DATA/AppData/$AppID/searxng:/etc/searxng
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - DAC_OVERRIDE
+    # Healthcheck for the SearXNG service
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8080/', timeout=5).read(1)\""]
+      interval: 10s
+      timeout: 6s
+      retries: 20
+      start_period: 10s
+    networks:
+      - big_bear_odysseus_network
+    x-casaos:
+      envs:
+        - container: SEARXNG_BASE_URL
+          description:
+            en_us: 'Container Variable: SEARXNG_BASE_URL'
+        - container: SEARXNG_SECRET
+          description:
+            en_us: 'Container Variable: SEARXNG_SECRET'
+      volumes:
+        - container: /etc/searxng
+          description:
+            en_us: 'Container Path: /etc/searxng'
+  # Service name: ntfy
+  # Optional notification service
+  ntfy:
+    # Name of the container
+    container_name: big-bear-odysseus-ntfy
+    # Image to be used for the container
+    image: binwiederhier/ntfy:v2.23.0
+    # Container restart policy
+    restart: unless-stopped
+    # Run the ntfy server
+    command: serve
+    # Ports mapping between host and container (bound to loopback by default)
+    ports:
+      - "${NTFY_BIND:-127.0.0.1}:8091:80"
+    environment:
+      # Base URL for ntfy
+      - NTFY_BASE_URL=${NTFY_BASE_URL:-http://localhost:8091}
+    # Volumes to be mounted to the container
+    volumes:
+      # ntfy cache
+      - /DATA/AppData/$AppID/ntfy:/var/cache/ntfy
+    networks:
+      - big_bear_odysseus_network
+    x-casaos:
+      envs:
+        - container: NTFY_BASE_URL
+          description:
+            en_us: 'Container Variable: NTFY_BASE_URL'
+      volumes:
+        - container: /var/cache/ntfy
+          description:
+            en_us: 'Container Path: /var/cache/ntfy'
+      ports:
+        - container: "80"
+          description:
+            en_us: 'Container Port: 80'
+# Network configuration
+networks:
+  big_bear_odysseus_network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-odysseus
+  # Detailed description for the application
+  description:
+    en_us: Odysseus is a self-hosted AI workspace. It bundles chat, web search via SearXNG, and a ChromaDB vector store so you can run your own private AI environment with the LLM provider of your choice.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://raw.githubusercontent.com/pewdiepie-archdaemon/odysseus/main/docs/odysseus.jpg
+  # Brief tagline for the application
+  tagline:
+    en_us: Self-hosted AI workspace
+  # Developer's information
+  developer: pewdiepie-archdaemon
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/odysseus/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |
+        Set ODYSSEUS_ADMIN_PASSWORD before installing. The default password is insecure.
+  # Title for the application
+  title:
+    en_us: Odysseus
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "7000"

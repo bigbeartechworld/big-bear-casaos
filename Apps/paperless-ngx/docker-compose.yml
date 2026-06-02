@@ -103,7 +103,7 @@ services:
             en_us: 'Container Port: 8000'
   big-bear-paperless-ngx-broker:
     container_name: big-bear-paperless-ngx-broker
-    image: docker.io/library/redis:8.6.3
+    image: docker.io/library/redis:8.8.0
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/redis:/data
@@ -156,7 +156,7 @@ services:
   # /tmp directory to prevent potential security issues.
   big-bear-paperless-ngx-gotenberg:
     container_name: big-bear-paperless-ngx-gotenberg
-    image: gotenberg/gotenberg:8.32
+    image: gotenberg/gotenberg:8.33
     restart: unless-stopped
     # The gotenberg chromium route is used to convert .eml files. We do not
     # want to allow external content like tracking pixels or even javascript.
