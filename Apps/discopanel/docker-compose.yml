@@ -1,0 +1,100 @@
+# Configuration for discopanel setup
+
+# Name of the big-bear-discopanel application
+name: big-bear-discopanel
+# Service definitions for the big-bear-discopanel application
+services:
+  # Service name: big-bear-discopanel
+  # The main DiscoPanel application service
+  big-bear-discopanel:
+    # Name of the container
+    container_name: big-bear-discopanel
+    # Image to be used for the container
+    image: nickheyer/discopanel:v2.0.12
+    # Container restart policy
+    restart: unless-stopped
+    # Host networking is required so DiscoPanel can expose the dynamic
+    # Minecraft server ports (25565+) of the containers it manages
+    network_mode: host
+    # Environment variables for the container
+    environment:
+      # Path inside the container where DiscoPanel stores its data
+      - DISCOPANEL_DATA_DIR=/app/data
+      # Real host path of the data mount. DiscoPanel passes this to the
+      # Minecraft containers it spawns so they can bind-mount their worlds.
+      # Must match the host source of the /app/data bind mount below.
+      - DISCOPANEL_HOST_DATA_PATH=/DATA/AppData/discopanel/data
+      # Timezone for the application
+      - TZ=UTC
+    # Volumes to be mounted to the container. Bind mounts are used (not named
+    # volumes) because DISCOPANEL_HOST_DATA_PATH must reference a real host
+    # path that DiscoPanel can hand to the Minecraft containers it spawns.
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Manage Minecraft server containers
+      - /DATA/AppData/discopanel/data:/app/data # Application data and server worlds
+      - /DATA/AppData/discopanel/backups:/app/backups # Server backups
+      - /DATA/AppData/discopanel/tmp:/app/tmp # Temporary files
+    x-casaos:
+      envs:
+        - container: DISCOPANEL_DATA_DIR
+          description:
+            en_us: 'Container Variable: DISCOPANEL_DATA_DIR'
+        - container: DISCOPANEL_HOST_DATA_PATH
+          description:
+            en_us: 'Container Variable: DISCOPANEL_HOST_DATA_PATH'
+        - container: TZ
+          description:
+            en_us: 'Container Variable: TZ'
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_us: 'Container Path: /var/run/docker.sock'
+        - container: /app/data
+          description:
+            en_us: 'Container Path: /app/data'
+        - container: /app/backups
+          description:
+            en_us: 'Container Path: /app/backups'
+        - container: /app/tmp
+          description:
+            en_us: 'Container Path: /app/tmp'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: big-bear-discopanel
+  # Detailed description for the application
+  description:
+    en_us: DiscoPanel is a game server panel for Minecraft. It provides a clean interface for creating and managing Minecraft servers, installing modpacks, and running each server as its own Docker container. Features include modpack browsing and installation, per-server configuration, backups, and real-time server management.
+  # Brief tagline for the application
+  tagline:
+    en_us: A game server panel for Minecraft
+  # Developer's information
+  developer: nickheyer
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://discopanel.app/g1_256x256.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: |-
+        **Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld
+        **Community Forum**: https://community.bigbeartechworld.com
+
+        DiscoPanel manages Minecraft servers as Docker containers and runs with host networking so it can expose each server's port (25565+).
+
+        `DISCOPANEL_HOST_DATA_PATH` must match the host path of the data mount so the Minecraft servers DiscoPanel spawns can bind-mount their worlds. It defaults to `/DATA/AppData/discopanel/data`. If you change the data mount location, update this value to match.
+
+        **Security Note**: This app requires Docker socket access, which grants full Docker daemon privileges.
+  # Title for the application
+  title:
+    en_us: DiscoPanel
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "8080"
