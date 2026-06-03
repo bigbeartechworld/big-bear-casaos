@@ -23,9 +23,9 @@ services:
       # Process group ID
       - PGID=1000
       # Require login to access the workspace
-      - AUTH_ENABLED=${AUTH_ENABLED:-true}
+      - AUTH_ENABLED=true
       # Admin password (override via .env, default is insecure)
-      - ODYSSEUS_ADMIN_PASSWORD=${ODYSSEUS_ADMIN_PASSWORD:-changeme}
+      - ODYSSEUS_ADMIN_PASSWORD=61713bbc-7b62-4148-b5ea-5c83048c4818
       # SearXNG search instance URL
       - SEARXNG_INSTANCE=http://searxng:8080
       # ChromaDB host
@@ -149,7 +149,7 @@ services:
       # Base URL for SearXNG
       - SEARXNG_BASE_URL=http://localhost:8080/
       # Optional fixed secret (auto-generated if empty)
-      - SEARXNG_SECRET=${SEARXNG_SECRET:-}
+      - SEARXNG_SECRET=3164fa5e-b7bf-4c65-8576-c63170a47042
     # Volumes to be mounted to the container
     volumes:
       # SearXNG config persistence
@@ -195,10 +195,10 @@ services:
     command: serve
     # Ports mapping between host and container (bound to loopback by default)
     ports:
-      - "${NTFY_BIND:-127.0.0.1}:8091:80"
+      - "127.0.0.1:8091:80"
     environment:
       # Base URL for ntfy
-      - NTFY_BASE_URL=${NTFY_BASE_URL:-http://localhost:8091}
+      - NTFY_BASE_URL=http://localhost:8091
     # Volumes to be mounted to the container
     volumes:
       # ntfy cache

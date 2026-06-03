@@ -1,6 +1,6 @@
 {
   "id": "nextcloud-with-smbclient",
-  "version": "33.0.3",
+  "version": "33.0.4",
   "image": "bigbeartechworld/big-bear-nextcloud-with-smbclient",
   "youtube": "",
   "docs_link": ""
