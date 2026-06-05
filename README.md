@@ -91,7 +91,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | Application | Docker Image | Version | YouTube Video | Docs |
 | --- | --- | --- | --- | --- |
 | 2fauth | 2fauth/2fauth | 6.1.3 | [YouTube Video](https://youtu.be/yCnjxSryD_U) |  |
-| actual-server | actualbudget/actual-server | 26.5.2 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
+| actual-server | actualbudget/actual-server | 26.6.0 | [YouTube Video](https://youtu.be/fa8j7ZfkYaM) |  |
 | adguard-home-host | adguard/adguardhome | v0.107.76 |  |  |
 | adguard-home | adguard/adguardhome | v0.107.76 | [YouTube Video](https://youtu.be/7NGnCbxBf_U) | [Docs](https://github.com/AdguardTeam/AdGuardHome/wiki) |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
@@ -103,10 +103,10 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | beaverhabits | daya0576/beaverhabits | 0.9.1 |  |  |
 | beszel | henrygd/beszel | 0.18.7 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
-| bookstack | lscr.io/linuxserver/bookstack | 26.05.20260528 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
+| bookstack | lscr.io/linuxserver/bookstack | 26.05.20260601 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.39.5 |  |  |
+| budibase | budibase/budibase | 3.39.7 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | changedetection | ghcr.io/dgtlmoon/changedetection.io | 0.55.3 |  |  |
@@ -156,7 +156,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ghostfolio | ghostfolio/ghostfolio | 3.6.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 1.26.2 |  | [Docs](https://docs.gitea.com/) |
-| gladys | gladysassistant/gladys | v4.76.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
+| gladys | gladysassistant/gladys | v4.77.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glances | nicolargo/glances | 4.5.3.2-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.41.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | goaway | pommee/goaway | 0.63.15 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
@@ -208,7 +208,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.23.1 |  |  |
+| n8n | n8nio/n8n | 2.23.2 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.7 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.5.4 |  | [Docs](https://docs.netalertx.com) |
@@ -229,16 +229,16 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | octoprint | octoprint/octoprint | 1.11.7 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
 | odysseus | bigbeartechworld/big-bear-odysseus | 2026.06.02 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
-| ollama-amd | ollama/ollama | 0.24.0-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.24.0 |  |  |
-| ollama-nvidia | ollama/ollama | 0.24.0 |  |  |
+| ollama-amd | ollama/ollama | 0.30.0-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.30.0 |  |  |
+| ollama-nvidia | ollama/ollama | 0.30.0 |  |  |
 | onedev | 1dev/server | 15.0.8 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.28.0 |  |  |
-| owncloud | owncloud/server | 10.16.2 |  |  |
+| owncloud | owncloud/server | 10.16.3 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.15 |  |  |
 | passwordpusher-v2 | pglombardo/pwpush | 2.7.0 | [YouTube Video](https://youtu.be/U17LWqXfOmU) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
 | passwordpusher | pglombardo/pwpush | 1.69.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
@@ -271,7 +271,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rackpeek | aptacode/rackpeek | v1.4.0 |  | [Docs](https://timmoth.github.io/RackPeek/docs/overview) |
 | rallly | lukevella/rallly | 4.10.2 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | v5.1.7 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v5.1.8 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.3 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat-v8 | rocket.chat | 8.4.1 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
@@ -321,7 +321,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | wishlist | ghcr.io/cmintey/wishlist | v0.64.0 |  |  |
 | wordpress | wordpress | 6.9.4 | [YouTube Video](https://youtu.be/j5M4qlRCbYs) |  |
 | write-freely | nephatrine/write-freely | 0.16 |  |  |
-| zigbee2mqtt | koenkk/zigbee2mqtt | 2.10.1 |  |  |
+| zigbee2mqtt | koenkk/zigbee2mqtt | 2.11.0 |  |  |
 | zipline | ghcr.io/diced/zipline | 3.7.13 |  |  |
 | zotero | linuxserver/zotero | 9.0.20260417 |  |  |
 
