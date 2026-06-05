@@ -1,6 +1,6 @@
 {
   "id": "actual-server",
-  "version": "26.5.2",
+  "version": "26.6.0",
   "image": "actualbudget/actual-server",
   "youtube": "https://youtu.be/fa8j7ZfkYaM",
   "docs_link": ""
