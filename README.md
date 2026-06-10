@@ -144,7 +144,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | faster-whisper | linuxserver/faster-whisper | 3.1.0 |  |  |
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.5 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
 | filebrowser-quantum | gtstef/filebrowser | 1.3.3-stable |  |  |
-| filebrowser | filebrowser/filebrowser | v2.63.12-s6 |  |  |
+| filebrowser | filebrowser/filebrowser | v2.63.13-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | lscr.io/linuxserver/firefox | 1151.0.3 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
@@ -153,7 +153,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 6.44.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 6.44.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 3.7.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 1.26.2 |  | [Docs](https://docs.gitea.com/) |
@@ -233,7 +233,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.30.6-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.30.6 |  |  |
 | ollama-nvidia | ollama/ollama | 0.30.6 |  |  |
-| onedev | 1dev/server | 15.1.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 15.1.5 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
@@ -289,7 +289,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.14.3 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
-| stalwart-mail | stalwartlabs/stalwart | v0.16.7 |  |  |
+| stalwart-mail | stalwartlabs/stalwart | v0.16.8 |  |  |
 | stirling-pdf | stirlingtools/stirling-pdf | 2.11.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.1 |  |  |
@@ -313,7 +313,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | vikunja | vikunja/vikunja | 1.1.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.5.3 |  |  |
 | wallabag | wallabag/wallabag | 2.6.14 |  |  |
-| wallos | bellamy/wallos | 4.9.3 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
+| wallos | bellamy/wallos | 4.9.5 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 9.9.3 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.4 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
 | wg-easy-v15 | ghcr.io/wg-easy/wg-easy | 15 |  |  |
