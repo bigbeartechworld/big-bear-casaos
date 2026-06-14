@@ -151,7 +151,7 @@ services:
           description:
             en_us: 'Container Path: /var/lib/mysql'
   big-bear-invoice-ninja-init:
-    image: bash:5.3.12
+    image: bash:5.3.15
     container_name: big-bear-invoice-ninja-init
     volumes:
       - /DATA/AppData/$AppID/data:/tmp/data
