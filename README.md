@@ -105,8 +105,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
 | bookstack | lscr.io/linuxserver/bookstack | 26.05.20260608 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
-| btop | bigbeartechworld/big-bear-btop | 0.1.8 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.39.11 |  |  |
+| btop | bigbeartechworld/big-bear-btop | 0.1.9 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
+| budibase | budibase/budibase | 3.39.12 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | celestory | celestory/gateway | 1.1.2 |  |  |
@@ -114,7 +114,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | chatpad | ghcr.io/deiucanta/chatpad | f45cd53bc410412610c1ba1cbd84cd137d8e167d |  |  |
 | chrome | kasmweb/chrome | 1.15.0-rolling | [YouTube Video](https://youtu.be/jYm_Ih8VHAs) |  |
 | chromium | lscr.io/linuxserver/chromium | version-6ae43f81 | [YouTube Video](https://youtu.be/ziy4c4n7KnU) |  |
-| cloudflared-web | wisdomsky/cloudflared-web | 2026.5.2 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) | [Docs](https://github.com/wisdomsky/cloudflared-web) |
+| cloudflared-web | wisdomsky/cloudflared-web | 2026.6.0 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) | [Docs](https://github.com/wisdomsky/cloudflared-web) |
 | code-server | linuxserver/code-server | 4.123.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | v2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | composetoolbox | ghcr.io/bluegoosemedia/composetoolbox | latest |  | [Docs](https://github.com/bluegoosemedia/composetoolbox) |
@@ -127,7 +127,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashy | lissy93/dashy | 3.3.1 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.4.1 |  |  |
 | dbgate | dbgate/dbgate | 7.2.0-alpine |  |  |
-| discopanel | nickheyer/discopanel | v2.0.12 |  | [Docs](https://docs.discopanel.app) |
+| discopanel | nickheyer/discopanel | v2.0.13 |  | [Docs](https://docs.discopanel.app) |
 | diun | crazymax/diun | 4.33.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
@@ -146,7 +146,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | filebrowser-quantum | gtstef/filebrowser | 1.3.3-stable |  |  |
 | filebrowser | filebrowser/filebrowser | v2.63.14-s6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
-| firefox | lscr.io/linuxserver/firefox | 1151.0.3 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
+| firefox | lscr.io/linuxserver/firefox | 1151.0.4 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.6.0 |  |  |
 | flowise | flowiseai/flowise | 3.1.2 |  |  |
@@ -209,8 +209,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.26.1 |  |  |
-| ncdu | bigbeartechworld/big-bear-ncdu | 0.0.7 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
+| n8n | n8nio/n8n | 2.26.2 |  |  |
+| ncdu | bigbeartechworld/big-bear-ncdu | 0.0.8 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.6.3 |  | [Docs](https://docs.netalertx.com) |
 | netalertx | jokobsk/netalertx | 25.11.29 |  |  |
@@ -295,12 +295,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 2.1 |  |  |
 | tailscale | tailscale/tailscale | v1.98.4 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.9 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.31.28 |  |  |
+| tianji | moonrailgun/tianji | 1.31.29 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.2 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.14-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.103.0 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.87 |  |  |
-| tugtainer | quenary/tugtainer | v1.30.2 |  |  |
+| tugtainer | quenary/tugtainer | v1.30.3 |  |  |
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
 | umbrel-os | dockurr/umbrel | 1.7.3 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
