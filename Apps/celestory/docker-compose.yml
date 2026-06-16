@@ -152,7 +152,7 @@ services:
           description:
             en_us: 'Container Variable: ORIGIN'
   api:
-    image: celestory/api:1.1.2
+    image: celestory/api:1.1.3
     container_name: celestory-api
     volumes:
       - /DATA/AppData/$AppID/projectFiles:/app/projectFiles
@@ -258,7 +258,7 @@ services:
           description:
             en_us: 'Container Path: /usr/src/app/projectFiles'
   auth:
-    image: celestory/auth:1.1.0
+    image: celestory/auth:1.1.1
     container_name: celestory-auth
     environment:
       PORT: 80
