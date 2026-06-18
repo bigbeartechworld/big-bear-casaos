@@ -154,7 +154,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.45.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.10.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.11.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 1.26.2 |  | [Docs](https://docs.gitea.com/) |
 | gladys | gladysassistant/gladys | v4.78.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
@@ -249,7 +249,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.3 |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2026.05.0 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
-| pihole-updatelists | jacklul/pihole | 2026.05.0 |  |  |
+| pihole-updatelists | jacklul/pihole | 2026.06.0 |  |  |
 | pihole | pihole/pihole | 2026.05.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | v1.13.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 16.4.0 |  |  |
@@ -287,7 +287,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.14.3 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.14.4 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
 | stalwart-mail | stalwartlabs/stalwart | v0.16.8 |  |  |
 | stirling-pdf | stirlingtools/stirling-pdf | 2.12.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
@@ -295,12 +295,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | syncthing | syncthing/syncthing | 2.1 |  |  |
 | tailscale | tailscale/tailscale | v1.98.4 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.9 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.31.29 |  |  |
+| tianji | moonrailgun/tianji | 1.32.0 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.2 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.14-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.103.0 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.87 |  |  |
-| tugtainer | quenary/tugtainer | v1.30.4 |  |  |
+| tugtainer | quenary/tugtainer | v1.30.5 |  |  |
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
 | umbrel-os | dockurr/umbrel | 1.7.3 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
