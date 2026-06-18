@@ -60,7 +60,7 @@ services:
           description:
             en_us: 'Container Port: 80'
   frontend:
-    image: celestory/frontend:1.1.3
+    image: celestory/frontend:1.1.4
     container_name: celestory-frontend
     environment:
       CLOUD_API_URL: http://api
