@@ -10,9 +10,14 @@ services:
     # Name of the container
     container_name: big-bear-nexterm
     # Image to be used for the container
-    image: germannewsmaker/nexterm:1.0.9-OPEN-PREVIEW
+    image: nexterm/aio:1.2.1-BETA
     # Container restart policy
     restart: unless-stopped
+    # Environment variables for the big-bear-nexterm container
+    environment:
+      # REQUIRED: Replace with a strong random key before deploying
+      # Generate with: openssl rand -hex 32
+      - ENCRYPTION_KEY=
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local nexterm_data directory to /app/data inside the container
@@ -22,6 +27,10 @@ services:
       # Mapping port 6989 of the host to port 6989 of the container
       - "6989:6989"
     x-casaos:
+      envs:
+        - container: ENCRYPTION_KEY
+          description:
+            en_us: 'Container Variable: ENCRYPTION_KEY'
       volumes:
         - container: /app/data
           description:
@@ -39,12 +48,12 @@ x-casaos:
   main: big-bear-nexterm
   # Detailed description for the application
   description:
-    en_us: The open source server management software for SSH, VNC & RDP. This is in Preview Release.
+    en_us: The open source server management software for SSH, VNC & RDP. This is in BETA.
   # Brief tagline for the application
   tagline:
     en_us: Nexterm
   # Developer's information
-  developer: germannewsmaker
+  developer: gnmyt
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
