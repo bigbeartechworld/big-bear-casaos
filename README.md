@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 26.05.20260608 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.10 | [YouTube Video](https://youtu.be/mD52bujMt68) |  |
-| budibase | budibase/budibase | 3.39.18 |  |  |
+| budibase | budibase/budibase | 3.39.19 |  |  |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | celestory | celestory/gateway | 1.1.2 |  |  |
@@ -154,7 +154,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.45.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.11.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.12.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 1.26.2 |  | [Docs](https://docs.gitea.com/) |
 | gladys | gladysassistant/gladys | v4.79.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
@@ -209,7 +209,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.27.0 |  |  |
+| n8n | n8nio/n8n | 2.27.1 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.9 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.6.3 |  | [Docs](https://docs.netalertx.com) |
@@ -230,9 +230,9 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | octoprint | octoprint/octoprint | 1.11.7 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
 | odysseus | bigbeartechworld/big-bear-odysseus | 2026.06.15 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
-| ollama-amd | ollama/ollama | 0.30.8-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.30.8 |  |  |
-| ollama-nvidia | ollama/ollama | 0.30.8 |  |  |
+| ollama-amd | ollama/ollama | 0.30.10-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.30.10 |  |  |
+| ollama-nvidia | ollama/ollama | 0.30.10 |  |  |
 | onedev | 1dev/server | 15.1.6 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
@@ -250,7 +250,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.3 |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 2026.06.0 | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole-updatelists | jacklul/pihole | 2026.06.0 |  |  |
-| pihole | pihole/pihole | 2026.05.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
+| pihole | pihole/pihole | 2026.06.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | v1.13.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 16.4.0 |  |  |
 | planka-v2 | ghcr.io/plankanban/planka | 2.1.1 | [YouTube Video](https://youtu.be/rsyU2cBbbSI) | [Docs](https://docs.planka.cloud/docs/upgrade-to-v2/docker/) |
@@ -277,7 +277,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat-v8 | rocket.chat | 8.4.3 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 4.9.1 |  | [Docs](https://github.com/rommapp/romm/wiki) |
+| romm | rommapp/romm | 4.9.2 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | rustfs | rustfs/rustfs | 1.0.0-alpha.71 |  | [Docs](https://community.bigbeartechworld.com/t/added-rustfs-to-bigbearuniversal-apps/5143#p-7884-documentation-5) |
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | v0.144.1-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
