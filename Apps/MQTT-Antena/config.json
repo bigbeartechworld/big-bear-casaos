@@ -1,0 +1,7 @@
+{
+  "id": "mqtt-antena",
+  "version": "1.5.8",
+  "image": "fbossolan/mqtt-antena",
+  "youtube": "",
+  "docs_link": "https://fbossolan.github.io/mqtt-antena/"
+}
