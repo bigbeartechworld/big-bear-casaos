@@ -264,7 +264,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | portainer-agent | portainer/agent | 2.42.0 |  |  |
 | portainer | portainer/portainer-ce | 2.42.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | portracker | mostafawahied/portracker | 1.3 |  |  |
-| poste-io | analogic/poste.io | 2.5.12 |  |  |
+| poste-io | analogic/poste.io | 2.5.13 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | psitransfer | psitrax/psitransfer | v2.4.4 |  | [Docs](https://github.com/psi-4ward/psitransfer/tree/master/docs) |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.12.2 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
