@@ -290,7 +290,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.14.5 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
 | stalwart-mail | stalwartlabs/stalwart | v0.16.11 |  |  |
-| stirling-pdf | stirlingtools/stirling-pdf | 2.13.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
+| stirling-pdf | stirlingtools/stirling-pdf | 2.14.0 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.1 |  |  |
 | tailscale | tailscale/tailscale | v1.98.4 |  |  |
