@@ -1,0 +1,230 @@
+name: big-bear-ente
+services:
+  museum:
+    image: ghcr.io/ente/server:latest@sha256:c56831e83306988b2f5ee30eee20194d6b8f848a9cc4f4afa75931722ac1086b
+    container_name: ente-museum
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      minio-init:
+        condition: service_completed_successfully
+    environment:
+      ENTE_DB_HOST: postgres
+      ENTE_DB_PORT: "5432"
+      ENTE_DB_NAME: ente_db
+      ENTE_DB_USER: pguser
+      ENTE_DB_PASSWORD: change-me-qE7Yb2sN4wR9tK1
+      ENTE_DB_SSLMODE: disable
+      ENTE_S3_ARE_LOCAL_BUCKETS: "true"
+      ENTE_S3_USE_PATH_STYLE_URLS: "true"
+      ENTE_S3_B2_EU_CEN_KEY: ente-minio-access
+      ENTE_S3_B2_EU_CEN_SECRET: change-me-minio-vH3pL8xC0zN5
+      ENTE_S3_B2_EU_CEN_ENDPOINT: localhost:3200
+      ENTE_S3_B2_EU_CEN_REGION: eu-central-2
+      ENTE_S3_B2_EU_CEN_BUCKET: b2-eu-cen
+      ENTE_KEY_ENCRYPTION: yvmG/RnzKrbCb9L3mgsmoxXr9H7i2Z4qlbT0mL3ln4w=
+      ENTE_KEY_HASH: KXYiG07wC7GIgvCSdg+WmyWdXDAn6XKYJtp/wkEU7x573+byBRAYtpTP0wwvi8i/4l37uicX1dVTUzwH3sLZyw==
+      ENTE_JWT_SECRET: i2DecQmfGreG6q1vBj5tCokhlN41gcfS2cjOs9Po-u8=
+      ENTE_APPS_PUBLIC_ALBUMS: http://localhost:3002
+    restart: unless-stopped
+    networks:
+      - ente_network
+    x-casaos:
+      envs:
+        - container: ENTE_DB_HOST
+          description:
+            en_us: 'Container Variable: ENTE_DB_HOST'
+        - container: ENTE_DB_PORT
+          description:
+            en_us: 'Container Variable: ENTE_DB_PORT'
+        - container: ENTE_DB_NAME
+          description:
+            en_us: 'Container Variable: ENTE_DB_NAME'
+        - container: ENTE_DB_USER
+          description:
+            en_us: 'Container Variable: ENTE_DB_USER'
+        - container: ENTE_DB_PASSWORD
+          description:
+            en_us: 'Container Variable: ENTE_DB_PASSWORD'
+        - container: ENTE_DB_SSLMODE
+          description:
+            en_us: 'Container Variable: ENTE_DB_SSLMODE'
+        - container: ENTE_S3_ARE_LOCAL_BUCKETS
+          description:
+            en_us: 'Container Variable: ENTE_S3_ARE_LOCAL_BUCKETS'
+        - container: ENTE_S3_USE_PATH_STYLE_URLS
+          description:
+            en_us: 'Container Variable: ENTE_S3_USE_PATH_STYLE_URLS'
+        - container: ENTE_S3_B2_EU_CEN_KEY
+          description:
+            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_KEY'
+        - container: ENTE_S3_B2_EU_CEN_SECRET
+          description:
+            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_SECRET'
+        - container: ENTE_S3_B2_EU_CEN_ENDPOINT
+          description:
+            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_ENDPOINT'
+        - container: ENTE_S3_B2_EU_CEN_REGION
+          description:
+            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_REGION'
+        - container: ENTE_S3_B2_EU_CEN_BUCKET
+          description:
+            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_BUCKET'
+        - container: ENTE_KEY_ENCRYPTION
+          description:
+            en_us: 'Container Variable: ENTE_KEY_ENCRYPTION'
+        - container: ENTE_KEY_HASH
+          description:
+            en_us: 'Container Variable: ENTE_KEY_HASH'
+        - container: ENTE_JWT_SECRET
+          description:
+            en_us: 'Container Variable: ENTE_JWT_SECRET'
+        - container: ENTE_APPS_PUBLIC_ALBUMS
+          description:
+            en_us: 'Container Variable: ENTE_APPS_PUBLIC_ALBUMS'
+      ports:
+        - container: "8080"
+          description:
+            en_us: 'Container Port: 8080'
+  socat:
+    image: alpine/socat
+    container_name: ente-socat
+    network_mode: service:museum
+    depends_on:
+      - museum
+      - minio
+    command: TCP-LISTEN:3200,fork,reuseaddr TCP:minio:3200
+    restart: unless-stopped
+  web:
+    image: ghcr.io/ente/web:latest@sha256:3bf4390356f57400c762dbd7ed26e5af7cc7bb2add4f627ba5481c94635f1614
+    container_name: ente-web
+    ports:
+      - "3000:3000"
+      - "3002:3002"
+    depends_on:
+      - museum
+    environment:
+      ENTE_API_ORIGIN: http://localhost:8080
+    restart: unless-stopped
+    networks:
+      - ente_network
+    x-casaos:
+      envs:
+        - container: ENTE_API_ORIGIN
+          description:
+            en_us: 'Container Variable: ENTE_API_ORIGIN'
+      ports:
+        - container: "3000"
+          description:
+            en_us: 'Container Port: 3000'
+        - container: "3002"
+          description:
+            en_us: 'Container Port: 3002'
+  postgres:
+    image: postgres:15
+    container_name: ente-postgres
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: change-me-qE7Yb2sN4wR9tK1
+      POSTGRES_DB: ente_db
+    volumes:
+      - /DATA/AppData/$AppID/postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pguser -d ente_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - ente_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_us: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_us: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_us: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_us: 'Container Path: /var/lib/postgresql/data'
+  minio:
+    image: minio/minio
+    container_name: ente-minio
+    ports:
+      - "3200:3200"
+    environment:
+      MINIO_ROOT_USER: ente-minio-access
+      MINIO_ROOT_PASSWORD: change-me-minio-vH3pL8xC0zN5
+    command: server /data --address ":3200" --console-address ":3201"
+    volumes:
+      - /DATA/AppData/$AppID/minio_data:/data
+    restart: unless-stopped
+    networks:
+      - ente_network
+    x-casaos:
+      envs:
+        - container: MINIO_ROOT_USER
+          description:
+            en_us: 'Container Variable: MINIO_ROOT_USER'
+        - container: MINIO_ROOT_PASSWORD
+          description:
+            en_us: 'Container Variable: MINIO_ROOT_PASSWORD'
+      volumes:
+        - container: /data
+          description:
+            en_us: 'Container Path: /data'
+      ports:
+        - container: "3200"
+          description:
+            en_us: 'Container Port: 3200'
+  minio-init:
+    image: minio/mc
+    container_name: ente-minio-init
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c " until mc alias set ente http://minio:3200 ente-minio-access change-me-minio-vH3pL8xC0zN5; do sleep 1; done; mc mb --ignore-existing ente/b2-eu-cen; mc mb --ignore-existing ente/wasabi-eu-central-2-v3; mc mb --ignore-existing ente/scw-eu-fr-v3; exit 0; "
+
+    networks:
+      - ente_network
+networks:
+  ente_network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Main service for this application
+  main: web
+  # Detailed description for the application
+  description:
+    en_us: Ente is a self-hosted, end-to-end encrypted platform to store, share, and rediscover your photos and videos across all your devices.
+  # Brief tagline for the application
+  tagline:
+    en_us: End-to-end encrypted photo storage
+  # Developer's information
+  developer: ente-io
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ente-photos.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_us: Ente Photos
+  # Category under which the application falls
+  category: BigBearCasaOS
+  # Default port mapping for the application
+  port_map: "3000"
