@@ -136,6 +136,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | docmost | docmost/docmost | 0.90.1 |  |  |
 | dozzle | amir20/dozzle | v10.6.7 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.3.7 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
+| ente | ghcr.io/ente/web | 2026.07.07 |  | [Docs](https://help.ente.io/self-hosting/) |
 | erugo | wardy784/erugo | 0.2.15 |  |  |
 | eufy-security-ws | bropat/eufy-security-ws | 2.1.0 |  |  |
 | excalidraw | excalidraw/excalidraw | latest | [YouTube Video](https://youtu.be/T4K6RDhieIA) |  |
@@ -214,6 +215,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.7.1 |  | [Docs](https://docs.netalertx.com) |
 | netalertx | jokobsk/netalertx | 25.11.29 |  |  |
+| netpulse | ghcr.io/bentfender/netpulse | sha-8922b29 |  | [Docs](https://github.com/BentFender/netpulse) |
 | nextcloud-ls | linuxserver/nextcloud | 33.0.5 |  |  |
 | nextcloud-with-smbclient | bigbeartechworld/big-bear-nextcloud-with-smbclient | 33.0.5 |  |  |
 | nextcloud | bigbeartechworld/big-bear-nextcloud-with-smbclient | 33.0.5 | [YouTube Video](https://youtu.be/O0fzG16COYc) |  |
