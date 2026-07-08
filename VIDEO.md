@@ -31,6 +31,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | dockpeek |  |
 | docmost |  |
 | ejbca-ce |  |
+| ente |  |
 | erugo |  |
 | eufy-security-ws |  |
 | farmos-v4 |  |
@@ -43,7 +44,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | flowise |  |
 | gemdigest |  |
 | gitea-mirror |  |
-| gitea |  |
 | gluetun |  |
 | goaway |  |
 | gotify |  |
@@ -81,6 +81,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | neko-firefox |  |
 | netalertx-v26 |  |
 | netalertx |  |
+| netpulse |  |
 | nextcloud-ls |  |
 | nextcloud-with-smbclient |  |
 | node-red |  |
@@ -151,7 +152,6 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | wg-easy |  |
 | whats-up-docker |  |
 | wishlist |  |
-| write-freely |  |
 | zigbee2mqtt |  |
 | zipline |  |
 | zotero |  |
