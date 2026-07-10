@@ -4,6 +4,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 
 | Application | YouTube Video |
 | --- | --- |
+| adguard-home-host |  |
 | anse |  |
 | appsmith |  |
 | audiobookshelf |  |
@@ -36,15 +37,21 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | farmos-v4 |  |
 | farmos |  |
 | faster-whisper |  |
+| filebrowser-quantum |  |
+| filebrowser |  |
+| financial-freedom |  |
 | flcontainers-guacamole |  |
 | flowise |  |
 | gemdigest |  |
 | gitea-mirror |  |
 | gitea |  |
 | gluetun |  |
+| goaway |  |
 | gotify |  |
+| healthchecks |  |
 | homarr-v1 |  |
 | homebridge |  |
+| homepage |  |
 | homer |  |
 | immich-aio-alpine |  |
 | immich-kiosk |  |
