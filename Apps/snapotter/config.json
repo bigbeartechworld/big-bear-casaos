@@ -1,0 +1,7 @@
+{
+  "id": "snapotter",
+  "version": "2.0.0",
+  "image": "snapotter/snapotter",
+  "youtube": "",
+  "docs_link": "https://docs.snapotter.com/guide/getting-started"
+}
