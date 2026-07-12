@@ -1,7 +1,7 @@
 name: big-bear-ente
 services:
   museum:
-    image: ghcr.io/ente/server:latest@sha256:c56831e83306988b2f5ee30eee20194d6b8f848a9cc4f4afa75931722ac1086b
+    image: ghcr.io/ente/server:latest@sha256:276523f99187c7a396948ae433d64832221a7591c824cd854a92d52d51e935b1
     container_name: ente-museum
     ports:
       - "8080:8080"
@@ -100,7 +100,7 @@ services:
     command: TCP-LISTEN:3200,fork,reuseaddr TCP:minio:3200
     restart: unless-stopped
   web:
-    image: ghcr.io/ente/web:latest@sha256:3bf4390356f57400c762dbd7ed26e5af7cc7bb2add4f627ba5481c94635f1614
+    image: ghcr.io/ente/web:latest@sha256:77f2a5244e8e515e66c3d737ed2ed89907e440d51d22435d7cf55e9c33623632
     container_name: ente-web
     ports:
       - "3000:3000"
