@@ -1,6 +1,6 @@
 {
   "id": "ente",
-  "version": "2026.07.07",
+  "version": "77f2a5244e8e515e66c3d737ed2ed89907e440d51d22435d7cf55e9c33623632",
   "image": "ghcr.io/ente/web",
   "youtube": "",
   "docs_link": "https://help.ente.io/self-hosting/"
