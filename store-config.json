@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "store_id": "com.bigbeartechworld.casaos",
+  "name": { "en_US": "Big Bear CasaOS App Store" },
+  "description": { "en_US": "Community-maintained apps for CasaOS and ZimaOS by BigBearTechWorld." },
+  "maintainer": "BigBearTechWorld",
+  "url": "https://github.com/bigbeartechworld/big-bear-casaos"
+}
