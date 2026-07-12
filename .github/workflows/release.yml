@@ -5,14 +5,12 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
-  pages: write
-  id-token: write
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build v2 + v1 store
+      - name: Build v2 store
         id: build
         uses: IceWhaleTech/build-appstore-action@v1
         with:
@@ -29,11 +27,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-      - name: Attach v1 main.zip to a release
-        if: hashFiles('dist/store/main.zip') != ''
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: store-${{ github.run_number }}
-          files: dist/store/main.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
