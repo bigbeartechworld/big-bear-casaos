@@ -1,6 +1,6 @@
 {
   "id": "rackpeek",
-  "version": "v1.4.0",
+  "version": "v2.0.0",
   "image": "aptacode/rackpeek",
   "youtube": "",
   "docs_link": "https://timmoth.github.io/RackPeek/docs/overview"

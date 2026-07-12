@@ -1,16 +1,40 @@
-# Configuration for big-bear-wordpress setup
+# Configuration for big-bear-wordpress-v7 setup
 
-# Name of the big-bear-wordpress application
-name: big-bear-wordpress
-# Service definitions for the wordpress application
+# WORDPRESS V7.0.1 - NEW DEPLOYMENT
+# ================================
+# This is a SEPARATE app from 'wordpress' (v6.9.4). They can coexist.
+#
+# WHY A NEW APP:
+# - WordPress 7.0 raises the minimum database to MySQL 8.0 (up from 5.5.5)
+# - The legacy 'wordpress' app bundles mysql:5.7, which WordPress 7 rejects
+# - A MySQL 5.7 data directory does NOT upgrade in-place to 8.0 cleanly
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new WordPress instances
+# - Pairs WordPress 7.0.1 with MySQL 8.0
+#
+# FOR MIGRATION FROM THE LEGACY APP:
+# - Do NOT uninstall your existing 'wordpress' (v6) app
+# - Deploy this as a NEW app alongside it
+# - Migration is manual (MySQL 5.7 -> 8.0 requires a dump/reload)
+#
+# Migration steps (after deploying this app):
+# 1. Dump legacy DB: docker compose -f apps/wordpress/docker-compose.yml exec db mysqldump -u root -pcasaos wordpress > wordpress.sql
+# 2. Copy legacy html volume contents into wordpress-v7_html
+# 3. Import into v7 DB: docker compose -f apps/wordpress-v7/docker-compose.yml exec -T db mysql -u root -pcasaos wordpress < wordpress.sql
+# 4. Verify the v7 site before removing the legacy app
+
+# Name of the big-bear-wordpress-v7 application
+name: big-bear-wordpress-v7
+# Service definitions for the wordpress-v7 application
 services:
   # Service definition for the main application
   app:
     # Docker image to use for the application
-    image: wordpress:6.9.4
+    image: wordpress:7.0.1
     # Port mapping for the application
     ports:
-      - 8080:80
+      - 8084:80
     # Environment variables for the application
     environment:
       WORDPRESS_DB_HOST: db
@@ -48,7 +72,7 @@ services:
   # Service definition for the database
   db:
     # Docker image to use for the database
-    image: mysql:5.7
+    image: mysql:8.0
     # Environment variables for the database
     environment:
       MYSQL_DATABASE: wordpress
@@ -85,7 +109,7 @@ x-casaos:
   main: app
   # Detailed description for the application
   description:
-    en_us: Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web (as of my last training data in 2022).
+    en_us: Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web. WordPress 7 requires MySQL 8.0 and is packaged as a new app alongside the legacy WordPress 6 entry.
   # Brief tagline for the application
   tagline:
     en_us: WordPress
@@ -97,10 +121,14 @@ x-casaos:
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wordpress.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_us: "\U0001F195 WORDPRESS V7 - SEPARATE APP\n\nThis is a NEW app, separate from 'wordpress' (v6). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new WordPress deployments\n✅ Pairs WordPress 7.0.1 with MySQL 8.0 (WordPress 7 requires MySQL 8.0)\n\nFOR V6 USERS:\n⚠️  Do NOT uninstall your 'wordpress' v6 app\n⚠️  Deploy this as a NEW app alongside v6\n⚠️  WordPress 7 rejects MySQL 5.7, and a 5.7 data directory does not upgrade in-place to 8.0\n⚠️  Migration requires a manual MySQL dump/reload — back up your database first\n\nSupport: https://community.bigbeartechworld.com/"
   # Title for the application
   title:
-    en_us: WordPress (Legacy)
+    en_us: WordPress v7
   # Category under which the application falls
   category: BigBearCasaOS
   # Default port mapping for the application
-  port_map: "8080"
+  port_map: "8084"
