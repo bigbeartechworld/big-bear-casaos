@@ -11,7 +11,11 @@ jobs:
         run: sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_amd64 && sudo chmod +x /usr/local/bin/yq
       - name: Lint v2 invariants
         run: bash .github/scripts/lint-casaos-v2.sh
+      - name: Detect v2 migration
+        id: migrated
+        run: bash .github/scripts/detect-v2-migration.sh
       - name: Build check (no publish)
+        if: steps.migrated.outputs.migrated == 'true'
         uses: IceWhaleTech/build-appstore-action@v1
         with:
           source: .

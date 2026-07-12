@@ -11,7 +11,7 @@ for f in "$ROOT"/Apps/*/docker-compose.yml; do
   [[ -z "$id" ]] && continue
   checked=$((checked+1))
   if [[ "$id" != com.bigbeartechworld.* ]]; then echo "[$app] invalid x-casaos.id ('$id')"; rc=1; fi
-  if yq eval '[.x-casaos | .. | select(tag == "!!map") | keys | .[]] | any_c(. == "en_us")' "$f" 2>/dev/null | grep -q true; then
+  if yq eval '[.. | select(tag == "!!map") | keys | .[]] | any_c(. == "en_us")' "$f" 2>/dev/null | grep -q true; then
     echo "[$app] lowercase en_us locale key"; rc=1
   fi
   cat=$(yq eval '.x-casaos.category // ""' "$f")

@@ -10,8 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install yq
+        run: sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_amd64 && sudo chmod +x /usr/local/bin/yq
+      - name: Detect v2 migration
+        id: migrated
+        run: bash .github/scripts/detect-v2-migration.sh
       - name: Build v2 store
         id: build
+        if: steps.migrated.outputs.migrated == 'true'
         uses: IceWhaleTech/build-appstore-action@v1
         with:
           source: .
@@ -22,6 +28,7 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Deploy dist to gh-pages
+        if: steps.migrated.outputs.migrated == 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
