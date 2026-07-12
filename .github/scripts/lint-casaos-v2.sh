@@ -7,6 +7,7 @@ checked=0
 for f in "$ROOT"/Apps/*/docker-compose.yml; do
   [[ -f "$f" ]] || continue
   app=$(basename "$(dirname "$f")")
+  if ! yq eval '.' "$f" >/dev/null 2>&1; then echo "[$app] malformed YAML"; rc=1; continue; fi
   id=$(yq eval '.x-casaos.id // ""' "$f")
   [[ -z "$id" ]] && continue
   checked=$((checked+1))

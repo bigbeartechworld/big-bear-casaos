@@ -94,4 +94,11 @@ R="$(mktemp -d)"; mkapp "$R" s "$V2_SERVICE_ENUS"
 bash "$LINT" "$R" >/dev/null; [[ $? -eq 1 ]] && pass "lint fails service-level en_us" || bad "lint missed service en_us"
 rm -rf "$R"
 
+# lint: malformed YAML -> fail (not silently skipped)
+R="$(mktemp -d)"; mkapp "$R" m 'x-casaos:
+  id: com.bigbeartechworld.m
+    category: Media'
+bash "$LINT" "$R" >/dev/null; [[ $? -eq 1 ]] && pass "lint fails malformed YAML" || bad "lint missed malformed YAML"
+rm -rf "$R"
+
 exit $fail
