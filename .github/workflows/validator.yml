@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install yq
         run: sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_amd64 && sudo chmod +x /usr/local/bin/yq
+      - name: Test v2 scripts
+        run: bash .github/scripts/test-v2-scripts.sh
       - name: Lint v2 invariants
         run: bash .github/scripts/lint-casaos-v2.sh
       - name: Detect v2 migration
