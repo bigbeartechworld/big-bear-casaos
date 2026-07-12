@@ -1,0 +1,46 @@
+name: Validate AppStore v2
+on:
+  pull_request:
+    branches: [master]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install yq
+        env:
+          YQ_VERSION: v4.44.3
+          YQ_SHA256: a2c097180dd884a8d50c956ee16a9cec070f30a7947cf4ebf87d5f36213e9ed7
+        run: |
+          wget -qO /tmp/yq "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64"
+          echo "${YQ_SHA256}  /tmp/yq" | sha256sum -c -
+          sudo install -m 0755 /tmp/yq /usr/local/bin/yq
+      - name: Test v2 scripts
+        run: bash .github/scripts/test-v2-scripts.sh
+      - name: Lint v2 invariants
+        run: bash .github/scripts/lint-casaos-v2.sh
+      - name: Detect v2 migration
+        id: migrated
+        run: bash .github/scripts/detect-v2-migration.sh
+      - name: Build check (no publish)
+        if: steps.migrated.outputs.migrated == 'true'
+        uses: IceWhaleTech/build-appstore-action@787271faebb0ef2101eb0f85d5485ff7208140db # v1.0.0
+        with:
+          source: .
+          output: dist
+          base-url: https://cdn.jsdelivr.net/gh/${{ github.repository }}@gh-pages
+          report-json: out/build-v2-report.json
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Upload build report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-v2-report
+          path: out/build-v2-report.json
+          if-no-files-found: ignore
