@@ -34,11 +34,11 @@ services:
       volumes:
         - container: /uploads/
           description:
-            en_us: 'Container Path: /uploads/'
+            en_US: 'Container Path: /uploads/'
       ports:
         - container: "5000"
           description:
-            en_us: 'Container Port: 5000'
+            en_US: 'Container Port: 5000'
   # Service name: parsr
   parsr:
     image: axarev/parsr:v1.2.2
@@ -73,17 +73,17 @@ services:
       envs:
         - container: KEEP_RESULTS_HOURS
           description:
-            en_us: 'Container Variable: KEEP_RESULTS_HOURS'
+            en_US: 'Container Variable: KEEP_RESULTS_HOURS'
       volumes:
         - container: /root/.cache/
           description:
-            en_us: 'Container Path: /root/.cache/'
+            en_US: 'Container Path: /root/.cache/'
         - container: /to-ocr/
           description:
-            en_us: 'Container Path: /to-ocr/'
+            en_US: 'Container Path: /to-ocr/'
         - container: /uploads/
           description:
-            en_us: 'Container Path: /uploads/'
+            en_US: 'Container Path: /uploads/'
   # Service name: ocr_worker
   ocr_worker:
     image: pd3f/pd3f-ocr:latest
@@ -95,7 +95,7 @@ services:
       volumes:
         - container: /to-ocr/
           description:
-            en_us: 'Container Path: /to-ocr/'
+            en_US: 'Container Path: /to-ocr/'
 # Network definitions
 networks:
   big-bear-pd3f-network:
@@ -105,14 +105,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pd3f
   # Main service for this application
   main: web
   # Detailed description for the application
   description:
-    en_us: pd3f is a PDF text extraction pipeline that is self-hosted, local-first and Docker-based. It reconstructs the original continuous text with the help of machine learning.
+    en_US: pd3f is a PDF text extraction pipeline that is self-hosted, local-first and Docker-based. It reconstructs the original continuous text with the help of machine learning.
   # Brief tagline for the application
   tagline:
-    en_us: PD3F
+    en_US: PD3F
   # Developer's information
   developer: pd3f
   # Author of this particular configuration
@@ -123,8 +125,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: PD3F
+    en_US: PD3F
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "1616"

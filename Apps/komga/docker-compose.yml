@@ -28,31 +28,33 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "25600"
           description:
-            en_us: 'Container Port: 25600'
+            en_US: 'Container Port: 25600'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.komga
   # Main service for this application
   main: big-bear-komga
   # Detailed description for the application
   description:
-    en_us: A media server for your comics, mangas, BDs, magazines and eBooks.
+    en_US: A media server for your comics, mangas, BDs, magazines and eBooks.
   # Brief tagline for the application
   tagline:
-    en_us: A media server for your comics, mangas, BDs, magazines and eBooks.
+    en_US: A media server for your comics, mangas, BDs, magazines and eBooks.
   # Developer's information
   developer: gotson
   # Author of this particular configuration
@@ -64,12 +66,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-komga-to-bigbearcasaos/1916#p-3567-documentation-4
   # Title for the application
   title:
-    en_us: Komga
+    en_US: Komga
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "25600"

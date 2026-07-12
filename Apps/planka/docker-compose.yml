@@ -75,39 +75,39 @@ services:
       envs:
         - container: BASE_URL
           description:
-            en_us: 'Container Variable: BASE_URL'
+            en_US: 'Container Variable: BASE_URL'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: SECRET_KEY
           description:
-            en_us: 'Container Variable: SECRET_KEY'
+            en_US: 'Container Variable: SECRET_KEY'
         - container: DEFAULT_ADMIN_EMAIL
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_EMAIL'
+            en_US: 'Container Variable: DEFAULT_ADMIN_EMAIL'
         - container: DEFAULT_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_PASSWORD'
+            en_US: 'Container Variable: DEFAULT_ADMIN_PASSWORD'
         - container: DEFAULT_ADMIN_NAME
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_NAME'
+            en_US: 'Container Variable: DEFAULT_ADMIN_NAME'
         - container: DEFAULT_ADMIN_USERNAME
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_USERNAME'
+            en_US: 'Container Variable: DEFAULT_ADMIN_USERNAME'
       volumes:
         - container: /app/public/user-avatars
           description:
-            en_us: 'Container Path: /app/public/user-avatars'
+            en_US: 'Container Path: /app/public/user-avatars'
         - container: /app/public/project-background-images
           description:
-            en_us: 'Container Path: /app/public/project-background-images'
+            en_US: 'Container Path: /app/public/project-background-images'
         - container: /app/private/attachments
           description:
-            en_us: 'Container Path: /app/private/attachments'
+            en_US: 'Container Path: /app/private/attachments'
       ports:
         - container: "1337"
           description:
-            en_us: 'Container Port: 1337'
+            en_US: 'Container Port: 1337'
   # Service definition for the PostgreSQL database used by big-bear-planka
   big-bear-planka-postgres:
     # Specifies the Docker image to use for the PostgreSQL database
@@ -149,14 +149,14 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_HOST_AUTH_METHOD
           description:
-            en_us: 'Container Variable: POSTGRES_HOST_AUTH_METHOD'
+            en_US: 'Container Variable: POSTGRES_HOST_AUTH_METHOD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 networks:
   big-bear-planka-network:
     driver: bridge
@@ -165,14 +165,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.planka
   # Main service for this application
   main: big-bear-planka
   # Detailed description for the application
   description:
-    en_us: The realtime kanban board for workgroups built with React and Redux.
+    en_US: The realtime kanban board for workgroups built with React and Redux.
   # Brief tagline for the application
   tagline:
-    en_us: Legacy v1 - Use Planka v2 for new installs.
+    en_US: Legacy v1 - Use Planka v2 for new installs.
   # Developer's information
   developer: plankanban
   # Author of this particular configuration
@@ -184,11 +186,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: "\U0001F4CC Planka v1 Maintenance Mode\n\nThis is the stable v1.26.3 release. For new deployments, consider 'planka-v2' which includes:\n- Enhanced security (SSRF protection)\n- New features (user mentions, task linking)\n- UI-based webhooks and SMTP configuration\n\nExisting v1 users: Stay on v1 until ready to migrate. Migration requires manual data migration with no rollback.\n\nMigration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
+      en_US: "\U0001F4CC Planka v1 Maintenance Mode\n\nThis is the stable v1.26.3 release. For new deployments, consider 'planka-v2' which includes:\n- Enhanced security (SSRF protection)\n- New features (user mentions, task linking)\n- UI-based webhooks and SMTP configuration\n\nExisting v1 users: Stay on v1 until ready to migrate. Migration requires manual data migration with no rollback.\n\nMigration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
   # Title for the application
   title:
-    en_us: Planka (Legacy)
+    en_US: Planka (Legacy)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "3000"

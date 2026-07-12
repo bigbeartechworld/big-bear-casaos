@@ -71,75 +71,75 @@ services:
       envs:
         - container: MYSQL_HOST
           description:
-            en_us: 'Container Variable: MYSQL_HOST'
+            en_US: 'Container Variable: MYSQL_HOST'
         - container: MYSQL_PORT
           description:
-            en_us: 'Container Variable: MYSQL_PORT'
+            en_US: 'Container Variable: MYSQL_PORT'
         - container: MYSQL_USERNAME
           description:
-            en_us: 'Container Variable: MYSQL_USERNAME'
+            en_US: 'Container Variable: MYSQL_USERNAME'
         - container: MYSQL_PSW
           description:
-            en_us: 'Container Variable: MYSQL_PSW'
+            en_US: 'Container Variable: MYSQL_PSW'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: JWT_SECRET
           description:
-            en_us: 'Container Variable: JWT_SECRET'
+            en_US: 'Container Variable: JWT_SECRET'
         - container: JWT_EXP
           description:
-            en_us: 'Container Variable: JWT_EXP'
+            en_US: 'Container Variable: JWT_EXP'
         - container: USERS_LIMIT
           description:
-            en_us: 'Container Variable: USERS_LIMIT'
+            en_US: 'Container Variable: USERS_LIMIT'
         - container: UPLOAD_DIR
           description:
-            en_us: 'Container Variable: UPLOAD_DIR'
+            en_US: 'Container Variable: UPLOAD_DIR'
         - container: API_PORT
           description:
-            en_us: 'Container Variable: API_PORT'
+            en_US: 'Container Variable: API_PORT'
         - container: TREFLE_KEY
           description:
-            en_us: 'Container Variable: TREFLE_KEY'
+            en_US: 'Container Variable: TREFLE_KEY'
         - container: LOG_LEVEL
           description:
-            en_us: 'Container Variable: LOG_LEVEL'
+            en_US: 'Container Variable: LOG_LEVEL'
         - container: ALLOWED_ORIGINS
           description:
-            en_us: 'Container Variable: ALLOWED_ORIGINS'
+            en_US: 'Container Variable: ALLOWED_ORIGINS'
         - container: CACHE_TTL
           description:
-            en_us: 'Container Variable: CACHE_TTL'
+            en_US: 'Container Variable: CACHE_TTL'
         - container: CACHE_HOST
           description:
-            en_us: 'Container Variable: CACHE_HOST'
+            en_US: 'Container Variable: CACHE_HOST'
         - container: CACHE_PORT
           description:
-            en_us: 'Container Variable: CACHE_PORT'
+            en_US: 'Container Variable: CACHE_PORT'
         - container: SSL_ENABLED
           description:
-            en_us: 'Container Variable: SSL_ENABLED'
+            en_US: 'Container Variable: SSL_ENABLED'
         - container: CERTIFICATE_PATH
           description:
-            en_us: 'Container Variable: CERTIFICATE_PATH'
+            en_US: 'Container Variable: CERTIFICATE_PATH'
       volumes:
         - container: /upload-dir
           description:
-            en_us: 'Container Path: /upload-dir'
+            en_US: 'Container Path: /upload-dir'
         - container: /certificates
           description:
-            en_us: 'Container Path: /certificates'
+            en_US: 'Container Path: /certificates'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   # Service definition for the database
   big-bear-plant-it-db:
     # Name of the database container
@@ -166,18 +166,18 @@ services:
       envs:
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
       ports:
         - container: "3306"
           description:
-            en_us: 'Container Port: 3306'
+            en_US: 'Container Port: 3306'
   # Service definition for the cache
   big-bear-plant-it-cache:
     # Name of the cache container
@@ -199,14 +199,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.plant-it
   # Main service for this application
   main: big-bear-plant-it
   # Detailed description for the application
   description:
-    en_us: Plant-it is a self-hosted gardening companion app. Useful for keeping track of plant care, receiving notifications about when to water plants, uploading plant images, and more.
+    en_US: Plant-it is a self-hosted gardening companion app. Useful for keeping track of plant care, receiving notifications about when to water plants, uploading plant images, and more.
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted, open source gardening companion app
+    en_US: Self-hosted, open source gardening companion app
   # Developer's information
   developer: msdeluise
   # Author of this particular configuration
@@ -218,12 +220,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before installing read this: https://community.bigbeartechworld.com/t/added-plant-it-to-bigbearcasaos/1297#documentation-3
   # Title for the application
   title:
-    en_us: Plant-it
+    en_US: Plant-it
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

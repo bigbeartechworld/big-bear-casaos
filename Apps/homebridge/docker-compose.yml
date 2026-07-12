@@ -25,24 +25,26 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /homebridge
           description:
-            en_us: 'Container Path: /homebridge'
+            en_US: 'Container Path: /homebridge'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.homebridge
   # Main service for this application
   main: big-bear-homebridge
   # Detailed description for the application
   description:
-    en_us: HomeKit support for the impatient.
+    en_US: HomeKit support for the impatient.
   # Brief tagline for the application
   tagline:
-    en_us: HomeKit support for the impatient.
+    en_US: HomeKit support for the impatient.
   # Developer's information
   developer: homebridge
   # Author of this particular configuration
@@ -53,8 +55,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: HomeBridge
+    en_US: HomeBridge
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8581"

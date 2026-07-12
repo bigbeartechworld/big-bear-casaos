@@ -31,20 +31,20 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: JWT_SECRET
           description:
-            en_us: 'Container Variable: JWT_SECRET'
+            en_US: 'Container Variable: JWT_SECRET'
         - container: ALLOW_REGISTER
           description:
-            en_us: 'Container Variable: ALLOW_REGISTER'
+            en_US: 'Container Variable: ALLOW_REGISTER'
         - container: ALLOW_OPENAPI
           description:
-            en_us: 'Container Variable: ALLOW_OPENAPI'
+            en_US: 'Container Variable: ALLOW_OPENAPI'
       ports:
         - container: "12345"
           description:
-            en_us: 'Container Port: 12345'
+            en_US: 'Container Port: 12345'
   # Postgres database
   big-bear-tianji-db:
     container_name: big-bear-tianji-db
@@ -67,17 +67,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 networks:
   big_bear_tianji_network:
     driver: bridge
@@ -86,14 +86,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.tianji
   # Main service for this application
   main: big-bear-tianji
   # Detailed description for the application
   description:
-    en_us: During our observations of the website. We often need to use multiple applications together. For example, we need analysis tools such as GA/umami to check pv/uv and the number of visits to each page, we need an uptime monitor to check the network quality and connectivity of the server, and we need to use prometheus to obtain the status reported by the server to check the quality of the server. In addition, if we develop an application that allows open source deployment, we often need a telemetry system to help us collect the simplest information about other people's deployment situations. I think these tools should serve the same purpose, so is there an application that can integrate these common needs in a lightweight way? After all, most of the time we don't need very professional and in-depth functions. But in order to achieve comprehensive monitoring, I need to install so many services. It's good to specialize in one thing, if we are experts in related abilities we need such specialized tools. But for most users who only have lightweight needs, an All-in-One application will be more convenient and easier to use.
+    en_US: During our observations of the website. We often need to use multiple applications together. For example, we need analysis tools such as GA/umami to check pv/uv and the number of visits to each page, we need an uptime monitor to check the network quality and connectivity of the server, and we need to use prometheus to obtain the status reported by the server to check the quality of the server. In addition, if we develop an application that allows open source deployment, we often need a telemetry system to help us collect the simplest information about other people's deployment situations. I think these tools should serve the same purpose, so is there an application that can integrate these common needs in a lightweight way? After all, most of the time we don't need very professional and in-depth functions. But in order to achieve comprehensive monitoring, I need to install so many services. It's good to specialize in one thing, if we are experts in related abilities we need such specialized tools. But for most users who only have lightweight needs, an All-in-One application will be more convenient and easier to use.
   # Brief tagline for the application
   tagline:
-    en_us: 'Tianji: Insight into everything, Website Analytics + Uptime Monitor + Server Status. not only another GA alternatives'
+    en_US: 'Tianji: Insight into everything, Website Analytics + Uptime Monitor + Server Status. not only another GA alternatives'
   # Developer's information
   developer: moonrailgun
   # Author of this particular configuration
@@ -104,8 +106,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Tianji
+    en_US: Tianji
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "12345"

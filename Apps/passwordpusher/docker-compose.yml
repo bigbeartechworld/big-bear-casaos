@@ -35,24 +35,24 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT
           description:
-            en_us: 'Container Variable: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT'
+            en_US: 'Container Variable: PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT'
         - container: PWP__PW__EXPIRE_AFTER_VIEWS_MIN
           description:
-            en_us: 'Container Variable: PWP__PW__EXPIRE_AFTER_VIEWS_MIN'
+            en_US: 'Container Variable: PWP__PW__EXPIRE_AFTER_VIEWS_MIN'
         - container: PWP__PW__RETRIEVAL_STEP_DEFAULT
           description:
-            en_us: 'Container Variable: PWP__PW__RETRIEVAL_STEP_DEFAULT'
+            en_US: 'Container Variable: PWP__PW__RETRIEVAL_STEP_DEFAULT'
       volumes:
         - container: /opt/PasswordPusher/storage
           description:
-            en_us: 'Container Path: /opt/PasswordPusher/storage'
+            en_US: 'Container Path: /opt/PasswordPusher/storage'
       ports:
         - container: "5100"
           description:
-            en_us: 'Container Port: 5100'
+            en_US: 'Container Port: 5100'
   big-bear-pwpush-db:
     container_name: big-bear-pwpush-db
     image: mariadb:10.6.5
@@ -71,24 +71,24 @@ services:
       envs:
         - container: MARIADB_USER
           description:
-            en_us: 'Container Variable: MARIADB_USER'
+            en_US: 'Container Variable: MARIADB_USER'
         - container: MARIADB_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_PASSWORD'
+            en_US: 'Container Variable: MARIADB_PASSWORD'
         - container: MARIADB_DATABASE
           description:
-            en_us: 'Container Variable: MARIADB_DATABASE'
+            en_US: 'Container Variable: MARIADB_DATABASE'
         - container: MARIADB_RANDOM_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_RANDOM_ROOT_PASSWORD'
+            en_US: 'Container Variable: MARIADB_RANDOM_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
       ports:
         - container: "3306"
           description:
-            en_us: 'Container Port: 3306'
+            en_US: 'Container Port: 3306'
 networks:
   big_bear_pwpush_network:
     driver: bridge
@@ -97,14 +97,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.passwordpusher
   # Main service for this application
   main: big-bear-pwpush
   # Detailed description for the application
   description:
-    en_us: Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.
+    en_US: Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.
   # Brief tagline for the application
   tagline:
-    en_us: Give your users the tools to be secure by default.
+    en_US: Give your users the tools to be secure by default.
   # Developer's information
   developer: pglombardo
   # Author of this particular configuration
@@ -116,12 +118,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-password-pusher-to-bigbearcasaos/1508?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Password Pusher (Legacy)
+    en_US: Password Pusher (Legacy)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "5100"

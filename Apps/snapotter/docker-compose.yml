@@ -30,55 +30,57 @@ services:
       envs:
         - container: AUTH_ENABLED
           description:
-            en_us: 'Container Variable: AUTH_ENABLED'
+            en_US: 'Container Variable: AUTH_ENABLED'
         - container: DEFAULT_USERNAME
           description:
-            en_us: 'Container Variable: DEFAULT_USERNAME'
+            en_US: 'Container Variable: DEFAULT_USERNAME'
         - container: DEFAULT_PASSWORD
           description:
-            en_us: 'Container Variable: DEFAULT_PASSWORD'
+            en_US: 'Container Variable: DEFAULT_PASSWORD'
         - container: MAX_UPLOAD_SIZE_MB
           description:
-            en_us: 'Container Variable: MAX_UPLOAD_SIZE_MB'
+            en_US: 'Container Variable: MAX_UPLOAD_SIZE_MB'
         - container: MAX_BATCH_SIZE
           description:
-            en_us: 'Container Variable: MAX_BATCH_SIZE'
+            en_US: 'Container Variable: MAX_BATCH_SIZE'
         - container: CONCURRENT_JOBS
           description:
-            en_us: 'Container Variable: CONCURRENT_JOBS'
+            en_US: 'Container Variable: CONCURRENT_JOBS'
         - container: REDIS_MAXMEMORY
           description:
-            en_us: 'Container Variable: REDIS_MAXMEMORY'
+            en_US: 'Container Variable: REDIS_MAXMEMORY'
         - container: TRUST_PROXY
           description:
-            en_us: 'Container Variable: TRUST_PROXY'
+            en_US: 'Container Variable: TRUST_PROXY'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
         - container: /tmp/workspace
           description:
-            en_us: 'Container Path: /tmp/workspace'
+            en_US: 'Container Path: /tmp/workspace'
       ports:
         - container: "1349"
           description:
-            en_us: 'Container Port: 1349'
+            en_US: 'Container Port: 1349'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.snapotter
   # Main service for this application
   main: snapotter
   # Detailed description for the application
   description:
-    en_us: SnapOtter is an open-source, self-hosted file manipulation suite with 200+ tools across images, video, audio, PDFs, and files. It includes batch processing, reusable pipelines, local AI tools, a browser image editor, and a REST API so files stay on your own server.
+    en_US: SnapOtter is an open-source, self-hosted file manipulation suite with 200+ tools across images, video, audio, PDFs, and files. It includes batch processing, reusable pipelines, local AI tools, a browser image editor, and a REST API so files stay on your own server.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/snapotter/screenshots/screenshot-1.png
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted file toolkit for images, video, audio, PDFs, and files.
+    en_US: Self-hosted file toolkit for images, video, audio, PDFs, and files.
   # Developer's information
   developer: SnapOtter
   # Author of this particular configuration
@@ -90,12 +92,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Default login is admin / admin. You will be asked to change the password after first login. This package uses SnapOtter embedded mode, so leave DATABASE_URL and REDIS_URL unset unless you are moving to an external Postgres/Redis stack.
   # Title for the application
   title:
-    en_us: SnapOtter
+    en_US: SnapOtter
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "1349"

@@ -21,27 +21,29 @@ services:
       envs:
         - container: tz
           description:
-            en_us: 'Container Variable: tz'
+            en_US: 'Container Variable: tz'
         - container: EXTENSIONS
           description:
-            en_us: 'Container Variable: EXTENSIONS'
+            en_US: 'Container Variable: EXTENSIONS'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.flcontainers-guacamole
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.
+    en_US: A Docker Container for Apache Guacamole, a client-less remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH over HTML5.
   # Brief tagline for the application
   tagline:
-    en_us: Fully packaged Multi-Arch Guacamole.
+    en_US: Fully packaged Multi-Arch Guacamole.
   # Developer's information
   developer: flcontainers
   # Author of this particular configuration
@@ -52,8 +54,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: FlContainers Guacamole
+    en_US: FlContainers Guacamole
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8080"

@@ -29,23 +29,23 @@ services:
       envs:
         - container: GUACD_HOSTNAME
           description:
-            en_us: 'Container Variable: GUACD_HOSTNAME'
+            en_US: 'Container Variable: GUACD_HOSTNAME'
         - container: MYSQL_HOSTNAME
           description:
-            en_us: 'Container Variable: MYSQL_HOSTNAME'
+            en_US: 'Container Variable: MYSQL_HOSTNAME'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   # mysql service configuration
   mysql:
     image: mysql:5.7
@@ -63,32 +63,34 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.guacamole
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.
+    en_US: Apache Guacamole is a free and open-source, cross-platform, clientless remote desktop gateway maintained by the Apache Software Foundation.
   # Brief tagline for the application
   tagline:
-    en_us: Guacamole
+    en_US: Guacamole
   # Developer's information
   developer: guacamole
   # Author of this particular configuration
@@ -99,8 +101,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Guacamole
+    en_US: Guacamole
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8090"

@@ -30,42 +30,44 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: VERSION
           description:
-            en_us: 'Container Variable: VERSION'
+            en_US: 'Container Variable: VERSION'
         - container: PLEX_CLAIM
           description:
-            en_us: 'Container Variable: PLEX_CLAIM'
+            en_US: 'Container Variable: PLEX_CLAIM'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /tv
           description:
-            en_us: 'Container Path: /tv'
+            en_US: 'Container Path: /tv'
         - container: /movies
           description:
-            en_us: 'Container Path: /movies'
+            en_US: 'Container Path: /movies'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.plex
   # Main service for this application
   main: big-bear-plex
   # Detailed description for the application
   description:
-    en_us: Stream Movies & TV Shows
+    en_US: Stream Movies & TV Shows
   # Brief tagline for the application
   tagline:
-    en_us: Stream Movies & TV Shows
+    en_US: Stream Movies & TV Shows
   # Developer's information
   developer: plexinc
   # Author of this particular configuration
@@ -76,8 +78,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Plex
+    en_US: Plex
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "32400"

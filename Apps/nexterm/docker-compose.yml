@@ -30,28 +30,30 @@ services:
       envs:
         - container: ENCRYPTION_KEY
           description:
-            en_us: 'Container Variable: ENCRYPTION_KEY'
+            en_US: 'Container Variable: ENCRYPTION_KEY'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
       ports:
         - container: "6989"
           description:
-            en_us: 'Container Port: 6989'
+            en_US: 'Container Port: 6989'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nexterm
   # Main service for this application
   main: big-bear-nexterm
   # Detailed description for the application
   description:
-    en_us: The open source server management software for SSH, VNC & RDP. This is in BETA.
+    en_US: The open source server management software for SSH, VNC & RDP. This is in BETA.
   # Brief tagline for the application
   tagline:
-    en_us: Nexterm
+    en_US: Nexterm
   # Developer's information
   developer: gnmyt
   # Author of this particular configuration
@@ -63,12 +65,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3
   # Title for the application
   title:
-    en_us: Nexterm
+    en_US: Nexterm
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "6989"

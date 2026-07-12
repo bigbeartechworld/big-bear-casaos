@@ -24,24 +24,26 @@ services:
       envs:
         - container: ROOT_WWW_PATH
           description:
-            en_us: 'Container Variable: ROOT_WWW_PATH'
+            en_US: 'Container Variable: ROOT_WWW_PATH'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.retroarch-web
   # Main service for this application
   main: big-bear-retroarch-web
   # Detailed description for the application
   description:
-    en_us: Online retro games emulator.The RetroArch Web Player is RetroArch compiled through Emscripten.
+    en_US: Online retro games emulator.The RetroArch Web Player is RetroArch compiled through Emscripten.
   # Brief tagline for the application
   tagline:
-    en_us: RetroArch Web Player
+    en_US: RetroArch Web Player
   # Developer's information
   developer: inglebard
   # Author of this particular configuration
@@ -53,12 +55,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-retroarch-web-player-to-bigbearcasaos/2002?u=dragonfire1119
   # Title for the application
   title:
-    en_us: RetroArch
+    en_US: RetroArch
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "8080"

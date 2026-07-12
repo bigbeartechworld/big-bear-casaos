@@ -29,27 +29,29 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.umbrel-os
   # Main service for this application
   main: big-bear-umbrel
   # Detailed description for the application
   description:
-    en_us: Umbrel is a personal server OS that makes self-hosting accessible to everyone.
+    en_US: Umbrel is a personal server OS that makes self-hosting accessible to everyone.
   # Brief tagline for the application
   tagline:
-    en_us: Umbrel OS
+    en_US: Umbrel OS
   # Developer's information
   developer: dockurr
   # Author of this particular configuration
@@ -61,12 +63,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-umbrelos-to-bigbearcasaos/2249
   # Title for the application
   title:
-    en_us: Umbrel OS
+    en_US: Umbrel OS
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

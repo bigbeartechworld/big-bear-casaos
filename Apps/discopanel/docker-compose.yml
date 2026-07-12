@@ -38,39 +38,41 @@ services:
       envs:
         - container: DISCOPANEL_DATA_DIR
           description:
-            en_us: 'Container Variable: DISCOPANEL_DATA_DIR'
+            en_US: 'Container Variable: DISCOPANEL_DATA_DIR'
         - container: DISCOPANEL_HOST_DATA_PATH
           description:
-            en_us: 'Container Variable: DISCOPANEL_HOST_DATA_PATH'
+            en_US: 'Container Variable: DISCOPANEL_HOST_DATA_PATH'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
         - container: /app/backups
           description:
-            en_us: 'Container Path: /app/backups'
+            en_US: 'Container Path: /app/backups'
         - container: /app/tmp
           description:
-            en_us: 'Container Path: /app/tmp'
+            en_US: 'Container Path: /app/tmp'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.discopanel
   # Main service for this application
   main: big-bear-discopanel
   # Detailed description for the application
   description:
-    en_us: DiscoPanel is a game server panel for Minecraft. It provides a clean interface for creating and managing Minecraft servers, installing modpacks, and running each server as its own Docker container. Features include modpack browsing and installation, per-server configuration, backups, and real-time server management.
+    en_US: DiscoPanel is a game server panel for Minecraft. It provides a clean interface for creating and managing Minecraft servers, installing modpacks, and running each server as its own Docker container. Features include modpack browsing and installation, per-server configuration, backups, and real-time server management.
   # Brief tagline for the application
   tagline:
-    en_us: A game server panel for Minecraft
+    en_US: A game server panel for Minecraft
   # Developer's information
   developer: nickheyer
   # Author of this particular configuration
@@ -82,7 +84,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |-
+      en_US: |-
         **Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld
         **Community Forum**: https://community.bigbeartechworld.com
 
@@ -93,8 +95,8 @@ x-casaos:
         **Security Note**: This app requires Docker socket access, which grants full Docker daemon privileges.
   # Title for the application
   title:
-    en_us: DiscoPanel
+    en_US: DiscoPanel
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8080"

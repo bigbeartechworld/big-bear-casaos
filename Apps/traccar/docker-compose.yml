@@ -21,33 +21,35 @@ services:
       volumes:
         - container: /opt/traccar/logs
           description:
-            en_us: 'Container Path: /opt/traccar/logs'
+            en_US: 'Container Path: /opt/traccar/logs'
         - container: /opt/traccar/conf/traccar.xml
           description:
-            en_us: 'Container Path: /opt/traccar/conf/traccar.xml'
+            en_US: 'Container Path: /opt/traccar/conf/traccar.xml'
       ports:
         - container: "8082"
           description:
-            en_us: 'Container Port: 8082'
+            en_US: 'Container Port: 8082'
         - container: 5000-5150
           description:
-            en_us: 'Container Port: 5000-5150'
+            en_US: 'Container Port: 5000-5150'
         - container: 5000-5150
           description:
-            en_us: 'Container Port: 5000-5150'
+            en_US: 'Container Port: 5000-5150'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.traccar
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Traccar GPS Tracking System in Docker image.
+    en_US: Traccar GPS Tracking System in Docker image.
   # Brief tagline for the application
   tagline:
-    en_us: Traccar
+    en_US: Traccar
   # Developer's information
   developer: traccar
   # Author of this particular configuration
@@ -58,8 +60,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Traccar
+    en_US: Traccar
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8080"

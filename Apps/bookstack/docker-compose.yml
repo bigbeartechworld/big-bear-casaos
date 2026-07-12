@@ -35,30 +35,30 @@ services:
       envs:
         - container: APP_KEY
           description:
-            en_us: 'Container Variable: APP_KEY'
+            en_US: 'Container Variable: APP_KEY'
         - container: APP_URL
           description:
-            en_us: 'Container Variable: APP_URL'
+            en_US: 'Container Variable: APP_URL'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: DB_DATABASE
           description:
-            en_us: 'Container Variable: DB_DATABASE'
+            en_US: 'Container Variable: DB_DATABASE'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   # Service definition for the database (MariaDB)
   big-bear-bookstack-db:
     image: linuxserver/mariadb:10.11.6 # The Docker image for MariaDB
@@ -77,20 +77,20 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
 # Network definition for the bookstack application
 networks:
   big_bear_bookstack_network:
@@ -100,14 +100,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.bookstack
   # Main service for this application
   main: big-bear-bookstack
   # Detailed description for the application
   description:
-    en_us: BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login admin@admin.com password password
+    en_US: BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login admin@admin.com password password
   # Brief tagline for the application
   tagline:
-    en_us: BookStack
+    en_US: BookStack
   # Developer's information
   developer: Dan Brown
   # Author of this particular configuration
@@ -119,12 +121,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-bookstack-to-bigbearcasaos/1262#p-2263-documentation-3
   # Title for the application
   title:
-    en_us: bookstack
+    en_US: bookstack
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

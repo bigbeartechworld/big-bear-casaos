@@ -29,33 +29,35 @@ services:
       envs:
         - container: USERNAME
           description:
-            en_us: 'Container Variable: USERNAME'
+            en_US: 'Container Variable: USERNAME'
         - container: PASSWORD
           description:
-            en_us: 'Container Variable: PASSWORD'
+            en_US: 'Container Variable: PASSWORD'
         - container: COUNTRY
           description:
-            en_us: 'Container Variable: COUNTRY'
+            en_US: 'Container Variable: COUNTRY'
         - container: LANGUAGE
           description:
-            en_us: 'Container Variable: LANGUAGE'
+            en_US: 'Container Variable: LANGUAGE'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.eufy-security-ws
   # Main service for this application
   main: big-bear-eufy-security-ws
   # Detailed description for the application
   description:
-    en_us: eufy-security-ws is a small server wrapper around the eufy-security-client library to access it via a WebSocket. It allows you to control Eufy security devices by connecting to the Eufy cloud servers and local/remote stations.
+    en_US: eufy-security-ws is a small server wrapper around the eufy-security-client library to access it via a WebSocket. It allows you to control Eufy security devices by connecting to the Eufy cloud servers and local/remote stations.
   # Brief tagline for the application
   tagline:
-    en_us: eufy-security-ws
+    en_US: eufy-security-ws
   # Developer's information
   developer: bropat
   # Author of this particular configuration
@@ -67,12 +69,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-eufy-security-ws-to-bigbearcasaos/2228
   # Title for the application
   title:
-    en_us: Eufy Security WS
+    en_US: Eufy Security WS
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

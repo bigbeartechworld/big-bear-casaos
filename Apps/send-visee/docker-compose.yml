@@ -39,27 +39,27 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
         - container: BASE_URL
           description:
-            en_us: 'Container Variable: BASE_URL'
+            en_US: 'Container Variable: BASE_URL'
         - container: REDIS_HOST
           description:
-            en_us: 'Container Variable: REDIS_HOST'
+            en_US: 'Container Variable: REDIS_HOST'
         - container: MAX_FILE_SIZE
           description:
-            en_us: 'Container Variable: MAX_FILE_SIZE'
+            en_US: 'Container Variable: MAX_FILE_SIZE'
         - container: FILE_DIR
           description:
-            en_us: 'Container Variable: FILE_DIR'
+            en_US: 'Container Variable: FILE_DIR'
       volumes:
         - container: /uploads
           description:
-            en_us: 'Container Path: /uploads'
+            en_US: 'Container Path: /uploads'
       ports:
         - container: "1443"
           description:
-            en_us: 'Container Port: 1443'
+            en_US: 'Container Port: 1443'
   big-bear-send-visee-redis:
     # Name of the container (Docker does not have to generate a random name)
     container_name: big-bear-send-visee-redis
@@ -83,7 +83,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 # Networks to be used for the containers
 networks:
   big_bear_send_visee_network:
@@ -94,17 +94,19 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.send-visee
   # Main service for this application
   main: big-bear-send-visee
   # Detailed description for the application
   description:
-    en_us: A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
+    en_US: A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/send-visee/screenshots/screenshot-1.png
   # Brief tagline for the application
   tagline:
-    en_us: A fork of Mozilla's Firefox Send.
+    en_US: A fork of Mozilla's Firefox Send.
   # Developer's information
   developer: timvisee
   # Author of this particular configuration
@@ -116,12 +118,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-send-visee-to-bigbearcasaos/3456?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Send Visee
+    en_US: Send Visee
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Social
   # Default port mapping for the application
   port_map: "1443"

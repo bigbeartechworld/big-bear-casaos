@@ -31,42 +31,44 @@ services:
       envs:
         - container: WEBUI_PORT
           description:
-            en_us: 'Container Variable: WEBUI_PORT'
+            en_US: 'Container Variable: WEBUI_PORT'
         - container: EDGE_IP_VERSION
           description:
-            en_us: 'Container Variable: EDGE_IP_VERSION'
+            en_US: 'Container Variable: EDGE_IP_VERSION'
         - container: PROTOCOL
           description:
-            en_us: 'Container Variable: PROTOCOL'
+            en_US: 'Container Variable: PROTOCOL'
         - container: METRICS_ENABLE
           description:
-            en_us: 'Container Variable: METRICS_ENABLE'
+            en_US: 'Container Variable: METRICS_ENABLE'
         - container: METRICS_PORT
           description:
-            en_us: 'Container Variable: METRICS_PORT'
+            en_US: 'Container Variable: METRICS_PORT'
         - container: BASIC_AUTH_USER
           description:
-            en_us: 'Container Variable: BASIC_AUTH_USER'
+            en_US: 'Container Variable: BASIC_AUTH_USER'
         - container: BASIC_AUTH_PASS
           description:
-            en_us: 'Container Variable: BASIC_AUTH_PASS'
+            en_US: 'Container Variable: BASIC_AUTH_PASS'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.cloudflared-web
   # Main service for this application
   main: big-bear-cloudflared-web
   # Detailed description for the application
   description:
-    en_us: Cloudflared-web is a docker image that packages both cloudflared cli and a simple Web UI to easily start or stop remotely-managed Cloudflare tunnel.
+    en_US: Cloudflared-web is a docker image that packages both cloudflared cli and a simple Web UI to easily start or stop remotely-managed Cloudflare tunnel.
   # Brief tagline for the application
   tagline:
-    en_us: Cloudflared Web
+    en_US: Cloudflared Web
   # Developer's information
   developer: wisdomsky
   # Author of this particular configuration
@@ -78,12 +80,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-cloudflared-web-to-bigbearcasaos/2275?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Cloudflared Web
+    en_US: Cloudflared Web
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "14333"

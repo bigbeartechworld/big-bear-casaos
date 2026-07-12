@@ -21,20 +21,22 @@ services:
       volumes:
         - container: /opt/adguardhome/work
           description:
-            en_us: 'Container Path: /opt/adguardhome/work'
+            en_US: 'Container Path: /opt/adguardhome/work'
         - container: /opt/adguardhome/conf
           description:
-            en_us: 'Container Path: /opt/adguardhome/conf'
+            en_US: 'Container Path: /opt/adguardhome/conf'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.adguard-home-host
   # Main service for this application
   main: big-bear-adguard-home-host
   # Detailed description for the application
   description:
-    en_us: Use if you're going to use Adguard Home as a DHCP server. AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. Learn more on our official Github repository.
+    en_US: Use if you're going to use Adguard Home as a DHCP server. AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. Learn more on our official Github repository.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-1.png
@@ -42,7 +44,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-3.png
   # Brief tagline for the application
   tagline:
-    en_us: Network Mode is host. Network-wide ads & trackers blocking DNS server.
+    en_US: Network Mode is host. Network-wide ads & trackers blocking DNS server.
   # Developer's information
   developer: AdGuardTeam
   # Author of this particular configuration
@@ -54,7 +56,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Run this script:
 
         ```
@@ -64,8 +66,8 @@ x-casaos:
         After running this script, you need to restart the container.
   # Title for the application
   title:
-    en_us: AdGuard Home (HOST)
+    en_US: AdGuard Home (HOST)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "80"

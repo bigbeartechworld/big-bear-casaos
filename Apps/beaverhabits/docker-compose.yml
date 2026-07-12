@@ -35,34 +35,36 @@ services:
       envs:
         - container: HABITS_STORAGE
           description:
-            en_us: 'Container Variable: HABITS_STORAGE'
+            en_US: 'Container Variable: HABITS_STORAGE'
         - container: TRUSTED_LOCAL_EMAIL
           description:
-            en_us: 'Container Variable: TRUSTED_LOCAL_EMAIL'
+            en_US: 'Container Variable: TRUSTED_LOCAL_EMAIL'
         - container: INDEX_HABIT_DATE_COLUMNS
           description:
-            en_us: 'Container Variable: INDEX_HABIT_DATE_COLUMNS'
+            en_US: 'Container Variable: INDEX_HABIT_DATE_COLUMNS'
         - container: ENABLE_IOS_STANDALONE
           description:
-            en_us: 'Container Variable: ENABLE_IOS_STANDALONE'
+            en_US: 'Container Variable: ENABLE_IOS_STANDALONE'
       volumes:
         - container: /app/.user/
           description:
-            en_us: 'Container Path: /app/.user/'
+            en_US: 'Container Path: /app/.user/'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.beaverhabits
   # Main service for this application
   main: big-bear-beaverhabits
   # Detailed description for the application
   description:
-    en_us: A self-hosted habit tracking app without Goals
+    en_US: A self-hosted habit tracking app without Goals
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/beaverhabits/screenshots/screenshot-1.png
@@ -70,7 +72,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/beaverhabits/screenshots/screenshot-3.png
   # Brief tagline for the application
   tagline:
-    en_us: A self-hosted habit tracking app without Goals
+    en_US: A self-hosted habit tracking app without Goals
   # Developer's information
   developer: daya0576
   # Author of this particular configuration
@@ -82,12 +84,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-beaverhabits-to-bigbearcasaos/3345?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Beaver Habit Tracker
+    en_US: Beaver Habit Tracker
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

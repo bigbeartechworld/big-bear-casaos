@@ -41,33 +41,33 @@ services:
       envs:
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_ROOT_PASSWD
           description:
-            en_us: 'Container Variable: DB_ROOT_PASSWD'
+            en_US: 'Container Variable: DB_ROOT_PASSWD'
         - container: TIME_ZONE
           description:
-            en_us: 'Container Variable: TIME_ZONE'
+            en_US: 'Container Variable: TIME_ZONE'
         - container: SEAFILE_ADMIN_EMAIL
           description:
-            en_us: 'Container Variable: SEAFILE_ADMIN_EMAIL'
+            en_US: 'Container Variable: SEAFILE_ADMIN_EMAIL'
         - container: SEAFILE_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: SEAFILE_ADMIN_PASSWORD'
+            en_US: 'Container Variable: SEAFILE_ADMIN_PASSWORD'
         - container: SEAFILE_SERVER_LETSENCRYPT
           description:
-            en_us: 'Container Variable: SEAFILE_SERVER_LETSENCRYPT'
+            en_US: 'Container Variable: SEAFILE_SERVER_LETSENCRYPT'
         - container: SEAFILE_SERVER_HOSTNAME
           description:
-            en_us: 'Container Variable: SEAFILE_SERVER_HOSTNAME'
+            en_US: 'Container Variable: SEAFILE_SERVER_HOSTNAME'
       volumes:
         - container: /shared
           description:
-            en_us: 'Container Path: /shared'
+            en_US: 'Container Path: /shared'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   # Database service for seafile
   big-bear-seafile-db:
     image: mariadb:10.11
@@ -92,17 +92,17 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_LOG_CONSOLE
           description:
-            en_us: 'Container Variable: MYSQL_LOG_CONSOLE'
+            en_US: 'Container Variable: MYSQL_LOG_CONSOLE'
         - container: MARIADB_AUTO_UPGRADE
           description:
-            en_us: 'Container Variable: MARIADB_AUTO_UPGRADE'
+            en_US: 'Container Variable: MARIADB_AUTO_UPGRADE'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
   # Memcached service for seafile
   big-bear-seafile-memcached:
     container_name: big-bear-seafile-memcached
@@ -119,14 +119,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.seafile
   # Main service for this application
   main: big-bear-seafile
   # Detailed description for the application
   description:
-    en_us: Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.
+    en_US: Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.
   # Brief tagline for the application
   tagline:
-    en_us: Seafile is an open source file sync and share platform, focusing on reliability and performance.
+    en_US: Seafile is an open source file sync and share platform, focusing on reliability and performance.
   # Developer's information
   developer: seafile
   # Author of this particular configuration
@@ -138,12 +140,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-seafile-to-bigbearcasaos/1011#instructions-3
   # Title for the application
   title:
-    en_us: seafile
+    en_US: seafile
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8080"

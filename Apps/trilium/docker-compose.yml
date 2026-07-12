@@ -28,28 +28,30 @@ services:
       envs:
         - container: TRILIUM_DATA_DIR
           description:
-            en_us: 'Container Variable: TRILIUM_DATA_DIR'
+            en_US: 'Container Variable: TRILIUM_DATA_DIR'
       volumes:
         - container: /home/node/trilium-data
           description:
-            en_us: 'Container Path: /home/node/trilium-data'
+            en_US: 'Container Path: /home/node/trilium-data'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.trilium
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Build your personal knowledge base with Trilium Notes
+    en_US: Build your personal knowledge base with Trilium Notes
   # Brief tagline for the application
   tagline:
-    en_us: Build your personal knowledge base with Trilium Notes
+    en_US: Build your personal knowledge base with Trilium Notes
   # Developer's information
   developer: TriliumNext
   # Author of this particular configuration
@@ -60,8 +62,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Trilium
+    en_US: Trilium
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

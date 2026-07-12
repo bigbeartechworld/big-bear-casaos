@@ -46,39 +46,41 @@ services:
       envs:
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /openvpn
           description:
-            en_us: 'Container Path: /openvpn'
+            en_US: 'Container Path: /openvpn'
       ports:
         - container: "943"
           description:
-            en_us: 'Container Port: 943'
+            en_US: 'Container Port: 943'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
         - container: "1194"
           description:
-            en_us: 'Container Port: 1194'
+            en_US: 'Container Port: 1194'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.openvpn-as
   # Main service for this application
   main: big-bear-openvpn-as
   # Detailed description for the application
   description:
-    en_us: OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.
+    en_US: OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.
   # Brief tagline for the application
   tagline:
-    en_us: OpenVPN is an open-source commercial software that implements virtual private network (VPN).
+    en_US: OpenVPN is an open-source commercial software that implements virtual private network (VPN).
   # Developer's information
   developer: openvpn
   # Author of this particular configuration
@@ -89,8 +91,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: OpenVPN
+    en_US: OpenVPN
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "943"

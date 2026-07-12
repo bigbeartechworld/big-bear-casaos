@@ -24,23 +24,25 @@ services:
       volumes:
         - container: /data/
           description:
-            en_us: 'Container Path: /data/'
+            en_US: 'Container Path: /data/'
         - container: /run/dbus
           description:
-            en_us: 'Container Path: /run/dbus'
+            en_US: 'Container Path: /run/dbus'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.python-matter-server
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: This project implements a Matter Controller Server over WebSockets using the official Matter (formerly CHIP) SDK as a base and provides both a server and client implementation. The goal of this project is primary to have Matter support in Home Assistant but its universal approach makes it suitable to be used in other projects too.
+    en_US: This project implements a Matter Controller Server over WebSockets using the official Matter (formerly CHIP) SDK as a base and provides both a server and client implementation. The goal of this project is primary to have Matter support in Home Assistant but its universal approach makes it suitable to be used in other projects too.
   # Brief tagline for the application
   tagline:
-    en_us: Python Matter Server
+    en_US: Python Matter Server
   # Developer's information
   developer: home-assistant-libs
   # Author of this particular configuration
@@ -51,8 +53,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Python Matter Server
+    en_US: Python Matter Server
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "5580"

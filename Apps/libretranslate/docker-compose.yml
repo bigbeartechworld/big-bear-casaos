@@ -34,40 +34,42 @@ services:
       envs:
         - container: LT_API_KEYS
           description:
-            en_us: 'Container Variable: LT_API_KEYS'
+            en_US: 'Container Variable: LT_API_KEYS'
         - container: LT_API_KEYS_DB_PATH
           description:
-            en_us: 'Container Variable: LT_API_KEYS_DB_PATH'
+            en_US: 'Container Variable: LT_API_KEYS_DB_PATH'
         - container: LT_UPDATE_MODELS
           description:
-            en_us: 'Container Variable: LT_UPDATE_MODELS'
+            en_US: 'Container Variable: LT_UPDATE_MODELS'
         - container: LT_LOAD_ONLY
           description:
-            en_us: 'Container Variable: LT_LOAD_ONLY'
+            en_US: 'Container Variable: LT_LOAD_ONLY'
       volumes:
         - container: /app/db
           description:
-            en_us: 'Container Path: /app/db'
+            en_US: 'Container Path: /app/db'
         - container: /home/libretranslate/.local
           description:
-            en_us: 'Container Path: /home/libretranslate/.local'
+            en_US: 'Container Path: /home/libretranslate/.local'
       ports:
         - container: "5000"
           description:
-            en_us: 'Container Port: 5000'
+            en_US: 'Container Port: 5000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.libretranslate
   # Main service for this application
   main: big-bear-libretranslate
   # Detailed description for the application
   description:
-    en_us: Free and Open Source Machine Translation API, entirely self-hosted. Unlike other APIs, it doesn't rely on proprietary providers such as Google or Azure to perform translations. Instead, its translation engine is powered by the open source Argos Translate library.
+    en_US: Free and Open Source Machine Translation API, entirely self-hosted. Unlike other APIs, it doesn't rely on proprietary providers such as Google or Azure to perform translations. Instead, its translation engine is powered by the open source Argos Translate library.
   # Brief tagline for the application
   tagline:
-    en_us: Free and Open Source Machine Translation API. 100% self-hosted, offline capable and easy to setup.
+    en_US: Free and Open Source Machine Translation API. 100% self-hosted, offline capable and easy to setup.
   # Developer's information
   developer: LibreTranslate
   # Author of this particular configuration
@@ -78,8 +80,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: LibreTranslate
+    en_US: LibreTranslate
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "5000"

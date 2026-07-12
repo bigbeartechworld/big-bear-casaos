@@ -15,28 +15,30 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /app/db
           description:
-            en_us: 'Container Path: /app/db'
+            en_US: 'Container Path: /app/db'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.mind
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!
+    en_US: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!
   # Brief tagline for the application
   tagline:
-    en_us: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!
+    en_US: A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!
   # Developer's information
   developer: Casvt
   # Author of this particular configuration
@@ -47,8 +49,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: MIND
+    en_US: MIND
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

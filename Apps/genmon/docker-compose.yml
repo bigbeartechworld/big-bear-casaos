@@ -30,43 +30,45 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /git/genmon
           description:
-            en_us: 'Container Path: /git/genmon'
+            en_US: 'Container Path: /git/genmon'
         - container: /etc/genmon
           description:
-            en_us: 'Container Path: /etc/genmon'
+            en_US: 'Container Path: /etc/genmon'
         - container: /var/log
           description:
-            en_us: 'Container Path: /var/log'
+            en_US: 'Container Path: /var/log'
       ports:
         - container: "22"
           description:
-            en_us: 'Container Port: 22'
+            en_US: 'Container Port: 22'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.genmon
   # Main service for this application
   main: big-bear-genmon
   # Detailed description for the application
   description:
-    en_us: Generac (and other models) Generator Monitoring using a Raspberry Pi and WiFi
+    en_US: Generac (and other models) Generator Monitoring using a Raspberry Pi and WiFi
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/genmon/screenshots/screenshot1.png
   # Brief tagline for the application
   tagline:
-    en_us: Genmon
+    en_US: Genmon
   # Developer's information
   developer: bigbeartechworld
   # Author of this particular configuration
@@ -77,8 +79,8 @@ x-casaos:
   thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/genmon/screenshot1.png
   # Title for the application
   title:
-    en_us: Genmon
+    en_US: Genmon
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8000"

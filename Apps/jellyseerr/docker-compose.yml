@@ -15,31 +15,33 @@ services:
       envs:
         - container: LOG_LEVEL
           description:
-            en_us: 'Container Variable: LOG_LEVEL'
+            en_US: 'Container Variable: LOG_LEVEL'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /app/config
           description:
-            en_us: 'Container Path: /app/config'
+            en_US: 'Container Path: /app/config'
       ports:
         - container: "5055"
           description:
-            en_us: 'Container Port: 5055'
+            en_US: 'Container Port: 5055'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.jellyseerr
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: 'Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers! Note: Jellyseerr is no longer actively maintained. New users should use Seerr instead.'
+    en_US: 'Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers! Note: Jellyseerr is no longer actively maintained. New users should use Seerr instead.'
   # Brief tagline for the application
   tagline:
-    en_us: Legacy media request manager - new users should use Seerr instead
+    en_US: Legacy media request manager - new users should use Seerr instead
   # Developer's information
   developer: Fallenbagel
   # Author of this particular configuration
@@ -51,11 +53,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: Jellyseerr is no longer actively maintained. Consider installing Seerr instead, which is the official successor with automatic migration support.
+      en_US: Jellyseerr is no longer actively maintained. Consider installing Seerr instead, which is the official successor with automatic migration support.
   # Title for the application
   title:
-    en_us: Jellyseerr (Legacy)
+    en_US: Jellyseerr (Legacy)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "5055"

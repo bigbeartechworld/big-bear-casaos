@@ -25,24 +25,26 @@ services:
       volumes:
         - container: /var/www/html/storage
           description:
-            en_us: 'Container Path: /var/www/html/storage'
+            en_US: 'Container Path: /var/www/html/storage'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.erugo
   # Main service for this application
   main: big-bear-erugo
   # Detailed description for the application
   description:
-    en_us: A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend. It offers secure, customizable file-transfer capabilities through an elegant user interface, giving you complete control over your data while providing a seamless experience for both senders and recipients.
+    en_US: A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend. It offers secure, customizable file-transfer capabilities through an elegant user interface, giving you complete control over your data while providing a seamless experience for both senders and recipients.
   # Brief tagline for the application
   tagline:
-    en_us: A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend.
+    en_US: A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend.
   # Developer's information
   developer: wardy784
   # Author of this particular configuration
@@ -53,8 +55,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Erugo
+    en_US: Erugo
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "9997"

@@ -48,49 +48,51 @@ services:
       envs:
         - container: VPN_SERVICE_PROVIDER
           description:
-            en_us: 'Container Variable: VPN_SERVICE_PROVIDER'
+            en_US: 'Container Variable: VPN_SERVICE_PROVIDER'
         - container: VPN_TYPE
           description:
-            en_us: 'Container Variable: VPN_TYPE'
+            en_US: 'Container Variable: VPN_TYPE'
         - container: OPENVPN_USER
           description:
-            en_us: 'Container Variable: OPENVPN_USER'
+            en_US: 'Container Variable: OPENVPN_USER'
         - container: OPENVPN_PASSWORD
           description:
-            en_us: 'Container Variable: OPENVPN_PASSWORD'
+            en_US: 'Container Variable: OPENVPN_PASSWORD'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: UPDATER_PERIOD
           description:
-            en_us: 'Container Variable: UPDATER_PERIOD'
+            en_US: 'Container Variable: UPDATER_PERIOD'
       volumes:
         - container: /gluetun
           description:
-            en_us: 'Container Path: /gluetun'
+            en_US: 'Container Path: /gluetun'
       ports:
         - container: "8888"
           description:
-            en_us: 'Container Port: 8888'
+            en_US: 'Container Port: 8888'
         - container: "8388"
           description:
-            en_us: 'Container Port: 8388'
+            en_US: 'Container Port: 8388'
         - container: "8388"
           description:
-            en_us: 'Container Port: 8388'
+            en_US: 'Container Port: 8388'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.gluetun
   # Main service for this application
   main: gluetun
   # Detailed description for the application
   description:
-    en_us: Lightweight swiss-knife-like VPN client to multiple VPN service providers
+    en_US: Lightweight swiss-knife-like VPN client to multiple VPN service providers
   # Brief tagline for the application
   tagline:
-    en_us: Gluetun
+    en_US: Gluetun
   # Developer's information
   developer: portainer
   # Author of this particular configuration
@@ -102,12 +104,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         You will need to configure the providers in the environment variables. See: [BigBearCasaOS Gluetun Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)
   # Title for the application
   title:
-    en_us: Gluetun
+    en_US: Gluetun
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: ""

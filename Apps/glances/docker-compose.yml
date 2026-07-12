@@ -26,31 +26,33 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: GLANCES_OPT
           description:
-            en_us: 'Container Variable: GLANCES_OPT'
+            en_US: 'Container Variable: GLANCES_OPT'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "61208"
           description:
-            en_us: 'Container Port: 61208'
+            en_US: 'Container Port: 61208'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.glances
   # Main service for this application
   main: big-bear-glances
   # Detailed description for the application
   description:
-    en_us: Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc. It also allows monitoring of running processes, logged in users, temperatures, voltages, fan speeds etc. It also supports container monitoring, it supports different container management systems such as Docker, LXC. The information is presented in an easy to read dashboard and can also be used for remote monitoring of systems via a web interface or command line interface. It is easy to install and use and can be customized to show only the information that you are interested in.
+    en_US: Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc. It also allows monitoring of running processes, logged in users, temperatures, voltages, fan speeds etc. It also supports container monitoring, it supports different container management systems such as Docker, LXC. The information is presented in an easy to read dashboard and can also be used for remote monitoring of systems via a web interface or command line interface. It is easy to install and use and can be customized to show only the information that you are interested in.
   # Brief tagline for the application
   tagline:
-    en_us: Glances
+    en_US: Glances
   # Developer's information
   developer: nicolargo
   # Author of this particular configuration
@@ -61,8 +63,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Glances
+    en_US: Glances
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "61208"

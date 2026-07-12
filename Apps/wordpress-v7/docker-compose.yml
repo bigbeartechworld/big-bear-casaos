@@ -51,24 +51,24 @@ services:
       envs:
         - container: WORDPRESS_DB_HOST
           description:
-            en_us: 'Container Variable: WORDPRESS_DB_HOST'
+            en_US: 'Container Variable: WORDPRESS_DB_HOST'
         - container: WORDPRESS_DB_USER
           description:
-            en_us: 'Container Variable: WORDPRESS_DB_USER'
+            en_US: 'Container Variable: WORDPRESS_DB_USER'
         - container: WORDPRESS_DB_PASSWORD
           description:
-            en_us: 'Container Variable: WORDPRESS_DB_PASSWORD'
+            en_US: 'Container Variable: WORDPRESS_DB_PASSWORD'
         - container: WORDPRESS_DB_NAME
           description:
-            en_us: 'Container Variable: WORDPRESS_DB_NAME'
+            en_US: 'Container Variable: WORDPRESS_DB_NAME'
       volumes:
         - container: /var/www/html
           description:
-            en_us: 'Container Path: /var/www/html'
+            en_US: 'Container Path: /var/www/html'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   # Service definition for the database
   db:
     # Docker image to use for the database
@@ -86,33 +86,35 @@ services:
       envs:
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.wordpress-v7
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web. WordPress 7 requires MySQL 8.0 and is packaged as a new app alongside the legacy WordPress 6 entry.
+    en_US: Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web. WordPress 7 requires MySQL 8.0 and is packaged as a new app alongside the legacy WordPress 6 entry.
   # Brief tagline for the application
   tagline:
-    en_us: WordPress
+    en_US: WordPress
   # Developer's information
   developer: Automattic
   # Author of this particular configuration
@@ -124,11 +126,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: "\U0001F195 WORDPRESS V7 - SEPARATE APP\n\nThis is a NEW app, separate from 'wordpress' (v6). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new WordPress deployments\n✅ Pairs WordPress 7.0.1 with MySQL 8.0 (WordPress 7 requires MySQL 8.0)\n\nFOR V6 USERS:\n⚠️  Do NOT uninstall your 'wordpress' v6 app\n⚠️  Deploy this as a NEW app alongside v6\n⚠️  WordPress 7 rejects MySQL 5.7, and a 5.7 data directory does not upgrade in-place to 8.0\n⚠️  Migration requires a manual MySQL dump/reload — back up your database first\n\nSupport: https://community.bigbeartechworld.com/"
+      en_US: "\U0001F195 WORDPRESS V7 - SEPARATE APP\n\nThis is a NEW app, separate from 'wordpress' (v6). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new WordPress deployments\n✅ Pairs WordPress 7.0.1 with MySQL 8.0 (WordPress 7 requires MySQL 8.0)\n\nFOR V6 USERS:\n⚠️  Do NOT uninstall your 'wordpress' v6 app\n⚠️  Deploy this as a NEW app alongside v6\n⚠️  WordPress 7 rejects MySQL 5.7, and a 5.7 data directory does not upgrade in-place to 8.0\n⚠️  Migration requires a manual MySQL dump/reload — back up your database first\n\nSupport: https://community.bigbeartechworld.com/"
   # Title for the application
   title:
-    en_us: WordPress v7
+    en_US: WordPress v7
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8084"

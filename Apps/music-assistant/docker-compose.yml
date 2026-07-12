@@ -31,20 +31,22 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.music-assistant
   # Main service for this application
   main: big-bear-music-assistant-server
   # Detailed description for the application
   description:
-    en_us: Music Assistant is a music library manager for your offline and online music sources which can easily stream your favourite music to a wide range of supported players and be combined with the power of Home Assistant!
+    en_US: Music Assistant is a music library manager for your offline and online music sources which can easily stream your favourite music to a wide range of supported players and be combined with the power of Home Assistant!
   # Brief tagline for the application
   tagline:
-    en_us: Home Automation
+    en_US: Home Automation
   # Developer's information
   developer: music-assistant
   # Author of this particular configuration
@@ -55,8 +57,8 @@ x-casaos:
   thumbnail: https://www.music-assistant.io/assets/banner.png
   # Title for the application
   title:
-    en_us: Music Assistant
+    en_US: Music Assistant
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "8095"

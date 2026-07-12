@@ -34,46 +34,48 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: DATABASE_PATH
           description:
-            en_us: 'Container Variable: DATABASE_PATH'
+            en_US: 'Container Variable: DATABASE_PATH'
         - container: TRUSTED_LOCAL_EMAIL
           description:
-            en_us: 'Container Variable: TRUSTED_LOCAL_EMAIL'
+            en_US: 'Container Variable: TRUSTED_LOCAL_EMAIL'
         - container: CACHE_TIMEOUT_MS
           description:
-            en_us: 'Container Variable: CACHE_TIMEOUT_MS'
+            en_US: 'Container Variable: CACHE_TIMEOUT_MS'
         - container: DISABLE_CACHE
           description:
-            en_us: 'Container Variable: DISABLE_CACHE'
+            en_US: 'Container Variable: DISABLE_CACHE'
         - container: INCLUDE_UDP
           description:
-            en_us: 'Container Variable: INCLUDE_UDP'
+            en_US: 'Container Variable: INCLUDE_UDP'
         - container: DEBUG
           description:
-            en_us: 'Container Variable: DEBUG'
+            en_US: 'Container Variable: DEBUG'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "4999"
           description:
-            en_us: 'Container Port: 4999'
+            en_US: 'Container Port: 4999'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.portracker
   # Main service for this application
   main: big-bear-portracker
   # Detailed description for the application
   description:
-    en_us: A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.
+    en_US: A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/portracker/screenshots/screenshot-1.png
@@ -82,7 +84,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/portracker/screenshots/screenshot-4.png
   # Brief tagline for the application
   tagline:
-    en_us: Real-time Port Monitoring Tool
+    en_US: Real-time Port Monitoring Tool
   # Developer's information
   developer: Mostafa-Wahied
   # Author of this particular configuration
@@ -94,11 +96,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: "Portracker is a self-hosted port monitoring tool that automatically discovers network services.\n                \nRead this before installing: https://community.bigbeartechworld.com/t/added-portracker-to-bigbearcasaos/5003?u=dragonfire1119"
+      en_US: "Portracker is a self-hosted port monitoring tool that automatically discovers network services.\n                \nRead this before installing: https://community.bigbeartechworld.com/t/added-portracker-to-bigbearcasaos/5003?u=dragonfire1119"
   # Title for the application
   title:
-    en_us: Portracker
+    en_US: Portracker
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "4999"

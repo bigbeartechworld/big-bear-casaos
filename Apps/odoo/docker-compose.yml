@@ -34,24 +34,24 @@ services:
       envs:
         - container: HOST
           description:
-            en_us: 'Container Variable: HOST'
+            en_US: 'Container Variable: HOST'
         - container: USER
           description:
-            en_us: 'Container Variable: USER'
+            en_US: 'Container Variable: USER'
         - container: PASSWORD
           description:
-            en_us: 'Container Variable: PASSWORD'
+            en_US: 'Container Variable: PASSWORD'
       volumes:
         - container: /etc/odoo
           description:
-            en_us: 'Container Path: /etc/odoo'
+            en_US: 'Container Path: /etc/odoo'
         - container: /mnt/extra-addons
           description:
-            en_us: 'Container Path: /mnt/extra-addons'
+            en_US: 'Container Path: /mnt/extra-addons'
       ports:
         - container: "8069"
           description:
-            en_us: 'Container Port: 8069'
+            en_US: 'Container Port: 8069'
   # Database service for Odoo
   big-bear-odoo-db:
     container_name: big-bear-odoo-db # Database container name
@@ -70,17 +70,17 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Network definition for the big-bear-odoo application
 networks:
   big_bear_odoo_network:
@@ -90,14 +90,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.odoo
   # Main service for this application
   main: big-bear-odoo
   # Detailed description for the application
   description:
-    en_us: Open-source business management software suite designed to streamline various aspects of business operations. With its modular structure, users can choose and integrate specific applications such as accounting, inventory, and sales. Odoo provides a user-friendly interface, scalability for businesses of all sizes, and is available in both community (free) and enterprise editions. Its integrated approach and customization options make it a popular choice for comprehensive ERP (Enterprise Resource Planning) solutions.
+    en_US: Open-source business management software suite designed to streamline various aspects of business operations. With its modular structure, users can choose and integrate specific applications such as accounting, inventory, and sales. Odoo provides a user-friendly interface, scalability for businesses of all sizes, and is available in both community (free) and enterprise editions. Its integrated approach and customization options make it a popular choice for comprehensive ERP (Enterprise Resource Planning) solutions.
   # Brief tagline for the application
   tagline:
-    en_us: Open-source business management software with modular applications for streamlined operations.
+    en_US: Open-source business management software with modular applications for streamlined operations.
   # Developer's information
   developer: odoo
   # Author of this particular configuration
@@ -109,12 +111,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Documentation: https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Odoo
+    en_US: Odoo
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Finance
   # Default port mapping for the application
   port_map: "8069"

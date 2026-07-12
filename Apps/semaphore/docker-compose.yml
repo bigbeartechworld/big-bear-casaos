@@ -39,48 +39,48 @@ services:
       envs:
         - container: SEMAPHORE_DB_USER
           description:
-            en_us: 'Container Variable: SEMAPHORE_DB_USER'
+            en_US: 'Container Variable: SEMAPHORE_DB_USER'
         - container: SEMAPHORE_DB_PASS
           description:
-            en_us: 'Container Variable: SEMAPHORE_DB_PASS'
+            en_US: 'Container Variable: SEMAPHORE_DB_PASS'
         - container: SEMAPHORE_DB_HOST
           description:
-            en_us: 'Container Variable: SEMAPHORE_DB_HOST'
+            en_US: 'Container Variable: SEMAPHORE_DB_HOST'
         - container: SEMAPHORE_DB_PORT
           description:
-            en_us: 'Container Variable: SEMAPHORE_DB_PORT'
+            en_US: 'Container Variable: SEMAPHORE_DB_PORT'
         - container: SEMAPHORE_DB_DIALECT
           description:
-            en_us: 'Container Variable: SEMAPHORE_DB_DIALECT'
+            en_US: 'Container Variable: SEMAPHORE_DB_DIALECT'
         - container: SEMAPHORE_DB
           description:
-            en_us: 'Container Variable: SEMAPHORE_DB'
+            en_US: 'Container Variable: SEMAPHORE_DB'
         - container: SEMAPHORE_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: SEMAPHORE_ADMIN_PASSWORD'
+            en_US: 'Container Variable: SEMAPHORE_ADMIN_PASSWORD'
         - container: SEMAPHORE_ADMIN_NAME
           description:
-            en_us: 'Container Variable: SEMAPHORE_ADMIN_NAME'
+            en_US: 'Container Variable: SEMAPHORE_ADMIN_NAME'
         - container: SEMAPHORE_ADMIN_EMAIL
           description:
-            en_us: 'Container Variable: SEMAPHORE_ADMIN_EMAIL'
+            en_US: 'Container Variable: SEMAPHORE_ADMIN_EMAIL'
         - container: SEMAPHORE_ADMIN
           description:
-            en_us: 'Container Variable: SEMAPHORE_ADMIN'
+            en_US: 'Container Variable: SEMAPHORE_ADMIN'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /etc/semaphore
           description:
-            en_us: 'Container Path: /etc/semaphore'
+            en_US: 'Container Path: /etc/semaphore'
         - container: /var/lib/semaphore
           description:
-            en_us: 'Container Path: /var/lib/semaphore'
+            en_US: 'Container Path: /var/lib/semaphore'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
   # MySQL database service for semaphore
   big-bear-semaphore-db:
     container_name: big-bear-semaphore-db
@@ -99,20 +99,20 @@ services:
       envs:
         - container: MYSQL_RANDOM_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_RANDOM_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_RANDOM_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 networks:
   big-bear-semaphore-network:
     driver: bridge # Specifies network driver type
@@ -121,14 +121,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.semaphore
   # Main service for this application
   main: big-bear-semaphore
   # Detailed description for the application
   description:
-    en_us: Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.
+    en_US: Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.
   # Brief tagline for the application
   tagline:
-    en_us: Ansible Semaphore
+    en_US: Ansible Semaphore
   # Developer's information
   developer: semaphore
   # Author of this particular configuration
@@ -139,8 +141,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Ansible Semaphore
+    en_US: Ansible Semaphore
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

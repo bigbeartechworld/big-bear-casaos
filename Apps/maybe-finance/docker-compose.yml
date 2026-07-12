@@ -61,42 +61,42 @@ services:
       envs:
         - container: SELF_HOSTED
           description:
-            en_us: 'Container Variable: SELF_HOSTED'
+            en_US: 'Container Variable: SELF_HOSTED'
         - container: RAILS_FORCE_SSL
           description:
-            en_us: 'Container Variable: RAILS_FORCE_SSL'
+            en_US: 'Container Variable: RAILS_FORCE_SSL'
         - container: RAILS_ASSUME_SSL
           description:
-            en_us: 'Container Variable: RAILS_ASSUME_SSL'
+            en_US: 'Container Variable: RAILS_ASSUME_SSL'
         - container: GOOD_JOB_EXECUTION_MODE
           description:
-            en_us: 'Container Variable: GOOD_JOB_EXECUTION_MODE'
+            en_US: 'Container Variable: GOOD_JOB_EXECUTION_MODE'
         - container: SECRET_KEY_BASE
           description:
-            en_us: 'Container Variable: SECRET_KEY_BASE'
+            en_US: 'Container Variable: SECRET_KEY_BASE'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: REDIS_URL
           description:
-            en_us: 'Container Variable: REDIS_URL'
+            en_US: 'Container Variable: REDIS_URL'
       volumes:
         - container: /rails/storage
           description:
-            en_us: 'Container Path: /rails/storage'
+            en_US: 'Container Path: /rails/storage'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
   # Service name: big-bear-maybe-finance-postgres
   # The `big-bear-maybe-finance-postgres` service definition
   big-bear-maybe-finance-postgres:
@@ -136,17 +136,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   # Service name: big-bear-maybe-finance-redis
   # The `big-bear-maybe-finance-redis` service definition
   big-bear-maybe-finance-redis:
@@ -178,7 +178,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 # Definition of networks used in the services
 networks:
   big_bear_maybe_finance_network:
@@ -189,14 +189,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.maybe-finance
   # Main service for this application
   main: big-bear-maybe-finance
   # Detailed description for the application
   description:
-    en_us: Maybe is a fully* open-source OS for your personal finances built by a small team alongside an incredible community Discord
+    en_US: Maybe is a fully* open-source OS for your personal finances built by a small team alongside an incredible community Discord
   # Brief tagline for the application
   tagline:
-    en_us: maybe-finance
+    en_US: maybe-finance
   # Developer's information
   developer: Maybe Finance
   # Author of this particular configuration
@@ -208,7 +210,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         ### Additional Instructions:
         Generate the app secret key:
 
@@ -224,8 +226,8 @@ x-casaos:
         For more information, refer to the [official documentation](https://maybe.co)
   # Title for the application
   title:
-    en_us: Maybe Finance
+    en_US: Maybe Finance
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Finance
   # Default port mapping for the application
   port_map: "4000"

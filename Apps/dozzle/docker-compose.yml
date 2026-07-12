@@ -25,24 +25,26 @@ services:
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.dozzle
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Dozzle is a real-time log viewer for docker containers.
+    en_US: Dozzle is a real-time log viewer for docker containers.
   # Brief tagline for the application
   tagline:
-    en_us: Dozzle is a real-time log viewer for docker containers.
+    en_US: Dozzle is a real-time log viewer for docker containers.
   # Developer's information
   developer: amir20
   # Author of this particular configuration
@@ -53,8 +55,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Dozzle
+    en_US: Dozzle
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8888"

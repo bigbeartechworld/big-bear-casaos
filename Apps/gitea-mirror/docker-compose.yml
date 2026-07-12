@@ -49,40 +49,42 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: HOST
           description:
-            en_us: 'Container Variable: HOST'
+            en_US: 'Container Variable: HOST'
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: BETTER_AUTH_URL
           description:
-            en_us: 'Container Variable: BETTER_AUTH_URL'
+            en_US: 'Container Variable: BETTER_AUTH_URL'
         - container: BETTER_AUTH_SECRET
           description:
-            en_us: 'Container Variable: BETTER_AUTH_SECRET'
+            en_US: 'Container Variable: BETTER_AUTH_SECRET'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
       ports:
         - container: "4321"
           description:
-            en_us: 'Container Port: 4321'
+            en_US: 'Container Port: 4321'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.gitea-mirror
   # Main service for this application
   main: big-bear-gitea-mirror
   # Detailed description for the application
   description:
-    en_us: Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It features a user-friendly interface to sync public, private, or starred GitHub repos, mirror entire organizations with structure preservation, and optionally mirror issues and labels. The application includes smart filtering, detailed logs, and scheduled automatic mirroring.
+    en_US: Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It features a user-friendly interface to sync public, private, or starred GitHub repos, mirror entire organizations with structure preservation, and optionally mirror issues and labels. The application includes smart filtering, detailed logs, and scheduled automatic mirroring.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/1.png
@@ -93,7 +95,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/gitea-mirror/6.png
   # Brief tagline for the application
   tagline:
-    en_us: Mirror GitHub repositories to Gitea
+    en_US: Mirror GitHub repositories to Gitea
   # Developer's information
   developer: raylabs.io
   # Author of this particular configuration
@@ -105,12 +107,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Gitea Mirror
+    en_US: Gitea Mirror
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "4321"

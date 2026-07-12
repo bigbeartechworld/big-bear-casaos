@@ -21,20 +21,22 @@ services:
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.chatpad
   # Main service for this application
   main: big-bear-chatpad
   # Detailed description for the application
   description:
-    en_us: Recently, there has been a surge of UIs for ChatGPT, making it the new to-do app that everyone wants to try their hand at. Chatpad sets itself apart with a broader vision - to become the ultimate interface for ChatGPT users.
+    en_US: Recently, there has been a surge of UIs for ChatGPT, making it the new to-do app that everyone wants to try their hand at. Chatpad sets itself apart with a broader vision - to become the ultimate interface for ChatGPT users.
   # Brief tagline for the application
   tagline:
-    en_us: Not just another ChatGPT user-interface!
+    en_US: Not just another ChatGPT user-interface!
   # Developer's information
   developer: deiucanta
   # Author of this particular configuration
@@ -45,8 +47,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Chatpad
+    en_US: Chatpad
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

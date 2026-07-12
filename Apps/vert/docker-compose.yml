@@ -21,20 +21,22 @@ services:
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.vert
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud. Convert images, audio, documents, and video with support for over 250+ file formats. No file or file size limits.
+    en_US: VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud. Convert images, audio, documents, and video with support for over 250+ file formats. No file or file size limits.
   # Brief tagline for the application
   tagline:
-    en_us: The next-generation file converter. Open source, fully local and free forever.
+    en_US: The next-generation file converter. Open source, fully local and free forever.
   # Developer's information
   developer: VERT-sh
   # Author of this particular configuration
@@ -45,8 +47,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: VERT
+    en_US: VERT
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3030"

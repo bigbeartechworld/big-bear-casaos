@@ -39,46 +39,48 @@ services:
       envs:
         - container: GOTTY_AUTH_USER
           description:
-            en_us: 'Container Variable: GOTTY_AUTH_USER'
+            en_US: 'Container Variable: GOTTY_AUTH_USER'
         - container: GOTTY_AUTH_PASS
           description:
-            en_us: 'Container Variable: GOTTY_AUTH_PASS'
+            en_US: 'Container Variable: GOTTY_AUTH_PASS'
         - container: GOTTY_AUTH_ENABLED
           description:
-            en_us: 'Container Variable: GOTTY_AUTH_ENABLED'
+            en_US: 'Container Variable: GOTTY_AUTH_ENABLED'
       volumes:
         - container: /proc
           description:
-            en_us: 'Container Path: /proc'
+            en_US: 'Container Path: /proc'
         - container: /sys
           description:
-            en_us: 'Container Path: /sys'
+            en_US: 'Container Path: /sys'
         - container: /dev
           description:
-            en_us: 'Container Path: /dev'
+            en_US: 'Container Path: /dev'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
         - container: /root/.config/btop
           description:
-            en_us: 'Container Path: /root/.config/btop'
+            en_US: 'Container Path: /root/.config/btop'
       ports:
         - container: "7681"
           description:
-            en_us: 'Container Port: 7681'
+            en_US: 'Container Port: 7681'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.btop
   # Main service for this application
   main: big-bear-btop
   # Detailed description for the application
   description:
-    en_us: A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop
+    en_US: A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop
   # Brief tagline for the application
   tagline:
-    en_us: A monitor of resources
+    en_US: A monitor of resources
   # Developer's information
   developer: bigbeartechworld
   # Author of this particular configuration
@@ -90,12 +92,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-btop-to-bigbearcasaos/1240?u=dragonfire1119
   # Title for the application
   title:
-    en_us: btop
+    en_US: btop
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "7681"

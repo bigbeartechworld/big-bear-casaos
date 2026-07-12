@@ -33,33 +33,33 @@ services:
       envs:
         - container: AUTHENTIK_REDIS__HOST
           description:
-            en_us: 'Container Variable: AUTHENTIK_REDIS__HOST'
+            en_US: 'Container Variable: AUTHENTIK_REDIS__HOST'
         - container: AUTHENTIK_POSTGRESQL__HOST
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__HOST'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__HOST'
         - container: AUTHENTIK_POSTGRESQL__USER
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__USER'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__USER'
         - container: AUTHENTIK_POSTGRESQL__NAME
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__NAME'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__NAME'
         - container: AUTHENTIK_POSTGRESQL__PASSWORD
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__PASSWORD'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__PASSWORD'
         - container: AUTHENTIK_SECRET_KEY
           description:
-            en_us: 'Container Variable: AUTHENTIK_SECRET_KEY'
+            en_US: 'Container Variable: AUTHENTIK_SECRET_KEY'
       volumes:
         - container: /media
           description:
-            en_us: 'Container Path: /media'
+            en_US: 'Container Path: /media'
         - container: /templates
           description:
-            en_us: 'Container Path: /templates'
+            en_US: 'Container Path: /templates'
       ports:
         - container: "9443"
           description:
-            en_us: 'Container Port: 9443'
+            en_US: 'Container Port: 9443'
   big-bear-authentik-worker:
     image: ghcr.io/goauthentik/server:2026.2.2
     restart: unless-stopped
@@ -93,35 +93,35 @@ services:
       envs:
         - container: AUTHENTIK_REDIS__HOST
           description:
-            en_us: 'Container Variable: AUTHENTIK_REDIS__HOST'
+            en_US: 'Container Variable: AUTHENTIK_REDIS__HOST'
         - container: AUTHENTIK_POSTGRESQL__HOST
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__HOST'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__HOST'
         - container: AUTHENTIK_POSTGRESQL__USER
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__USER'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__USER'
         - container: AUTHENTIK_POSTGRESQL__NAME
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__NAME'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__NAME'
         - container: AUTHENTIK_POSTGRESQL__PASSWORD
           description:
-            en_us: 'Container Variable: AUTHENTIK_POSTGRESQL__PASSWORD'
+            en_US: 'Container Variable: AUTHENTIK_POSTGRESQL__PASSWORD'
         - container: AUTHENTIK_SECRET_KEY
           description:
-            en_us: 'Container Variable: AUTHENTIK_SECRET_KEY'
+            en_US: 'Container Variable: AUTHENTIK_SECRET_KEY'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
         - container: /media
           description:
-            en_us: 'Container Path: /media'
+            en_US: 'Container Path: /media'
         - container: /certs
           description:
-            en_us: 'Container Path: /certs'
+            en_US: 'Container Path: /certs'
         - container: /templates
           description:
-            en_us: 'Container Path: /templates'
+            en_US: 'Container Path: /templates'
   big-bear-authentik-db:
     container_name: big-bear-authentik-db
     # PostgreSQL 14+ required by Authentik (since version 2024.6)
@@ -147,17 +147,17 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   big-bear-authentik-redis:
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     command: ["--save", "60", "1", "--loglevel", "warning"]
@@ -177,7 +177,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 networks:
   big_bear_authentik_network:
     driver: bridge
@@ -186,14 +186,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.authentik
   # Main service for this application
   main: big-bear-authentik
   # Detailed description for the application
   description:
-    en_us: Authentik is a self-hosted identity and access management platform that provides a secure and scalable solution for managing user accounts, authentication, and authorization. It offers a range of features, including user management, role-based access control, and multi-factor authentication. Authentik is designed to be easy to use and integrate with your existing systems, making it a great choice for organizations looking to improve their security and compliance.
+    en_US: Authentik is a self-hosted identity and access management platform that provides a secure and scalable solution for managing user accounts, authentication, and authorization. It offers a range of features, including user management, role-based access control, and multi-factor authentication. Authentik is designed to be easy to use and integrate with your existing systems, making it a great choice for organizations looking to improve their security and compliance.
   # Brief tagline for the application
   tagline:
-    en_us: Authentik
+    en_US: Authentik
   # Developer's information
   developer: authentik
   # Author of this particular configuration
@@ -205,12 +207,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-authentik-to-bigbearcasaos/1196#instructions-3
   # Title for the application
   title:
-    en_us: Authentik
+    en_US: Authentik
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "9443"

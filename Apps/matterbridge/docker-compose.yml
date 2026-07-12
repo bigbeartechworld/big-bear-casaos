@@ -22,23 +22,25 @@ services:
       volumes:
         - container: /root/Matterbridge
           description:
-            en_us: 'Container Path: /root/Matterbridge'
+            en_US: 'Container Path: /root/Matterbridge'
         - container: /root/.matterbridge
           description:
-            en_us: 'Container Path: /root/.matterbridge'
+            en_US: 'Container Path: /root/.matterbridge'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.matterbridge
   # Main service for this application
   main: big-bear-matterbridge
   # Detailed description for the application
   description:
-    en_us: Matterbridge is a Matter plugin manager that allows you to have all your Matter devices up and running in a couple of minutes without having to deal with the pairing process for each individual device. It creates a device that can be paired with any ecosystem, such as Apple Home, Google Home, Amazon Alexa, Home Assistant, or any other platform supporting Matter.
+    en_US: Matterbridge is a Matter plugin manager that allows you to have all your Matter devices up and running in a couple of minutes without having to deal with the pairing process for each individual device. It creates a device that can be paired with any ecosystem, such as Apple Home, Google Home, Amazon Alexa, Home Assistant, or any other platform supporting Matter.
   # Brief tagline for the application
   tagline:
-    en_us: Matter plugin manager for smart home devices
+    en_US: Matter plugin manager for smart home devices
   # Developer's information
   developer: Luligu
   # Author of this particular configuration
@@ -50,12 +52,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-matterbridge-to-bigbearcasaos/5072#p-7704-documentation-2
   # Title for the application
   title:
-    en_us: Matterbridge
+    en_US: Matterbridge
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "8283"

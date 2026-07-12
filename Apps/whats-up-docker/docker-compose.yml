@@ -16,24 +16,26 @@ services:
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.whats-up-docker
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Gets you notified when new versions of your Docker containers are available and lets you react the way you want.
+    en_US: Gets you notified when new versions of your Docker containers are available and lets you react the way you want.
   # Brief tagline for the application
   tagline:
-    en_us: What's Up Docker
+    en_US: What's Up Docker
   # Developer's information
   developer: fmartinou
   # Author of this particular configuration
@@ -44,8 +46,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: What's Up Docker
+    en_US: What's Up Docker
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3000"

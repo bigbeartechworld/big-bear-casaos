@@ -36,44 +36,44 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: SECRET_PASSWORD
           description:
-            en_us: 'Container Variable: SECRET_PASSWORD'
+            en_US: 'Container Variable: SECRET_PASSWORD'
         - container: NEXT_PUBLIC_BASE_URL
           description:
-            en_us: 'Container Variable: NEXT_PUBLIC_BASE_URL'
+            en_US: 'Container Variable: NEXT_PUBLIC_BASE_URL'
         - container: NOREPLY_EMAIL
           description:
-            en_us: 'Container Variable: NOREPLY_EMAIL'
+            en_US: 'Container Variable: NOREPLY_EMAIL'
         - container: SUPPORT_EMAIL
           description:
-            en_us: 'Container Variable: SUPPORT_EMAIL'
+            en_US: 'Container Variable: SUPPORT_EMAIL'
         - container: SMTP_HOST
           description:
-            en_us: 'Container Variable: SMTP_HOST'
+            en_US: 'Container Variable: SMTP_HOST'
         - container: SMTP_PORT
           description:
-            en_us: 'Container Variable: SMTP_PORT'
+            en_US: 'Container Variable: SMTP_PORT'
         - container: SMTP_SECURE
           description:
-            en_us: 'Container Variable: SMTP_SECURE'
+            en_US: 'Container Variable: SMTP_SECURE'
         - container: SMTP_USER
           description:
-            en_us: 'Container Variable: SMTP_USER'
+            en_US: 'Container Variable: SMTP_USER'
         - container: SMTP_PWD
           description:
-            en_us: 'Container Variable: SMTP_PWD'
+            en_US: 'Container Variable: SMTP_PWD'
         - container: SMTP_TLS_ENABLED
           description:
-            en_us: 'Container Variable: SMTP_TLS_ENABLED'
+            en_US: 'Container Variable: SMTP_TLS_ENABLED'
         - container: ALLOWED_EMAILS
           description:
-            en_us: 'Container Variable: ALLOWED_EMAILS'
+            en_US: 'Container Variable: ALLOWED_EMAILS'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
   # Database service for the application
   big-bear-rallly-db:
     container_name: big-bear-rallly-db # Container name for the database service
@@ -96,17 +96,17 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Network definitions for the application
 networks:
   big_bear_rally_network:
@@ -116,14 +116,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rallly
   # Main service for this application
   main: big-bear-rallly
   # Detailed description for the application
   description:
-    en_us: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.
+    en_US: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.
   # Brief tagline for the application
   tagline:
-    en_us: Rallly
+    en_US: Rallly
   # Developer's information
   developer: lukevella
   # Author of this particular configuration
@@ -135,12 +137,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3
   # Title for the application
   title:
-    en_us: Rallly
+    en_US: Rallly
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

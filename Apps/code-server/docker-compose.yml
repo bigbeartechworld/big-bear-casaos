@@ -23,46 +23,48 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: PASSWORD
           description:
-            en_us: 'Container Variable: PASSWORD'
+            en_US: 'Container Variable: PASSWORD'
         - container: SUDO_PASSWORD
           description:
-            en_us: 'Container Variable: SUDO_PASSWORD'
+            en_US: 'Container Variable: SUDO_PASSWORD'
         - container: DEFAULT_WORKSPACE
           description:
-            en_us: 'Container Variable: DEFAULT_WORKSPACE'
+            en_US: 'Container Variable: DEFAULT_WORKSPACE'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /projects
           description:
-            en_us: 'Container Path: /projects'
+            en_US: 'Container Path: /projects'
       ports:
         - container: "8443"
           description:
-            en_us: 'Container Port: 8443'
+            en_US: 'Container Port: 8443'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.code-server
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Run VS Code on any machine anywhere and access it in the browser.
+    en_US: Run VS Code on any machine anywhere and access it in the browser.
   # Brief tagline for the application
   tagline:
-    en_us: Code Server
+    en_US: Code Server
   # Developer's information
   developer: linuxserver
   # Author of this particular configuration
@@ -73,8 +75,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Code Server
+    en_US: Code Server
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8080"

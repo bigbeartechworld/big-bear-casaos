@@ -24,34 +24,36 @@ services:
       envs:
         - container: JWT_SECRET
           description:
-            en_us: 'Container Variable: JWT_SECRET'
+            en_US: 'Container Variable: JWT_SECRET'
         - container: HTTP_ALLOWED
           description:
-            en_us: 'Container Variable: HTTP_ALLOWED'
+            en_US: 'Container Variable: HTTP_ALLOWED'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.convertx
   # Main service for this application
   main: big-bear-convertx
   # Detailed description for the application
   description:
-    en_us: A self-hosted online file converter. Supports over a thousand different formats. Written with TypeScript, Bun and Elysia.
+    en_US: A self-hosted online file converter. Supports over a thousand different formats. Written with TypeScript, Bun and Elysia.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/convertx/screenshots/screenshot-1.png
   # Brief tagline for the application
   tagline:
-    en_us: "\U0001F4BE Self-hosted online file converter. Supports 1000+ formats ⚙️"
+    en_US: "\U0001F4BE Self-hosted online file converter. Supports 1000+ formats ⚙️"
   # Developer's information
   developer: C4illin
   # Author of this particular configuration
@@ -63,12 +65,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/add-convertx-to-bigbearcasaos/3232#p-5599-documentation-5
   # Title for the application
   title:
-    en_us: ConvertX
+    en_US: ConvertX
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

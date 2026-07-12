@@ -27,27 +27,29 @@ services:
       envs:
         - container: IFACES
           description:
-            en_us: 'Container Variable: IFACES'
+            en_US: 'Container Variable: IFACES'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data/WatchYourLAN
           description:
-            en_us: 'Container Path: /data/WatchYourLAN'
+            en_US: 'Container Path: /data/WatchYourLAN'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.watchyourlan
   # Main service for this application
   main: big-bear-watchyourlan
   # Detailed description for the application
   description:
-    en_us: Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history
+    en_US: Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history
   # Brief tagline for the application
   tagline:
-    en_us: WatchYourLAN
+    en_US: WatchYourLAN
   # Developer's information
   developer: ajnart
   # Author of this particular configuration
@@ -58,8 +60,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: WatchYourLAN
+    en_US: WatchYourLAN
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8840"

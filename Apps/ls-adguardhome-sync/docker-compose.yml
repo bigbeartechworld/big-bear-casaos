@@ -40,64 +40,66 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: LOG_LEVEL
           description:
-            en_us: 'Container Variable: LOG_LEVEL'
+            en_US: 'Container Variable: LOG_LEVEL'
         - container: ORIGIN_URL
           description:
-            en_us: 'Container Variable: ORIGIN_URL'
+            en_US: 'Container Variable: ORIGIN_URL'
         - container: ORIGIN_USERNAME
           description:
-            en_us: 'Container Variable: ORIGIN_USERNAME'
+            en_US: 'Container Variable: ORIGIN_USERNAME'
         - container: ORIGIN_PASSWORD
           description:
-            en_us: 'Container Variable: ORIGIN_PASSWORD'
+            en_US: 'Container Variable: ORIGIN_PASSWORD'
         - container: REPLICA_URL
           description:
-            en_us: 'Container Variable: REPLICA_URL'
+            en_US: 'Container Variable: REPLICA_URL'
         - container: REPLICA_USERNAME
           description:
-            en_us: 'Container Variable: REPLICA_USERNAME'
+            en_US: 'Container Variable: REPLICA_USERNAME'
         - container: REPLICA_PASSWORD
           description:
-            en_us: 'Container Variable: REPLICA_PASSWORD'
+            en_US: 'Container Variable: REPLICA_PASSWORD'
         - container: CRON
           description:
-            en_us: 'Container Variable: CRON'
+            en_US: 'Container Variable: CRON'
         - container: RUN_ON_START
           description:
-            en_us: 'Container Variable: RUN_ON_START'
+            en_US: 'Container Variable: RUN_ON_START'
         - container: API_PORT
           description:
-            en_us: 'Container Variable: API_PORT'
+            en_US: 'Container Variable: API_PORT'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ls-adguardhome-sync
   # Main service for this application
   main: big-bear-ls-adguard-home-sync
   # Detailed description for the application
   description:
-    en_us: "\U0001F6E1️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version."
+    en_US: "\U0001F6E1️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version."
   # Brief tagline for the application
   tagline:
-    en_us: LS Adguard Home Sync
+    en_US: LS Adguard Home Sync
   # Developer's information
   developer: bakito
   # Author of this particular configuration
@@ -108,8 +110,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: LS Adguard Home Sync
+    en_US: LS Adguard Home Sync
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8080"

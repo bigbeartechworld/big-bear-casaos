@@ -14,31 +14,33 @@ services:
       envs:
         - container: VNC_PASSWORD
           description:
-            en_us: 'Container Variable: VNC_PASSWORD'
+            en_US: 'Container Variable: VNC_PASSWORD'
         - container: FF_OPEN_URL
           description:
-            en_us: 'Container Variable: FF_OPEN_URL'
+            en_US: 'Container Variable: FF_OPEN_URL'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "5800"
           description:
-            en_us: 'Container Port: 5800'
+            en_US: 'Container Port: 5800'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.jlesage-firefox
   # Main service for this application
   main: big-bear-jlesage-firefox
   # Detailed description for the application
   description:
-    en_us: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
+    en_US: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
   # Brief tagline for the application
   tagline:
-    en_us: This project implements a Docker container for Firefox.
+    en_US: This project implements a Docker container for Firefox.
   # Developer's information
   developer: jlesage
   # Author of this particular configuration
@@ -50,12 +52,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-3
   # Title for the application
   title:
-    en_us: Jlesage Firefox
+    en_US: Jlesage Firefox
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "5800"

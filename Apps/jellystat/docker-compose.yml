@@ -32,27 +32,27 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_IP
           description:
-            en_us: 'Container Variable: POSTGRES_IP'
+            en_US: 'Container Variable: POSTGRES_IP'
         - container: POSTGRES_PORT
           description:
-            en_us: 'Container Variable: POSTGRES_PORT'
+            en_US: 'Container Variable: POSTGRES_PORT'
         - container: JWT_SECRET
           description:
-            en_us: 'Container Variable: JWT_SECRET'
+            en_US: 'Container Variable: JWT_SECRET'
       volumes:
         - container: /app/backend/backup-data
           description:
-            en_us: 'Container Path: /app/backend/backup-data'
+            en_US: 'Container Path: /app/backend/backup-data'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
   big-bear-jellystat-db:
     container_name: big-bear-jellystat-db
     image: postgres:15.2
@@ -68,17 +68,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 networks:
   big-bear-jellystat-network:
     name: big-bear-jellystat-network
@@ -88,14 +88,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.jellystat
   # Main service for this application
   main: big-bear-jellystat
   # Detailed description for the application
   description:
-    en_us: Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)
+    en_US: Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)
   # Brief tagline for the application
   tagline:
-    en_us: Jellystat
+    en_US: Jellystat
   # Developer's information
   developer: cyfershepard
   # Author of this particular configuration
@@ -106,8 +108,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Jellystat
+    en_US: Jellystat
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "3000"

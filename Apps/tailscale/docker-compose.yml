@@ -37,57 +37,59 @@ services:
       envs:
         - container: TS_SERVE_CONFIG
           description:
-            en_us: 'Container Variable: TS_SERVE_CONFIG'
+            en_US: 'Container Variable: TS_SERVE_CONFIG'
         - container: TS_ACCEPT_DNS
           description:
-            en_us: 'Container Variable: TS_ACCEPT_DNS'
+            en_US: 'Container Variable: TS_ACCEPT_DNS'
         - container: TS_AUTH_ONCE
           description:
-            en_us: 'Container Variable: TS_AUTH_ONCE'
+            en_US: 'Container Variable: TS_AUTH_ONCE'
         - container: TS_AUTHKEY
           description:
-            en_us: 'Container Variable: TS_AUTHKEY'
+            en_US: 'Container Variable: TS_AUTHKEY'
         - container: TS_HOSTNAME
           description:
-            en_us: 'Container Variable: TS_HOSTNAME'
+            en_US: 'Container Variable: TS_HOSTNAME'
         - container: TS_ROUTES
           description:
-            en_us: 'Container Variable: TS_ROUTES'
+            en_US: 'Container Variable: TS_ROUTES'
         - container: TS_EXTRA_ARGS
           description:
-            en_us: 'Container Variable: TS_EXTRA_ARGS'
+            en_US: 'Container Variable: TS_EXTRA_ARGS'
         - container: TS_USERSPACE
           description:
-            en_us: 'Container Variable: TS_USERSPACE'
+            en_US: 'Container Variable: TS_USERSPACE'
         - container: TS_STATE_DIR
           description:
-            en_us: 'Container Variable: TS_STATE_DIR'
+            en_US: 'Container Variable: TS_STATE_DIR'
       volumes:
         - container: /var/lib/tailscale
           description:
-            en_us: 'Container Path: /var/lib/tailscale'
+            en_US: 'Container Path: /var/lib/tailscale'
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /shared
           description:
-            en_us: 'Container Path: /shared'
+            en_US: 'Container Path: /shared'
         - container: /dev/net/tun
           description:
-            en_us: 'Container Path: /dev/net/tun'
+            en_US: 'Container Path: /dev/net/tun'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.tailscale
   # Main service for this application
   main: big-bear-tailscale
   # Detailed description for the application
   description:
-    en_us: Zero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.
+    en_US: Zero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.
   # Brief tagline for the application
   tagline:
-    en_us: The easiest, most secure way to use WireGuard and 2FA.
+    en_US: The easiest, most secure way to use WireGuard and 2FA.
   # Developer's information
   developer: tailscale
   # Author of this particular configuration
@@ -98,8 +100,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Tailscale
+    en_US: Tailscale
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: ""

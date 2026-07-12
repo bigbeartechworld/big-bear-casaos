@@ -26,27 +26,29 @@ services:
       volumes:
         - container: /app/config
           description:
-            en_us: 'Container Path: /app/config'
+            en_US: 'Container Path: /app/config'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.homepage
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.
+    en_US: A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages. Easily configured via YAML files or through docker label discovery.
   # Brief tagline for the application
   tagline:
-    en_us: Homepage
+    en_US: Homepage
   # Developer's information
   developer: gethomepage
   # Author of this particular configuration
@@ -57,8 +59,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Homepage
+    en_US: Homepage
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3000"

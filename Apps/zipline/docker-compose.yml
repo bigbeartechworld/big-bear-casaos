@@ -36,33 +36,33 @@ services:
       envs:
         - container: CORE_RETURN_HTTPS
           description:
-            en_us: 'Container Variable: CORE_RETURN_HTTPS'
+            en_US: 'Container Variable: CORE_RETURN_HTTPS'
         - container: CORE_SECRET
           description:
-            en_us: 'Container Variable: CORE_SECRET'
+            en_US: 'Container Variable: CORE_SECRET'
         - container: CORE_HOST
           description:
-            en_us: 'Container Variable: CORE_HOST'
+            en_US: 'Container Variable: CORE_HOST'
         - container: CORE_PORT
           description:
-            en_us: 'Container Variable: CORE_PORT'
+            en_US: 'Container Variable: CORE_PORT'
         - container: CORE_DATABASE_URL
           description:
-            en_us: 'Container Variable: CORE_DATABASE_URL'
+            en_US: 'Container Variable: CORE_DATABASE_URL'
         - container: CORE_LOGGER
           description:
-            en_us: 'Container Variable: CORE_LOGGER'
+            en_US: 'Container Variable: CORE_LOGGER'
       volumes:
         - container: /zipline/uploads
           description:
-            en_us: 'Container Path: /zipline/uploads'
+            en_US: 'Container Path: /zipline/uploads'
         - container: /zipline/public
           description:
-            en_us: 'Container Path: /zipline/public'
+            en_US: 'Container Path: /zipline/public'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
   # Postgres database
   zipline-db:
     # Name of the container
@@ -86,17 +86,17 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DATABASE
           description:
-            en_us: 'Container Variable: POSTGRES_DATABASE'
+            en_US: 'Container Variable: POSTGRES_DATABASE'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Networks to be created
 networks:
   # Network name
@@ -108,14 +108,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.zipline
   # Main service for this application
   main: zipline
   # Detailed description for the application
   description:
-    en_us: A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!
+    en_US: A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!
   # Brief tagline for the application
   tagline:
-    en_us: zipline
+    en_US: zipline
   # Developer's information
   developer: zipline
   # Author of this particular configuration
@@ -127,12 +129,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-zipline-to-bigbearcasaos/629?u=dragonfire1119
   # Title for the application
   title:
-    en_us: zipline
+    en_US: zipline
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

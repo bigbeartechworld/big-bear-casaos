@@ -27,43 +27,45 @@ services:
       envs:
         - container: USER_UID
           description:
-            en_us: 'Container Variable: USER_UID'
+            en_US: 'Container Variable: USER_UID'
         - container: USER_GID
           description:
-            en_us: 'Container Variable: USER_GID'
+            en_US: 'Container Variable: USER_GID'
         - container: GITEA__server__SSH_PORT
           description:
-            en_us: 'Container Variable: GITEA__server__SSH_PORT'
+            en_US: 'Container Variable: GITEA__server__SSH_PORT'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
         - container: /etc/timezone
           description:
-            en_us: 'Container Path: /etc/timezone'
+            en_US: 'Container Path: /etc/timezone'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "22"
           description:
-            en_us: 'Container Port: 22'
+            en_US: 'Container Port: 22'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.gitea
   # Main service for this application
   main: big-bear-gitea
   # Detailed description for the application
   description:
-    en_us: Gitea is a painless self-hosted all-in-one software development service. It includes Git hosting, code review, team collaboration, package registry, and CI/CD. It is similar to GitHub, Bitbucket and GitLab.
+    en_US: Gitea is a painless self-hosted all-in-one software development service. It includes Git hosting, code review, team collaboration, package registry, and CI/CD. It is similar to GitHub, Bitbucket and GitLab.
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted Git service
+    en_US: Self-hosted Git service
   # Developer's information
   developer: gitea
   # Author of this particular configuration
@@ -74,8 +76,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Gitea
+    en_US: Gitea
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3000"

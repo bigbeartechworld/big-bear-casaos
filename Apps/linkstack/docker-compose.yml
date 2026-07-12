@@ -40,46 +40,48 @@ services:
       envs:
         - container: HTTP_SERVER_NAME
           description:
-            en_us: 'Container Variable: HTTP_SERVER_NAME'
+            en_US: 'Container Variable: HTTP_SERVER_NAME'
         - container: HTTPS_SERVER_NAME
           description:
-            en_us: 'Container Variable: HTTPS_SERVER_NAME'
+            en_US: 'Container Variable: HTTPS_SERVER_NAME'
         - container: SERVER_ADMIN
           description:
-            en_us: 'Container Variable: SERVER_ADMIN'
+            en_US: 'Container Variable: SERVER_ADMIN'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: PHP_MEMORY_LIMIT
           description:
-            en_us: 'Container Variable: PHP_MEMORY_LIMIT'
+            en_US: 'Container Variable: PHP_MEMORY_LIMIT'
         - container: UPLOAD_MAX_FILESIZE
           description:
-            en_us: 'Container Variable: UPLOAD_MAX_FILESIZE'
+            en_US: 'Container Variable: UPLOAD_MAX_FILESIZE'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.linkstack
   # Main service for this application
   main: big-bear-linkstack
   # Detailed description for the application
   description:
-    en_us: LinkStack is a link-in-bio tool that allows you to create a personalized and easily customizable page that houses all the important links you want to share with your audience.
+    en_US: LinkStack is a link-in-bio tool that allows you to create a personalized and easily customizable page that houses all the important links you want to share with your audience.
   # Brief tagline for the application
   tagline:
-    en_us: Your all-in-one link sharing solution
+    en_US: Your all-in-one link sharing solution
   # Developer's information
   developer: LinkStackOrg
   # Author of this particular configuration
@@ -90,8 +92,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: LinkStack
+    en_US: LinkStack
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "10443"

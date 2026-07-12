@@ -27,33 +27,35 @@ services:
       volumes:
         - container: /kavita/config
           description:
-            en_us: 'Container Path: /kavita/config'
+            en_US: 'Container Path: /kavita/config'
         - container: /books
           description:
-            en_us: 'Container Path: /books'
+            en_US: 'Container Path: /books'
         - container: /comics
           description:
-            en_us: 'Container Path: /comics'
+            en_US: 'Container Path: /comics'
         - container: /manga
           description:
-            en_us: 'Container Path: /manga'
+            en_US: 'Container Path: /manga'
       ports:
         - container: "5000"
           description:
-            en_us: 'Container Port: 5000'
+            en_US: 'Container Port: 5000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kavita
   # Main service for this application
   main: big-bear-kavita
   # Detailed description for the application
   description:
-    en_us: Kavita is a fast, feature rich, cross platform reading server
+    en_US: Kavita is a fast, feature rich, cross platform reading server
   # Brief tagline for the application
   tagline:
-    en_us: Kavita
+    en_US: Kavita
   # Developer's information
   developer: jvmilazz0
   # Author of this particular configuration
@@ -64,8 +66,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Kavita
+    en_US: Kavita
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "5000"

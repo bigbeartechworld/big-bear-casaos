@@ -31,24 +31,24 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /gallery
           description:
-            en_us: 'Container Path: /gallery'
+            en_US: 'Container Path: /gallery'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   big-bear-piwigo-db:
     image: mariadb:10.6
     container_name: big-bear-piwigo-db
@@ -66,20 +66,20 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 # Network definition for the big-bear-piwigo application
 networks:
   big_bear_piwigo_network:
@@ -89,14 +89,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.piwigo
   # Main service for this application
   main: big-bear-piwigo
   # Detailed description for the application
   description:
-    en_us: Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.
+    en_US: Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.
   # Brief tagline for the application
   tagline:
-    en_us: Piwigo
+    en_US: Piwigo
   # Developer's information
   developer: piwigo
   # Author of this particular configuration
@@ -108,12 +110,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-piwigo-to-bigbearcasaos/1133#documentation-3
   # Title for the application
   title:
-    en_us: Piwigo
+    en_US: Piwigo
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "8080"

@@ -51,52 +51,54 @@ services:
       envs:
         - container: INIT_ENABLED
           description:
-            en_us: 'Container Variable: INIT_ENABLED'
+            en_US: 'Container Variable: INIT_ENABLED'
         - container: INIT_USERNAME
           description:
-            en_us: 'Container Variable: INIT_USERNAME'
+            en_US: 'Container Variable: INIT_USERNAME'
         - container: INIT_PASSWORD
           description:
-            en_us: 'Container Variable: INIT_PASSWORD'
+            en_US: 'Container Variable: INIT_PASSWORD'
         - container: INIT_HOST
           description:
-            en_us: 'Container Variable: INIT_HOST'
+            en_US: 'Container Variable: INIT_HOST'
         - container: INIT_PORT
           description:
-            en_us: 'Container Variable: INIT_PORT'
+            en_US: 'Container Variable: INIT_PORT'
         - container: INIT_DNS
           description:
-            en_us: 'Container Variable: INIT_DNS'
+            en_US: 'Container Variable: INIT_DNS'
         - container: INIT_IPV4_CIDR
           description:
-            en_us: 'Container Variable: INIT_IPV4_CIDR'
+            en_US: 'Container Variable: INIT_IPV4_CIDR'
         - container: INIT_IPV6_CIDR
           description:
-            en_us: 'Container Variable: INIT_IPV6_CIDR'
+            en_US: 'Container Variable: INIT_IPV6_CIDR'
       volumes:
         - container: /etc/wireguard
           description:
-            en_us: 'Container Path: /etc/wireguard'
+            en_US: 'Container Path: /etc/wireguard'
       ports:
         - container: "51820"
           description:
-            en_us: 'Container Port: 51820'
+            en_US: 'Container Port: 51820'
         - container: "51821"
           description:
-            en_us: 'Container Port: 51821'
+            en_US: 'Container Port: 51821'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.wg-easy-v15
   # Main service for this application
   main: big-bear-wg-easy-v15
   # Detailed description for the application
   description:
-    en_us: 'WireGuard Easy v15 - Complete rewrite with new features and improved UI. Access your homeserver from anywhere with this modern VPN solution. NOTE: This is v15 which has breaking changes from v14. If you''re currently using v14, please backup your configuration before migrating.'
+    en_US: 'WireGuard Easy v15 - Complete rewrite with new features and improved UI. Access your homeserver from anywhere with this modern VPN solution. NOTE: This is v15 which has breaking changes from v14. If you''re currently using v14, please backup your configuration before migrating.'
   # Brief tagline for the application
   tagline:
-    en_us: WireGuard VPN server v15 (New Version)
+    en_US: WireGuard VPN server v15 (New Version)
   # Developer's information
   developer: WeeJeWel
   # Author of this particular configuration
@@ -108,11 +110,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: 'Read this before installing: https://community.bigbeartechworld.com/t/added-wg-easy-v15-to-bigbearcasaos/5071#p-7701-why-a-new-version-4'
+      en_US: 'Read this before installing: https://community.bigbeartechworld.com/t/added-wg-easy-v15-to-bigbearcasaos/5071#p-7701-why-a-new-version-4'
   # Title for the application
   title:
-    en_us: WireGuard Easy v15
+    en_US: WireGuard Easy v15
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "51821"

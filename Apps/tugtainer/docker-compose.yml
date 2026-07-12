@@ -32,42 +32,44 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: LOG_LEVEL
           description:
-            en_us: 'Container Variable: LOG_LEVEL'
+            en_US: 'Container Variable: LOG_LEVEL'
         - container: JWT_SECRET_KEY
           description:
-            en_us: 'Container Variable: JWT_SECRET_KEY'
+            en_US: 'Container Variable: JWT_SECRET_KEY'
         - container: ACCESS_TOKEN_LIFETIME_MIN
           description:
-            en_us: 'Container Variable: ACCESS_TOKEN_LIFETIME_MIN'
+            en_US: 'Container Variable: ACCESS_TOKEN_LIFETIME_MIN'
         - container: REFRESH_TOKEN_LIFETIME_MIN
           description:
-            en_us: 'Container Variable: REFRESH_TOKEN_LIFETIME_MIN'
+            en_US: 'Container Variable: REFRESH_TOKEN_LIFETIME_MIN'
         - container: HTTPS
           description:
-            en_us: 'Container Variable: HTTPS'
+            en_US: 'Container Variable: HTTPS'
       volumes:
         - container: /tugtainer
           description:
-            en_us: 'Container Path: /tugtainer'
+            en_US: 'Container Path: /tugtainer'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.tugtainer
   # Main service for this application
   main: big-bear-tugtainer
   # Detailed description for the application
   description:
-    en_us: Tugtainer is a self-hosted app for automating updates of your docker containers with a web UI. It's like watchtower but with more control and a user-friendly interface.
+    en_US: Tugtainer is a self-hosted app for automating updates of your docker containers with a web UI. It's like watchtower but with more control and a user-friendly interface.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/tugtainer/screenshots/screenshot-1.png
@@ -75,7 +77,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/tugtainer/screenshots/screenshot-3.png
   # Brief tagline for the application
   tagline:
-    en_us: Docker Container Update Automator
+    en_US: Docker Container Update Automator
   # Developer's information
   developer: Quenary
   # Author of this particular configuration
@@ -86,8 +88,8 @@ x-casaos:
   thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/tugtainer/screenshot-1.png
   # Title for the application
   title:
-    en_us: Tugtainer
+    en_US: Tugtainer
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "9412"

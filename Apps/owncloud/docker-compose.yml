@@ -51,48 +51,48 @@ services:
       envs:
         - container: OWNCLOUD_DOMAIN
           description:
-            en_us: 'Container Variable: OWNCLOUD_DOMAIN'
+            en_US: 'Container Variable: OWNCLOUD_DOMAIN'
         - container: OWNCLOUD_TRUSTED_DOMAINS
           description:
-            en_us: 'Container Variable: OWNCLOUD_TRUSTED_DOMAINS'
+            en_US: 'Container Variable: OWNCLOUD_TRUSTED_DOMAINS'
         - container: OWNCLOUD_DB_TYPE
           description:
-            en_us: 'Container Variable: OWNCLOUD_DB_TYPE'
+            en_US: 'Container Variable: OWNCLOUD_DB_TYPE'
         - container: OWNCLOUD_DB_NAME
           description:
-            en_us: 'Container Variable: OWNCLOUD_DB_NAME'
+            en_US: 'Container Variable: OWNCLOUD_DB_NAME'
         - container: OWNCLOUD_DB_USERNAME
           description:
-            en_us: 'Container Variable: OWNCLOUD_DB_USERNAME'
+            en_US: 'Container Variable: OWNCLOUD_DB_USERNAME'
         - container: OWNCLOUD_DB_PASSWORD
           description:
-            en_us: 'Container Variable: OWNCLOUD_DB_PASSWORD'
+            en_US: 'Container Variable: OWNCLOUD_DB_PASSWORD'
         - container: OWNCLOUD_DB_HOST
           description:
-            en_us: 'Container Variable: OWNCLOUD_DB_HOST'
+            en_US: 'Container Variable: OWNCLOUD_DB_HOST'
         - container: OWNCLOUD_ADMIN_USERNAME
           description:
-            en_us: 'Container Variable: OWNCLOUD_ADMIN_USERNAME'
+            en_US: 'Container Variable: OWNCLOUD_ADMIN_USERNAME'
         - container: OWNCLOUD_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: OWNCLOUD_ADMIN_PASSWORD'
+            en_US: 'Container Variable: OWNCLOUD_ADMIN_PASSWORD'
         - container: OWNCLOUD_MYSQL_UTF8MB4
           description:
-            en_us: 'Container Variable: OWNCLOUD_MYSQL_UTF8MB4'
+            en_US: 'Container Variable: OWNCLOUD_MYSQL_UTF8MB4'
         - container: OWNCLOUD_REDIS_ENABLED
           description:
-            en_us: 'Container Variable: OWNCLOUD_REDIS_ENABLED'
+            en_US: 'Container Variable: OWNCLOUD_REDIS_ENABLED'
         - container: OWNCLOUD_REDIS_HOST
           description:
-            en_us: 'Container Variable: OWNCLOUD_REDIS_HOST'
+            en_US: 'Container Variable: OWNCLOUD_REDIS_HOST'
       volumes:
         - container: /mnt/data
           description:
-            en_us: 'Container Path: /mnt/data'
+            en_US: 'Container Path: /mnt/data'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   big-bear-owncloud-db:
     container_name: big-bear-owncloud-db
     image: mariadb:10.6
@@ -117,23 +117,23 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MARIADB_AUTO_UPGRADE
           description:
-            en_us: 'Container Variable: MARIADB_AUTO_UPGRADE'
+            en_US: 'Container Variable: MARIADB_AUTO_UPGRADE'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
   big-bear-owncloud-redis:
     container_name: big-bear-owncloud-redis
     image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
@@ -152,7 +152,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 networks:
   big_bear_owncloud_network:
     name: big_bear_owncloud_network
@@ -162,14 +162,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.owncloud
   # Main service for this application
   main: big-bear-owncloud
   # Detailed description for the application
   description:
-    en_us: ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.
+    en_US: ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.
   # Brief tagline for the application
   tagline:
-    en_us: ownCloud
+    en_US: ownCloud
   # Developer's information
   developer: owncloud
   # Author of this particular configuration
@@ -181,12 +183,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-owncloud-to-bigbearcasaos/1874#p-3512-documentation-4
   # Title for the application
   title:
-    en_us: ownCloud
+    en_US: ownCloud
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

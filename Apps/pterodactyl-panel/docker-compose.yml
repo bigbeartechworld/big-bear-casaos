@@ -52,84 +52,84 @@ services:
       envs:
         - container: APP_URL
           description:
-            en_us: 'Container Variable: APP_URL'
+            en_US: 'Container Variable: APP_URL'
         - container: APP_TIMEZONE
           description:
-            en_us: 'Container Variable: APP_TIMEZONE'
+            en_US: 'Container Variable: APP_TIMEZONE'
         - container: APP_SERVICE_AUTHOR
           description:
-            en_us: 'Container Variable: APP_SERVICE_AUTHOR'
+            en_US: 'Container Variable: APP_SERVICE_AUTHOR'
         - container: MAIL_FROM
           description:
-            en_us: 'Container Variable: MAIL_FROM'
+            en_US: 'Container Variable: MAIL_FROM'
         - container: MAIL_DRIVER
           description:
-            en_us: 'Container Variable: MAIL_DRIVER'
+            en_US: 'Container Variable: MAIL_DRIVER'
         - container: MAIL_HOST
           description:
-            en_us: 'Container Variable: MAIL_HOST'
+            en_US: 'Container Variable: MAIL_HOST'
         - container: MAIL_PORT
           description:
-            en_us: 'Container Variable: MAIL_PORT'
+            en_US: 'Container Variable: MAIL_PORT'
         - container: MAIL_USERNAME
           description:
-            en_us: 'Container Variable: MAIL_USERNAME'
+            en_US: 'Container Variable: MAIL_USERNAME'
         - container: MAIL_PASSWORD
           description:
-            en_us: 'Container Variable: MAIL_PASSWORD'
+            en_US: 'Container Variable: MAIL_PASSWORD'
         - container: MAIL_ENCRYPTION
           description:
-            en_us: 'Container Variable: MAIL_ENCRYPTION'
+            en_US: 'Container Variable: MAIL_ENCRYPTION'
         - container: APP_ENV
           description:
-            en_us: 'Container Variable: APP_ENV'
+            en_US: 'Container Variable: APP_ENV'
         - container: APP_ENVIRONMENT_ONLY
           description:
-            en_us: 'Container Variable: APP_ENVIRONMENT_ONLY'
+            en_US: 'Container Variable: APP_ENVIRONMENT_ONLY'
         - container: CACHE_DRIVER
           description:
-            en_us: 'Container Variable: CACHE_DRIVER'
+            en_US: 'Container Variable: CACHE_DRIVER'
         - container: SESSION_DRIVER
           description:
-            en_us: 'Container Variable: SESSION_DRIVER'
+            en_US: 'Container Variable: SESSION_DRIVER'
         - container: QUEUE_DRIVER
           description:
-            en_us: 'Container Variable: QUEUE_DRIVER'
+            en_US: 'Container Variable: QUEUE_DRIVER'
         - container: REDIS_HOST
           description:
-            en_us: 'Container Variable: REDIS_HOST'
+            en_US: 'Container Variable: REDIS_HOST'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: DB_PORT
           description:
-            en_us: 'Container Variable: DB_PORT'
+            en_US: 'Container Variable: DB_PORT'
         - container: DB_CONNECTION
           description:
-            en_us: 'Container Variable: DB_CONNECTION'
+            en_US: 'Container Variable: DB_CONNECTION'
       volumes:
         - container: /app/var/
           description:
-            en_us: 'Container Path: /app/var/'
+            en_US: 'Container Path: /app/var/'
         - container: /etc/nginx/http.d/
           description:
-            en_us: 'Container Path: /etc/nginx/http.d/'
+            en_US: 'Container Path: /etc/nginx/http.d/'
         - container: /etc/letsencrypt/
           description:
-            en_us: 'Container Path: /etc/letsencrypt/'
+            en_US: 'Container Path: /etc/letsencrypt/'
         - container: /app/storage/logs
           description:
-            en_us: 'Container Path: /app/storage/logs'
+            en_US: 'Container Path: /app/storage/logs'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
   database:
     # Image to use for the database
     image: mariadb:10.5
@@ -151,20 +151,20 @@ services:
       envs:
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
   cache:
     # Image to use for the cache
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
@@ -175,14 +175,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pterodactyl-panel
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.
+    en_US: Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end users.
   # Brief tagline for the application
   tagline:
-    en_us: Pterodactyl Panel
+    en_US: Pterodactyl Panel
   # Developer's information
   developer: pterodactyl
   # Author of this particular configuration
@@ -194,14 +196,14 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you can use Pterodactyl Panel, you need to read the installation guide.
 
         [Install Guide Link](https://github.com/bigbeartechworld/big-bear-casaos/tree/master/Apps/pterodactyl-panel)
   # Title for the application
   title:
-    en_us: Pterodactyl Panel
+    en_US: Pterodactyl Panel
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "1180"

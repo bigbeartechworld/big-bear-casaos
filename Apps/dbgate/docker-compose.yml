@@ -25,24 +25,26 @@ services:
       volumes:
         - container: /root/.dbgate
           description:
-            en_us: 'Container Path: /root/.dbgate'
+            en_US: 'Container Path: /root/.dbgate'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.dbgate
   # Main service for this application
   main: big-bear-dbgate
   # Detailed description for the application
   description:
-    en_us: Web based UI for managing and exploring SQL database data
+    en_US: Web based UI for managing and exploring SQL database data
   # Brief tagline for the application
   tagline:
-    en_us: DBGate
+    en_US: DBGate
   # Developer's information
   developer: dbgate
   # Author of this particular configuration
@@ -53,8 +55,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: DBGate
+    en_US: DBGate
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3000"

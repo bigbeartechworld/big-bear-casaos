@@ -40,39 +40,41 @@ services:
       volumes:
         - container: /rootfs
           description:
-            en_us: 'Container Path: /rootfs'
+            en_US: 'Container Path: /rootfs'
         - container: /var/run
           description:
-            en_us: 'Container Path: /var/run'
+            en_US: 'Container Path: /var/run'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
         - container: /sys
           description:
-            en_us: 'Container Path: /sys'
+            en_US: 'Container Path: /sys'
         - container: /var/lib/docker
           description:
-            en_us: 'Container Path: /var/lib/docker'
+            en_US: 'Container Path: /var/lib/docker'
         - container: /dev/disk
           description:
-            en_us: 'Container Path: /dev/disk'
+            en_US: 'Container Path: /dev/disk'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.cadvisor
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers. It is a running daemon that collects, aggregates, processes, and exports information about running containers. Specifically, for each container it keeps resource isolation parameters, historical resource usage, histograms of complete historical resource usage and network statistics. This data is exported by container and machine-wide.
+    en_US: cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers. It is a running daemon that collects, aggregates, processes, and exports information about running containers. Specifically, for each container it keeps resource isolation parameters, historical resource usage, histograms of complete historical resource usage and network statistics. This data is exported by container and machine-wide.
   # Brief tagline for the application
   tagline:
-    en_us: cAdvisor
+    en_US: cAdvisor
   # Developer's information
   developer: cadvisor
   # Author of this particular configuration
@@ -83,8 +85,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: cAdvisor
+    en_US: cAdvisor
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8085"

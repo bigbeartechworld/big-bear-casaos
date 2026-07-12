@@ -54,43 +54,45 @@ services:
       envs:
         - container: FLASK_APP
           description:
-            en_us: 'Container Variable: FLASK_APP'
+            en_US: 'Container Variable: FLASK_APP'
         - container: FLASK_ENV
           description:
-            en_us: 'Container Variable: FLASK_ENV'
+            en_US: 'Container Variable: FLASK_ENV'
         - container: ADMIN_USERNAME
           description:
-            en_us: 'Container Variable: ADMIN_USERNAME'
+            en_US: 'Container Variable: ADMIN_USERNAME'
         - container: ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: ADMIN_PASSWORD'
+            en_US: 'Container Variable: ADMIN_PASSWORD'
       volumes:
         - container: /sys/fs/cgroup
           description:
-            en_us: 'Container Path: /sys/fs/cgroup'
+            en_US: 'Container Path: /sys/fs/cgroup'
         - container: /var/lib/casaos/db
           description:
-            en_us: 'Container Path: /var/lib/casaos/db'
+            en_US: 'Container Path: /var/lib/casaos/db'
         - container: /run/systemd/system
           description:
-            en_us: 'Container Path: /run/systemd/system'
+            en_US: 'Container Path: /run/systemd/system'
         - container: /var/run/dbus/system_bus_socket
           description:
-            en_us: 'Container Path: /var/run/dbus/system_bus_socket'
+            en_US: 'Container Path: /var/run/dbus/system_bus_socket'
       ports:
         - container: "5000"
           description:
-            en_us: 'Container Port: 5000'
+            en_US: 'Container Port: 5000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.big-bear-casaos-user-management
   # Main service for this application
   main: big-bear-casaos-user-management
   # Detailed description for the application
   description:
-    en_us: Manage users in CasaOS
+    en_US: Manage users in CasaOS
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/big-bear-casaos-user-management/screenshots/screenshot-1.png
@@ -98,7 +100,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/big-bear-casaos-user-management/screenshots/screenshot-3.png
   # Brief tagline for the application
   tagline:
-    en_us: Manage users in CasaOS
+    en_US: Manage users in CasaOS
   # Developer's information
   developer: bigbeartechworld
   # Author of this particular configuration
@@ -110,12 +112,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-big-bear-casaos-user-management-to-bigbearcasaos/2227#p-4191-quick-start-3
   # Title for the application
   title:
-    en_us: Big Bear CasaOS User Management
+    en_US: Big Bear CasaOS User Management
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "5000"

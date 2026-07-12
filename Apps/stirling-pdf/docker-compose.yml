@@ -45,52 +45,54 @@ services:
       envs:
         - container: DOCKER_ENABLE_SECURITY
           description:
-            en_us: 'Container Variable: DOCKER_ENABLE_SECURITY'
+            en_US: 'Container Variable: DOCKER_ENABLE_SECURITY'
         - container: SECURITY_ENABLE_LOGIN
           description:
-            en_us: 'Container Variable: SECURITY_ENABLE_LOGIN'
+            en_US: 'Container Variable: SECURITY_ENABLE_LOGIN'
         - container: SECURITY_INITIALLOGIN_USERNAME
           description:
-            en_us: 'Container Variable: SECURITY_INITIALLOGIN_USERNAME'
+            en_US: 'Container Variable: SECURITY_INITIALLOGIN_USERNAME'
         - container: SECURITY_INITIALLOGIN_PASSWORD
           description:
-            en_us: 'Container Variable: SECURITY_INITIALLOGIN_PASSWORD'
+            en_US: 'Container Variable: SECURITY_INITIALLOGIN_PASSWORD'
         - container: CSRF_DISABLED
           description:
-            en_us: 'Container Variable: CSRF_DISABLED'
+            en_US: 'Container Variable: CSRF_DISABLED'
         - container: DEFAULT_LOCALE
           description:
-            en_us: 'Container Variable: DEFAULT_LOCALE'
+            en_US: 'Container Variable: DEFAULT_LOCALE'
         - container: INSTALL_BOOK_AND_ADVANCED_HTML_OPS
           description:
-            en_us: 'Container Variable: INSTALL_BOOK_AND_ADVANCED_HTML_OPS'
+            en_US: 'Container Variable: INSTALL_BOOK_AND_ADVANCED_HTML_OPS'
         - container: LANGS
           description:
-            en_us: 'Container Variable: LANGS'
+            en_US: 'Container Variable: LANGS'
       volumes:
         - container: /usr/share/tessdata
           description:
-            en_us: 'Container Path: /usr/share/tessdata'
+            en_US: 'Container Path: /usr/share/tessdata'
         - container: /configs
           description:
-            en_us: 'Container Path: /configs'
+            en_US: 'Container Path: /configs'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.stirling-pdf
   # Main service for this application
   main: big-bear-stirling-pdf
   # Detailed description for the application
   description:
-    en_us: Stirling PDF - Local hosted web based PDF editor
+    en_US: Stirling PDF - Local hosted web based PDF editor
   # Brief tagline for the application
   tagline:
-    en_us: Stirling PDF - Local hosted web based PDF editor
+    en_US: Stirling PDF - Local hosted web based PDF editor
   # Developer's information
   developer: stirlingtools
   # Author of this particular configuration
@@ -102,12 +104,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3
   # Title for the application
   title:
-    en_us: Stirling-PDF
+    en_US: Stirling-PDF
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8080"

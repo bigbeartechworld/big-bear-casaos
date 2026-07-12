@@ -38,57 +38,57 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: DB_HOSTNAME
           description:
-            en_us: 'Container Variable: DB_HOSTNAME'
+            en_US: 'Container Variable: DB_HOSTNAME'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: DB_DATABASE_NAME
           description:
-            en_us: 'Container Variable: DB_DATABASE_NAME'
+            en_US: 'Container Variable: DB_DATABASE_NAME'
         - container: REDIS_HOSTNAME
           description:
-            en_us: 'Container Variable: REDIS_HOSTNAME'
+            en_US: 'Container Variable: REDIS_HOSTNAME'
         - container: DB_PORT
           description:
-            en_us: 'Container Variable: DB_PORT'
+            en_US: 'Container Variable: DB_PORT'
         - container: REDIS_PORT
           description:
-            en_us: 'Container Variable: REDIS_PORT'
+            en_US: 'Container Variable: REDIS_PORT'
         - container: REDIS_PASSWORD
           description:
-            en_us: 'Container Variable: REDIS_PASSWORD'
+            en_US: 'Container Variable: REDIS_PASSWORD'
         - container: MACHINE_LEARNING_GPU_ACCELERATION
           description:
-            en_us: 'Container Variable: MACHINE_LEARNING_GPU_ACCELERATION'
+            en_US: 'Container Variable: MACHINE_LEARNING_GPU_ACCELERATION'
         - container: MACHINE_LEARNING_WORKERS
           description:
-            en_us: 'Container Variable: MACHINE_LEARNING_WORKERS'
+            en_US: 'Container Variable: MACHINE_LEARNING_WORKERS'
         - container: MACHINE_LEARNING_WORKER_TIMEOUT
           description:
-            en_us: 'Container Variable: MACHINE_LEARNING_WORKER_TIMEOUT'
+            en_US: 'Container Variable: MACHINE_LEARNING_WORKER_TIMEOUT'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /usr/src/app/photos
           description:
-            en_us: 'Container Path: /usr/src/app/photos'
+            en_US: 'Container Path: /usr/src/app/photos'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   # Configuration for Redis service
   big-bear-immich-redis:
     container_name: big-bear-immich-redis # Name of the running container
@@ -115,20 +115,20 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: PG_DATA
           description:
-            en_us: 'Container Variable: PG_DATA'
+            en_US: 'Container Variable: PG_DATA'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 networks: # Defines network configurations for the services
   big_bear_immich_network:
     driver: bridge # Uses bridge network driver
@@ -137,14 +137,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.immich-aio-alpine
   # Main service for this application
   main: big-bear-immich-aio-alpine
   # Detailed description for the application
   description:
-    en_us: AIO Alpine. Self-hosted photo and video storage.
+    en_US: AIO Alpine. Self-hosted photo and video storage.
   # Brief tagline for the application
   tagline:
-    en_us: Immich All In One Alpine
+    en_US: Immich All In One Alpine
   # Developer's information
   developer: imagegenius
   # Author of this particular configuration
@@ -155,8 +157,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Immich AIO Alpine
+    en_US: Immich AIO Alpine
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "2283"

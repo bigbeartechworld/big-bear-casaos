@@ -36,40 +36,42 @@ services:
       envs:
         - container: NCDU_PATH
           description:
-            en_us: 'Container Variable: NCDU_PATH'
+            en_US: 'Container Variable: NCDU_PATH'
       volumes:
         - container: /proc
           description:
-            en_us: 'Container Path: /proc'
+            en_US: 'Container Path: /proc'
         - container: /sys
           description:
-            en_us: 'Container Path: /sys'
+            en_US: 'Container Path: /sys'
         - container: /dev
           description:
-            en_us: 'Container Path: /dev'
+            en_US: 'Container Path: /dev'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
         - container: /casaos
           description:
-            en_us: 'Container Path: /casaos'
+            en_US: 'Container Path: /casaos'
       ports:
         - container: "7681"
           description:
-            en_us: 'Container Port: 7681'
+            en_US: 'Container Port: 7681'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ncdu
   # Main service for this application
   main: big-bear-ncdu
   # Detailed description for the application
   description:
-    en_us: Ncdu is a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don’t have an entire graphical setup available, but it is a useful tool even on regular desktop systems. Ncdu aims to be fast, simple and easy to use, and should be able to run in any minimal POSIX-like environment with ncurses installed. Software made by Yorhel at https://dev.yorhel.nl/ncdu
+    en_US: Ncdu is a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don’t have an entire graphical setup available, but it is a useful tool even on regular desktop systems. Ncdu aims to be fast, simple and easy to use, and should be able to run in any minimal POSIX-like environment with ncurses installed. Software made by Yorhel at https://dev.yorhel.nl/ncdu
   # Brief tagline for the application
   tagline:
-    en_us: Ncdu is a disk usage analyzer with an ncurses interface.
+    en_US: Ncdu is a disk usage analyzer with an ncurses interface.
   # Developer's information
   developer: bigbeartechworld
   # Author of this particular configuration
@@ -81,12 +83,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-ncdu-to-bigbearcasaos/1240?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Ncdu
+    en_US: Ncdu
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "7681"

@@ -41,40 +41,42 @@ services:
       envs:
         - container: KASM_PORT
           description:
-            en_us: 'Container Variable: KASM_PORT'
+            en_US: 'Container Variable: KASM_PORT'
       volumes:
         - container: /opt
           description:
-            en_us: 'Container Path: /opt'
+            en_US: 'Container Path: /opt'
         - container: /profiles
           description:
-            en_us: 'Container Path: /profiles'
+            en_US: 'Container Path: /profiles'
         - container: /dev/input
           description:
-            en_us: 'Container Path: /dev/input'
+            en_US: 'Container Path: /dev/input'
         - container: /run/udev/data
           description:
-            en_us: 'Container Path: /run/udev/data'
+            en_US: 'Container Path: /run/udev/data'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kasm
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: The Container Streaming Platform - Streaming containerized apps and desktops to end-users. The Workspaces platform provides enterprise-class orchestration, data loss prevention, and web streaming technology to enable the delivery of containerized workloads to your browser.
+    en_US: The Container Streaming Platform - Streaming containerized apps and desktops to end-users. The Workspaces platform provides enterprise-class orchestration, data loss prevention, and web streaming technology to enable the delivery of containerized workloads to your browser.
   # Brief tagline for the application
   tagline:
-    en_us: Kasm
+    en_US: Kasm
   # Developer's information
   developer: Kasm
   # Author of this particular configuration
@@ -86,13 +88,13 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Admin default address: admin@kasm.local
         User default address: user@kasm.local
   # Title for the application
   title:
-    en_us: Kasm
+    en_US: Kasm
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "3000"

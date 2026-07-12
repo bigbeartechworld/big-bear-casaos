@@ -28,30 +28,30 @@ services:
       envs:
         - container: DB_HOSTNAME
           description:
-            en_us: 'Container Variable: DB_HOSTNAME'
+            en_US: 'Container Variable: DB_HOSTNAME'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: DB_DATABASE_NAME
           description:
-            en_us: 'Container Variable: DB_DATABASE_NAME'
+            en_US: 'Container Variable: DB_DATABASE_NAME'
         - container: DB_PORT
           description:
-            en_us: 'Container Variable: DB_PORT'
+            en_US: 'Container Variable: DB_PORT'
         - container: REDIS_HOSTNAME
           description:
-            en_us: 'Container Variable: REDIS_HOSTNAME'
+            en_US: 'Container Variable: REDIS_HOSTNAME'
       volumes:
         - container: /usr/src/app/upload
           description:
-            en_us: 'Container Path: /usr/src/app/upload'
+            en_US: 'Container Path: /usr/src/app/upload'
       ports:
         - container: "2283"
           description:
-            en_us: 'Container Port: 2283'
+            en_US: 'Container Port: 2283'
   # Configuration for Redis service
   redis:
     container_name: immich-redis # Name of the running container
@@ -75,33 +75,35 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: PG_DATA
           description:
-            en_us: 'Container Variable: PG_DATA'
+            en_US: 'Container Variable: PG_DATA'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.immich-without-machine-learning
   # Main service for this application
   main: immich-server
   # Detailed description for the application
   description:
-    en_us: Self-hosted photo and video storage. This does not include the machine learning part.
+    en_US: Self-hosted photo and video storage. This does not include the machine learning part.
   # Brief tagline for the application
   tagline:
-    en_us: Immich without machine learning
+    en_US: Immich without machine learning
   # Developer's information
   developer: immich
   # Author of this particular configuration
@@ -112,8 +114,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Immich without machine learning
+    en_US: Immich without machine learning
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "2283"

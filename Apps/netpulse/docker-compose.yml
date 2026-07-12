@@ -31,39 +31,41 @@ services:
       envs:
         - container: NETPULSE_USERNAME
           description:
-            en_us: 'Container Variable: NETPULSE_USERNAME'
+            en_US: 'Container Variable: NETPULSE_USERNAME'
         - container: NETPULSE_PASSWORD
           description:
-            en_us: 'Container Variable: NETPULSE_PASSWORD'
+            en_US: 'Container Variable: NETPULSE_PASSWORD'
         - container: SPEEDTEST_INTERVAL_MIN
           description:
-            en_us: 'Container Variable: SPEEDTEST_INTERVAL_MIN'
+            en_US: 'Container Variable: SPEEDTEST_INTERVAL_MIN'
         - container: PING_INTERVAL_SEC
           description:
-            en_us: 'Container Variable: PING_INTERVAL_SEC'
+            en_US: 'Container Variable: PING_INTERVAL_SEC'
         - container: PING_HOST
           description:
-            en_us: 'Container Variable: PING_HOST'
+            en_US: 'Container Variable: PING_HOST'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.netpulse
   # Main service for this application
   main: big-bear-netpulse
   # Detailed description for the application
   description:
-    en_us: A self-hosted network monitoring dashboard that runs real Ookla speedtests on a schedule, pings continuously to track uptime, and shows the history as graphs you can actually reflect on — not just a live number that resets every refresh.
+    en_US: A self-hosted network monitoring dashboard that runs real Ookla speedtests on a schedule, pings continuously to track uptime, and shows the history as graphs you can actually reflect on — not just a live number that resets every refresh.
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted internet speed & uptime monitor
+    en_US: Self-hosted internet speed & uptime monitor
   # Developer's information
   developer: BentFender
   # Author of this particular configuration
@@ -75,11 +77,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: NetPulse runs on host networking and binds port 8077 directly on your server. Change the default NETPULSE_PASSWORD — it protects the dashboard login (default username is admin). Speedtests run every 10 minutes by default; adjust SPEEDTEST_INTERVAL_MIN if that's too frequent.
+      en_US: NetPulse runs on host networking and binds port 8077 directly on your server. Change the default NETPULSE_PASSWORD — it protects the dashboard login (default username is admin). Speedtests run every 10 minutes by default; adjust SPEEDTEST_INTERVAL_MIN if that's too frequent.
   # Title for the application
   title:
-    en_us: NetPulse
+    en_US: NetPulse
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8077"

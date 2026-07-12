@@ -33,37 +33,39 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
       volumes:
         - container: /mnt/config
           description:
-            en_us: 'Container Path: /mnt/config'
+            en_US: 'Container Path: /mnt/config'
       ports:
         - container: "70"
           description:
-            en_us: 'Container Port: 70'
+            en_US: 'Container Port: 70'
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.write-freely
   # Main service for this application
   main: big-bear-write-freely
   # Detailed description for the application
   description:
-    en_us: WriteFreely is a clean, minimalist publishing platform made for writers. Start a blog, share knowledge within your organization, or build a community around the shared act of writing.
+    en_US: WriteFreely is a clean, minimalist publishing platform made for writers. Start a blog, share knowledge within your organization, or build a community around the shared act of writing.
   # Brief tagline for the application
   tagline:
-    en_us: Markdown-based publishing platform.
+    en_US: Markdown-based publishing platform.
   # Developer's information
   developer: nephatrine
   # Author of this particular configuration
@@ -75,12 +77,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-write-freely-to-bigbearcasaos/3164?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Write Freely
+    en_US: Write Freely
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Social
   # Default port mapping for the application
   port_map: "8080"

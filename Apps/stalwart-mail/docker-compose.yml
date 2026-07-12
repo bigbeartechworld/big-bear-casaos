@@ -39,45 +39,47 @@ services:
       volumes:
         - container: /opt/stalwart
           description:
-            en_us: 'Container Path: /opt/stalwart'
+            en_US: 'Container Path: /opt/stalwart'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
         - container: "25"
           description:
-            en_us: 'Container Port: 25'
+            en_US: 'Container Port: 25'
         - container: "143"
           description:
-            en_us: 'Container Port: 143'
+            en_US: 'Container Port: 143'
         - container: "465"
           description:
-            en_us: 'Container Port: 465'
+            en_US: 'Container Port: 465'
         - container: "587"
           description:
-            en_us: 'Container Port: 587'
+            en_US: 'Container Port: 587'
         - container: "993"
           description:
-            en_us: 'Container Port: 993'
+            en_US: 'Container Port: 993'
         - container: "4190"
           description:
-            en_us: 'Container Port: 4190'
+            en_US: 'Container Port: 4190'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.stalwart-mail
   # Main service for this application
   main: big-bear-stalwart-mail
   # Detailed description for the application
   description:
-    en_us: Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.
+    en_US: Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/stalwart-mail/thumbnail.gif
   # Brief tagline for the application
   tagline:
-    en_us: "Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) \U0001F6E1️"
+    en_US: "Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) \U0001F6E1️"
   # Developer's information
   developer: stalwartlabs
   # Author of this particular configuration
@@ -89,12 +91,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-stalwart-to-bigbearcasaos/3342#p-5723-documentation-3
   # Title for the application
   title:
-    en_us: Stalwart Mail
+    en_US: Stalwart Mail
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

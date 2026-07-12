@@ -21,20 +21,22 @@ services:
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.it-tools
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Collection of handy online tools for developers, with great UX as a web app.
+    en_US: Collection of handy online tools for developers, with great UX as a web app.
   # Brief tagline for the application
   tagline:
-    en_us: IT Tools
+    en_US: IT Tools
   # Developer's information
   developer: corentinth
   # Author of this particular configuration
@@ -45,8 +47,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: IT Tools
+    en_US: IT Tools
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

@@ -30,34 +30,36 @@ services:
       envs:
         - container: TELEGRAM_API_KEY
           description:
-            en_us: 'Container Variable: TELEGRAM_API_KEY'
+            en_US: 'Container Variable: TELEGRAM_API_KEY'
         - container: GEMINI_API_KEY
           description:
-            en_us: 'Container Variable: GEMINI_API_KEY'
+            en_US: 'Container Variable: GEMINI_API_KEY'
         - container: ADMIN_USER_ID
           description:
-            en_us: 'Container Variable: ADMIN_USER_ID'
+            en_US: 'Container Variable: ADMIN_USER_ID'
       volumes:
         - container: /gem_digest_bot/extra_configs
           description:
-            en_us: 'Container Path: /gem_digest_bot/extra_configs'
+            en_US: 'Container Path: /gem_digest_bot/extra_configs'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.gemdigest
   # Main service for this application
   main: big-bear-gem-digest-bot
   # Detailed description for the application
   description:
-    en_us: "Simplify your reads, amplify your time! \U0001F4DA✨ GemDigest is a Telegram bot that summarizes articles from any website into bite-sized nuggets, saving you time and energy for what matters most. \U0001F4F1\U0001F44B"
+    en_US: "Simplify your reads, amplify your time! \U0001F4DA✨ GemDigest is a Telegram bot that summarizes articles from any website into bite-sized nuggets, saving you time and energy for what matters most. \U0001F4F1\U0001F44B"
   # Brief tagline for the application
   tagline:
-    en_us: Your personal article summarizer
+    en_US: Your personal article summarizer
   # Developer's information
   developer: Armaggheddon
   # Author of this particular configuration
@@ -68,8 +70,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: GemDigest Bot
+    en_US: GemDigest Bot
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3333"

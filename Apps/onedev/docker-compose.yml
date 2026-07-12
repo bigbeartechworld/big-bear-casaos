@@ -43,45 +43,45 @@ services:
       envs:
         - container: hibernate_dialect
           description:
-            en_us: 'Container Variable: hibernate_dialect'
+            en_US: 'Container Variable: hibernate_dialect'
         - container: hibernate_connection_driver_class
           description:
-            en_us: 'Container Variable: hibernate_connection_driver_class'
+            en_US: 'Container Variable: hibernate_connection_driver_class'
         - container: hibernate_connection_url
           description:
-            en_us: 'Container Variable: hibernate_connection_url'
+            en_US: 'Container Variable: hibernate_connection_url'
         - container: hibernate_connection_username
           description:
-            en_us: 'Container Variable: hibernate_connection_username'
+            en_US: 'Container Variable: hibernate_connection_username'
         - container: hibernate_connection_password
           description:
-            en_us: 'Container Variable: hibernate_connection_password'
+            en_US: 'Container Variable: hibernate_connection_password'
         - container: initial_user
           description:
-            en_us: 'Container Variable: initial_user'
+            en_US: 'Container Variable: initial_user'
         - container: initial_password
           description:
-            en_us: 'Container Variable: initial_password'
+            en_US: 'Container Variable: initial_password'
         - container: initial_email
           description:
-            en_us: 'Container Variable: initial_email'
+            en_US: 'Container Variable: initial_email'
         - container: initial_server_url
           description:
-            en_us: 'Container Variable: initial_server_url'
+            en_US: 'Container Variable: initial_server_url'
       volumes:
         - container: /opt/onedev
           description:
-            en_us: 'Container Path: /opt/onedev'
+            en_US: 'Container Path: /opt/onedev'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "6610"
           description:
-            en_us: 'Container Port: 6610'
+            en_US: 'Container Port: 6610'
         - container: "6611"
           description:
-            en_us: 'Container Port: 6611'
+            en_US: 'Container Port: 6611'
   # Define the service for the PostgreSQL database
   big-bear-onedev-db:
     container_name: big-bear-onedev-db # Container name for easy reference
@@ -99,17 +99,17 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Define the network for the big-bear-onedev application
 networks:
   big_bear_ondedev_network: # Network name
@@ -119,14 +119,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.onedev
   # Main service for this application
   main: big-bear-onedev
   # Detailed description for the application
   description:
-    en_us: Self-hosted Git Server with Kanban and CI/CD
+    en_US: Self-hosted Git Server with Kanban and CI/CD
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted Git Server with Kanban and CI/CD
+    en_US: Self-hosted Git Server with Kanban and CI/CD
   # Developer's information
   developer: theonedev
   # Author of this particular configuration
@@ -137,8 +139,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: OneDev
+    en_US: OneDev
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "6610"

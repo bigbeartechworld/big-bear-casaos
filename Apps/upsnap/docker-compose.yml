@@ -23,20 +23,22 @@ services:
       volumes:
         - container: /app/pb_data
           description:
-            en_us: 'Container Path: /app/pb_data'
+            en_US: 'Container Path: /app/pb_data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.upsnap
   # Main service for this application
   main: big-bear-upsnap
   # Detailed description for the application
   description:
-    en_us: A simple wake on lan web app written with SvelteKit, Go and PocketBase.
+    en_US: A simple wake on lan web app written with SvelteKit, Go and PocketBase.
   # Brief tagline for the application
   tagline:
-    en_us: Upsnap
+    en_US: Upsnap
   # Developer's information
   developer: seriousm4x
   # Author of this particular configuration
@@ -48,12 +50,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-upsnap-to-bigbearcasaos/2279?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Upsnap
+    en_US: Upsnap
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8090"

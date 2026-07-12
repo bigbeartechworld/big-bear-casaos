@@ -25,24 +25,26 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.npmplus
   # Main service for this application
   main: big-bear-npmplus
   # Detailed description for the application
   description:
-    en_us: Docker container for managing Nginx proxy hosts with a simple, powerful interface
+    en_US: Docker container for managing Nginx proxy hosts with a simple, powerful interface
   # Brief tagline for the application
   tagline:
-    en_us: NPMPlus
+    en_US: NPMPlus
   # Developer's information
   developer: zoeyvid
   # Author of this particular configuration
@@ -53,8 +55,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: NPMPlus
+    en_US: NPMPlus
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "81"

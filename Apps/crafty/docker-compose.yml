@@ -33,49 +33,51 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /crafty/backups
           description:
-            en_us: 'Container Path: /crafty/backups'
+            en_US: 'Container Path: /crafty/backups'
         - container: /crafty/logs
           description:
-            en_us: 'Container Path: /crafty/logs'
+            en_US: 'Container Path: /crafty/logs'
         - container: /crafty/servers
           description:
-            en_us: 'Container Path: /crafty/servers'
+            en_US: 'Container Path: /crafty/servers'
         - container: /crafty/app/config
           description:
-            en_us: 'Container Path: /crafty/app/config'
+            en_US: 'Container Path: /crafty/app/config'
         - container: /crafty/import
           description:
-            en_us: 'Container Path: /crafty/import'
+            en_US: 'Container Path: /crafty/import'
       ports:
         - container: "8443"
           description:
-            en_us: 'Container Port: 8443'
+            en_US: 'Container Port: 8443'
         - container: "8123"
           description:
-            en_us: 'Container Port: 8123'
+            en_US: 'Container Port: 8123'
         - container: "19132"
           description:
-            en_us: 'Container Port: 19132'
+            en_US: 'Container Port: 19132'
         - container: 25500-25600
           description:
-            en_us: 'Container Port: 25500-25600'
+            en_US: 'Container Port: 25500-25600'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.crafty
   # Main service for this application
   main: big-bear-crafty
   # Detailed description for the application
   description:
-    en_us: Crafty 4 is the next iteration of our Minecraft Server Wrapper / Controller / Launcher.
+    en_US: Crafty 4 is the next iteration of our Minecraft Server Wrapper / Controller / Launcher.
   # Brief tagline for the application
   tagline:
-    en_us: Crafty Controller
+    en_US: Crafty Controller
   # Developer's information
   developer: crafty-controller
   # Author of this particular configuration
@@ -87,12 +89,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install Crafty Controller, you need to read the https://community.bigbeartechworld.com/t/added-crafty-controller-to-bigbearcasaos/1013#instructions-3.
   # Title for the application
   title:
-    en_us: Crafty Controller
+    en_US: Crafty Controller
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "8443"

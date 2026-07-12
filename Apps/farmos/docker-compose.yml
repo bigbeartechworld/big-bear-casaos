@@ -27,11 +27,11 @@ services:
       volumes:
         - container: /opt/drupal/web/sites
           description:
-            en_us: 'Container Path: /opt/drupal/web/sites'
+            en_US: 'Container Path: /opt/drupal/web/sites'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   # MariaDB database service configuration for FarmOS
   big-bear-farmos-db:
     # Specify the container name
@@ -69,24 +69,24 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
       ports:
         - container: "3306"
           description:
-            en_us: 'Container Port: 3306'
+            en_US: 'Container Port: 3306'
 networks:
   big-bear-farmos-network:
     name: big-bear-farmos-network
@@ -96,17 +96,19 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.farmos
   # Main service for this application
   main: big-bear-farmos
   # Detailed description for the application
   description:
-    en_us: farmOS is a web-based application for farm management, planning, and record keeping. It is developed by a community of volunteers and aims to provide a standard platform for farmers, developers, and researchers to build upon.
+    en_US: farmOS is a web-based application for farm management, planning, and record keeping. It is developed by a community of volunteers and aims to provide a standard platform for farmers, developers, and researchers to build upon.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/farmos/screenshots/screenshot-1.png
   # Brief tagline for the application
   tagline:
-    en_us: A web-based farm record keeping application.
+    en_US: A web-based farm record keeping application.
   # Developer's information
   developer: farmOS
   # Author of this particular configuration
@@ -118,12 +120,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-farmos-to-bigbearcasaos/2334?u=dragonfire1119
   # Title for the application
   title:
-    en_us: FarmOS (Legacy)
+    en_US: FarmOS (Legacy)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Social
   # Default port mapping for the application
   port_map: "8080"
