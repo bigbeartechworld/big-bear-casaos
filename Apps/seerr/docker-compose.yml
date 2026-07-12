@@ -23,31 +23,33 @@ services:
       envs:
         - container: LOG_LEVEL
           description:
-            en_us: 'Container Variable: LOG_LEVEL'
+            en_US: 'Container Variable: LOG_LEVEL'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /app/config
           description:
-            en_us: 'Container Path: /app/config'
+            en_US: 'Container Path: /app/config'
       ports:
         - container: "5055"
           description:
-            en_us: 'Container Port: 5055'
+            en_US: 'Container Port: 5055'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.seerr
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Seerr is a free and open source software application for managing requests for your media library. It is the successor to Overseerr and Jellyseerr, bringing support for Jellyfin, Plex, and Emby media servers.
+    en_US: Seerr is a free and open source software application for managing requests for your media library. It is the successor to Overseerr and Jellyseerr, bringing support for Jellyfin, Plex, and Emby media servers.
   # Brief tagline for the application
   tagline:
-    en_us: Media request management for Jellyfin, Plex, and Emby
+    en_US: Media request management for Jellyfin, Plex, and Emby
   # Developer's information
   developer: Seerr Team
   # Author of this particular configuration
@@ -58,8 +60,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Seerr
+    en_US: Seerr
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "5056"

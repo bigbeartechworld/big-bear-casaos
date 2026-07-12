@@ -11,24 +11,26 @@ services:
       volumes:
         - container: /mnt/host
           description:
-            en_us: 'Container Path: /mnt/host'
+            en_US: 'Container Path: /mnt/host'
       ports:
         - container: "3001"
           description:
-            en_us: 'Container Port: 3001'
+            en_US: 'Container Port: 3001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.dashdot
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: About A simple, modern server dashboard, primarily used by smaller private servers.
+    en_US: About A simple, modern server dashboard, primarily used by smaller private servers.
   # Brief tagline for the application
   tagline:
-    en_us: dash. - a modern server dashboard
+    en_US: dash. - a modern server dashboard
   # Developer's information
   developer: mauricenino
   # Author of this particular configuration
@@ -39,8 +41,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Dashdot
+    en_US: Dashdot
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3001"

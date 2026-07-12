@@ -41,64 +41,66 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: KOPIA_HTTPS
           description:
-            en_us: 'Container Variable: KOPIA_HTTPS'
+            en_US: 'Container Variable: KOPIA_HTTPS'
         - container: KOPIA_UI_USERNAME
           description:
-            en_us: 'Container Variable: KOPIA_UI_USERNAME'
+            en_US: 'Container Variable: KOPIA_UI_USERNAME'
         - container: KOPIA_UI_PASSWORD
           description:
-            en_us: 'Container Variable: KOPIA_UI_PASSWORD'
+            en_US: 'Container Variable: KOPIA_UI_PASSWORD'
         - container: KOPIA_PASSWORD
           description:
-            en_us: 'Container Variable: KOPIA_PASSWORD'
+            en_US: 'Container Variable: KOPIA_PASSWORD'
         - container: REFRESH_INTERVAL
           description:
-            en_us: 'Container Variable: REFRESH_INTERVAL'
+            en_US: 'Container Variable: REFRESH_INTERVAL'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /backups/home
           description:
-            en_us: 'Container Path: /backups/home'
+            en_US: 'Container Path: /backups/home'
         - container: /backups/docker
           description:
-            en_us: 'Container Path: /backups/docker'
+            en_US: 'Container Path: /backups/docker'
         - container: /repository
           description:
-            en_us: 'Container Path: /repository'
+            en_US: 'Container Path: /repository'
         - container: /tmp
           description:
-            en_us: 'Container Path: /tmp'
+            en_US: 'Container Path: /tmp'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "51515"
           description:
-            en_us: 'Container Port: 51515'
+            en_US: 'Container Port: 51515'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kopia
   # Main service for this application
   main: big-bear-kopia
   # Detailed description for the application
   description:
-    en_us: Kopia is a fast and secure open-source backup/restore tool that allows you to create encrypted snapshots of your data and save the snapshots to remote or cloud storage of your choice, to network-attached storage or server, or locally on your machine.
+    en_US: Kopia is a fast and secure open-source backup/restore tool that allows you to create encrypted snapshots of your data and save the snapshots to remote or cloud storage of your choice, to network-attached storage or server, or locally on your machine.
   # Brief tagline for the application
   tagline:
-    en_us: Kopia
+    en_US: Kopia
   # Developer's information
   developer: thespad
   # Author of this particular configuration
@@ -109,8 +111,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Kopia
+    en_US: Kopia
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "51515"

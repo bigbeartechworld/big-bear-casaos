@@ -30,28 +30,30 @@ services:
       envs:
         - container: SD_AUTH
           description:
-            en_us: 'Container Variable: SD_AUTH'
+            en_US: 'Container Variable: SD_AUTH'
       volumes:
         - container: /var/spacedrive
           description:
-            en_us: 'Container Path: /var/spacedrive'
+            en_US: 'Container Path: /var/spacedrive'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.spacedrive
   # Main service for this application
   main: big-bear-spacedrive
   # Detailed description for the application
   description:
-    en_us: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.
+    en_US: Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.
   # Brief tagline for the application
   tagline:
-    en_us: Cross-platform file explorer
+    en_US: Cross-platform file explorer
   # Developer's information
   developer: spacedriveapp
   # Author of this particular configuration
@@ -63,12 +65,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-spacedrive-to-bigbearcasaos/3163?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Spacedrive
+    en_US: Spacedrive
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

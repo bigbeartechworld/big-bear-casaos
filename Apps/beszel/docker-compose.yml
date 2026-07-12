@@ -24,24 +24,26 @@ services:
       volumes:
         - container: /beszel_data
           description:
-            en_us: 'Container Path: /beszel_data'
+            en_US: 'Container Path: /beszel_data'
       ports:
         - container: "8090"
           description:
-            en_us: 'Container Port: 8090'
+            en_US: 'Container Port: 8090'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.beszel
   # Main service for this application
   main: big-bear-beszel
   # Detailed description for the application
   description:
-    en_us: A lightweight server resource monitoring hub with historical data, docker stats, and alerts.
+    en_US: A lightweight server resource monitoring hub with historical data, docker stats, and alerts.
   # Brief tagline for the application
   tagline:
-    en_us: Server Monitoring Hub
+    en_US: Server Monitoring Hub
   # Developer's information
   developer: henrygd
   # Author of this particular configuration
@@ -52,8 +54,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Beszel
+    en_US: Beszel
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8090"

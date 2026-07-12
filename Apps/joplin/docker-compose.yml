@@ -31,35 +31,35 @@ services:
       envs:
         - container: APP_PORT
           description:
-            en_us: 'Container Variable: APP_PORT'
+            en_US: 'Container Variable: APP_PORT'
         - container: APP_BASE_URL
           description:
-            en_us: 'Container Variable: APP_BASE_URL'
+            en_US: 'Container Variable: APP_BASE_URL'
         - container: DB_CLIENT
           description:
-            en_us: 'Container Variable: DB_CLIENT'
+            en_US: 'Container Variable: DB_CLIENT'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DATABASE
           description:
-            en_us: 'Container Variable: POSTGRES_DATABASE'
+            en_US: 'Container Variable: POSTGRES_DATABASE'
         - container: POSTGRES_PORT
           description:
-            en_us: 'Container Variable: POSTGRES_PORT'
+            en_US: 'Container Variable: POSTGRES_PORT'
         - container: POSTGRES_HOST
           description:
-            en_us: 'Container Variable: POSTGRES_HOST'
+            en_US: 'Container Variable: POSTGRES_HOST'
         - container: MAX_TIME_DRIFT
           description:
-            en_us: 'Container Variable: MAX_TIME_DRIFT'
+            en_US: 'Container Variable: MAX_TIME_DRIFT'
       ports:
         - container: "22300"
           description:
-            en_us: 'Container Port: 22300'
+            en_US: 'Container Port: 22300'
   # Configuration for the PostgreSQL database service used by Joplin
   big-bear-joplin-db:
     container_name: big-bear-joplin-db # Name of the database container.
@@ -77,17 +77,17 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Network configuration for the services to communicate internally.
 networks:
   big_bear_joplin_network:
@@ -97,14 +97,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.joplin
   # Main service for this application
   main: big-bear-joplin
   # Detailed description for the application
   description:
-    en_us: Note taking and to-do application with synchronisation
+    en_US: Note taking and to-do application with synchronisation
   # Brief tagline for the application
   tagline:
-    en_us: joplin
+    en_US: joplin
   # Developer's information
   developer: joplin
   # Author of this particular configuration
@@ -116,12 +118,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-joplin-server-to-bigbearcasaos/800?u=dragonfire1119
   # Title for the application
   title:
-    en_us: joplin
+    en_US: joplin
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "22300"

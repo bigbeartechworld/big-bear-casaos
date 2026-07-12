@@ -50,81 +50,81 @@ services:
       envs:
         - container: DATABASE_HOST
           description:
-            en_us: 'Container Variable: DATABASE_HOST'
+            en_US: 'Container Variable: DATABASE_HOST'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: DATABASE_DIRECT_URL
           description:
-            en_us: 'Container Variable: DATABASE_DIRECT_URL'
+            en_US: 'Container Variable: DATABASE_DIRECT_URL'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: LICENSE
           description:
-            en_us: 'Container Variable: LICENSE'
+            en_US: 'Container Variable: LICENSE'
         - container: NEXT_PUBLIC_LICENSE_CONSENT
           description:
-            en_us: 'Container Variable: NEXT_PUBLIC_LICENSE_CONSENT'
+            en_US: 'Container Variable: NEXT_PUBLIC_LICENSE_CONSENT'
         - container: NEXT_PUBLIC_WEBAPP_URL
           description:
-            en_us: 'Container Variable: NEXT_PUBLIC_WEBAPP_URL'
+            en_US: 'Container Variable: NEXT_PUBLIC_WEBAPP_URL'
         - container: NEXTAUTH_SECRET
           description:
-            en_us: 'Container Variable: NEXTAUTH_SECRET'
+            en_US: 'Container Variable: NEXTAUTH_SECRET'
         - container: CALENDSO_ENCRYPTION_KEY
           description:
-            en_us: 'Container Variable: CALENDSO_ENCRYPTION_KEY'
+            en_US: 'Container Variable: CALENDSO_ENCRYPTION_KEY'
         - container: MS_GRAPH_CLIENT_ID
           description:
-            en_us: 'Container Variable: MS_GRAPH_CLIENT_ID'
+            en_US: 'Container Variable: MS_GRAPH_CLIENT_ID'
         - container: MS_GRAPH_CLIENT_SECRET
           description:
-            en_us: 'Container Variable: MS_GRAPH_CLIENT_SECRET'
+            en_US: 'Container Variable: MS_GRAPH_CLIENT_SECRET'
         - container: ZOOM_CLIENT_ID
           description:
-            en_us: 'Container Variable: ZOOM_CLIENT_ID'
+            en_US: 'Container Variable: ZOOM_CLIENT_ID'
         - container: ZOOM_CLIENT_SECRET
           description:
-            en_us: 'Container Variable: ZOOM_CLIENT_SECRET'
+            en_US: 'Container Variable: ZOOM_CLIENT_SECRET'
         - container: GOOGLE_API_CREDENTIALS
           description:
-            en_us: 'Container Variable: GOOGLE_API_CREDENTIALS'
+            en_US: 'Container Variable: GOOGLE_API_CREDENTIALS'
         - container: EMAIL_FROM
           description:
-            en_us: 'Container Variable: EMAIL_FROM'
+            en_US: 'Container Variable: EMAIL_FROM'
         - container: EMAIL_SERVER_HOST
           description:
-            en_us: 'Container Variable: EMAIL_SERVER_HOST'
+            en_US: 'Container Variable: EMAIL_SERVER_HOST'
         - container: EMAIL_SERVER_PORT
           description:
-            en_us: 'Container Variable: EMAIL_SERVER_PORT'
+            en_US: 'Container Variable: EMAIL_SERVER_PORT'
         - container: EMAIL_SERVER_PASSWORD
           description:
-            en_us: 'Container Variable: EMAIL_SERVER_PASSWORD'
+            en_US: 'Container Variable: EMAIL_SERVER_PASSWORD'
         - container: EMAIL_SERVER_USER
           description:
-            en_us: 'Container Variable: EMAIL_SERVER_USER'
+            en_US: 'Container Variable: EMAIL_SERVER_USER'
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "3001"
           description:
-            en_us: 'Container Port: 3001'
+            en_US: 'Container Port: 3001'
   big-bear-calcom-db:
     container_name: big-bear-calcom-db
     image: postgres:16.1
@@ -141,17 +141,17 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 networks:
   big_bear_calcom_network:
     driver: bridge
@@ -160,17 +160,19 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.calcom
   # Main service for this application
   main: big-bear-calcom
   # Detailed description for the application
   description:
-    en_us: |-
+    en_US: |-
       The open source Calendly successor. You are in charge of your own data, workflow, and appearance.
       Calendly and other scheduling tools are awesome. It made our lives massively easier. We're using it for business meetings, seminars, yoga classes, and even calls with our families. However, most tools are very limited in terms of control and customization.
           That's where Cal.com comes in. Self-hosted or hosted by us. White-label by design. API-driven and ready to be deployed on your own domain. Full control of your events and data.
   # Brief tagline for the application
   tagline:
-    en_us: Cal.com
+    en_US: Cal.com
   # Developer's information
   developer: calcom
   # Author of this particular configuration
@@ -182,12 +184,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-cal-com-to-bigbearcasaos/1873#p-3510-documentation-4
   # Title for the application
   title:
-    en_us: Cal.com
+    en_US: Cal.com
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3000"

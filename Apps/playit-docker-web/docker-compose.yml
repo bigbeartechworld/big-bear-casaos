@@ -25,24 +25,26 @@ services:
       envs:
         - container: WEBUI_PORT
           description:
-            en_us: 'Container Variable: WEBUI_PORT'
+            en_US: 'Container Variable: WEBUI_PORT'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.playit-docker-web
   # Main service for this application
   main: big-bear-playit-docker-web
   # Detailed description for the application
   description:
-    en_us: Playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
+    en_US: Playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
   # Brief tagline for the application
   tagline:
-    en_us: Playit.gg is a global proxy that allows anyone to host a server without port forwarding.
+    en_US: Playit.gg is a global proxy that allows anyone to host a server without port forwarding.
   # Developer's information
   developer: wisdomsky
   # Author of this particular configuration
@@ -54,12 +56,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-playit-docker-web-to-bigbearcasaos/2276?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Playit Docker Web
+    en_US: Playit Docker Web
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8008"

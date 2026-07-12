@@ -19,27 +19,29 @@ services:
       volumes:
         - container: /appsmith-stacks
           description:
-            en_us: 'Container Path: /appsmith-stacks'
+            en_US: 'Container Path: /appsmith-stacks'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.appsmith
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.
+    en_US: Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.
   # Brief tagline for the application
   tagline:
-    en_us: Appsmith
+    en_US: Appsmith
   # Developer's information
   developer: appsmithorg
   # Author of this particular configuration
@@ -50,8 +52,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Appsmith
+    en_US: Appsmith
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "1080"

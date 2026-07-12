@@ -27,45 +27,47 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
         - container: SQLITE_FILE_PATH
           description:
-            en_us: 'Container Variable: SQLITE_FILE_PATH'
+            en_US: 'Container Variable: SQLITE_FILE_PATH'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: SERVER_PORT
           description:
-            en_us: 'Container Variable: SERVER_PORT'
+            en_US: 'Container Variable: SERVER_PORT'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
         - container: /var/lib/gladysassistant
           description:
-            en_us: 'Container Path: /var/lib/gladysassistant'
+            en_US: 'Container Path: /var/lib/gladysassistant'
         - container: /dev
           description:
-            en_us: 'Container Path: /dev'
+            en_US: 'Container Path: /dev'
         - container: /run/udev
           description:
-            en_us: 'Container Path: /run/udev'
+            en_US: 'Container Path: /run/udev'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.gladys
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Gladys Assistant is a modern, privacy-first & open-source home automation software that runs anywhere.
+    en_US: Gladys Assistant is a modern, privacy-first & open-source home automation software that runs anywhere.
   # Screenshot links for the application
   screenshot_link:
     - https://gladysassistant.com/img/home/main_screenshot/main_screenshot_en_j5czyj_c_scale,w_2526.png
   # Brief tagline for the application
   tagline:
-    en_us: A privacy-first, open-source home assistant.
+    en_US: A privacy-first, open-source home assistant.
   # Developer's information
   developer: GladysAssistant
   # Author of this particular configuration
@@ -76,8 +78,8 @@ x-casaos:
   thumbnail: https://gladysassistant.com/img/home/main_screenshot/main_screenshot_en_j5czyj_c_scale,w_2526.png
   # Title for the application
   title:
-    en_us: Gladys Assistant
+    en_US: Gladys Assistant
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "1080"

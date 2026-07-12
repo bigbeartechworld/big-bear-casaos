@@ -17,27 +17,29 @@ services:
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
         - container: /var/lib/docker/volumes
           description:
-            en_us: 'Container Path: /var/lib/docker/volumes'
+            en_US: 'Container Path: /var/lib/docker/volumes'
       ports:
         - container: "9001"
           description:
-            en_us: 'Container Port: 9001'
+            en_US: 'Container Port: 9001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.portainer-agent
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Portainer uses the Portainer Agent container to communicate with the Portainer Server instance and provide access to the node's resources. This document will outline how to install the Portainer Agent on your node and how to connect to it from your Portainer Server instance. If you do not have a working Portainer Server instance yet, please refer to the Portainer Server installation guide first.
+    en_US: Portainer uses the Portainer Agent container to communicate with the Portainer Server instance and provide access to the node's resources. This document will outline how to install the Portainer Agent on your node and how to connect to it from your Portainer Server instance. If you do not have a working Portainer Server instance yet, please refer to the Portainer Server installation guide first.
   # Brief tagline for the application
   tagline:
-    en_us: Portainer Agent
+    en_US: Portainer Agent
   # Developer's information
   developer: portainer
   # Author of this particular configuration
@@ -49,12 +51,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         The Portainer Agent is reachable on port 9001. You will need Portainer Server running to connect to the Portainer Agent.
   # Title for the application
   title:
-    en_us: Portainer Agent
+    en_US: Portainer Agent
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: ""

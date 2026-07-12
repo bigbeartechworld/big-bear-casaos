@@ -28,14 +28,14 @@ services:
       envs:
         - container: SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION
           description:
-            en_us: 'Container Variable: SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION'
+            en_US: 'Container Variable: SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION'
         - container: SCRYPTED_WEBHOOK_UPDATE
           description:
-            en_us: 'Container Variable: SCRYPTED_WEBHOOK_UPDATE'
+            en_US: 'Container Variable: SCRYPTED_WEBHOOK_UPDATE'
       volumes:
         - container: /server/volume
           description:
-            en_us: 'Container Path: /server/volume'
+            en_US: 'Container Path: /server/volume'
   # This service manages automatic updates for Scrypted using Watchtower
   watchtower:
     environment:
@@ -61,37 +61,39 @@ services:
       envs:
         - container: WATCHTOWER_HTTP_API_TOKEN
           description:
-            en_us: 'Container Variable: WATCHTOWER_HTTP_API_TOKEN'
+            en_US: 'Container Variable: WATCHTOWER_HTTP_API_TOKEN'
         - container: WATCHTOWER_HTTP_API_UPDATE
           description:
-            en_us: 'Container Variable: WATCHTOWER_HTTP_API_UPDATE'
+            en_US: 'Container Variable: WATCHTOWER_HTTP_API_UPDATE'
         - container: WATCHTOWER_SCOPE
           description:
-            en_us: 'Container Variable: WATCHTOWER_SCOPE'
+            en_US: 'Container Variable: WATCHTOWER_SCOPE'
         - container: WATCHTOWER_HTTP_API_PERIODIC_POLLS
           description:
-            en_us: 'Container Variable: WATCHTOWER_HTTP_API_PERIODIC_POLLS'
+            en_US: 'Container Variable: WATCHTOWER_HTTP_API_PERIODIC_POLLS'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.scrypted
   # Main service for this application
   main: scrypted
   # Detailed description for the application
   description:
-    en_us: Scrypted is an open source video integration platform. Using various Plugins, Scrypted can receive streams from a range of cameras and send them to other platforms (HomeKit, Google Home, Alexa, Home Assistant).
+    en_US: Scrypted is an open source video integration platform. Using various Plugins, Scrypted can receive streams from a range of cameras and send them to other platforms (HomeKit, Google Home, Alexa, Home Assistant).
   # Brief tagline for the application
   tagline:
-    en_us: Scrypted
+    en_US: Scrypted
   # Developer's information
   developer: koush
   # Author of this particular configuration
@@ -102,8 +104,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Scrypted
+    en_US: Scrypted
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "10443"

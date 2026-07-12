@@ -31,33 +31,33 @@ services:
       envs:
         - container: VIKUNJA_SERVICE_PUBLICURL
           description:
-            en_us: 'Container Variable: VIKUNJA_SERVICE_PUBLICURL'
+            en_US: 'Container Variable: VIKUNJA_SERVICE_PUBLICURL'
         - container: VIKUNJA_DATABASE_HOST
           description:
-            en_us: 'Container Variable: VIKUNJA_DATABASE_HOST'
+            en_US: 'Container Variable: VIKUNJA_DATABASE_HOST'
         - container: VIKUNJA_DATABASE_PASSWORD
           description:
-            en_us: 'Container Variable: VIKUNJA_DATABASE_PASSWORD'
+            en_US: 'Container Variable: VIKUNJA_DATABASE_PASSWORD'
         - container: VIKUNJA_DATABASE_TYPE
           description:
-            en_us: 'Container Variable: VIKUNJA_DATABASE_TYPE'
+            en_US: 'Container Variable: VIKUNJA_DATABASE_TYPE'
         - container: VIKUNJA_DATABASE_USER
           description:
-            en_us: 'Container Variable: VIKUNJA_DATABASE_USER'
+            en_US: 'Container Variable: VIKUNJA_DATABASE_USER'
         - container: VIKUNJA_DATABASE_DATABASE
           description:
-            en_us: 'Container Variable: VIKUNJA_DATABASE_DATABASE'
+            en_US: 'Container Variable: VIKUNJA_DATABASE_DATABASE'
         - container: VIKUNJA_SERVICE_JWTSECRET
           description:
-            en_us: 'Container Variable: VIKUNJA_SERVICE_JWTSECRET'
+            en_US: 'Container Variable: VIKUNJA_SERVICE_JWTSECRET'
       volumes:
         - container: /app/vikunja/files
           description:
-            en_us: 'Container Path: /app/vikunja/files'
+            en_US: 'Container Path: /app/vikunja/files'
       ports:
         - container: "3456"
           description:
-            en_us: 'Container Port: 3456'
+            en_US: 'Container Port: 3456'
   vikunja-db:
     image: mariadb:10
     container_name: vikunja-db
@@ -80,20 +80,20 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 networks:
   vikunja-network:
     driver: bridge
@@ -102,14 +102,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.vikunja
   # Main service for this application
   main: vikunja
   # Detailed description for the application
   description:
-    en_us: The open-source, self-hostable to-do app. Organize everything, on all platforms.
+    en_US: The open-source, self-hostable to-do app. Organize everything, on all platforms.
   # Brief tagline for the application
   tagline:
-    en_us: Vikunja
+    en_US: Vikunja
   # Developer's information
   developer: kolaente
   # Author of this particular configuration
@@ -120,8 +122,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Vikunja (Legacy)
+    en_US: Vikunja (Legacy)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8081"

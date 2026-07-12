@@ -47,60 +47,60 @@ services:
       envs:
         - container: PAPERLESS_REDIS
           description:
-            en_us: 'Container Variable: PAPERLESS_REDIS'
+            en_US: 'Container Variable: PAPERLESS_REDIS'
         - container: PAPERLESS_DBHOST
           description:
-            en_us: 'Container Variable: PAPERLESS_DBHOST'
+            en_US: 'Container Variable: PAPERLESS_DBHOST'
         - container: PAPERLESS_DBUSER
           description:
-            en_us: 'Container Variable: PAPERLESS_DBUSER'
+            en_US: 'Container Variable: PAPERLESS_DBUSER'
         - container: PAPERLESS_DBPASS
           description:
-            en_us: 'Container Variable: PAPERLESS_DBPASS'
+            en_US: 'Container Variable: PAPERLESS_DBPASS'
         - container: PAPERLESS_ADMIN_USER
           description:
-            en_us: 'Container Variable: PAPERLESS_ADMIN_USER'
+            en_US: 'Container Variable: PAPERLESS_ADMIN_USER'
         - container: PAPERLESS_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: PAPERLESS_ADMIN_PASSWORD'
+            en_US: 'Container Variable: PAPERLESS_ADMIN_PASSWORD'
         - container: PAPERLESS_TIKA_ENABLED
           description:
-            en_us: 'Container Variable: PAPERLESS_TIKA_ENABLED'
+            en_US: 'Container Variable: PAPERLESS_TIKA_ENABLED'
         - container: PAPERLESS_TIKA_GOTENBERG_ENDPOINT
           description:
-            en_us: 'Container Variable: PAPERLESS_TIKA_GOTENBERG_ENDPOINT'
+            en_US: 'Container Variable: PAPERLESS_TIKA_GOTENBERG_ENDPOINT'
         - container: PAPERLESS_TIKA_ENDPOINT
           description:
-            en_us: 'Container Variable: PAPERLESS_TIKA_ENDPOINT'
+            en_US: 'Container Variable: PAPERLESS_TIKA_ENDPOINT'
         - container: PAPERLESS_URL
           description:
-            en_us: 'Container Variable: PAPERLESS_URL'
+            en_US: 'Container Variable: PAPERLESS_URL'
         - container: COMPOSE_PROJECT_NAME
           description:
-            en_us: 'Container Variable: COMPOSE_PROJECT_NAME'
+            en_US: 'Container Variable: COMPOSE_PROJECT_NAME'
         - container: PAPERLESS_CSRF_TRUSTED_ORIGINS
           description:
-            en_us: 'Container Variable: PAPERLESS_CSRF_TRUSTED_ORIGINS'
+            en_US: 'Container Variable: PAPERLESS_CSRF_TRUSTED_ORIGINS'
       volumes:
         - container: /usr/src/paperless/data
           description:
-            en_us: 'Container Path: /usr/src/paperless/data'
+            en_US: 'Container Path: /usr/src/paperless/data'
         - container: /usr/src/paperless/media
           description:
-            en_us: 'Container Path: /usr/src/paperless/media'
+            en_US: 'Container Path: /usr/src/paperless/media'
         - container: /usr/src/paperless/export
           description:
-            en_us: 'Container Path: /usr/src/paperless/export'
+            en_US: 'Container Path: /usr/src/paperless/export'
         - container: /usr/src/paperless/consume
           description:
-            en_us: 'Container Path: /usr/src/paperless/consume'
+            en_US: 'Container Path: /usr/src/paperless/consume'
         - container: /tmp
           description:
-            en_us: 'Container Path: /tmp'
+            en_US: 'Container Path: /tmp'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
   big-bear-paperless-ngx-broker:
     container_name: big-bear-paperless-ngx-broker
     image: docker.io/library/redis:8.8.0
@@ -113,7 +113,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
   # The PostgreSQL database service is used to store the data for the paperless-ngx service.
   big-bear-paperless-ngx-db:
     # Container name
@@ -140,17 +140,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   # The gotenberg service is used for converting documents to PDFs. It is
   # configured to disable JavaScript and only allow access to the
   # /tmp directory to prevent potential security issues.
@@ -185,7 +185,7 @@ services:
       volumes:
         - container: /tmp
           description:
-            en_us: 'Container Path: /tmp'
+            en_US: 'Container Path: /tmp'
 # Define a network for the paperless-ngx services to communicate with
 # each other. This network is a bridge network, which means that it is
 # not isolated from the host's network stack.
@@ -197,14 +197,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.paperless-ngx
   # Main service for this application
   main: big-bear-paperless-ngx
   # Detailed description for the application
   description:
-    en_us: Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
+    en_US: Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
   # Brief tagline for the application
   tagline:
-    en_us: Paperless-ngx
+    en_US: Paperless-ngx
   # Developer's information
   developer: paperless-ngx
   # Author of this particular configuration
@@ -216,12 +218,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-paperlessngx-to-bigbearcasaos/1954#p-3625-documentation-4
   # Title for the application
   title:
-    en_us: Paperless-ngx
+    en_US: Paperless-ngx
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Social
   # Default port mapping for the application
   port_map: "8000"

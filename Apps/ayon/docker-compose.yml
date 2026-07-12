@@ -41,17 +41,17 @@ services:
       volumes:
         - container: /addons
           description:
-            en_us: 'Container Path: /addons'
+            en_US: 'Container Path: /addons'
         - container: /storage
           description:
-            en_us: 'Container Path: /storage'
+            en_US: 'Container Path: /storage'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
       ports:
         - container: "5000"
           description:
-            en_us: 'Container Port: 5000'
+            en_US: 'Container Port: 5000'
   # Service definition for the PostgreSQL database
   postgres:
     image: postgres:15-alpine
@@ -75,17 +75,17 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   # Service definition for the Redis database
   redis:
     image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
@@ -105,7 +105,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 networks:
   big-bear-ayon-network:
     driver: bridge
@@ -113,14 +113,16 @@ x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ayon
   # Main service for this application
   main: big-bear-ayon
   # Detailed description for the application
   description:
-    en_us: This is the official Docker-based deployment for the Ayon Server. Ayon is a robust tool designed to manage and automate workflows in the animation and visual effects industries.
+    en_US: This is the official Docker-based deployment for the Ayon Server. Ayon is a robust tool designed to manage and automate workflows in the animation and visual effects industries.
   # Brief tagline for the application
   tagline:
-    en_us: Ayon
+    en_US: Ayon
   # Developer's information
   developer: ynput
   # Author of this particular configuration
@@ -131,8 +133,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Ayon
+    en_US: Ayon
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "5000"

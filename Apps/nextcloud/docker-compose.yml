@@ -45,45 +45,45 @@ services:
       envs:
         - container: POSTGRES_HOST
           description:
-            en_us: 'Container Variable: POSTGRES_HOST'
+            en_US: 'Container Variable: POSTGRES_HOST'
         - container: REDIS_HOST
           description:
-            en_us: 'Container Variable: REDIS_HOST'
+            en_US: 'Container Variable: REDIS_HOST'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: NEXTCLOUD_ADMIN_USER
           description:
-            en_us: 'Container Variable: NEXTCLOUD_ADMIN_USER'
+            en_US: 'Container Variable: NEXTCLOUD_ADMIN_USER'
         - container: NEXTCLOUD_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: NEXTCLOUD_ADMIN_PASSWORD'
+            en_US: 'Container Variable: NEXTCLOUD_ADMIN_PASSWORD'
         - container: TRUSTED_PROXIES
           description:
-            en_us: 'Container Variable: TRUSTED_PROXIES'
+            en_US: 'Container Variable: TRUSTED_PROXIES'
         - container: OVERWRITEPROTOCOL
           description:
-            en_us: 'Container Variable: OVERWRITEPROTOCOL'
+            en_US: 'Container Variable: OVERWRITEPROTOCOL'
         - container: PHP_MEMORY_LIMIT
           description:
-            en_us: 'Container Variable: PHP_MEMORY_LIMIT'
+            en_US: 'Container Variable: PHP_MEMORY_LIMIT'
         - container: PHP_UPLOAD_LIMIT
           description:
-            en_us: 'Container Variable: PHP_UPLOAD_LIMIT'
+            en_US: 'Container Variable: PHP_UPLOAD_LIMIT'
       volumes:
         - container: /var/www/html
           description:
-            en_us: 'Container Path: /var/www/html'
+            en_US: 'Container Path: /var/www/html'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   # Define the database container for Nextcloud
   db-nextcloud:
     container_name: db-nextcloud
@@ -107,17 +107,17 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   # Redis configuration for Nextcloud
   redis-nextcloud:
     container_name: redis-nextcloud
@@ -138,7 +138,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
   cron:
     image: bigbeartechworld/big-bear-nextcloud-with-smbclient:33.0.5
     restart: unless-stopped
@@ -157,7 +157,7 @@ services:
       volumes:
         - container: /var/www/html
           description:
-            en_us: 'Container Path: /var/www/html'
+            en_US: 'Container Path: /var/www/html'
 # Network definition for the big-bear-nextcloud application
 networks:
   nextcloud_network:
@@ -167,11 +167,13 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nextcloud
   # Main service for this application
   main: nextcloud
   # Detailed description for the application
   description:
-    en_us: Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
+    en_US: Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-1.png
@@ -179,7 +181,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-3.png
   # Brief tagline for the application
   tagline:
-    en_us: The productivity platform that keeps you in control
+    en_US: The productivity platform that keeps you in control
   # Developer's information
   developer: nextcloud
   # Author of this particular configuration
@@ -191,12 +193,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read the [Nextcloud installation guide](https://community.bigbeartechworld.com/t/added-nextcloud-to-bigbearcasaos/455?u=dragonfire1119)
   # Title for the application
   title:
-    en_us: Nextcloud
+    en_US: Nextcloud
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "7580"

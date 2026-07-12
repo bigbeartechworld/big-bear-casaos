@@ -38,45 +38,45 @@ services:
       envs:
         - container: USE_GENERIC_CACHE
           description:
-            en_us: 'Container Variable: USE_GENERIC_CACHE'
+            en_US: 'Container Variable: USE_GENERIC_CACHE'
         - container: LANCACHE_IP
           description:
-            en_us: 'Container Variable: LANCACHE_IP'
+            en_US: 'Container Variable: LANCACHE_IP'
         - container: DNS_BIND_IP
           description:
-            en_us: 'Container Variable: DNS_BIND_IP'
+            en_US: 'Container Variable: DNS_BIND_IP'
         - container: UPSTREAM_DNS
           description:
-            en_us: 'Container Variable: UPSTREAM_DNS'
+            en_US: 'Container Variable: UPSTREAM_DNS'
         - container: CACHE_ROOT
           description:
-            en_us: 'Container Variable: CACHE_ROOT'
+            en_US: 'Container Variable: CACHE_ROOT'
         - container: CACHE_DISK_SIZE
           description:
-            en_us: 'Container Variable: CACHE_DISK_SIZE'
+            en_US: 'Container Variable: CACHE_DISK_SIZE'
         - container: CACHE_INDEX_SIZE
           description:
-            en_us: 'Container Variable: CACHE_INDEX_SIZE'
+            en_US: 'Container Variable: CACHE_INDEX_SIZE'
         - container: CACHE_MAX_AGE
           description:
-            en_us: 'Container Variable: CACHE_MAX_AGE'
+            en_US: 'Container Variable: CACHE_MAX_AGE'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data/cache
           description:
-            en_us: 'Container Path: /data/cache'
+            en_US: 'Container Path: /data/cache'
         - container: /data/logs
           description:
-            en_us: 'Container Path: /data/logs'
+            en_US: 'Container Path: /data/logs'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
   # DNS service configuration
   dns:
     image: lancachenet/lancache-dns:latest # Docker image for DNS service
@@ -107,50 +107,52 @@ services:
       envs:
         - container: USE_GENERIC_CACHE
           description:
-            en_us: 'Container Variable: USE_GENERIC_CACHE'
+            en_US: 'Container Variable: USE_GENERIC_CACHE'
         - container: LANCACHE_IP
           description:
-            en_us: 'Container Variable: LANCACHE_IP'
+            en_US: 'Container Variable: LANCACHE_IP'
         - container: DNS_BIND_IP
           description:
-            en_us: 'Container Variable: DNS_BIND_IP'
+            en_US: 'Container Variable: DNS_BIND_IP'
         - container: UPSTREAM_DNS
           description:
-            en_us: 'Container Variable: UPSTREAM_DNS'
+            en_US: 'Container Variable: UPSTREAM_DNS'
         - container: CACHE_ROOT
           description:
-            en_us: 'Container Variable: CACHE_ROOT'
+            en_US: 'Container Variable: CACHE_ROOT'
         - container: CACHE_DISK_SIZE
           description:
-            en_us: 'Container Variable: CACHE_DISK_SIZE'
+            en_US: 'Container Variable: CACHE_DISK_SIZE'
         - container: CACHE_INDEX_SIZE
           description:
-            en_us: 'Container Variable: CACHE_INDEX_SIZE'
+            en_US: 'Container Variable: CACHE_INDEX_SIZE'
         - container: CACHE_MAX_AGE
           description:
-            en_us: 'Container Variable: CACHE_MAX_AGE'
+            en_US: 'Container Variable: CACHE_MAX_AGE'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       ports:
         - container: "53"
           description:
-            en_us: 'Container Port: 53'
+            en_US: 'Container Port: 53'
         - container: "53"
           description:
-            en_us: 'Container Port: 53'
+            en_US: 'Container Port: 53'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.lancache
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.
+    en_US: Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.
   # Brief tagline for the application
   tagline:
-    en_us: LAN Party game caching made easy
+    en_US: LAN Party game caching made easy
   # Developer's information
   developer: lancachenet
   # Author of this particular configuration
@@ -161,8 +163,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: LAN Cache
+    en_US: LAN Cache
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8080"

@@ -27,24 +27,26 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kiwix-serve
   # Main service for this application
   main: big-bear-kiwix-serve
   # Detailed description for the application
   description:
-    en_us: Kiwix Server is a web server for hosting .zim files
+    en_US: Kiwix Server is a web server for hosting .zim files
   # Brief tagline for the application
   tagline:
-    en_us: Kiwix Server
+    en_US: Kiwix Server
   # Developer's information
   developer: kiwix
   # Author of this particular configuration
@@ -56,12 +58,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-kiwix-serve-to-bigbearcasaos/1554#documentation-4
   # Title for the application
   title:
-    en_us: Kiwix Server
+    en_US: Kiwix Server
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

@@ -23,31 +23,33 @@ services:
       envs:
         - container: BASEROW_PUBLIC_URL
           description:
-            en_us: 'Container Variable: BASEROW_PUBLIC_URL'
+            en_US: 'Container Variable: BASEROW_PUBLIC_URL'
       volumes:
         - container: /baserow/data
           description:
-            en_us: 'Container Path: /baserow/data'
+            en_US: 'Container Path: /baserow/data'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.baserow
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.
+    en_US: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.
   # Brief tagline for the application
   tagline:
-    en_us: Baserow
+    en_US: Baserow
   # Developer's information
   developer: baserow
   # Author of this particular configuration
@@ -58,8 +60,8 @@ x-casaos:
   thumbnail: https://github.com/bram2w/baserow/raw/master/docs/assets/screenshot.png
   # Title for the application
   title:
-    en_us: Baserow
+    en_US: Baserow
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "7350"

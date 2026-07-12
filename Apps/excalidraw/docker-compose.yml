@@ -19,19 +19,21 @@ services:
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.excalidraw
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Virtual whiteboard for sketching hand-drawn like diagrams
+    en_US: Virtual whiteboard for sketching hand-drawn like diagrams
   # Brief tagline for the application
   tagline:
-    en_us: Virtual whiteboard for sketching hand-drawn like diagrams
+    en_US: Virtual whiteboard for sketching hand-drawn like diagrams
   # Developer's information
   developer: excalidraw
   # Author of this particular configuration
@@ -42,8 +44,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Excalidraw
+    en_US: Excalidraw
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8000"

@@ -57,75 +57,77 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: MANAGE_HTTP_PORT
           description:
-            en_us: 'Container Variable: MANAGE_HTTP_PORT'
+            en_US: 'Container Variable: MANAGE_HTTP_PORT'
         - container: MANAGE_HTTPS_PORT
           description:
-            en_us: 'Container Variable: MANAGE_HTTPS_PORT'
+            en_US: 'Container Variable: MANAGE_HTTPS_PORT'
         - container: PORTAL_HTTP_PORT
           description:
-            en_us: 'Container Variable: PORTAL_HTTP_PORT'
+            en_US: 'Container Variable: PORTAL_HTTP_PORT'
         - container: PORTAL_HTTPS_PORT
           description:
-            en_us: 'Container Variable: PORTAL_HTTPS_PORT'
+            en_US: 'Container Variable: PORTAL_HTTPS_PORT'
         - container: PORT_APP_DISCOVERY
           description:
-            en_us: 'Container Variable: PORT_APP_DISCOVERY'
+            en_US: 'Container Variable: PORT_APP_DISCOVERY'
         - container: PORT_ADOPT_V1
           description:
-            en_us: 'Container Variable: PORT_ADOPT_V1'
+            en_US: 'Container Variable: PORT_ADOPT_V1'
         - container: PORT_UPGRADE_V1
           description:
-            en_us: 'Container Variable: PORT_UPGRADE_V1'
+            en_US: 'Container Variable: PORT_UPGRADE_V1'
         - container: PORT_MANAGER_V1
           description:
-            en_us: 'Container Variable: PORT_MANAGER_V1'
+            en_US: 'Container Variable: PORT_MANAGER_V1'
         - container: PORT_MANAGER_V2
           description:
-            en_us: 'Container Variable: PORT_MANAGER_V2'
+            en_US: 'Container Variable: PORT_MANAGER_V2'
         - container: PORT_DISCOVERY
           description:
-            en_us: 'Container Variable: PORT_DISCOVERY'
+            en_US: 'Container Variable: PORT_DISCOVERY'
         - container: SHOW_SERVER_LOGS
           description:
-            en_us: 'Container Variable: SHOW_SERVER_LOGS'
+            en_US: 'Container Variable: SHOW_SERVER_LOGS'
         - container: SHOW_MONGODB_LOGS
           description:
-            en_us: 'Container Variable: SHOW_MONGODB_LOGS'
+            en_US: 'Container Variable: SHOW_MONGODB_LOGS'
         - container: SSL_CERT_NAME
           description:
-            en_us: 'Container Variable: SSL_CERT_NAME'
+            en_US: 'Container Variable: SSL_CERT_NAME'
         - container: SSL_KEY_NAME
           description:
-            en_us: 'Container Variable: SSL_KEY_NAME'
+            en_US: 'Container Variable: SSL_KEY_NAME'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /opt/tplink/EAPController/data
           description:
-            en_us: 'Container Path: /opt/tplink/EAPController/data'
+            en_US: 'Container Path: /opt/tplink/EAPController/data'
         - container: /opt/tplink/EAPController/logs
           description:
-            en_us: 'Container Path: /opt/tplink/EAPController/logs'
+            en_US: 'Container Path: /opt/tplink/EAPController/logs'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.tp-link-omada-controller
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware
+    en_US: Docker image for TP-Link Omada Controller to control TP-Link Omada Hardware
   # Brief tagline for the application
   tagline:
-    en_us: TP-Link Omada Controller
+    en_US: TP-Link Omada Controller
   # Developer's information
   developer: mbentley
   # Author of this particular configuration
@@ -136,8 +138,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: TP-Link Omada Controller
+    en_US: TP-Link Omada Controller
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8088"

@@ -37,59 +37,59 @@ services:
       envs:
         - container: ENTE_DB_HOST
           description:
-            en_us: 'Container Variable: ENTE_DB_HOST'
+            en_US: 'Container Variable: ENTE_DB_HOST'
         - container: ENTE_DB_PORT
           description:
-            en_us: 'Container Variable: ENTE_DB_PORT'
+            en_US: 'Container Variable: ENTE_DB_PORT'
         - container: ENTE_DB_NAME
           description:
-            en_us: 'Container Variable: ENTE_DB_NAME'
+            en_US: 'Container Variable: ENTE_DB_NAME'
         - container: ENTE_DB_USER
           description:
-            en_us: 'Container Variable: ENTE_DB_USER'
+            en_US: 'Container Variable: ENTE_DB_USER'
         - container: ENTE_DB_PASSWORD
           description:
-            en_us: 'Container Variable: ENTE_DB_PASSWORD'
+            en_US: 'Container Variable: ENTE_DB_PASSWORD'
         - container: ENTE_DB_SSLMODE
           description:
-            en_us: 'Container Variable: ENTE_DB_SSLMODE'
+            en_US: 'Container Variable: ENTE_DB_SSLMODE'
         - container: ENTE_S3_ARE_LOCAL_BUCKETS
           description:
-            en_us: 'Container Variable: ENTE_S3_ARE_LOCAL_BUCKETS'
+            en_US: 'Container Variable: ENTE_S3_ARE_LOCAL_BUCKETS'
         - container: ENTE_S3_USE_PATH_STYLE_URLS
           description:
-            en_us: 'Container Variable: ENTE_S3_USE_PATH_STYLE_URLS'
+            en_US: 'Container Variable: ENTE_S3_USE_PATH_STYLE_URLS'
         - container: ENTE_S3_B2_EU_CEN_KEY
           description:
-            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_KEY'
+            en_US: 'Container Variable: ENTE_S3_B2_EU_CEN_KEY'
         - container: ENTE_S3_B2_EU_CEN_SECRET
           description:
-            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_SECRET'
+            en_US: 'Container Variable: ENTE_S3_B2_EU_CEN_SECRET'
         - container: ENTE_S3_B2_EU_CEN_ENDPOINT
           description:
-            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_ENDPOINT'
+            en_US: 'Container Variable: ENTE_S3_B2_EU_CEN_ENDPOINT'
         - container: ENTE_S3_B2_EU_CEN_REGION
           description:
-            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_REGION'
+            en_US: 'Container Variable: ENTE_S3_B2_EU_CEN_REGION'
         - container: ENTE_S3_B2_EU_CEN_BUCKET
           description:
-            en_us: 'Container Variable: ENTE_S3_B2_EU_CEN_BUCKET'
+            en_US: 'Container Variable: ENTE_S3_B2_EU_CEN_BUCKET'
         - container: ENTE_KEY_ENCRYPTION
           description:
-            en_us: 'Container Variable: ENTE_KEY_ENCRYPTION'
+            en_US: 'Container Variable: ENTE_KEY_ENCRYPTION'
         - container: ENTE_KEY_HASH
           description:
-            en_us: 'Container Variable: ENTE_KEY_HASH'
+            en_US: 'Container Variable: ENTE_KEY_HASH'
         - container: ENTE_JWT_SECRET
           description:
-            en_us: 'Container Variable: ENTE_JWT_SECRET'
+            en_US: 'Container Variable: ENTE_JWT_SECRET'
         - container: ENTE_APPS_PUBLIC_ALBUMS
           description:
-            en_us: 'Container Variable: ENTE_APPS_PUBLIC_ALBUMS'
+            en_US: 'Container Variable: ENTE_APPS_PUBLIC_ALBUMS'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   socat:
     image: alpine/socat
     container_name: ente-socat
@@ -116,14 +116,14 @@ services:
       envs:
         - container: ENTE_API_ORIGIN
           description:
-            en_us: 'Container Variable: ENTE_API_ORIGIN'
+            en_US: 'Container Variable: ENTE_API_ORIGIN'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "3002"
           description:
-            en_us: 'Container Port: 3002'
+            en_US: 'Container Port: 3002'
   postgres:
     image: postgres:15
     container_name: ente-postgres
@@ -146,17 +146,17 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   minio:
     image: minio/minio
     container_name: ente-minio
@@ -175,18 +175,18 @@ services:
       envs:
         - container: MINIO_ROOT_USER
           description:
-            en_us: 'Container Variable: MINIO_ROOT_USER'
+            en_US: 'Container Variable: MINIO_ROOT_USER'
         - container: MINIO_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MINIO_ROOT_PASSWORD'
+            en_US: 'Container Variable: MINIO_ROOT_PASSWORD'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "3200"
           description:
-            en_us: 'Container Port: 3200'
+            en_US: 'Container Port: 3200'
   minio-init:
     image: minio/mc
     container_name: ente-minio-init
@@ -205,14 +205,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ente
   # Main service for this application
   main: web
   # Detailed description for the application
   description:
-    en_us: Ente is a self-hosted, end-to-end encrypted platform to store, share, and rediscover your photos and videos across all your devices.
+    en_US: Ente is a self-hosted, end-to-end encrypted platform to store, share, and rediscover your photos and videos across all your devices.
   # Brief tagline for the application
   tagline:
-    en_us: End-to-end encrypted photo storage
+    en_US: End-to-end encrypted photo storage
   # Developer's information
   developer: ente-io
   # Author of this particular configuration
@@ -223,8 +225,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Ente Photos
+    en_US: Ente Photos
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "3000"

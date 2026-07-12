@@ -40,14 +40,14 @@ services:
       envs:
         - container: MONGO_OPLOG_URL
           description:
-            en_us: 'Container Variable: MONGO_OPLOG_URL'
+            en_US: 'Container Variable: MONGO_OPLOG_URL'
         - container: ROOT_URL
           description:
-            en_us: 'Container Variable: ROOT_URL'
+            en_US: 'Container Variable: ROOT_URL'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
   # Service: db
   # This service runs the MongoDB database used by Rocket.Chat.
   db:
@@ -71,7 +71,7 @@ services:
       volumes:
         - container: /data/db
           description:
-            en_us: 'Container Path: /data/db'
+            en_US: 'Container Path: /data/db'
 # Networks
 # Defines the network configurations used by the services.
 networks:
@@ -81,14 +81,16 @@ x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rocket-chat
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Rocket.Chat is an open-source fully customizable communications platform [...]
+    en_US: Rocket.Chat is an open-source fully customizable communications platform [...]
   # Brief tagline for the application
   tagline:
-    en_us: The communications platform that puts data protection first.
+    en_US: The communications platform that puts data protection first.
   # Developer's information
   developer: rocket.chat
   # Author of this particular configuration
@@ -99,8 +101,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Rocket.Chat (Legacy)
+    en_US: Rocket.Chat (Legacy)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Social
   # Default port mapping for the application
   port_map: "3000"

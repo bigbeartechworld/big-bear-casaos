@@ -42,72 +42,72 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: MONGO_HOST
           description:
-            en_us: 'Container Variable: MONGO_HOST'
+            en_US: 'Container Variable: MONGO_HOST'
         - container: MONGO_USER
           description:
-            en_us: 'Container Variable: MONGO_USER'
+            en_US: 'Container Variable: MONGO_USER'
         - container: MONGO_PASS
           description:
-            en_us: 'Container Variable: MONGO_PASS'
+            en_US: 'Container Variable: MONGO_PASS'
         - container: MONGO_PORT
           description:
-            en_us: 'Container Variable: MONGO_PORT'
+            en_US: 'Container Variable: MONGO_PORT'
         - container: MONGO_DBNAME
           description:
-            en_us: 'Container Variable: MONGO_DBNAME'
+            en_US: 'Container Variable: MONGO_DBNAME'
         - container: MEM_LIMIT
           description:
-            en_us: 'Container Variable: MEM_LIMIT'
+            en_US: 'Container Variable: MEM_LIMIT'
         - container: MEM_STARTUP
           description:
-            en_us: 'Container Variable: MEM_STARTUP'
+            en_US: 'Container Variable: MEM_STARTUP'
         - container: MONGO_TLS
           description:
-            en_us: 'Container Variable: MONGO_TLS'
+            en_US: 'Container Variable: MONGO_TLS'
         - container: MONGO_AUTHSOURCE
           description:
-            en_us: 'Container Variable: MONGO_AUTHSOURCE'
+            en_US: 'Container Variable: MONGO_AUTHSOURCE'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "8443"
           description:
-            en_us: 'Container Port: 8443'
+            en_US: 'Container Port: 8443'
         - container: "3478"
           description:
-            en_us: 'Container Port: 3478'
+            en_US: 'Container Port: 3478'
         - container: "10001"
           description:
-            en_us: 'Container Port: 10001'
+            en_US: 'Container Port: 10001'
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
         - container: "1900"
           description:
-            en_us: 'Container Port: 1900'
+            en_US: 'Container Port: 1900'
         - container: "8843"
           description:
-            en_us: 'Container Port: 8843'
+            en_US: 'Container Port: 8843'
         - container: "8880"
           description:
-            en_us: 'Container Port: 8880'
+            en_US: 'Container Port: 8880'
         - container: "6789"
           description:
-            en_us: 'Container Port: 6789'
+            en_US: 'Container Port: 6789'
         - container: "5514"
           description:
-            en_us: 'Container Port: 5514'
+            en_US: 'Container Port: 5514'
   # MongoDB database for the application
   unifi-db:
     image: mongo:6.0.11
@@ -124,14 +124,14 @@ services:
       volumes:
         - container: /data/db
           description:
-            en_us: 'Container Path: /data/db'
+            en_US: 'Container Path: /data/db'
         - container: /docker-entrypoint-initdb.d/init-mongo.js
           description:
-            en_us: 'Container Path: /docker-entrypoint-initdb.d/init-mongo.js'
+            en_US: 'Container Path: /docker-entrypoint-initdb.d/init-mongo.js'
       ports:
         - container: "27017"
           description:
-            en_us: 'Container Port: 27017'
+            en_US: 'Container Port: 27017'
 # Networks used by the application
 networks:
   # Define the network for AdGuard Home
@@ -142,14 +142,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.unifi-network-application
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.
+    en_US: The Unifi-network-application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.
   # Brief tagline for the application
   tagline:
-    en_us: The Unifi-network-application
+    en_US: The Unifi-network-application
   # Developer's information
   developer: Ubiquiti
   # Author of this particular configuration
@@ -161,12 +163,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-unifi-network-application-to-bigbearcasaos/487
   # Title for the application
   title:
-    en_us: Unifi Network Application
+    en_US: Unifi Network Application
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8443"

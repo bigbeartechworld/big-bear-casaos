@@ -36,29 +36,29 @@ services:
       envs:
         - container: SERVER_NAME
           description:
-            en_us: 'Container Variable: SERVER_NAME'
+            en_US: 'Container Variable: SERVER_NAME'
         - container: FRONTEND_HOST
           description:
-            en_us: 'Container Variable: FRONTEND_HOST'
+            en_US: 'Container Variable: FRONTEND_HOST'
         - container: FRONTEND_PORT
           description:
-            en_us: 'Container Variable: FRONTEND_PORT'
+            en_US: 'Container Variable: FRONTEND_PORT'
         - container: VOLTASK_HOST
           description:
-            en_us: 'Container Variable: VOLTASK_HOST'
+            en_US: 'Container Variable: VOLTASK_HOST'
         - container: VOLTASK_PORT
           description:
-            en_us: 'Container Variable: VOLTASK_PORT'
+            en_US: 'Container Variable: VOLTASK_PORT'
         - container: HUB_HOST
           description:
-            en_us: 'Container Variable: HUB_HOST'
+            en_US: 'Container Variable: HUB_HOST'
         - container: HUB_PORT
           description:
-            en_us: 'Container Variable: HUB_PORT'
+            en_US: 'Container Variable: HUB_PORT'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   frontend:
     image: celestory/frontend:1.1.4
     container_name: celestory-frontend
@@ -81,19 +81,19 @@ services:
       envs:
         - container: CLOUD_API_URL
           description:
-            en_us: 'Container Variable: CLOUD_API_URL'
+            en_US: 'Container Variable: CLOUD_API_URL'
         - container: ACCOUNT_API_URL
           description:
-            en_us: 'Container Variable: ACCOUNT_API_URL'
+            en_US: 'Container Variable: ACCOUNT_API_URL'
         - container: AUTH_CLIENT_ID
           description:
-            en_us: 'Container Variable: AUTH_CLIENT_ID'
+            en_US: 'Container Variable: AUTH_CLIENT_ID'
         - container: AUTH_CLIENT_SECRET
           description:
-            en_us: 'Container Variable: AUTH_CLIENT_SECRET'
+            en_US: 'Container Variable: AUTH_CLIENT_SECRET'
         - container: AUTH_AUDIENCE
           description:
-            en_us: 'Container Variable: AUTH_AUDIENCE'
+            en_US: 'Container Variable: AUTH_AUDIENCE'
   hub:
     image: celestory/hub:1.1.0
     container_name: celestory-hub
@@ -123,34 +123,34 @@ services:
       envs:
         - container: AUTH_ORIGIN
           description:
-            en_us: 'Container Variable: AUTH_ORIGIN'
+            en_US: 'Container Variable: AUTH_ORIGIN'
         - container: AUTH_AUDIENCE
           description:
-            en_us: 'Container Variable: AUTH_AUDIENCE'
+            en_US: 'Container Variable: AUTH_AUDIENCE'
         - container: AUTH_AUTHORITY_SECRET
           description:
-            en_us: 'Container Variable: AUTH_AUTHORITY_SECRET'
+            en_US: 'Container Variable: AUTH_AUTHORITY_SECRET'
         - container: AUTH_JWKS_URI
           description:
-            en_us: 'Container Variable: AUTH_JWKS_URI'
+            en_US: 'Container Variable: AUTH_JWKS_URI'
         - container: DB_VOLTASK_URL
           description:
-            en_us: 'Container Variable: DB_VOLTASK_URL'
+            en_US: 'Container Variable: DB_VOLTASK_URL'
         - container: DB_HUB_URL
           description:
-            en_us: 'Container Variable: DB_HUB_URL'
+            en_US: 'Container Variable: DB_HUB_URL'
         - container: ADMIN_USERNAME
           description:
-            en_us: 'Container Variable: ADMIN_USERNAME'
+            en_US: 'Container Variable: ADMIN_USERNAME'
         - container: ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: ADMIN_PASSWORD'
+            en_US: 'Container Variable: ADMIN_PASSWORD'
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: ORIGIN
           description:
-            en_us: 'Container Variable: ORIGIN'
+            en_US: 'Container Variable: ORIGIN'
   api:
     image: celestory/api:1.1.3
     container_name: celestory-api
@@ -185,41 +185,41 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: SELF_HOSTED
           description:
-            en_us: 'Container Variable: SELF_HOSTED'
+            en_US: 'Container Variable: SELF_HOSTED'
         - container: STORAGE_SOLUTION
           description:
-            en_us: 'Container Variable: STORAGE_SOLUTION'
+            en_US: 'Container Variable: STORAGE_SOLUTION'
         - container: AUTH_DOMAIN
           description:
-            en_us: 'Container Variable: AUTH_DOMAIN'
+            en_US: 'Container Variable: AUTH_DOMAIN'
         - container: DB_URL
           description:
-            en_us: 'Container Variable: DB_URL'
+            en_US: 'Container Variable: DB_URL'
         - container: AUTH_JWKS_URI
           description:
-            en_us: 'Container Variable: AUTH_JWKS_URI'
+            en_US: 'Container Variable: AUTH_JWKS_URI'
         - container: AUTH_CLIENT_ID
           description:
-            en_us: 'Container Variable: AUTH_CLIENT_ID'
+            en_US: 'Container Variable: AUTH_CLIENT_ID'
         - container: AUTH_CLIENT_SECRET
           description:
-            en_us: 'Container Variable: AUTH_CLIENT_SECRET'
+            en_US: 'Container Variable: AUTH_CLIENT_SECRET'
         - container: AUTH_AUDIENCE
           description:
-            en_us: 'Container Variable: AUTH_AUDIENCE'
+            en_US: 'Container Variable: AUTH_AUDIENCE'
         - container: GENERATOR_URL
           description:
-            en_us: 'Container Variable: GENERATOR_URL'
+            en_US: 'Container Variable: GENERATOR_URL'
         - container: ORIGIN
           description:
-            en_us: 'Container Variable: ORIGIN'
+            en_US: 'Container Variable: ORIGIN'
       volumes:
         - container: /app/projectFiles
           description:
-            en_us: 'Container Path: /app/projectFiles'
+            en_US: 'Container Path: /app/projectFiles'
   generator:
     image: celestory/generator:1.1.2
     container_name: celestory-generator
@@ -243,20 +243,20 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: PROJECT_FILES_PATH
           description:
-            en_us: 'Container Variable: PROJECT_FILES_PATH'
+            en_US: 'Container Variable: PROJECT_FILES_PATH'
         - container: STORAGE_SOLUTION
           description:
-            en_us: 'Container Variable: STORAGE_SOLUTION'
+            en_US: 'Container Variable: STORAGE_SOLUTION'
         - container: PROJECT_FILES_PREFIX
           description:
-            en_us: 'Container Variable: PROJECT_FILES_PREFIX'
+            en_US: 'Container Variable: PROJECT_FILES_PREFIX'
       volumes:
         - container: /usr/src/app/projectFiles
           description:
-            en_us: 'Container Path: /usr/src/app/projectFiles'
+            en_US: 'Container Path: /usr/src/app/projectFiles'
   auth:
     image: celestory/auth:1.1.1
     container_name: celestory-auth
@@ -286,40 +286,40 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_DATABASE
           description:
-            en_us: 'Container Variable: DB_DATABASE'
+            en_US: 'Container Variable: DB_DATABASE'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: API_AUTHORITY_SECRET
           description:
-            en_us: 'Container Variable: API_AUTHORITY_SECRET'
+            en_US: 'Container Variable: API_AUTHORITY_SECRET'
         - container: API_OAUTH_ISSUER
           description:
-            en_us: 'Container Variable: API_OAUTH_ISSUER'
+            en_US: 'Container Variable: API_OAUTH_ISSUER'
         - container: SELF_HOSTED_REDIRECT_URI
           description:
-            en_us: 'Container Variable: SELF_HOSTED_REDIRECT_URI'
+            en_US: 'Container Variable: SELF_HOSTED_REDIRECT_URI'
         - container: GENERATE_KEYS
           description:
-            en_us: 'Container Variable: GENERATE_KEYS'
+            en_US: 'Container Variable: GENERATE_KEYS'
         - container: API_ACCESS_TOKEN_TTL
           description:
-            en_us: 'Container Variable: API_ACCESS_TOKEN_TTL'
+            en_US: 'Container Variable: API_ACCESS_TOKEN_TTL'
         - container: API_REFRESH_TOKEN_TTL
           description:
-            en_us: 'Container Variable: API_REFRESH_TOKEN_TTL'
+            en_US: 'Container Variable: API_REFRESH_TOKEN_TTL'
         - container: USE_SELF_HOSTED_CLIENT
           description:
-            en_us: 'Container Variable: USE_SELF_HOSTED_CLIENT'
+            en_US: 'Container Variable: USE_SELF_HOSTED_CLIENT'
   voltask:
     image: celestory/voltask:1.0.8
     container_name: celestory-voltask
@@ -362,53 +362,53 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: ORCHESTRATOR_URL
           description:
-            en_us: 'Container Variable: ORCHESTRATOR_URL'
+            en_US: 'Container Variable: ORCHESTRATOR_URL'
         - container: VOLTASK_URL
           description:
-            en_us: 'Container Variable: VOLTASK_URL'
+            en_US: 'Container Variable: VOLTASK_URL'
         - container: WEBHOOK_URL
           description:
-            en_us: 'Container Variable: WEBHOOK_URL'
+            en_US: 'Container Variable: WEBHOOK_URL'
         - container: CELESTORY_AUTH_URL
           description:
-            en_us: 'Container Variable: CELESTORY_AUTH_URL'
+            en_US: 'Container Variable: CELESTORY_AUTH_URL'
         - container: CELESTORY_AUTH_CLIENT_ID
           description:
-            en_us: 'Container Variable: CELESTORY_AUTH_CLIENT_ID'
+            en_US: 'Container Variable: CELESTORY_AUTH_CLIENT_ID'
         - container: CELESTORY_AUTH_CLIENT_SECRET
           description:
-            en_us: 'Container Variable: CELESTORY_AUTH_CLIENT_SECRET'
+            en_US: 'Container Variable: CELESTORY_AUTH_CLIENT_SECRET'
         - container: LICENSE_API_URL
           description:
-            en_us: 'Container Variable: LICENSE_API_URL'
+            en_US: 'Container Variable: LICENSE_API_URL'
         - container: PLUGINS_BUN_URL
           description:
-            en_us: 'Container Variable: PLUGINS_BUN_URL'
+            en_US: 'Container Variable: PLUGINS_BUN_URL'
         - container: PLUGINS_DENO_URL
           description:
-            en_us: 'Container Variable: PLUGINS_DENO_URL'
+            en_US: 'Container Variable: PLUGINS_DENO_URL'
         - container: PREMISE
           description:
-            en_us: 'Container Variable: PREMISE'
+            en_US: 'Container Variable: PREMISE'
         - container: PREMISE_USER_EMAIL
           description:
-            en_us: 'Container Variable: PREMISE_USER_EMAIL'
+            en_US: 'Container Variable: PREMISE_USER_EMAIL'
         - container: PREMISE_USER_PASSWORD
           description:
-            en_us: 'Container Variable: PREMISE_USER_PASSWORD'
+            en_US: 'Container Variable: PREMISE_USER_PASSWORD'
         - container: STORAGE_DIR
           description:
-            en_us: 'Container Variable: STORAGE_DIR'
+            en_US: 'Container Variable: STORAGE_DIR'
       volumes:
         - container: /app/uploads
           description:
-            en_us: 'Container Path: /app/uploads'
+            en_US: 'Container Path: /app/uploads'
   plugins-bun:
     image: celestory/voltask-plugins-bun:1.0.8
     container_name: celestory-plugins-bun
@@ -431,7 +431,7 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
   plugins-deno:
     image: celestory/voltask-plugins-deno:1.0.8
     container_name: celestory-plugins-deno
@@ -454,7 +454,7 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
   orchestrator:
     image: celestory/voltask-orchestrator:1.0.8
     container_name: celestory-orchestrator
@@ -476,10 +476,10 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
   db:
     image: celestory/postgres:1.0.0
     container_name: celestory-db
@@ -498,27 +498,29 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.celestory
   # Main service for this application
   main: gateway
   # Detailed description for the application
   description:
-    en_us: The all-in-one no-code platform for interactive storytelling and Voltask automation engine. Paid license required, no free tier available. Purchase a license at https://celestory.io/pricing
+    en_US: The all-in-one no-code platform for interactive storytelling and Voltask automation engine. Paid license required, no free tier available. Purchase a license at https://celestory.io/pricing
   # Brief tagline for the application
   tagline:
-    en_us: No-code interactive storytelling & automation
+    en_US: No-code interactive storytelling & automation
   # Developer's information
   developer: celestory
   # Author of this particular configuration
@@ -529,8 +531,8 @@ x-casaos:
   thumbnail: https://storage.googleapis.com/voltask-assets/celestory.png
   # Title for the application
   title:
-    en_us: Celestory & Voltask
+    en_US: Celestory & Voltask
   # Category under which the application falls
-  category: Development
+  category: Developer
   # Default port mapping for the application
   port_map: "1500"

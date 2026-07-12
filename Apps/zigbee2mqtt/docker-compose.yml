@@ -31,31 +31,33 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
         - container: /run/udev
           description:
-            en_us: 'Container Path: /run/udev'
+            en_US: 'Container Path: /run/udev'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.zigbee2mqtt
   # Main service for this application
   main: big-bear-zigbee2mqtt
   # Detailed description for the application
   description:
-    en_us: Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges
+    en_US: Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges
   # Brief tagline for the application
   tagline:
-    en_us: Zigbee to MQTT bridge
+    en_US: Zigbee to MQTT bridge
   # Developer's information
   developer: koenkk
   # Author of this particular configuration
@@ -67,12 +69,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-zigbee2mqtt-to-bigbearcasaos/1337#documentation-3
   # Title for the application
   title:
-    en_us: Zigbee to MQTT bridge
+    en_US: Zigbee to MQTT bridge
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "8080"

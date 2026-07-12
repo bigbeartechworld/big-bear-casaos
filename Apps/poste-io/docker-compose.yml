@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-poste-io
     # Image to be used for the container specifies the analogic/poste.io version and source
-    image: analogic/poste.io:2.5.13
+    image: analogic/poste.io:2.5.14
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Network mode
@@ -33,28 +33,30 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.poste-io
   # Main service for this application
   main: big-bear-poste-io
   # Detailed description for the application
   description:
-    en_us: Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.
+    en_US: Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/poste-io/screenshots/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/poste-io/screenshots/screenshot-2.png
   # Brief tagline for the application
   tagline:
-    en_us: Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin
+    en_US: Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin
   # Developer's information
   developer: analogic
   # Author of this particular configuration
@@ -66,12 +68,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-poste-io-to-bigbearcasaos/3344
   # Title for the application
   title:
-    en_us: Poste.io
+    en_US: Poste.io
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "80"

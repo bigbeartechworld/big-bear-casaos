@@ -33,33 +33,35 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: ALWAYS_FRESH_INSTALL
           description:
-            en_us: 'Container Variable: ALWAYS_FRESH_INSTALL'
+            en_US: 'Container Variable: ALWAYS_FRESH_INSTALL'
       volumes:
         - container: /app/config
           description:
-            en_us: 'Container Path: /app/config'
+            en_US: 'Container Path: /app/config'
         - container: /app/db
           description:
-            en_us: 'Container Path: /app/db'
+            en_US: 'Container Path: /app/db'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.netalertx
   # Main service for this application
   main: big-bear-netalertx
   # Detailed description for the application
   description:
-    en_us: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. NOTE: This is the legacy version (frozen at 25.11.29). For new installs, use NetAlertX v26 which has improved security and updated volume paths.'
+    en_US: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. NOTE: This is the legacy version (frozen at 25.11.29). For new installs, use NetAlertX v26 which has improved security and updated volume paths.'
   # Brief tagline for the application
   tagline:
-    en_us: NetAlertX (Legacy)
+    en_US: NetAlertX (Legacy)
   # Developer's information
   developer: jokobsk
   # Author of this particular configuration
@@ -70,8 +72,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: NetAlertX (Legacy)
+    en_US: NetAlertX (Legacy)
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8080"

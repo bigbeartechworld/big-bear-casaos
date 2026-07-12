@@ -32,33 +32,35 @@ services:
       volumes:
         - container: /proc
           description:
-            en_us: 'Container Path: /proc'
+            en_US: 'Container Path: /proc'
         - container: /sys
           description:
-            en_us: 'Container Path: /sys'
+            en_US: 'Container Path: /sys'
         - container: /dev
           description:
-            en_us: 'Container Path: /dev'
+            en_US: 'Container Path: /dev'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
       ports:
         - container: "7681"
           description:
-            en_us: 'Container Port: 7681'
+            en_US: 'Container Port: 7681'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.fastfetch
   # Main service for this application
   main: big-bear-fastfetch
   # Detailed description for the application
   description:
-    en_us: Fastfetch is a neofetch-like tool for fetching system information and displaying it prettily. It is written mainly in C, with performance and customizability in mind. Currently, Linux, Android, FreeBSD, macOS, SunOS and Windows 7+ are supported. https://github.com/fastfetch-cli/fastfetch
+    en_US: Fastfetch is a neofetch-like tool for fetching system information and displaying it prettily. It is written mainly in C, with performance and customizability in mind. Currently, Linux, Android, FreeBSD, macOS, SunOS and Windows 7+ are supported. https://github.com/fastfetch-cli/fastfetch
   # Brief tagline for the application
   tagline:
-    en_us: Fastfetch is a neofetch-like tool.
+    en_US: Fastfetch is a neofetch-like tool.
   # Developer's information
   developer: bigbeartechworld
   # Author of this particular configuration
@@ -70,12 +72,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-fastfetch-to-bigbearcasaos/1579?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Fastfetch
+    en_US: Fastfetch
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "7681"

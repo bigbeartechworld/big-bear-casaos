@@ -38,36 +38,38 @@ services:
       envs:
         - container: LANG
           description:
-            en_us: 'Container Variable: LANG'
+            en_US: 'Container Variable: LANG'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: KIOSK_IMMICH_API_KEY
           description:
-            en_us: 'Container Variable: KIOSK_IMMICH_API_KEY'
+            en_US: 'Container Variable: KIOSK_IMMICH_API_KEY'
         - container: KIOSK_IMMICH_URL
           description:
-            en_us: 'Container Variable: KIOSK_IMMICH_URL'
+            en_US: 'Container Variable: KIOSK_IMMICH_URL'
         - container: KIOSK_IMMICH_EXTERNAL_URL
           description:
-            en_us: 'Container Variable: KIOSK_IMMICH_EXTERNAL_URL'
+            en_US: 'Container Variable: KIOSK_IMMICH_EXTERNAL_URL'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.immich-kiosk
   # Main service for this application
   main: big-bear-immich-kiosk
   # Detailed description for the application
   description:
-    en_us: Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.
+    en_US: Immich Kiosk is a lightweight slideshow for running on kiosk devices and browsers that uses Immich as a data source.
   # Brief tagline for the application
   tagline:
-    en_us: Immich Kiosk
+    en_US: Immich Kiosk
   # Developer's information
   developer: damongolding
   # Author of this particular configuration
@@ -79,12 +81,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-immich-kiosk-to-bigbearcasaos/3513?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Immich Kiosk
+    en_US: Immich Kiosk
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

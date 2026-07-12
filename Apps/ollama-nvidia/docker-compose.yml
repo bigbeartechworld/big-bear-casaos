@@ -37,24 +37,26 @@ services:
       volumes:
         - container: /root/.ollama
           description:
-            en_us: 'Container Path: /root/.ollama'
+            en_US: 'Container Path: /root/.ollama'
       ports:
         - container: "11434"
           description:
-            en_us: 'Container Port: 11434'
+            en_US: 'Container Port: 11434'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ollama-nvidia
   # Main service for this application
   main: big-bear-ollama-nvidia
   # Detailed description for the application
   description:
-    en_us: Get up and running with Llama 3, Mistral, Gemma, and other large language models.
+    en_US: Get up and running with Llama 3, Mistral, Gemma, and other large language models.
   # Brief tagline for the application
   tagline:
-    en_us: LLMs inference server with OpenAI compatible API
+    en_US: LLMs inference server with OpenAI compatible API
   # Developer's information
   developer: ollama
   # Author of this particular configuration
@@ -65,8 +67,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Ollama - NVIDIA
+    en_US: Ollama - NVIDIA
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "11434"

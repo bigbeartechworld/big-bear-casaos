@@ -42,37 +42,39 @@ services:
       envs:
         - container: READECK_LOG_LEVEL
           description:
-            en_us: 'Container Variable: READECK_LOG_LEVEL'
+            en_US: 'Container Variable: READECK_LOG_LEVEL'
         - container: READECK_SERVER_HOST
           description:
-            en_us: 'Container Variable: READECK_SERVER_HOST'
+            en_US: 'Container Variable: READECK_SERVER_HOST'
         - container: READECK_SERVER_PORT
           description:
-            en_us: 'Container Variable: READECK_SERVER_PORT'
+            en_US: 'Container Variable: READECK_SERVER_PORT'
         - container: READECK_LOG_FORMAT
           description:
-            en_us: 'Container Variable: READECK_LOG_FORMAT'
+            en_US: 'Container Variable: READECK_LOG_FORMAT'
       volumes:
         - container: /readeck
           description:
-            en_us: 'Container Path: /readeck'
+            en_US: 'Container Path: /readeck'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.readeck
   # Main service for this application
   main: big-bear-readeck
   # Detailed description for the application
   description:
-    en_us: Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. It is a self-hosted alternative to Instapaper and Wallabag with a modern interface and powerful features for managing your bookmarks and reading list.
+    en_US: Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. It is a self-hosted alternative to Instapaper and Wallabag with a modern interface and powerful features for managing your bookmarks and reading list.
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted bookmark manager and read-it-later app
+    en_US: Self-hosted bookmark manager and read-it-later app
   # Developer's information
   developer: readeck
   # Author of this particular configuration
@@ -84,12 +86,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-readeck-to-bigbearcasaos/5079#p-7723-documentation-3
   # Title for the application
   title:
-    en_us: Readeck
+    en_US: Readeck
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8000"

@@ -45,48 +45,50 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: VERSION
           description:
-            en_us: 'Container Variable: VERSION'
+            en_US: 'Container Variable: VERSION'
         - container: PLEX_CLAIM
           description:
-            en_us: 'Container Variable: PLEX_CLAIM'
+            en_US: 'Container Variable: PLEX_CLAIM'
         - container: CPU_FALLBACK
           description:
-            en_us: 'Container Variable: CPU_FALLBACK'
+            en_US: 'Container Variable: CPU_FALLBACK'
         - container: NVIDIA_VISIBLE_DEVICES
           description:
-            en_us: 'Container Variable: NVIDIA_VISIBLE_DEVICES'
+            en_US: 'Container Variable: NVIDIA_VISIBLE_DEVICES'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /tv
           description:
-            en_us: 'Container Path: /tv'
+            en_US: 'Container Path: /tv'
         - container: /movies
           description:
-            en_us: 'Container Path: /movies'
+            en_US: 'Container Path: /movies'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.plex-nvidia
   # Main service for this application
   main: big-bear-plex-nvidia
   # Detailed description for the application
   description:
-    en_us: Stream Movies & TV Shows with NVIDIA GPU
+    en_US: Stream Movies & TV Shows with NVIDIA GPU
   # Brief tagline for the application
   tagline:
-    en_us: Stream Movies & TV Shows with NVIDIA GPU
+    en_US: Stream Movies & TV Shows with NVIDIA GPU
   # Developer's information
   developer: plexinc
   # Author of this particular configuration
@@ -98,12 +100,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-plex-with-nvidia-gpu-to-bigbearcasaos/3447?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Plex with NVIDIA GPU
+    en_US: Plex with NVIDIA GPU
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "32400"

@@ -31,26 +31,28 @@ services:
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
         - container: /run/dbus
           description:
-            en_us: 'Container Path: /run/dbus'
+            en_US: 'Container Path: /run/dbus'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.home-assistant
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
+    en_US: Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
   # Brief tagline for the application
   tagline:
-    en_us: Home Automation
+    en_US: Home Automation
   # Developer's information
   developer: home-assistant
   # Author of this particular configuration
@@ -61,8 +63,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Home Assistant
+    en_US: Home Assistant
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "8123"

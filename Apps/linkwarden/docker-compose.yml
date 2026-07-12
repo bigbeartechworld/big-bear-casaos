@@ -33,24 +33,24 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: NEXTAUTH_SECRET
           description:
-            en_us: 'Container Variable: NEXTAUTH_SECRET'
+            en_US: 'Container Variable: NEXTAUTH_SECRET'
         - container: NEXTAUTH_URL
           description:
-            en_us: 'Container Variable: NEXTAUTH_URL'
+            en_US: 'Container Variable: NEXTAUTH_URL'
         - container: NEXT_PUBLIC_DISABLE_REGISTRATION
           description:
-            en_us: 'Container Variable: NEXT_PUBLIC_DISABLE_REGISTRATION'
+            en_US: 'Container Variable: NEXT_PUBLIC_DISABLE_REGISTRATION'
       volumes:
         - container: /data/data
           description:
-            en_us: 'Container Path: /data/data'
+            en_US: 'Container Path: /data/data'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
   # Postgres database
   linkwarden-db:
     # Name of the container
@@ -74,17 +74,17 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Networks to be created
 networks:
   # Network name
@@ -96,14 +96,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.linkwarden
   # Main service for this application
   main: linkwarden
   # Detailed description for the application
   description:
-    en_us: ⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.
+    en_US: ⚡️⚡️⚡️Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.
   # Brief tagline for the application
   tagline:
-    en_us: Linkwarden
+    en_US: Linkwarden
   # Developer's information
   developer: linkwarden
   # Author of this particular configuration
@@ -114,8 +116,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Linkwarden
+    en_US: Linkwarden
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "3000"

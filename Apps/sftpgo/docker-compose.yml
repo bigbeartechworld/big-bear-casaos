@@ -35,55 +35,57 @@ services:
       envs:
         - container: SFTPGO_HTTPD_BINDINGS_0_PORT
           description:
-            en_us: 'Container Variable: SFTPGO_HTTPD_BINDINGS_0_PORT'
+            en_US: 'Container Variable: SFTPGO_HTTPD_BINDINGS_0_PORT'
         - container: SFTPGO_HTTPD_BINDINGS_0_ADDRESS
           description:
-            en_us: 'Container Variable: SFTPGO_HTTPD_BINDINGS_0_ADDRESS'
+            en_US: 'Container Variable: SFTPGO_HTTPD_BINDINGS_0_ADDRESS'
         - container: SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN
           description:
-            en_us: 'Container Variable: SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN'
+            en_US: 'Container Variable: SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN'
         - container: SFTPGO_WEBDAVD_BINDINGS_0_PORT
           description:
-            en_us: 'Container Variable: SFTPGO_WEBDAVD_BINDINGS_0_PORT'
+            en_US: 'Container Variable: SFTPGO_WEBDAVD_BINDINGS_0_PORT'
         - container: SFTPGO_FTPD_BINDINGS_0_PORT
           description:
-            en_us: 'Container Variable: SFTPGO_FTPD_BINDINGS_0_PORT'
+            en_US: 'Container Variable: SFTPGO_FTPD_BINDINGS_0_PORT'
         - container: SFTPGO_FTPD_BINDINGS_0_FORCE_PASSIVE_IP
           description:
-            en_us: 'Container Variable: SFTPGO_FTPD_BINDINGS_0_FORCE_PASSIVE_IP'
+            en_US: 'Container Variable: SFTPGO_FTPD_BINDINGS_0_FORCE_PASSIVE_IP'
       volumes:
         - container: /srv/sftpgo
           description:
-            en_us: 'Container Path: /srv/sftpgo'
+            en_US: 'Container Path: /srv/sftpgo'
         - container: /var/lib/sftpgo
           description:
-            en_us: 'Container Path: /var/lib/sftpgo'
+            en_US: 'Container Path: /var/lib/sftpgo'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
         - container: "2022"
           description:
-            en_us: 'Container Port: 2022'
+            en_US: 'Container Port: 2022'
         - container: "2121"
           description:
-            en_us: 'Container Port: 2121'
+            en_US: 'Container Port: 2121'
         - container: "10080"
           description:
-            en_us: 'Container Port: 10080'
+            en_US: 'Container Port: 10080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.sftpgo
   # Main service for this application
   main: big-bear-sftpgo
   # Detailed description for the application
   description:
-    en_us: Full-featured and highly configurable SFTP, HTTP/S, FTP/S and WebDAV server - S3, Google Cloud Storage, Azure Blob
+    en_US: Full-featured and highly configurable SFTP, HTTP/S, FTP/S and WebDAV server - S3, Google Cloud Storage, Azure Blob
   # Brief tagline for the application
   tagline:
-    en_us: SFTPGO
+    en_US: SFTPGO
   # Developer's information
   developer: drakkan
   # Author of this particular configuration
@@ -94,8 +96,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: SFTPGO
+    en_US: SFTPGO
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

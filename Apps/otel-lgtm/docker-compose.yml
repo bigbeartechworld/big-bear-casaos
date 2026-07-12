@@ -41,17 +41,17 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "4317"
           description:
-            en_us: 'Container Port: 4317'
+            en_US: 'Container Port: 4317'
         - container: "4318"
           description:
-            en_us: 'Container Port: 4318'
+            en_US: 'Container Port: 4318'
 networks:
   big-bear-otel-lgtm:
     driver: bridge
@@ -60,14 +60,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.otel-lgtm
   # Main service for this application
   main: big-bear-otel-lgtm
   # Detailed description for the application
   description:
-    en_us: An OpenTelemetry Backend in a Docker Image.
+    en_US: An OpenTelemetry Backend in a Docker Image.
   # Brief tagline for the application
   tagline:
-    en_us: OpenTelemetry Backend
+    en_US: OpenTelemetry Backend
   # Developer's information
   developer: Grafana Labs
   # Author of this particular configuration
@@ -79,16 +81,16 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_uk: |-
         Read this before installing: https://github.com/grafana/docker-otel-lgtm/
         and https://grafana.com/blog/2024/03/13/an-opentelemetry-backend-in-a-docker-image-introducing-grafana/otel-lgtm/
-      en_uk: |-
+      en_US: |
         Read this before installing: https://github.com/grafana/docker-otel-lgtm/
         and https://grafana.com/blog/2024/03/13/an-opentelemetry-backend-in-a-docker-image-introducing-grafana/otel-lgtm/
   # Title for the application
   title:
-    en_us: OTEL LGTM
+    en_US: OTEL LGTM
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3000"

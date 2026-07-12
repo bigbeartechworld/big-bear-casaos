@@ -29,33 +29,35 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "3001"
           description:
-            en_us: 'Container Port: 3001'
+            en_US: 'Container Port: 3001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.zotero
   # Main service for this application
   main: big-bear-zotero
   # Detailed description for the application
   description:
-    en_us: Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.
+    en_US: Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.
   # Brief tagline for the application
   tagline:
-    en_us: Zotero
+    en_US: Zotero
   # Developer's information
   developer: linuxserver
   # Author of this particular configuration
@@ -66,8 +68,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Zotero
+    en_US: Zotero
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

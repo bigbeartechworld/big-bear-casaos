@@ -15,31 +15,33 @@ services:
       envs:
         - container: VNC_PW
           description:
-            en_us: 'Container Variable: VNC_PW'
+            en_US: 'Container Variable: VNC_PW'
         - container: LAUNCH_URL
           description:
-            en_us: 'Container Variable: LAUNCH_URL'
+            en_US: 'Container Variable: LAUNCH_URL'
       volumes:
         - container: /home/kasm-user/Downloads
           description:
-            en_us: 'Container Path: /home/kasm-user/Downloads'
+            en_US: 'Container Path: /home/kasm-user/Downloads'
       ports:
         - container: "6901"
           description:
-            en_us: 'Container Port: 6901'
+            en_US: 'Container Port: 6901'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.brave
   # Main service for this application
   main: brave
   # Detailed description for the application
   description:
-    en_us: This Image contains a browser-accessible version of Brave.
+    en_US: This Image contains a browser-accessible version of Brave.
   # Brief tagline for the application
   tagline:
-    en_us: Brave
+    en_US: Brave
   # Developer's information
   developer: kasmweb
   # Author of this particular configuration
@@ -51,13 +53,13 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Username: kasm_user
         Password: casaos
   # Title for the application
   title:
-    en_us: Brave
+    en_US: Brave
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "6901"

@@ -18,33 +18,35 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
         - container: "9000"
           description:
-            en_us: 'Container Port: 9000'
+            en_US: 'Container Port: 9000'
         - container: "9443"
           description:
-            en_us: 'Container Port: 9443'
+            en_US: 'Container Port: 9443'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.portainer
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Irrespective of your industry, orchestration platform, or computing device, Portainer is the most versatile container management software that simplifies your secure adoption of containers with remarkable speed.
+    en_US: Irrespective of your industry, orchestration platform, or computing device, Portainer is the most versatile container management software that simplifies your secure adoption of containers with remarkable speed.
   # Brief tagline for the application
   tagline:
-    en_us: Portainer
+    en_US: Portainer
   # Developer's information
   developer: portainer
   # Author of this particular configuration
@@ -55,8 +57,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Portainer
+    en_US: Portainer
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "9443"

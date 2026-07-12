@@ -13,24 +13,26 @@ services:
       volumes:
         - container: /app/instance
           description:
-            en_us: 'Container Path: /app/instance'
+            en_US: 'Container Path: /app/instance'
       ports:
         - container: "5001"
           description:
-            en_us: 'Container Port: 5001'
+            en_US: 'Container Port: 5001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nova-dso-tracker
   # Main service for this application
   main: nova
   # Detailed description for the application
   description:
-    en_us: Nova DSO Tracker is a tool for astrophotographers to track Deep Space Objects, check observability, and manage imaging sessions.
+    en_US: Nova DSO Tracker is a tool for astrophotographers to track Deep Space Objects, check observability, and manage imaging sessions.
   # Brief tagline for the application
   tagline:
-    en_us: Real-time tracking and planning for Deep Space Objects.
+    en_US: Real-time tracking and planning for Deep Space Objects.
   # Developer's information
   developer: mrantonSG
   # Author of this particular configuration
@@ -41,8 +43,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Nova DSO Tracker
+    en_US: Nova DSO Tracker
   # Category under which the application falls
-  category: Photography
+  category: Media
   # Default port mapping for the application
   port_map: "5001"

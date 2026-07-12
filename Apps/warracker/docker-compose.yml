@@ -47,36 +47,36 @@ services:
       envs:
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_NAME
           description:
-            en_us: 'Container Variable: DB_NAME'
+            en_US: 'Container Variable: DB_NAME'
         - container: DB_USER
           description:
-            en_us: 'Container Variable: DB_USER'
+            en_US: 'Container Variable: DB_USER'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: SMTP_HOST
           description:
-            en_us: 'Container Variable: SMTP_HOST'
+            en_US: 'Container Variable: SMTP_HOST'
         - container: SMTP_PORT
           description:
-            en_us: 'Container Variable: SMTP_PORT'
+            en_US: 'Container Variable: SMTP_PORT'
         - container: SMTP_USERNAME
           description:
-            en_us: 'Container Variable: SMTP_USERNAME'
+            en_US: 'Container Variable: SMTP_USERNAME'
         - container: SMTP_PASSWORD
           description:
-            en_us: 'Container Variable: SMTP_PASSWORD'
+            en_US: 'Container Variable: SMTP_PASSWORD'
       volumes:
         - container: /data/uploads
           description:
-            en_us: 'Container Path: /data/uploads'
+            en_US: 'Container Path: /data/uploads'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   big-bear-warrackerdb:
     # Container name
     container_name: big-bear-warrackerdb
@@ -105,17 +105,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Container networks
 networks:
   big_bear_warracker_network:
@@ -126,11 +126,13 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.warracker
   # Main service for this application
   main: big-bear-warracker
   # Detailed description for the application
   description:
-    en_us: A self-hosted warranty tracker
+    en_US: A self-hosted warranty tracker
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/warracker/screenshots/screenshot-1.png
@@ -138,7 +140,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/warracker/screenshots/screenshot-3.png
   # Brief tagline for the application
   tagline:
-    en_us: A self-hosted warranty tracker
+    en_US: A self-hosted warranty tracker
   # Developer's information
   developer: sassanix
   # Author of this particular configuration
@@ -150,12 +152,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-warracker-to-bigbearcasaos/3346?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Warracker
+    en_US: Warracker
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8005"

@@ -21,34 +21,36 @@ services:
       envs:
         - container: MINIO_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MINIO_ROOT_PASSWORD'
+            en_US: 'Container Variable: MINIO_ROOT_PASSWORD'
         - container: MINIO_ROOT_USER
           description:
-            en_us: 'Container Variable: MINIO_ROOT_USER'
+            en_US: 'Container Variable: MINIO_ROOT_USER'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "9000"
           description:
-            en_us: 'Container Port: 9000'
+            en_US: 'Container Port: 9000'
         - container: "9001"
           description:
-            en_us: 'Container Port: 9001'
+            en_US: 'Container Port: 9001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.minio
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.
+    en_US: A distributed object storage server built for cloud applications and devops. Default credentials 'minioadmin:minioadmin', we recommend that you change these values with 'MINIO_ROOT_USER' and 'MINIO_ROOT_PASSWORD' environment variables.
   # Brief tagline for the application
   tagline:
-    en_us: An open-source S3 alternative
+    en_US: An open-source S3 alternative
   # Developer's information
   developer: minio
   # Author of this particular configuration
@@ -59,8 +61,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Minio
+    en_US: Minio
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "9011"

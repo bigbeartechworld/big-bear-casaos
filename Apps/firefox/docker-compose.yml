@@ -18,40 +18,42 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: FIREFOX_CLI
           description:
-            en_us: 'Container Variable: FIREFOX_CLI'
+            en_US: 'Container Variable: FIREFOX_CLI'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "3001"
           description:
-            en_us: 'Container Port: 3001'
+            en_US: 'Container Port: 3001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.firefox
   # Main service for this application
   main: firefox
   # Detailed description for the application
   description:
-    en_us: This Image contains a browser-accessible version of Firefox.
+    en_US: This Image contains a browser-accessible version of Firefox.
   # Brief tagline for the application
   tagline:
-    en_us: Firefox
+    en_US: Firefox
   # Developer's information
   developer: linuxserver
   # Author of this particular configuration
@@ -63,12 +65,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Access the browser at http://your-server:3000 or https://your-server:3001
   # Title for the application
   title:
-    en_us: Firefox
+    en_US: Firefox
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "3000"

@@ -24,21 +24,21 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: NC_AUTH_JWT_SECRET
           description:
-            en_us: 'Container Variable: NC_AUTH_JWT_SECRET'
+            en_US: 'Container Variable: NC_AUTH_JWT_SECRET'
         - container: NC_REDIS_URL
           description:
-            en_us: 'Container Variable: NC_REDIS_URL'
+            en_US: 'Container Variable: NC_REDIS_URL'
       volumes:
         - container: /usr/src/app/data
           description:
-            en_us: 'Container Path: /usr/src/app/data'
+            en_US: 'Container Path: /usr/src/app/data'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   # Database service configuration
   big-bear-nocodb-db:
     container_name: big-bear-nocodb-db
@@ -56,17 +56,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   # Redis service configuration
   big-bear-nocodb-redis:
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0 # Specifies the Redis Docker image to use
@@ -86,7 +86,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 # Network configuration
 networks:
   big-bear-nocodb-network:
@@ -96,14 +96,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nocodb
   # Main service for this application
   main: big-bear-nocodb
   # Detailed description for the application
   description:
-    en_us: NocoDB allows building no-code database solutions with ease of spreadsheets. Bring your own database or choose ours! Millions of rows? Not a problem. Your Data. Your rules. You are in control.
+    en_US: NocoDB allows building no-code database solutions with ease of spreadsheets. Bring your own database or choose ours! Millions of rows? Not a problem. Your Data. Your rules. You are in control.
   # Brief tagline for the application
   tagline:
-    en_us: "\U0001F525 \U0001F525 \U0001F525 Open Source Airtable Alternative"
+    en_US: "\U0001F525 \U0001F525 \U0001F525 Open Source Airtable Alternative"
   # Developer's information
   developer: nocodb
   # Author of this particular configuration
@@ -114,8 +116,8 @@ x-casaos:
   thumbnail: https://user-images.githubusercontent.com/86527202/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif
   # Title for the application
   title:
-    en_us: NocoDB
+    en_US: NocoDB
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8080"

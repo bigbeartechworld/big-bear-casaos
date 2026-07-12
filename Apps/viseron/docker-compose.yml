@@ -35,46 +35,48 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
       volumes:
         - container: /segments
           description:
-            en_us: 'Container Path: /segments'
+            en_US: 'Container Path: /segments'
         - container: /snapshots
           description:
-            en_us: 'Container Path: /snapshots'
+            en_US: 'Container Path: /snapshots'
         - container: /thumbnails
           description:
-            en_us: 'Container Path: /thumbnails'
+            en_US: 'Container Path: /thumbnails'
         - container: /event_clips
           description:
-            en_us: 'Container Path: /event_clips'
+            en_US: 'Container Path: /event_clips'
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
       ports:
         - container: "8888"
           description:
-            en_us: 'Container Port: 8888'
+            en_US: 'Container Port: 8888'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.viseron
   # Main service for this application
   main: big-bear-viseron
   # Detailed description for the application
   description:
-    en_us: Viseron is a self-hosted, local only NVR and AI Computer Vision software
+    en_US: Viseron is a self-hosted, local only NVR and AI Computer Vision software
   # Brief tagline for the application
   tagline:
-    en_us: Viseron
+    en_US: Viseron
   # Developer's information
   developer: roflcoopter
   # Author of this particular configuration
@@ -86,12 +88,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-viseron-to-bigbearcasaos/2134?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Viseron
+    en_US: Viseron
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "8888"

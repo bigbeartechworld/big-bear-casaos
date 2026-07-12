@@ -28,34 +28,36 @@ services:
       envs:
         - container: COUCHDB_USER
           description:
-            en_us: 'Container Variable: COUCHDB_USER'
+            en_US: 'Container Variable: COUCHDB_USER'
         - container: COUCHDB_PASSWORD
           description:
-            en_us: 'Container Variable: COUCHDB_PASSWORD'
+            en_US: 'Container Variable: COUCHDB_PASSWORD'
       volumes:
         - container: /opt/couchdb/data
           description:
-            en_us: 'Container Path: /opt/couchdb/data'
+            en_US: 'Container Path: /opt/couchdb/data'
         - container: /opt/couchdb/etc/local.ini
           description:
-            en_us: 'Container Path: /opt/couchdb/etc/local.ini'
+            en_US: 'Container Path: /opt/couchdb/etc/local.ini'
       ports:
         - container: "5984"
           description:
-            en_us: 'Container Port: 5984'
+            en_US: 'Container Port: 5984'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.obsidian-livesync
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Self-hosted database for synchronizing Obsidian vaults.
+    en_US: Self-hosted database for synchronizing Obsidian vaults.
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted database for synchronizing Obsidian vaults.
+    en_US: Self-hosted database for synchronizing Obsidian vaults.
   # Developer's information
   developer: couchdb
   # Author of this particular configuration
@@ -67,7 +69,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Run this script before installing the big-bear-obsidian-livesync application:
 
         ```
@@ -79,8 +81,8 @@ x-casaos:
         After running this script, you need to restart the container.
   # Title for the application
   title:
-    en_us: Obsidian Livesync
+    en_US: Obsidian Livesync
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "5984"

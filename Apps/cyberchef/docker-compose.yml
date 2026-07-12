@@ -21,20 +21,22 @@ services:
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.cyberchef
   # Main service for this application
   main: big-bear-cyberchef
   # Detailed description for the application
   description:
-    en_us: CyberChef is a simple, intuitive web app for carrying out all manner of cyber operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, IPv6 and X.509 parsing, changing character encodings, and much more.
+    en_US: CyberChef is a simple, intuitive web app for carrying out all manner of cyber operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, IPv6 and X.509 parsing, changing character encodings, and much more.
   # Brief tagline for the application
   tagline:
-    en_us: The Cyber Swiss Army Knife
+    en_US: The Cyber Swiss Army Knife
   # Developer's information
   developer: gchq
   # Author of this particular configuration
@@ -45,8 +47,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: CyberChef
+    en_US: CyberChef
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "8080"

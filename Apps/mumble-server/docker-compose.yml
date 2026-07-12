@@ -20,22 +20,24 @@ services:
       ports:
         - container: "64738"
           description:
-            en_us: 'Container Port: 64738'
+            en_US: 'Container Port: 64738'
         - container: "64738"
           description:
-            en_us: 'Container Port: 64738'
+            en_US: 'Container Port: 64738'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.mumble-server
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Mumble is a free, open source, low latency, high quality voice chat application.
+    en_US: Mumble is a free, open source, low latency, high quality voice chat application.
   # Brief tagline for the application
   tagline:
-    en_us: Mumble Server
+    en_US: Mumble Server
   # Developer's information
   developer: mumblevoip
   # Author of this particular configuration
@@ -46,8 +48,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Mumble Server
+    en_US: Mumble Server
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Social
   # Default port mapping for the application
   port_map: "64738"

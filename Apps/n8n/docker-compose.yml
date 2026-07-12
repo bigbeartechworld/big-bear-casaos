@@ -28,30 +28,30 @@ services:
       envs:
         - container: DB_TYPE
           description:
-            en_us: 'Container Variable: DB_TYPE'
+            en_US: 'Container Variable: DB_TYPE'
         - container: DB_POSTGRESDB_DATABASE
           description:
-            en_us: 'Container Variable: DB_POSTGRESDB_DATABASE'
+            en_US: 'Container Variable: DB_POSTGRESDB_DATABASE'
         - container: DB_POSTGRESDB_HOST
           description:
-            en_us: 'Container Variable: DB_POSTGRESDB_HOST'
+            en_US: 'Container Variable: DB_POSTGRESDB_HOST'
         - container: DB_POSTGRESDB_PORT
           description:
-            en_us: 'Container Variable: DB_POSTGRESDB_PORT'
+            en_US: 'Container Variable: DB_POSTGRESDB_PORT'
         - container: DB_POSTGRESDB_USER
           description:
-            en_us: 'Container Variable: DB_POSTGRESDB_USER'
+            en_US: 'Container Variable: DB_POSTGRESDB_USER'
         - container: DB_POSTGRESDB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_POSTGRESDB_PASSWORD'
+            en_US: 'Container Variable: DB_POSTGRESDB_PASSWORD'
       volumes:
         - container: /home/node/.n8n
           description:
-            en_us: 'Container Path: /home/node/.n8n'
+            en_US: 'Container Path: /home/node/.n8n'
       ports:
         - container: "5678"
           description:
-            en_us: 'Container Port: 5678'
+            en_US: 'Container Port: 5678'
   # Database service configuration
   db-n8n:
     container_name: db-n8n # Name of the database container
@@ -75,33 +75,35 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
         - container: /docker-entrypoint-initdb.d/init-data.sh
           description:
-            en_us: 'Container Path: /docker-entrypoint-initdb.d/init-data.sh'
+            en_US: 'Container Path: /docker-entrypoint-initdb.d/init-data.sh'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.n8n
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Free and open fair-code licensed node based Workflow Automation Tool.
+    en_US: Free and open fair-code licensed node based Workflow Automation Tool.
   # Brief tagline for the application
   tagline:
-    en_us: Workflow automation tool
+    en_US: Workflow automation tool
   # Developer's information
   developer: n8n
   # Author of this particular configuration
@@ -113,7 +115,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Run this script:
 
         ```
@@ -121,8 +123,8 @@ x-casaos:
         ```
   # Title for the application
   title:
-    en_us: n8n
+    en_US: n8n
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "5678"

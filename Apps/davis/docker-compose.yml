@@ -43,56 +43,56 @@ services:
       envs:
         - container: APP_ENV
           description:
-            en_us: 'Container Variable: APP_ENV'
+            en_US: 'Container Variable: APP_ENV'
         - container: DATABASE_DRIVER
           description:
-            en_us: 'Container Variable: DATABASE_DRIVER'
+            en_US: 'Container Variable: DATABASE_DRIVER'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: MAILER_DSN
           description:
-            en_us: 'Container Variable: MAILER_DSN'
+            en_US: 'Container Variable: MAILER_DSN'
         - container: ADMIN_LOGIN
           description:
-            en_us: 'Container Variable: ADMIN_LOGIN'
+            en_US: 'Container Variable: ADMIN_LOGIN'
         - container: ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: ADMIN_PASSWORD'
+            en_US: 'Container Variable: ADMIN_PASSWORD'
         - container: AUTH_REALM
           description:
-            en_us: 'Container Variable: AUTH_REALM'
+            en_US: 'Container Variable: AUTH_REALM'
         - container: AUTH_METHOD
           description:
-            en_us: 'Container Variable: AUTH_METHOD'
+            en_US: 'Container Variable: AUTH_METHOD'
         - container: CALDAV_ENABLED
           description:
-            en_us: 'Container Variable: CALDAV_ENABLED'
+            en_US: 'Container Variable: CALDAV_ENABLED'
         - container: CARDDAV_ENABLED
           description:
-            en_us: 'Container Variable: CARDDAV_ENABLED'
+            en_US: 'Container Variable: CARDDAV_ENABLED'
         - container: WEBDAV_ENABLED
           description:
-            en_us: 'Container Variable: WEBDAV_ENABLED'
+            en_US: 'Container Variable: WEBDAV_ENABLED'
         - container: WEBDAV_TMP_DIR
           description:
-            en_us: 'Container Variable: WEBDAV_TMP_DIR'
+            en_US: 'Container Variable: WEBDAV_TMP_DIR'
         - container: WEBDAV_PUBLIC_DIR
           description:
-            en_us: 'Container Variable: WEBDAV_PUBLIC_DIR'
+            en_US: 'Container Variable: WEBDAV_PUBLIC_DIR'
         - container: WEBDAV_HOMES_DIR
           description:
-            en_us: 'Container Variable: WEBDAV_HOMES_DIR'
+            en_US: 'Container Variable: WEBDAV_HOMES_DIR'
         - container: INVITE_FROM_ADDRESS
           description:
-            en_us: 'Container Variable: INVITE_FROM_ADDRESS'
+            en_US: 'Container Variable: INVITE_FROM_ADDRESS'
         - container: APP_TIMEZONE
           description:
-            en_us: 'Container Variable: APP_TIMEZONE'
+            en_US: 'Container Variable: APP_TIMEZONE'
       ports:
         - container: "9000"
           description:
-            en_us: 'Container Port: 9000'
+            en_US: 'Container Port: 9000'
   # Service name: big-bear-davis-mailpit
   big-bear-davis-mailpit:
     container_name: big-bear-davis-mailpit # Container name for the app service
@@ -111,18 +111,18 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "8025"
           description:
-            en_us: 'Container Port: 8025'
+            en_US: 'Container Port: 8025'
         - container: "1025"
           description:
-            en_us: 'Container Port: 1025'
+            en_US: 'Container Port: 1025'
   # Service name: big-bear-mysql
   big-bear-davis-mysql:
     container_name: big-bear-davis-mysql
@@ -145,20 +145,20 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 networks:
   big-bear-davis-network:
     driver: bridge
@@ -167,14 +167,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.davis
   # Main service for this application
   main: big-bear-davis
   # Detailed description for the application
   description:
-    en_us: A simple, fully translatable admin interface for sabre/dav based on Symfony 5 and Bootstrap 5, initially inspired by Baïkal. Provides user edition, calendar creation and sharing, and address book creation. The interface is simple and straightforward, responsive, and provides a light and a dark mode.
+    en_US: A simple, fully translatable admin interface for sabre/dav based on Symfony 5 and Bootstrap 5, initially inspired by Baïkal. Provides user edition, calendar creation and sharing, and address book creation. The interface is simple and straightforward, responsive, and provides a light and a dark mode.
   # Brief tagline for the application
   tagline:
-    en_us: Davis
+    en_US: Davis
   # Developer's information
   developer: tchapi
   # Author of this particular configuration
@@ -185,8 +187,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Davis
+    en_US: Davis
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "9000"

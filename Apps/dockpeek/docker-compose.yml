@@ -33,37 +33,39 @@ services:
       envs:
         - container: SECRET_KEY
           description:
-            en_us: 'Container Variable: SECRET_KEY'
+            en_US: 'Container Variable: SECRET_KEY'
         - container: USERNAME
           description:
-            en_us: 'Container Variable: USERNAME'
+            en_US: 'Container Variable: USERNAME'
         - container: PASSWORD
           description:
-            en_us: 'Container Variable: PASSWORD'
+            en_US: 'Container Variable: PASSWORD'
         - container: DOCKER_HOST
           description:
-            en_us: 'Container Variable: DOCKER_HOST'
+            en_US: 'Container Variable: DOCKER_HOST'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.dockpeek
   # Main service for this application
   main: big-bear-dockpeek
   # Detailed description for the application
   description:
-    en_us: A lightweight, self-hosted Docker dashboard that provides quick access to all running containers and their exposed ports with one-click access to web apps.
+    en_US: A lightweight, self-hosted Docker dashboard that provides quick access to all running containers and their exposed ports with one-click access to web apps.
   # Brief tagline for the application
   tagline:
-    en_us: Docker Dashboard
+    en_US: Docker Dashboard
   # Developer's information
   developer: dockpeek
   # Author of this particular configuration
@@ -75,7 +77,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |-
+      en_US: |-
         **Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld
         **Community Forum**: https://community.bigbeartechworld.com
         **Read this before installing**: https://community.bigbeartechworld.com/t/added-dockpeek-to-bigbearcasaos/4136?u=dragonfire1119
@@ -83,8 +85,8 @@ x-casaos:
         Before you install, make sure to change the default credentials (SECRET_KEY, USERNAME, PASSWORD) for security.
   # Title for the application
   title:
-    en_us: Dockpeek
+    en_US: Dockpeek
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3420"

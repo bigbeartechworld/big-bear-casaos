@@ -30,21 +30,23 @@ services:
       volumes:
         - container: /tmp
           description:
-            en_us: 'Container Path: /tmp'
+            en_US: 'Container Path: /tmp'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.morphos
   # Main service for this application
   main: big-bear-morphos
   # Detailed description for the application
   description:
-    en_us: Today we are forced to rely on third party services to convert files to other formats. This is a serious threat to our privacy, if we use such services to convert files with highly sensitive personal data. It can be used against us, sooner or later. Morphos server aims to solve the problem mentioned above, by providing a self-hosted server to convert files privately. The project provides an user-friendly web UI. For now, Morphos only supports images. Documents will be added soon.
+    en_US: Today we are forced to rely on third party services to convert files to other formats. This is a serious threat to our privacy, if we use such services to convert files with highly sensitive personal data. It can be used against us, sooner or later. Morphos server aims to solve the problem mentioned above, by providing a self-hosted server to convert files privately. The project provides an user-friendly web UI. For now, Morphos only supports images. Documents will be added soon.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-1.png
@@ -56,7 +58,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/morphos/screenshots/screenshot-7.png
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted file converter server
+    en_US: Self-hosted file converter server
   # Developer's information
   developer: danvergara
   # Author of this particular configuration
@@ -68,12 +70,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-morphos-to-bigbearcasaos/3160?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Morphos
+    en_US: Morphos
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8080"

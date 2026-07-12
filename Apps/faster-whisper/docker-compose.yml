@@ -33,42 +33,44 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: WHISPER_MODEL
           description:
-            en_us: 'Container Variable: WHISPER_MODEL'
+            en_US: 'Container Variable: WHISPER_MODEL'
         - container: WHISPER_BEAM
           description:
-            en_us: 'Container Variable: WHISPER_BEAM'
+            en_US: 'Container Variable: WHISPER_BEAM'
         - container: WHISPER_LANG
           description:
-            en_us: 'Container Variable: WHISPER_LANG'
+            en_US: 'Container Variable: WHISPER_LANG'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "10300"
           description:
-            en_us: 'Container Port: 10300'
+            en_US: 'Container Port: 10300'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.faster-whisper
   # Main service for this application
   main: big-bear-faster-whisper
   # Detailed description for the application
   description:
-    en_us: Faster-whisper is a reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast inference engine for Transformer models. This container provides a Wyoming protocol server for faster-whisper.
+    en_US: Faster-whisper is a reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast inference engine for Transformer models. This container provides a Wyoming protocol server for faster-whisper.
   # Brief tagline for the application
   tagline:
-    en_us: Faster-whisper
+    en_US: Faster-whisper
   # Developer's information
   developer: systran
   # Author of this particular configuration
@@ -79,8 +81,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Faster-whisper
+    en_US: Faster-whisper
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "7575"

@@ -24,24 +24,26 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "1880"
           description:
-            en_us: 'Container Port: 1880'
+            en_US: 'Container Port: 1880'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.node-red
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.  It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.
+    en_US: Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.  It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.
   # Brief tagline for the application
   tagline:
-    en_us: Low-code programming for event-driven applications
+    en_US: Low-code programming for event-driven applications
   # Developer's information
   developer: nodered
   # Author of this particular configuration
@@ -52,8 +54,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Node-RED
+    en_US: Node-RED
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "1880"

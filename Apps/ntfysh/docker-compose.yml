@@ -27,31 +27,33 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /var/cache/ntfy
           description:
-            en_us: 'Container Path: /var/cache/ntfy'
+            en_US: 'Container Path: /var/cache/ntfy'
         - container: /etc/ntfy
           description:
-            en_us: 'Container Path: /etc/ntfy'
+            en_US: 'Container Path: /etc/ntfy'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ntfysh
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
+    en_US: ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
   # Brief tagline for the application
   tagline:
-    en_us: A simple HTTP-based pub-sub notification service
+    en_US: A simple HTTP-based pub-sub notification service
   # Developer's information
   developer: binwiederhier
   # Author of this particular configuration
@@ -62,8 +64,8 @@ x-casaos:
   thumbnail: https://ntfy.sh/_next/static/media/screenshot-web-3.de6f19af.png
   # Title for the application
   title:
-    en_us: Ntfy.sh
+    en_US: Ntfy.sh
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "7200"

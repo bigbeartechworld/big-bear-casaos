@@ -43,49 +43,51 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
       volumes:
         - container: /srv/app-data
           description:
-            en_us: 'Container Path: /srv/app-data'
+            en_US: 'Container Path: /srv/app-data'
         - container: /srv/documents
           description:
-            en_us: 'Container Path: /srv/documents'
+            en_US: 'Container Path: /srv/documents'
         - container: /srv/downloads
           description:
-            en_us: 'Container Path: /srv/downloads'
+            en_US: 'Container Path: /srv/downloads'
         - container: /srv/gallery
           description:
-            en_us: 'Container Path: /srv/gallery'
+            en_US: 'Container Path: /srv/gallery'
         - container: /srv/media
           description:
-            en_us: 'Container Path: /srv/media'
+            en_US: 'Container Path: /srv/media'
         - container: /database
           description:
-            en_us: 'Container Path: /database'
+            en_US: 'Container Path: /database'
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.filebrowser
   # Main service for this application
   main: big-bear-filebrowser
   # Detailed description for the application
   description:
-    en_us: Reliable and Performant File Management Desktop Sync and File Sharing Tool.
+    en_US: Reliable and Performant File Management Desktop Sync and File Sharing Tool.
   # Brief tagline for the application
   tagline:
-    en_us: Access your homeserver files from your browser
+    en_US: Access your homeserver files from your browser
   # Developer's information
   developer: filebrowser
   # Author of this particular configuration
@@ -97,12 +99,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-filebrowser-to-bigbearcasaos/1934#p-3590-documentation-4
   # Title for the application
   title:
-    en_us: Filebrowser
+    en_US: Filebrowser
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

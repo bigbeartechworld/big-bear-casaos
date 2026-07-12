@@ -46,39 +46,41 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: ALWAYS_FRESH_INSTALL
           description:
-            en_us: 'Container Variable: ALWAYS_FRESH_INSTALL'
+            en_US: 'Container Variable: ALWAYS_FRESH_INSTALL'
       volumes:
         - container: /data/config
           description:
-            en_us: 'Container Path: /data/config'
+            en_US: 'Container Path: /data/config'
         - container: /data/db
           description:
-            en_us: 'Container Path: /data/db'
+            en_US: 'Container Path: /data/db'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.netalertx-v26
   # Main service for this application
   main: big-bear-netalertx-v26
   # Detailed description for the application
   description:
-    en_us: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. WARNING: v26 has breaking changes from previous versions — volume paths changed from /app/config and /app/db to /data/config and /data/db. Existing data will NOT be migrated automatically. See the migration docs before upgrading.'
+    en_US: 'WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. WARNING: v26 has breaking changes from previous versions — volume paths changed from /app/config and /app/db to /data/config and /data/db. Existing data will NOT be migrated automatically. See the migration docs before upgrading.'
   # Brief tagline for the application
   tagline:
-    en_us: NetAlertX v26 (Latest)
+    en_US: NetAlertX v26 (Latest)
   # Developer's information
   developer: jokobsk
   # Author of this particular configuration
@@ -90,12 +92,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         v26 has breaking volume path changes. If migrating from the legacy version, see https://docs.netalertx.com for migration instructions.
   # Title for the application
   title:
-    en_us: NetAlertX v26
+    en_US: NetAlertX v26
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8080"

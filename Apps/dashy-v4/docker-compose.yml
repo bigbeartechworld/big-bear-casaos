@@ -50,28 +50,30 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
       volumes:
         - container: /app/user-data
           description:
-            en_us: 'Container Path: /app/user-data'
+            en_US: 'Container Path: /app/user-data'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.dashy-v4
   # Main service for this application
   main: big-bear-dashy-v4
   # Detailed description for the application
   description:
-    en_us: Dashy helps you organize your self-hosted services by making them accessible from a single place
+    en_US: Dashy helps you organize your self-hosted services by making them accessible from a single place
   # Brief tagline for the application
   tagline:
-    en_us: Dashy v4
+    en_US: Dashy v4
   # Developer's information
   developer: Lissy93
   # Author of this particular configuration
@@ -83,7 +85,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |-
+      en_US: |-
         NEW APP - DASHY V4
 
         This is a NEW app, separate from 'dashy' (v3). Both can run simultaneously.
@@ -102,8 +104,8 @@ x-casaos:
         Detailed changelog: https://github.com/Lissy93/dashy/blob/master/docs/changelog.md
   # Title for the application
   title:
-    en_us: Dashy v4
+    en_US: Dashy v4
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "4001"

@@ -21,19 +21,21 @@ services:
       volumes:
         - container: /secrets
           description:
-            en_us: 'Container Path: /secrets'
+            en_US: 'Container Path: /secrets'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.playitgg
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
+    en_US: playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
   # Brief tagline for the application
   tagline:
-    en_us: playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
+    en_US: playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!
   # Developer's information
   developer: Dysta
   # Author of this particular configuration
@@ -44,8 +46,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: playit.gg
+    en_US: playit.gg
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: ""

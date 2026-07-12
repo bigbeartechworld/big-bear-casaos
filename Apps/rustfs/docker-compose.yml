@@ -27,49 +27,51 @@ services:
       envs:
         - container: RUSTFS_ACCESS_KEY
           description:
-            en_us: 'Container Variable: RUSTFS_ACCESS_KEY'
+            en_US: 'Container Variable: RUSTFS_ACCESS_KEY'
         - container: RUSTFS_SECRET_KEY
           description:
-            en_us: 'Container Variable: RUSTFS_SECRET_KEY'
+            en_US: 'Container Variable: RUSTFS_SECRET_KEY'
         - container: RUSTFS_CONSOLE_ENABLE
           description:
-            en_us: 'Container Variable: RUSTFS_CONSOLE_ENABLE'
+            en_US: 'Container Variable: RUSTFS_CONSOLE_ENABLE'
         - container: RUSTFS_ADDRESS
           description:
-            en_us: 'Container Variable: RUSTFS_ADDRESS'
+            en_US: 'Container Variable: RUSTFS_ADDRESS'
         - container: RUSTFS_CONSOLE_ADDRESS
           description:
-            en_us: 'Container Variable: RUSTFS_CONSOLE_ADDRESS'
+            en_US: 'Container Variable: RUSTFS_CONSOLE_ADDRESS'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
         - container: /logs
           description:
-            en_us: 'Container Path: /logs'
+            en_US: 'Container Path: /logs'
       ports:
         - container: "9000"
           description:
-            en_us: 'Container Port: 9000'
+            en_US: 'Container Port: 9000'
         - container: "9001"
           description:
-            en_us: 'Container Port: 9001'
+            en_US: 'Container Port: 9001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rustfs
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: RustFS is a high-performance, distributed object storage system built in Rust. It combines the simplicity of MinIO with the memory safety and raw performance of Rust. It offers full S3 compatibility, is completely open-source under Apache 2.0 license, and is optimized for data lakes, AI, and big data workloads.
+    en_US: RustFS is a high-performance, distributed object storage system built in Rust. It combines the simplicity of MinIO with the memory safety and raw performance of Rust. It offers full S3 compatibility, is completely open-source under Apache 2.0 license, and is optimized for data lakes, AI, and big data workloads.
   # Brief tagline for the application
   tagline:
-    en_us: High-performance S3-compatible object storage built in Rust
+    en_US: High-performance S3-compatible object storage built in Rust
   # Developer's information
   developer: rustfs
   # Author of this particular configuration
@@ -81,11 +83,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: 'The container runs as non-root user (UID 10001). Ensure your data directories have correct ownership: chown -R 10001:10001 /path/to/data'
+      en_US: 'The container runs as non-root user (UID 10001). Ensure your data directories have correct ownership: chown -R 10001:10001 /path/to/data'
   # Title for the application
   title:
-    en_us: RustFS
+    en_US: RustFS
   # Category under which the application falls
-  category: Storage
+  category: AI
   # Default port mapping for the application
   port_map: "9000"

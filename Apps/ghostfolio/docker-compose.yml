@@ -36,44 +36,44 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
         - container: HOST
           description:
-            en_us: 'Container Variable: HOST'
+            en_US: 'Container Variable: HOST'
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: ACCESS_TOKEN_SALT
           description:
-            en_us: 'Container Variable: ACCESS_TOKEN_SALT'
+            en_US: 'Container Variable: ACCESS_TOKEN_SALT'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: JWT_SECRET_KEY
           description:
-            en_us: 'Container Variable: JWT_SECRET_KEY'
+            en_US: 'Container Variable: JWT_SECRET_KEY'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: REDIS_HOST
           description:
-            en_us: 'Container Variable: REDIS_HOST'
+            en_US: 'Container Variable: REDIS_HOST'
         - container: REDIS_PASSWORD
           description:
-            en_us: 'Container Variable: REDIS_PASSWORD'
+            en_US: 'Container Variable: REDIS_PASSWORD'
         - container: REDIS_PORT
           description:
-            en_us: 'Container Variable: REDIS_PORT'
+            en_US: 'Container Variable: REDIS_PORT'
       ports:
         - container: "3333"
           description:
-            en_us: 'Container Port: 3333'
+            en_US: 'Container Port: 3333'
   # PostgreSQL database service for Ghostfolio
   big-bear-ghostfolio-db:
     container_name: big-bear-ghostfolio-db
@@ -97,20 +97,20 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: PGDATA
           description:
-            en_us: 'Container Variable: PGDATA'
+            en_US: 'Container Variable: PGDATA'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   # Redis service for Ghostfolio, used for caching and session storage
   big-bear-ghostfolio-redis:
     container_name: big-bear-ghostfolio-redis
@@ -133,7 +133,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
 # Network definition for inter-service communication
 networks:
   big_bear_ghostfolio_network:
@@ -143,14 +143,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ghostfolio
   # Main service for this application
   main: big-bear-ghostfolio
   # Detailed description for the application
   description:
-    en_us: "Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript \U0001F90D"
+    en_US: "Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript \U0001F90D"
   # Brief tagline for the application
   tagline:
-    en_us: Ghostfolio
+    en_US: Ghostfolio
   # Developer's information
   developer: ghostfolio
   # Author of this particular configuration
@@ -161,8 +163,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Ghostfolio
+    en_US: Ghostfolio
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3333"

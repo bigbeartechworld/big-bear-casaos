@@ -54,29 +54,29 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: INSECURE_USE_HTTP
           description:
-            en_us: 'Container Variable: INSECURE_USE_HTTP'
+            en_US: 'Container Variable: INSECURE_USE_HTTP'
         - container: MONGO_CONNECTION
           description:
-            en_us: 'Container Variable: MONGO_CONNECTION'
+            en_US: 'Container Variable: MONGO_CONNECTION'
         - container: API_SECRET
           description:
-            en_us: 'Container Variable: API_SECRET'
+            en_US: 'Container Variable: API_SECRET'
         - container: ENABLE
           description:
-            en_us: 'Container Variable: ENABLE'
+            en_US: 'Container Variable: ENABLE'
         - container: AUTH_DEFAULT_ROLES
           description:
-            en_us: 'Container Variable: AUTH_DEFAULT_ROLES'
+            en_US: 'Container Variable: AUTH_DEFAULT_ROLES'
       ports:
         - container: "1337"
           description:
-            en_us: 'Container Port: 1337'
+            en_US: 'Container Port: 1337'
   big-bear-nightscout-mongo:
     # Name of the MongoDB container
     container_name: big-bear-nightscout-mongo
@@ -92,7 +92,7 @@ services:
       volumes:
         - container: /data/db
           description:
-            en_us: 'Container Path: /data/db'
+            en_US: 'Container Path: /data/db'
 # Network definitions
 networks:
   big-bear-nightscout-network:
@@ -102,17 +102,19 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nightscout
   # Main service for this application
   main: big-bear-nightscout
   # Detailed description for the application
   description:
-    en_us: This acts as a web-based CGM (Continuous Glucose Monitor) to allow multiple caregivers to remotely view a patient's glucose data in real time. The server reads a MongoDB which is intended to be data from a physical CGM, where it sends new SGV (sensor glucose values) as the data becomes available. The data is then displayed graphically and blood glucose values are predicted 0.5 hours ahead using an autoregressive second order model. Alarms are generated for high and low values, which can be cleared by any watcher of the data.
+    en_US: This acts as a web-based CGM (Continuous Glucose Monitor) to allow multiple caregivers to remotely view a patient's glucose data in real time. The server reads a MongoDB which is intended to be data from a physical CGM, where it sends new SGV (sensor glucose values) as the data becomes available. The data is then displayed graphically and blood glucose values are predicted 0.5 hours ahead using an autoregressive second order model. Alarms are generated for high and low values, which can be cleared by any watcher of the data.
   # Screenshot links for the application
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/nightscout/screenshots/screenshot.png
   # Brief tagline for the application
   tagline:
-    en_us: Nightscout
+    en_US: Nightscout
   # Developer's information
   developer: nightscout
   # Author of this particular configuration
@@ -124,12 +126,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         https://community.bigbeartechworld.com/t/added-nightscout-to-bigbearcasaos/1403#documentation-3
   # Title for the application
   title:
-    en_us: nightscout
+    en_US: nightscout
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "1337"

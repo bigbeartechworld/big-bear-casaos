@@ -30,31 +30,33 @@ services:
       envs:
         - container: PASSWORD
           description:
-            en_us: 'Container Variable: PASSWORD'
+            en_US: 'Container Variable: PASSWORD'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "5005"
           description:
-            en_us: 'Container Port: 5005'
+            en_US: 'Container Port: 5005'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.flame
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Flame is a self-hosted startpage for your server. Its design is heavily inspired by SUI. Flame is user-friendly and easy to set up. With its built-in editors, users can quickly establish their own application hub without any file editing.
+    en_US: Flame is a self-hosted startpage for your server. Its design is heavily inspired by SUI. Flame is user-friendly and easy to set up. With its built-in editors, users can quickly establish their own application hub without any file editing.
   # Brief tagline for the application
   tagline:
-    en_us: Flame is a self-hosted startpage for your server. Manage your apps and bookmarks effortlessly with built-in editors.
+    en_US: Flame is a self-hosted startpage for your server. Manage your apps and bookmarks effortlessly with built-in editors.
   # Developer's information
   developer: pawelmalak
   # Author of this particular configuration
@@ -65,8 +67,8 @@ x-casaos:
   thumbnail: https://github.com/pawelmalak/flame/raw/master/.github/home.png
   # Title for the application
   title:
-    en_us: Flame
+    en_US: Flame
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "5005"

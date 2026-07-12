@@ -42,49 +42,51 @@ services:
       envs:
         - container: HTTP_PORT
           description:
-            en_us: 'Container Variable: HTTP_PORT'
+            en_US: 'Container Variable: HTTP_PORT'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /music
           description:
-            en_us: 'Container Path: /music'
+            en_US: 'Container Path: /music'
         - container: /playlist
           description:
-            en_us: 'Container Path: /playlist'
+            en_US: 'Container Path: /playlist'
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
         - container: /etc/timezone
           description:
-            en_us: 'Container Path: /etc/timezone'
+            en_US: 'Container Path: /etc/timezone'
       ports:
         - container: "9000"
           description:
-            en_us: 'Container Port: 9000'
+            en_US: 'Container Port: 9000'
         - container: "9090"
           description:
-            en_us: 'Container Port: 9090'
+            en_US: 'Container Port: 9090'
         - container: "3483"
           description:
-            en_us: 'Container Port: 3483'
+            en_US: 'Container Port: 3483'
         - container: "3483"
           description:
-            en_us: 'Container Port: 3483'
+            en_US: 'Container Port: 3483'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.lyrionmusicserver
   # Main service for this application
   main: big-bear-lyrionmusicserver
   # Detailed description for the application
   description:
-    en_us: Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
+    en_US: Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
   # Brief tagline for the application
   tagline:
-    en_us: Streaming audio server
+    en_US: Streaming audio server
   # Developer's information
   developer: LMS-Community
   # Author of this particular configuration
@@ -96,12 +98,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-lyrion-music-server-to-bigbearcasaos/2606#p-4742-documentation-3
   # Title for the application
   title:
-    en_us: LyriOn Music Server
+    en_US: LyriOn Music Server
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "9000"

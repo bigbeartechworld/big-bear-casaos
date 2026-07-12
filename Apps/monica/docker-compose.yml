@@ -31,24 +31,24 @@ services:
       envs:
         - container: APP_KEY
           description:
-            en_us: 'Container Variable: APP_KEY'
+            en_US: 'Container Variable: APP_KEY'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
       volumes:
         - container: /var/www/html/storage
           description:
-            en_us: 'Container Path: /var/www/html/storage'
+            en_US: 'Container Path: /var/www/html/storage'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
   # Database service for monica
   big-bear-monica-db:
     image: mariadb:10.6.11
@@ -68,23 +68,23 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: MARIADB_RANDOM_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_RANDOM_ROOT_PASSWORD'
+            en_US: 'Container Variable: MARIADB_RANDOM_ROOT_PASSWORD'
         - container: MARIADB_DATABASE
           description:
-            en_us: 'Container Variable: MARIADB_DATABASE'
+            en_US: 'Container Variable: MARIADB_DATABASE'
         - container: MARIADB_USER
           description:
-            en_us: 'Container Variable: MARIADB_USER'
+            en_US: 'Container Variable: MARIADB_USER'
         - container: MARIADB_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_PASSWORD'
+            en_US: 'Container Variable: MARIADB_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 # Networks used by the application
 networks:
   big_bear_monica_network:
@@ -94,14 +94,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.monica
   # Main service for this application
   main: big-bear-monica
   # Detailed description for the application
   description:
-    en_us: Monica is an open-source web application to organize and record your interactions with your loved ones. We call it a PRM, or Personal Relationship Management. Think of it as a CRM (a popular tool used by sales teams in the corporate world) for your friends or family.
+    en_US: Monica is an open-source web application to organize and record your interactions with your loved ones. We call it a PRM, or Personal Relationship Management. Think of it as a CRM (a popular tool used by sales teams in the corporate world) for your friends or family.
   # Brief tagline for the application
   tagline:
-    en_us: A Personal Relationship Management tool to help you document your social life.
+    en_US: A Personal Relationship Management tool to help you document your social life.
   # Developer's information
   developer: monica
   # Author of this particular configuration
@@ -112,8 +114,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Monica
+    en_US: Monica
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8080"

@@ -38,18 +38,18 @@ services:
       envs:
         - container: LIBREDESK_SYSTEM_USER_PASSWORD
           description:
-            en_us: 'Container Variable: LIBREDESK_SYSTEM_USER_PASSWORD'
+            en_US: 'Container Variable: LIBREDESK_SYSTEM_USER_PASSWORD'
       volumes:
         - container: /libredesk/uploads
           description:
-            en_us: 'Container Path: /libredesk/uploads'
+            en_US: 'Container Path: /libredesk/uploads'
         - container: /libredesk/config
           description:
-            en_us: 'Container Path: /libredesk/config'
+            en_US: 'Container Path: /libredesk/config'
       ports:
         - container: "9000"
           description:
-            en_us: 'Container Port: 9000'
+            en_US: 'Container Port: 9000'
   # PostgreSQL database
   big-bear-libredesk-db:
     image: postgres:17-alpine
@@ -75,21 +75,21 @@ services:
       envs:
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
       ports:
         - container: "5432"
           description:
-            en_us: 'Container Port: 5432'
+            en_US: 'Container Port: 5432'
   # Redis
   big-bear-libredesk-redis:
     image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
@@ -105,11 +105,11 @@ services:
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "6379"
           description:
-            en_us: 'Container Port: 6379'
+            en_US: 'Container Port: 6379'
 networks:
   big-bear-libredesk-network:
     driver: bridge
@@ -118,14 +118,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.libredesk
   # Main service for this application
   main: big-bear-libredesk
   # Detailed description for the application
   description:
-    en_us: Open source, self-hosted customer support desk. Single binary app.
+    en_US: Open source, self-hosted customer support desk. Single binary app.
   # Brief tagline for the application
   tagline:
-    en_us: Open source, self-hosted customer support desk. Single binary app.
+    en_US: Open source, self-hosted customer support desk. Single binary app.
   # Developer's information
   developer: libredesk
   # Author of this particular configuration
@@ -137,12 +139,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-libredesk-to-bigbearcasaos/2993#p-5277-documentation-4
   # Title for the application
   title:
-    en_us: Libredesk
+    en_US: Libredesk
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "9000"

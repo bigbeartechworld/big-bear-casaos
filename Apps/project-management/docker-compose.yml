@@ -41,48 +41,48 @@ services:
       envs:
         - container: DB_CONNECTION
           description:
-            en_us: 'Container Variable: DB_CONNECTION'
+            en_US: 'Container Variable: DB_CONNECTION'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_PORT
           description:
-            en_us: 'Container Variable: DB_PORT'
+            en_US: 'Container Variable: DB_PORT'
         - container: DB_DATABASE
           description:
-            en_us: 'Container Variable: DB_DATABASE'
+            en_US: 'Container Variable: DB_DATABASE'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: MAIL_MAILER
           description:
-            en_us: 'Container Variable: MAIL_MAILER'
+            en_US: 'Container Variable: MAIL_MAILER'
         - container: MAIL_HOST
           description:
-            en_us: 'Container Variable: MAIL_HOST'
+            en_US: 'Container Variable: MAIL_HOST'
         - container: MAIL_PORT
           description:
-            en_us: 'Container Variable: MAIL_PORT'
+            en_US: 'Container Variable: MAIL_PORT'
         - container: MAIL_USERNAME
           description:
-            en_us: 'Container Variable: MAIL_USERNAME'
+            en_US: 'Container Variable: MAIL_USERNAME'
         - container: MAIL_PASSWORD
           description:
-            en_us: 'Container Variable: MAIL_PASSWORD'
+            en_US: 'Container Variable: MAIL_PASSWORD'
         - container: MAIL_ENCRYPTION
           description:
-            en_us: 'Container Variable: MAIL_ENCRYPTION'
+            en_US: 'Container Variable: MAIL_ENCRYPTION'
       volumes:
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
   big-bear-project-management-db:
     image: mysql:5.7
     container_name: big-bear-project-management-db
@@ -105,20 +105,20 @@ services:
       envs:
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 networks:
   big_bear_project_management_network:
     driver: bridge
@@ -127,14 +127,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.project-management
   # Main service for this application
   main: big-bear-project-management
   # Detailed description for the application
   description:
-    en_us: An open source Project management tool based on Laravel and Filament
+    en_US: An open source Project management tool based on Laravel and Filament
   # Brief tagline for the application
   tagline:
-    en_us: Project Management
+    en_US: Project Management
   # Developer's information
   developer: eloufirhatim
   # Author of this particular configuration
@@ -145,8 +147,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Project Management
+    en_US: Project Management
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8000"

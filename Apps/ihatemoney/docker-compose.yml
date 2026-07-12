@@ -29,23 +29,23 @@ services:
       envs:
         - container: SECRET_KEY
           description:
-            en_us: 'Container Variable: SECRET_KEY'
+            en_US: 'Container Variable: SECRET_KEY'
         - container: SQLALCHEMY_DATABASE_URI
           description:
-            en_us: 'Container Variable: SQLALCHEMY_DATABASE_URI'
+            en_US: 'Container Variable: SQLALCHEMY_DATABASE_URI'
         - container: ACTIVATE_ADMIN_DASHBOARD
           description:
-            en_us: 'Container Variable: ACTIVATE_ADMIN_DASHBOARD'
+            en_US: 'Container Variable: ACTIVATE_ADMIN_DASHBOARD'
         - container: ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: ADMIN_PASSWORD'
+            en_US: 'Container Variable: ADMIN_PASSWORD'
         - container: SESSION_COOKIE_SECURE
           description:
-            en_us: 'Container Variable: SESSION_COOKIE_SECURE'
+            en_US: 'Container Variable: SESSION_COOKIE_SECURE'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
   # Define a service named 'big-bear-ihatemoney-db' for the database.
   big-bear-ihatemoney-db:
     image: mariadb:10 # Use MariaDB version 10 Docker image.
@@ -65,24 +65,24 @@ services:
       envs:
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
       ports:
         - container: "3306"
           description:
-            en_us: 'Container Port: 3306'
+            en_US: 'Container Port: 3306'
 networks:
   big_bear_ihatemoney_network: # Define a network named 'big_bear_ihatemoney_network'.
     driver: bridge # Use the bridge network driver.
@@ -91,14 +91,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ihatemoney
   # Main service for this application
   main: big-bear-ihatemoney
   # Detailed description for the application
   description:
-    en_us: I hate money is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills.
+    en_US: I hate money is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills.
   # Brief tagline for the application
   tagline:
-    en_us: A simple shared budget manager web application
+    en_US: A simple shared budget manager web application
   # Developer's information
   developer: spiral-project
   # Author of this particular configuration
@@ -109,8 +111,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: I Hate Money
+    en_US: I Hate Money
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Finance
   # Default port mapping for the application
   port_map: "8001"

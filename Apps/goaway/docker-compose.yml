@@ -30,30 +30,32 @@ services:
       volumes:
         - container: /app/config
           description:
-            en_us: 'Container Path: /app/config'
+            en_US: 'Container Path: /app/config'
       ports:
         - container: "53"
           description:
-            en_us: 'Container Port: 53'
+            en_US: 'Container Port: 53'
         - container: "53"
           description:
-            en_us: 'Container Port: 53'
+            en_US: 'Container Port: 53'
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.goaway
   # Main service for this application
   main: big-bear-goaway
   # Detailed description for the application
   description:
-    en_us: GoAway is a lightweight DNS sinkhole that blocks ads, trackers, and malicious domains at the network level. It provides a web-based admin dashboard for management and supports customizable blocking rules with real-time statistics tracking.
+    en_US: GoAway is a lightweight DNS sinkhole that blocks ads, trackers, and malicious domains at the network level. It provides a web-based admin dashboard for management and supports customizable blocking rules with real-time statistics tracking.
   # Brief tagline for the application
   tagline:
-    en_us: Lightweight DNS sinkhole for blocking ads and trackers
+    en_US: Lightweight DNS sinkhole for blocking ads and trackers
   # Developer's information
   developer: pommee
   # Author of this particular configuration
@@ -65,13 +67,13 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Visit the community post for setup instructions and community support:
         https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085
   # Title for the application
   title:
-    en_us: GoAway
+    en_US: GoAway
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8080"

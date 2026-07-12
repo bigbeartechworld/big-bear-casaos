@@ -41,64 +41,66 @@ services:
       envs:
         - container: PORT
           description:
-            en_us: 'Container Variable: PORT'
+            en_US: 'Container Variable: PORT'
         - container: FLOWISE_USERNAME
           description:
-            en_us: 'Container Variable: FLOWISE_USERNAME'
+            en_US: 'Container Variable: FLOWISE_USERNAME'
         - container: FLOWISE_PASSWORD
           description:
-            en_us: 'Container Variable: FLOWISE_PASSWORD'
+            en_US: 'Container Variable: FLOWISE_PASSWORD'
         - container: FLOWISE_SECRETKEY_OVERWRITE
           description:
-            en_us: 'Container Variable: FLOWISE_SECRETKEY_OVERWRITE'
+            en_US: 'Container Variable: FLOWISE_SECRETKEY_OVERWRITE'
         - container: LANGCHAIN_ENDPOINT
           description:
-            en_us: 'Container Variable: LANGCHAIN_ENDPOINT'
+            en_US: 'Container Variable: LANGCHAIN_ENDPOINT'
         - container: LANGCHAIN_API_KEY
           description:
-            en_us: 'Container Variable: LANGCHAIN_API_KEY'
+            en_US: 'Container Variable: LANGCHAIN_API_KEY'
         - container: LANGCHAIN_PROJECT
           description:
-            en_us: 'Container Variable: LANGCHAIN_PROJECT'
+            en_US: 'Container Variable: LANGCHAIN_PROJECT'
         - container: LANGCHAIN_TRACING_V2
           description:
-            en_us: 'Container Variable: LANGCHAIN_TRACING_V2'
+            en_US: 'Container Variable: LANGCHAIN_TRACING_V2'
         - container: DISABLE_FLOWISE_TELEMETRY
           description:
-            en_us: 'Container Variable: DISABLE_FLOWISE_TELEMETRY'
+            en_US: 'Container Variable: DISABLE_FLOWISE_TELEMETRY'
         - container: DATABASE_PATH
           description:
-            en_us: 'Container Variable: DATABASE_PATH'
+            en_US: 'Container Variable: DATABASE_PATH'
         - container: APIKEY_PATH
           description:
-            en_us: 'Container Variable: APIKEY_PATH'
+            en_US: 'Container Variable: APIKEY_PATH'
         - container: SECRETKEY_PATH
           description:
-            en_us: 'Container Variable: SECRETKEY_PATH'
+            en_US: 'Container Variable: SECRETKEY_PATH'
         - container: LOG_PATH
           description:
-            en_us: 'Container Variable: LOG_PATH'
+            en_US: 'Container Variable: LOG_PATH'
       volumes:
         - container: /root/.flowise
           description:
-            en_us: 'Container Path: /root/.flowise'
+            en_US: 'Container Path: /root/.flowise'
       ports:
         - container: "8009"
           description:
-            en_us: 'Container Port: 8009'
+            en_US: 'Container Port: 8009'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.flowise
   # Main service for this application
   main: big-bear-flowise
   # Detailed description for the application
   description:
-    en_us: Flowise AI is an Open source UI visual tool to build your customized LLM orchestration flow & AI agents. Developing LLM apps takeslength iterations. With low code approach, Flowise AI enable quick iterations to go from testing to production.
+    en_US: Flowise AI is an Open source UI visual tool to build your customized LLM orchestration flow & AI agents. Developing LLM apps takeslength iterations. With low code approach, Flowise AI enable quick iterations to go from testing to production.
   # Brief tagline for the application
   tagline:
-    en_us: Build LLM Apps Easily
+    en_US: Build LLM Apps Easily
   # Developer's information
   developer: bigbeartechworld
   # Author of this particular configuration
@@ -110,12 +112,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-flowise-to-bigbearcasaos/1989?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Flowise AI
+    en_US: Flowise AI
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "8009"

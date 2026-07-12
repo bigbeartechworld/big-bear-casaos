@@ -30,18 +30,18 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /home/filebrowser/data
           description:
-            en_us: 'Container Path: /home/filebrowser/data'
+            en_US: 'Container Path: /home/filebrowser/data'
         - container: /srv
           description:
-            en_us: 'Container Path: /srv'
+            en_US: 'Container Path: /srv'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 # Networks definition for the big-bear-filebrowser-quantum application
 networks:
   big-bear-filebrowser-quantum-network:
@@ -51,14 +51,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.filebrowser-quantum
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: A self-hosted web file manager forked from FileBrowser with advanced features including OIDC authentication, indexed search, office document previews, and multi-source support.
+    en_US: A self-hosted web file manager forked from FileBrowser with advanced features including OIDC authentication, indexed search, office document previews, and multi-source support.
   # Brief tagline for the application
   tagline:
-    en_us: Advanced self-hosted web file manager
+    en_US: Advanced self-hosted web file manager
   # Developer's information
   developer: gtsteffaniak
   # Author of this particular configuration
@@ -70,15 +72,15 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |-
+      en_US: |-
         **Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld
         **Community Forum**: https://community.bigbeartechworld.com/t/added-filebrowser-quantum-to-bigbearuniversal-apps/5209?u=dragonfire1119
 
         Default credentials are **admin / admin**. Please change the password after your first login.
   # Title for the application
   title:
-    en_us: FileBrowser Quantum
+    en_US: FileBrowser Quantum
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8700"

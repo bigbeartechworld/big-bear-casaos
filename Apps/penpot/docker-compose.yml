@@ -32,11 +32,11 @@ services:
       volumes:
         - container: /opt/data/assets
           description:
-            en_us: 'Container Path: /opt/data/assets'
+            en_US: 'Container Path: /opt/data/assets'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   # Definition for penpot-backend service
   penpot-backend:
     # Docker image for the service
@@ -71,38 +71,38 @@ services:
       envs:
         - container: PENPOT_FLAGS
           description:
-            en_us: 'Container Variable: PENPOT_FLAGS'
+            en_US: 'Container Variable: PENPOT_FLAGS'
         - container: PENPOT_SECRET_KEY
           description:
-            en_us: 'Container Variable: PENPOT_SECRET_KEY'
+            en_US: 'Container Variable: PENPOT_SECRET_KEY'
         - container: PENPOT_PUBLIC_URI
           description:
-            en_us: 'Container Variable: PENPOT_PUBLIC_URI'
+            en_US: 'Container Variable: PENPOT_PUBLIC_URI'
         - container: PENPOT_DATABASE_URI
           description:
-            en_us: 'Container Variable: PENPOT_DATABASE_URI'
+            en_US: 'Container Variable: PENPOT_DATABASE_URI'
         - container: PENPOT_DATABASE_USERNAME
           description:
-            en_us: 'Container Variable: PENPOT_DATABASE_USERNAME'
+            en_US: 'Container Variable: PENPOT_DATABASE_USERNAME'
         - container: PENPOT_DATABASE_PASSWORD
           description:
-            en_us: 'Container Variable: PENPOT_DATABASE_PASSWORD'
+            en_US: 'Container Variable: PENPOT_DATABASE_PASSWORD'
         - container: PENPOT_REDIS_URI
           description:
-            en_us: 'Container Variable: PENPOT_REDIS_URI'
+            en_US: 'Container Variable: PENPOT_REDIS_URI'
         - container: PENPOT_ASSETS_STORAGE_BACKEND
           description:
-            en_us: 'Container Variable: PENPOT_ASSETS_STORAGE_BACKEND'
+            en_US: 'Container Variable: PENPOT_ASSETS_STORAGE_BACKEND'
         - container: PENPOT_STORAGE_ASSETS_FS_DIRECTORY
           description:
-            en_us: 'Container Variable: PENPOT_STORAGE_ASSETS_FS_DIRECTORY'
+            en_US: 'Container Variable: PENPOT_STORAGE_ASSETS_FS_DIRECTORY'
         - container: PENPOT_TELEMETRY_ENABLED
           description:
-            en_us: 'Container Variable: PENPOT_TELEMETRY_ENABLED'
+            en_US: 'Container Variable: PENPOT_TELEMETRY_ENABLED'
       volumes:
         - container: /opt/data/assets
           description:
-            en_us: 'Container Path: /opt/data/assets'
+            en_US: 'Container Path: /opt/data/assets'
   # Define the penpot-exporter service
   penpot-exporter:
     # Use the penpotapp/exporter:1.19.3 Docker image
@@ -124,10 +124,10 @@ services:
       envs:
         - container: PENPOT_PUBLIC_URI
           description:
-            en_us: 'Container Variable: PENPOT_PUBLIC_URI'
+            en_US: 'Container Variable: PENPOT_PUBLIC_URI'
         - container: PENPOT_REDIS_URI
           description:
-            en_us: 'Container Variable: PENPOT_REDIS_URI'
+            en_US: 'Container Variable: PENPOT_REDIS_URI'
   # Define the PostgreSQL service for Penpot
   penpot-postgres:
     image: postgres:14
@@ -148,20 +148,20 @@ services:
       envs:
         - container: POSTGRES_INITDB_ARGS
           description:
-            en_us: 'Container Variable: POSTGRES_INITDB_ARGS'
+            en_US: 'Container Variable: POSTGRES_INITDB_ARGS'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
   # Define the Redis service for Penpot
   penpot-redis:
     image: redis:7.4.6@sha256:d7432711a2a5c99c2e9dd0e006061cd274d7cb7a9e77f07ffe2ea99e21244677
@@ -183,7 +183,7 @@ services:
       ports:
         - container: "1080"
           description:
-            en_us: 'Container Port: 1080'
+            en_US: 'Container Port: 1080'
 # Define the networks section
 networks:
   # Define the penpot-network
@@ -195,14 +195,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.penpot
   # Main service for this application
   main: penpot-frontend
   # Detailed description for the application
   description:
-    en_us: Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.
+    en_US: Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.
   # Brief tagline for the application
   tagline:
-    en_us: Bring Design Freedom to your Product Team
+    en_US: Bring Design Freedom to your Product Team
   # Developer's information
   developer: penpotapp
   # Author of this particular configuration
@@ -213,8 +215,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Penpot
+    en_US: Penpot
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "9001"

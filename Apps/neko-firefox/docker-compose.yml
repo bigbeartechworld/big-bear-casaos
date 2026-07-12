@@ -42,74 +42,76 @@ services:
       envs:
         - container: NEKO_SCREEN
           description:
-            en_us: 'Container Variable: NEKO_SCREEN'
+            en_US: 'Container Variable: NEKO_SCREEN'
         - container: NEKO_PASSWORD
           description:
-            en_us: 'Container Variable: NEKO_PASSWORD'
+            en_US: 'Container Variable: NEKO_PASSWORD'
         - container: NEKO_PASSWORD_ADMIN
           description:
-            en_us: 'Container Variable: NEKO_PASSWORD_ADMIN'
+            en_US: 'Container Variable: NEKO_PASSWORD_ADMIN'
         - container: NEKO_EPR
           description:
-            en_us: 'Container Variable: NEKO_EPR'
+            en_US: 'Container Variable: NEKO_EPR'
         - container: NEKO_ICELITE
           description:
-            en_us: 'Container Variable: NEKO_ICELITE'
+            en_US: 'Container Variable: NEKO_ICELITE'
         - container: NEKO_DEBUG
           description:
-            en_us: 'Container Variable: NEKO_DEBUG'
+            en_US: 'Container Variable: NEKO_DEBUG'
         - container: NEKO_NAT1TO1
           description:
-            en_us: 'Container Variable: NEKO_NAT1TO1'
+            en_US: 'Container Variable: NEKO_NAT1TO1'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
         - container: "52000"
           description:
-            en_us: 'Container Port: 52000'
+            en_US: 'Container Port: 52000'
         - container: "52001"
           description:
-            en_us: 'Container Port: 52001'
+            en_US: 'Container Port: 52001'
         - container: "52002"
           description:
-            en_us: 'Container Port: 52002'
+            en_US: 'Container Port: 52002'
         - container: "52003"
           description:
-            en_us: 'Container Port: 52003'
+            en_US: 'Container Port: 52003'
         - container: "52004"
           description:
-            en_us: 'Container Port: 52004'
+            en_US: 'Container Port: 52004'
         - container: "52005"
           description:
-            en_us: 'Container Port: 52005'
+            en_US: 'Container Port: 52005'
         - container: "52006"
           description:
-            en_us: 'Container Port: 52006'
+            en_US: 'Container Port: 52006'
         - container: "52007"
           description:
-            en_us: 'Container Port: 52007'
+            en_US: 'Container Port: 52007'
         - container: "52008"
           description:
-            en_us: 'Container Port: 52008'
+            en_US: 'Container Port: 52008'
         - container: "52009"
           description:
-            en_us: 'Container Port: 52009'
+            en_US: 'Container Port: 52009'
         - container: "52010"
           description:
-            en_us: 'Container Port: 52010'
+            en_US: 'Container Port: 52010'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.neko-firefox
   # Main service for this application
   main: big-bear-neko-firefox
   # Detailed description for the application
   description:
-    en_us: Welcome to Neko, a self-hosted virtual browser that runs in Docker and uses WebRTC technology. Neko is a powerful tool that allows you to run a fully-functional browser in a virtual environment, giving you the ability to access the internet securely and privately from anywhere. With Neko, you can browse the web, run applications, and perform other tasks just as you would on a regular browser, all within a secure and isolated environment. Whether you are a developer looking to test web applications, a privacy-conscious user seeking a secure browsing experience, or simply someone who wants to take advantage of the convenience and flexibility of a virtual browser, Neko is the perfect solution.
+    en_US: Welcome to Neko, a self-hosted virtual browser that runs in Docker and uses WebRTC technology. Neko is a powerful tool that allows you to run a fully-functional browser in a virtual environment, giving you the ability to access the internet securely and privately from anywhere. With Neko, you can browse the web, run applications, and perform other tasks just as you would on a regular browser, all within a secure and isolated environment. Whether you are a developer looking to test web applications, a privacy-conscious user seeking a secure browsing experience, or simply someone who wants to take advantage of the convenience and flexibility of a virtual browser, Neko is the perfect solution.
   # Brief tagline for the application
   tagline:
-    en_us: A self hosted virtual browser that runs in docker and uses WebRTC.
+    en_US: A self hosted virtual browser that runs in docker and uses WebRTC.
   # Developer's information
   developer: m1k1o
   # Author of this particular configuration
@@ -120,8 +122,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Neko Firefox
+    en_US: Neko Firefox
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8080"

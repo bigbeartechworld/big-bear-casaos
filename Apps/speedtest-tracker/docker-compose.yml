@@ -34,48 +34,48 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: DB_CONNECTION
           description:
-            en_us: 'Container Variable: DB_CONNECTION'
+            en_US: 'Container Variable: DB_CONNECTION'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_PORT
           description:
-            en_us: 'Container Variable: DB_PORT'
+            en_US: 'Container Variable: DB_PORT'
         - container: DB_DATABASE
           description:
-            en_us: 'Container Variable: DB_DATABASE'
+            en_US: 'Container Variable: DB_DATABASE'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /etc/localtime
           description:
-            en_us: 'Container Path: /etc/localtime'
+            en_US: 'Container Path: /etc/localtime'
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /etc/ssl/web
           description:
-            en_us: 'Container Path: /etc/ssl/web'
+            en_US: 'Container Path: /etc/ssl/web'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
         - container: "443"
           description:
-            en_us: 'Container Port: 443'
+            en_US: 'Container Port: 443'
   big-bear-speedtest-tracker-db:
     image: mariadb:10
     container_name: big-bear-speedtest-tracker-db
@@ -93,20 +93,20 @@ services:
       envs:
         - container: MARIADB_DATABASE
           description:
-            en_us: 'Container Variable: MARIADB_DATABASE'
+            en_US: 'Container Variable: MARIADB_DATABASE'
         - container: MARIADB_USER
           description:
-            en_us: 'Container Variable: MARIADB_USER'
+            en_US: 'Container Variable: MARIADB_USER'
         - container: MARIADB_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_PASSWORD'
+            en_US: 'Container Variable: MARIADB_PASSWORD'
         - container: MARIADB_RANDOM_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_RANDOM_ROOT_PASSWORD'
+            en_US: 'Container Variable: MARIADB_RANDOM_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 # Network definition for the big-bear-speedtest-tracker application
 networks:
   big_bear_speedtest_tracker_network:
@@ -116,14 +116,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.speedtest-tracker
   # Main service for this application
   main: big-bear-speedtest-tracker
   # Detailed description for the application
   description:
-    en_us: A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.
+    en_US: A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.
   # Brief tagline for the application
   tagline:
-    en_us: Speedtest Tracker
+    en_US: Speedtest Tracker
   # Developer's information
   developer: alexjustesen
   # Author of this particular configuration
@@ -135,12 +137,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Default Credentials - Username: admin@example.com and Password: password
   # Title for the application
   title:
-    en_us: Speedtest Tracker
+    en_US: Speedtest Tracker
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Networking
   # Default port mapping for the application
   port_map: "8080"

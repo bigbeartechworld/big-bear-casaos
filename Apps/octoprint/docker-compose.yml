@@ -32,24 +32,26 @@ services:
       volumes:
         - container: /octoprint
           description:
-            en_us: 'Container Path: /octoprint'
+            en_US: 'Container Path: /octoprint'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.octoprint
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: OctoPrint is the snappy web interface for your 3D printer!
+    en_US: OctoPrint is the snappy web interface for your 3D printer!
   # Brief tagline for the application
   tagline:
-    en_us: OctoPrint
+    en_US: OctoPrint
   # Developer's information
   developer: octoprint
   # Author of this particular configuration
@@ -60,8 +62,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: OctoPrint
+    en_US: OctoPrint
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Home
   # Default port mapping for the application
   port_map: "1080"

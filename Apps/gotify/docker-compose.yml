@@ -17,30 +17,32 @@ services:
       envs:
         - container: GOTIFY_DEFAULTUSER_NAME
           description:
-            en_us: 'Container Variable: GOTIFY_DEFAULTUSER_NAME'
+            en_US: 'Container Variable: GOTIFY_DEFAULTUSER_NAME'
         - container: GOTIFY_DEFAULTUSER_PASS
           description:
-            en_us: 'Container Variable: GOTIFY_DEFAULTUSER_PASS'
+            en_US: 'Container Variable: GOTIFY_DEFAULTUSER_PASS'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.gotify
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: a simple server for sending and receiving messages
+    en_US: a simple server for sending and receiving messages
   # Brief tagline for the application
   tagline:
-    en_us: Gotify
+    en_US: Gotify
   # Developer's information
   developer: gotify
   # Author of this particular configuration
@@ -51,8 +53,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Gotify
+    en_US: Gotify
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Social
   # Default port mapping for the application
   port_map: "8091"

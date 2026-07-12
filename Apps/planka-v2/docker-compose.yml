@@ -109,45 +109,45 @@ services:
       envs:
         - container: BASE_URL
           description:
-            en_us: 'Container Variable: BASE_URL'
+            en_US: 'Container Variable: BASE_URL'
         - container: DATABASE_URL
           description:
-            en_us: 'Container Variable: DATABASE_URL'
+            en_US: 'Container Variable: DATABASE_URL'
         - container: SECRET_KEY
           description:
-            en_us: 'Container Variable: SECRET_KEY'
+            en_US: 'Container Variable: SECRET_KEY'
         - container: DEFAULT_ADMIN_EMAIL
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_EMAIL'
+            en_US: 'Container Variable: DEFAULT_ADMIN_EMAIL'
         - container: DEFAULT_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_PASSWORD'
+            en_US: 'Container Variable: DEFAULT_ADMIN_PASSWORD'
         - container: DEFAULT_ADMIN_NAME
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_NAME'
+            en_US: 'Container Variable: DEFAULT_ADMIN_NAME'
         - container: DEFAULT_ADMIN_USERNAME
           description:
-            en_us: 'Container Variable: DEFAULT_ADMIN_USERNAME'
+            en_US: 'Container Variable: DEFAULT_ADMIN_USERNAME'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
         - container: /app/public/background-images
           description:
-            en_us: 'Container Path: /app/public/background-images'
+            en_US: 'Container Path: /app/public/background-images'
         - container: /app/public/user-avatars
           description:
-            en_us: 'Container Path: /app/public/user-avatars'
+            en_US: 'Container Path: /app/public/user-avatars'
         - container: /app/public/project-background-images
           description:
-            en_us: 'Container Path: /app/public/project-background-images'
+            en_US: 'Container Path: /app/public/project-background-images'
         - container: /app/private/attachments
           description:
-            en_us: 'Container Path: /app/private/attachments'
+            en_US: 'Container Path: /app/private/attachments'
       ports:
         - container: "1337"
           description:
-            en_us: 'Container Port: 1337'
+            en_US: 'Container Port: 1337'
   # Service definition for the PostgreSQL database used by big-bear-planka-v2
   big-bear-planka-v2-postgres:
     # Specifies the Docker image to use for the PostgreSQL database
@@ -189,14 +189,14 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_HOST_AUTH_METHOD
           description:
-            en_us: 'Container Variable: POSTGRES_HOST_AUTH_METHOD'
+            en_US: 'Container Variable: POSTGRES_HOST_AUTH_METHOD'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 networks:
   big-bear-planka-v2-network:
     driver: bridge
@@ -205,14 +205,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.planka-v2
   # Main service for this application
   main: big-bear-planka-v2
   # Detailed description for the application
   description:
-    en_us: The realtime kanban board for workgroups built with React and Redux.
+    en_US: The realtime kanban board for workgroups built with React and Redux.
   # Brief tagline for the application
   tagline:
-    en_us: Free open source kanban board for workgroups.
+    en_US: Free open source kanban board for workgroups.
   # Developer's information
   developer: plankanban
   # Author of this particular configuration
@@ -224,11 +226,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: "\U0001F195 PLANKA V2 - SEPARATE APP\n\nThis is a NEW app, separate from 'planka' (v1). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new Planka deployments\n✅ Modern v2 architecture with unified data directory\n✅ Enhanced security (SSRF protection)\n✅ New features: user mentions, task linking, webhooks UI, SMTP UI\n\nFOR V1 USERS:\n⚠️  Do NOT uninstall your 'planka' v1 app\n⚠️  Deploy this as a NEW app alongside v1\n⚠️  Migration is ONE-WAY with NO ROLLBACK\n⚠️  Requires manual data migration: https://docs.planka.cloud/docs/upgrade-to-v2/docker/\n⚠️  Must be on v1 >= 1.26.2, subdomain hosting required\n\nDetailed migration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
+      en_US: "\U0001F195 PLANKA V2 - SEPARATE APP\n\nThis is a NEW app, separate from 'planka' (v1). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new Planka deployments\n✅ Modern v2 architecture with unified data directory\n✅ Enhanced security (SSRF protection)\n✅ New features: user mentions, task linking, webhooks UI, SMTP UI\n\nFOR V1 USERS:\n⚠️  Do NOT uninstall your 'planka' v1 app\n⚠️  Deploy this as a NEW app alongside v1\n⚠️  Migration is ONE-WAY with NO ROLLBACK\n⚠️  Requires manual data migration: https://docs.planka.cloud/docs/upgrade-to-v2/docker/\n⚠️  Must be on v1 >= 1.26.2, subdomain hosting required\n\nDetailed migration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
   # Title for the application
   title:
-    en_us: Planka v2
+    en_US: Planka v2
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "3001"

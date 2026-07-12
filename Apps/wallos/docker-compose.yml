@@ -30,31 +30,33 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /var/www/html/db
           description:
-            en_us: 'Container Path: /var/www/html/db'
+            en_US: 'Container Path: /var/www/html/db'
         - container: /var/www/html/images/uploads/logos
           description:
-            en_us: 'Container Path: /var/www/html/images/uploads/logos'
+            en_US: 'Container Path: /var/www/html/images/uploads/logos'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.wallos
   # Main service for this application
   main: big-bear-wallos
   # Detailed description for the application
   description:
-    en_us: 'Wallos: Open-Source Personal Subscription Tracker'
+    en_US: 'Wallos: Open-Source Personal Subscription Tracker'
   # Brief tagline for the application
   tagline:
-    en_us: Wallos
+    en_US: Wallos
   # Developer's information
   developer: bellamy
   # Author of this particular configuration
@@ -66,12 +68,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-wallos-to-bigbearcasaos/2139?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Wallos
+    en_US: Wallos
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8282"

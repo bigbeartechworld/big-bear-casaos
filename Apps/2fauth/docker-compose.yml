@@ -27,28 +27,30 @@ services:
       envs:
         - container: APP_URL
           description:
-            en_us: 'Container Variable: APP_URL'
+            en_US: 'Container Variable: APP_URL'
       volumes:
         - container: /2fauth
           description:
-            en_us: 'Container Path: /2fauth'
+            en_US: 'Container Path: /2fauth'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.2fauth
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
+    en_US: A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
   # Brief tagline for the application
   tagline:
-    en_us: A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
+    en_US: A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
   # Developer's information
   developer: bubka
   # Author of this particular configuration
@@ -59,8 +61,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: 2FAuth
+    en_US: 2FAuth
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "8000"

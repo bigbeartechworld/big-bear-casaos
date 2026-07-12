@@ -27,33 +27,35 @@ services:
       envs:
         - container: PMA_HOST
           description:
-            en_us: 'Container Variable: PMA_HOST'
+            en_US: 'Container Variable: PMA_HOST'
         - container: PMA_PORT
           description:
-            en_us: 'Container Variable: PMA_PORT'
+            en_US: 'Container Variable: PMA_PORT'
         - container: PMA_USER
           description:
-            en_us: 'Container Variable: PMA_USER'
+            en_US: 'Container Variable: PMA_USER'
         - container: PMA_PASSWORD
           description:
-            en_us: 'Container Variable: PMA_PASSWORD'
+            en_US: 'Container Variable: PMA_PASSWORD'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.phpmyadmin
   # Main service for this application
   main: phpmyadmin
   # Detailed description for the application
   description:
-    en_us: phpMyAdmin - A web interface for MySQL and MariaDB.
+    en_US: phpMyAdmin - A web interface for MySQL and MariaDB.
   # Brief tagline for the application
   tagline:
-    en_us: phpMyAdmin
+    en_US: phpMyAdmin
   # Developer's information
   developer: phpMyAdmin
   # Author of this particular configuration
@@ -64,8 +66,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: phpMyAdmin
+    en_US: phpMyAdmin
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

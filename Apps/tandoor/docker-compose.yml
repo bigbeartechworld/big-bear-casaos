@@ -41,36 +41,36 @@ services:
       envs:
         - container: SECRET_KEY
           description:
-            en_us: 'Container Variable: SECRET_KEY'
+            en_US: 'Container Variable: SECRET_KEY'
         - container: DB_ENGINE
           description:
-            en_us: 'Container Variable: DB_ENGINE'
+            en_US: 'Container Variable: DB_ENGINE'
         - container: POSTGRES_HOST
           description:
-            en_us: 'Container Variable: POSTGRES_HOST'
+            en_US: 'Container Variable: POSTGRES_HOST'
         - container: POSTGRES_PORT
           description:
-            en_us: 'Container Variable: POSTGRES_PORT'
+            en_US: 'Container Variable: POSTGRES_PORT'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /opt/recipes/staticfiles
           description:
-            en_us: 'Container Path: /opt/recipes/staticfiles'
+            en_US: 'Container Path: /opt/recipes/staticfiles'
         - container: /opt/recipes/mediafiles
           description:
-            en_us: 'Container Path: /opt/recipes/mediafiles'
+            en_US: 'Container Path: /opt/recipes/mediafiles'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
   big-bear-tandoor-db:
     image: postgres:15-alpine
     container_name: big-bear-tandoor-db
@@ -94,20 +94,20 @@ services:
       envs:
         - container: POSTGRES_PORT
           description:
-            en_us: 'Container Variable: POSTGRES_PORT'
+            en_US: 'Container Variable: POSTGRES_PORT'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
 # Network definitions for the big-bear-tandoor application
 networks:
   big_bear_tandoor_network:
@@ -117,14 +117,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.tandoor
   # Main service for this application
   main: big-bear-tandoor
   # Detailed description for the application
   description:
-    en_us: Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!
+    en_US: Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!
   # Brief tagline for the application
   tagline:
-    en_us: Recipe collection manager.
+    en_US: Recipe collection manager.
   # Developer's information
   developer: tandoorrecipes
   # Author of this particular configuration
@@ -135,8 +137,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Tandoor
+    en_US: Tandoor
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "8080"

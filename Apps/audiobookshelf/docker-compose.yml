@@ -27,33 +27,35 @@ services:
       volumes:
         - container: /audiobooks
           description:
-            en_us: 'Container Path: /audiobooks'
+            en_US: 'Container Path: /audiobooks'
         - container: /podcasts
           description:
-            en_us: 'Container Path: /podcasts'
+            en_US: 'Container Path: /podcasts'
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /metadata
           description:
-            en_us: 'Container Path: /metadata'
+            en_US: 'Container Path: /metadata'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.audiobookshelf
   # Main service for this application
   main: big-bear-audiobookshelf
   # Detailed description for the application
   description:
-    en_us: Audiobookshelf is a self-hosted audiobook server for managing and playing your audiobooks. Audiobookshelf has a clean, accessible design that's loaded with features but not overly complicated.
+    en_US: Audiobookshelf is a self-hosted audiobook server for managing and playing your audiobooks. Audiobookshelf has a clean, accessible design that's loaded with features but not overly complicated.
   # Brief tagline for the application
   tagline:
-    en_us: Audiobookshelf is a self-hosted audiobook and podcast server.
+    en_US: Audiobookshelf is a self-hosted audiobook and podcast server.
   # Developer's information
   developer: ajnart
   # Author of this particular configuration
@@ -64,8 +66,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Audiobookshelf
+    en_US: Audiobookshelf
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Media
   # Default port mapping for the application
   port_map: "8080"

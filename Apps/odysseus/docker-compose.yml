@@ -57,36 +57,36 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: AUTH_ENABLED
           description:
-            en_us: 'Container Variable: AUTH_ENABLED'
+            en_US: 'Container Variable: AUTH_ENABLED'
         - container: ODYSSEUS_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: ODYSSEUS_ADMIN_PASSWORD'
+            en_US: 'Container Variable: ODYSSEUS_ADMIN_PASSWORD'
         - container: SEARXNG_INSTANCE
           description:
-            en_us: 'Container Variable: SEARXNG_INSTANCE'
+            en_US: 'Container Variable: SEARXNG_INSTANCE'
         - container: CHROMADB_HOST
           description:
-            en_us: 'Container Variable: CHROMADB_HOST'
+            en_US: 'Container Variable: CHROMADB_HOST'
         - container: CHROMADB_PORT
           description:
-            en_us: 'Container Variable: CHROMADB_PORT'
+            en_US: 'Container Variable: CHROMADB_PORT'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
         - container: /app/logs
           description:
-            en_us: 'Container Path: /app/logs'
+            en_US: 'Container Path: /app/logs'
       ports:
         - container: "7000"
           description:
-            en_us: 'Container Port: 7000'
+            en_US: 'Container Port: 7000'
   # Service name: chromadb
   # Vector database for Odysseus
   chromadb:
@@ -109,11 +109,11 @@ services:
       envs:
         - container: ANONYMIZED_TELEMETRY
           description:
-            en_us: 'Container Variable: ANONYMIZED_TELEMETRY'
+            en_US: 'Container Variable: ANONYMIZED_TELEMETRY'
       volumes:
         - container: /chroma/chroma
           description:
-            en_us: 'Container Path: /chroma/chroma'
+            en_US: 'Container Path: /chroma/chroma'
   # Service name: searxng
   # Web search backend; settings seeded into the named volume on first run
   searxng:
@@ -174,14 +174,14 @@ services:
       envs:
         - container: SEARXNG_BASE_URL
           description:
-            en_us: 'Container Variable: SEARXNG_BASE_URL'
+            en_US: 'Container Variable: SEARXNG_BASE_URL'
         - container: SEARXNG_SECRET
           description:
-            en_us: 'Container Variable: SEARXNG_SECRET'
+            en_US: 'Container Variable: SEARXNG_SECRET'
       volumes:
         - container: /etc/searxng
           description:
-            en_us: 'Container Path: /etc/searxng'
+            en_US: 'Container Path: /etc/searxng'
   # Service name: ntfy
   # Optional notification service
   ntfy:
@@ -209,15 +209,15 @@ services:
       envs:
         - container: NTFY_BASE_URL
           description:
-            en_us: 'Container Variable: NTFY_BASE_URL'
+            en_US: 'Container Variable: NTFY_BASE_URL'
       volumes:
         - container: /var/cache/ntfy
           description:
-            en_us: 'Container Path: /var/cache/ntfy'
+            en_US: 'Container Path: /var/cache/ntfy'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 # Network configuration
 networks:
   big_bear_odysseus_network:
@@ -227,17 +227,19 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.odysseus
   # Main service for this application
   main: big-bear-odysseus
   # Detailed description for the application
   description:
-    en_us: Odysseus is a self-hosted AI workspace. It bundles chat, web search via SearXNG, and a ChromaDB vector store so you can run your own private AI environment with the LLM provider of your choice.
+    en_US: Odysseus is a self-hosted AI workspace. It bundles chat, web search via SearXNG, and a ChromaDB vector store so you can run your own private AI environment with the LLM provider of your choice.
   # Screenshot links for the application
   screenshot_link:
     - https://raw.githubusercontent.com/pewdiepie-archdaemon/odysseus/main/docs/odysseus.jpg
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted AI workspace
+    en_US: Self-hosted AI workspace
   # Developer's information
   developer: pewdiepie-archdaemon
   # Author of this particular configuration
@@ -249,12 +251,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Set ODYSSEUS_ADMIN_PASSWORD before installing. The default password is insecure.
   # Title for the application
   title:
-    en_us: Odysseus
+    en_US: Odysseus
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "7000"

@@ -28,28 +28,30 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_us: 'Container Variable: NODE_ENV'
+            en_US: 'Container Variable: NODE_ENV'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.composetoolbox
   # Main service for this application
   main: big-bear-composetoolbox
   # Detailed description for the application
   description:
-    en_us: Self-hosted tool to edit, validate, and get suggestions for docker-compose.yml files.
+    en_US: Self-hosted tool to edit, validate, and get suggestions for docker-compose.yml files.
   # Brief tagline for the application
   tagline:
-    en_us: Compose file editor & validator
+    en_US: Compose file editor & validator
   # Developer's information
   developer: bluegoosemedia
   # Author of this particular configuration
@@ -60,8 +62,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Compose Toolbox
+    en_US: Compose Toolbox
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3002"

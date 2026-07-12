@@ -46,58 +46,60 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
         - container: WINGS_UID
           description:
-            en_us: 'Container Variable: WINGS_UID'
+            en_US: 'Container Variable: WINGS_UID'
         - container: WINGS_GID
           description:
-            en_us: 'Container Variable: WINGS_GID'
+            en_US: 'Container Variable: WINGS_GID'
         - container: WINGS_USERNAME
           description:
-            en_us: 'Container Variable: WINGS_USERNAME'
+            en_US: 'Container Variable: WINGS_USERNAME'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
         - container: /var/lib/docker/containers/
           description:
-            en_us: 'Container Path: /var/lib/docker/containers/'
+            en_US: 'Container Path: /var/lib/docker/containers/'
         - container: /etc/ssl/certs
           description:
-            en_us: 'Container Path: /etc/ssl/certs'
+            en_US: 'Container Path: /etc/ssl/certs'
         - container: /tmp/pterodactyl/
           description:
-            en_us: 'Container Path: /tmp/pterodactyl/'
+            en_US: 'Container Path: /tmp/pterodactyl/'
         - container: /etc/pterodactyl/
           description:
-            en_us: 'Container Path: /etc/pterodactyl/'
+            en_US: 'Container Path: /etc/pterodactyl/'
         - container: /var/log/pterodactyl/
           description:
-            en_us: 'Container Path: /var/log/pterodactyl/'
+            en_US: 'Container Path: /var/log/pterodactyl/'
         - container: /var/lib/pterodactyl/
           description:
-            en_us: 'Container Path: /var/lib/pterodactyl/'
+            en_US: 'Container Path: /var/lib/pterodactyl/'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
         - container: "2022"
           description:
-            en_us: 'Container Port: 2022'
+            en_US: 'Container Port: 2022'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pterodactyl-wings
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Wings is Pterodactyl's server control plane, built for the rapidly changing gaming industry and designed to be highly performant and secure. Wings provides an HTTP API allowing you to interface directly with running server instances, fetch server logs, generate backups, and control all aspects of the server lifecycle.
+    en_US: Wings is Pterodactyl's server control plane, built for the rapidly changing gaming industry and designed to be highly performant and secure. Wings provides an HTTP API allowing you to interface directly with running server instances, fetch server logs, generate backups, and control all aspects of the server lifecycle.
   # Brief tagline for the application
   tagline:
-    en_us: Pterodactyl Wings
+    en_US: Pterodactyl Wings
   # Developer's information
   developer: pterodactyl
   # Author of this particular configuration
@@ -109,7 +111,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before setting up Pterodactyl Wings in your container, you need to ensure that the node is properly configured in the Pterodactyl panel. Follow these steps:
 
         Create the Node in the Pterodactyl Panel: If you haven't already, initiate and configure the node within the Pterodactyl panel.
@@ -125,8 +127,8 @@ x-casaos:
         Restart the Container: Once the configuration is in place, ensure you restart the container for the changes to take effect.
   # Title for the application
   title:
-    en_us: Pterodactyl Wings
+    en_US: Pterodactyl Wings
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "2022"

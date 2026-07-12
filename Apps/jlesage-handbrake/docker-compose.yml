@@ -16,37 +16,39 @@ services:
       envs:
         - container: VNC_PASSWORD
           description:
-            en_us: 'Container Variable: VNC_PASSWORD'
+            en_US: 'Container Variable: VNC_PASSWORD'
       volumes:
         - container: /config
           description:
-            en_us: 'Container Path: /config'
+            en_US: 'Container Path: /config'
         - container: /storage
           description:
-            en_us: 'Container Path: /storage'
+            en_US: 'Container Path: /storage'
         - container: /watch
           description:
-            en_us: 'Container Path: /watch'
+            en_US: 'Container Path: /watch'
         - container: /output
           description:
-            en_us: 'Container Path: /output'
+            en_US: 'Container Path: /output'
       ports:
         - container: "5800"
           description:
-            en_us: 'Container Port: 5800'
+            en_US: 'Container Port: 5800'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.jlesage-handbrake
   # Main service for this application
   main: big-bear-jlesage-handbrake
   # Detailed description for the application
   description:
-    en_us: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
+    en_US: The GUI of the application is accessed through a modern web browser (no installation or configuration needed on the client side) or via any VNC client.
   # Brief tagline for the application
   tagline:
-    en_us: This project implements a Docker container for Handbrake.
+    en_US: This project implements a Docker container for Handbrake.
   # Developer's information
   developer: jlesage
   # Author of this particular configuration
@@ -58,12 +60,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-jlesage-handbrake-to-bigbearcasaos/2956?u=dragonfire1119
   # Title for the application
   title:
-    en_us: Jlesage Handbrake
+    en_US: Jlesage Handbrake
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "5800"

@@ -24,36 +24,36 @@ services:
       envs:
         - container: HOME
           description:
-            en_us: 'Container Variable: HOME'
+            en_US: 'Container Variable: HOME'
         - container: TERM
           description:
-            en_us: 'Container Variable: TERM'
+            en_US: 'Container Variable: TERM'
         - container: OPENCLAW_GATEWAY_TOKEN
           description:
-            en_us: 'Container Variable: OPENCLAW_GATEWAY_TOKEN'
+            en_US: 'Container Variable: OPENCLAW_GATEWAY_TOKEN'
         - container: CLAUDE_AI_SESSION_KEY
           description:
-            en_us: 'Container Variable: CLAUDE_AI_SESSION_KEY'
+            en_US: 'Container Variable: CLAUDE_AI_SESSION_KEY'
         - container: CLAUDE_WEB_SESSION_KEY
           description:
-            en_us: 'Container Variable: CLAUDE_WEB_SESSION_KEY'
+            en_US: 'Container Variable: CLAUDE_WEB_SESSION_KEY'
         - container: CLAUDE_WEB_COOKIE
           description:
-            en_us: 'Container Variable: CLAUDE_WEB_COOKIE'
+            en_US: 'Container Variable: CLAUDE_WEB_COOKIE'
       volumes:
         - container: /home/node/.openclaw
           description:
-            en_us: 'Container Path: /home/node/.openclaw'
+            en_US: 'Container Path: /home/node/.openclaw'
         - container: /home/node/.openclaw/workspace
           description:
-            en_us: 'Container Path: /home/node/.openclaw/workspace'
+            en_US: 'Container Path: /home/node/.openclaw/workspace'
       ports:
         - container: "18789"
           description:
-            en_us: 'Container Port: 18789'
+            en_US: 'Container Port: 18789'
         - container: "18790"
           description:
-            en_us: 'Container Port: 18790'
+            en_US: 'Container Port: 18790'
   big-bear-openclaw-cli:
     image: ghcr.io/openclaw/openclaw:2026.5.3-1
     container_name: big-bear-openclaw-cli
@@ -79,45 +79,47 @@ services:
       envs:
         - container: HOME
           description:
-            en_us: 'Container Variable: HOME'
+            en_US: 'Container Variable: HOME'
         - container: TERM
           description:
-            en_us: 'Container Variable: TERM'
+            en_US: 'Container Variable: TERM'
         - container: BROWSER
           description:
-            en_us: 'Container Variable: BROWSER'
+            en_US: 'Container Variable: BROWSER'
         - container: OPENCLAW_GATEWAY_TOKEN
           description:
-            en_us: 'Container Variable: OPENCLAW_GATEWAY_TOKEN'
+            en_US: 'Container Variable: OPENCLAW_GATEWAY_TOKEN'
         - container: CLAUDE_AI_SESSION_KEY
           description:
-            en_us: 'Container Variable: CLAUDE_AI_SESSION_KEY'
+            en_US: 'Container Variable: CLAUDE_AI_SESSION_KEY'
         - container: CLAUDE_WEB_SESSION_KEY
           description:
-            en_us: 'Container Variable: CLAUDE_WEB_SESSION_KEY'
+            en_US: 'Container Variable: CLAUDE_WEB_SESSION_KEY'
         - container: CLAUDE_WEB_COOKIE
           description:
-            en_us: 'Container Variable: CLAUDE_WEB_COOKIE'
+            en_US: 'Container Variable: CLAUDE_WEB_COOKIE'
       volumes:
         - container: /home/node/.openclaw
           description:
-            en_us: 'Container Path: /home/node/.openclaw'
+            en_US: 'Container Path: /home/node/.openclaw'
         - container: /home/node/.openclaw/workspace
           description:
-            en_us: 'Container Path: /home/node/.openclaw/workspace'
+            en_US: 'Container Path: /home/node/.openclaw/workspace'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.openclaw
   # Main service for this application
   main: big-bear-openclaw
   # Detailed description for the application
   description:
-    en_us: OpenClaw is a self-hosted AI agent platform that provides Claude AI integration through a local gateway. It enables running AI assistants with local tool execution, file access, and workspace management. Features include WebSocket gateway, browser automation, and extensible command framework.
+    en_US: OpenClaw is a self-hosted AI agent platform that provides Claude AI integration through a local gateway. It enables running AI assistants with local tool execution, file access, and workspace management. Features include WebSocket gateway, browser automation, and extensible command framework.
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted AI agent platform with Claude integration
+    en_US: Self-hosted AI agent platform with Claude integration
   # Developer's information
   developer: openclaw
   # Author of this particular configuration
@@ -129,11 +131,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: 'Generate a secure gateway token using: openssl rand -hex 32. Set OPENCLAW_GATEWAY_TOKEN in your environment before starting.'
+      en_US: 'Generate a secure gateway token using: openssl rand -hex 32. Set OPENCLAW_GATEWAY_TOKEN in your environment before starting.'
   # Title for the application
   title:
-    en_us: OpenClaw
+    en_US: OpenClaw
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "18789"

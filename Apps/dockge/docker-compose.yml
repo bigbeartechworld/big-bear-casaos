@@ -29,34 +29,36 @@ services:
       envs:
         - container: DOCKGE_STACKS_DIR
           description:
-            en_us: 'Container Variable: DOCKGE_STACKS_DIR'
+            en_US: 'Container Variable: DOCKGE_STACKS_DIR'
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
         - container: /DATA/AppData/big-bear-dockge/stacks
           description:
-            en_us: 'Container Path: /DATA/AppData/big-bear-dockge/stacks'
+            en_US: 'Container Path: /DATA/AppData/big-bear-dockge/stacks'
       ports:
         - container: "5001"
           description:
-            en_us: 'Container Port: 5001'
+            en_US: 'Container Port: 5001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.dockge
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager
+    en_US: A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager
   # Brief tagline for the application
   tagline:
-    en_us: Dockge
+    en_US: Dockge
   # Developer's information
   developer: louislam
   # Author of this particular configuration
@@ -67,8 +69,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Dockge
+    en_US: Dockge
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "5001"

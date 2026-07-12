@@ -57,90 +57,90 @@ services:
       envs:
         - container: PHOTOPRISM_ADMIN_PASSWORD
           description:
-            en_us: 'Container Variable: PHOTOPRISM_ADMIN_PASSWORD'
+            en_US: 'Container Variable: PHOTOPRISM_ADMIN_PASSWORD'
         - container: PHOTOPRISM_SITE_URL
           description:
-            en_us: 'Container Variable: PHOTOPRISM_SITE_URL'
+            en_US: 'Container Variable: PHOTOPRISM_SITE_URL'
         - container: PHOTOPRISM_ORIGINALS_LIMIT
           description:
-            en_us: 'Container Variable: PHOTOPRISM_ORIGINALS_LIMIT'
+            en_US: 'Container Variable: PHOTOPRISM_ORIGINALS_LIMIT'
         - container: PHOTOPRISM_HTTP_COMPRESSION
           description:
-            en_us: 'Container Variable: PHOTOPRISM_HTTP_COMPRESSION'
+            en_US: 'Container Variable: PHOTOPRISM_HTTP_COMPRESSION'
         - container: PHOTOPRISM_LOG_LEVEL
           description:
-            en_us: 'Container Variable: PHOTOPRISM_LOG_LEVEL'
+            en_US: 'Container Variable: PHOTOPRISM_LOG_LEVEL'
         - container: PHOTOPRISM_PUBLIC
           description:
-            en_us: 'Container Variable: PHOTOPRISM_PUBLIC'
+            en_US: 'Container Variable: PHOTOPRISM_PUBLIC'
         - container: PHOTOPRISM_READONLY
           description:
-            en_us: 'Container Variable: PHOTOPRISM_READONLY'
+            en_US: 'Container Variable: PHOTOPRISM_READONLY'
         - container: PHOTOPRISM_EXPERIMENTAL
           description:
-            en_us: 'Container Variable: PHOTOPRISM_EXPERIMENTAL'
+            en_US: 'Container Variable: PHOTOPRISM_EXPERIMENTAL'
         - container: PHOTOPRISM_DISABLE_CHOWN
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DISABLE_CHOWN'
+            en_US: 'Container Variable: PHOTOPRISM_DISABLE_CHOWN'
         - container: PHOTOPRISM_DISABLE_WEBDAV
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DISABLE_WEBDAV'
+            en_US: 'Container Variable: PHOTOPRISM_DISABLE_WEBDAV'
         - container: PHOTOPRISM_DISABLE_SETTINGS
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DISABLE_SETTINGS'
+            en_US: 'Container Variable: PHOTOPRISM_DISABLE_SETTINGS'
         - container: PHOTOPRISM_DISABLE_TENSORFLOW
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DISABLE_TENSORFLOW'
+            en_US: 'Container Variable: PHOTOPRISM_DISABLE_TENSORFLOW'
         - container: PHOTOPRISM_DISABLE_FACES
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DISABLE_FACES'
+            en_US: 'Container Variable: PHOTOPRISM_DISABLE_FACES'
         - container: PHOTOPRISM_DISABLE_CLASSIFICATION
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DISABLE_CLASSIFICATION'
+            en_US: 'Container Variable: PHOTOPRISM_DISABLE_CLASSIFICATION'
         - container: PHOTOPRISM_DISABLE_RAW
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DISABLE_RAW'
+            en_US: 'Container Variable: PHOTOPRISM_DISABLE_RAW'
         - container: PHOTOPRISM_RAW_PRESETS
           description:
-            en_us: 'Container Variable: PHOTOPRISM_RAW_PRESETS'
+            en_US: 'Container Variable: PHOTOPRISM_RAW_PRESETS'
         - container: PHOTOPRISM_JPEG_QUALITY
           description:
-            en_us: 'Container Variable: PHOTOPRISM_JPEG_QUALITY'
+            en_US: 'Container Variable: PHOTOPRISM_JPEG_QUALITY'
         - container: PHOTOPRISM_DETECT_NSFW
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DETECT_NSFW'
+            en_US: 'Container Variable: PHOTOPRISM_DETECT_NSFW'
         - container: PHOTOPRISM_UPLOAD_NSFW
           description:
-            en_us: 'Container Variable: PHOTOPRISM_UPLOAD_NSFW'
+            en_US: 'Container Variable: PHOTOPRISM_UPLOAD_NSFW'
         - container: PHOTOPRISM_DATABASE_DRIVER
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DATABASE_DRIVER'
+            en_US: 'Container Variable: PHOTOPRISM_DATABASE_DRIVER'
         - container: PHOTOPRISM_DATABASE_SERVER
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DATABASE_SERVER'
+            en_US: 'Container Variable: PHOTOPRISM_DATABASE_SERVER'
         - container: PHOTOPRISM_DATABASE_NAME
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DATABASE_NAME'
+            en_US: 'Container Variable: PHOTOPRISM_DATABASE_NAME'
         - container: PHOTOPRISM_DATABASE_USER
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DATABASE_USER'
+            en_US: 'Container Variable: PHOTOPRISM_DATABASE_USER'
         - container: PHOTOPRISM_DATABASE_PASSWORD
           description:
-            en_us: 'Container Variable: PHOTOPRISM_DATABASE_PASSWORD'
+            en_US: 'Container Variable: PHOTOPRISM_DATABASE_PASSWORD'
         - container: PHOTOPRISM_SITE_CAPTION
           description:
-            en_us: 'Container Variable: PHOTOPRISM_SITE_CAPTION'
+            en_US: 'Container Variable: PHOTOPRISM_SITE_CAPTION'
       volumes:
         - container: /photoprism/originals
           description:
-            en_us: 'Container Path: /photoprism/originals'
+            en_US: 'Container Path: /photoprism/originals'
         - container: /photoprism/storage
           description:
-            en_us: 'Container Path: /photoprism/storage'
+            en_US: 'Container Path: /photoprism/storage'
       ports:
         - container: "2342"
           description:
-            en_us: 'Container Port: 2342'
+            en_US: 'Container Port: 2342'
   # Database service for Photoprism
   photoprism-db:
     # Docker image for the database
@@ -166,20 +166,20 @@ services:
       envs:
         - container: MARIADB_DATABASE
           description:
-            en_us: 'Container Variable: MARIADB_DATABASE'
+            en_US: 'Container Variable: MARIADB_DATABASE'
         - container: MARIADB_USER
           description:
-            en_us: 'Container Variable: MARIADB_USER'
+            en_US: 'Container Variable: MARIADB_USER'
         - container: MARIADB_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_PASSWORD'
+            en_US: 'Container Variable: MARIADB_PASSWORD'
         - container: MARIADB_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MARIADB_ROOT_PASSWORD'
+            en_US: 'Container Variable: MARIADB_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 # Define the networks section
 networks:
   # Define the photoprism-network
@@ -191,14 +191,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.photoprism
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: PhotoPrism® is an AI-Powered Photos App for the Decentralized Web. It makes use of the latest technologies to tag and find pictures automatically without getting in your way. You can run it at home, on a private server, or in the cloud.
+    en_US: PhotoPrism® is an AI-Powered Photos App for the Decentralized Web. It makes use of the latest technologies to tag and find pictures automatically without getting in your way. You can run it at home, on a private server, or in the cloud.
   # Brief tagline for the application
   tagline:
-    en_us: AI-Powered Photos App
+    en_US: AI-Powered Photos App
   # Developer's information
   developer: photoprism.app
   # Author of this particular configuration
@@ -209,8 +211,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Photoprism
+    en_US: Photoprism
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: AI
   # Default port mapping for the application
   port_map: "2342"

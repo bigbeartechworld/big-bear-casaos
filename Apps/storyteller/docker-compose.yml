@@ -18,37 +18,39 @@ services:
       envs:
         - container: STORYTELLER_SECRET_KEY
           description:
-            en_us: 'Container Variable: STORYTELLER_SECRET_KEY'
+            en_US: 'Container Variable: STORYTELLER_SECRET_KEY'
         - container: STORYTELLER_LOG_LEVEL
           description:
-            en_us: 'Container Variable: STORYTELLER_LOG_LEVEL'
+            en_US: 'Container Variable: STORYTELLER_LOG_LEVEL'
         - container: STORYTELLER_DATA_DIR
           description:
-            en_us: 'Container Variable: STORYTELLER_DATA_DIR'
+            en_US: 'Container Variable: STORYTELLER_DATA_DIR'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "8001"
           description:
-            en_us: 'Container Port: 8001'
+            en_US: 'Container Port: 8001'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.storyteller
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Storyteller is a self-hosted platform for ebook reading and library management. It supports multiple ebook formats including EPUB, PDF, and MOBI. Features include a modern web-based reader, library organization, metadata management, and multi-user support. Built with Django and includes optional Readium reader integration for enhanced reading experience.
+    en_US: Storyteller is a self-hosted platform for ebook reading and library management. It supports multiple ebook formats including EPUB, PDF, and MOBI. Features include a modern web-based reader, library organization, metadata management, and multi-user support. Built with Django and includes optional Readium reader integration for enhanced reading experience.
   # Brief tagline for the application
   tagline:
-    en_us: Self-hosted ebook reading platform
+    en_US: Self-hosted ebook reading platform
   # Developer's information
   developer: storyteller-platform
   # Author of this particular configuration
@@ -60,11 +62,11 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: 'Generate a secure secret key using: openssl rand -base64 32'
+      en_US: 'Generate a secure secret key using: openssl rand -base64 32'
   # Title for the application
   title:
-    en_us: Storyteller
+    en_US: Storyteller
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8015"

@@ -25,24 +25,26 @@ services:
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
       ports:
         - container: "9000"
           description:
-            en_us: 'Container Port: 9000'
+            en_US: 'Container Port: 9000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.mealie
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family. Easily add recipes into your database by providing the url and mealie will automatically import the relevant data or add a family recipe with the UI editor
+    en_US: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family. Easily add recipes into your database by providing the url and mealie will automatically import the relevant data or add a family recipe with the UI editor
   # Brief tagline for the application
   tagline:
-    en_us: Mealie
+    en_US: Mealie
   # Developer's information
   developer: mealie-recipes
   # Author of this particular configuration
@@ -54,12 +56,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this: https://community.bigbeartechworld.com/t/added-mealie-to-bigbearcasaos/587
   # Title for the application
   title:
-    en_us: Mealie
+    en_US: Mealie
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "9925"

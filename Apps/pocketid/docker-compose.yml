@@ -40,40 +40,42 @@ services:
       envs:
         - container: APP_URL
           description:
-            en_us: 'Container Variable: APP_URL'
+            en_US: 'Container Variable: APP_URL'
         - container: TRUST_PROXY
           description:
-            en_us: 'Container Variable: TRUST_PROXY'
+            en_US: 'Container Variable: TRUST_PROXY'
         - container: MAXMIND_LICENSE_KEY
           description:
-            en_us: 'Container Variable: MAXMIND_LICENSE_KEY'
+            en_US: 'Container Variable: MAXMIND_LICENSE_KEY'
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
       volumes:
         - container: /app/data
           description:
-            en_us: 'Container Path: /app/data'
+            en_US: 'Container Path: /app/data'
       ports:
         - container: "1411"
           description:
-            en_us: 'Container Port: 1411'
+            en_US: 'Container Port: 1411'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pocketid
   # Main service for this application
   main: big-bear-pocketid
   # Detailed description for the application
   description:
-    en_us: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.
+    en_US: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.
   # Brief tagline for the application
   tagline:
-    en_us: Passkey-based OIDC authentication
+    en_US: Passkey-based OIDC authentication
   # Developer's information
   developer: pocket-id
   # Author of this particular configuration
@@ -85,12 +87,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you install read this: https://community.bigbeartechworld.com/t/added-pocket-id-to-bigbearcasaos/3552#p-6013-documentation-4
   # Title for the application
   title:
-    en_us: Pocket ID
+    en_US: Pocket ID
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "1411"

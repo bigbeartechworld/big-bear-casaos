@@ -31,18 +31,18 @@ services:
       envs:
         - container: JWT_SECRET
           description:
-            en_us: 'Container Variable: JWT_SECRET'
+            en_US: 'Container Variable: JWT_SECRET'
         - container: CORS_ORIGINS
           description:
-            en_us: 'Container Variable: CORS_ORIGINS'
+            en_US: 'Container Variable: CORS_ORIGINS'
       volumes:
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
 # Network definitions for the big-bear-note-mark-aio application
 networks:
   big_bear_note_mark_aio_network:
@@ -52,14 +52,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.note-mark-aio
   # Main service for this application
   main: big-bear-note-mark-aio
   # Detailed description for the application
   description:
-    en_us: Note Mark Aio is a self-hosted note taking app that allows you to create, organize, and share notes. It's a fork of the popular note-mark app with a focus on simplicity and ease of use.
+    en_US: Note Mark Aio is a self-hosted note taking app that allows you to create, organize, and share notes. It's a fork of the popular note-mark app with a focus on simplicity and ease of use.
   # Brief tagline for the application
   tagline:
-    en_us: Note Mark Aio
+    en_US: Note Mark Aio
   # Developer's information
   developer: enchant97
   # Author of this particular configuration
@@ -71,12 +73,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Read this before installing: https://community.bigbeartechworld.com/t/added-note-mark-aio-to-bigbearcasaos/1952#p-3621-documentation-4
   # Title for the application
   title:
-    en_us: Note Mark AIO
+    en_US: Note Mark AIO
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8000"

@@ -24,23 +24,25 @@ services:
       volumes:
         - container: /opt/focalboard/data
           description:
-            en_us: 'Container Path: /opt/focalboard/data'
+            en_US: 'Container Path: /opt/focalboard/data'
       ports:
         - container: "8000"
           description:
-            en_us: 'Container Port: 8000'
+            en_US: 'Container Port: 8000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.focalboard
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+    en_US: Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
   # Brief tagline for the application
   tagline:
-    en_us: Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
+    en_US: Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
   # Developer's information
   developer: mattermost
   # Author of this particular configuration
@@ -52,12 +54,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Before you can use the application, you will need to create a new account when going to the Focalboard UI.
   # Title for the application
   title:
-    en_us: Focalboard
+    en_US: Focalboard
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "8000"

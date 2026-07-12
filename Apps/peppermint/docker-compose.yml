@@ -49,26 +49,26 @@ services:
       envs:
         - container: API_URL
           description:
-            en_us: 'Container Variable: API_URL'
+            en_US: 'Container Variable: API_URL'
         - container: DB_HOST
           description:
-            en_us: 'Container Variable: DB_HOST'
+            en_US: 'Container Variable: DB_HOST'
         - container: DB_PASSWORD
           description:
-            en_us: 'Container Variable: DB_PASSWORD'
+            en_US: 'Container Variable: DB_PASSWORD'
         - container: DB_USERNAME
           description:
-            en_us: 'Container Variable: DB_USERNAME'
+            en_US: 'Container Variable: DB_USERNAME'
         - container: SECRET
           description:
-            en_us: 'Container Variable: SECRET'
+            en_US: 'Container Variable: SECRET'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
         - container: "5003"
           description:
-            en_us: 'Container Port: 5003'
+            en_US: 'Container Port: 5003'
   # Service name: db
   # The `db` service definition
   db:
@@ -108,30 +108,30 @@ services:
       envs:
         - container: PGID
           description:
-            en_us: 'Container Variable: PGID'
+            en_US: 'Container Variable: PGID'
         - container: POSTGRES_DB
           description:
-            en_us: 'Container Variable: POSTGRES_DB'
+            en_US: 'Container Variable: POSTGRES_DB'
         - container: POSTGRES_PASSWORD
           description:
-            en_us: 'Container Variable: POSTGRES_PASSWORD'
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
         - container: POSTGRES_USER
           description:
-            en_us: 'Container Variable: POSTGRES_USER'
+            en_US: 'Container Variable: POSTGRES_USER'
         - container: PUID
           description:
-            en_us: 'Container Variable: PUID'
+            en_US: 'Container Variable: PUID'
         - container: TZ
           description:
-            en_us: 'Container Variable: TZ'
+            en_US: 'Container Variable: TZ'
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: 'Container Path: /var/lib/postgresql/data'
+            en_US: 'Container Path: /var/lib/postgresql/data'
       ports:
         - container: "5432"
           description:
-            en_us: 'Container Port: 5432'
+            en_US: 'Container Port: 5432'
 networks:
   default:
     name: peppermint_default
@@ -139,14 +139,16 @@ x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.peppermint
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Peppermint is a central hub for your help desk. A powerfully easy system for tracking, prioritising, and solving customer support tickets.
+    en_US: Peppermint is a central hub for your help desk. A powerfully easy system for tracking, prioritising, and solving customer support tickets.
   # Brief tagline for the application
   tagline:
-    en_us: peppermint
+    en_US: peppermint
   # Developer's information
   developer: Pepperlabs
   # Author of this particular configuration
@@ -158,7 +160,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         ### Additional Instructions:
         After finished installing, open the `app settings` and update the `API_URL` to point it to your Home Server's IP Address.
         e.g:
@@ -168,8 +170,8 @@ x-casaos:
         Username: `admin@admin.com` Password: `1234`
   # Title for the application
   title:
-    en_us: Peppermint
+    en_US: Peppermint
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "3000"

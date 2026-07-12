@@ -14,30 +14,32 @@ services:
       volumes:
         - container: /usr/src/app/uploads
           description:
-            en_us: 'Container Path: /usr/src/app/uploads'
+            en_US: 'Container Path: /usr/src/app/uploads'
         - container: /usr/src/app/db
           description:
-            en_us: 'Container Path: /usr/src/app/db'
+            en_US: 'Container Path: /usr/src/app/db'
         - container: /usr/src/app/docs-config.yaml
           description:
-            en_us: 'Container Path: /usr/src/app/docs-config.yaml'
+            en_US: 'Container Path: /usr/src/app/docs-config.yaml'
       ports:
         - container: "3000"
           description:
-            en_us: 'Container Port: 3000'
+            en_US: 'Container Port: 3000'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.codex-docs
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content.
+    en_US: CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content.
   # Brief tagline for the application
   tagline:
-    en_us: CodeX Docs
+    en_US: CodeX Docs
   # Developer's information
   developer: codex-team
   # Author of this particular configuration
@@ -48,8 +50,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: CodeX Docs
+    en_US: CodeX Docs
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Developer
   # Default port mapping for the application
   port_map: "3000"

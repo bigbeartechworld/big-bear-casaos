@@ -66,33 +66,35 @@ services:
       volumes:
         - container: /opt/scrutiny/config
           description:
-            en_us: 'Container Path: /opt/scrutiny/config'
+            en_US: 'Container Path: /opt/scrutiny/config'
         - container: /opt/scrutiny/influxdb
           description:
-            en_us: 'Container Path: /opt/scrutiny/influxdb'
+            en_US: 'Container Path: /opt/scrutiny/influxdb'
         - container: /run/udev
           description:
-            en_us: 'Container Path: /run/udev'
+            en_US: 'Container Path: /run/udev'
       ports:
         - container: "8080"
           description:
-            en_us: 'Container Port: 8080'
+            en_US: 'Container Port: 8080'
         - container: "8086"
           description:
-            en_us: 'Container Port: 8086'
+            en_US: 'Container Port: 8086'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.scrutiny
   # Main service for this application
   main: big-bear-scrutiny
   # Detailed description for the application
   description:
-    en_us: If you run a server with more than a couple of hard drives, you're probably already familiar with S.M.A.R.T and the smartd daemon.
+    en_US: If you run a server with more than a couple of hard drives, you're probably already familiar with S.M.A.R.T and the smartd daemon.
   # Brief tagline for the application
   tagline:
-    en_us: Monitor your server's hard disk health
+    en_US: Monitor your server's hard disk health
   # Developer's information
   developer: analogj
   # Author of this particular configuration
@@ -103,8 +105,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Scrutiny
+    en_US: Scrutiny
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "38080"

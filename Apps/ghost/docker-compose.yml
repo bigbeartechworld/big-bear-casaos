@@ -39,30 +39,30 @@ services:
       envs:
         - container: database__client
           description:
-            en_us: 'Container Variable: database__client'
+            en_US: 'Container Variable: database__client'
         - container: database__connection__host
           description:
-            en_us: 'Container Variable: database__connection__host'
+            en_US: 'Container Variable: database__connection__host'
         - container: database__connection__user
           description:
-            en_us: 'Container Variable: database__connection__user'
+            en_US: 'Container Variable: database__connection__user'
         - container: database__connection__password
           description:
-            en_us: 'Container Variable: database__connection__password'
+            en_US: 'Container Variable: database__connection__password'
         - container: database__connection__database
           description:
-            en_us: 'Container Variable: database__connection__database'
+            en_US: 'Container Variable: database__connection__database'
         - container: url
           description:
-            en_us: 'Container Variable: url'
+            en_US: 'Container Variable: url'
       volumes:
         - container: /var/lib/ghost/content
           description:
-            en_us: 'Container Path: /var/lib/ghost/content'
+            en_US: 'Container Path: /var/lib/ghost/content'
       ports:
         - container: "2368"
           description:
-            en_us: 'Container Port: 2368'
+            en_US: 'Container Port: 2368'
   # The `db` service for database (MySQL in this case)
   db:
     # Container name
@@ -87,20 +87,20 @@ services:
       envs:
         - container: MYSQL_USER
           description:
-            en_us: 'Container Variable: MYSQL_USER'
+            en_US: 'Container Variable: MYSQL_USER'
         - container: MYSQL_DATABASE
           description:
-            en_us: 'Container Variable: MYSQL_DATABASE'
+            en_US: 'Container Variable: MYSQL_DATABASE'
         - container: MYSQL_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_PASSWORD'
+            en_US: 'Container Variable: MYSQL_PASSWORD'
         - container: MYSQL_ROOT_PASSWORD
           description:
-            en_us: 'Container Variable: MYSQL_ROOT_PASSWORD'
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
       volumes:
         - container: /var/lib/mysql
           description:
-            en_us: 'Container Path: /var/lib/mysql'
+            en_US: 'Container Path: /var/lib/mysql'
 # Networks used by the application
 networks:
   # Define the network for AdGuard Home
@@ -111,14 +111,16 @@ x-casaos:
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ghost
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
+    en_US: Ghost is a free and open source blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
   # Brief tagline for the application
   tagline:
-    en_us: Ghost is a free and open source blogging platform
+    en_US: Ghost is a free and open source blogging platform
   # Developer's information
   developer: ghost
   # Author of this particular configuration
@@ -130,12 +132,12 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_us: |
+      en_US: |
         Update the url environment variable to reflect your CasaOS IP address.
   # Title for the application
   title:
-    en_us: Ghost
+    en_US: Ghost
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "2368"

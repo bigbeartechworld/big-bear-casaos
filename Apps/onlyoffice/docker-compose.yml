@@ -18,39 +18,41 @@ services:
       volumes:
         - container: /var/log/onlyoffice
           description:
-            en_us: 'Container Path: /var/log/onlyoffice'
+            en_US: 'Container Path: /var/log/onlyoffice'
         - container: /var/www/onlyoffice/Data
           description:
-            en_us: 'Container Path: /var/www/onlyoffice/Data'
+            en_US: 'Container Path: /var/www/onlyoffice/Data'
         - container: /var/lib/onlyoffice
           description:
-            en_us: 'Container Path: /var/lib/onlyoffice'
+            en_US: 'Container Path: /var/lib/onlyoffice'
         - container: /var/lib/rabbitmq
           description:
-            en_us: 'Container Path: /var/lib/rabbitmq'
+            en_US: 'Container Path: /var/lib/rabbitmq'
         - container: /var/lib/redis
           description:
-            en_us: 'Container Path: /var/lib/redis'
+            en_US: 'Container Path: /var/lib/redis'
         - container: /var/lib/postgresql
           description:
-            en_us: 'Container Path: /var/lib/postgresql'
+            en_US: 'Container Path: /var/lib/postgresql'
       ports:
         - container: "80"
           description:
-            en_us: 'Container Port: 80'
+            en_US: 'Container Port: 80'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.onlyoffice
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Feature-rich web-based office suite with a vast range of collaborative capabilities
+    en_US: Feature-rich web-based office suite with a vast range of collaborative capabilities
   # Brief tagline for the application
   tagline:
-    en_us: OnlyOffice
+    en_US: OnlyOffice
   # Developer's information
   developer: onlyoffice
   # Author of this particular configuration
@@ -61,8 +63,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: OnlyOffice
+    en_US: OnlyOffice
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Productivity
   # Default port mapping for the application
   port_map: "7400"

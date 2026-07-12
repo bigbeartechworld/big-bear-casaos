@@ -31,33 +31,35 @@ services:
       volumes:
         - container: /app/data/configs
           description:
-            en_us: 'Container Path: /app/data/configs'
+            en_US: 'Container Path: /app/data/configs'
         - container: /app/public/icons
           description:
-            en_us: 'Container Path: /app/public/icons'
+            en_US: 'Container Path: /app/public/icons'
         - container: /data
           description:
-            en_us: 'Container Path: /data'
+            en_US: 'Container Path: /data'
         - container: /var/run/docker.sock
           description:
-            en_us: 'Container Path: /var/run/docker.sock'
+            en_US: 'Container Path: /var/run/docker.sock'
       ports:
         - container: "7575"
           description:
-            en_us: 'Container Port: 7575'
+            en_US: 'Container Port: 7575'
 x-casaos:
   # Supported CPU architectures for this application
   architectures:
     - amd64
     - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.homarr
   # Main service for this application
   main: app
   # Detailed description for the application
   description:
-    en_us: Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
+    en_US: Simplify the management of your server with Homarr - a sleek, modern dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.
   # Brief tagline for the application
   tagline:
-    en_us: Homarr
+    en_US: Homarr
   # Developer's information
   developer: ajnart
   # Author of this particular configuration
@@ -68,8 +70,8 @@ x-casaos:
   thumbnail: ""
   # Title for the application
   title:
-    en_us: Homarr
+    en_US: Homarr
   # Category under which the application falls
-  category: BigBearCasaOS
+  category: Others
   # Default port mapping for the application
   port_map: "7575"
