@@ -11,7 +11,7 @@ services:
     # Name of the container (Docker does not have to generate a random name)
     container_name: big-bear-send-visee
     # Image to be used for the container
-    image: registry.gitlab.com/timvisee/send:v3.4.27
+    image: registry.gitlab.com/timvisee/send:v3.4.27@sha256:b950a557f0f4eb7d2114a9126aea5df984ffe868385a3fb6b327d9f770bec0ae
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container

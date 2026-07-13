@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-discopanel
     # Image to be used for the container
-    image: nickheyer/discopanel:v2.0.15
+    image: nickheyer/discopanel:v2.0.15@sha256:4b8bd7d13bceaa4fbb06846760814fcaecf29a4383dbb3b8563b5df23efde192
     # Container restart policy
     restart: unless-stopped
     # Host networking is required so DiscoPanel can expose the dynamic

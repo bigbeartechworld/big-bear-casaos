@@ -7,7 +7,7 @@ services:
     # Container configuration for the Pterodactyl Panel
     container_name: pterodactyl-panel
     # Image to use for the panel
-    image: ghcr.io/pterodactyl/panel:v1.12.2
+    image: ghcr.io/pterodactyl/panel:v1.12.2@sha256:dd2687b00a532117fe25a88a8acbb34a6fb23a9ca59a76a405735e3cb729efca
     # Restart the container automatically if it stops
     restart: always
     # Ports mapping: [HOST:CONTAINER]
@@ -132,7 +132,7 @@ services:
             en_US: 'Container Port: 443'
   database:
     # Image to use for the database
-    image: mariadb:10.5
+    image: mariadb:10.5@sha256:a530aeeefd82f4fa5150f391b6c75462140904780338766f6b03acecb1cca3ce
     # Restart the container automatically if it stops
     restart: always
     # Command to run on container start

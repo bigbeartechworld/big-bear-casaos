@@ -39,7 +39,7 @@ services:
     # Name of the container
     container_name: big-bear-planka-v2
     # Image to be used for the container specifies the Planka version and source
-    image: ghcr.io/plankanban/planka:2.1.1
+    image: ghcr.io/plankanban/planka:2.1.1@sha256:19b507ae3ab5cb1855c3f6984249e4a4881ed0b912febdfd492139c29bf10f39
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Volumes to be mounted to the container for persistent storage
@@ -152,7 +152,7 @@ services:
   big-bear-planka-v2-postgres:
     # Specifies the Docker image to use for the PostgreSQL database
     # Using version 14 of PostgreSQL, based on the lightweight Alpine Linux distribution
-    image: postgres:14-alpine
+    image: postgres:14-alpine@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579
     # Specifies the container restart policy
     # The container will restart if it fails during runtime
     restart: on-failure

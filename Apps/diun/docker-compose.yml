@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-diun
     # Image to be used for the container
-    image: crazymax/diun:4.33.0
+    image: crazymax/diun:4.33.0@sha256:e324b793eb32dfb7f74d3a39421ebf090141caaadee69b8f78da63112408ee25
     # Command to run inside the container
     command: ["serve"]
     # Container restart policy

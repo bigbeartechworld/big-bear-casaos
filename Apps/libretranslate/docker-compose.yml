@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-libretranslate
     # Image to be used for the container
-    image: libretranslate/libretranslate:v1.9.6
+    image: libretranslate/libretranslate:v1.9.6@sha256:1de2d7056bb8ad607a412f4563d9abe324ff632b43b5be9428bcc8e213aebb32
     # Container restart policy
     restart: unless-stopped
     environment:

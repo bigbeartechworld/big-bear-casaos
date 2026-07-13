@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-portracker
     # Image to be used for the container
-    image: mostafawahied/portracker:1.3
+    image: mostafawahied/portracker:1.3@sha256:c7b4143ae32da4642a339d49ef5559c8408862eb1d1aacd9052df46e8ae225cb
     # Container restart policy
     restart: unless-stopped
     # Environment variables for service configuration

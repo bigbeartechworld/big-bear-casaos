@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-authentik
     # Image to be used for the container
-    image: ghcr.io/goauthentik/server:2026.2.2
+    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
     command: server
     environment:
       AUTHENTIK_REDIS__HOST: big-bear-authentik-redis
@@ -61,7 +61,7 @@ services:
           description:
             en_US: 'Container Port: 9443'
   big-bear-authentik-worker:
-    image: ghcr.io/goauthentik/server:2026.2.2
+    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
     restart: unless-stopped
     command: worker
     container_name: big-bear-authentik-worker
@@ -127,7 +127,7 @@ services:
     # PostgreSQL 14+ required by Authentik (since version 2024.6)
     # BREAKING CHANGE: Existing users with PostgreSQL 12 data need to migrate
     # See: https://www.postgresql.org/docs/current/upgrading.html
-    image: postgres:14-alpine
+    image: postgres:14-alpine@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]

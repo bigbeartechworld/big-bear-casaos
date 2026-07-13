@@ -3,7 +3,7 @@ name: big-bear-codex-docs
 # Service definitions for the big-bear-codex-docs application
 services:
   app:
-    image: ghcr.io/codex-team/codex.docs:v2.2
+    image: ghcr.io/codex-team/codex.docs:v2.2@sha256:c25f47c7f5af84206cef1fcedb2debcd25ba9ce1d4c6e5a33a0f273faff5a41f
     ports:
       - "3000:3000"
     volumes:

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-tududi
     # Image to be used for the container
-    image: chrisvel/tududi:0.87
+    image: chrisvel/tududi:0.87@sha256:733bceb71e60ba73d75e33d66569edaf8be55b5cd113830ecaee11b48e8e392a
     # Container restart policy
     restart: unless-stopped
     # Environment variables

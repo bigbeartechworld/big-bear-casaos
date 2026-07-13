@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-monica
     # Image to be used for the container
-    image: monica:4.1.2
+    image: monica:4.1.2@sha256:f4e948060cf2ba9f304ed62de5c1e47035df91f0cb92f8cdbec924760f6735ae
     # Container restart policy
     restart: unless-stopped
     environment:
@@ -51,7 +51,7 @@ services:
             en_US: 'Container Port: 80'
   # Database service for monica
   big-bear-monica-db:
-    image: mariadb:10.6.11
+    image: mariadb:10.6.11@sha256:efa2cc5bf16a2112ccb7e832f76d9e3913d017777b91293cd3e7c0d5e8286b23
     container_name: big-bear-monica-db
     environment:
       - TZ=UTC

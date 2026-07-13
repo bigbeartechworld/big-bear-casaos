@@ -3,7 +3,7 @@ services:
   # Defines a set of services to be run together
   app:
     # Name of the service
-    image: stonith404/pingvin-share:v1.13.0
+    image: stonith404/pingvin-share:v1.13.0@sha256:6bf2bcd3043ee68cb61264f0857511ccf7f212fdb984382b7f2d491635184ad6
     # Image to be used for this service
 
     restart: unless-stopped

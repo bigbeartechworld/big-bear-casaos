@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-homebridge
     # Image to be used for the container
-    image: homebridge/homebridge:2024-05-02
+    image: homebridge/homebridge:2024-05-02@sha256:ecdcb11b69a3c73e5c8e638a5f06ecd16d5212d8bdb52b58f1759f1fdcac6c9e
     # Container restart policy
     restart: unless-stopped
     # Environment Variables

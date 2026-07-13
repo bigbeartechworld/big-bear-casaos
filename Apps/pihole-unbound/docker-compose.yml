@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-pihole-unbound
     # Image to be used for the container
-    image: bigbeartechworld/big-bear-pihole-unbound:2026.06.0
+    image: bigbeartechworld/big-bear-pihole-unbound:2026.06.0@sha256:462ed84e3f4d8c2fb4749114ff37fcd7817221b3be867da75848d2b1736573eb
     # Container restart policy
     restart: unless-stopped
     # Environment variables

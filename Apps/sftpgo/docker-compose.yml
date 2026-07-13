@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-sftpgo
     # Image to be used for the container
-    image: drakkan/sftpgo:v2.7
+    image: drakkan/sftpgo:v2.7@sha256:6cb60f08fede46c5dc49a0c1d2994287ca440a63a3bd75b7f37ab2c0b24bbd06
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-calcom
     # Image to be used for the container
-    image: calcom/cal.com:v6.2.0
+    image: calcom/cal.com:v6.2.0@sha256:ace3bb1219fb7306585ab9f4d94d41af7ee064c343db0498173436bbe857bd49
     # Container restart policy
     restart: unless-stopped
     # Environment variables
@@ -127,7 +127,7 @@ services:
             en_US: 'Container Port: 3001'
   big-bear-calcom-db:
     container_name: big-bear-calcom-db
-    image: postgres:16.1
+    image: postgres:16.1@sha256:09f23e02d76670d3b346a3c00aa33a27cf57aab8341eedfcdaed41459d14f5c4
     restart: on-failure
     volumes:
       - /DATA/AppData/$AppID/data/db:/var/lib/postgresql/data

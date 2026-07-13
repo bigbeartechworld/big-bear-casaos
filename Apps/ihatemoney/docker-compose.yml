@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-ihatemoney
     # Image to be used for the container
-    image: ihatemoney/ihatemoney:7.1.1
+    image: ihatemoney/ihatemoney:7.1.1@sha256:cfd8a44362458559f0b9a216e4f878eb2542ae383cceb1e074bcf8f59d91bb71
     # Container restart policy
     restart: unless-stopped
     environment:
@@ -48,7 +48,7 @@ services:
             en_US: 'Container Port: 8000'
   # Define a service named 'big-bear-ihatemoney-db' for the database.
   big-bear-ihatemoney-db:
-    image: mariadb:10 # Use MariaDB version 10 Docker image.
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350 # Use MariaDB version 10 Docker image.
     container_name: big-bear-ihatemoney-db # Custom container name.
     environment:
       MYSQL_ROOT_PASSWORD: password # Root password for MariaDB.

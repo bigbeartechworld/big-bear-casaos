@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-spacedrive
     # Image to be used for the container specifies the spacedrive version and source
-    image: ghcr.io/spacedriveapp/spacedrive/server:0.4.2
+    image: ghcr.io/spacedriveapp/spacedrive/server:0.4.2@sha256:fd3bc896f3a5b8e429e008cedde361d6b9468c48d8c81996fdb1d99e90e0837b
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Environment variables for service configuration

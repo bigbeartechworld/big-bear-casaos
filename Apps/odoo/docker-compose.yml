@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-odoo # Specifies the container instance name for identification
     # Image to be used for the container
-    image: odoo:19 # Docker image for Odoo version 17
+    image: odoo:19@sha256:f54272f31d5f77e4146b887efb3761c98480317daf687e4b4b5e76ed8bcc08c5 # Docker image for Odoo version 17
     # Container restart policy
     restart: unless-stopped # Restart policy to ensure service recovery
     # User to run the container as
@@ -55,7 +55,7 @@ services:
   # Database service for Odoo
   big-bear-odoo-db:
     container_name: big-bear-odoo-db # Database container name
-    image: postgres:15 # PostgreSQL version 15 Docker image
+    image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba # PostgreSQL version 15 Docker image
     user: root # Runs as root user
     environment:
       - POSTGRES_USER=odoo # Database user

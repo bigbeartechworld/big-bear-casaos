@@ -1,7 +1,7 @@
 name: big-bear-minio
 services:
   app:
-    image: bigbeartechworld/big-bear-minio:RELEASE.2025-10-15T17-29-55Z
+    image: bigbeartechworld/big-bear-minio:RELEASE.2025-10-15T17-29-55Z@sha256:7a18393957baa73bb4e3181e2e53b8b7051a99d7ce9a020bf76a58961f68c10f
     container_name: big-bear-minio
     volumes:
       - /DATA/AppData/$AppID:/data

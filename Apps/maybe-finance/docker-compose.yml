@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-maybe-finance
     # Image to be used for the container
-    image: ghcr.io/maybe-finance/maybe:sha-347c0a790693031fdd3b32792b5b6792693d1805
+    image: ghcr.io/maybe-finance/maybe:sha-347c0a790693031fdd3b32792b5b6792693d1805@sha256:92e13ea9d1639747da2e7ce603d28123f22ead2fa8c2b9fb8ac8e86ff4e21a7b
     # Container restart policy
     restart: unless-stopped
     # Privilege of the container
@@ -103,7 +103,7 @@ services:
     # Name of the container
     container_name: big-bear-maybe-finance-postgres
     # Image to be used for the container
-    image: postgres:16
+    image: postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

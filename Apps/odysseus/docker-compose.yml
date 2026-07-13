@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-odysseus
     # Image to be used for the container
-    image: bigbeartechworld/big-bear-odysseus:2026.06.29
+    image: bigbeartechworld/big-bear-odysseus:2026.06.29@sha256:64ec6fadda7de876097878d4ec32b1dce8c7f6c00d9ae4de8620037d009bac2d
     # Container restart policy
     restart: unless-stopped
     # Ports mapping between host and container
@@ -93,7 +93,7 @@ services:
     # Name of the container
     container_name: big-bear-odysseus-chromadb
     # Image to be used for the container
-    image: chromadb/chroma:1.5.9
+    image: chromadb/chroma:1.5.9@sha256:1e0b73a187a28757c572acba508c46f48c9e8b0acaf5c20e6d95cdedce1acdf6
     # Container restart policy
     restart: unless-stopped
     environment:
@@ -120,7 +120,7 @@ services:
     # Name of the container
     container_name: big-bear-odysseus-searxng
     # Image to be used for the container
-    image: searxng/searxng:2026.6.2-e964708c0
+    image: searxng/searxng:2026.6.2-e964708c0@sha256:0872beb1d495d41f2dda73d7aea83746657afdd2be3010eb1b11f5a541555c9e
     # Container restart policy
     restart: unless-stopped
     # Inline entrypoint seeds settings.yml (secret + html/json formats) into the volume
@@ -188,7 +188,7 @@ services:
     # Name of the container
     container_name: big-bear-odysseus-ntfy
     # Image to be used for the container
-    image: binwiederhier/ntfy:v2.25.0
+    image: binwiederhier/ntfy:v2.25.0@sha256:cfbbb1bac9196cb711e29ef0ac4adaeb033be6235f1df857705dc39c14384a1d
     # Container restart policy
     restart: unless-stopped
     # Run the ntfy server

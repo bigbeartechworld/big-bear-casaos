@@ -5,7 +5,7 @@ services:
   # Service for cAdvisor, a tool to monitor container performance
   app:
     # Docker image to be used for cAdvisor
-    image: gcr.io/cadvisor/cadvisor:v0.55.1
+    image: gcr.io/cadvisor/cadvisor:v0.55.1@sha256:3de2bd5203120b866d74a9b283b2ffb8ec382fbf9dc321814700c6ea6f44ec57
     # Name of the container instance
     container_name: monitoring_cadvisor
     # Restart policy - Restart the container unless it's stopped manually

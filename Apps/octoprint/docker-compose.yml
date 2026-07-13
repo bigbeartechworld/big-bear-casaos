@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: octoprint
     # Image to be used for the container
-    image: octoprint/octoprint:1.11.8
+    image: octoprint/octoprint:1.11.8@sha256:5ea0181e476597faa2800c991af4ce16903005f46b4c16666a4080ad606310bb
     # Container restart policy
     restart: unless-stopped
     # devices:

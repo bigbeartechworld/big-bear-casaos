@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-homarr-v1
     # Image to be used for the container
-    image: ghcr.io/homarr-labs/homarr:v1.63.0
+    image: ghcr.io/homarr-labs/homarr:v1.63.0@sha256:6daf640531c1c114ccce15775185b3fb8958365a62c2fabc559d9cc5ae064326
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

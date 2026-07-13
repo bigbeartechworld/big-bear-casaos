@@ -6,7 +6,7 @@ name: big-bear-unifi-network-application-mongo-4
 services:
   # Main application service
   app: # Name of the service
-    image: linuxserver/unifi-network-application:10.4.57 # Docker image to use
+    image: linuxserver/unifi-network-application:10.4.57@sha256:7d25457f8d0600388f663cd2316d7f86c8104de8e6fa9b6e2e44c7f6526476d6 # Docker image to use
     container_name: big-bear-unifi-network-application # Name for the created container
     environment: # Environmental variables for the container
       - PUID=1000 # User ID
@@ -110,7 +110,7 @@ services:
             en_US: 'Container Port: 5514'
   # MongoDB database for the application
   unifi-db:
-    image: mongo:4.4.28
+    image: mongo:4.4.28@sha256:7a272834036ddc9c7379c2d646b6a6c23c985e28c280f1340b3f611c762f9d83
     container_name: big-bear-unifi-db
     volumes:
       - /DATA/AppData/$AppID/db/data:/data/db # MongoDB data persistence

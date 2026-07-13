@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-rackpeek
     # Image to be used for the container
-    image: aptacode/rackpeek:v2.0.0
+    image: aptacode/rackpeek:v2.0.0@sha256:ebe9b5a7585b07ecdff5978b9464815138d340f720cc88f53a262fb230b6e717
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

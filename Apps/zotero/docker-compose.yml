@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-zotero
     # Image to be used for the container
-    image: linuxserver/zotero:9.0.20260417
+    image: linuxserver/zotero:9.0.20260417@sha256:1b37bde9b1974ac9be736f822212f63b515d3db21f3772373fb65fd2f21d5136
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container

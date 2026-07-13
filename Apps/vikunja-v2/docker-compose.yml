@@ -24,7 +24,7 @@ name: big-bear-vikunja-v2
 # Service definitions for the big-bear-vikunja-v2 application
 services:
   vikunja-v2:
-    image: vikunja/vikunja:2.3.0
+    image: vikunja/vikunja:2.3.0@sha256:f6b80393c1998cd5cd0dc38d24762c59ab4c10000a6f1032ef5b554e262cab93
     container_name: big-bear-vikunja-v2
     ports:
       - 8082:3456
@@ -74,7 +74,7 @@ services:
           description:
             en_US: 'Container Port: 3456'
   vikunja-v2-db:
-    image: mariadb:11
+    image: mariadb:11@sha256:efb4959ef2c835cd735dbc388eb9ad6aab0c78dd64febcd51bc17481111890c4
     container_name: vikunja-v2-db
     command:
       - --character-set-server=utf8mb4

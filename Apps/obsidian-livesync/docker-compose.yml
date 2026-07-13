@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: obsidian-livesync
     # Image to be used for the container
-    image: couchdb:3.5.0
+    image: couchdb:3.5.0@sha256:1c0a30a54535377bc9ae23f42efb1ca4e92abe796f78ec98b768ac1d5874cc1b
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

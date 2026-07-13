@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-pihole-updatelists
     # Image to be used for the container
-    image: jacklul/pihole:2026.06.0
+    image: jacklul/pihole:2026.06.0@sha256:374143d289e13aeef3a2d622f5f4565d2f10d1564a79a4217488cc2559bd766f
     # Container restart policy
     restart: unless-stopped
     # Environment variables

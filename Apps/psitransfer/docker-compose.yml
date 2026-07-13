@@ -8,7 +8,7 @@ services:
   # The `app` service definition
   app:
     # Image to be used for the container
-    image: psitrax/psitransfer:v2.4.4
+    image: psitrax/psitransfer:v2.4.4@sha256:312d060e0e2934ff618b3e361d766872b89892dc33c5456858b4aa04dc17a18d
     # Name of the container
     container_name: big-bear-psitransfer
     # Run as UID 1000 (node user) to match the image's default user

@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-jfa-go
     # Image to be used for the container specifies the hrfee/jfa-go version and source
-    image: hrfee/jfa-go:latest
+    image: hrfee/jfa-go:latest@sha256:701cfca823f9278b65f4cf7706b0c7f89b3be33e17ca077f11d89dc119e9f307
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Volume mappings required for system integration

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-peppermint
     # Image to be used for the container
-    image: pepperlabs/peppermint:latest
+    image: pepperlabs/peppermint:latest@sha256:d13932713561c8d69baea49820ba2d42ea145b28193b6a7e33950a05812406fd
     # Container restart policy
     restart: always
     # Privilege of the container
@@ -75,7 +75,7 @@ services:
     # Name of the container
     container_name: db
     # Image to be used for the container
-    image: postgres:15.5
+    image: postgres:15.5@sha256:15b7f8dd3b75bc8f86ba8e875e92e560c03fd6314fe0a4d1315e169421aace01
     # Container restart policy
     restart: always
     # Environment variables for a PostgreSQL service or container

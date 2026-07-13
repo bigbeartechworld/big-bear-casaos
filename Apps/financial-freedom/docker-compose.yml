@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-financial-freedom
     # Image to be used for the container
-    image: serversideup/financial-freedom:v0.2.0-alpha1
+    image: serversideup/financial-freedom:v0.2.0-alpha1@sha256:e36fc6e42b8fd41f9f715b2a26461f1c2365355ff139b8d5d2cfdc60593ccdf2
     # Container restart policy
     restart: unless-stopped
     # financial-freedom-network networks
@@ -192,7 +192,7 @@ services:
           description:
             en_US: 'Container Port: 443'
   mariadb:
-    image: mariadb:10.11
+    image: mariadb:10.11@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
     volumes:
       - /DATA/AppData/$AppID/mariadb:/var/lib/mysql
     # financial-freedom-network is defined in networks section

@@ -11,7 +11,7 @@ services:
     # Name of the container
     container_name: big-bear-readeck
     # Image to be used for the container
-    image: codeberg.org/readeck/readeck:0.22.3
+    image: codeberg.org/readeck/readeck:0.22.3@sha256:ed1c513f8e1d59b1d38fda324ac279eeb65afd0327907e498061ec9fd2f31c15
     # Container restart policy
     restart: unless-stopped
     # Environment variables for Readeck configuration

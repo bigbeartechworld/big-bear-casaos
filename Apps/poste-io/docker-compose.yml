@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-poste-io
     # Image to be used for the container specifies the analogic/poste.io version and source
-    image: analogic/poste.io:2.5.14
+    image: analogic/poste.io:2.5.14@sha256:4722c66d70034bb6b0f20be027cdea8659f1ae164ed5ee9aa52b2b703450cabd
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Network mode

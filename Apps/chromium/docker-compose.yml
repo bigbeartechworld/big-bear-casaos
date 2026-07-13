@@ -2,7 +2,7 @@ name: big-bear-chromium # Name of the CasaOS application
 services:
   chromium:
     container_name: big-bear-chromium # Name of the Docker container
-    image: linuxserver/chromium:version-6ae43f81 # Docker image for the chromium browser
+    image: linuxserver/chromium:version-6ae43f81@sha256:da269d40b655eb25ca0cd17c87f2e8e34b5b21f3e3eb14143746e40c62cb6951 # Docker image for the chromium browser
     ports:
       - "3000:3000" # Expose port 3000 for HTTP VNC access
       - "3001:3001" # Expose port 3001 for HTTPS VNC access

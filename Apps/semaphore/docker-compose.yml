@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-semaphore
     # Image to be used for the container
-    image: semaphoreui/semaphore:v2.18.14
+    image: semaphoreui/semaphore:v2.18.25@sha256:9d2ca34eb47675397fb1939365a66b7c24899a57ee7654c8adc0fd1c0d9c5d57
     # Container restart policy
     restart: unless-stopped
     # Environment variables for configuration
@@ -84,7 +84,7 @@ services:
   # MySQL database service for semaphore
   big-bear-semaphore-db:
     container_name: big-bear-semaphore-db
-    image: mysql:8.0
+    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql # Data directory for MySQL

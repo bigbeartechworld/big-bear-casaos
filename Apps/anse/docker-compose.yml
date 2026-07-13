@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-anse
     # Image to be used for the container
-    image: ddiu8081/anse:v1.1.11
+    image: ddiu8081/anse:v1.1.11@sha256:fd9afc84b9e1df02ca065170e72994b787e7d2ea881f22eda2fcd2c58e717164
     # Container restart policy
     restart: unless-stopped
     # Environment variables

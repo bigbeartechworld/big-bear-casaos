@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-immich-kiosk
     # Image to be used for the container specifies the Immich Kiosk version and source
-    image: ghcr.io/damongolding/immich-kiosk:0.38.1
+    image: ghcr.io/damongolding/immich-kiosk:0.38.1@sha256:28cf751b556e5c9fefc18f0c2b0ed2d6fe672df734ca3c860d6adc9b2b7fdffb
     # Enable TTY for interactive terminal access
     tty: true
     # Container restart policy - restarts the container unless manually stopped

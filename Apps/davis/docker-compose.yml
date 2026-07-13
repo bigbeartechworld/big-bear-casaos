@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-davis
     # Image to be used for the container
-    image: ghcr.io/tchapi/davis-standalone:5.4.1
+    image: ghcr.io/tchapi/davis-standalone:5.4.1@sha256:9db11b957fdce6d56c04185793c149b62db1596035feb876878acef6b3421be4
     # Container restart policy
     restart: unless-stopped
     # Environment variables to be set in the container
@@ -96,7 +96,7 @@ services:
   # Service name: big-bear-davis-mailpit
   big-bear-davis-mailpit:
     container_name: big-bear-davis-mailpit # Container name for the app service
-    image: axllent/mailpit:v1.30 # Image for the app service
+    image: axllent/mailpit:v1.30@sha256:5a49a77c5bdbe7c5474450b4f46348d09949df3695257729c93a30369382d4f6 # Image for the app service
     restart: unless-stopped # Restart policy for the container
     volumes: # Volumes to mount for the app service
       - /DATA/AppData/$AppID/mailpit/data:/data
@@ -126,7 +126,7 @@ services:
   # Service name: big-bear-mysql
   big-bear-davis-mysql:
     container_name: big-bear-davis-mysql
-    image: mariadb:10.6.10
+    image: mariadb:10.6.10@sha256:d1bd65504ffbea8dc7445223c9a9b1e6dc7d93f49f5ceff352bb9d43f52d0ffa
     environment:
       - MYSQL_ROOT_PASSWORD=0c9d2acc-d4f3-423c-8361-86f35cdd3eb2
       - MYSQL_DATABASE=davis

@@ -6,7 +6,7 @@ name: big-bear-lancache
 services:
   # Service name: app
   app:
-    image: lancachenet/monolithic:latest # Docker image for the caching service
+    image: lancachenet/monolithic:latest@sha256:a5f93cef3a4c48c63e9f09883ac7a3961621db56974427110d9aeb4f36af9360 # Docker image for the caching service
     environment:
       # Toggle for load balancer usage or separate IPs for each service
       - USE_GENERIC_CACHE=true
@@ -79,7 +79,7 @@ services:
             en_US: 'Container Port: 443'
   # DNS service configuration
   dns:
-    image: lancachenet/lancache-dns:latest # Docker image for DNS service
+    image: lancachenet/lancache-dns:latest@sha256:3f37998a643435c2a9d1226a64ff13ea073f588031f6e3a92648b80d8281f20f # Docker image for DNS service
     environment:
       # Toggle for load balancer usage or separate IPs for each service
       - USE_GENERIC_CACHE=true

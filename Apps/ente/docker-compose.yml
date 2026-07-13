@@ -91,7 +91,7 @@ services:
           description:
             en_US: 'Container Port: 8080'
   socat:
-    image: alpine/socat
+    image: alpine/socat@sha256:d85531a29ef5ba99dfb4717485c239307e2902d522a1bc010992a2728c92cfad
     container_name: ente-socat
     network_mode: service:museum
     depends_on:
@@ -125,7 +125,7 @@ services:
           description:
             en_US: 'Container Port: 3002'
   postgres:
-    image: postgres:15
+    image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba
     container_name: ente-postgres
     environment:
       POSTGRES_USER: pguser
@@ -158,7 +158,7 @@ services:
           description:
             en_US: 'Container Path: /var/lib/postgresql/data'
   minio:
-    image: minio/minio
+    image: minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
     container_name: ente-minio
     ports:
       - "3200:3200"
@@ -188,7 +188,7 @@ services:
           description:
             en_US: 'Container Port: 3200'
   minio-init:
-    image: minio/mc
+    image: minio/mc@sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727
     container_name: ente-minio-init
     depends_on:
       - minio
