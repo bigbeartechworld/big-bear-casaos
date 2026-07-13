@@ -49,7 +49,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/jellyseerr.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://cdn.jsdelivr.net/gh/seerr-team/seerr@develop/public/preview.jpg
+  thumbnail: https://cdn.jsdelivr.net/gh/seerr-team/seerr@5ae70d05e1ee123b3cda43153ed415754fd8e816/public/preview.jpg
   # Installation tips
   tips:
     before_install:
