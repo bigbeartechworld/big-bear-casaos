@@ -57,7 +57,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/spoolman.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/spoolman/screenshots-1.png
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/spoolman/screenshot-1.png
   # Title for the application
   title:
     en_US: Spoolman
