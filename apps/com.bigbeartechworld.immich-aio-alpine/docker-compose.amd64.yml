@@ -1,0 +1,60 @@
+name: big-bear-immich-aio-alpine
+services:
+  big-bear-immich-aio-alpine:
+    container_name: big-bear-immich-aio-alpine
+    image: ghcr.io/imagegenius/immich:2.0.0-alpine
+    ports:
+    - 2283:8080
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/photos:/usr/src/app/photos
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    - DB_HOSTNAME=big-bear-immich-db
+    - DB_USERNAME=casaos
+    - DB_PASSWORD=casaos
+    - DB_DATABASE_NAME=immich
+    - REDIS_HOSTNAME=big-bear-immich-redis
+    - DB_PORT=5432
+    - REDIS_PORT=6379
+    - REDIS_PASSWORD=
+    - MACHINE_LEARNING_GPU_ACCELERATION=
+    - MACHINE_LEARNING_WORKERS=1
+    - MACHINE_LEARNING_WORKER_TIMEOUT=120
+    depends_on:
+    - big-bear-immich-redis
+    - big-bear-immich-db
+    restart: unless-stopped
+    networks:
+    - big_bear_immich_network
+  big-bear-immich-redis:
+    container_name: big-bear-immich-redis
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f
+    restart: always
+    networks:
+    - big_bear_immich_network
+  big-bear-immich-db:
+    container_name: big-bear-immich-db
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:739cdd626151ff1f796dc95a6591b55a714f341c737e27f045019ceabf8e8c52
+    environment:
+      POSTGRES_PASSWORD: casaos
+      POSTGRES_USER: casaos
+      POSTGRES_DB: immich
+      PG_DATA: /var/lib/postgresql/data
+    volumes:
+    - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+    - big_bear_immich_network
+networks:
+  big_bear_immich_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.immich-aio-alpine
+  main: big-bear-immich-aio-alpine
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.immich-aio-alpine/assets/icon.png
+  title:
+    en_US: Immich AIO Alpine
+  port_map: '2283'

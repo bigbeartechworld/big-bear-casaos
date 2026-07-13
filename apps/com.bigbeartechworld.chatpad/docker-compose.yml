@@ -1,0 +1,15 @@
+name: big-bear-chatpad
+services:
+  big-bear-chatpad:
+    container_name: big-bear-chatpad
+    image: ghcr.io/deiucanta/chatpad:f45cd53bc410412610c1ba1cbd84cd137d8e167d@sha256:b0b2364a3ad97812bd88c1f33541ba4281e0bbff1878b509cef354ae7ec3278d
+    restart: unless-stopped
+    ports:
+    - 8080:80
+x-casaos:
+  id: com.bigbeartechworld.chatpad
+  main: big-bear-chatpad
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.chatpad/assets/icon.jpeg
+  title:
+    en_US: Chatpad
+  port_map: '8080'

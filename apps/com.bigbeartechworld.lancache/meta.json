@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "Make the most of your network. Get more play for your gamers. Download your games once and serve them out to many people at your LAN.",
+  "tagline": "LAN Party game caching made easy",
+  "developer": "lancachenet",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Networking",
+  "title": "LAN Cache",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.lancache",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

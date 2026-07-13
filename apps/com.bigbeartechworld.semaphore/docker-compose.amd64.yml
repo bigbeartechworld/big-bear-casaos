@@ -1,0 +1,48 @@
+name: big-bear-semaphore
+services:
+  big-bear-semaphore:
+    container_name: big-bear-semaphore
+    image: semaphoreui/semaphore:v2.18.25@sha256:9d2ca34eb47675397fb1939365a66b7c24899a57ee7654c8adc0fd1c0d9c5d57
+    restart: unless-stopped
+    environment:
+      SEMAPHORE_DB_USER: semaphore
+      SEMAPHORE_DB_PASS: semaphore
+      SEMAPHORE_DB_HOST: big-bear-semaphore-db
+      SEMAPHORE_DB_PORT: '3306'
+      SEMAPHORE_DB_DIALECT: mysql
+      SEMAPHORE_DB: semaphore
+      SEMAPHORE_ADMIN_PASSWORD: password
+      SEMAPHORE_ADMIN_NAME: admin
+      SEMAPHORE_ADMIN_EMAIL: admin@example.com
+      SEMAPHORE_ADMIN: admin
+      TZ: UTC
+    volumes:
+    - /DATA/AppData/$AppID/home:/etc/semaphore
+    - /DATA/AppData/$AppID/lib:/var/lib/semaphore
+    ports:
+    - 3000:3000
+    networks:
+    - big-bear-semaphore-network
+  big-bear-semaphore-db:
+    container_name: big-bear-semaphore-db
+    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: semaphore
+      MYSQL_USER: semaphore
+      MYSQL_PASSWORD: semaphore
+    networks:
+    - big-bear-semaphore-network
+networks:
+  big-bear-semaphore-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.semaphore
+  main: big-bear-semaphore
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.semaphore/assets/icon.png
+  title:
+    en_US: Ansible Semaphore
+  port_map: '3000'

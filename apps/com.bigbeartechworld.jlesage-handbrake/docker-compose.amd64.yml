@@ -1,0 +1,21 @@
+name: big-bear-jlesage-handbrake
+services:
+  big-bear-jlesage-handbrake:
+    container_name: big-bear-jlesage-handbrake
+    image: jlesage/handbrake:v26.03.3@sha256:2b1eb1e34cf2edba2590c3ab768206a11cf8916fbe8a8a3391fe74d9eabcdce0
+    ports:
+    - 5800:5800
+    environment:
+    - VNC_PASSWORD=casaos
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/storage:/storage
+    - /DATA/AppData/$AppID/watch:/watch
+    - /DATA/AppData/$AppID/output:/output
+x-casaos:
+  id: com.bigbeartechworld.jlesage-handbrake
+  main: big-bear-jlesage-handbrake
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.jlesage-handbrake/assets/icon.png
+  title:
+    en_US: Jlesage Handbrake
+  port_map: '5800'

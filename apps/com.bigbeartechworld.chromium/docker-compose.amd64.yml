@@ -1,0 +1,23 @@
+name: big-bear-chromium
+services:
+  chromium:
+    container_name: big-bear-chromium
+    image: linuxserver/chromium:version-6ae43f81@sha256:da269d40b655eb25ca0cd17c87f2e8e34b5b21f3e3eb14143746e40c62cb6951
+    ports:
+    - 3000:3000
+    - 3001:3001
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    - CHROME_CLI=https://community.bigbeartechworld.com/
+    shm_size: 1gb
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+x-casaos:
+  id: com.bigbeartechworld.chromium
+  main: chromium
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.chromium/assets/icon.png
+  title:
+    en_US: chromium
+  port_map: '6902'

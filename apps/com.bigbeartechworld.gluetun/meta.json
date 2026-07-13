@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Lightweight swiss-knife-like VPN client to multiple VPN service providers",
+  "tagline": "Gluetun",
+  "developer": "portainer",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "You will need to configure the providers in the environment variables. See: [BigBearCasaOS Gluetun Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175)\n"
+  },
+  "category": "Networking",
+  "title": "Gluetun",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.gluetun",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

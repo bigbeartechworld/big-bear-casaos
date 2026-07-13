@@ -1,0 +1,55 @@
+name: big-bear-warracker
+services:
+  big-bear-warracker:
+    container_name: big-bear-warracker
+    image: ghcr.io/sassanix/warracker/main:9.9.3
+    restart: unless-stopped
+    privileged: true
+    environment:
+    - DB_HOST=big-bear-warrackerdb
+    - DB_NAME=big_bear_warracker
+    - DB_USER=big_bear_warracker_user
+    - DB_PASSWORD=4892f1bc-f1ea-464f-b528-1d52b2c9bb05
+    - SMTP_HOST=smtp.email.com
+    - SMTP_PORT=465
+    - SMTP_USERNAME=youremail@email.com
+    - SMTP_PASSWORD=password
+    volumes:
+    - /DATA/AppData/$AppID/uploads:/data/uploads
+    ports:
+    - 8005:80
+    networks:
+    - big_bear_warracker_network
+    depends_on:
+      big-bear-warrackerdb:
+        condition: service_healthy
+  big-bear-warrackerdb:
+    container_name: big-bear-warrackerdb
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    volumes:
+    - /DATA/AppData/$AppID/warrackerdb:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_DB=big_bear_warracker
+    - POSTGRES_USER=big_bear_warracker_user
+    - POSTGRES_PASSWORD=4892f1bc-f1ea-464f-b528-1d52b2c9bb05
+    restart: unless-stopped
+    networks:
+    - big_bear_warracker_network
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB
+      interval: 5s
+      timeout: 5s
+      retries: 5
+networks:
+  big_bear_warracker_network:
+    name: big_bear_warracker_network
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.warracker
+  main: big-bear-warracker
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.warracker/assets/icon.png
+  title:
+    en_US: Warracker
+  port_map: '8005'

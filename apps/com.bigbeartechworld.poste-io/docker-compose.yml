@@ -1,0 +1,20 @@
+name: big-bear-poste-io
+services:
+  big-bear-poste-io:
+    container_name: big-bear-poste-io
+    image: analogic/poste.io:2.5.14@sha256:4722c66d70034bb6b0f20be027cdea8659f1ae164ed5ee9aa52b2b703450cabd
+    restart: unless-stopped
+    network_mode: host
+    environment:
+    - TZ=UTC
+    hostname: mail.example.com
+    tty: true
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+x-casaos:
+  id: com.bigbeartechworld.poste-io
+  main: big-bear-poste-io
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.poste-io/assets/icon.png
+  title:
+    en_US: Poste.io
+  port_map: '80'

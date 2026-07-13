@@ -1,0 +1,26 @@
+name: big-bear-lyrionmusicserver
+services:
+  big-bear-lyrionmusicserver:
+    container_name: big-bear-lyrionmusicserver
+    image: lmscommunity/lyrionmusicserver:9.2.0@sha256:a6322f5596fa08967112be88536b72e4b93b63742c7885ba5d6a221b4c451819
+    restart: unless-stopped
+    environment:
+    - HTTP_PORT=9000
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/music:/music
+    - /DATA/AppData/$AppID/playlists:/playlist
+    - /etc/localtime:/etc/localtime:ro
+    - /etc/timezone:/etc/timezone:ro
+    ports:
+    - 9000:9000/tcp
+    - 9090:9090/tcp
+    - 3483:3483/tcp
+    - 3483:3483/udp
+x-casaos:
+  id: com.bigbeartechworld.lyrionmusicserver
+  main: big-bear-lyrionmusicserver
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.lyrionmusicserver/assets/icon.png
+  title:
+    en_US: LyriOn Music Server
+  port_map: '9000'

@@ -1,0 +1,22 @@
+name: big-bear-immich-kiosk
+services:
+  big-bear-immich-kiosk:
+    container_name: big-bear-immich-kiosk
+    image: ghcr.io/damongolding/immich-kiosk:0.38.1@sha256:28cf751b556e5c9fefc18f0c2b0ed2d6fe672df734ca3c860d6adc9b2b7fdffb
+    tty: true
+    restart: unless-stopped
+    environment:
+      LANG: en_us
+      TZ: UTC
+      KIOSK_IMMICH_API_KEY: ''
+      KIOSK_IMMICH_URL: ''
+      KIOSK_IMMICH_EXTERNAL_URL: ''
+    ports:
+    - 3000:3000
+x-casaos:
+  id: com.bigbeartechworld.immich-kiosk
+  main: big-bear-immich-kiosk
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.immich-kiosk/assets/icon.png
+  title:
+    en_US: Immich Kiosk
+  port_map: '3000'

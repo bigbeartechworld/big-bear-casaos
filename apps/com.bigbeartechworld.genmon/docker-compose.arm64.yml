@@ -1,0 +1,23 @@
+name: big-bear-genmon
+services:
+  big-bear-genmon:
+    container_name: big-bear-genmon
+    image: bigbeartechworld/big-bear-genmon:2.0.01@sha256:0cc8f42c7859c64b428e0b5eca908c7e67f02880b34520b3b1985558998a897a
+    environment:
+    - TZ=America/Chicago
+    ports:
+    - '20022:22'
+    - 38443:443
+    - 8000:8000
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/git/genmon:/git/genmon
+    - /DATA/AppData/$AppID/etc/genmon:/etc/genmon
+    - /DATA/AppData/$AppID/var/log:/var/log
+x-casaos:
+  id: com.bigbeartechworld.genmon
+  main: big-bear-genmon
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.genmon/assets/icon.jpeg
+  title:
+    en_US: Genmon
+  port_map: '8000'

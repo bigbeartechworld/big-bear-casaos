@@ -1,0 +1,63 @@
+name: big-bear-plant-it
+services:
+  big-bear-plant-it:
+    container_name: big-bear-plant-it
+    image: msdeluise/plant-it-server:0.10.0@sha256:23ddf8660087d6b9f5dbdca2ca09817b84db45cb2d9d6e2e0176e70f514629e7
+    restart: unless-stopped
+    environment:
+    - MYSQL_HOST=big-bear-plant-it-db
+    - MYSQL_PORT=3306
+    - MYSQL_USERNAME=root
+    - MYSQL_PSW=9c75c563-b549-40e6-a0d2-360cf9a962ea
+    - MYSQL_DATABASE=plantit
+    - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
+    - JWT_SECRET=putTheSecretHere
+    - JWT_EXP=1
+    - USERS_LIMIT=-1
+    - UPLOAD_DIR=/upload-dir
+    - API_PORT=8080
+    - TREFLE_KEY=
+    - LOG_LEVEL=DEBUG
+    - ALLOWED_ORIGINS=*
+    - CACHE_TTL=86400
+    - CACHE_HOST=big-bear-plant-it-cache
+    - CACHE_PORT=6379
+    - SSL_ENABLED=false
+    - CERTIFICATE_PATH=/certificates/
+    volumes:
+    - /DATA/AppData/$AppID/upload-dir:/upload-dir
+    - /DATA/AppData/$AppID/certificates:/certificates
+    ports:
+    - 3000:3000
+    - 8080:8080
+    networks:
+    - big_bear_plant_it_network
+  big-bear-plant-it-db:
+    container_name: big-bear-plant-it-db
+    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    restart: always
+    environment:
+    - MYSQL_DATABASE=plantit
+    - MYSQL_ROOT_PASSWORD=9c75c563-b549-40e6-a0d2-360cf9a962ea
+    ports:
+    - 3306:3306
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    networks:
+    - big_bear_plant_it_network
+  big-bear-plant-it-cache:
+    container_name: big-bear-plant-it-cache
+    image: redis:7.2.11@sha256:9c44a721d444690605ffa32d6b6e1ac565060676386f88bbbb376f56cef2f724
+    restart: always
+    networks:
+    - big_bear_plant_it_network
+networks:
+  big_bear_plant_it_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.plant-it
+  main: big-bear-plant-it
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.plant-it/assets/icon.png
+  title:
+    en_US: Plant-it
+  port_map: '3000'

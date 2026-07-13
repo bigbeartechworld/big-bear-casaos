@@ -1,0 +1,17 @@
+name: big-bear-octoprint
+services:
+  app:
+    container_name: octoprint
+    image: octoprint/octoprint:1.11.8@sha256:5ea0181e476597faa2800c991af4ce16903005f46b4c16666a4080ad606310bb
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/octoprint:/octoprint
+    ports:
+    - 1080:80
+x-casaos:
+  id: com.bigbeartechworld.octoprint
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.octoprint/assets/icon.png
+  title:
+    en_US: OctoPrint
+  port_map: '1080'

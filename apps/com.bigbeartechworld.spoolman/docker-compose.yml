@@ -1,0 +1,22 @@
+name: big-bear-spoolman
+services:
+  app:
+    image: ghcr.io/donkie/spoolman:0.23.1@sha256:c798bcc19194949962044459e4b43c09d667d084ae9c2c2e0187a42c36d43d9e
+    ports:
+    - 7912:8000
+    volumes:
+    - /DATA/AppData/$AppID/data:/home/app/.local/share/spoolman
+    environment:
+    - TZ=$TZ
+    - SPOOLMAN_DB_TYPE=sqlite
+    - SPOOLMAN_LOGGING_LEVEL=INFO
+    - SPOOLMAN_AUTOMATIC_BACKUP=TRUE
+    restart: unless-stopped
+    network_mode: bridge
+x-casaos:
+  id: com.bigbeartechworld.spoolman
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.spoolman/assets/icon.png
+  title:
+    en_US: Spoolman
+  port_map: '7912'

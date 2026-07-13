@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.",
+  "tagline": "A black hole for Internet advertisements",
+  "developer": "pi-hole.net",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Networking",
+  "title": "Pi-hole",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.pihole",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

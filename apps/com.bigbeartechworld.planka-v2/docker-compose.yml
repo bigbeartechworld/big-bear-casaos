@@ -1,0 +1,54 @@
+name: big-bear-planka-v2
+services:
+  big-bear-planka-v2:
+    container_name: big-bear-planka-v2
+    image: ghcr.io/plankanban/planka:2.1.1@sha256:19b507ae3ab5cb1855c3f6984249e4a4881ed0b912febdfd492139c29bf10f39
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    - /DATA/AppData/$AppID/background-images:/app/public/background-images
+    - /DATA/AppData/$AppID/user-avatars:/app/public/user-avatars
+    - /DATA/AppData/$AppID/project-background-images:/app/public/project-background-images
+    - /DATA/AppData/$AppID/attachments:/app/private/attachments
+    ports:
+    - 3001:1337
+    environment:
+    - BASE_URL=http://[YOUR_CASAOS_LAN_IP]:3001
+    - DATABASE_URL=postgresql://postgres@big-bear-planka-v2-postgres/planka
+    - SECRET_KEY=notsecretkey
+    - DEFAULT_ADMIN_EMAIL=demo@demo.demo
+    - DEFAULT_ADMIN_PASSWORD=demo
+    - DEFAULT_ADMIN_NAME=Demo Demo
+    - DEFAULT_ADMIN_USERNAME=demo
+    networks:
+    - big-bear-planka-v2-network
+    depends_on:
+      big-bear-planka-v2-postgres:
+        condition: service_healthy
+  big-bear-planka-v2-postgres:
+    image: postgres:14-alpine@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579
+    restart: on-failure
+    volumes:
+    - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_DB=planka
+    - POSTGRES_HOST_AUTH_METHOD=trust
+    networks:
+    - big-bear-planka-v2-network
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U postgres -d planka
+      interval: 10s
+      timeout: 5s
+      retries: 5
+networks:
+  big-bear-planka-v2-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.planka-v2
+  main: big-bear-planka-v2
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.planka-v2/assets/icon.png
+  title:
+    en_US: Planka v2
+  port_map: '3001'

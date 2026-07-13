@@ -1,0 +1,23 @@
+name: big-bear-beaverhabits
+services:
+  big-bear-beaverhabits:
+    container_name: big-bear-beaverhabits
+    image: daya0576/beaverhabits:0.9.1@sha256:6cd7e464207369785c88cfd59f99c6cc44ec57f3a8d90c3439908da42271d69f
+    restart: unless-stopped
+    user: 1000:1000
+    environment:
+    - HABITS_STORAGE=USER_DISK
+    - TRUSTED_LOCAL_EMAIL=your@email.com
+    - INDEX_HABIT_DATE_COLUMNS=5
+    - ENABLE_IOS_STANDALONE=true
+    volumes:
+    - /DATA/AppData/$AppID/.user:/app/.user/
+    ports:
+    - 8080:8080
+x-casaos:
+  id: com.bigbeartechworld.beaverhabits
+  main: big-bear-beaverhabits
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.beaverhabits/assets/icon.png
+  title:
+    en_US: Beaver Habit Tracker
+  port_map: '8080'

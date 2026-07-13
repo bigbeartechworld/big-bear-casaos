@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Storyteller is a self-hosted platform for ebook reading and library management. It supports multiple ebook formats including EPUB, PDF, and MOBI. Features include a modern web-based reader, library organization, metadata management, and multi-user support. Built with Django and includes optional Readium reader integration for enhanced reading experience.",
+  "tagline": "Self-hosted ebook reading platform",
+  "developer": "storyteller-platform",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Generate a secure secret key using: openssl rand -base64 32"
+  },
+  "category": "Productivity",
+  "title": "Storyteller",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.storyteller",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 721744077,
+    "arm64": 699696412
+  }
+}

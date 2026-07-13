@@ -1,0 +1,19 @@
+name: big-bear-jfa-go
+services:
+  big-bear-jfa-go:
+    container_name: big-bear-jfa-go
+    image: hrfee/jfa-go:latest@sha256:701cfca823f9278b65f4cf7706b0c7f89b3be33e17ca077f11d89dc119e9f307
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/.config/jfa-go:/data
+    - /DATA/AppData/$AppID/jellyfin:/jf
+    - /etc/localtime:/etc/localtime:ro
+    ports:
+    - 8056:8056
+x-casaos:
+  id: com.bigbeartechworld.jfa-go
+  main: big-bear-jfa-go
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.jfa-go/assets/icon.png
+  title:
+    en_US: jfa-go
+  port_map: '8056'

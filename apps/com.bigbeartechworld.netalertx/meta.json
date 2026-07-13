@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. NOTE: This is the legacy version (frozen at 25.11.29). For new installs, use NetAlertX v26 which has improved security and updated volume paths.",
+  "tagline": "NetAlertX (Legacy)",
+  "developer": "jokobsk",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Networking",
+  "title": "NetAlertX (Legacy)",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.netalertx",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

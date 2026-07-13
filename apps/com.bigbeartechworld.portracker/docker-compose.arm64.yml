@@ -1,0 +1,26 @@
+name: big-bear-portracker
+services:
+  big-bear-portracker:
+    container_name: big-bear-portracker
+    image: mostafawahied/portracker:1.3@sha256:c7b4143ae32da4642a339d49ef5559c8408862eb1d1aacd9052df46e8ae225cb
+    restart: unless-stopped
+    environment:
+    - PORT=4999
+    - DATABASE_PATH=/data/portracker.db
+    - TRUSTED_LOCAL_EMAIL=your@email.com
+    - CACHE_TIMEOUT_MS=30000
+    - DISABLE_CACHE=false
+    - INCLUDE_UDP=false
+    - DEBUG=false
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+    - 4999:4999
+x-casaos:
+  id: com.bigbeartechworld.portracker
+  main: big-bear-portracker
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.portracker/assets/icon.png
+  title:
+    en_US: Portracker
+  port_map: '4999'

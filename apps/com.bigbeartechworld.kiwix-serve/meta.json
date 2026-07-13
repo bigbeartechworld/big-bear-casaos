@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Kiwix Server is a web server for hosting .zim files",
+  "tagline": "Kiwix Server",
+  "developer": "kiwix",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-kiwix-serve-to-bigbearcasaos/1554#documentation-4\n"
+  },
+  "category": "Others",
+  "title": "Kiwix Server",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.kiwix-serve",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 26235908,
+    "arm64": 24159144
+  }
+}

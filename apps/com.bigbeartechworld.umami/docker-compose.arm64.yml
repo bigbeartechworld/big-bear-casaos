@@ -1,0 +1,37 @@
+name: big-bear-umami
+services:
+  app:
+    image: ghcr.io/umami-software/umami:postgresql-latest@sha256:8edfe4beaef13f9d1300619fa264ef250a3688df9cc54d24ca830ca31cb475ec
+    ports:
+    - 3000:3000
+    environment:
+      DATABASE_URL: postgresql://umami:umami@db:5432/umami
+      DATABASE_TYPE: postgresql
+      APP_SECRET: replace-me-with-a-random-string
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
+  db:
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: umami
+    volumes:
+    - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}
+      interval: 5s
+      timeout: 5s
+      retries: 5
+x-casaos:
+  id: com.bigbeartechworld.umami
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.umami/assets/icon.png
+  title:
+    en_US: Umami
+  port_map: '3000'

@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The open-source, self-hostable to-do app. Organize everything, on all platforms.",
+  "tagline": "Vikunja",
+  "developer": "kolaente",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "NEW APP - VIKUNJA V2\n\nThis is a SEPARATE app from 'Vikunja (Legacy)' (v1.x). Both can run simultaneously.\n\nVikunja v2 is a major rewrite:\n- Rebuilt session-based authentication (API clients may need updates)\n- Typesense search removed\n- Changed API routes\n\nFOR MIGRATION FROM V1:\n- Do NOT uninstall your existing Vikunja (Legacy) app\n- Deploy this as a NEW app alongside v1\n- Create backups before migrating\n- See: https://vikunja.io/docs/api-login-session-migration/"
+  },
+  "category": "Others",
+  "title": "Vikunja v2",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.vikunja-v2",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

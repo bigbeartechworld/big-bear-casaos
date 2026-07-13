@@ -1,0 +1,39 @@
+name: big-bear-pocketid
+services:
+  big-bear-pocketid:
+    container_name: big-bear-pocketid
+    image: ghcr.io/pocket-id/pocket-id:v2.7@sha256:45bdeaf3fcd6d07cf8721e98785d93324bb8e65b586498874c05a3d489c8094e
+    restart: unless-stopped
+    cpu_shares: 90
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
+    environment:
+    - APP_URL=http://localhost:1411
+    - TRUST_PROXY=false
+    - MAXMIND_LICENSE_KEY=
+    - PUID=1000
+    - PGID=1000
+    hostname: big-bear-pocketid
+    ports:
+    - target: 1411
+      published: '1411'
+      protocol: tcp
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    network_mode: bridge
+    privileged: false
+    healthcheck:
+      test: curl -f http://localhost:1411/healthz
+      interval: 1m30s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+x-casaos:
+  id: com.bigbeartechworld.pocketid
+  main: big-bear-pocketid
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pocketid/assets/icon.png
+  title:
+    en_US: Pocket ID
+  port_map: '1411'

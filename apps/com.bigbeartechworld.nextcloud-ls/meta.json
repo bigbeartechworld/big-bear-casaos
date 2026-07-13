@@ -1,0 +1,29 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.nextcloud-ls/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.nextcloud-ls/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.nextcloud-ls/assets/screenshot-3.webp"
+  ],
+  "tagline": "LinuxServer - The productivity platform that keeps you in control",
+  "developer": "nextcloud",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.nextcloud-ls/assets/nextcloud-hub-25-files.webp",
+  "category": "Media",
+  "title": "Nextcloud LS",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.nextcloud-ls",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

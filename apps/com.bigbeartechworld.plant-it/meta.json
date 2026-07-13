@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Plant-it is a self-hosted gardening companion app. Useful for keeping track of plant care, receiving notifications about when to water plants, uploading plant images, and more.",
+  "tagline": "Self-hosted, open source gardening companion app",
+  "developer": "msdeluise",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before installing read this: https://community.bigbeartechworld.com/t/added-plant-it-to-bigbearcasaos/1297#documentation-3\n"
+  },
+  "category": "Others",
+  "title": "Plant-it",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.plant-it",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

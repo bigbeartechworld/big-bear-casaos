@@ -1,0 +1,21 @@
+name: big-bear-glances
+services:
+  big-bear-glances:
+    container_name: big-bear-glances
+    image: nicolargo/glances:4.5.3.2-full@sha256:2d16ab0fdba4b9f61b327f78dbb8a7e7931f4967be8e1db4d37326e4680e8433
+    ports:
+    - 61208:61208
+    environment:
+    - TZ=UTC
+    - GLANCES_OPT=-w
+    pid: host
+    restart: unless-stopped
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+x-casaos:
+  id: com.bigbeartechworld.glances
+  main: big-bear-glances
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.glances/assets/icon.png
+  title:
+    en_US: Glances
+  port_map: '61208'

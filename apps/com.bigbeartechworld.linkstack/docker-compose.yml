@@ -1,0 +1,38 @@
+name: big-bear-linkstack
+services:
+  big-bear-linkstack:
+    image: linkstackorg/linkstack:V4@sha256:5cc5b4806f57c153e924fbd0c49d4255dee4c66cd6621f0e457fd43e43e5c000
+    container_name: big-bear-linkstack
+    hostname: big-bear-linkstack
+    environment:
+    - HTTP_SERVER_NAME=www.example.xyz
+    - HTTPS_SERVER_NAME=www.example.xyz
+    - SERVER_ADMIN=admin@example.xyz
+    - TZ=Europe/Berlin
+    - PHP_MEMORY_LIMIT=512M
+    - UPLOAD_MAX_FILESIZE=8M
+    ports:
+    - 8080:80
+    - 10443:443
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    entrypoint: /bin/sh
+    command:
+    - -c
+    - cp -n -r /htdocs/database/ /data/database; cp -n /htdocs/.env /data/.env; cp
+      -n -r /htdocs/littlelink/images /data/images; cp -n -r /htdocs/themes /data/themes;
+      cp -n -r /htdocs/img /data/img; chown -R apache:apache /data; rm -rf /htdocs/database/;
+      rm /htdocs/.env; rm -rf /htdocs/littlelink/images; rm -rf /htdocs/themes; rm
+      -rf /htdocs/img; sed -i 's/FORCE_HTTPS=false/FORCE_HTTPS=true/g' /data/.env;
+      ln -s /data/database /htdocs/database; ln -s /data/.env /htdocs/.env; ln -s
+      /data/images /htdocs/littlelink/images; ln -s /data/themes /htdocs/themes; ln
+      -s /data/img/ /htdocs/img; cd /htdocs; php artisan migrate --force; exec /usr/local/bin/docker-entrypoint.sh
+      server
+x-casaos:
+  id: com.bigbeartechworld.linkstack
+  main: big-bear-linkstack
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.linkstack/assets/icon.png
+  title:
+    en_US: LinkStack
+  port_map: '10443'

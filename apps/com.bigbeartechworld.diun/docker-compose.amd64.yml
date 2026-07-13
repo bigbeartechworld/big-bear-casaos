@@ -1,0 +1,26 @@
+name: big-bear-diun
+services:
+  big-bear-diun:
+    container_name: big-bear-diun
+    image: crazymax/diun:4.33.0@sha256:e324b793eb32dfb7f74d3a39421ebf090141caaadee69b8f78da63112408ee25
+    command:
+    - serve
+    restart: always
+    environment:
+      TZ: UTC
+      DIUN_WATCH_WORKERS: '20'
+      DIUN_WATCH_SCHEDULE: 0 */6 * * *
+      DIUN_WATCH_JITTER: 30s
+      DIUN_PROVIDERS_DOCKER: 'true'
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+    - diun.enable=true
+x-casaos:
+  id: com.bigbeartechworld.diun
+  main: big-bear-diun
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.diun/assets/icon.png
+  title:
+    en_US: DIUN
+  port_map: ''

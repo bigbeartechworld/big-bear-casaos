@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "ROM manager for organizing, enriching, and playing retro games, with support for 400+ platforms.",
+  "tagline": "RomM",
+  "developer": "RomM Team",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Run this script before installing the big-bear-romm application:\n\n```\nbash -c \"$(wget -qLO - https://raw.githubusercontent.com/bigbeartechworld/big-bear-scripts/master/generate-romm-config/run.sh)\"\n```\n\nAfter running this script, you need to restart the container.\n"
+  },
+  "category": "Media",
+  "title": "RomM",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.romm",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

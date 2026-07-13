@@ -1,0 +1,21 @@
+name: big-bear-dockge
+services:
+  app:
+    container_name: big-bear-dockge
+    image: louislam/dockge:1.5.0@sha256:335c6368b880ecc203236ed89e6e5232e0d6578e8ef5920e4a502390451502bf
+    environment:
+      DOCKGE_STACKS_DIR: /DATA/AppData/big-bear-dockge/stacks
+    restart: unless-stopped
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /DATA/AppData/$AppID/data:/app/data
+    - /DATA/AppData/$AppID/stacks:/DATA/AppData/big-bear-dockge/stacks
+    ports:
+    - 5001:5001
+x-casaos:
+  id: com.bigbeartechworld.dockge
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.dockge/assets/icon.png
+  title:
+    en_US: Dockge
+  port_map: '5001'

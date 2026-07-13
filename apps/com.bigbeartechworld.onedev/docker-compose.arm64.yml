@@ -1,0 +1,48 @@
+name: big-bear-onedev
+services:
+  big-bear-onedev:
+    container_name: big-bear-onedev
+    image: 1dev/server:16.0.5@sha256:327030763933d36d0aa39a94b76128fb95d6dd1ca5c7595d57d9ba2ae0963169
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/opt/onedev
+    - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+    - hibernate_dialect=io.onedev.server.persistence.PostgreSQLDialect
+    - hibernate_connection_driver_class=org.postgresql.Driver
+    - hibernate_connection_url=jdbc:postgresql://big-bear-onedev-db:5432/onedev
+    - hibernate_connection_username=bigbear
+    - hibernate_connection_password=eea2dad6-2203-45eb-8908-e8ba4d1e7f92
+    - initial_user=bigbear
+    - initial_password=password
+    - initial_email=admin@example.com
+    - initial_server_url=http://localhost:6610
+    ports:
+    - 6610:6610
+    - 6611:6611
+    depends_on:
+    - big-bear-onedev-db
+    networks:
+    - big_bear_ondedev_network
+  big-bear-onedev-db:
+    container_name: big-bear-onedev-db
+    image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
+    restart: unless-stopped
+    environment:
+    - POSTGRES_USER=bigbear
+    - POSTGRES_PASSWORD=eea2dad6-2203-45eb-8908-e8ba4d1e7f92
+    - POSTGRES_DB=onedev
+    volumes:
+    - /DATA/AppData/$AppID/postgres/data:/var/lib/postgresql/data
+    networks:
+    - big_bear_ondedev_network
+networks:
+  big_bear_ondedev_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.onedev
+  main: big-bear-onedev
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.onedev/assets/icon.png
+  title:
+    en_US: OneDev
+  port_map: '6610'

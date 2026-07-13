@@ -1,0 +1,18 @@
+name: big-bear-node-red
+services:
+  app:
+    container_name: node-red
+    image: nodered/node-red:5.0.1@sha256:6cb1b27fa5a83deec6a662db62eec8bb32e55ac5412d6b7a653e874ce62055d5
+    restart: unless-stopped
+    ports:
+    - 1880:1880
+    network_mode: bridge
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+x-casaos:
+  id: com.bigbeartechworld.node-red
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.node-red/assets/icon.png
+  title:
+    en_US: Node-RED
+  port_map: '1880'

@@ -1,0 +1,23 @@
+name: big-bear-storyteller
+services:
+  app:
+    image: registry.gitlab.com/storyteller-platform/storyteller:web-v2.6.0-experimental.14@sha256:876ca77416c1e262faf871ad9f4558339fc3d8858a3fac49610ec5cb69b14957
+    container_name: big-bear-storyteller
+    ports:
+    - 8015:8001
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    environment:
+    - STORYTELLER_SECRET_KEY=${STORYTELLER_SECRET_KEY}
+    - STORYTELLER_LOG_LEVEL=${STORYTELLER_LOG_LEVEL:-info}
+    - STORYTELLER_DATA_DIR=${STORYTELLER_DATA_DIR:-/data}
+    - TZ=${TZ:-UTC}
+    restart: unless-stopped
+    network_mode: bridge
+x-casaos:
+  id: com.bigbeartechworld.storyteller
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.storyteller/assets/icon.png
+  title:
+    en_US: Storyteller
+  port_map: '8015'

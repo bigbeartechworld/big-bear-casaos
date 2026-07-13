@@ -1,0 +1,17 @@
+name: big-bear-pingvin-share
+services:
+  app:
+    image: stonith404/pingvin-share:v1.13.0@sha256:6bf2bcd3043ee68cb61264f0857511ccf7f212fdb984382b7f2d491635184ad6
+    restart: unless-stopped
+    ports:
+    - 3000:3000
+    volumes:
+    - /DATA/AppData/pingvin-share/data:/opt/app/backend/data
+    - /DATA/AppData/pingvin-share/images:/opt/app/frontend/public/img
+x-casaos:
+  id: com.bigbeartechworld.pingvin-share
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pingvin-share/assets/icon.png
+  title:
+    en_US: Pingvin Share
+  port_map: '3000'

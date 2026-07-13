@@ -1,0 +1,30 @@
+name: big-bear-pihole
+services:
+  app:
+    container_name: big-bear-pihole
+    image: pihole/pihole:2026.06.0@sha256:8ea95136e7c8c15b42d88eadf1a3875421aa1be30ad39e50f661188cc986fb27
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      FTLCONF_webserver_api_password: your_password
+    volumes:
+    - /DATA/AppData/$AppID/etc:/etc/pihole/
+    - /DATA/AppData/$AppID/dnsmasq.d:/etc/dnsmasq.d/
+    ports:
+    - 53:53/tcp
+    - 53:53/udp
+    - 67:67/udp
+    - 8080:80/tcp
+    - 10443:443/tcp
+    networks:
+    - pihole-network
+networks:
+  pihole-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.pihole
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pihole/assets/icon.png
+  title:
+    en_US: Pi-hole
+  port_map: '8080'

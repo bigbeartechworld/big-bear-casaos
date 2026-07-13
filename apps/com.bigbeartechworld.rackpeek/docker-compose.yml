@@ -1,0 +1,17 @@
+name: big-bear-rackpeek
+services:
+  big-bear-rackpeek:
+    container_name: big-bear-rackpeek
+    image: aptacode/rackpeek:v2.0.0@sha256:ebe9b5a7585b07ecdff5978b9464815138d340f720cc88f53a262fb230b6e717
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/config:/app/config
+    ports:
+    - 8095:8080
+x-casaos:
+  id: com.bigbeartechworld.rackpeek
+  main: big-bear-rackpeek
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.rackpeek/assets/icon.jpg
+  title:
+    en_US: RackPeek
+  port_map: '8095'

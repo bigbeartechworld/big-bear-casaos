@@ -1,0 +1,18 @@
+name: big-bear-nova-dso-tracker
+services:
+  nova:
+    image: mrantonsg/nova-dso-tracker:6.2.0@sha256:eb5cd12f4c7627ec6e70051f4bccc5852db1efcd349402929b0c2cc0da2f1938
+    container_name: big-bear-nova-dso-tracker
+    ports:
+    - 5001:5001
+    volumes:
+    - /DATA/AppData/$AppID/instance:/app/instance
+    restart: unless-stopped
+    network_mode: bridge
+x-casaos:
+  id: com.bigbeartechworld.nova-dso-tracker
+  main: nova
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.nova-dso-tracker/assets/icon.png
+  title:
+    en_US: Nova DSO Tracker
+  port_map: '5001'

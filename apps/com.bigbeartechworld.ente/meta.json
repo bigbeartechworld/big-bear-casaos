@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Ente is a self-hosted, end-to-end encrypted platform to store, share, and rediscover your photos and videos across all your devices.",
+  "tagline": "End-to-end encrypted photo storage",
+  "developer": "ente-io",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Media",
+  "title": "Ente Photos",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.ente",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 117811007,
+    "arm64": 114729018
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A self-hosted warranty tracker",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.warracker/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.warracker/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.warracker/assets/screenshot-3.webp"
+  ],
+  "tagline": "A self-hosted warranty tracker",
+  "developer": "sassanix",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.warracker/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-warracker-to-bigbearcasaos/3346?u=dragonfire1119\n"
+  },
+  "category": "Others",
+  "title": "Warracker",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.warracker",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

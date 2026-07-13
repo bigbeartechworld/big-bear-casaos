@@ -1,0 +1,25 @@
+name: big-bear-tugtainer
+services:
+  big-bear-tugtainer:
+    container_name: big-bear-tugtainer
+    image: quenary/tugtainer:v1.30.8@sha256:4e9abfd0565fa0695fc770c107e8913650ce58ac9298831843d11f932810eac0
+    restart: unless-stopped
+    ports:
+    - 9412:80
+    environment:
+      TZ: UTC
+      LOG_LEVEL: warning
+      JWT_SECRET_KEY: your-secret-key-here
+      ACCESS_TOKEN_LIFETIME_MIN: '5'
+      REFRESH_TOKEN_LIFETIME_MIN: '43200'
+      HTTPS: 'FALSE'
+    volumes:
+    - /DATA/AppData/$AppID/data:/tugtainer
+    - /var/run/docker.sock:/var/run/docker.sock
+x-casaos:
+  id: com.bigbeartechworld.tugtainer
+  main: big-bear-tugtainer
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.tugtainer/assets/icon.png
+  title:
+    en_US: Tugtainer
+  port_map: '9412'

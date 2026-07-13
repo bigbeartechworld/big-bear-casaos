@@ -1,0 +1,32 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A self-hosted habit tracking app without Goals",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.beaverhabits/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.beaverhabits/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.beaverhabits/assets/screenshot-3.webp"
+  ],
+  "tagline": "A self-hosted habit tracking app without Goals",
+  "developer": "daya0576",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.beaverhabits/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-beaverhabits-to-bigbearcasaos/3345?u=dragonfire1119\n"
+  },
+  "category": "Others",
+  "title": "Beaver Habit Tracker",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.beaverhabits",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

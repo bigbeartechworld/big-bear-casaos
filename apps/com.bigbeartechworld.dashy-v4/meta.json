@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Dashy helps you organize your self-hosted services by making them accessible from a single place",
+  "tagline": "Dashy v4",
+  "developer": "Lissy93",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "NEW APP - DASHY V4\n\nThis is a NEW app, separate from 'dashy' (v3). Both can run simultaneously.\n\nFOR NEW USERS:\n- Install this app for new Dashy deployments\n- v4 stores config at /app/user-data instead of /app/public\n- Runs as non-root (uid/gid 1000)\n\nFOR V3 USERS:\n- Do NOT uninstall your 'dashy' v3 app\n- Deploy this as a NEW app alongside v3\n- Copy your conf.yml from v3: docker cp big-bear-dashy:/app/public/conf.yml ./conf.yml\n- Note: pageInfo.footerText renamed to pageInfo.footer in v4\n\nDetailed changelog: https://github.com/Lissy93/dashy/blob/master/docs/changelog.md"
+  },
+  "category": "Others",
+  "title": "Dashy v4",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.dashy-v4",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

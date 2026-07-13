@@ -1,0 +1,17 @@
+name: big-bear-beszel
+services:
+  big-bear-beszel:
+    container_name: big-bear-beszel
+    image: henrygd/beszel:0.18.7@sha256:a849ad80814b6a1a3be665304dcace5d4854b3bed7bde4dd1227e8ce1b82d477
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/beszel_data
+    ports:
+    - 8090:8090
+x-casaos:
+  id: com.bigbeartechworld.beszel
+  main: big-bear-beszel
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.beszel/assets/icon.jpg
+  title:
+    en_US: Beszel
+  port_map: '8090'

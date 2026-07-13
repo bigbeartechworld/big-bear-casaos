@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Low code project to build admin panels, internal tools, and dashboards, integrating 15+ databases.",
+  "tagline": "Appsmith",
+  "developer": "appsmithorg",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Developer",
+  "title": "Appsmith",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.appsmith",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

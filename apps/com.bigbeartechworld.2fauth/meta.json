@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
+  "tagline": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
+  "developer": "bubka",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Developer",
+  "title": "2FAuth",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.2fauth",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

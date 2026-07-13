@@ -1,0 +1,18 @@
+name: big-bear-appsmith
+services:
+  app:
+    image: appsmith/appsmith-ce:v1.98.1@sha256:9a5119fdbf22c5ae25c2240a5d5f944b9c44c4fe4a6cfa65934dc3792d24c871
+    container_name: appsmith
+    ports:
+    - 1080:80
+    - 10443:443
+    volumes:
+    - /DATA/AppData/$AppID/stacks:/appsmith-stacks
+    restart: unless-stopped
+x-casaos:
+  id: com.bigbeartechworld.appsmith
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.appsmith/assets/icon.png
+  title:
+    en_US: Appsmith
+  port_map: '1080'

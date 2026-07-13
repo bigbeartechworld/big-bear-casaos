@@ -1,0 +1,19 @@
+name: big-bear-jlesage-firefox
+services:
+  big-bear-jlesage-firefox:
+    container_name: big-bear-jlesage-firefox
+    image: jlesage/firefox:v26.03.1@sha256:a68749c6696c857d992c5b750c234ab86f184bcac92d6c080bab7679c759f845
+    ports:
+    - 5800:5800
+    environment:
+    - VNC_PASSWORD=casaos
+    - FF_OPEN_URL=https://community.bigbeartechworld.com/
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+x-casaos:
+  id: com.bigbeartechworld.jlesage-firefox
+  main: big-bear-jlesage-firefox
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.jlesage-firefox/assets/icon.png
+  title:
+    en_US: Jlesage Firefox
+  port_map: '5800'

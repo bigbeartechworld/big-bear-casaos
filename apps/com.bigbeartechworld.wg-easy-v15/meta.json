@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "WireGuard Easy v15 - Complete rewrite with new features and improved UI. Access your homeserver from anywhere with this modern VPN solution. NOTE: This is v15 which has breaking changes from v14. If you're currently using v14, please backup your configuration before migrating.",
+  "tagline": "WireGuard VPN server v15 (New Version)",
+  "developer": "WeeJeWel",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-wg-easy-v15-to-bigbearcasaos/5071#p-7701-why-a-new-version-4"
+  },
+  "category": "Networking",
+  "title": "WireGuard Easy v15",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.wg-easy-v15",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 80188822,
+    "arm64": 76688586
+  }
+}

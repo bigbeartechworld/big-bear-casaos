@@ -1,0 +1,55 @@
+name: big-bear-rallly
+services:
+  big-bear-rallly:
+    container_name: big-bear-rallly
+    image: lukevella/rallly:4.11.1@sha256:b2acb78afb1e2e88445e78cec4393cd8b8cc63f9268cf1defe19f96d0db945b0
+    restart: unless-stopped
+    environment:
+    - DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly
+    - SECRET_PASSWORD=0f6f292d-c78c-4709-920d-e3b6361eb5b5
+    - NEXT_PUBLIC_BASE_URL=http://[YOUR_CASAOS_IP]:3000
+    - NOREPLY_EMAIL=noreply@example.com
+    - SUPPORT_EMAIL=support@example.com
+    - SMTP_HOST=[YOUR_CASAOS_IP]
+    - SMTP_PORT=1025
+    - SMTP_SECURE=
+    - SMTP_USER=
+    - SMTP_PWD=
+    - SMTP_TLS_ENABLED=
+    - ALLOWED_EMAILS=
+    ports:
+    - 3000:3000
+    networks:
+    - big_bear_rally_network
+    depends_on:
+      big-bear-rallly-db:
+        condition: service_healthy
+  big-bear-rallly-db:
+    container_name: big-bear-rallly-db
+    image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PASSWORD=f87c7126-f816-47ef-9193-2e5eec763fcd
+    - POSTGRES_DB=big-bear-rallly
+    - POSTGRES_USER=rallly
+    networks:
+    - big_bear_rally_network
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U rallly
+      interval: 5s
+      timeout: 5s
+      retries: 5
+networks:
+  big_bear_rally_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.rallly
+  main: big-bear-rallly
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.rallly/assets/icon.png
+  title:
+    en_US: Rallly
+  port_map: '3000'

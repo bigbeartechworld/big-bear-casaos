@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Coolify is a self-hosted web application that allows you to manage your servers, applications, and services. It provides a simple and intuitive interface for managing your infrastructure, making it easy to deploy and manage your applications. With Coolify, you can easily manage your servers, applications, and services, providing a streamlined experience for managing your infrastructure.",
+  "tagline": "Coolify",
+  "developer": "coollabsio",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-coolify-to-casaos/2186?u=dragonfire1119\n"
+  },
+  "category": "Media",
+  "title": "Coolify",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.coolify",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 217023195,
+    "arm64": 225511089
+  }
+}

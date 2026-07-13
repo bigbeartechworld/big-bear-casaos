@@ -1,0 +1,20 @@
+name: big-bear-uisp
+services:
+  big-bear-uisp:
+    container_name: big-bear-uisp
+    image: nico640/docker-unms:2.4.155.1@sha256:f7f3f7820cb3e86bfbe0691585410482b5079f9708b400c810fbdc4cc9fd6590
+    restart: unless-stopped
+    environment:
+    - TZ=UTC
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    ports:
+    - 8080:80
+    - 10443:443
+x-casaos:
+  id: com.bigbeartechworld.uisp
+  main: big-bear-uisp
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.uisp/assets/icon.png
+  title:
+    en_US: UISP
+  port_map: '10443'

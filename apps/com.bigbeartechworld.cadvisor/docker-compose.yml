@@ -1,0 +1,26 @@
+name: big-bear-cadvisor
+services:
+  app:
+    image: gcr.io/cadvisor/cadvisor:v0.55.1@sha256:3de2bd5203120b866d74a9b283b2ffb8ec382fbf9dc321814700c6ea6f44ec57
+    container_name: monitoring_cadvisor
+    restart: unless-stopped
+    devices:
+    - /dev/kmsg:/dev/kmsg
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /var/run/docker.sock:/var/run/docker.sock:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+    - /dev/disk/:/dev/disk:ro
+    expose:
+    - 8080
+    ports:
+    - 8085:8080
+x-casaos:
+  id: com.bigbeartechworld.cadvisor
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.cadvisor/assets/icon.png
+  title:
+    en_US: cAdvisor
+  port_map: '8085'

@@ -1,0 +1,31 @@
+name: big-bear-wordpress
+services:
+  app:
+    image: wordpress:6.9.4@sha256:5d2c212561c4b5442ebc4d98933a9cbadcf3dee8888ed3fd9ed44667c27cc905
+    ports:
+    - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: casaos
+      WORDPRESS_DB_PASSWORD: casaos
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+    - /DATA/AppData/$AppID/html:/var/www/html
+    depends_on:
+    - db
+  db:
+    image: mysql:5.7@sha256:4bc6bc963e6d8443453676cae56536f4b8156d78bae03c0145cbe47c2aad73bb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+x-casaos:
+  id: com.bigbeartechworld.wordpress
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.wordpress/assets/icon.png
+  title:
+    en_US: WordPress (Legacy)
+  port_map: '8080'

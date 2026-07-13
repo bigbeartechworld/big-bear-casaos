@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A self-hosted network monitoring dashboard that runs real Ookla speedtests on a schedule, pings continuously to track uptime, and shows the history as graphs you can actually reflect on — not just a live number that resets every refresh.",
+  "tagline": "Self-hosted internet speed & uptime monitor",
+  "developer": "BentFender",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "NetPulse runs on host networking and binds port 8077 directly on your server. Change the default NETPULSE_PASSWORD — it protects the dashboard login (default username is admin). Speedtests run every 10 minutes by default; adjust SPEEDTEST_INTERVAL_MIN if that's too frequent."
+  },
+  "category": "Networking",
+  "title": "NetPulse",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.netpulse",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 54412034,
+    "arm64": 54606201
+  }
+}

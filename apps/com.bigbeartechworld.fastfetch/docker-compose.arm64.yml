@@ -1,0 +1,21 @@
+name: big-bear-fastfetch
+services:
+  big-bear-fastfetch:
+    container_name: big-bear-fastfetch
+    image: bigbeartechworld/big-bear-fastfetch:0.0.5@sha256:fa84a845c95fdc1b9ee427786e7467c3909fbadfd98c4b32e0cf4a2f2a227751
+    restart: unless-stopped
+    privileged: true
+    volumes:
+    - /proc:/proc
+    - /sys:/sys
+    - /dev:/dev
+    - /etc/localtime:/etc/localtime:ro
+    ports:
+    - 7681:7681
+x-casaos:
+  id: com.bigbeartechworld.fastfetch
+  main: big-bear-fastfetch
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.fastfetch/assets/icon.png
+  title:
+    en_US: Fastfetch
+  port_map: '7681'

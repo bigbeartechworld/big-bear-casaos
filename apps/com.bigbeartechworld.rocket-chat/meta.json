@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "Rocket.Chat is an open-source fully customizable communications platform [...]",
+  "tagline": "The communications platform that puts data protection first.",
+  "developer": "rocket.chat",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Social",
+  "title": "Rocket.Chat (Legacy)",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.rocket-chat",
+  "version": "",
+  "categories": [
+    "social"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

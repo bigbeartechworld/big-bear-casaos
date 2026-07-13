@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "a simple server for sending and receiving messages",
+  "tagline": "Gotify",
+  "developer": "gotify",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Social",
+  "title": "Gotify",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.gotify",
+  "version": "",
+  "categories": [
+    "social"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

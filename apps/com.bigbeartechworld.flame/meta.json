@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Flame is a self-hosted startpage for your server. Its design is heavily inspired by SUI. Flame is user-friendly and easy to set up. With its built-in editors, users can quickly establish their own application hub without any file editing.",
+  "tagline": "Flame is a self-hosted startpage for your server. Manage your apps and bookmarks effortlessly with built-in editors.",
+  "developer": "pawelmalak",
+  "author": "BigBearCommunity",
+  "thumbnail": "/apps/com.bigbeartechworld.flame/assets/home.webp",
+  "category": "Others",
+  "title": "Flame",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.flame",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

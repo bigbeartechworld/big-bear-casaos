@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "GoAway is a lightweight DNS sinkhole that blocks ads, trackers, and malicious domains at the network level. It provides a web-based admin dashboard for management and supports customizable blocking rules with real-time statistics tracking.",
+  "tagline": "Lightweight DNS sinkhole for blocking ads and trackers",
+  "developer": "pommee",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Visit the community post for setup instructions and community support:\nhttps://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085\n"
+  },
+  "category": "Networking",
+  "title": "GoAway",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.goaway",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

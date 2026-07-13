@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "🛡️ Synchronize AdGuard Home config to replicas. This is the LinuxServer version.",
+  "tagline": "LS Adguard Home Sync",
+  "developer": "bakito",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Networking",
+  "title": "LS Adguard Home Sync",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.ls-adguardhome-sync",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

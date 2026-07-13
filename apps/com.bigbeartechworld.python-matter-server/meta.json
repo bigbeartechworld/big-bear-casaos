@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "This project implements a Matter Controller Server over WebSockets using the official Matter (formerly CHIP) SDK as a base and provides both a server and client implementation. The goal of this project is primary to have Matter support in Home Assistant but its universal approach makes it suitable to be used in other projects too.",
+  "tagline": "Python Matter Server",
+  "developer": "home-assistant-libs",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Home",
+  "title": "Python Matter Server",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.python-matter-server",
+  "version": "",
+  "categories": [
+    "home"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 145838526,
+    "arm64": 144373051
+  }
+}

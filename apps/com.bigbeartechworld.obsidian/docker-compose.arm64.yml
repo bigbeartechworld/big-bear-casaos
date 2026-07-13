@@ -1,0 +1,22 @@
+name: big-bear-obsidian
+services:
+  big-bear-obsidian:
+    container_name: big-bear-obsidian
+    image: linuxserver/obsidian:1.12.7@sha256:6d7d462c8cd3e4b3b5aabee2c5a69d026c9fe41913adec115ae3ecbc8096dec0
+    restart: unless-stopped
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    ports:
+    - 3000:3000
+    - 3001:3001
+x-casaos:
+  id: com.bigbeartechworld.obsidian
+  main: big-bear-obsidian
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.obsidian/assets/icon.png
+  title:
+    en_US: Obsidian
+  port_map: '3000'

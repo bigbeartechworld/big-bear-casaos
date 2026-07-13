@@ -1,0 +1,43 @@
+name: big-bear-rocket-chat
+services:
+  app:
+    container_name: big-bear-rocket-chat
+    image: rocket.chat:6.13.1@sha256:b6cfd507cf913290045d380be2c14511c735acb840509d471fb2d7359a820031
+    restart: unless-stopped
+    environment:
+      MONGO_OPLOG_URL: mongodb://db:27017/local
+      ROOT_URL: http://localhost:3000
+    ports:
+    - 3000:3000
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+    - rocketchat-net
+  db:
+    image: mongo:4.4.28@sha256:7a272834036ddc9c7379c2d646b6a6c23c985e28c280f1340b3f611c762f9d83
+    container_name: big-bear-rocketchat-db
+    volumes:
+    - /DATA/AppData/$AppID/db:/data/db
+    healthcheck:
+      test:
+      - CMD
+      - mongo
+      - --eval
+      - db.stats()
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+    - rocketchat-net
+networks:
+  rocketchat-net:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.rocket-chat
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.rocket-chat/assets/icon.png
+  title:
+    en_US: Rocket.Chat (Legacy)
+  port_map: '3000'

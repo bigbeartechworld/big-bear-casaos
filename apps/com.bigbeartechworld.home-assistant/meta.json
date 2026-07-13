@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
+  "tagline": "Home Automation",
+  "developer": "home-assistant",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Home",
+  "title": "Home Assistant",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.home-assistant",
+  "version": "",
+  "categories": [
+    "home"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 609026255,
+    "arm64": 595545633
+  }
+}

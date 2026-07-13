@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+  "tagline": "Virtual whiteboard for sketching hand-drawn like diagrams",
+  "developer": "excalidraw",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Others",
+  "title": "Excalidraw",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.excalidraw",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

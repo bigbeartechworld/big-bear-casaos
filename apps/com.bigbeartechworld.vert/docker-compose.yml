@@ -1,0 +1,15 @@
+name: big-bear-vert
+services:
+  app:
+    container_name: big-bear-vert
+    image: ghcr.io/vert-sh/vert:sha-a1b0b15@sha256:9f69e1f0a61be4882f8b1e9ba35647e8df4a91669fb4c3cdf30aeb88c247c600
+    restart: unless-stopped
+    ports:
+    - 3030:80
+x-casaos:
+  id: com.bigbeartechworld.vert
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.vert/assets/icon.png
+  title:
+    en_US: VERT
+  port_map: '3030'

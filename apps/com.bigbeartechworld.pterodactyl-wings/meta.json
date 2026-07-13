@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Wings is Pterodactyl's server control plane, built for the rapidly changing gaming industry and designed to be highly performant and secure. Wings provides an HTTP API allowing you to interface directly with running server instances, fetch server logs, generate backups, and control all aspects of the server lifecycle.",
+  "tagline": "Pterodactyl Wings",
+  "developer": "pterodactyl",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before setting up Pterodactyl Wings in your container, you need to ensure that the node is properly configured in the Pterodactyl panel. Follow these steps:\n\nCreate the Node in the Pterodactyl Panel: If you haven't already, initiate and configure the node within the Pterodactyl panel.\n\nCopy the Configuration: After creating the node, the panel will provide a configuration file. You need to copy the content of this configuration and place it in:\n\n```\n/etc/pterodactyl/config.yml\n```\n\nTip: Use the CasaOS files app for an easy file management experience.\n\nRestart the Container: Once the configuration is in place, ensure you restart the container for the changes to take effect.\n"
+  },
+  "category": "Developer",
+  "title": "Pterodactyl Wings",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.pterodactyl-wings",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 12106680,
+    "arm64": 11274049
+  }
+}

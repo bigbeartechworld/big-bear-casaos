@@ -1,0 +1,31 @@
+name: big-bear-wg-easy
+services:
+  big-bear-wg-easy:
+    container_name: big-bear-wg-easy
+    image: ghcr.io/wg-easy/wg-easy:15@sha256:93bbd593e07bab98d02807a28770ac87ab6c48818e319e68c1f66561feb99876
+    restart: unless-stopped
+    environment:
+      WG_HOST: '[YOUR_PUBLIC_IP]'
+      PASSWORD_HASH: $2b$12$coPqCsPtcFO.Ab99xylBNOW4.Iu7OOA2/ZIboHN6/oyxca3MWo7fW
+      WG_DEFAULT_DNS: 1.1.1.1
+      WG_ALLOWED_IPS: 0.0.0.0/0, ::/0
+    cap_add:
+    - NET_ADMIN
+    - SYS_MODULE
+    sysctls:
+    - net.ipv4.conf.all.src_valid_mark=1
+    - net.ipv4.ip_forward=1
+    devices:
+    - /dev/net/tun:/dev/net/tun
+    volumes:
+    - /DATA/AppData/$AppID/data:/etc/wireguard
+    ports:
+    - 51820:51820/udp
+    - 51821:51821/tcp
+x-casaos:
+  id: com.bigbeartechworld.wg-easy
+  main: big-bear-wg-easy
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.wg-easy/assets/icon.png
+  title:
+    en_US: Wireguard Easy 14 (Legacy)
+  port_map: '51821'

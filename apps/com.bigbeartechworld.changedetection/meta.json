@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The best and simplest free open source website change detection, restock monitor and notification service.",
+  "tagline": "Website change detection.",
+  "developer": "dgtlmoon",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Others",
+  "title": "Change Detection",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.changedetection",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 356774708,
+    "arm64": 326424613
+  }
+}

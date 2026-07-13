@@ -1,0 +1,20 @@
+name: big-bear-lobe-chat
+services:
+  big-bear-lobe-chat:
+    container_name: big-bear-lobe-chat
+    image: lobehub/lobe-chat:1.143.3@sha256:b2d2454525523d9f0a19c79661f83ec45f13363dbadd5c1180887e77af35d872
+    restart: unless-stopped
+    environment:
+    - OPENAI_API_KEY=""
+    - OPENAI_PROXY_URL=""
+    - CUSTOM_MODELS=""
+    - ACCESS_CODE=""
+    ports:
+    - 3210:3210
+x-casaos:
+  id: com.bigbeartechworld.lobe-chat
+  main: big-bear-lobe-chat
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.lobe-chat/assets/icon.png
+  title:
+    en_US: LobeChat
+  port_map: '3210'

@@ -1,0 +1,48 @@
+name: big-bear-pwpush-v2
+services:
+  big-bear-pwpush-v2:
+    container_name: big-bear-pwpush-v2
+    image: pglombardo/pwpush:2.8.1@sha256:2d92b5b62bcbc0e5cf6092e3828354a66dc784eda6de2171792a62cbfc7c4ea7
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://pwpusher:6280144a-56af-486f-9088-ac7301399328@big-bear-pwpush-v2-db:5432/passwordpusher_db
+      PWP__PW__EXPIRE_AFTER_DAYS_DEFAULT: '1'
+      PWP__PW__EXPIRE_AFTER_VIEWS_MIN: '1'
+      PWP__PW__RETRIEVAL_STEP_DEFAULT: 'true'
+    volumes:
+    - /DATA/AppData/$AppID/storage:/opt/PasswordPusher/storage
+    ports:
+    - 5101:5100
+    networks:
+    - big_bear_pwpush_v2_network
+    depends_on:
+      big-bear-pwpush-v2-db:
+        condition: service_healthy
+  big-bear-pwpush-v2-db:
+    container_name: big-bear-pwpush-v2-db
+    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
+    environment:
+      POSTGRES_USER: pwpusher
+      POSTGRES_PASSWORD: 6280144a-56af-486f-9088-ac7301399328
+      POSTGRES_DB: passwordpusher_db
+    volumes:
+    - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U pwpusher -d passwordpusher_db
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+    - big_bear_pwpush_v2_network
+networks:
+  big_bear_pwpush_v2_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.passwordpusher-v2
+  main: big-bear-pwpush-v2
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.passwordpusher-v2/assets/icon.png
+  title:
+    en_US: Password Pusher v2
+  port_map: '5101'

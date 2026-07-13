@@ -1,0 +1,67 @@
+name: big-bear-immich
+services:
+  immich-server:
+    container_name: immich-server
+    image: ghcr.io/immich-app/immich-server:v3.0.0@sha256:685ba5c93337058ff8a189d3ed89f0ba470ef966b1c94d2eace1a3d991f9816e
+    ports:
+    - 2283:2283
+    volumes:
+    - /DATA/AppData/$AppID/upload:/usr/src/app/upload
+    environment:
+      DB_HOSTNAME: immich-postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: immich
+      DB_PORT: '5432'
+      REDIS_HOSTNAME: immich-redis
+      IMMICH_MACHINE_LEARNING_URL: http://immich-machine-learning:3003
+    depends_on:
+    - redis
+    - database
+    restart: unless-stopped
+    networks:
+    - big_bear_immich_network
+  immich-machine-learning:
+    container_name: immich-machine-learning
+    image: ghcr.io/immich-app/immich-machine-learning:v3.0.0@sha256:5b480e92a2b77618d9ccae8c8110b0eae144ec9daf86715d246ec6d39cb7a553
+    volumes:
+    - /DATA/AppData/$AppID/model-cache:/cache
+    environment:
+      DB_HOSTNAME: immich-postgres
+      DB_USERNAME: casaos
+      DB_PASSWORD: casaos
+      DB_DATABASE_NAME: casaos
+      DB_PORT: 5432
+      REDIS_HOSTNAME: immich-redis
+    restart: unless-stopped
+    networks:
+    - big_bear_immich_network
+  redis:
+    container_name: immich-redis
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f
+    restart: always
+    networks:
+    - big_bear_immich_network
+  database:
+    container_name: immich-postgres
+    image: ghcr.io/immich-app/postgres:14-vectorchord0.3.0-pgvectors0.2.0@sha256:c570d9e1c2494f65d2a0a379a7f6df66e8441964254a30aa62cc58e8ebf1dee0
+    environment:
+      POSTGRES_PASSWORD: casaos
+      POSTGRES_USER: casaos
+      POSTGRES_DB: immich
+      PG_DATA: /var/lib/postgresql/data
+    volumes:
+    - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+    - big_bear_immich_network
+networks:
+  big_bear_immich_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.immich
+  main: immich-server
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.immich/assets/icon.png
+  title:
+    en_US: Immich
+  port_map: '2283'

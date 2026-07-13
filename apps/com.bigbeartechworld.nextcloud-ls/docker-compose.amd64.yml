@@ -1,0 +1,22 @@
+name: big-bear-nextcloud-ls
+services:
+  big-bear-nextcloud-ls:
+    container_name: big-bear-nextcloud-ls
+    image: linuxserver/nextcloud:34.0.1@sha256:a5f914b3284eba90d9fe059fffaba9718dc194432a8b6cabe856b88d17436ec2
+    restart: unless-stopped
+    ports:
+    - 10443:443
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/data:/data
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+x-casaos:
+  id: com.bigbeartechworld.nextcloud-ls
+  main: big-bear-nextcloud-ls
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.nextcloud-ls/assets/icon.png
+  title:
+    en_US: Nextcloud LS
+  port_map: '10443'

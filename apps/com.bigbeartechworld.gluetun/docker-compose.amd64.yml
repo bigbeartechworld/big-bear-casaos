@@ -1,0 +1,29 @@
+name: big-bear-gluetun
+services:
+  gluetun:
+    image: qmcgaw/gluetun:v3.41.1@sha256:1a5bf4b4820a879cdf8d93d7ef0d2d963af56670c9ebff8981860b6804ebc8ab
+    container_name: gluetun
+    cap_add:
+    - NET_ADMIN
+    devices:
+    - /dev/net/tun:/dev/net/tun
+    ports:
+    - 8888:8888/tcp
+    - 8388:8388/tcp
+    - 8388:8388/udp
+    volumes:
+    - /DATA/AppData/$AppID/data:/gluetun
+    environment:
+    - VPN_SERVICE_PROVIDER=custom
+    - VPN_TYPE=openvpn
+    - OPENVPN_USER=
+    - OPENVPN_PASSWORD=
+    - TZ=
+    - UPDATER_PERIOD=
+x-casaos:
+  id: com.bigbeartechworld.gluetun
+  main: gluetun
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.gluetun/assets/icon.png
+  title:
+    en_US: Gluetun
+  port_map: ''

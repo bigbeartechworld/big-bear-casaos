@@ -1,0 +1,30 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.send-visee/assets/screenshot-1.webp"
+  ],
+  "tagline": "A fork of Mozilla's Firefox Send.",
+  "developer": "timvisee",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.send-visee/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-send-visee-to-bigbearcasaos/3456?u=dragonfire1119\n"
+  },
+  "category": "Social",
+  "title": "Send Visee",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.send-visee",
+  "version": "",
+  "categories": [
+    "social"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 68866264,
+    "arm64": 68867106
+  }
+}

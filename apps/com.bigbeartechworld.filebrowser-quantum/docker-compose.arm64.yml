@@ -1,0 +1,25 @@
+name: big-bear-filebrowser-quantum
+services:
+  app:
+    container_name: big-bear-filebrowser-quantum
+    image: gtstef/filebrowser:1.4.0-stable@sha256:2cd949cd06c058576773c5b8400c854478a64c4f364b1e2bea275819847f099b
+    restart: unless-stopped
+    environment:
+    - TZ=UTC
+    volumes:
+    - /DATA/AppData/$AppID/data:/home/filebrowser/data
+    - /DATA/AppData/$AppID/srv:/srv
+    ports:
+    - 8700:80
+    networks:
+    - big-bear-filebrowser-quantum-network
+networks:
+  big-bear-filebrowser-quantum-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.filebrowser-quantum
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.filebrowser-quantum/assets/icon.png
+  title:
+    en_US: FileBrowser Quantum
+  port_map: '8700'

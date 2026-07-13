@@ -1,0 +1,17 @@
+name: big-bear-mealie
+services:
+  app:
+    container_name: big-bear-mealie
+    image: hkotel/mealie:v3.20.1@sha256:9b680f5dad8618e69317a005e083a00a699845fb2a72c392a558a4e2898aed20
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    ports:
+    - 9925:9000
+x-casaos:
+  id: com.bigbeartechworld.mealie
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.mealie/assets/icon.png
+  title:
+    en_US: Mealie
+  port_map: '9925'

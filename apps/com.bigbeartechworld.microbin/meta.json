@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Self-hosted, encrypted pastebin alternative with configurable features.",
+  "tagline": "Pastebin alternative with encryption",
+  "developer": "danielszabo99",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "For a full list of Microbin environment variables and their meanings, see:\nhttps://github.com/szabodanika/microbin/blob/master/.env\n"
+  },
+  "category": "Others",
+  "title": "Microbin",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.microbin",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

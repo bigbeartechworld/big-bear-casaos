@@ -1,0 +1,17 @@
+name: big-bear-matterbridge
+services:
+  big-bear-matterbridge:
+    container_name: big-bear-matterbridge
+    image: luligu/matterbridge:3.9.3@sha256:32d33714771e2b0396cf239de7318e52666267418c39ae7aaf6fbfb96f56d3e4
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+    - /DATA/AppData/$AppID/Matterbridge:/root/Matterbridge
+    - /DATA/AppData/$AppID/.matterbridge:/root/.matterbridge
+x-casaos:
+  id: com.bigbeartechworld.matterbridge
+  main: big-bear-matterbridge
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.matterbridge/assets/icon.png
+  title:
+    en_US: Matterbridge
+  port_map: '8283'

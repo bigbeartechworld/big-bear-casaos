@@ -1,0 +1,30 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Odysseus is a self-hosted AI workspace. It bundles chat, web search via SearXNG, and a ChromaDB vector store so you can run your own private AI environment with the LLM provider of your choice.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.odysseus/assets/odysseus.webp"
+  ],
+  "tagline": "Self-hosted AI workspace",
+  "developer": "pewdiepie-archdaemon",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Set ODYSSEUS_ADMIN_PASSWORD before installing. The default password is insecure.\n"
+  },
+  "category": "AI",
+  "title": "Odysseus",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.odysseus",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

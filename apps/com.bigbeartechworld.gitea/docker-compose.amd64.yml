@@ -1,0 +1,36 @@
+name: big-bear-gitea
+services:
+  big-bear-gitea:
+    container_name: big-bear-gitea
+    image: gitea/gitea:1.26.4@sha256:8e25c717b8f748445e15ec46e0390f577cb628101184cb0a150d1dae126c1f39
+    restart: unless-stopped
+    ports:
+    - 3000:3000
+    - '2222:22'
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro
+    environment:
+    - USER_UID=1000
+    - USER_GID=1000
+    - GITEA__server__SSH_PORT=2222
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - --no-verbose
+      - --tries=3
+      - --spider
+      - http://localhost:3000
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+x-casaos:
+  id: com.bigbeartechworld.gitea
+  main: big-bear-gitea
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.gitea/assets/icon.png
+  title:
+    en_US: Gitea
+  port_map: '3000'

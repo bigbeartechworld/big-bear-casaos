@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "An OpenTelemetry Backend in a Docker Image.",
+  "tagline": "OpenTelemetry Backend",
+  "developer": "Grafana Labs",
+  "author": "Konrad Botor (Forinil)",
+  "thumbnail": "/apps/com.bigbeartechworld.otel-lgtm/assets/overview.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://github.com/grafana/docker-otel-lgtm/\nand https://grafana.com/blog/2024/03/13/an-opentelemetry-backend-in-a-docker-image-introducing-grafana/otel-lgtm/\n"
+  },
+  "category": "Developer",
+  "title": "OTEL LGTM",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.otel-lgtm",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

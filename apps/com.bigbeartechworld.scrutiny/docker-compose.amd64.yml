@@ -1,0 +1,36 @@
+name: big-bear-scrutiny
+services:
+  big-bear-scrutiny:
+    container_name: big-bear-scrutiny
+    image: ghcr.io/analogj/scrutiny:master-omnibus@sha256:18689773150d6b8b53c94a435f40f7b6e946fd4a6d40b44c64fa2154a5b38941
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/config:/opt/scrutiny/config
+    - /DATA/AppData/$AppID/influxdb:/opt/scrutiny/influxdb
+    - /run/udev:/run/udev:ro
+    ports:
+    - 38080:8080
+    - 38086:8086
+    cap_add:
+    - SYS_RAWIO
+    devices:
+    - /dev/sda:/dev/sda
+    - /dev/nvme0:/dev/nvme0
+    privileged: true
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:8080/api/health
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+x-casaos:
+  id: com.bigbeartechworld.scrutiny
+  main: big-bear-scrutiny
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.scrutiny/assets/icon.png
+  title:
+    en_US: Scrutiny
+  port_map: '38080'

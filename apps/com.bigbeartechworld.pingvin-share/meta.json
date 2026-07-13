@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.",
+  "tagline": "Pingvin Share",
+  "developer": "stonith404",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.pingvin-share/assets/225038319-b2ef742c-3a74-4eb6-9689-4207a36842a4.webp",
+  "category": "Others",
+  "title": "Pingvin Share",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.pingvin-share",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

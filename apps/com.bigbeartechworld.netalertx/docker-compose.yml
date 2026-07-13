@@ -1,0 +1,22 @@
+name: big-bear-netalertx
+services:
+  big-bear-netalertx:
+    container_name: big-bear-netalertx
+    image: jokobsk/netalertx:25.11.29@sha256:fd1a4ca4bd4c0f38797b36b4ec5b0928d7add7b9add788d9cedb11fd25a42a65
+    restart: unless-stopped
+    privileged: true
+    volumes:
+    - /DATA/AppData/$AppID/config:/app/config
+    - /DATA/AppData/$AppID/db:/app/db
+    environment:
+    - TZ=UTC
+    - PORT=8080
+    - ALWAYS_FRESH_INSTALL=false
+    network_mode: host
+x-casaos:
+  id: com.bigbeartechworld.netalertx
+  main: big-bear-netalertx
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.netalertx/assets/icon.png
+  title:
+    en_US: NetAlertX (Legacy)
+  port_map: '8080'

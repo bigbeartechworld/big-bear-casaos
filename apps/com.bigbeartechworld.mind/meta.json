@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!",
+  "tagline": "A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!",
+  "developer": "Casvt",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Others",
+  "title": "MIND",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.mind",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

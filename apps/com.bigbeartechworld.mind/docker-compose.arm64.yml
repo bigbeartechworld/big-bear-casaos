@@ -1,0 +1,18 @@
+name: big-bear-mind
+services:
+  app:
+    image: mrcas/mind:v1.4.1@sha256:152f824d093f2e8772af0d209afc710b9e79edf3e6286d7c3eccb0509dafffd4
+    container_name: mind
+    environment:
+    - TZ=UTC
+    volumes:
+    - /DATA/AppData/$AppID/db:/app/db
+    ports:
+    - 8080:8080
+x-casaos:
+  id: com.bigbeartechworld.mind
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.mind/assets/icon.png
+  title:
+    en_US: MIND
+  port_map: '8080'

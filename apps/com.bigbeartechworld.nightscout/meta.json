@@ -1,0 +1,30 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "This acts as a web-based CGM (Continuous Glucose Monitor) to allow multiple caregivers to remotely view a patient's glucose data in real time. The server reads a MongoDB which is intended to be data from a physical CGM, where it sends new SGV (sensor glucose values) as the data becomes available. The data is then displayed graphically and blood glucose values are predicted 0.5 hours ahead using an autoregressive second order model. Alarms are generated for high and low values, which can be cleared by any watcher of the data.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.nightscout/assets/screenshot.webp"
+  ],
+  "tagline": "Nightscout",
+  "developer": "nightscout",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.nightscout/assets/screenshot.webp",
+  "tips": {
+    "before_install": "https://community.bigbeartechworld.com/t/added-nightscout-to-bigbearcasaos/1403#documentation-3\n"
+  },
+  "category": "Home",
+  "title": "nightscout",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.nightscout",
+  "version": "",
+  "categories": [
+    "home"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

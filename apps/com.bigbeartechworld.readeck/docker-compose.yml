@@ -1,0 +1,32 @@
+name: big-bear-readeck
+services:
+  big-bear-readeck:
+    container_name: big-bear-readeck
+    image: codeberg.org/readeck/readeck:0.22.3@sha256:ed1c513f8e1d59b1d38fda324ac279eeb65afd0327907e498061ec9fd2f31c15
+    restart: unless-stopped
+    environment:
+    - READECK_LOG_LEVEL=info
+    - READECK_SERVER_HOST=0.0.0.0
+    - READECK_SERVER_PORT=8000
+    - READECK_LOG_FORMAT=text
+    volumes:
+    - /DATA/AppData/$AppID/data:/readeck
+    ports:
+    - 8000:8000
+    healthcheck:
+      test:
+      - CMD
+      - /bin/readeck
+      - healthcheck
+      - -config
+      - config.toml
+      interval: 30s
+      timeout: 2s
+      retries: 3
+x-casaos:
+  id: com.bigbeartechworld.readeck
+  main: big-bear-readeck
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.readeck/assets/icon.png
+  title:
+    en_US: Readeck
+  port_map: '8000'

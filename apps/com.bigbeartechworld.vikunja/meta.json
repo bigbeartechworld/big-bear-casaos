@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The open-source, self-hostable to-do app. Organize everything, on all platforms.",
+  "tagline": "Vikunja",
+  "developer": "kolaente",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Others",
+  "title": "Vikunja (Legacy)",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.vikunja",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

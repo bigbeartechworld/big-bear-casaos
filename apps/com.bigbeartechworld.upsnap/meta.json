@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A simple wake on lan web app written with SvelteKit, Go and PocketBase.",
+  "tagline": "Upsnap",
+  "developer": "seriousm4x",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-upsnap-to-bigbearcasaos/2279?u=dragonfire1119\n"
+  },
+  "category": "Others",
+  "title": "Upsnap",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.upsnap",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 42840326,
+    "arm64": 42424862
+  }
+}

@@ -1,0 +1,20 @@
+name: big-bear-homarr-v1
+services:
+  big-bear-homarr-v1:
+    container_name: big-bear-homarr-v1
+    image: ghcr.io/homarr-labs/homarr:v1.63.0@sha256:6daf640531c1c114ccce15775185b3fb8958365a62c2fabc559d9cc5ae064326
+    restart: unless-stopped
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /DATA/AppData/$AppID/appdata:/appdata
+    environment:
+    - SECRET_ENCRYPTION_KEY=
+    ports:
+    - 7575:7575
+x-casaos:
+  id: com.bigbeartechworld.homarr-v1
+  main: big-bear-homarr-v1
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.homarr-v1/assets/icon.png
+  title:
+    en_US: Homarr v1
+  port_map: '7575'

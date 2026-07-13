@@ -1,0 +1,19 @@
+name: big-bear-homer
+services:
+  app:
+    image: b4bz/homer:v26.4.2@sha256:ace7c6a2cfb66e13f0e94d5534cb569562f190aa5cac9446b2453ef7822cd195
+    container_name: homer
+    volumes:
+    - /DATA/AppData/$AppID/assets:/www/assets
+    ports:
+    - 8080:8080
+    user: 1000:1000
+    environment:
+    - INIT_ASSETS=1
+x-casaos:
+  id: com.bigbeartechworld.homer
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.homer/assets/icon.png
+  title:
+    en_US: Homer
+  port_map: '8080'

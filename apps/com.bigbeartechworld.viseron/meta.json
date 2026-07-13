@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Viseron is a self-hosted, local only NVR and AI Computer Vision software",
+  "tagline": "Viseron",
+  "developer": "roflcoopter",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-viseron-to-bigbearcasaos/2134?u=dragonfire1119\n"
+  },
+  "category": "AI",
+  "title": "Viseron",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.viseron",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

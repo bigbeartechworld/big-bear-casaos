@@ -1,0 +1,104 @@
+name: big-bear-odysseus
+services:
+  big-bear-odysseus:
+    container_name: big-bear-odysseus
+    image: bigbeartechworld/big-bear-odysseus:2026.06.29@sha256:64ec6fadda7de876097878d4ec32b1dce8c7f6c00d9ae4de8620037d009bac2d
+    restart: unless-stopped
+    ports:
+    - 7000:7000
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - AUTH_ENABLED=true
+    - ODYSSEUS_ADMIN_PASSWORD=61713bbc-7b62-4148-b5ea-5c83048c4818
+    - SEARXNG_INSTANCE=http://searxng:8080
+    - CHROMADB_HOST=chromadb
+    - CHROMADB_PORT=8000
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    - /DATA/AppData/$AppID/logs:/app/logs
+    depends_on:
+      searxng:
+        condition: service_healthy
+      chromadb:
+        condition: service_started
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:7000/api/health
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+    - big_bear_odysseus_network
+  chromadb:
+    container_name: big-bear-odysseus-chromadb
+    image: chromadb/chroma:1.5.9@sha256:1e0b73a187a28757c572acba508c46f48c9e8b0acaf5c20e6d95cdedce1acdf6
+    restart: unless-stopped
+    environment:
+    - ANONYMIZED_TELEMETRY=FALSE
+    volumes:
+    - /DATA/AppData/$AppID/chromadb:/chroma/chroma
+    networks:
+    - big_bear_odysseus_network
+  searxng:
+    container_name: big-bear-odysseus-searxng
+    image: searxng/searxng:2026.6.2-e964708c0@sha256:0872beb1d495d41f2dda73d7aea83746657afdd2be3010eb1b11f5a541555c9e
+    restart: unless-stopped
+    entrypoint:
+    - /bin/sh
+    - -c
+    - "set -eu\nif [ ! -s /etc/searxng/settings.yml ]; then\n  secret=\"$${SEARXNG_SECRET:-}\"\
+      \n  if [ -z \"$$secret\" ]; then\n    secret=\"$$(python -c 'import secrets;\
+      \ print(secrets.token_urlsafe(48))')\"\n  fi\n  cat > /etc/searxng/settings.yml\
+      \ <<EOF\nuse_default_settings: true\nserver:\n  secret_key: \"$$secret\"\nsearch:\n\
+      \  formats:\n    - html\n    - json\nEOF\nfi\nexec /usr/local/searxng/entrypoint.sh\n"
+    environment:
+    - SEARXNG_BASE_URL=http://localhost:8080/
+    - SEARXNG_SECRET=3164fa5e-b7bf-4c65-8576-c63170a47042
+    volumes:
+    - /DATA/AppData/$AppID/searxng:/etc/searxng
+    cap_drop:
+    - ALL
+    cap_add:
+    - CHOWN
+    - SETGID
+    - SETUID
+    - DAC_OVERRIDE
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - python -c "import urllib.request; urllib.request.urlopen('http://localhost:8080/',
+        timeout=5).read(1)"
+      interval: 10s
+      timeout: 6s
+      retries: 20
+      start_period: 10s
+    networks:
+    - big_bear_odysseus_network
+  ntfy:
+    container_name: big-bear-odysseus-ntfy
+    image: binwiederhier/ntfy:v2.25.0@sha256:cfbbb1bac9196cb711e29ef0ac4adaeb033be6235f1df857705dc39c14384a1d
+    restart: unless-stopped
+    command: serve
+    ports:
+    - 127.0.0.1:8091:80
+    environment:
+    - NTFY_BASE_URL=http://localhost:8091
+    volumes:
+    - /DATA/AppData/$AppID/ntfy:/var/cache/ntfy
+    networks:
+    - big_bear_odysseus_network
+networks:
+  big_bear_odysseus_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.odysseus
+  main: big-bear-odysseus
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.odysseus/assets/icon.png
+  title:
+    en_US: Odysseus
+  port_map: '7000'

@@ -1,0 +1,21 @@
+name: big-bear-gem-digest-bot
+services:
+  big-bear-gem-digest-bot:
+    container_name: big-bear-gem-digest-bot
+    image: piero24/gemdigest:1.0@sha256:6f49c511af7f2f7a1b9e652e517e6a222760632e7b69801a4997787e40065cc6
+    volumes:
+    - /DATA/AppData/$AppID/extra/configs:/gem_digest_bot/extra_configs
+    environment:
+      TELEGRAM_API_KEY: TELEGRAM_API_KEY
+      GEMINI_API_KEY: GEMINI_API_KEY
+      ADMIN_USER_ID: 123;456
+    restart: unless-stopped
+    ports:
+    - 3333:8080
+x-casaos:
+  id: com.bigbeartechworld.gemdigest
+  main: big-bear-gem-digest-bot
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.gemdigest/assets/icon.png
+  title:
+    en_US: GemDigest Bot
+  port_map: '3333'

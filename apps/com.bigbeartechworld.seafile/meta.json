@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.",
+  "tagline": "Seafile is an open source file sync and share platform, focusing on reliability and performance.",
+  "developer": "seafile",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-seafile-to-bigbearcasaos/1011#instructions-3\n"
+  },
+  "category": "Productivity",
+  "title": "seafile",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.seafile",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

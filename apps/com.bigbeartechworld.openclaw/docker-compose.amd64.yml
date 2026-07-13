@@ -1,0 +1,61 @@
+name: big-bear-openclaw
+services:
+  big-bear-openclaw:
+    image: ghcr.io/openclaw/openclaw:2026.5.3-1@sha256:142f70fa2751bdedf03648ae427372fff3f92ac0e96ab91abb3824b088c38b7b
+    container_name: big-bear-openclaw
+    environment:
+    - HOME=/home/node
+    - TERM=xterm-256color
+    - 'OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:?Gateway token required. Generate
+      with: openssl rand -hex 32}'
+    - CLAUDE_AI_SESSION_KEY=${CLAUDE_AI_SESSION_KEY:-}
+    - CLAUDE_WEB_SESSION_KEY=${CLAUDE_WEB_SESSION_KEY:-}
+    - CLAUDE_WEB_COOKIE=${CLAUDE_WEB_COOKIE:-}
+    volumes:
+    - /DATA/AppData/$AppID/config:/home/node/.openclaw
+    - /DATA/AppData/$AppID/workspace:/home/node/.openclaw/workspace
+    ports:
+    - 18789:18789
+    - 18790:18790
+    init: true
+    restart: unless-stopped
+    network_mode: bridge
+    command:
+    - node
+    - dist/index.js
+    - gateway
+    - --bind
+    - lan
+    - --port
+    - '18789'
+  big-bear-openclaw-cli:
+    image: ghcr.io/openclaw/openclaw:2026.5.3-1@sha256:142f70fa2751bdedf03648ae427372fff3f92ac0e96ab91abb3824b088c38b7b
+    container_name: big-bear-openclaw-cli
+    environment:
+    - HOME=/home/node
+    - TERM=xterm-256color
+    - BROWSER=echo
+    - 'OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:?Gateway token required. Generate
+      with: openssl rand -hex 32}'
+    - CLAUDE_AI_SESSION_KEY=${CLAUDE_AI_SESSION_KEY:-}
+    - CLAUDE_WEB_SESSION_KEY=${CLAUDE_WEB_SESSION_KEY:-}
+    - CLAUDE_WEB_COOKIE=${CLAUDE_WEB_COOKIE:-}
+    volumes:
+    - /DATA/AppData/$AppID/config:/home/node/.openclaw
+    - /DATA/AppData/$AppID/workspace:/home/node/.openclaw/workspace
+    init: true
+    stdin_open: true
+    tty: true
+    network_mode: bridge
+    entrypoint:
+    - node
+    - dist/index.js
+    profiles:
+    - tools
+x-casaos:
+  id: com.bigbeartechworld.openclaw
+  main: big-bear-openclaw
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.openclaw/assets/icon.png
+  title:
+    en_US: OpenClaw
+  port_map: '18789'

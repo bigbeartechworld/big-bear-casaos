@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.",
+  "tagline": "Baserow",
+  "developer": "baserow",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.baserow/assets/screenshot.webp",
+  "category": "Developer",
+  "title": "Baserow",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.baserow",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

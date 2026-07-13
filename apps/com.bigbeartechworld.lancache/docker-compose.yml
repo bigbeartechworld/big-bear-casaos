@@ -1,0 +1,44 @@
+name: big-bear-lancache
+services:
+  app:
+    image: lancachenet/monolithic:latest@sha256:a5f93cef3a4c48c63e9f09883ac7a3961621db56974427110d9aeb4f36af9360
+    environment:
+    - USE_GENERIC_CACHE=true
+    - LANCACHE_IP=10.0.39.1
+    - DNS_BIND_IP=10.0.39.1
+    - UPSTREAM_DNS=8.8.8.8
+    - CACHE_ROOT=./lancache
+    - CACHE_DISK_SIZE=2000g
+    - CACHE_INDEX_SIZE=500m
+    - CACHE_MAX_AGE=3650d
+    - TZ=UTC
+    restart: unless-stopped
+    ports:
+    - 8080:80
+    - 10443:443
+    volumes:
+    - /DATA/AppData/$AppID/cache:/data/cache
+    - /DATA/AppData/$AppID/logs:/data/logs
+  dns:
+    image: lancachenet/lancache-dns:latest@sha256:3f37998a643435c2a9d1226a64ff13ea073f588031f6e3a92648b80d8281f20f
+    environment:
+    - USE_GENERIC_CACHE=true
+    - LANCACHE_IP=10.0.39.1
+    - DNS_BIND_IP=10.0.39.1
+    - UPSTREAM_DNS=8.8.8.8
+    - CACHE_ROOT=./lancache
+    - CACHE_DISK_SIZE=2000g
+    - CACHE_INDEX_SIZE=500m
+    - CACHE_MAX_AGE=3650d
+    - TZ=UTC
+    restart: unless-stopped
+    ports:
+    - 53:53/udp
+    - 53:53/tcp
+x-casaos:
+  id: com.bigbeartechworld.lancache
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.lancache/assets/icon.png
+  title:
+    en_US: LAN Cache
+  port_map: '8080'

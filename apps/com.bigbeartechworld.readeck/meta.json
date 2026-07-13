@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. It is a self-hosted alternative to Instapaper and Wallabag with a modern interface and powerful features for managing your bookmarks and reading list.",
+  "tagline": "Self-hosted bookmark manager and read-it-later app",
+  "developer": "readeck",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-readeck-to-bigbearcasaos/5079#p-7723-documentation-3\n"
+  },
+  "category": "Productivity",
+  "title": "Readeck",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.readeck",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 28623202,
+    "arm64": 26928499
+  }
+}

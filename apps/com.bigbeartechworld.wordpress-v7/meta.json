@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Initially started as a blogging tool in 2003, it has evolved into a highly flexible CMS that powers over 40% of the web. WordPress 7 requires MySQL 8.0 and is packaged as a new app alongside the legacy WordPress 6 entry.",
+  "tagline": "WordPress",
+  "developer": "Automattic",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "🆕 WORDPRESS V7 - SEPARATE APP\n\nThis is a NEW app, separate from 'wordpress' (v6). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new WordPress deployments\n✅ Pairs WordPress 7.0.1 with MySQL 8.0 (WordPress 7 requires MySQL 8.0)\n\nFOR V6 USERS:\n⚠️  Do NOT uninstall your 'wordpress' v6 app\n⚠️  Deploy this as a NEW app alongside v6\n⚠️  WordPress 7 rejects MySQL 5.7, and a 5.7 data directory does not upgrade in-place to 8.0\n⚠️  Migration requires a manual MySQL dump/reload — back up your database first\n\nSupport: https://community.bigbeartechworld.com/"
+  },
+  "category": "Others",
+  "title": "WordPress v7",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.wordpress-v7",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

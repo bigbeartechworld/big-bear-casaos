@@ -1,0 +1,28 @@
+name: big-bear-sftpgo
+services:
+  big-bear-sftpgo:
+    container_name: big-bear-sftpgo
+    image: drakkan/sftpgo:v2.7@sha256:6cb60f08fede46c5dc49a0c1d2994287ca440a63a3bd75b7f37ab2c0b24bbd06
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/srv:/srv/sftpgo
+    - /DATA/AppData/$AppID/data:/var/lib/sftpgo
+    ports:
+    - 8080:8080
+    - 2022:2022
+    - 2121:2121
+    - 10080:10080
+    environment:
+    - SFTPGO_HTTPD_BINDINGS_0_PORT=8080
+    - SFTPGO_HTTPD_BINDINGS_0_ADDRESS=0.0.0.0
+    - SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN=true
+    - SFTPGO_WEBDAVD_BINDINGS_0_PORT=10080
+    - SFTPGO_FTPD_BINDINGS_0_PORT=2121
+    - SFTPGO_FTPD_BINDINGS_0_FORCE_PASSIVE_IP='127.0.0.1:8080'
+x-casaos:
+  id: com.bigbeartechworld.sftpgo
+  main: big-bear-sftpgo
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.sftpgo/assets/icon.png
+  title:
+    en_US: SFTPGO
+  port_map: '8080'

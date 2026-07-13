@@ -1,0 +1,20 @@
+name: big-bear-portainer
+services:
+  app:
+    container_name: big-bear-portainer
+    image: portainer/portainer-ce:2.43.0-alpine@sha256:b39d73976b94d945f6e62ac727ca65d1cf9b46dc9d2c3c0e833ef0422469f09e
+    network_mode: bridge
+    ports:
+    - 8000:8000
+    - 9000:9000
+    - 9443:9443
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    - /var/run/docker.sock:/var/run/docker.sock
+x-casaos:
+  id: com.bigbeartechworld.portainer
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.portainer/assets/icon.png
+  title:
+    en_US: Portainer
+  port_map: '9443'

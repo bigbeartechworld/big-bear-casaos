@@ -1,0 +1,31 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Wallabag is a self-hosted application for saving web pages. Unlike other services, Wallabag is free and open source.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.wallabag/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.wallabag/assets/screenshot-2.webp"
+  ],
+  "tagline": "Save and classify articles. Read them later. Freely.",
+  "developer": "wallabag",
+  "author": "Wallabag Team",
+  "thumbnail": "/apps/com.bigbeartechworld.wallabag/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-wallabag-to-bigbearcasaos/3544#p-6005-documentation-4\n"
+  },
+  "category": "Others",
+  "title": "Wallabag",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.wallabag",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

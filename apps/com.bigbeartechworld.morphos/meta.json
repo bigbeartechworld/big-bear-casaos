@@ -1,0 +1,36 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Today we are forced to rely on third party services to convert files to other formats. This is a serious threat to our privacy, if we use such services to convert files with highly sensitive personal data. It can be used against us, sooner or later. Morphos server aims to solve the problem mentioned above, by providing a self-hosted server to convert files privately. The project provides an user-friendly web UI. For now, Morphos only supports images. Documents will be added soon.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.morphos/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.morphos/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.morphos/assets/screenshot-3.webp",
+    "/apps/com.bigbeartechworld.morphos/assets/screenshot-4.webp",
+    "/apps/com.bigbeartechworld.morphos/assets/screenshot-5.webp",
+    "/apps/com.bigbeartechworld.morphos/assets/screenshot-6.webp",
+    "/apps/com.bigbeartechworld.morphos/assets/screenshot-7.webp"
+  ],
+  "tagline": "Self-hosted file converter server",
+  "developer": "danvergara",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.morphos/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-morphos-to-bigbearcasaos/3160?u=dragonfire1119\n"
+  },
+  "category": "Productivity",
+  "title": "Morphos",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.morphos",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 781460334,
+    "arm64": 760559543
+  }
+}

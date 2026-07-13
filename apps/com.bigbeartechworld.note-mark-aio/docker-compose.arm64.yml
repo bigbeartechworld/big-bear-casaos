@@ -1,0 +1,25 @@
+name: big-bear-note-mark-aio
+services:
+  big-bear-note-mark-aio:
+    container_name: big-bear-note-mark-aio
+    image: ghcr.io/enchant97/note-mark-aio:0.19.4@sha256:b8d6ff400af1e3a27ef8f2968308310b9816ad35d066dc83aab9bbdf73a51069
+    restart: unless-stopped
+    environment:
+    - JWT_SECRET="MGZiMzlkM2EtNmYxNC00NzNlLWI2YjItYTViY2M0Mzg0NjNl"
+    - CORS_ORIGINS="http://example.com:8000"
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    ports:
+    - 8000:8000
+    networks:
+    - big_bear_note_mark_aio_network
+networks:
+  big_bear_note_mark_aio_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.note-mark-aio
+  main: big-bear-note-mark-aio
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.note-mark-aio/assets/icon.png
+  title:
+    en_US: Note Mark AIO
+  port_map: '8000'

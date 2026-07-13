@@ -1,0 +1,65 @@
+name: big-bear-libredesk
+services:
+  big-bear-libredesk:
+    container_name: big-bear-libredesk
+    image: libredesk/libredesk:v0.7.4-alpha@sha256:61dc7cea8d46d40d75b90a9ea0e4276d7d3092388e36ab7578049784fb96b57e
+    restart: unless-stopped
+    environment:
+    - LIBREDESK_SYSTEM_USER_PASSWORD="c6b51a4e-ab9d-4f4f-933e-e96ed3570c1A"
+    volumes:
+    - /DATA/AppData/$AppID/uploads:/libredesk/uploads
+    - /DATA/AppData/$AppID/config:/libredesk/config
+    ports:
+    - 9000:9000
+    command:
+    - sh
+    - -c
+    - ./libredesk --install --idempotent-install --yes --config /libredesk/config/config.toml
+      && ./libredesk --upgrade --yes --config /libredesk/config/config.toml && ./libredesk
+      --config /libredesk/config/config.toml
+    depends_on:
+    - big-bear-libredesk-db
+    - big-bear-libredesk-redis
+    networks:
+    - big-bear-libredesk-network
+  big-bear-libredesk-db:
+    image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
+    container_name: big-bear-libredesk-db
+    restart: unless-stopped
+    networks:
+    - big-bear-libredesk-network
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_USER: libredesk
+      POSTGRES_PASSWORD: libredesk
+      POSTGRES_DB: big_bear_libredesk
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U libredesk
+      interval: 10s
+      timeout: 5s
+      retries: 6
+    volumes:
+    - /DATA/AppData/$AppID/data/postgres:/var/lib/postgresql/data
+  big-bear-libredesk-redis:
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
+    container_name: big-bear-libredesk-redis
+    restart: unless-stopped
+    ports:
+    - 6379:6379
+    networks:
+    - big-bear-libredesk-network
+    volumes:
+    - /DATA/AppData/$AppID/data/redis:/data
+networks:
+  big-bear-libredesk-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.libredesk
+  main: big-bear-libredesk
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.libredesk/assets/icon.jpg
+  title:
+    en_US: Libredesk
+  port_map: '9000'

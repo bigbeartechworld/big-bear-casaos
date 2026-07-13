@@ -1,0 +1,20 @@
+name: big-bear-docker-cron-restart-notifier
+services:
+  app:
+    container_name: big-bear-docker-cron-restart-notifier
+    image: deduard/tools:restart-notifier-latest@sha256:8299b18aaff643879f94193b23615cb794e3828b165f2da3847c24470f3ebb02
+    restart: unless-stopped
+    environment:
+      DISCORD_WEBHOOK_URL: ''
+      RESTART_CONTAINERS: app_1,app_2
+      RUN_ON_STARTUP: 'false'
+      CRON_SCHEDULE: 0 4 * * FRI
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+x-casaos:
+  id: com.bigbeartechworld.docker-cron-restart-notifier
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.docker-cron-restart-notifier/assets/icon.png
+  title:
+    en_US: Docker Cron Restart Notifier
+  port_map: ''

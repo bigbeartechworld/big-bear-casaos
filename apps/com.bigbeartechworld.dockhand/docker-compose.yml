@@ -1,0 +1,18 @@
+name: big-bear-dockhand
+services:
+  app:
+    container_name: big-bear-dockhand
+    image: fnsys/dockhand:latest@sha256:1927b2b33966a83964a876d010818157b84af05fc3736f1c0c600d7291f2c2b1
+    restart: unless-stopped
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /DATA/AppData/$AppID/data:/app/data
+    ports:
+    - 3003:3000
+x-casaos:
+  id: com.bigbeartechworld.dockhand
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.dockhand/assets/icon.png
+  title:
+    en_US: Dockhand
+  port_map: '3003'

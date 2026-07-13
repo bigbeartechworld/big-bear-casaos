@@ -1,0 +1,23 @@
+name: big-bear-netpulse
+services:
+  big-bear-netpulse:
+    container_name: big-bear-netpulse
+    image: ghcr.io/bentfender/netpulse:sha-8922b29@sha256:14a442573fe53e0e812d2d3e5d84f0ecc11646578372f55ff98ffc07d5288624
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    environment:
+    - NETPULSE_USERNAME=admin
+    - NETPULSE_PASSWORD=97f76f53-c2b9-499d-b5cb-1643e6b29cf3
+    - SPEEDTEST_INTERVAL_MIN=10
+    - PING_INTERVAL_SEC=60
+    - PING_HOST=1.1.1.1
+    - TZ=UTC
+    network_mode: host
+x-casaos:
+  id: com.bigbeartechworld.netpulse
+  main: big-bear-netpulse
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.netpulse/assets/icon.jpg
+  title:
+    en_US: NetPulse
+  port_map: '8077'

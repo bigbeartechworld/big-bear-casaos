@@ -1,0 +1,59 @@
+name: big-bear-pterodactyl-panel
+services:
+  app:
+    container_name: pterodactyl-panel
+    image: ghcr.io/pterodactyl/panel:v1.12.2@sha256:dd2687b00a532117fe25a88a8acbb34a6fb23a9ca59a76a405735e3cb729efca
+    restart: always
+    ports:
+    - 1180:80
+    - 11443:443
+    links:
+    - database
+    - cache
+    volumes:
+    - /DATA/AppData/$AppID/var/:/app/var/
+    - /DATA/AppData/$AppID/nginx/:/etc/nginx/http.d/
+    - /DATA/AppData/$AppID/certs/:/etc/letsencrypt/
+    - /DATA/AppData/$AppID/logs/:/app/storage/logs
+    environment:
+      APP_URL: http://example.com
+      APP_TIMEZONE: UTC
+      APP_SERVICE_AUTHOR: noreply@example.com
+      MAIL_FROM: noreply@example.com
+      MAIL_DRIVER: smtp
+      MAIL_HOST: mail
+      MAIL_PORT: '1025'
+      MAIL_USERNAME: ''
+      MAIL_PASSWORD: ''
+      MAIL_ENCRYPTION: 'true'
+      APP_ENV: production
+      APP_ENVIRONMENT_ONLY: 'false'
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: cache
+      DB_HOST: database
+      DB_PASSWORD: casaos
+      DB_PORT: '3306'
+      DB_CONNECTION: mariadb
+  database:
+    image: mariadb:10.5@sha256:a530aeeefd82f4fa5150f391b6c75462140904780338766f6b03acecb1cca3ce
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+    - /DATA/AppData/$AppID/database:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: panel
+      MYSQL_USER: pterodactyl
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+  cache:
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
+    restart: always
+x-casaos:
+  id: com.bigbeartechworld.pterodactyl-panel
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pterodactyl-panel/assets/icon.png
+  title:
+    en_US: Pterodactyl Panel
+  port_map: '1180'

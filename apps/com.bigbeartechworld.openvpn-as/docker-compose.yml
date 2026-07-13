@@ -1,0 +1,28 @@
+name: big-bear-openvpn-as
+services:
+  big-bear-openvpn-as:
+    container_name: big-bear-openvpn-as
+    image: openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22@sha256:609aa2238acef1cb3b277c1e7f293e21da1033fb2eb1b52f51e8b22d6ee7227c
+    restart: unless-stopped
+    privileged: true
+    cap_add:
+    - NET_ADMIN
+    environment:
+    - PGID=1000
+    - PUID=1000
+    - TZ=Europe/Rome
+    hostname: OpenVPN
+    ports:
+    - 943:943/tcp
+    - 443:443/tcp
+    - 1194:1194/udp
+    volumes:
+    - /DATA/AppData/$AppID/data:/openvpn
+    network_mode: bridge
+x-casaos:
+  id: com.bigbeartechworld.openvpn-as
+  main: big-bear-openvpn-as
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.openvpn-as/assets/icon.png
+  title:
+    en_US: OpenVPN
+  port_map: '943'

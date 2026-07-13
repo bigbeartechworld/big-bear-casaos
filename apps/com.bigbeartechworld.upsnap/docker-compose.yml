@@ -1,0 +1,16 @@
+name: big-bear-upsnap
+services:
+  big-bear-upsnap:
+    container_name: big-bear-upsnap
+    image: ghcr.io/seriousm4x/upsnap:5.3.4@sha256:f7edc52fe03f5d424182b06faa72962c625f5e78ff3c9e8457e9617f20d0e611
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+    - /DATA/AppData/$AppID/pb/data:/app/pb_data
+x-casaos:
+  id: com.bigbeartechworld.upsnap
+  main: big-bear-upsnap
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.upsnap/assets/icon.png
+  title:
+    en_US: Upsnap
+  port_map: '8090'

@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "OpenClaw is a self-hosted AI agent platform that provides Claude AI integration through a local gateway. It enables running AI assistants with local tool execution, file access, and workspace management. Features include WebSocket gateway, browser automation, and extensible command framework.",
+  "tagline": "Self-hosted AI agent platform with Claude integration",
+  "developer": "openclaw",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Generate a secure gateway token using: openssl rand -hex 32. Set OPENCLAW_GATEWAY_TOKEN in your environment before starting."
+  },
+  "category": "AI",
+  "title": "OpenClaw",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.openclaw",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 688586079,
+    "arm64": 680049629
+  }
+}

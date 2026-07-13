@@ -1,0 +1,58 @@
+name: big-bear-calcom
+services:
+  big-bear-calcom:
+    container_name: big-bear-calcom
+    image: calcom/cal.com:v6.2.0@sha256:ace3bb1219fb7306585ab9f4d94d41af7ee064c343db0498173436bbe857bd49
+    restart: unless-stopped
+    environment:
+    - DATABASE_HOST=big-bear-calcom-db
+    - DATABASE_URL=postgresql://bigbear:9e45944b-37bb-41f7-aa6f-b74195fb58ec@big-bear-calcom-db/bigbear_calcom
+    - DATABASE_DIRECT_URL=postgresql://bigbear:9e45944b-37bb-41f7-aa6f-b74195fb58ec@big-bear-calcom-db/bigbear_calcom
+    - POSTGRES_USER=bigbear
+    - POSTGRES_PASSWORD=9e45944b-37bb-41f7-aa6f-b74195fb58ec
+    - POSTGRES_DB=bigbear_calcom
+    - LICENSE=agree
+    - NEXT_PUBLIC_LICENSE_CONSENT=agree
+    - NEXT_PUBLIC_WEBAPP_URL=http://localhost:3000
+    - NEXTAUTH_SECRET=a5446147-f55c-4e29-98e7-e7638f223b9c
+    - CALENDSO_ENCRYPTION_KEY=82f83d51-5ef7-456c-8ebf-817495cd39d9
+    - MS_GRAPH_CLIENT_ID=
+    - MS_GRAPH_CLIENT_SECRET=
+    - ZOOM_CLIENT_ID=
+    - ZOOM_CLIENT_SECRET=
+    - GOOGLE_API_CREDENTIALS=
+    - EMAIL_FROM=user@example.com
+    - EMAIL_SERVER_HOST=mailpit
+    - EMAIL_SERVER_PORT=1025
+    - EMAIL_SERVER_PASSWORD=
+    - EMAIL_SERVER_USER=
+    - NODE_ENV=production
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    ports:
+    - 3000:3000
+    - 3001:3001
+    networks:
+    - big_bear_calcom_network
+  big-bear-calcom-db:
+    container_name: big-bear-calcom-db
+    image: postgres:16.1@sha256:09f23e02d76670d3b346a3c00aa33a27cf57aab8341eedfcdaed41459d14f5c4
+    restart: on-failure
+    volumes:
+    - /DATA/AppData/$AppID/data/db:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PASSWORD=9e45944b-37bb-41f7-aa6f-b74195fb58ec
+    - POSTGRES_USER=bigbear
+    - POSTGRES_DB=bigbear_calcom
+    networks:
+    - big_bear_calcom_network
+networks:
+  big_bear_calcom_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.calcom
+  main: big-bear-calcom
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.calcom/assets/icon.jpg
+  title:
+    en_US: Cal.com
+  port_map: '3000'

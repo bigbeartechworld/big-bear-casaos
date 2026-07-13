@@ -1,0 +1,18 @@
+name: big-bear-portainer-agent
+services:
+  app:
+    container_name: portainer-agent
+    image: portainer/agent:2.43.0@sha256:3e8cb049fc5fe8f7328dec3d5312d7da3f007127eb6f78f98f3e883d7c15e4b4
+    network_mode: bridge
+    ports:
+    - 9001:9001
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /var/lib/docker/volumes:/var/lib/docker/volumes
+x-casaos:
+  id: com.bigbeartechworld.portainer-agent
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.portainer-agent/assets/icon.png
+  title:
+    en_US: Portainer Agent
+  port_map: ''

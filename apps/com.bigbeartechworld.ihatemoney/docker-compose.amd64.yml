@@ -1,0 +1,40 @@
+name: big-bear-ihatemoney
+services:
+  big-bear-ihatemoney:
+    container_name: big-bear-ihatemoney
+    image: ihatemoney/ihatemoney:7.1.1@sha256:cfd8a44362458559f0b9a216e4f878eb2542ae383cceb1e074bcf8f59d91bb71
+    restart: unless-stopped
+    environment:
+      SECRET_KEY: 1d58bc34-e7ff-4f6d-a1e4-f319262ed9b8
+      SQLALCHEMY_DATABASE_URI: mysql+pymysql://bigbear:password@big-bear-ihatemoney-db/ihatemoney
+      ACTIVATE_ADMIN_DASHBOARD: 'True'
+      ADMIN_PASSWORD: ''
+      SESSION_COOKIE_SECURE: 'False'
+    ports:
+    - 8001:8000
+    networks:
+    - big_bear_ihatemoney_network
+  big-bear-ihatemoney-db:
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    container_name: big-bear-ihatemoney-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: ihatemoney
+      MYSQL_USER: bigbear
+      MYSQL_PASSWORD: password
+    ports:
+    - 3306:3306
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    networks:
+    - big_bear_ihatemoney_network
+networks:
+  big_bear_ihatemoney_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.ihatemoney
+  main: big-bear-ihatemoney
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ihatemoney/assets/icon.png
+  title:
+    en_US: I Hate Money
+  port_map: '8001'

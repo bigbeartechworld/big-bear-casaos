@@ -1,0 +1,26 @@
+name: big-bear-viseron
+services:
+  big-bear-viseron:
+    container_name: big-bear-viseron
+    image: roflcoopter/viseron:3.5.3@sha256:2ed603e5a3ae02eefbb8a17736b1fb40ed071fc65e8e16918ab4cfeebce834b4
+    restart: unless-stopped
+    shm_size: 1024mb
+    volumes:
+    - /DATA/AppData/$AppID/segments:/segments
+    - /DATA/AppData/$AppID/snapshots:/snapshots
+    - /DATA/AppData/$AppID/thumbnails:/thumbnails
+    - /DATA/AppData/$AppID/event/clips:/event_clips
+    - /DATA/AppData/$AppID/config:/config
+    - /etc/localtime:/etc/localtime:ro
+    ports:
+    - 8888:8888
+    environment:
+    - PUID=1000
+    - PGID=1000
+x-casaos:
+  id: com.bigbeartechworld.viseron
+  main: big-bear-viseron
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.viseron/assets/icon.png
+  title:
+    en_US: Viseron
+  port_map: '8888'

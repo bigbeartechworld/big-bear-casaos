@@ -1,0 +1,57 @@
+name: big-bear-tandoor
+services:
+  big-bear-tandoor:
+    container_name: big-bear-tandoor
+    image: ghcr.io/tandoorrecipes/recipes:2.6.9@sha256:969c5b3552ffbf18a6f82b3ad5babbae89bfbd30ab6e3195fd3c158bcf3062ed
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/staticfiles:/opt/recipes/staticfiles
+    - /DATA/AppData/$AppID/mediafiles:/opt/recipes/mediafiles
+    ports:
+    - 8080:8080
+    environment:
+    - SECRET_KEY=6496f725-e4a4-4fa5-9f7b-db0114bc1568
+    - DB_ENGINE=django.db.backends.postgresql
+    - POSTGRES_HOST=big-bear-tandoor-db
+    - POSTGRES_PORT=5432
+    - POSTGRES_USER=tandoor
+    - POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d
+    - POSTGRES_DB=tandoordb
+    networks:
+    - big_bear_tandoor_network
+    depends_on:
+      big-bear-tandoor-db:
+        condition: service_healthy
+  big-bear-tandoor-db:
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    container_name: big-bear-tandoor-db
+    volumes:
+    - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PORT=5432
+    - POSTGRES_USER=tandoor
+    - POSTGRES_PASSWORD=100c7d31-9ec5-44ec-9101-e226c8e2420d
+    - POSTGRES_DB=tandoordb
+    restart: unless-stopped
+    networks:
+    - big_bear_tandoor_network
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready
+      - -d
+      - tandoor
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+networks:
+  big_bear_tandoor_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.tandoor
+  main: big-bear-tandoor
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.tandoor/assets/icon.png
+  title:
+    en_US: Tandoor
+  port_map: '8080'

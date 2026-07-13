@@ -1,0 +1,16 @@
+name: big-bear-wud
+services:
+  app:
+    image: fmartinou/whats-up-docker:6.6.1@sha256:7cbdfa9bb56de7ad820e3efea16205c3cf09e5f06192436530c5c798964607f0
+    container_name: wud
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+    - 3000:3000
+x-casaos:
+  id: com.bigbeartechworld.whats-up-docker
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.whats-up-docker/assets/icon.png
+  title:
+    en_US: What's Up Docker
+  port_map: '3000'

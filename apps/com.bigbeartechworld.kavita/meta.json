@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Kavita is a fast, feature rich, cross platform reading server",
+  "tagline": "Kavita",
+  "developer": "jvmilazz0",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Productivity",
+  "title": "Kavita",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.kavita",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

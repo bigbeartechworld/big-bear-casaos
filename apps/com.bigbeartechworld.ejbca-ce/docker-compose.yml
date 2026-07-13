@@ -1,0 +1,20 @@
+name: big-bear-ejbca-ce
+services:
+  big-bear-ejbca-ce:
+    container_name: big-bear-ejbca-ce
+    image: keyfactor/ejbca-ce:9.3.7@sha256:183b86af44b9b13e7cc8912c868f635aeb8dba6bf056ccbd4683b17626964d0a
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/persistent:/mnt/persistent
+    ports:
+    - 8080:8080
+    - 8443:8443
+    environment:
+    - TLS_SETUP_ENABLED=simple
+x-casaos:
+  id: com.bigbeartechworld.ejbca-ce
+  main: big-bear-ejbca-ce
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ejbca-ce/assets/icon.png
+  title:
+    en_US: EJBCA Community
+  port_map: '8443'

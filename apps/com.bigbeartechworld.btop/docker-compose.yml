@@ -1,0 +1,26 @@
+name: big-bear-btop
+services:
+  big-bear-btop:
+    container_name: big-bear-btop
+    image: bigbeartechworld/big-bear-btop:0.1.10@sha256:750bd69f934dc11458e88667ba311745535c57855a127f16ea2ed9c2ba8a3762
+    restart: unless-stopped
+    privileged: true
+    environment:
+    - GOTTY_AUTH_USER=bigbear
+    - GOTTY_AUTH_PASS=password
+    - GOTTY_AUTH_ENABLED=true
+    volumes:
+    - /proc:/proc
+    - /sys:/sys
+    - /dev:/dev
+    - /etc/localtime:/etc/localtime:ro
+    - /DATA/AppData/$AppID/config:/root/.config/btop
+    ports:
+    - 7681:7681
+x-casaos:
+  id: com.bigbeartechworld.btop
+  main: big-bear-btop
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.btop/assets/icon.png
+  title:
+    en_US: btop
+  port_map: '7681'

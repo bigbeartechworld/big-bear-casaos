@@ -1,0 +1,86 @@
+name: big-bear-penpot
+services:
+  penpot-frontend:
+    container_name: big-bear-penpot-frontend
+    image: penpotapp/frontend:2.16.2@sha256:4725b4698d8d1bd25ee1666e0d900d20da8937fea845c6a088f76cd69293560b
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/assets:/opt/data/assets
+    ports:
+    - 9001:8080
+    depends_on:
+    - penpot-backend
+    - penpot-exporter
+    networks:
+    - big-bear-penpot-network
+  penpot-backend:
+    image: penpotapp/backend:2.16.2@sha256:6c8e3851f3734e98e48d5a4a68e2c64485f6bd67a1ffec809aa9f1847d90a646
+    container_name: big-bear-penpot-backend
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/assets:/opt/data/assets
+    depends_on:
+    - penpot-postgres
+    - penpot-redis
+    networks:
+    - big-bear-penpot-network
+    environment:
+    - PENPOT_FLAGS=enable-registration enable-login-with-password disable-email-verification
+      disable-secure-session-cookies
+    - PENPOT_SECRET_KEY=big-bear-penpot-secret-key
+    - PENPOT_PUBLIC_URI=http://big-bear-penpot-frontend:8080
+    - PENPOT_DATABASE_URI=postgresql://big-bear-penpot-postgres/penpot
+    - PENPOT_DATABASE_USERNAME=bigbear
+    - PENPOT_DATABASE_PASSWORD=casaos
+    - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
+    - PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
+    - PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
+    - PENPOT_TELEMETRY_ENABLED=false
+  penpot-exporter:
+    image: penpotapp/exporter:2.16.2@sha256:b370f14927050fb05ac646441b5993d9337dda7eec60d944aa112819c88207bc
+    container_name: big-bear-penpot-exporter
+    restart: unless-stopped
+    networks:
+    - big-bear-penpot-network
+    environment:
+    - PENPOT_PUBLIC_URI=http://big-bear-penpot-frontend:8080
+    - PENPOT_REDIS_URI=redis://big-bear-penpot-redis/0
+  penpot-postgres:
+    image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
+    restart: unless-stopped
+    container_name: big-bear-penpot-postgres
+    stop_signal: SIGINT
+    volumes:
+    - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    networks:
+    - big-bear-penpot-network
+    environment:
+    - POSTGRES_INITDB_ARGS=--data-checksums
+    - POSTGRES_DB=penpot
+    - POSTGRES_USER=bigbear
+    - POSTGRES_PASSWORD=casaos
+  penpot-redis:
+    image: redis:7.4.6@sha256:d7432711a2a5c99c2e9dd0e006061cd274d7cb7a9e77f07ffe2ea99e21244677
+    container_name: big-bear-penpot-redis
+    restart: unless-stopped
+    networks:
+    - big-bear-penpot-network
+  penpot-mailcatch:
+    image: sj26/mailcatcher:latest@sha256:5d153a4daadf0c266f29c3856085741f06ca1e3768671f4267622d3e3ffe5564
+    restart: always
+    expose:
+    - '1025'
+    ports:
+    - 1080:1080
+    networks:
+    - big-bear-penpot-network
+networks:
+  big-bear-penpot-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.penpot
+  main: penpot-frontend
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.penpot/assets/icon.jpg
+  title:
+    en_US: Penpot
+  port_map: '9001'

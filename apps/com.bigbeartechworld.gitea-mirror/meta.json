@@ -1,0 +1,35 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Gitea Mirror is a modern web app for automatically mirroring repositories from GitHub to your self-hosted Gitea instance. It features a user-friendly interface to sync public, private, or starred GitHub repos, mirror entire organizations with structure preservation, and optionally mirror issues and labels. The application includes smart filtering, detailed logs, and scheduled automatic mirroring.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.gitea-mirror/assets/1.webp",
+    "/apps/com.bigbeartechworld.gitea-mirror/assets/2.webp",
+    "/apps/com.bigbeartechworld.gitea-mirror/assets/3.webp",
+    "/apps/com.bigbeartechworld.gitea-mirror/assets/4.webp",
+    "/apps/com.bigbeartechworld.gitea-mirror/assets/5.webp",
+    "/apps/com.bigbeartechworld.gitea-mirror/assets/6.webp"
+  ],
+  "tagline": "Mirror GitHub repositories to Gitea",
+  "developer": "raylabs.io",
+  "author": "RayLabs HQ",
+  "thumbnail": "/apps/com.bigbeartechworld.gitea-mirror/assets/1.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119\n"
+  },
+  "category": "Developer",
+  "title": "Gitea Mirror",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.gitea-mirror",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 244039158,
+    "arm64": 244015716
+  }
+}

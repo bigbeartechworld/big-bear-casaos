@@ -1,0 +1,29 @@
+name: big-bear-seerr
+services:
+  app:
+    image: seerr/seerr:v3.3.0@sha256:c92d2dc117f62185e7bcb88cd56efd374ea79210eaf433275449e8d5988eb5a8
+    init: true
+    container_name: big-bear-seerr
+    ports:
+    - 5056:5055
+    volumes:
+    - /DATA/AppData/$AppID/config:/app/config
+    environment:
+    - LOG_LEVEL=debug
+    - TZ=$TZ
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public
+        || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+    network_mode: bridge
+x-casaos:
+  id: com.bigbeartechworld.seerr
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.seerr/assets/icon.png
+  title:
+    en_US: Seerr
+  port_map: '5056'

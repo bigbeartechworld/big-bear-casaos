@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "DiscoPanel is a game server panel for Minecraft. It provides a clean interface for creating and managing Minecraft servers, installing modpacks, and running each server as its own Docker container. Features include modpack browsing and installation, per-server configuration, backups, and real-time server management.",
+  "tagline": "A game server panel for Minecraft",
+  "developer": "nickheyer",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "**Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld\n**Community Forum**: https://community.bigbeartechworld.com\n\nDiscoPanel manages Minecraft servers as Docker containers and runs with host networking so it can expose each server's port (25565+).\n\n`DISCOPANEL_HOST_DATA_PATH` must match the host path of the data mount so the Minecraft servers DiscoPanel spawns can bind-mount their worlds. It defaults to `/DATA/AppData/discopanel/data`. If you change the data mount location, update this value to match.\n\n**Security Note**: This app requires Docker socket access, which grants full Docker daemon privileges."
+  },
+  "category": "Developer",
+  "title": "DiscoPanel",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.discopanel",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

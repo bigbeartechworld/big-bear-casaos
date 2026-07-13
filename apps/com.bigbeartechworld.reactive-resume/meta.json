@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.",
+  "tagline": "A free and open-source resume builder",
+  "developer": "AmruthPillai",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Change [CASAOS_IP] to your CasaOS IP address. In the environment variables.\n"
+  },
+  "category": "Others",
+  "title": "Reactive Resume",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.reactive-resume",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,18 @@
+name: big-bear-flcontainers-guacamole
+services:
+  app:
+    image: flcontainers/guacamole:1.6.0@sha256:81a420f386ef8cbb4697208e13ea90f6a10a54619981241bed672e4a41b5f77f
+    container_name: big-bear-flcontainers-guacamole
+    restart: always
+    environment:
+      tz: UTC
+      EXTENSIONS: auth-totp,auth-ldap
+    ports:
+    - 8080:8080
+x-casaos:
+  id: com.bigbeartechworld.flcontainers-guacamole
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.flcontainers-guacamole/assets/icon.png
+  title:
+    en_US: FlContainers Guacamole
+  port_map: '8080'

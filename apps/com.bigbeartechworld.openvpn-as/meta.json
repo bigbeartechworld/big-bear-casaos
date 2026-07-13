@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "OpenVPN is an open-source commercial software that implements virtual private network (VPN) techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.",
+  "tagline": "OpenVPN is an open-source commercial software that implements virtual private network (VPN).",
+  "developer": "openvpn",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "category": "Networking",
+  "title": "OpenVPN",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.openvpn-as",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

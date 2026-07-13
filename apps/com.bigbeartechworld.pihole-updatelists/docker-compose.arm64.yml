@@ -1,0 +1,35 @@
+name: big-bear-pihole-updatelists
+services:
+  big-bear-pihole-updatelists:
+    container_name: big-bear-pihole-updatelists
+    image: jacklul/pihole:2026.06.0@sha256:374143d289e13aeef3a2d622f5f4565d2f10d1564a79a4217488cc2559bd766f
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      FTLCONF_webserver_api_password: your_password
+      BLOCKLISTS_URL: https://v.firebog.net/hosts/lists.php?type=tick
+      REGEX_BLACKLIST_URL: https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list
+    volumes:
+    - /DATA/AppData/$AppID/etc:/etc/pihole/
+    - /DATA/AppData/$AppID/etc/pihole-updatelists:/etc/pihole-updatelists/
+    - /DATA/AppData/$AppID/dnsmasq.d:/etc/dnsmasq.d/
+    ports:
+    - 53:53/tcp
+    - 53:53/udp
+    - 67:67/udp
+    - 8080:80/tcp
+    - 10443:443/tcp
+    networks:
+    - pihole-network
+    cap_add:
+    - NET_ADMIN
+networks:
+  pihole-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.pihole-updatelists
+  main: big-bear-pihole-updatelists
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pihole-updatelists/assets/icon.png
+  title:
+    en_US: Pi-hole® Updatelists
+  port_map: '8080'

@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Stream Movies & TV Shows",
+  "tagline": "Stream Movies & TV Shows",
+  "developer": "plexinc",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Media",
+  "title": "Plex",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.plex",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

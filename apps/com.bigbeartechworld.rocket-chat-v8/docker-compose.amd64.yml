@@ -1,0 +1,43 @@
+name: big-bear-rocket-chat-v8
+services:
+  app:
+    container_name: big-bear-rocket-chat-v8
+    image: rocket.chat:8.5.1@sha256:60a48d89164eb690c55f5581c324d4642f2431e010ac0bd7dfc97e7c5432139f
+    restart: unless-stopped
+    environment:
+      MONGO_OPLOG_URL: mongodb://db:27017/local
+      ROOT_URL: http://localhost:3100
+    ports:
+    - 3100:3000
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+    - rocketchat-v8-net
+  db:
+    image: mongo:8.2.0
+    container_name: big-bear-rocketchat-v8-db
+    volumes:
+    - /DATA/AppData/$AppID/db:/data/db
+    healthcheck:
+      test:
+      - CMD
+      - mongosh
+      - --eval
+      - db.adminCommand('ping')
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+    - rocketchat-v8-net
+networks:
+  rocketchat-v8-net:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.rocket-chat-v8
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.rocket-chat-v8/assets/icon.png
+  title:
+    en_US: Rocket.Chat v8
+  port_map: '3100'

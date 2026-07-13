@@ -1,0 +1,19 @@
+name: big-bear-trilium
+services:
+  app:
+    container_name: big-bear-trilium
+    image: triliumnext/trilium:v0.103.0@sha256:8e6bc939a6d5dbeed42d1b5b155bc790b1c28ca3ac414382d04d626903c62081
+    restart: unless-stopped
+    environment:
+    - TRILIUM_DATA_DIR=/home/node/trilium-data
+    volumes:
+    - /DATA/AppData/$AppID/data:/home/node/trilium-data
+    ports:
+    - 8080:8080
+x-casaos:
+  id: com.bigbeartechworld.trilium
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.trilium/assets/icon.png
+  title:
+    en_US: Trilium
+  port_map: '8080'

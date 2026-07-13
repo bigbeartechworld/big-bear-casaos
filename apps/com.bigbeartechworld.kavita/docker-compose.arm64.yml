@@ -1,0 +1,20 @@
+name: big-bear-kavita
+services:
+  big-bear-kavita:
+    container_name: big-bear-kavita
+    image: jvmilazz0/kavita:0.9.0@sha256:36aab0c578d488f8b10bd33910953b50965aff9ac6adc476ef4692c38c60427e
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data/kavita-config:/kavita/config
+    - /DATA/AppData/$AppID/media/data/books:/books
+    - /DATA/AppData/$AppID/media/data/comics:/comics
+    - /DATA/AppData/$AppID/media/data/manga:/manga
+    ports:
+    - 5000:5000
+x-casaos:
+  id: com.bigbeartechworld.kavita
+  main: big-bear-kavita
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.kavita/assets/icon.png
+  title:
+    en_US: Kavita
+  port_map: '5000'

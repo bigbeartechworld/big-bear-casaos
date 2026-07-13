@@ -1,0 +1,23 @@
+name: big-bear-goaway
+services:
+  big-bear-goaway:
+    container_name: big-bear-goaway
+    image: pommee/goaway:0.63.17@sha256:971efe3aca286accf2d2da24b28bac57354df29949f800d5c48134363c9533ac
+    restart: unless-stopped
+    ports:
+    - 53:53/udp
+    - 53:53/tcp
+    - 8080:8080
+    network_mode: bridge
+    volumes:
+    - /DATA/AppData/$AppID/config:/app/config
+    cap_add:
+    - NET_BIND_SERVICE
+    - NET_RAW
+x-casaos:
+  id: com.bigbeartechworld.goaway
+  main: big-bear-goaway
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.goaway/assets/icon.png
+  title:
+    en_US: GoAway
+  port_map: '8080'

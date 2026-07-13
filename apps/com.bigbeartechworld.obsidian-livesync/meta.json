@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Self-hosted database for synchronizing Obsidian vaults.",
+  "tagline": "Self-hosted database for synchronizing Obsidian vaults.",
+  "developer": "couchdb",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Run this script before installing the big-bear-obsidian-livesync application:\n\n```\nbash -c \"$(wget -qLO - https://raw.githubusercontent.com/bigbeartechworld/big-bear-scripts/master/generate-obsidian-livesync-local-ini/run.sh)\"\n```\n\nVideo Tutorial: https://youtu.be/-n1abMPLmFg\n\nAfter running this script, you need to restart the container.\n"
+  },
+  "category": "Developer",
+  "title": "Obsidian Livesync",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.obsidian-livesync",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,20 @@
+name: big-bear-composetoolbox
+services:
+  big-bear-composetoolbox:
+    environment:
+      NODE_ENV: production
+    image: ghcr.io/bluegoosemedia/composetoolbox:latest@sha256:61e8a6f0a00583f145e83018ce0954089f5bd89157dc39ef7459043643ca17f6
+    pull_policy: always
+    ports:
+    - 3002:3000
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    container_name: big-bear-composetoolbox
+x-casaos:
+  id: com.bigbeartechworld.composetoolbox
+  main: big-bear-composetoolbox
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.composetoolbox/assets/icon.png
+  title:
+    en_US: Compose Toolbox
+  port_map: '3002'

@@ -1,0 +1,19 @@
+name: big-bear-phpmyadmin
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.3@sha256:42a200db07b4e70fbf32c594ad4521cf16399b8e54bbb5adceae98e7566dfbeb
+    container_name: big-bear-phpmyadmin
+    environment:
+      PMA_HOST: '[YOUR-CASAOS-IP]'
+      PMA_PORT: '3306'
+      PMA_USER: bigbear
+      PMA_PASSWORD: password
+    ports:
+    - 8080:80
+x-casaos:
+  id: com.bigbeartechworld.phpmyadmin
+  main: phpmyadmin
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.phpmyadmin/assets/icon.png
+  title:
+    en_US: phpMyAdmin
+  port_map: '8080'

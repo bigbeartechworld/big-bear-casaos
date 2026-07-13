@@ -1,0 +1,17 @@
+name: big-bear-mumble-server
+services:
+  app:
+    image: mumblevoip/mumble-server:v1.4.230-6@sha256:42ea734f0a8962cde8c3cd5f0dc5536c9caf6131064093b9ba76ed133b104fc4
+    container_name: mumble-server
+    hostname: mumble-server
+    restart: on-failure
+    ports:
+    - 64738:64738
+    - 64738:64738/udp
+x-casaos:
+  id: com.bigbeartechworld.mumble-server
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.mumble-server/assets/icon.png
+  title:
+    en_US: Mumble Server
+  port_map: '64738'

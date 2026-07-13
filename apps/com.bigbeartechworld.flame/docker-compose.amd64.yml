@@ -1,0 +1,23 @@
+name: big-bear-flame
+services:
+  app:
+    image: pawelmalak/flame:multiarch2.3.1@sha256:9f88b17692a0e7393bfceec774dd556a8331032bfb737d7db282a2eedc6b74d1
+    environment:
+      PASSWORD: casaos
+    restart: unless-stopped
+    ports:
+    - target: 5005
+      published: '5005'
+      protocol: tcp
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    - type: bind
+      source: /var/run/docker.sock
+      target: /var/run/docker.sock
+x-casaos:
+  id: com.bigbeartechworld.flame
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.flame/assets/icon.png
+  title:
+    en_US: Flame
+  port_map: '5005'

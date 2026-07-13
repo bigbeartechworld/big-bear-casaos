@@ -1,0 +1,19 @@
+name: big-bear-baserow
+services:
+  app:
+    container_name: baserow
+    image: baserow/baserow:2.2.2@sha256:73886bcda89632664dc7aaa9ae15414ffb32b00e571d413ccee3c5b5d66b9883
+    environment:
+      BASEROW_PUBLIC_URL: http://[YOUR_CASAOS_IP]:7350
+    ports:
+    - 7350:80
+    - 7351:443
+    volumes:
+    - /DATA/AppData/$AppID/data:/baserow/data
+x-casaos:
+  id: com.bigbeartechworld.baserow
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.baserow/assets/icon.png
+  title:
+    en_US: Baserow
+  port_map: '7350'

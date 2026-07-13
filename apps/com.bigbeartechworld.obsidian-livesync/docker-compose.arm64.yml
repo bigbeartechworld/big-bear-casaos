@@ -1,0 +1,21 @@
+name: big-bear-obsidian-livesync
+services:
+  app:
+    container_name: obsidian-livesync
+    image: couchdb:3.5.0@sha256:1c0a30a54535377bc9ae23f42efb1ca4e92abe796f78ec98b768ac1d5874cc1b
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data/couchdb:/opt/couchdb/data
+    - /DATA/AppData/$AppID/data/local.ini:/opt/couchdb/etc/local.ini
+    environment:
+    - COUCHDB_USER=casaos
+    - COUCHDB_PASSWORD=casaos
+    ports:
+    - 5984:5984
+x-casaos:
+  id: com.bigbeartechworld.obsidian-livesync
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.obsidian-livesync/assets/icon.png
+  title:
+    en_US: Obsidian Livesync
+  port_map: '5984'

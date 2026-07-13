@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Homarr v1 - A sleek, modern dashboard for your server. This is the latest major version (v1.x) from homarr-labs with improved architecture and features. Note: This version uses a different data structure and requires SECRET_ENCRYPTION_KEY. Not compatible with legacy Homarr (v0.x) data without migration.",
+  "tagline": "Homarr v1 (Latest)",
+  "developer": "homarr-labs",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-homarr-v1-to-bigbearcasaos/5074#p-7710-documentation-2"
+  },
+  "category": "Productivity",
+  "title": "Homarr v1",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.homarr-v1",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 133106235,
+    "arm64": 134422740
+  }
+}

@@ -1,0 +1,24 @@
+name: big-bear-cloudflared-web
+services:
+  big-bear-cloudflared-web:
+    container_name: big-bear-cloudflared-web
+    image: wisdomsky/cloudflared-web:2026.6.1@sha256:3552fa87c10f2ec6a854c0c09209753957e909eca6194499194cedbb8c817db9
+    restart: unless-stopped
+    network_mode: host
+    environment:
+    - WEBUI_PORT=14333
+    - EDGE_IP_VERSION=auto
+    - PROTOCOL=auto
+    - METRICS_ENABLE=false
+    - METRICS_PORT=60123
+    - BASIC_AUTH_USER=admin
+    - BASIC_AUTH_PASS=""
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+x-casaos:
+  id: com.bigbeartechworld.cloudflared-web
+  main: big-bear-cloudflared-web
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.cloudflared-web/assets/icon.png
+  title:
+    en_US: Cloudflared Web
+  port_map: '14333'

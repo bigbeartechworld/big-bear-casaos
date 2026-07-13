@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Self-hosted photo and video storage. This does not include the machine learning part.",
+  "tagline": "Immich without machine learning",
+  "developer": "immich",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "AI",
+  "title": "Immich without machine learning",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.immich-without-machine-learning",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 987745466,
+    "arm64": 668033243
+  }
+}

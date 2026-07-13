@@ -1,0 +1,23 @@
+name: big-bear-zotero
+services:
+  big-bear-zotero:
+    container_name: big-bear-zotero
+    image: linuxserver/zotero:9.0.20260417@sha256:1b37bde9b1974ac9be736f822212f63b515d3db21f3772373fb65fd2f21d5136
+    restart: unless-stopped
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    ports:
+    - 3000:3000
+    - 3001:3001
+    security_opt:
+    - seccomp:unconfined
+    shm_size: 1gb
+x-casaos:
+  id: com.bigbeartechworld.zotero
+  main: big-bear-zotero
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.zotero/assets/icon.png
+  title:
+    en_US: Zotero
+  port_map: '3000'

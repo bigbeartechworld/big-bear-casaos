@@ -1,0 +1,17 @@
+name: big-bear-budibase
+services:
+  big-bear-budibase:
+    container_name: big-bear-budibase
+    image: budibase/budibase:3.39.29@sha256:f84854cc4a955a68f77acd890989649799297c0ce28c5dd8248c86ecd758b6b3
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    ports:
+    - 8080:80
+x-casaos:
+  id: com.bigbeartechworld.budibase
+  main: big-bear-budibase
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.budibase/assets/icon.png
+  title:
+    en_US: Budibase
+  port_map: '8080'

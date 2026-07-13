@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Gladys Assistant is a modern, privacy-first & open-source home automation software that runs anywhere.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.gladys/assets/main_screenshot_en_j5czyj_c_scale,w_2526.webp"
+  ],
+  "tagline": "A privacy-first, open-source home assistant.",
+  "developer": "GladysAssistant",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.gladys/assets/main_screenshot_en_j5czyj_c_scale,w_2526.webp",
+  "category": "Others",
+  "title": "Gladys Assistant",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.gladys",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

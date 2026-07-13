@@ -1,0 +1,30 @@
+name: big-bear-casaos-user-management
+services:
+  big-bear-casaos-user-management:
+    container_name: big-bear-casaos-user-management
+    image: bigbeartechworld/big-bear-casaos-user-management:0.1.1@sha256:10bbfe4067e947649a27db62864efeb60ccb35f9b1578b4c95d4b276b3e40342
+    restart: unless-stopped
+    privileged: true
+    environment:
+    - FLASK_APP=app.py
+    - FLASK_ENV=production
+    - ADMIN_USERNAME=casaos
+    - ADMIN_PASSWORD=casaos
+    volumes:
+    - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    - /var/lib/casaos/db:/var/lib/casaos/db
+    - /run/systemd/system:/run/systemd/system
+    - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    ports:
+    - 5000:5000
+    cap_add:
+    - SYS_ADMIN
+    security_opt:
+    - seccomp:unconfined
+x-casaos:
+  id: com.bigbeartechworld.big-bear-casaos-user-management
+  main: big-bear-casaos-user-management
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.big-bear-casaos-user-management/assets/icon.jpg
+  title:
+    en_US: Big Bear CasaOS User Management
+  port_map: '5000'

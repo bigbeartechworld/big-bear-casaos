@@ -1,0 +1,48 @@
+name: big-bear-farmos
+services:
+  big-bear-farmos:
+    container_name: big-bear-farmos
+    image: farmos/farmos:3.5.1@sha256:7eca19088bcfc290d9811cf013ded4b4c1552f5cc65d9fc8766c532351748626
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/sites:/opt/drupal/web/sites
+    ports:
+    - 8080:80
+    networks:
+    - big-bear-farmos-network
+  big-bear-farmos-db:
+    container_name: big-bear-farmos-db
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    volumes:
+    - /DATA/AppData/$AppID/db:/var/lib/mysql
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 037ed96f-5f27-4fa8-bd7f-49b4a804a05c
+      MYSQL_DATABASE: big_bear_farmos
+      MYSQL_USER: farmos
+      MYSQL_PASSWORD: 037ed96f-5f27-4fa8-bd7f-49b4a804a05c
+    healthcheck:
+      test:
+      - CMD
+      - healthcheck.sh
+      - --connect
+      - --innodb_initialized
+      start_period: 1m
+      start_interval: 10s
+      interval: 1m
+      timeout: 5s
+      retries: 3
+    networks:
+    - big-bear-farmos-network
+networks:
+  big-bear-farmos-network:
+    name: big-bear-farmos-network
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.farmos
+  main: big-bear-farmos
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.farmos/assets/icon.jpeg
+  title:
+    en_US: FarmOS (Legacy)
+  port_map: '8080'

@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Umbrel is a personal server OS that makes self-hosting accessible to everyone.",
+  "tagline": "Umbrel OS",
+  "developer": "dockurr",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-umbrelos-to-bigbearcasaos/2249\n"
+  },
+  "category": "Others",
+  "title": "Umbrel OS",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.umbrel-os",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

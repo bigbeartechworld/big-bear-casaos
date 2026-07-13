@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "I hate money is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills.",
+  "tagline": "A simple shared budget manager web application",
+  "developer": "spiral-project",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Finance",
+  "title": "I Hate Money",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.ihatemoney",
+  "version": "",
+  "categories": [
+    "finance"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

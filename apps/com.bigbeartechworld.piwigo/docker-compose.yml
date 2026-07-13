@@ -1,0 +1,40 @@
+name: big-bear-piwigo
+services:
+  big-bear-piwigo:
+    container_name: big-bear-piwigo
+    image: linuxserver/piwigo:16.4.0@sha256:97a159850563dd7c5e4cedb7a30801f467963c3e910e7ecc07f04cb53b11e5f0
+    restart: unless-stopped
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=UTC
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/gallery:/gallery
+    ports:
+    - 8080:80
+    networks:
+    - big_bear_piwigo_network
+  big-bear-piwigo-db:
+    image: mariadb:10.6@sha256:114d40be36852d0a019afd8458f7e1cc63fd300403b115b1f32e31130d5f671b
+    container_name: big-bear-piwigo-db
+    environment:
+    - MYSQL_ROOT_PASSWORD=3cf3f2c4-3415-4efe-b478-db7b6f0b9934
+    - MYSQL_DATABASE=piwigo
+    - MYSQL_USER=big_bear_piwigo
+    - MYSQL_PASSWORD=358fac48-4beb-4027-9c11-840464aca400
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+    - big_bear_piwigo_network
+networks:
+  big_bear_piwigo_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.piwigo
+  main: big-bear-piwigo
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.piwigo/assets/icon.png
+  title:
+    en_US: Piwigo
+  port_map: '8080'

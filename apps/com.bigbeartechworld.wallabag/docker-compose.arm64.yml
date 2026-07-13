@@ -1,0 +1,81 @@
+name: big-bear-wallabag
+services:
+  big-bear-wallabag:
+    container_name: big-bear-wallabag
+    image: wallabag/wallabag:2.6.14@sha256:4a527e027e0d59e87c14225ef11e005af3d4890374202ad319ce5e63dfc66709
+    restart: unless-stopped
+    environment:
+    - MYSQL_ROOT_PASSWORD=777134a0-4480-49f3-b00c-29db42c6d136
+    - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
+    - SYMFONY__ENV__DATABASE_HOST=big-bear-wallabag-db
+    - SYMFONY__ENV__DATABASE_PORT=3306
+    - SYMFONY__ENV__DATABASE_NAME=wallabag
+    - SYMFONY__ENV__DATABASE_USER=big_bear_wallabag
+    - SYMFONY__ENV__DATABASE_PASSWORD=fbe433e9-e3a8-432a-a382-d132596a76fc
+    - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
+    - SYMFONY__ENV__DATABASE_TABLE_PREFIX="big_bear_wallabag_"
+    - SYMFONY__ENV__MAILER_DSN=smtp://127.0.0.1
+    - SYMFONY__ENV__FROM_EMAIL=wallabag@example.com
+    - SYMFONY__ENV__DOMAIN_NAME=http://[IP]:8080
+    - SYMFONY__ENV__SERVER_NAME="Big Bear Wallabag"
+    ports:
+    - 8080:80
+    volumes:
+    - /DATA/AppData/$AppID/images:/var/www/wallabag/web/assets/images
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - --no-verbose
+      - --tries=1
+      - --spider
+      - http://localhost/api/info
+      interval: 1m
+      timeout: 3s
+    networks:
+    - big-bear-wallabag-network
+    depends_on:
+    - big-bear-wallabag-db
+    - big-bear-wallabag-redis
+  big-bear-wallabag-db:
+    container_name: big-bear-wallabag-db
+    image: mariadb:10.11.10@sha256:41d89394db8e777d96058d4cf5cf4daf1ed87f76192154f3d89572676f1e2327
+    restart: unless-stopped
+    environment:
+    - MYSQL_ROOT_PASSWORD=777134a0-4480-49f3-b00c-29db42c6d136
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    networks:
+    - big-bear-wallabag-network
+    healthcheck:
+      test:
+      - CMD
+      - mysqladmin
+      - ping
+      - -h
+      - localhost
+      interval: 20s
+      timeout: 3s
+  big-bear-wallabag-redis:
+    container_name: big-bear-wallabag-redis
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
+    restart: unless-stopped
+    networks:
+    - big-bear-wallabag-network
+    healthcheck:
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      interval: 20s
+      timeout: 3s
+networks:
+  big-bear-wallabag-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.wallabag
+  main: big-bear-wallabag
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.wallabag/assets/icon.png
+  title:
+    en_US: Wallabag
+  port_map: '8080'

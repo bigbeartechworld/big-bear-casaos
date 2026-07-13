@@ -1,0 +1,26 @@
+name: big-bear-crafty
+services:
+  big-bear-crafty:
+    container_name: big-bear-crafty
+    image: registry.gitlab.com/crafty-controller/crafty-4:4.10.4@sha256:d2f61fcabb4756a63bc8538fb4f5e35ffddca3f1916a733c95a31c705c697742
+    restart: unless-stopped
+    environment:
+    - TZ=UTC
+    ports:
+    - 8443:8443
+    - 8123:8123
+    - 19132:19132/udp
+    - 25500-25600:25500-25600
+    volumes:
+    - /DATA/AppData/$AppID/data/backups:/crafty/backups
+    - /DATA/AppData/$AppID/data/logs:/crafty/logs
+    - /DATA/AppData/$AppID/data/servers:/crafty/servers
+    - /DATA/AppData/$AppID/data/config:/crafty/app/config
+    - /DATA/AppData/$AppID/data/import:/crafty/import
+x-casaos:
+  id: com.bigbeartechworld.crafty
+  main: big-bear-crafty
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.crafty/assets/icon.png
+  title:
+    en_US: Crafty Controller
+  port_map: '8443'

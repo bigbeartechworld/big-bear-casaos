@@ -1,0 +1,36 @@
+name: big-bear-rustfs
+services:
+  app:
+    image: rustfs/rustfs:1.0.0-alpha.71@sha256:5ed6b4845ff98d44d42f733324761dc1379a8c36b7ee66c25e2dc3e8cbe0280d
+    container_name: rustfs
+    ports:
+    - 9000:9000
+    - 9001:9001
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    - /DATA/AppData/$AppID/logs:/logs
+    environment:
+    - RUSTFS_ACCESS_KEY=bigbear
+    - RUSTFS_SECRET_KEY=f1805acc-55a7-4964-849a-8076b3e1cfdf
+    - RUSTFS_CONSOLE_ENABLE=true
+    - RUSTFS_ADDRESS=0.0.0.0:9000
+    - RUSTFS_CONSOLE_ADDRESS=0.0.0.0:9001
+    - TZ=UTC
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD
+      - sh
+      - -c
+      - curl -f http://localhost:9000/health && curl -f http://localhost:9001/rustfs/console/health
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+x-casaos:
+  id: com.bigbeartechworld.rustfs
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.rustfs/assets/icon.png
+  title:
+    en_US: RustFS
+  port_map: '9000'

@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
+  "tagline": "Paperless-ngx",
+  "developer": "paperless-ngx",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-paperlessngx-to-bigbearcasaos/1954#p-3625-documentation-4\n"
+  },
+  "category": "Social",
+  "title": "Paperless-ngx",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.paperless-ngx",
+  "version": "",
+  "categories": [
+    "social"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 506804426,
+    "arm64": 446633384
+  }
+}

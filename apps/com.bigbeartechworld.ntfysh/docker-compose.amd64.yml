@@ -1,0 +1,23 @@
+name: big-bear-ntfy
+services:
+  app:
+    image: binwiederhier/ntfy:v2.25.0@sha256:cfbbb1bac9196cb711e29ef0ac4adaeb033be6235f1df857705dc39c14384a1d
+    command:
+    - serve
+    environment:
+    - TZ=UTC
+    ports:
+    - target: 80
+      published: '7200'
+      protocol: tcp
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/cache:/var/cache/ntfy
+    - /DATA/AppData/$AppID/config:/etc/ntfy
+x-casaos:
+  id: com.bigbeartechworld.ntfysh
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ntfysh/assets/icon.png
+  title:
+    en_US: Ntfy.sh
+  port_map: '7200'

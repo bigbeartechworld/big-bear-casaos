@@ -1,0 +1,20 @@
+name: big-bear-brave
+services:
+  brave:
+    container_name: big-bear-brave
+    image: kasmweb/brave:1.15.0-rolling@sha256:679eefbde9b44b6de2a73a5b266790393cea11e5756a8ab884798944cfef6ea7
+    ports:
+    - 6901:6901
+    environment:
+    - VNC_PW=casaos
+    - LAUNCH_URL=https://community.bigbeartechworld.com/
+    shm_size: 512m
+    volumes:
+    - /DATA/AppData/$AppID/Downloads:/home/kasm-user/Downloads
+x-casaos:
+  id: com.bigbeartechworld.brave
+  main: brave
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.brave/assets/icon.png
+  title:
+    en_US: Brave
+  port_map: '6901'

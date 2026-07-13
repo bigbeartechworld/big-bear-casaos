@@ -1,0 +1,48 @@
+name: big-bear-vikunja
+services:
+  vikunja:
+    image: vikunja/vikunja:1.1.0@sha256:84b56920e2860c67cb889bce0e0950aa529e42838b45bdf81eb2422178e90cc7
+    container_name: big-bear-vikunja
+    ports:
+    - 8081:3456
+    volumes:
+    - /DATA/AppData/$AppID/files:/app/vikunja/files
+    environment:
+      VIKUNJA_SERVICE_PUBLICURL: http://<your public frontend url with slash>/
+      VIKUNJA_DATABASE_HOST: vikunja-db
+      VIKUNJA_DATABASE_PASSWORD: secret
+      VIKUNJA_DATABASE_TYPE: mysql
+      VIKUNJA_DATABASE_USER: vikunja
+      VIKUNJA_DATABASE_DATABASE: vikunja
+      VIKUNJA_SERVICE_JWTSECRET: 4c2ad520-f177-425f-ab7f-64c5e2b1c2c8
+    restart: unless-stopped
+    depends_on:
+    - vikunja-db
+    networks:
+    - vikunja-network
+  vikunja-db:
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    container_name: vikunja-db
+    command:
+    - --character-set-server=utf8mb4
+    - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecret
+      MYSQL_USER: vikunja
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: vikunja
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+    - vikunja-network
+networks:
+  vikunja-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.vikunja
+  main: vikunja
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.vikunja/assets/icon.png
+  title:
+    en_US: Vikunja (Legacy)
+  port_map: '8081'

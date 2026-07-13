@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop",
+  "tagline": "A monitor of resources",
+  "developer": "bigbeartechworld",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-btop-to-bigbearcasaos/1240?u=dragonfire1119\n"
+  },
+  "category": "Others",
+  "title": "btop",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.btop",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

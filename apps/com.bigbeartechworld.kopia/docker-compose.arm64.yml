@@ -1,0 +1,33 @@
+name: big-bear-kopia
+services:
+  big-bear-kopia:
+    container_name: big-bear-kopia
+    image: ghcr.io/thespad/kopia-server:v0.17.0-spad3@sha256:e9e9256e0037030932b78a16bdef09894b6f9c6f89e8367e05d9777813e67f62
+    restart: unless-stopped
+    environment:
+    - PUID=0
+    - PGID=0
+    - TZ=UTC
+    - KOPIA_HTTPS=true
+    - KOPIA_UI_USERNAME=casaos
+    - KOPIA_UI_PASSWORD=casaos
+    - KOPIA_PASSWORD=casaos
+    - REFRESH_INTERVAL=
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/home:/backups/home
+    - /var/lib/docker/volumes:/backups/docker:ro
+    - /DATA/AppData/$AppID/repository:/repository
+    - /tmp:/tmp:shared
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+    - 51515:51515
+    cap_add:
+    - SYS_ADMIN
+x-casaos:
+  id: com.bigbeartechworld.kopia
+  main: big-bear-kopia
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.kopia/assets/icon.png
+  title:
+    en_US: Kopia
+  port_map: '51515'

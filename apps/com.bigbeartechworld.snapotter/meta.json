@@ -1,0 +1,30 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "SnapOtter is an open-source, self-hosted file manipulation suite with 200+ tools across images, video, audio, PDFs, and files. It includes batch processing, reusable pipelines, local AI tools, a browser image editor, and a REST API so files stay on your own server.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.snapotter/assets/screenshot-1.webp"
+  ],
+  "tagline": "Self-hosted file toolkit for images, video, audio, PDFs, and files.",
+  "developer": "SnapOtter",
+  "author": "SnapOtter",
+  "thumbnail": "/apps/com.bigbeartechworld.snapotter/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Default login is admin / admin. You will be asked to change the password after first login. This package uses SnapOtter embedded mode, so leave DATABASE_URL and REDIS_URL unset unless you are moving to an external Postgres/Redis stack.\n"
+  },
+  "category": "AI",
+  "title": "SnapOtter",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.snapotter",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

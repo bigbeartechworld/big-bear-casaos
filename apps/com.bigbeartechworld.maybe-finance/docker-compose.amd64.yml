@@ -1,0 +1,75 @@
+name: big-bear-maybe-finance
+services:
+  big-bear-maybe-finance:
+    container_name: big-bear-maybe-finance
+    image: ghcr.io/maybe-finance/maybe:sha-347c0a790693031fdd3b32792b5b6792693d1805@sha256:92e13ea9d1639747da2e7ce603d28123f22ead2fa8c2b9fb8ac8e86ff4e21a7b
+    restart: unless-stopped
+    privileged: false
+    networks:
+    - big_bear_maybe_finance_network
+    volumes:
+    - /DATA/AppData/$AppID/app-storage:/rails/storage
+    ports:
+    - 4000:3000
+    environment:
+      SELF_HOSTED: 'true'
+      RAILS_FORCE_SSL: 'false'
+      RAILS_ASSUME_SSL: 'false'
+      GOOD_JOB_EXECUTION_MODE: async
+      SECRET_KEY_BASE: SECRET_KEY_BASE
+      DB_HOST: big-bear-maybe-finance-postgres
+      POSTGRES_DB: maybe_production
+      POSTGRES_USER: maybe_user
+      POSTGRES_PASSWORD: casaos
+      REDIS_URL: redis://big-bear-maybe-finance-redis:6379/1
+    depends_on:
+      big-bear-maybe-finance-postgres:
+        condition: service_healthy
+      big-bear-maybe-finance-redis:
+        condition: service_healthy
+  big-bear-maybe-finance-postgres:
+    container_name: big-bear-maybe-finance-postgres
+    image: postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: maybe_production
+      POSTGRES_USER: maybe_user
+      POSTGRES_PASSWORD: casaos
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U maybe_user -d maybe_production
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+    - big_bear_maybe_finance_network
+  big-bear-maybe-finance-redis:
+    container_name: big-bear-maybe-finance-redis
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/redis-data:/data
+    healthcheck:
+      test:
+      - CMD
+      - sh
+      - -c
+      - '[ "$(redis-cli ping)" = "PONG" ]'
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+    - big_bear_maybe_finance_network
+networks:
+  big_bear_maybe_finance_network:
+    name: big_bear_maybe_finance_network
+x-casaos:
+  id: com.bigbeartechworld.maybe-finance
+  main: big-bear-maybe-finance
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.maybe-finance/assets/icon.png
+  title:
+    en_US: Maybe Finance
+  port_map: '4000'

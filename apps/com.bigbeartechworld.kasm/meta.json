@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The Container Streaming Platform - Streaming containerized apps and desktops to end-users. The Workspaces platform provides enterprise-class orchestration, data loss prevention, and web streaming technology to enable the delivery of containerized workloads to your browser.",
+  "tagline": "Kasm",
+  "developer": "Kasm",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Admin default address: admin@kasm.local\nUser default address: user@kasm.local\n"
+  },
+  "category": "Media",
+  "title": "Kasm",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.kasm",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

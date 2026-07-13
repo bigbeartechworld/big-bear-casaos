@@ -1,0 +1,69 @@
+name: big-bear-pd3f
+services:
+  web:
+    container_name: big-bear-pd3f
+    image: pd3f/pd3f:latest@sha256:30a5c6c4c108c05799718d296630fb2d52d7053b2fba75cb0d89ff43b0eaa823
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/uploads:/uploads/
+    ports:
+    - 1616:5000
+    command:
+    - gunicorn
+    - app:app
+    - --bind=0.0.0.0:5000
+    depends_on:
+    - redis
+    - parsr
+    - worker
+    - ocr_worker
+    networks:
+    - big-bear-pd3f-network
+  parsr:
+    image: axarev/parsr:v1.2.2@sha256:9b2b844474cd750aa026cc4bcbba55fb807f93cead9f0bec47f8ac1dc9e33280
+    networks:
+    - big-bear-pd3f-network
+    expose:
+    - 3001
+  redis:
+    image: redis:6.2.20-alpine@sha256:2185e741f4c1e7b0ea9ca1e163a3767c4270a73086b6bbea2049a7203212fb7f
+    networks:
+    - big-bear-pd3f-network
+    expose:
+    - 6379
+  worker:
+    image: pd3f/pd3f:latest@sha256:30a5c6c4c108c05799718d296630fb2d52d7053b2fba75cb0d89ff43b0eaa823
+    depends_on:
+    - parsr
+    - redis
+    networks:
+    - big-bear-pd3f-network
+    volumes:
+    - /DATA/AppData/$AppID/cache:/root/.cache/
+    - /DATA/AppData/$AppID/to-ocr:/to-ocr/
+    - /DATA/AppData/$AppID/uploads:/uploads/
+    environment:
+    - KEEP_RESULTS_HOURS=24
+    command:
+    - rq
+    - worker
+    - -u
+    - redis://redis:6379
+    - --results-ttl
+    - '86400'
+  ocr_worker:
+    image: pd3f/pd3f-ocr:latest@sha256:7bd3d4c8ba1816932e1f631d207056eb1f421f53f205b305372af8340db16a1b
+    networks:
+    - big-bear-pd3f-network
+    volumes:
+    - /DATA/AppData/$AppID/to-ocr:/to-ocr/
+networks:
+  big-bear-pd3f-network:
+    name: big-bear-pd3f-network
+x-casaos:
+  id: com.bigbeartechworld.pd3f
+  main: web
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pd3f/assets/icon.jpg
+  title:
+    en_US: PD3F
+  port_map: '1616'

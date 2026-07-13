@@ -1,0 +1,25 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "The open-source public key infrastructure (PKI) and certificate authority (CA) software EJBCA is one of the longest running CA software projects. EJBCA covers all your needs - from certificate enrollment, via certificate management, to certificate validation.",
+  "tagline": "The open-source public key infrastructure (PKI) and certificate authority (CA)",
+  "developer": "Keyfactor",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "After installation wait for a few minutes as the initialization takes a while.\nDefault admin URL: https://<host/ip>:8443/ejbca/adminweb\nDefault HTTP port: 8080\nFor more information on custom setup visit: https://github.com/Keyfactor/ejbca-ce\n"
+  },
+  "category": "Social",
+  "title": "EJBCA Community",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.ejbca-ce",
+  "version": "",
+  "categories": [
+    "social"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

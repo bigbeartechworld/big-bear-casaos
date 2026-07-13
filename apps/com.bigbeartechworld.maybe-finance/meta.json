@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Maybe is a fully* open-source OS for your personal finances built by a small team alongside an incredible community Discord",
+  "tagline": "maybe-finance",
+  "developer": "Maybe Finance",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "### Additional Instructions:\nGenerate the app secret key:\n\n  1. Open a terminal and digit:\n\n  ```bash\n  head -c 64 /dev/urandom | od -An -tx1 | tr -d ' \\n' && echo\n  ```\n  2. Copy the generated key and paste it in the `SECRET_KEY_BASE`.\n\n  3. Save the changes and restart the application.\n\nFor more information, refer to the [official documentation](https://maybe.co)\n"
+  },
+  "category": "Finance",
+  "title": "Maybe Finance",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.maybe-finance",
+  "version": "",
+  "categories": [
+    "finance"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 358973597,
+    "arm64": 353236919
+  }
+}

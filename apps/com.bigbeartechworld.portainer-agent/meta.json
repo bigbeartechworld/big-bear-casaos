@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Portainer uses the Portainer Agent container to communicate with the Portainer Server instance and provide access to the node's resources. This document will outline how to install the Portainer Agent on your node and how to connect to it from your Portainer Server instance. If you do not have a working Portainer Server instance yet, please refer to the Portainer Server installation guide first.",
+  "tagline": "Portainer Agent",
+  "developer": "portainer",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "The Portainer Agent is reachable on port 9001. You will need Portainer Server running to connect to the Portainer Agent.\n"
+  },
+  "category": "Productivity",
+  "title": "Portainer Agent",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.portainer-agent",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

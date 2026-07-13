@@ -1,0 +1,46 @@
+name: big-bear-tianji
+services:
+  big-bear-tianji:
+    container_name: big-bear-tianji
+    image: moonrailgun/tianji:1.32.16@sha256:5722eba3ae9baf18100f8ae7c3b71b2cbd553fb3c4845eb84d340a8e06d4027a
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://tianji-user:227453b7-1286-48cc-b471-1c269495c5fc@big-bear-tianji-db:5432/tianji
+      JWT_SECRET: replace-me-with-a-random-string
+      ALLOW_REGISTER: 'false'
+      ALLOW_OPENAPI: 'true'
+    ports:
+    - 12345:12345
+    networks:
+    - big_bear_tianji_network
+    depends_on:
+    - big-bear-tianji-db
+  big-bear-tianji-db:
+    container_name: big-bear-tianji-db
+    image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
+    environment:
+      POSTGRES_DB: tianji
+      POSTGRES_USER: tianji-user
+      POSTGRES_PASSWORD: 227453b7-1286-48cc-b471-1c269495c5fc
+    volumes:
+    - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+    - big_bear_tianji_network
+networks:
+  big_bear_tianji_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.tianji
+  main: big-bear-tianji
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.tianji/assets/icon.png
+  title:
+    en_US: Tianji
+  port_map: '12345'

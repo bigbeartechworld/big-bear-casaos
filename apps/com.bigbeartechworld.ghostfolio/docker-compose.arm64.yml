@@ -1,0 +1,78 @@
+name: big-bear-ghostfolio
+services:
+  big-bear-ghostfolio:
+    container_name: big-bear-ghostfolio
+    image: ghostfolio/ghostfolio:3.18.0@sha256:f661cdba75921ce1b8d97b8b7b311f23edb8bdb16e1d0589498dc09afa7b7558
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: '3333'
+      ACCESS_TOKEN_SALT: 5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4
+      DATABASE_URL: postgresql://ghostfolio:casaospassword@big-bear-ghostfolio-db:5432/ghostfolio
+      JWT_SECRET_KEY: 534e820d-da30-4dd3-baf9-0511847c478a
+      POSTGRES_DB: ghostfolio
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: casaospassword
+      REDIS_HOST: big-bear-ghostfolio-redis
+      REDIS_PASSWORD: casaosredispassword
+      REDIS_PORT: '6379'
+    ports:
+    - 3333:3333
+    depends_on:
+      big-bear-ghostfolio-db:
+        condition: service_healthy
+      big-bear-ghostfolio-redis:
+        condition: service_healthy
+    networks:
+    - big_bear_ghostfolio_network
+  big-bear-ghostfolio-db:
+    container_name: big-bear-ghostfolio-db
+    image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ghostfolio
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: casaospassword
+      PGDATA: /var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -d ghostfolio -U ghostfolio
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+    - /DATA/AppData/$AppID/data/db:/var/lib/postgresql/data
+    networks:
+    - big_bear_ghostfolio_network
+  big-bear-ghostfolio-redis:
+    container_name: big-bear-ghostfolio-redis
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
+    restart: unless-stopped
+    command: '--requirepass casaosredispassword
+
+      '
+    healthcheck:
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    volumes:
+    - /DATA/AppData/$AppID/data/redis:/data
+    networks:
+    - big_bear_ghostfolio_network
+networks:
+  big_bear_ghostfolio_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.ghostfolio
+  main: big-bear-ghostfolio
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ghostfolio/assets/icon.png
+  title:
+    en_US: Ghostfolio
+  port_map: '3333'

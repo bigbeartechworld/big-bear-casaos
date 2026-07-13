@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Modern, efficient Docker management application providing real-time container management, Compose stack orchestration, and multi-environment support. Features include interactive terminal access, file browser, Git integration, and SSO via OIDC. All in a lightweight, secure and privacy-focused package.",
+  "tagline": "Modern Docker management you will like",
+  "developer": "Finsys",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "**Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld\n**Community Forum**: https://community.bigbeartechworld.com\n\nDockhand provides modern Docker management with real-time container orchestration, Compose stack management, and multi-environment support. Authentication is disabled by default for easy setup - consider enabling it in Settings > Authentication after installation.\n\n**Security Note**: This app requires Docker socket access, which grants full Docker daemon privileges."
+  },
+  "category": "Developer",
+  "title": "Dockhand",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.dockhand",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

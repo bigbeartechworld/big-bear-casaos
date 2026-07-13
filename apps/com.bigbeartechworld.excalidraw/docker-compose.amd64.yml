@@ -1,0 +1,15 @@
+name: big-bear-excalidraw
+services:
+  app:
+    container_name: big-bear-excalidraw
+    image: excalidraw/excalidraw:latest@sha256:f7ee194addd607bf831d2af0f0a34463dd4225e426cf35199ef0b12a803398e9
+    restart: unless-stopped
+    ports:
+    - 8000:80
+x-casaos:
+  id: com.bigbeartechworld.excalidraw
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.excalidraw/assets/icon.png
+  title:
+    en_US: Excalidraw
+  port_map: '8000'

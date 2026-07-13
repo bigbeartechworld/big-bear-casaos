@@ -1,0 +1,25 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "Peppermint is a central hub for your help desk. A powerfully easy system for tracking, prioritising, and solving customer support tickets.",
+  "tagline": "peppermint",
+  "developer": "Pepperlabs",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "### Additional Instructions:\nAfter finished installing, open the `app settings` and update the `API_URL` to point it to your Home Server's IP Address.\ne.g:\n``` http://192.168.31.31:5003\n```\n### Default credentials:\nUsername: `admin@admin.com` Password: `1234`\n"
+  },
+  "category": "Others",
+  "title": "Peppermint",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.peppermint",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

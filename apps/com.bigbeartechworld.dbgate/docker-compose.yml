@@ -1,0 +1,17 @@
+name: big-bear-dbgate
+services:
+  big-bear-dbgate:
+    container_name: big-bear-dbgate
+    image: dbgate/dbgate:7.2.1-alpine@sha256:91ddb068053c8b8cc46f7b5b7e56e5864ac53bcf2a21339fbed6d83e2f97205b
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/config:/root/.dbgate
+    ports:
+    - 3000:3000
+x-casaos:
+  id: com.bigbeartechworld.dbgate
+  main: big-bear-dbgate
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.dbgate/assets/icon.png
+  title:
+    en_US: DBGate
+  port_map: '3000'

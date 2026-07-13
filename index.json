@@ -1,0 +1,4770 @@
+{
+  "version": 2,
+  "updated_at": "2026-07-13T18:39:40Z",
+  "app_count": 239,
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "apps": [
+    {
+      "id": "com.bigbeartechworld.2fauth",
+      "title": "2FAuth",
+      "tagline": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bubka",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.2fauth/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.2fauth/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.2fauth/meta.json",
+      "content_hash": "67654f8a"
+    },
+    {
+      "id": "com.bigbeartechworld.actual-server",
+      "title": "Actual Budget",
+      "tagline": "Local-first OpenSource Budget tool",
+      "category": "Finance",
+      "categories": [
+        "finance"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "actualbudget",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.actual-server/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.actual-server/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.actual-server/meta.json",
+      "content_hash": "04c7a6c4"
+    },
+    {
+      "id": "com.bigbeartechworld.adguard-home",
+      "title": "AdGuard Home",
+      "tagline": "Network-wide ads & trackers blocking DNS server.",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "AdGuardTeam",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.adguard-home/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.adguard-home/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.adguard-home/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.adguard-home/meta.json",
+      "content_hash": "325f44a0"
+    },
+    {
+      "id": "com.bigbeartechworld.adguard-home-host",
+      "title": "AdGuard Home (HOST)",
+      "tagline": "Network Mode is host. Network-wide ads & trackers blocking DNS server.",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "AdGuardTeam",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.adguard-home-host/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.adguard-home-host/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.adguard-home-host/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.adguard-home-host/meta.json",
+      "content_hash": "5c7cbeb0"
+    },
+    {
+      "id": "com.bigbeartechworld.anse",
+      "title": "Anse",
+      "tagline": "Fully optimized UI for AI Chats.",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ddiu8081",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.anse/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.anse/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.anse/meta.json",
+      "content_hash": "0b8115dc"
+    },
+    {
+      "id": "com.bigbeartechworld.appsmith",
+      "title": "Appsmith",
+      "tagline": "Appsmith",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "appsmithorg",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.appsmith/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.appsmith/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.appsmith/meta.json",
+      "content_hash": "418d20fd"
+    },
+    {
+      "id": "com.bigbeartechworld.audiobookshelf",
+      "title": "Audiobookshelf",
+      "tagline": "Audiobookshelf is a self-hosted audiobook and podcast server.",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "advplyr",
+      "developer": "ajnart",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.audiobookshelf/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.audiobookshelf/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.audiobookshelf/meta.json",
+      "content_hash": "404a276a"
+    },
+    {
+      "id": "com.bigbeartechworld.authentik",
+      "title": "Authentik",
+      "tagline": "Authentik",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "authentik",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.authentik/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.authentik/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.authentik/meta.json",
+      "content_hash": "c8ff907b"
+    },
+    {
+      "id": "com.bigbeartechworld.ayon",
+      "title": "Ayon",
+      "tagline": "Ayon",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ynput",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ayon/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ayon/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ayon/meta.json",
+      "content_hash": "c1988fba"
+    },
+    {
+      "id": "com.bigbeartechworld.baserow",
+      "title": "Baserow",
+      "tagline": "Baserow",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "baserow",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.baserow/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.baserow/assets/screenshot.webp",
+      "compose_url": "/apps/com.bigbeartechworld.baserow/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.baserow/meta.json",
+      "content_hash": "aa249f24"
+    },
+    {
+      "id": "com.bigbeartechworld.beaverhabits",
+      "title": "Beaver Habit Tracker",
+      "tagline": "A self-hosted habit tracking app without Goals",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "daya0576",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.beaverhabits/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.beaverhabits/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.beaverhabits/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.beaverhabits/meta.json",
+      "content_hash": "69f0d681"
+    },
+    {
+      "id": "com.bigbeartechworld.beszel",
+      "title": "Beszel",
+      "tagline": "Server Monitoring Hub",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "henrygd",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.beszel/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.beszel/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.beszel/meta.json",
+      "content_hash": "a0335d19"
+    },
+    {
+      "id": "com.bigbeartechworld.big-bear-casaos-user-management",
+      "title": "Big Bear CasaOS User Management",
+      "tagline": "Manage users in CasaOS",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bigbeartechworld",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.big-bear-casaos-user-management/assets/icon.jpg",
+      "thumbnail": "/apps/com.bigbeartechworld.big-bear-casaos-user-management/assets/thumbnail-v2.webp",
+      "compose_url": "/apps/com.bigbeartechworld.big-bear-casaos-user-management/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.big-bear-casaos-user-management/meta.json",
+      "content_hash": "8864d083"
+    },
+    {
+      "id": "com.bigbeartechworld.bookstack",
+      "title": "bookstack",
+      "tagline": "BookStack",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Dan Brown",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.bookstack/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.bookstack/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.bookstack/meta.json",
+      "content_hash": "7ee66c23"
+    },
+    {
+      "id": "com.bigbeartechworld.brave",
+      "title": "Brave",
+      "tagline": "Brave",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "kasmweb",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.brave/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.brave/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.brave/meta.json",
+      "content_hash": "cb9e020f"
+    },
+    {
+      "id": "com.bigbeartechworld.btop",
+      "title": "btop",
+      "tagline": "A monitor of resources",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bigbeartechworld",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.btop/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.btop/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.btop/meta.json",
+      "content_hash": "b3b1e75d"
+    },
+    {
+      "id": "com.bigbeartechworld.budibase",
+      "title": "Budibase",
+      "tagline": "Internal tools made easy.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Budibase",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.budibase/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.budibase/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.budibase/meta.json",
+      "content_hash": "0d291ebd"
+    },
+    {
+      "id": "com.bigbeartechworld.cadvisor",
+      "title": "cAdvisor",
+      "tagline": "cAdvisor",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "cadvisor",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.cadvisor/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.cadvisor/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.cadvisor/meta.json",
+      "content_hash": "03e8259d"
+    },
+    {
+      "id": "com.bigbeartechworld.calcom",
+      "title": "Cal.com",
+      "tagline": "Cal.com",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "calcom",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.calcom/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.calcom/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.calcom/meta.json",
+      "content_hash": "9000295e"
+    },
+    {
+      "id": "com.bigbeartechworld.celestory",
+      "title": "Celestory & Voltask",
+      "tagline": "No-code interactive storytelling & automation",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "Celestory",
+      "developer": "celestory",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.celestory/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.celestory/assets/celestory.webp",
+      "compose_url": "/apps/com.bigbeartechworld.celestory/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.celestory/meta.json",
+      "content_hash": "05ab413c"
+    },
+    {
+      "id": "com.bigbeartechworld.changedetection",
+      "title": "Change Detection",
+      "tagline": "Website change detection.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "dgtlmoon",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.changedetection/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.changedetection/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.changedetection/meta.json",
+      "content_hash": "05edd8a9"
+    },
+    {
+      "id": "com.bigbeartechworld.chatpad",
+      "title": "Chatpad",
+      "tagline": "Not just another ChatGPT user-interface!",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "deiucanta",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.chatpad/assets/icon.jpeg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.chatpad/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.chatpad/meta.json",
+      "content_hash": "e731b605"
+    },
+    {
+      "id": "com.bigbeartechworld.chrome",
+      "title": "chrome",
+      "tagline": "chrome",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "kasmweb",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.chrome/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.chrome/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.chrome/meta.json",
+      "content_hash": "df127632"
+    },
+    {
+      "id": "com.bigbeartechworld.chromium",
+      "title": "chromium",
+      "tagline": "chromium",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "linuxserver",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.chromium/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.chromium/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.chromium/meta.json",
+      "content_hash": "76d8d6b6"
+    },
+    {
+      "id": "com.bigbeartechworld.cloudflared-web",
+      "title": "Cloudflared Web",
+      "tagline": "Cloudflared Web",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "wisdomsky",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.cloudflared-web/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.cloudflared-web/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.cloudflared-web/meta.json",
+      "content_hash": "7898701a"
+    },
+    {
+      "id": "com.bigbeartechworld.code-server",
+      "title": "Code Server",
+      "tagline": "Code Server",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "linuxserver",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.code-server/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.code-server/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.code-server/meta.json",
+      "content_hash": "9a593db8"
+    },
+    {
+      "id": "com.bigbeartechworld.codex-docs",
+      "title": "CodeX Docs",
+      "tagline": "CodeX Docs",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "codex-team",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.codex-docs/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.codex-docs/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.codex-docs/meta.json",
+      "content_hash": "8cf53bc5"
+    },
+    {
+      "id": "com.bigbeartechworld.composetoolbox",
+      "title": "Compose Toolbox",
+      "tagline": "Compose file editor & validator",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bluegoosemedia",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.composetoolbox/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.composetoolbox/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.composetoolbox/meta.json",
+      "content_hash": "eb4989f8"
+    },
+    {
+      "id": "com.bigbeartechworld.convertx",
+      "title": "ConvertX",
+      "tagline": "💾 Self-hosted online file converter. Supports 1000+ formats ⚙️",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "C4illin",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.convertx/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.convertx/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.convertx/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.convertx/meta.json",
+      "content_hash": "5ea8760a"
+    },
+    {
+      "id": "com.bigbeartechworld.coolify",
+      "title": "Coolify",
+      "tagline": "Coolify",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "coollabsio",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.coolify/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.coolify/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.coolify/meta.json",
+      "content_hash": "94cffa63"
+    },
+    {
+      "id": "com.bigbeartechworld.crafty",
+      "title": "Crafty Controller",
+      "tagline": "Crafty Controller",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "crafty-controller",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.crafty/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.crafty/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.crafty/meta.json",
+      "content_hash": "3237adc9"
+    },
+    {
+      "id": "com.bigbeartechworld.cyberchef",
+      "title": "CyberChef",
+      "tagline": "The Cyber Swiss Army Knife",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "gchq",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.cyberchef/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.cyberchef/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.cyberchef/meta.json",
+      "content_hash": "e131b50a"
+    },
+    {
+      "id": "com.bigbeartechworld.dashdot",
+      "title": "Dashdot",
+      "tagline": "dash. - a modern server dashboard",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "mauricenino",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dashdot/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dashdot/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dashdot/meta.json",
+      "content_hash": "160b781a"
+    },
+    {
+      "id": "com.bigbeartechworld.dashy",
+      "title": "Dashy (Legacy)",
+      "tagline": "Dashy",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Lissy93",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dashy/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dashy/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dashy/meta.json",
+      "content_hash": "a873ec81"
+    },
+    {
+      "id": "com.bigbeartechworld.dashy-v4",
+      "title": "Dashy v4",
+      "tagline": "Dashy v4",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Lissy93",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dashy-v4/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dashy-v4/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dashy-v4/meta.json",
+      "content_hash": "f1c5c088"
+    },
+    {
+      "id": "com.bigbeartechworld.davis",
+      "title": "Davis",
+      "tagline": "Davis",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "tchapi",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.davis/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.davis/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.davis/meta.json",
+      "content_hash": "e4657330"
+    },
+    {
+      "id": "com.bigbeartechworld.dbgate",
+      "title": "DBGate",
+      "tagline": "DBGate",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "dbgate",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dbgate/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dbgate/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dbgate/meta.json",
+      "content_hash": "b70188da"
+    },
+    {
+      "id": "com.bigbeartechworld.discopanel",
+      "title": "DiscoPanel",
+      "tagline": "A game server panel for Minecraft",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nickheyer",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.discopanel/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.discopanel/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.discopanel/meta.json",
+      "content_hash": "1ca46838"
+    },
+    {
+      "id": "com.bigbeartechworld.diun",
+      "title": "DIUN",
+      "tagline": "Docker Image Update Notifier",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "crazymax",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.diun/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.diun/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.diun/meta.json",
+      "content_hash": "903c0016"
+    },
+    {
+      "id": "com.bigbeartechworld.docker-cron-restart-notifier",
+      "title": "Docker Cron Restart Notifier",
+      "tagline": "Automatically restart specified Docker containers and send notifications to a Discord channel",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "activecs",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.docker-cron-restart-notifier/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.docker-cron-restart-notifier/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.docker-cron-restart-notifier/meta.json",
+      "content_hash": "1f18484a"
+    },
+    {
+      "id": "com.bigbeartechworld.dockge",
+      "title": "Dockge",
+      "tagline": "Dockge",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "louislam",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dockge/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dockge/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dockge/meta.json",
+      "content_hash": "d89ffc88"
+    },
+    {
+      "id": "com.bigbeartechworld.dockhand",
+      "title": "Dockhand",
+      "tagline": "Modern Docker management you will like",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Finsys",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dockhand/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dockhand/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dockhand/meta.json",
+      "content_hash": "6ea7177a"
+    },
+    {
+      "id": "com.bigbeartechworld.dockpeek",
+      "title": "Dockpeek",
+      "tagline": "Docker Dashboard",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "dockpeek",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dockpeek/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dockpeek/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dockpeek/meta.json",
+      "content_hash": "573e72aa"
+    },
+    {
+      "id": "com.bigbeartechworld.docmost",
+      "title": "Docmost",
+      "tagline": "Docmost",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "docmost",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.docmost/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.docmost/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.docmost/meta.json",
+      "content_hash": "eb9c46bf"
+    },
+    {
+      "id": "com.bigbeartechworld.dozzle",
+      "title": "Dozzle",
+      "tagline": "Dozzle is a real-time log viewer for docker containers.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "amir20",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.dozzle/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.dozzle/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.dozzle/meta.json",
+      "content_hash": "ecdd306a"
+    },
+    {
+      "id": "com.bigbeartechworld.ejbca-ce",
+      "title": "EJBCA Community",
+      "tagline": "The open-source public key infrastructure (PKI) and certificate authority (CA)",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Keyfactor",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ejbca-ce/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ejbca-ce/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ejbca-ce/meta.json",
+      "content_hash": "7f6496ed"
+    },
+    {
+      "id": "com.bigbeartechworld.ente",
+      "title": "Ente Photos",
+      "tagline": "End-to-end encrypted photo storage",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ente-io",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ente/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ente/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ente/meta.json",
+      "content_hash": "249d7592"
+    },
+    {
+      "id": "com.bigbeartechworld.erugo",
+      "title": "Erugo",
+      "tagline": "A powerful, self-hosted file-sharing platform built with PHP and Laravel with a Vue.js frontend.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "wardy784",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.erugo/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.erugo/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.erugo/meta.json",
+      "content_hash": "e68fd1fc"
+    },
+    {
+      "id": "com.bigbeartechworld.eufy-security-ws",
+      "title": "Eufy Security WS",
+      "tagline": "eufy-security-ws",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bropat",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.eufy-security-ws/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.eufy-security-ws/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.eufy-security-ws/meta.json",
+      "content_hash": "e5912fc9"
+    },
+    {
+      "id": "com.bigbeartechworld.excalidraw",
+      "title": "Excalidraw",
+      "tagline": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "excalidraw",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.excalidraw/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.excalidraw/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.excalidraw/meta.json",
+      "content_hash": "35d4f8d9"
+    },
+    {
+      "id": "com.bigbeartechworld.farmos",
+      "title": "FarmOS (Legacy)",
+      "tagline": "A web-based farm record keeping application.",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "farmOS",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.farmos/assets/icon.jpeg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.farmos/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.farmos/meta.json",
+      "content_hash": "299b9b62"
+    },
+    {
+      "id": "com.bigbeartechworld.farmos-v4",
+      "title": "FarmOS v4",
+      "tagline": "A web-based farm record keeping application.",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "farmOS",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.farmos-v4/assets/icon.jpeg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.farmos-v4/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.farmos-v4/meta.json",
+      "content_hash": "1be962f1"
+    },
+    {
+      "id": "com.bigbeartechworld.faster-whisper",
+      "title": "Faster-whisper",
+      "tagline": "Faster-whisper",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "systran",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.faster-whisper/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.faster-whisper/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.faster-whisper/meta.json",
+      "content_hash": "40858d07"
+    },
+    {
+      "id": "com.bigbeartechworld.fastfetch",
+      "title": "Fastfetch",
+      "tagline": "Fastfetch is a neofetch-like tool.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bigbeartechworld",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.fastfetch/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.fastfetch/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.fastfetch/meta.json",
+      "content_hash": "7e3f1df5"
+    },
+    {
+      "id": "com.bigbeartechworld.filebrowser",
+      "title": "Filebrowser",
+      "tagline": "Access your homeserver files from your browser",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "filebrowser",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.filebrowser/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.filebrowser/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.filebrowser/meta.json",
+      "content_hash": "505e8b41"
+    },
+    {
+      "id": "com.bigbeartechworld.filebrowser-quantum",
+      "title": "FileBrowser Quantum",
+      "tagline": "Advanced self-hosted web file manager",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "gtsteffaniak",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.filebrowser-quantum/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.filebrowser-quantum/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.filebrowser-quantum/meta.json",
+      "content_hash": "8ea237a1"
+    },
+    {
+      "id": "com.bigbeartechworld.financial-freedom",
+      "title": "Financial Freedom",
+      "tagline": "Financial Freedom",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "serversideup",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.financial-freedom/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.financial-freedom/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.financial-freedom/meta.json",
+      "content_hash": "2effc4b7"
+    },
+    {
+      "id": "com.bigbeartechworld.firefox",
+      "title": "Firefox",
+      "tagline": "Firefox",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "linuxserver",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.firefox/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.firefox/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.firefox/meta.json",
+      "content_hash": "eb9297c7"
+    },
+    {
+      "id": "com.bigbeartechworld.flame",
+      "title": "Flame",
+      "tagline": "Flame is a self-hosted startpage for your server. Manage your apps and bookmarks effortlessly with built-in editors.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "pawelmalak",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.flame/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.flame/assets/home.webp",
+      "compose_url": "/apps/com.bigbeartechworld.flame/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.flame/meta.json",
+      "content_hash": "a43ff311"
+    },
+    {
+      "id": "com.bigbeartechworld.flcontainers-guacamole",
+      "title": "FlContainers Guacamole",
+      "tagline": "Fully packaged Multi-Arch Guacamole.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "flcontainers",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.flcontainers-guacamole/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.flcontainers-guacamole/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.flcontainers-guacamole/meta.json",
+      "content_hash": "6d06333c"
+    },
+    {
+      "id": "com.bigbeartechworld.flowise",
+      "title": "Flowise AI",
+      "tagline": "Build LLM Apps Easily",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bigbeartechworld",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.flowise/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.flowise/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.flowise/meta.json",
+      "content_hash": "af7f5e8a"
+    },
+    {
+      "id": "com.bigbeartechworld.focalboard",
+      "title": "Focalboard",
+      "tagline": "Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "mattermost",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.focalboard/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.focalboard/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.focalboard/meta.json",
+      "content_hash": "625c570d"
+    },
+    {
+      "id": "com.bigbeartechworld.gemdigest",
+      "title": "GemDigest Bot",
+      "tagline": "Your personal article summarizer",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Armaggheddon",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.gemdigest/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.gemdigest/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.gemdigest/meta.json",
+      "content_hash": "9d427621"
+    },
+    {
+      "id": "com.bigbeartechworld.genmon",
+      "title": "Genmon",
+      "tagline": "Genmon",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bigbeartechworld",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.genmon/assets/icon.jpeg",
+      "thumbnail": "/apps/com.bigbeartechworld.genmon/assets/screenshot1.webp",
+      "compose_url": "/apps/com.bigbeartechworld.genmon/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.genmon/meta.json",
+      "content_hash": "fe463767"
+    },
+    {
+      "id": "com.bigbeartechworld.ghost",
+      "title": "Ghost",
+      "tagline": "Ghost is a free and open source blogging platform",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ghost",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ghost/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ghost/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ghost/meta.json",
+      "content_hash": "f0241912"
+    },
+    {
+      "id": "com.bigbeartechworld.ghostfolio",
+      "title": "Ghostfolio",
+      "tagline": "Ghostfolio",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ghostfolio",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ghostfolio/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ghostfolio/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ghostfolio/meta.json",
+      "content_hash": "a89fd85f"
+    },
+    {
+      "id": "com.bigbeartechworld.gitea",
+      "title": "Gitea",
+      "tagline": "Self-hosted Git service",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "gitea",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.gitea/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.gitea/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.gitea/meta.json",
+      "content_hash": "437e796b"
+    },
+    {
+      "id": "com.bigbeartechworld.gitea-mirror",
+      "title": "Gitea Mirror",
+      "tagline": "Mirror GitHub repositories to Gitea",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "RayLabs HQ",
+      "developer": "raylabs.io",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.gitea-mirror/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.gitea-mirror/assets/1.webp",
+      "compose_url": "/apps/com.bigbeartechworld.gitea-mirror/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.gitea-mirror/meta.json",
+      "content_hash": "18a49446"
+    },
+    {
+      "id": "com.bigbeartechworld.gladys",
+      "title": "Gladys Assistant",
+      "tagline": "A privacy-first, open-source home assistant.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "GladysAssistant",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.gladys/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.gladys/assets/main_screenshot_en_j5czyj_c_scale,w_2526.webp",
+      "compose_url": "/apps/com.bigbeartechworld.gladys/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.gladys/meta.json",
+      "content_hash": "2c132198"
+    },
+    {
+      "id": "com.bigbeartechworld.glances",
+      "title": "Glances",
+      "tagline": "Glances",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nicolargo",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.glances/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.glances/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.glances/meta.json",
+      "content_hash": "fdc164e1"
+    },
+    {
+      "id": "com.bigbeartechworld.gluetun",
+      "title": "Gluetun",
+      "tagline": "Gluetun",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "portainer",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.gluetun/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.gluetun/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.gluetun/meta.json",
+      "content_hash": "df935a31"
+    },
+    {
+      "id": "com.bigbeartechworld.goaway",
+      "title": "GoAway",
+      "tagline": "Lightweight DNS sinkhole for blocking ads and trackers",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pommee",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.goaway/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.goaway/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.goaway/meta.json",
+      "content_hash": "46918dee"
+    },
+    {
+      "id": "com.bigbeartechworld.gotify",
+      "title": "Gotify",
+      "tagline": "Gotify",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "gotify",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.gotify/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.gotify/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.gotify/meta.json",
+      "content_hash": "8434bcf9"
+    },
+    {
+      "id": "com.bigbeartechworld.guacamole",
+      "title": "Guacamole",
+      "tagline": "Guacamole",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "guacamole",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.guacamole/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.guacamole/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.guacamole/meta.json",
+      "content_hash": "4be9639e"
+    },
+    {
+      "id": "com.bigbeartechworld.healthchecks",
+      "title": "Healthchecks",
+      "tagline": "Healthchecks",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "linuxserver",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.healthchecks/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.healthchecks/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.healthchecks/meta.json",
+      "content_hash": "e30429ff"
+    },
+    {
+      "id": "com.bigbeartechworld.homarr",
+      "title": "Homarr",
+      "tagline": "Homarr",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ajnart",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.homarr/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.homarr/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.homarr/meta.json",
+      "content_hash": "3fd03def"
+    },
+    {
+      "id": "com.bigbeartechworld.homarr-v1",
+      "title": "Homarr v1",
+      "tagline": "Homarr v1 (Latest)",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "homarr-labs",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.homarr-v1/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.homarr-v1/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.homarr-v1/meta.json",
+      "content_hash": "13d126b5"
+    },
+    {
+      "id": "com.bigbeartechworld.home-assistant",
+      "title": "Home Assistant",
+      "tagline": "Home Automation",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "home-assistant",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.home-assistant/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.home-assistant/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.home-assistant/meta.json",
+      "content_hash": "5514e894"
+    },
+    {
+      "id": "com.bigbeartechworld.homebridge",
+      "title": "HomeBridge",
+      "tagline": "HomeKit support for the impatient.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "homebridge",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.homebridge/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.homebridge/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.homebridge/meta.json",
+      "content_hash": "aff954f0"
+    },
+    {
+      "id": "com.bigbeartechworld.homepage",
+      "title": "Homepage",
+      "tagline": "Homepage",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "gethomepage",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.homepage/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.homepage/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.homepage/meta.json",
+      "content_hash": "77f5472f"
+    },
+    {
+      "id": "com.bigbeartechworld.homer",
+      "title": "Homer",
+      "tagline": "Homer",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bastienwirtz",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.homer/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.homer/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.homer/meta.json",
+      "content_hash": "e84099a4"
+    },
+    {
+      "id": "com.bigbeartechworld.ihatemoney",
+      "title": "I Hate Money",
+      "tagline": "A simple shared budget manager web application",
+      "category": "Finance",
+      "categories": [
+        "finance"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "spiral-project",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ihatemoney/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ihatemoney/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ihatemoney/meta.json",
+      "content_hash": "c6a18d8d"
+    },
+    {
+      "id": "com.bigbeartechworld.immich",
+      "title": "Immich",
+      "tagline": "Immich",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "immich-app",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.immich/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.immich/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.immich/meta.json",
+      "content_hash": "bbfb3d07"
+    },
+    {
+      "id": "com.bigbeartechworld.immich-aio-alpine",
+      "title": "Immich AIO Alpine",
+      "tagline": "Immich All In One Alpine",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "imagegenius",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.immich-aio-alpine/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.immich-aio-alpine/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.immich-aio-alpine/meta.json",
+      "content_hash": "8ef41c40"
+    },
+    {
+      "id": "com.bigbeartechworld.immich-kiosk",
+      "title": "Immich Kiosk",
+      "tagline": "Immich Kiosk",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "damongolding",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.immich-kiosk/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.immich-kiosk/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.immich-kiosk/meta.json",
+      "content_hash": "ef4f0f2b"
+    },
+    {
+      "id": "com.bigbeartechworld.immich-without-machine-learning",
+      "title": "Immich without machine learning",
+      "tagline": "Immich without machine learning",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "immich",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.immich-without-machine-learning/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.immich-without-machine-learning/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.immich-without-machine-learning/meta.json",
+      "content_hash": "d7f6b04a"
+    },
+    {
+      "id": "com.bigbeartechworld.invoice-ninja",
+      "title": "Invoice Ninja",
+      "tagline": "Invoice Ninja",
+      "category": "Finance",
+      "categories": [
+        "finance"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "invoiceninja",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.invoice-ninja/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.invoice-ninja/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.invoice-ninja/meta.json",
+      "content_hash": "be21510d"
+    },
+    {
+      "id": "com.bigbeartechworld.it-tools",
+      "title": "IT Tools",
+      "tagline": "IT Tools",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "corentinth",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.it-tools/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.it-tools/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.it-tools/meta.json",
+      "content_hash": "8849af6d"
+    },
+    {
+      "id": "com.bigbeartechworld.jellyseerr",
+      "title": "Jellyseerr (Legacy)",
+      "tagline": "Legacy media request manager - new users should use Seerr instead",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Fallenbagel",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.jellyseerr/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.jellyseerr/assets/preview.webp",
+      "compose_url": "/apps/com.bigbeartechworld.jellyseerr/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.jellyseerr/meta.json",
+      "content_hash": "47da0153"
+    },
+    {
+      "id": "com.bigbeartechworld.jellystat",
+      "title": "Jellystat",
+      "tagline": "Jellystat",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "cyfershepard",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.jellystat/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.jellystat/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.jellystat/meta.json",
+      "content_hash": "e8a4a12d"
+    },
+    {
+      "id": "com.bigbeartechworld.jfa-go",
+      "title": "jfa-go",
+      "tagline": "Manage users in Jellyfin",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "hrfee",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.jfa-go/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.jfa-go/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.jfa-go/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.jfa-go/meta.json",
+      "content_hash": "2fb5c4f9"
+    },
+    {
+      "id": "com.bigbeartechworld.jlesage-firefox",
+      "title": "Jlesage Firefox",
+      "tagline": "This project implements a Docker container for Firefox.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "jlesage",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.jlesage-firefox/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.jlesage-firefox/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.jlesage-firefox/meta.json",
+      "content_hash": "4c7035be"
+    },
+    {
+      "id": "com.bigbeartechworld.jlesage-handbrake",
+      "title": "Jlesage Handbrake",
+      "tagline": "This project implements a Docker container for Handbrake.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "jlesage",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.jlesage-handbrake/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.jlesage-handbrake/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.jlesage-handbrake/meta.json",
+      "content_hash": "e4135a98"
+    },
+    {
+      "id": "com.bigbeartechworld.joplin",
+      "title": "joplin",
+      "tagline": "joplin",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "joplin",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.joplin/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.joplin/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.joplin/meta.json",
+      "content_hash": "af7f6861"
+    },
+    {
+      "id": "com.bigbeartechworld.kasm",
+      "title": "Kasm",
+      "tagline": "Kasm",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Kasm",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.kasm/assets/icon",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.kasm/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.kasm/meta.json",
+      "content_hash": "06cd3a8f"
+    },
+    {
+      "id": "com.bigbeartechworld.kavita",
+      "title": "Kavita",
+      "tagline": "Kavita",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "jvmilazz0",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.kavita/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.kavita/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.kavita/meta.json",
+      "content_hash": "7a21c6da"
+    },
+    {
+      "id": "com.bigbeartechworld.kiwix-serve",
+      "title": "Kiwix Server",
+      "tagline": "Kiwix Server",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "kiwix",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.kiwix-serve/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.kiwix-serve/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.kiwix-serve/meta.json",
+      "content_hash": "ee038b48"
+    },
+    {
+      "id": "com.bigbeartechworld.komf",
+      "title": "Komf",
+      "tagline": "Komga and Kavita Metadata Fetcher",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "sndxr",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.komf/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.komf/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.komf/meta.json",
+      "content_hash": "d04c20d3"
+    },
+    {
+      "id": "com.bigbeartechworld.komga",
+      "title": "Komga",
+      "tagline": "A media server for your comics, mangas, BDs, magazines and eBooks.",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "gotson",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.komga/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.komga/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.komga/meta.json",
+      "content_hash": "5f7a9f7e"
+    },
+    {
+      "id": "com.bigbeartechworld.kopia",
+      "title": "Kopia",
+      "tagline": "Kopia",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "thespad",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.kopia/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.kopia/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.kopia/meta.json",
+      "content_hash": "017edf76"
+    },
+    {
+      "id": "com.bigbeartechworld.lancache",
+      "title": "LAN Cache",
+      "tagline": "LAN Party game caching made easy",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "lancachenet",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.lancache/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.lancache/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.lancache/meta.json",
+      "content_hash": "ee25ca05"
+    },
+    {
+      "id": "com.bigbeartechworld.libredesk",
+      "title": "Libredesk",
+      "tagline": "Open source, self-hosted customer support desk. Single binary app.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "libredesk",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.libredesk/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.libredesk/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.libredesk/meta.json",
+      "content_hash": "29aed582"
+    },
+    {
+      "id": "com.bigbeartechworld.libretranslate",
+      "title": "LibreTranslate",
+      "tagline": "Free and Open Source Machine Translation API. 100% self-hosted, offline capable and easy to setup.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "LibreTranslate",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.libretranslate/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.libretranslate/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.libretranslate/meta.json",
+      "content_hash": "c156de79"
+    },
+    {
+      "id": "com.bigbeartechworld.linkstack",
+      "title": "LinkStack",
+      "tagline": "Your all-in-one link sharing solution",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "LinkStackOrg",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.linkstack/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.linkstack/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.linkstack/meta.json",
+      "content_hash": "bebe830b"
+    },
+    {
+      "id": "com.bigbeartechworld.linkwarden",
+      "title": "Linkwarden",
+      "tagline": "Linkwarden",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "linkwarden",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.linkwarden/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.linkwarden/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.linkwarden/meta.json",
+      "content_hash": "5f2979e5"
+    },
+    {
+      "id": "com.bigbeartechworld.lobe-chat",
+      "title": "LobeChat",
+      "tagline": "LobeChat",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "lobehub",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.lobe-chat/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.lobe-chat/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.lobe-chat/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.lobe-chat/meta.json",
+      "content_hash": "372aae29"
+    },
+    {
+      "id": "com.bigbeartechworld.ls-adguardhome-sync",
+      "title": "LS Adguard Home Sync",
+      "tagline": "LS Adguard Home Sync",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bakito",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ls-adguardhome-sync/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ls-adguardhome-sync/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ls-adguardhome-sync/meta.json",
+      "content_hash": "958398b7"
+    },
+    {
+      "id": "com.bigbeartechworld.lyrionmusicserver",
+      "title": "LyriOn Music Server",
+      "tagline": "Streaming audio server",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "LMS-Community",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.lyrionmusicserver/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.lyrionmusicserver/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.lyrionmusicserver/meta.json",
+      "content_hash": "7f36f5fe"
+    },
+    {
+      "id": "com.bigbeartechworld.mailpit",
+      "title": "Mailpit",
+      "tagline": "Mailpit",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "axllent",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.mailpit/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.mailpit/assets/logo.webp",
+      "compose_url": "/apps/com.bigbeartechworld.mailpit/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.mailpit/meta.json",
+      "content_hash": "97c8a065"
+    },
+    {
+      "id": "com.bigbeartechworld.matterbridge",
+      "title": "Matterbridge",
+      "tagline": "Matter plugin manager for smart home devices",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Luligu",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.matterbridge/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.matterbridge/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.matterbridge/meta.json",
+      "content_hash": "e6a92d1b"
+    },
+    {
+      "id": "com.bigbeartechworld.maybe-finance",
+      "title": "Maybe Finance",
+      "tagline": "maybe-finance",
+      "category": "Finance",
+      "categories": [
+        "finance"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Maybe Finance",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.maybe-finance/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.maybe-finance/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.maybe-finance/meta.json",
+      "content_hash": "dda129dc"
+    },
+    {
+      "id": "com.bigbeartechworld.mealie",
+      "title": "Mealie",
+      "tagline": "Mealie",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "mealie-recipes",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.mealie/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.mealie/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.mealie/meta.json",
+      "content_hash": "6bad4880"
+    },
+    {
+      "id": "com.bigbeartechworld.microbin",
+      "title": "Microbin",
+      "tagline": "Pastebin alternative with encryption",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "danielszabo99",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.microbin/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.microbin/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.microbin/meta.json",
+      "content_hash": "f4bffa0b"
+    },
+    {
+      "id": "com.bigbeartechworld.mind",
+      "title": "MIND",
+      "tagline": "A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Casvt",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.mind/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.mind/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.mind/meta.json",
+      "content_hash": "550f8768"
+    },
+    {
+      "id": "com.bigbeartechworld.minio",
+      "title": "Minio",
+      "tagline": "An open-source S3 alternative",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "minio",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.minio/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.minio/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.minio/meta.json",
+      "content_hash": "36990395"
+    },
+    {
+      "id": "com.bigbeartechworld.monica",
+      "title": "Monica",
+      "tagline": "A Personal Relationship Management tool to help you document your social life.",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "monica",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.monica/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.monica/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.monica/meta.json",
+      "content_hash": "50c067a5"
+    },
+    {
+      "id": "com.bigbeartechworld.morphos",
+      "title": "Morphos",
+      "tagline": "Self-hosted file converter server",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "danvergara",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.morphos/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.morphos/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.morphos/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.morphos/meta.json",
+      "content_hash": "35241cd3"
+    },
+    {
+      "id": "com.bigbeartechworld.mumble-server",
+      "title": "Mumble Server",
+      "tagline": "Mumble Server",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "mumblevoip",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.mumble-server/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.mumble-server/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.mumble-server/meta.json",
+      "content_hash": "b63cf6a1"
+    },
+    {
+      "id": "com.bigbeartechworld.music-assistant",
+      "title": "Music Assistant",
+      "tagline": "Home Automation",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "Tofil",
+      "developer": "music-assistant",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.music-assistant/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.music-assistant/assets/banner.webp",
+      "compose_url": "/apps/com.bigbeartechworld.music-assistant/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.music-assistant/meta.json",
+      "content_hash": "35cfeef3"
+    },
+    {
+      "id": "com.bigbeartechworld.myspeed",
+      "title": "MySpeed",
+      "tagline": "A speed test analysis software that shows your internet speed for up to 30 days",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "gnmyt",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.myspeed/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.myspeed/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.myspeed/meta.json",
+      "content_hash": "0671d065"
+    },
+    {
+      "id": "com.bigbeartechworld.n8n",
+      "title": "n8n",
+      "tagline": "Workflow automation tool",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "n8n",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.n8n/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.n8n/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.n8n/meta.json",
+      "content_hash": "28e76cea"
+    },
+    {
+      "id": "com.bigbeartechworld.ncdu",
+      "title": "Ncdu",
+      "tagline": "Ncdu is a disk usage analyzer with an ncurses interface.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bigbeartechworld",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ncdu/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ncdu/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ncdu/meta.json",
+      "content_hash": "bc849bba"
+    },
+    {
+      "id": "com.bigbeartechworld.neko-firefox",
+      "title": "Neko Firefox",
+      "tagline": "A self hosted virtual browser that runs in docker and uses WebRTC.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "m1k1o",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.neko-firefox/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.neko-firefox/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.neko-firefox/meta.json",
+      "content_hash": "1fdc47f0"
+    },
+    {
+      "id": "com.bigbeartechworld.netalertx",
+      "title": "NetAlertX (Legacy)",
+      "tagline": "NetAlertX (Legacy)",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "jokobsk",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.netalertx/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.netalertx/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.netalertx/meta.json",
+      "content_hash": "5867954a"
+    },
+    {
+      "id": "com.bigbeartechworld.netalertx-v26",
+      "title": "NetAlertX v26",
+      "tagline": "NetAlertX v26 (Latest)",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "jokobsk",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.netalertx-v26/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.netalertx-v26/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.netalertx-v26/meta.json",
+      "content_hash": "ac11a0f0"
+    },
+    {
+      "id": "com.bigbeartechworld.netpulse",
+      "title": "NetPulse",
+      "tagline": "Self-hosted internet speed & uptime monitor",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "BentFender",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.netpulse/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.netpulse/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.netpulse/meta.json",
+      "content_hash": "23e10f39"
+    },
+    {
+      "id": "com.bigbeartechworld.nextcloud",
+      "title": "Nextcloud",
+      "tagline": "The productivity platform that keeps you in control",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nextcloud",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.nextcloud/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.nextcloud/assets/nextcloud-hub-25-files.webp",
+      "compose_url": "/apps/com.bigbeartechworld.nextcloud/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.nextcloud/meta.json",
+      "content_hash": "fe8cf052"
+    },
+    {
+      "id": "com.bigbeartechworld.nextcloud-ls",
+      "title": "Nextcloud LS",
+      "tagline": "LinuxServer - The productivity platform that keeps you in control",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nextcloud",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.nextcloud-ls/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.nextcloud-ls/assets/nextcloud-hub-25-files.webp",
+      "compose_url": "/apps/com.bigbeartechworld.nextcloud-ls/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.nextcloud-ls/meta.json",
+      "content_hash": "6a2658d3"
+    },
+    {
+      "id": "com.bigbeartechworld.nextcloud-with-smbclient",
+      "title": "Nextcloud with SMB (Legacy)",
+      "tagline": "The productivity platform that keeps you in control",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nextcloud",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.nextcloud-with-smbclient/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.nextcloud-with-smbclient/assets/nextcloud-hub-25-files.webp",
+      "compose_url": "/apps/com.bigbeartechworld.nextcloud-with-smbclient/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.nextcloud-with-smbclient/meta.json",
+      "content_hash": "5249d864"
+    },
+    {
+      "id": "com.bigbeartechworld.nexterm",
+      "title": "Nexterm",
+      "tagline": "Nexterm",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "gnmyt",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.nexterm/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.nexterm/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.nexterm/meta.json",
+      "content_hash": "b3ed9cc6"
+    },
+    {
+      "id": "com.bigbeartechworld.nightscout",
+      "title": "nightscout",
+      "tagline": "Nightscout",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nightscout",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.nightscout/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.nightscout/assets/screenshot.webp",
+      "compose_url": "/apps/com.bigbeartechworld.nightscout/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.nightscout/meta.json",
+      "content_hash": "460fe254"
+    },
+    {
+      "id": "com.bigbeartechworld.nocodb",
+      "title": "NocoDB",
+      "tagline": "🔥 🔥 🔥 Open Source Airtable Alternative",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nocodb",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.nocodb/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.nocodb/assets/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif",
+      "compose_url": "/apps/com.bigbeartechworld.nocodb/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.nocodb/meta.json",
+      "content_hash": "449007fb"
+    },
+    {
+      "id": "com.bigbeartechworld.node-red",
+      "title": "Node-RED",
+      "tagline": "Low-code programming for event-driven applications",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nodered",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.node-red/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.node-red/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.node-red/meta.json",
+      "content_hash": "4ab740c0"
+    },
+    {
+      "id": "com.bigbeartechworld.note-mark-aio",
+      "title": "Note Mark AIO",
+      "tagline": "Note Mark Aio",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "enchant97",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.note-mark-aio/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.note-mark-aio/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.note-mark-aio/meta.json",
+      "content_hash": "365dd8c8"
+    },
+    {
+      "id": "com.bigbeartechworld.nova-dso-tracker",
+      "title": "Nova DSO Tracker",
+      "tagline": "Real-time tracking and planning for Deep Space Objects.",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "mrantonSG",
+      "developer": "mrantonSG",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.nova-dso-tracker/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.nova-dso-tracker/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.nova-dso-tracker/meta.json",
+      "content_hash": "9d69a0be"
+    },
+    {
+      "id": "com.bigbeartechworld.npmplus",
+      "title": "NPMPlus",
+      "tagline": "NPMPlus",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "zoeyvid",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.npmplus/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.npmplus/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.npmplus/meta.json",
+      "content_hash": "d1627d76"
+    },
+    {
+      "id": "com.bigbeartechworld.ntfysh",
+      "title": "Ntfy.sh",
+      "tagline": "A simple HTTP-based pub-sub notification service",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "binwiederhier",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ntfysh/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.ntfysh/assets/screenshot-web-3.de6f19af.webp",
+      "compose_url": "/apps/com.bigbeartechworld.ntfysh/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ntfysh/meta.json",
+      "content_hash": "8e833745"
+    },
+    {
+      "id": "com.bigbeartechworld.obsidian",
+      "title": "Obsidian",
+      "tagline": "Obsidian",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "obsidianmd",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.obsidian/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.obsidian/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.obsidian/meta.json",
+      "content_hash": "df7ffdec"
+    },
+    {
+      "id": "com.bigbeartechworld.obsidian-livesync",
+      "title": "Obsidian Livesync",
+      "tagline": "Self-hosted database for synchronizing Obsidian vaults.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "couchdb",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.obsidian-livesync/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.obsidian-livesync/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.obsidian-livesync/meta.json",
+      "content_hash": "1f028bde"
+    },
+    {
+      "id": "com.bigbeartechworld.octoprint",
+      "title": "OctoPrint",
+      "tagline": "OctoPrint",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "octoprint",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.octoprint/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.octoprint/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.octoprint/meta.json",
+      "content_hash": "162aa793"
+    },
+    {
+      "id": "com.bigbeartechworld.odoo",
+      "title": "Odoo",
+      "tagline": "Open-source business management software with modular applications for streamlined operations.",
+      "category": "Finance",
+      "categories": [
+        "finance"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "odoo",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.odoo/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.odoo/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.odoo/meta.json",
+      "content_hash": "21e6043a"
+    },
+    {
+      "id": "com.bigbeartechworld.odysseus",
+      "title": "Odysseus",
+      "tagline": "Self-hosted AI workspace",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pewdiepie-archdaemon",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.odysseus/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.odysseus/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.odysseus/meta.json",
+      "content_hash": "3dbc1b12"
+    },
+    {
+      "id": "com.bigbeartechworld.ollama-amd",
+      "title": "Ollama - AMD",
+      "tagline": "LLMs inference server with OpenAI compatible API",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ollama",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ollama-amd/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ollama-amd/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ollama-amd/meta.json",
+      "content_hash": "c038c24e"
+    },
+    {
+      "id": "com.bigbeartechworld.ollama-cpu",
+      "title": "Ollama - CPU",
+      "tagline": "LLMs inference server with OpenAI compatible API",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ollama",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ollama-cpu/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ollama-cpu/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ollama-cpu/meta.json",
+      "content_hash": "4ac86ac1"
+    },
+    {
+      "id": "com.bigbeartechworld.ollama-nvidia",
+      "title": "Ollama - NVIDIA",
+      "tagline": "LLMs inference server with OpenAI compatible API",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ollama",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.ollama-nvidia/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.ollama-nvidia/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.ollama-nvidia/meta.json",
+      "content_hash": "570eb833"
+    },
+    {
+      "id": "com.bigbeartechworld.onedev",
+      "title": "OneDev",
+      "tagline": "Self-hosted Git Server with Kanban and CI/CD",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "theonedev",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.onedev/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.onedev/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.onedev/meta.json",
+      "content_hash": "1ca66c00"
+    },
+    {
+      "id": "com.bigbeartechworld.onlyoffice",
+      "title": "OnlyOffice",
+      "tagline": "OnlyOffice",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "onlyoffice",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.onlyoffice/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.onlyoffice/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.onlyoffice/meta.json",
+      "content_hash": "d24d9ccb"
+    },
+    {
+      "id": "com.bigbeartechworld.open-webui",
+      "title": "Open WebUI",
+      "tagline": "User-friendly WebUI for LLMs",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "open-webui",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.open-webui/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.open-webui/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.open-webui/meta.json",
+      "content_hash": "e6cf24ed"
+    },
+    {
+      "id": "com.bigbeartechworld.openclaw",
+      "title": "OpenClaw",
+      "tagline": "Self-hosted AI agent platform with Claude integration",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "openclaw",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.openclaw/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.openclaw/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.openclaw/meta.json",
+      "content_hash": "60d23e11"
+    },
+    {
+      "id": "com.bigbeartechworld.openvpn-as",
+      "title": "OpenVPN",
+      "tagline": "OpenVPN is an open-source commercial software that implements virtual private network (VPN).",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "openvpn",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.openvpn-as/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.openvpn-as/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.openvpn-as/meta.json",
+      "content_hash": "08cb7502"
+    },
+    {
+      "id": "com.bigbeartechworld.otel-lgtm",
+      "title": "OTEL LGTM",
+      "tagline": "OpenTelemetry Backend",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "Konrad Botor (Forinil)",
+      "developer": "Grafana Labs",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.otel-lgtm/assets/icon",
+      "thumbnail": "/apps/com.bigbeartechworld.otel-lgtm/assets/overview.webp",
+      "compose_url": "/apps/com.bigbeartechworld.otel-lgtm/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.otel-lgtm/meta.json",
+      "content_hash": "4b04511c"
+    },
+    {
+      "id": "com.bigbeartechworld.owncloud",
+      "title": "ownCloud",
+      "tagline": "ownCloud",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "owncloud",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.owncloud/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.owncloud/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.owncloud/meta.json",
+      "content_hash": "1ec289f5"
+    },
+    {
+      "id": "com.bigbeartechworld.paperless-ngx",
+      "title": "Paperless-ngx",
+      "tagline": "Paperless-ngx",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "paperless-ngx",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.paperless-ngx/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.paperless-ngx/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.paperless-ngx/meta.json",
+      "content_hash": "f3a66a66"
+    },
+    {
+      "id": "com.bigbeartechworld.passwordpusher",
+      "title": "Password Pusher (Legacy)",
+      "tagline": "Give your users the tools to be secure by default.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pglombardo",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.passwordpusher/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.passwordpusher/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.passwordpusher/meta.json",
+      "content_hash": "a94f53dc"
+    },
+    {
+      "id": "com.bigbeartechworld.passwordpusher-v2",
+      "title": "Password Pusher v2",
+      "tagline": "Give your users the tools to be secure by default.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pglombardo",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.passwordpusher-v2/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.passwordpusher-v2/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.passwordpusher-v2/meta.json",
+      "content_hash": "0c79ddf1"
+    },
+    {
+      "id": "com.bigbeartechworld.pd3f",
+      "title": "PD3F",
+      "tagline": "PD3F",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pd3f",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pd3f/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.pd3f/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pd3f/meta.json",
+      "content_hash": "149e5e03"
+    },
+    {
+      "id": "com.bigbeartechworld.penpot",
+      "title": "Penpot",
+      "tagline": "Bring Design Freedom to your Product Team",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "penpotapp",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.penpot/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.penpot/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.penpot/meta.json",
+      "content_hash": "bb90dd57"
+    },
+    {
+      "id": "com.bigbeartechworld.peppermint",
+      "title": "Peppermint",
+      "tagline": "peppermint",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Pepperlabs",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.peppermint/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.peppermint/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.peppermint/meta.json",
+      "content_hash": "1074cd54"
+    },
+    {
+      "id": "com.bigbeartechworld.photoprism",
+      "title": "Photoprism",
+      "tagline": "AI-Powered Photos App",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "photoprism.app",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.photoprism/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.photoprism/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.photoprism/meta.json",
+      "content_hash": "a03e3d04"
+    },
+    {
+      "id": "com.bigbeartechworld.phpmyadmin",
+      "title": "phpMyAdmin",
+      "tagline": "phpMyAdmin",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "phpMyAdmin",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.phpmyadmin/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.phpmyadmin/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.phpmyadmin/meta.json",
+      "content_hash": "4bfdc141"
+    },
+    {
+      "id": "com.bigbeartechworld.pihole",
+      "title": "Pi-hole",
+      "tagline": "A black hole for Internet advertisements",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pi-hole.net",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pihole/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.pihole/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pihole/meta.json",
+      "content_hash": "108d5cfe"
+    },
+    {
+      "id": "com.bigbeartechworld.pihole-unbound",
+      "title": "Pi-hole and Unbound",
+      "tagline": "Pi-hole and Unbound",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bigbeartechworld",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pihole-unbound/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.pihole-unbound/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pihole-unbound/meta.json",
+      "content_hash": "5a787563"
+    },
+    {
+      "id": "com.bigbeartechworld.pihole-updatelists",
+      "title": "Pi-hole® Updatelists",
+      "tagline": "A black hole for Internet advertisements. This is a fork of the Pi-hole® application that adds the ability to update the lists of blocked domains and regexes.",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "jacklul",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pihole-updatelists/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.pihole-updatelists/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pihole-updatelists/meta.json",
+      "content_hash": "08a6450d"
+    },
+    {
+      "id": "com.bigbeartechworld.pingvin-share",
+      "title": "Pingvin Share",
+      "tagline": "Pingvin Share",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "stonith404",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pingvin-share/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.pingvin-share/assets/225038319-b2ef742c-3a74-4eb6-9689-4207a36842a4.webp",
+      "compose_url": "/apps/com.bigbeartechworld.pingvin-share/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pingvin-share/meta.json",
+      "content_hash": "827aec33"
+    },
+    {
+      "id": "com.bigbeartechworld.piwigo",
+      "title": "Piwigo",
+      "tagline": "Piwigo",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "piwigo",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.piwigo/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.piwigo/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.piwigo/meta.json",
+      "content_hash": "19e90046"
+    },
+    {
+      "id": "com.bigbeartechworld.planka",
+      "title": "Planka (Legacy)",
+      "tagline": "Legacy v1 - Use Planka v2 for new installs.",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "plankanban",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.planka/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.planka/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.planka/meta.json",
+      "content_hash": "a9ea1c98"
+    },
+    {
+      "id": "com.bigbeartechworld.planka-v2",
+      "title": "Planka v2",
+      "tagline": "Free open source kanban board for workgroups.",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "plankanban",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.planka-v2/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.planka-v2/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.planka-v2/meta.json",
+      "content_hash": "3a14b438"
+    },
+    {
+      "id": "com.bigbeartechworld.plant-it",
+      "title": "Plant-it",
+      "tagline": "Self-hosted, open source gardening companion app",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "msdeluise",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.plant-it/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.plant-it/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.plant-it/meta.json",
+      "content_hash": "f0a04e67"
+    },
+    {
+      "id": "com.bigbeartechworld.playit-docker-web",
+      "title": "Playit Docker Web",
+      "tagline": "Playit.gg is a global proxy that allows anyone to host a server without port forwarding.",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "wisdomsky",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.playit-docker-web/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.playit-docker-web/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.playit-docker-web/meta.json",
+      "content_hash": "7ef5b517"
+    },
+    {
+      "id": "com.bigbeartechworld.playitgg",
+      "title": "playit.gg",
+      "tagline": "playit.gg is a global proxy that allows anyone to host a server without port forwarding. We use tunneling. Only the server needs to run the program, not every player!",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Dysta",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.playitgg/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.playitgg/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.playitgg/meta.json",
+      "content_hash": "2006459d"
+    },
+    {
+      "id": "com.bigbeartechworld.plex",
+      "title": "Plex",
+      "tagline": "Stream Movies & TV Shows",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "plexinc",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.plex/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.plex/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.plex/meta.json",
+      "content_hash": "58243776"
+    },
+    {
+      "id": "com.bigbeartechworld.plex-nvidia",
+      "title": "Plex with NVIDIA GPU",
+      "tagline": "Stream Movies & TV Shows with NVIDIA GPU",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "plexinc",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.plex-nvidia/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.plex-nvidia/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.plex-nvidia/meta.json",
+      "content_hash": "46bea14c"
+    },
+    {
+      "id": "com.bigbeartechworld.pocketid",
+      "title": "Pocket ID",
+      "tagline": "Passkey-based OIDC authentication",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "techieanant",
+      "developer": "pocket-id",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pocketid/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.pocketid/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pocketid/meta.json",
+      "content_hash": "3378b1ac"
+    },
+    {
+      "id": "com.bigbeartechworld.portainer",
+      "title": "Portainer",
+      "tagline": "Portainer",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "portainer",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.portainer/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.portainer/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.portainer/meta.json",
+      "content_hash": "0986dce9"
+    },
+    {
+      "id": "com.bigbeartechworld.portainer-agent",
+      "title": "Portainer Agent",
+      "tagline": "Portainer Agent",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "portainer",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.portainer-agent/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.portainer-agent/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.portainer-agent/meta.json",
+      "content_hash": "127c99ac"
+    },
+    {
+      "id": "com.bigbeartechworld.portracker",
+      "title": "Portracker",
+      "tagline": "Real-time Port Monitoring Tool",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Mostafa-Wahied",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.portracker/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.portracker/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.portracker/meta.json",
+      "content_hash": "e21c9b4c"
+    },
+    {
+      "id": "com.bigbeartechworld.poste-io",
+      "title": "Poste.io",
+      "tagline": "Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "analogic",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.poste-io/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.poste-io/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.poste-io/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.poste-io/meta.json",
+      "content_hash": "8b147124"
+    },
+    {
+      "id": "com.bigbeartechworld.project-management",
+      "title": "Project Management",
+      "tagline": "Project Management",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "eloufirhatim",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.project-management/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.project-management/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.project-management/meta.json",
+      "content_hash": "ef3c5667"
+    },
+    {
+      "id": "com.bigbeartechworld.psitransfer",
+      "title": "PsiTransfer",
+      "tagline": "Simple self-hosted file sharing solution",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "psi-4ward",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.psitransfer/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.psitransfer/assets/psitransfer.gif",
+      "compose_url": "/apps/com.bigbeartechworld.psitransfer/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.psitransfer/meta.json",
+      "content_hash": "1dfab636"
+    },
+    {
+      "id": "com.bigbeartechworld.pterodactyl-panel",
+      "title": "Pterodactyl Panel",
+      "tagline": "Pterodactyl Panel",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pterodactyl",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pterodactyl-panel/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.pterodactyl-panel/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pterodactyl-panel/meta.json",
+      "content_hash": "9bc81792"
+    },
+    {
+      "id": "com.bigbeartechworld.pterodactyl-wings",
+      "title": "Pterodactyl Wings",
+      "tagline": "Pterodactyl Wings",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "pterodactyl",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.pterodactyl-wings/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.pterodactyl-wings/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.pterodactyl-wings/meta.json",
+      "content_hash": "cf8adbb1"
+    },
+    {
+      "id": "com.bigbeartechworld.python-matter-server",
+      "title": "Python Matter Server",
+      "tagline": "Python Matter Server",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "home-assistant-libs",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.python-matter-server/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.python-matter-server/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.python-matter-server/meta.json",
+      "content_hash": "805276da"
+    },
+    {
+      "id": "com.bigbeartechworld.rackpeek",
+      "title": "RackPeek",
+      "tagline": "Document Your Home Lab",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "timmoth",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.rackpeek/assets/icon.jpg",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.rackpeek/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.rackpeek/meta.json",
+      "content_hash": "af0c0102"
+    },
+    {
+      "id": "com.bigbeartechworld.rallly",
+      "title": "Rallly",
+      "tagline": "Rallly",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "lukevella",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.rallly/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.rallly/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.rallly/meta.json",
+      "content_hash": "5cd59fd5"
+    },
+    {
+      "id": "com.bigbeartechworld.reactive-resume",
+      "title": "Reactive Resume",
+      "tagline": "A free and open-source resume builder",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "AmruthPillai",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.reactive-resume/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.reactive-resume/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.reactive-resume/meta.json",
+      "content_hash": "e31f0db8"
+    },
+    {
+      "id": "com.bigbeartechworld.readeck",
+      "title": "Readeck",
+      "tagline": "Self-hosted bookmark manager and read-it-later app",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "readeck",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.readeck/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.readeck/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.readeck/meta.json",
+      "content_hash": "8f168f85"
+    },
+    {
+      "id": "com.bigbeartechworld.retroarch-web",
+      "title": "RetroArch",
+      "tagline": "RetroArch Web Player",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "inglebard",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.retroarch-web/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.retroarch-web/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.retroarch-web/meta.json",
+      "content_hash": "ca8d89b9"
+    },
+    {
+      "id": "com.bigbeartechworld.rocket-chat",
+      "title": "Rocket.Chat (Legacy)",
+      "tagline": "The communications platform that puts data protection first.",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "rocket.chat",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.rocket-chat/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.rocket-chat/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.rocket-chat/meta.json",
+      "content_hash": "81189f6d"
+    },
+    {
+      "id": "com.bigbeartechworld.rocket-chat-v8",
+      "title": "Rocket.Chat v8",
+      "tagline": "The communications platform that puts data protection first (v8).",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "rocket.chat",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.rocket-chat-v8/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.rocket-chat-v8/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.rocket-chat-v8/meta.json",
+      "content_hash": "acfd71de"
+    },
+    {
+      "id": "com.bigbeartechworld.romm",
+      "title": "RomM",
+      "tagline": "RomM",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "RomM Team",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.romm/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.romm/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.romm/meta.json",
+      "content_hash": "4e0f046b"
+    },
+    {
+      "id": "com.bigbeartechworld.rustfs",
+      "title": "RustFS",
+      "tagline": "High-performance S3-compatible object storage built in Rust",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "rustfs",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.rustfs/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.rustfs/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.rustfs/meta.json",
+      "content_hash": "08dda10d"
+    },
+    {
+      "id": "com.bigbeartechworld.scrutiny",
+      "title": "Scrutiny",
+      "tagline": "Monitor your server's hard disk health",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "analogj",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.scrutiny/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.scrutiny/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.scrutiny/meta.json",
+      "content_hash": "0a8ab741"
+    },
+    {
+      "id": "com.bigbeartechworld.scrypted",
+      "title": "Scrypted",
+      "tagline": "Scrypted",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "koush",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.scrypted/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.scrypted/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.scrypted/meta.json",
+      "content_hash": "f53511ca"
+    },
+    {
+      "id": "com.bigbeartechworld.seafile",
+      "title": "seafile",
+      "tagline": "Seafile is an open source file sync and share platform, focusing on reliability and performance.",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "seafile",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.seafile/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.seafile/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.seafile/meta.json",
+      "content_hash": "ed6a6da6"
+    },
+    {
+      "id": "com.bigbeartechworld.seerr",
+      "title": "Seerr",
+      "tagline": "Media request management for Jellyfin, Plex, and Emby",
+      "category": "Media",
+      "categories": [
+        "media"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "Seerr Team",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.seerr/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.seerr/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.seerr/meta.json",
+      "content_hash": "fd72b59d"
+    },
+    {
+      "id": "com.bigbeartechworld.semaphore",
+      "title": "Ansible Semaphore",
+      "tagline": "Ansible Semaphore",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "semaphore",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.semaphore/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.semaphore/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.semaphore/meta.json",
+      "content_hash": "2bdd0f47"
+    },
+    {
+      "id": "com.bigbeartechworld.send-visee",
+      "title": "Send Visee",
+      "tagline": "A fork of Mozilla's Firefox Send.",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "timvisee",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.send-visee/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.send-visee/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.send-visee/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.send-visee/meta.json",
+      "content_hash": "b72a5558"
+    },
+    {
+      "id": "com.bigbeartechworld.sftpgo",
+      "title": "SFTPGO",
+      "tagline": "SFTPGO",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "drakkan",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.sftpgo/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.sftpgo/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.sftpgo/meta.json",
+      "content_hash": "f6f5c95a"
+    },
+    {
+      "id": "com.bigbeartechworld.snapotter",
+      "title": "SnapOtter",
+      "tagline": "Self-hosted file toolkit for images, video, audio, PDFs, and files.",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "SnapOtter",
+      "developer": "SnapOtter",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.snapotter/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.snapotter/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.snapotter/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.snapotter/meta.json",
+      "content_hash": "c1c8b6b3"
+    },
+    {
+      "id": "com.bigbeartechworld.spacedrive",
+      "title": "Spacedrive",
+      "tagline": "Cross-platform file explorer",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "spacedriveapp",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.spacedrive/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.spacedrive/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.spacedrive/meta.json",
+      "content_hash": "fe0fa65f"
+    },
+    {
+      "id": "com.bigbeartechworld.speedtest-tracker",
+      "title": "Speedtest Tracker",
+      "tagline": "Speedtest Tracker",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "alexjustesen",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.speedtest-tracker/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.speedtest-tracker/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.speedtest-tracker/meta.json",
+      "content_hash": "276b5614"
+    },
+    {
+      "id": "com.bigbeartechworld.spoolman",
+      "title": "Spoolman",
+      "tagline": "Filament spool inventory management for 3D printing",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Donkie",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.spoolman/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.spoolman/assets/screenshot-1.webp",
+      "compose_url": "/apps/com.bigbeartechworld.spoolman/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.spoolman/meta.json",
+      "content_hash": "cf0db86f"
+    },
+    {
+      "id": "com.bigbeartechworld.stalwart-mail",
+      "title": "Stalwart Mail",
+      "tagline": "Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) 🛡️",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "stalwartlabs",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.stalwart-mail/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.stalwart-mail/assets/thumbnail.gif",
+      "compose_url": "/apps/com.bigbeartechworld.stalwart-mail/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.stalwart-mail/meta.json",
+      "content_hash": "61cd2ddf"
+    },
+    {
+      "id": "com.bigbeartechworld.stirling-pdf",
+      "title": "Stirling-PDF",
+      "tagline": "Stirling PDF - Local hosted web based PDF editor",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "stirlingtools",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.stirling-pdf/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.stirling-pdf/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.stirling-pdf/meta.json",
+      "content_hash": "6e6c5395"
+    },
+    {
+      "id": "com.bigbeartechworld.storyteller",
+      "title": "Storyteller",
+      "tagline": "Self-hosted ebook reading platform",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearCommunity",
+      "developer": "storyteller-platform",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.storyteller/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.storyteller/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.storyteller/meta.json",
+      "content_hash": "84c79e14"
+    },
+    {
+      "id": "com.bigbeartechworld.syncthing",
+      "title": "Syncthing",
+      "tagline": "Peer-to-peer file synchronization between your devices",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "syncthing",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.syncthing/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.syncthing/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.syncthing/meta.json",
+      "content_hash": "04c1590c"
+    },
+    {
+      "id": "com.bigbeartechworld.tailscale",
+      "title": "Tailscale",
+      "tagline": "The easiest, most secure way to use WireGuard and 2FA.",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "tailscale",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.tailscale/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.tailscale/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.tailscale/meta.json",
+      "content_hash": "7bfa4ebc"
+    },
+    {
+      "id": "com.bigbeartechworld.tandoor",
+      "title": "Tandoor",
+      "tagline": "Recipe collection manager.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "tandoorrecipes",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.tandoor/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.tandoor/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.tandoor/meta.json",
+      "content_hash": "671bb674"
+    },
+    {
+      "id": "com.bigbeartechworld.tianji",
+      "title": "Tianji",
+      "tagline": "Tianji: Insight into everything, Website Analytics + Uptime Monitor + Server Status. not only another GA alternatives",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "moonrailgun",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.tianji/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.tianji/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.tianji/meta.json",
+      "content_hash": "6ba6f88a"
+    },
+    {
+      "id": "com.bigbeartechworld.tp-link-omada-controller",
+      "title": "TP-Link Omada Controller",
+      "tagline": "TP-Link Omada Controller",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "mbentley",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.tp-link-omada-controller/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.tp-link-omada-controller/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.tp-link-omada-controller/meta.json",
+      "content_hash": "7b8d869e"
+    },
+    {
+      "id": "com.bigbeartechworld.traccar",
+      "title": "Traccar",
+      "tagline": "Traccar",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "traccar",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.traccar/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.traccar/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.traccar/meta.json",
+      "content_hash": "4b730010"
+    },
+    {
+      "id": "com.bigbeartechworld.trilium",
+      "title": "Trilium",
+      "tagline": "Build your personal knowledge base with Trilium Notes",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "TriliumNext",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.trilium/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.trilium/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.trilium/meta.json",
+      "content_hash": "52b32b40"
+    },
+    {
+      "id": "com.bigbeartechworld.tududi",
+      "title": "Tududi",
+      "tagline": "tududi is a task and project management web application built with Sinatra",
+      "category": "Productivity",
+      "categories": [
+        "productivity"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "chrisvel",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.tududi/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.tududi/assets/screenshot-1.webp",
+      "compose_url": "/apps/com.bigbeartechworld.tududi/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.tududi/meta.json",
+      "content_hash": "055b65aa"
+    },
+    {
+      "id": "com.bigbeartechworld.tugtainer",
+      "title": "Tugtainer",
+      "tagline": "Docker Container Update Automator",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Quenary",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.tugtainer/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.tugtainer/assets/screenshot-1.webp",
+      "compose_url": "/apps/com.bigbeartechworld.tugtainer/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.tugtainer/meta.json",
+      "content_hash": "c6284d73"
+    },
+    {
+      "id": "com.bigbeartechworld.uisp",
+      "title": "UISP",
+      "tagline": "UISP",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nico640",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.uisp/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.uisp/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.uisp/meta.json",
+      "content_hash": "f0dbf286"
+    },
+    {
+      "id": "com.bigbeartechworld.umami",
+      "title": "Umami",
+      "tagline": "Umami is a simple, fast, privacy-focused alternative to Google Analytics.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "umami-software",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.umami/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.umami/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.umami/meta.json",
+      "content_hash": "04b9cf39"
+    },
+    {
+      "id": "com.bigbeartechworld.umbrel-os",
+      "title": "Umbrel OS",
+      "tagline": "Umbrel OS",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "dockurr",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.umbrel-os/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.umbrel-os/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.umbrel-os/meta.json",
+      "content_hash": "fcc669e8"
+    },
+    {
+      "id": "com.bigbeartechworld.unifi-network-application",
+      "title": "Unifi Network Application",
+      "tagline": "The Unifi-network-application",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Ubiquiti",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.unifi-network-application/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.unifi-network-application/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.unifi-network-application/meta.json",
+      "content_hash": "6da85be6"
+    },
+    {
+      "id": "com.bigbeartechworld.unifi-network-application-mongo-4",
+      "title": "Unifi Network Application",
+      "tagline": "The Unifi-network-application MongoDB 4",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Ubiquiti",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.unifi-network-application-mongo-4/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.unifi-network-application-mongo-4/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.unifi-network-application-mongo-4/meta.json",
+      "content_hash": "e90ecb69"
+    },
+    {
+      "id": "com.bigbeartechworld.upsnap",
+      "title": "Upsnap",
+      "tagline": "Upsnap",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "seriousm4x",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.upsnap/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.upsnap/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.upsnap/meta.json",
+      "content_hash": "43bf2764"
+    },
+    {
+      "id": "com.bigbeartechworld.uptime-kuma",
+      "title": "Uptime Kuma",
+      "tagline": "A fancy self-hosted monitoring tool",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "louislam",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.uptime-kuma/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.uptime-kuma/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.uptime-kuma/meta.json",
+      "content_hash": "0561542b"
+    },
+    {
+      "id": "com.bigbeartechworld.vert",
+      "title": "VERT",
+      "tagline": "The next-generation file converter. Open source, fully local and free forever.",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "VERT-sh",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.vert/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.vert/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.vert/meta.json",
+      "content_hash": "d09160e8"
+    },
+    {
+      "id": "com.bigbeartechworld.vikunja",
+      "title": "Vikunja (Legacy)",
+      "tagline": "Vikunja",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "kolaente",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.vikunja/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.vikunja/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.vikunja/meta.json",
+      "content_hash": "a79c8477"
+    },
+    {
+      "id": "com.bigbeartechworld.vikunja-v2",
+      "title": "Vikunja v2",
+      "tagline": "Vikunja",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "kolaente",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.vikunja-v2/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.vikunja-v2/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.vikunja-v2/meta.json",
+      "content_hash": "e364b539"
+    },
+    {
+      "id": "com.bigbeartechworld.viseron",
+      "title": "Viseron",
+      "tagline": "Viseron",
+      "category": "AI",
+      "categories": [
+        "ai"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "roflcoopter",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.viseron/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.viseron/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.viseron/meta.json",
+      "content_hash": "844ff774"
+    },
+    {
+      "id": "com.bigbeartechworld.wallabag",
+      "title": "Wallabag",
+      "tagline": "Save and classify articles. Read them later. Freely.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "Wallabag Team",
+      "developer": "wallabag",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.wallabag/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.wallabag/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.wallabag/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.wallabag/meta.json",
+      "content_hash": "0c6cac34"
+    },
+    {
+      "id": "com.bigbeartechworld.wallos",
+      "title": "Wallos",
+      "tagline": "Wallos",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "bellamy",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.wallos/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.wallos/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.wallos/meta.json",
+      "content_hash": "69c399e3"
+    },
+    {
+      "id": "com.bigbeartechworld.warracker",
+      "title": "Warracker",
+      "tagline": "A self-hosted warranty tracker",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "sassanix",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.warracker/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.warracker/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.warracker/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.warracker/meta.json",
+      "content_hash": "a5e4c0db"
+    },
+    {
+      "id": "com.bigbeartechworld.watchyourlan",
+      "title": "WatchYourLAN",
+      "tagline": "WatchYourLAN",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "ajnart",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.watchyourlan/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.watchyourlan/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.watchyourlan/meta.json",
+      "content_hash": "65ab4a50"
+    },
+    {
+      "id": "com.bigbeartechworld.wg-easy",
+      "title": "Wireguard Easy 14 (Legacy)",
+      "tagline": "VPN server for your homeserver",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "WeeJeWel",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.wg-easy/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.wg-easy/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.wg-easy/meta.json",
+      "content_hash": "011105c9"
+    },
+    {
+      "id": "com.bigbeartechworld.wg-easy-v15",
+      "title": "WireGuard Easy v15",
+      "tagline": "WireGuard VPN server v15 (New Version)",
+      "category": "Networking",
+      "categories": [
+        "networking"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "WeeJeWel",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.wg-easy-v15/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.wg-easy-v15/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.wg-easy-v15/meta.json",
+      "content_hash": "ba2c9998"
+    },
+    {
+      "id": "com.bigbeartechworld.whats-up-docker",
+      "title": "What's Up Docker",
+      "tagline": "What's Up Docker",
+      "category": "Developer",
+      "categories": [
+        "developer"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "fmartinou",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.whats-up-docker/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.whats-up-docker/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.whats-up-docker/meta.json",
+      "content_hash": "71204af6"
+    },
+    {
+      "id": "com.bigbeartechworld.wishlist",
+      "title": "Wishlist",
+      "tagline": "Wishlist is a self-hosted wishlist application that you can share with your friends and family.",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "cmintey",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.wishlist/assets/icon.png",
+      "thumbnail": "/apps/com.bigbeartechworld.wishlist/assets/thumbnail.webp",
+      "compose_url": "/apps/com.bigbeartechworld.wishlist/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.wishlist/meta.json",
+      "content_hash": "194bbc84"
+    },
+    {
+      "id": "com.bigbeartechworld.wordpress",
+      "title": "WordPress (Legacy)",
+      "tagline": "WordPress",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Automattic",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.wordpress/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.wordpress/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.wordpress/meta.json",
+      "content_hash": "c462c85c"
+    },
+    {
+      "id": "com.bigbeartechworld.wordpress-v7",
+      "title": "WordPress v7",
+      "tagline": "WordPress",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "Automattic",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.wordpress-v7/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.wordpress-v7/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.wordpress-v7/meta.json",
+      "content_hash": "c136fc94"
+    },
+    {
+      "id": "com.bigbeartechworld.write-freely",
+      "title": "Write Freely",
+      "tagline": "Markdown-based publishing platform.",
+      "category": "Social",
+      "categories": [
+        "social"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "nephatrine",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.write-freely/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.write-freely/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.write-freely/meta.json",
+      "content_hash": "baeac52b"
+    },
+    {
+      "id": "com.bigbeartechworld.zigbee2mqtt",
+      "title": "Zigbee to MQTT bridge",
+      "tagline": "Zigbee to MQTT bridge",
+      "category": "Home",
+      "categories": [
+        "home"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "koenkk",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.zigbee2mqtt/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.zigbee2mqtt/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.zigbee2mqtt/meta.json",
+      "content_hash": "50949fc2"
+    },
+    {
+      "id": "com.bigbeartechworld.zipline",
+      "title": "zipline",
+      "tagline": "zipline",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "zipline",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.zipline/assets/icon",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.zipline/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.zipline/meta.json",
+      "content_hash": "1a163925"
+    },
+    {
+      "id": "com.bigbeartechworld.zotero",
+      "title": "Zotero",
+      "tagline": "Zotero",
+      "category": "Others",
+      "categories": [
+        "others"
+      ],
+      "author": "BigBearTechWorld",
+      "developer": "linuxserver",
+      "architectures": [
+        "amd64",
+        "arm64"
+      ],
+      "icon": "/apps/com.bigbeartechworld.zotero/assets/icon.png",
+      "thumbnail": "",
+      "compose_url": "/apps/com.bigbeartechworld.zotero/docker-compose.yml",
+      "meta_url": "/apps/com.bigbeartechworld.zotero/meta.json",
+      "content_hash": "da6e23c3"
+    }
+  ]
+}

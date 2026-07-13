@@ -1,0 +1,73 @@
+name: big-bear-photoprism
+services:
+  app:
+    container_name: big-bear-photoprism
+    image: photoprism/photoprism:240915@sha256:1f14335e2cd9dfaadc555ac8d40aa8a3966a5b5e5ef88fa78973ef7e8673fa2b
+    environment:
+      PHOTOPRISM_ADMIN_PASSWORD: casaos
+      PHOTOPRISM_SITE_URL: http://locahost/
+      PHOTOPRISM_ORIGINALS_LIMIT: '5000'
+      PHOTOPRISM_HTTP_COMPRESSION: gzip
+      PHOTOPRISM_LOG_LEVEL: info
+      PHOTOPRISM_PUBLIC: 'false'
+      PHOTOPRISM_READONLY: 'false'
+      PHOTOPRISM_EXPERIMENTAL: 'false'
+      PHOTOPRISM_DISABLE_CHOWN: 'false'
+      PHOTOPRISM_DISABLE_WEBDAV: 'false'
+      PHOTOPRISM_DISABLE_SETTINGS: 'false'
+      PHOTOPRISM_DISABLE_TENSORFLOW: 'false'
+      PHOTOPRISM_DISABLE_FACES: 'false'
+      PHOTOPRISM_DISABLE_CLASSIFICATION: 'false'
+      PHOTOPRISM_DISABLE_RAW: 'false'
+      PHOTOPRISM_RAW_PRESETS: 'false'
+      PHOTOPRISM_JPEG_QUALITY: '85'
+      PHOTOPRISM_DETECT_NSFW: 'false'
+      PHOTOPRISM_UPLOAD_NSFW: 'true'
+      PHOTOPRISM_DATABASE_DRIVER: mysql
+      PHOTOPRISM_DATABASE_SERVER: big-bear-photoprism-db:3306
+      PHOTOPRISM_DATABASE_NAME: photoprism
+      PHOTOPRISM_DATABASE_USER: photoprism
+      PHOTOPRISM_DATABASE_PASSWORD: casaos
+      PHOTOPRISM_SITE_CAPTION: AI-Powered Photos App
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/originals:/photoprism/originals
+    - /DATA/AppData/$AppID/storage:/photoprism/storage
+    ports:
+    - 2342:2342
+    networks:
+    - photoprism-network
+    depends_on:
+    - photoprism-db
+  photoprism-db:
+    image: mariadb:10.8@sha256:456709ab146585d6189da05669b84384518baecd83670c9e5221f8c20a47cf1e
+    restart: unless-stopped
+    container_name: big-bear-photoprism-db
+    command:
+    - mysqld
+    - --innodb-buffer-pool-size=128M
+    - --transaction-isolation=READ-COMMITTED
+    - --character-set-server=utf8mb4
+    - --collation-server=utf8mb4_unicode_ci
+    - --max-connections=512
+    - --innodb-rollback-on-timeout=OFF
+    - --innodb-lock-wait-timeout=120
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    environment:
+      MARIADB_DATABASE: photoprism
+      MARIADB_USER: photoprism
+      MARIADB_PASSWORD: casaos
+      MARIADB_ROOT_PASSWORD: casaos
+    networks:
+    - photoprism-network
+networks:
+  photoprism-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.photoprism
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.photoprism/assets/icon.png
+  title:
+    en_US: Photoprism
+  port_map: '2342'

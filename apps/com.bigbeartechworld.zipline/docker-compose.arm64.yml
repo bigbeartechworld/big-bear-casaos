@@ -1,0 +1,42 @@
+name: big-bear-zipline
+services:
+  zipline:
+    container_name: big-bear-zipline
+    image: ghcr.io/diced/zipline:3.7.13@sha256:f0209223b159be9460bf1454b1908417877fef6a1f3a31d5e682885fb9431f30
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/uploads:/zipline/uploads
+    - /DATA/AppData/$AppID/public:/zipline/public
+    environment:
+    - CORE_RETURN_HTTPS=false
+    - CORE_SECRET=changeme
+    - CORE_HOST=0.0.0.0
+    - CORE_PORT=3000
+    - CORE_DATABASE_URL=postgres://postgres:postgrespassword@zipline-db/zipline
+    - CORE_LOGGER=true
+    ports:
+    - 3000:3000
+    networks:
+    - zipline_network
+  zipline-db:
+    container_name: big-bear-zipline-db
+    image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba
+    restart: unless-stopped
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgrespassword
+    - POSTGRES_DATABASE=zipline
+    volumes:
+    - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+    networks:
+    - zipline_network
+networks:
+  zipline_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.zipline
+  main: zipline
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.zipline/assets/icon
+  title:
+    en_US: zipline
+  port_map: '3000'

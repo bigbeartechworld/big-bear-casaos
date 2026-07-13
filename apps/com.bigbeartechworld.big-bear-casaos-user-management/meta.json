@@ -1,0 +1,32 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Manage users in CasaOS",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.big-bear-casaos-user-management/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.big-bear-casaos-user-management/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.big-bear-casaos-user-management/assets/screenshot-3.webp"
+  ],
+  "tagline": "Manage users in CasaOS",
+  "developer": "bigbeartechworld",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.big-bear-casaos-user-management/assets/thumbnail-v2.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-big-bear-casaos-user-management-to-bigbearcasaos/2227#p-4191-quick-start-3\n"
+  },
+  "category": "Others",
+  "title": "Big Bear CasaOS User Management",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.big-bear-casaos-user-management",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

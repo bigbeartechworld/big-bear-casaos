@@ -1,0 +1,20 @@
+name: big-bear-jellyseerr
+services:
+  app:
+    image: fallenbagel/jellyseerr:2.7.3@sha256:4538137bc5af902dece165f2bf73776d9cf4eafb6dd714670724af8f3eb77764
+    ports:
+    - 5055:5055
+    volumes:
+    - /DATA/AppData/$AppID/config:/app/config
+    environment:
+    - LOG_LEVEL=debug
+    - TZ=$TZ
+    restart: unless-stopped
+    network_mode: bridge
+x-casaos:
+  id: com.bigbeartechworld.jellyseerr
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.jellyseerr/assets/icon.png
+  title:
+    en_US: Jellyseerr (Legacy)
+  port_map: '5055'

@@ -1,0 +1,64 @@
+name: big-bear-seafile
+services:
+  big-bear-seafile:
+    container_name: big-bear-seafile
+    image: seafileltd/seafile-mc:11.0.13@sha256:1239b087aa4bdf1b60a3802e80855f230736ac5d5fa3325a40b15d4c598f422c
+    restart: unless-stopped
+    depends_on:
+      big-bear-seafile-db:
+        condition: service_healthy
+      big-bear-seafile-memcached:
+        condition: service_started
+    volumes:
+    - /DATA/AppData/$AppID/shared:/shared
+    ports:
+    - 8080:80
+    environment:
+    - DB_HOST=big-bear-seafile-db
+    - DB_ROOT_PASSWD=seafilepassword
+    - TIME_ZONE=Etc/UTC
+    - SEAFILE_ADMIN_EMAIL=admin@example.com
+    - SEAFILE_ADMIN_PASSWORD=asecret
+    - SEAFILE_SERVER_LETSENCRYPT=false
+    - SEAFILE_SERVER_HOSTNAME=docs.seafile.com
+    networks:
+    - big_bear_seafile_network
+  big-bear-seafile-db:
+    image: mariadb:10.11@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    container_name: big-bear-seafile-db
+    environment:
+    - MYSQL_ROOT_PASSWORD=seafilepassword
+    - MYSQL_LOG_CONSOLE=true
+    - MARIADB_AUTO_UPGRADE=1
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD
+      - healthcheck.sh
+      - --connect
+      - --innodb_initialized
+      start_period: 1m
+      start_interval: 10s
+      interval: 1m
+      timeout: 5s
+      retries: 3
+    networks:
+    - big_bear_seafile_network
+  big-bear-seafile-memcached:
+    container_name: big-bear-seafile-memcached
+    image: memcached:1.6.39@sha256:462fa779babc9b64a235a69dd843cb79fb3591f229ee1f3ff6cb2ca058d8a759
+    entrypoint: memcached -m 256
+    networks:
+    - big_bear_seafile_network
+networks:
+  big_bear_seafile_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.seafile
+  main: big-bear-seafile
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.seafile/assets/icon.png
+  title:
+    en_US: seafile
+  port_map: '8080'

@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "NocoDB allows building no-code database solutions with ease of spreadsheets. Bring your own database or choose ours! Millions of rows? Not a problem. Your Data. Your rules. You are in control.",
+  "tagline": "🔥 🔥 🔥 Open Source Airtable Alternative",
+  "developer": "nocodb",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.nocodb/assets/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif",
+  "category": "Developer",
+  "title": "NocoDB",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.nocodb",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

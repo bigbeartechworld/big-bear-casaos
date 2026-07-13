@@ -1,0 +1,31 @@
+name: big-bear-wordpress-v7
+services:
+  app:
+    image: wordpress:7.0.1@sha256:e36cd332ae0de78f3c3691e468c54c5540c0a74286b51eb9b5964fa1e9c916cd
+    ports:
+    - 8084:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: casaos
+      WORDPRESS_DB_PASSWORD: casaos
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+    - /DATA/AppData/$AppID/html:/var/www/html
+    depends_on:
+    - db
+  db:
+    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+x-casaos:
+  id: com.bigbeartechworld.wordpress-v7
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.wordpress-v7/assets/icon.png
+  title:
+    en_US: WordPress v7
+  port_map: '8084'

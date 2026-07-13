@@ -1,0 +1,24 @@
+name: big-bear-plex
+services:
+  big-bear-plex:
+    container_name: big-bear-plex
+    image: linuxserver/plex:1.43.2@sha256:2785a6ad64d3a91529e31df678cf0f9fe8ddfe2718415222f270b8d1a6d765f0
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    - VERSION=docker
+    - PLEX_CLAIM=
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/tv:/tv
+    - /DATA/AppData/$AppID/movies:/movies
+x-casaos:
+  id: com.bigbeartechworld.plex
+  main: big-bear-plex
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.plex/assets/icon.png
+  title:
+    en_US: Plex
+  port_map: '32400'

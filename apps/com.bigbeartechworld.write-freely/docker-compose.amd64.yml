@@ -1,0 +1,22 @@
+name: big-bear-write-freely
+services:
+  big-bear-write-freely:
+    container_name: big-bear-write-freely
+    image: nephatrine/write-freely:0.16@sha256:cfac7d4ec0c367905ed4189a3b3930bcbb69e2c7f1cdafa4c02d69a8a5abf61c
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      PUID: 1000
+      PGID: 1000
+    volumes:
+    - /DATA/AppData/$AppID/data/config:/mnt/config
+    ports:
+    - 70:70/tcp
+    - 8080:8080/tcp
+x-casaos:
+  id: com.bigbeartechworld.write-freely
+  main: big-bear-write-freely
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.write-freely/assets/icon.png
+  title:
+    en_US: Write Freely
+  port_map: '8080'

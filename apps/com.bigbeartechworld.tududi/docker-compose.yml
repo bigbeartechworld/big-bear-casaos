@@ -1,0 +1,22 @@
+name: big-bear-tududi
+services:
+  big-bear-tududi:
+    container_name: big-bear-tududi
+    image: chrisvel/tududi:0.87@sha256:733bceb71e60ba73d75e33d66569edaf8be55b5cd113830ecaee11b48e8e392a
+    restart: unless-stopped
+    environment:
+    - TUDUDI_USER_EMAIL=admin@example.com
+    - TUDUDI_USER_PASSWORD=2dd25e05-65f4-47d7-a9a6-1a3293c02461
+    - TUDUDI_SESSION_SECRET=3337c138d17ac7acefa412e5db0d7ef6540905b198cc28c5bf0d11e48807a71bdfe48d82ed0a0a6eb667c937cbdd1db3e1e6073b3148bff37f73cc6398a39671
+    - TUDUDI_INTERNAL_SSL_ENABLED=false
+    volumes:
+    - /DATA/AppData/$AppID/tududi/db:/usr/src/app/tududi_db
+    ports:
+    - 9292:9292
+x-casaos:
+  id: com.bigbeartechworld.tududi
+  main: big-bear-tududi
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.tududi/assets/icon.png
+  title:
+    en_US: Tududi
+  port_map: '9292'

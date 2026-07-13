@@ -1,0 +1,25 @@
+name: big-bear-ollama-nvidia
+services:
+  big-bear-ollama-nvidia:
+    container_name: big-bear-ollama-nvidia
+    image: ollama/ollama:0.31.2@sha256:509fdf54e23bd50d87af646cb51c0a7a203d6a83cc4d6695b3b08c5be1c62c0a
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/.ollama:/root/.ollama
+    ports:
+    - 11434:11434
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities:
+            - gpu
+x-casaos:
+  id: com.bigbeartechworld.ollama-nvidia
+  main: big-bear-ollama-nvidia
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ollama-nvidia/assets/icon.png
+  title:
+    en_US: Ollama - NVIDIA
+  port_map: '11434'

@@ -1,0 +1,25 @@
+name: big-bear-code-server
+services:
+  app:
+    image: linuxserver/code-server:4.126.0@sha256:26dfecc1cd4c0e4c47dceb913b4eb8afd97af9f2311eb449d04b59126e6e5483
+    container_name: code-server
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=UTC
+    - PASSWORD=my_password
+    - SUDO_PASSWORD=sudo_my_password
+    - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/projects:/projects
+    ports:
+    - 8080:8443
+    restart: always
+x-casaos:
+  id: com.bigbeartechworld.code-server
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.code-server/assets/icon.png
+  title:
+    en_US: Code Server
+  port_map: '8080'

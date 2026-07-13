@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Self-hosted tool to edit, validate, and get suggestions for docker-compose.yml files.",
+  "tagline": "Compose file editor & validator",
+  "developer": "bluegoosemedia",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Developer",
+  "title": "Compose Toolbox",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.composetoolbox",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 82147855,
+    "arm64": 83904442
+  }
+}

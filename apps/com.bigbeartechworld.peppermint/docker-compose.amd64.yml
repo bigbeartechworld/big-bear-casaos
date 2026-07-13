@@ -1,0 +1,50 @@
+name: big-bear-peppermint
+services:
+  app:
+    container_name: big-bear-peppermint
+    image: pepperlabs/peppermint:latest@sha256:d13932713561c8d69baea49820ba2d42ea145b28193b6a7e33950a05812406fd
+    restart: always
+    privileged: false
+    networks:
+    - default
+    ports:
+    - 3000:3000/tcp
+    - 5003:5003/tcp
+    environment:
+    - API_URL=http://local.host:5003
+    - DB_HOST=db
+    - DB_PASSWORD=casaos
+    - DB_USERNAME=casaos
+    - SECRET=peppermint4life
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+  db:
+    container_name: db
+    image: postgres:15.5@sha256:15b7f8dd3b75bc8f86ba8e875e92e560c03fd6314fe0a4d1315e169421aace01
+    restart: always
+    environment:
+    - PGID=1000
+    - POSTGRES_DB=casaos
+    - POSTGRES_PASSWORD=casaos
+    - POSTGRES_USER=casaos
+    - PUID=1000
+    - TZ=Etc/UTC
+    ports:
+    - 5432:5432/tcp
+    volumes:
+    - /DATA/AppData/$AppID/postgres/data:/var/lib/postgresql/data
+    networks:
+    - default
+    privileged: false
+networks:
+  default:
+    name: peppermint_default
+x-casaos:
+  id: com.bigbeartechworld.peppermint
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.peppermint/assets/icon.png
+  title:
+    en_US: Peppermint
+  port_map: '3000'

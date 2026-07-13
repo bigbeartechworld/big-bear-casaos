@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "AIO Alpine. Self-hosted photo and video storage.",
+  "tagline": "Immich All In One Alpine",
+  "developer": "imagegenius",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Media",
+  "title": "Immich AIO Alpine",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.immich-aio-alpine",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,33 @@
+name: big-bear-otel-lgtm
+services:
+  big-bear-otel-lgtm:
+    container_name: big-bear-otel-lgtm
+    image: grafana/otel-lgtm:0.28.0@sha256:10f48eb2f8670134df542177bb19536c55421b089e43f9dfc2a27d4c078204d8
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    ports:
+    - mode: ingress
+      target: 3000
+      published: '3000'
+      protocol: tcp
+    - mode: ingress
+      target: 4317
+      published: '4317'
+      protocol: tcp
+    - mode: ingress
+      target: 4318
+      published: '4318'
+      protocol: tcp
+    networks:
+    - big-bear-otel-lgtm
+networks:
+  big-bear-otel-lgtm:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.otel-lgtm
+  main: big-bear-otel-lgtm
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.otel-lgtm/assets/icon
+  title:
+    en_US: OTEL LGTM
+  port_map: '3000'

@@ -1,0 +1,22 @@
+name: big-bear-zigbee2mqtt
+services:
+  big-bear-zigbee2mqtt:
+    container_name: big-bear-zigbee2mqtt
+    image: koenkk/zigbee2mqtt:2.12.1@sha256:80f7f04f72a99e4c4ef51ef7e98ee736edba6db0ecbb7abc626d0c4b0f1871f1
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    - /run/udev:/run/udev:ro
+    ports:
+    - 8080:8080
+    environment:
+    - TZ=UTC
+    devices:
+    - /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00:/dev/ttyACM0
+x-casaos:
+  id: com.bigbeartechworld.zigbee2mqtt
+  main: big-bear-zigbee2mqtt
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.zigbee2mqtt/assets/icon.png
+  title:
+    en_US: Zigbee to MQTT bridge
+  port_map: '8080'

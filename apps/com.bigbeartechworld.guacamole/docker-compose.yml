@@ -1,0 +1,35 @@
+name: big-bear-guacamole
+services:
+  guacd:
+    image: guacamole/guacd:1.6.0@sha256:8974eaa9ba32f713daf311e7cc8cd7e4cdfba1edea39eed75524e78ef4b08f4f
+    restart: always
+  app:
+    image: guacamole/guacamole:1.6.0@sha256:f344085e618bb05e22b964b0208dbd06d3468275bac70206f93805245e067b40
+    restart: always
+    links:
+    - guacd
+    environment:
+    - GUACD_HOSTNAME=guacd
+    - MYSQL_HOSTNAME=mysql
+    - MYSQL_DATABASE=guacamole_db
+    - MYSQL_USER=guacamole_user
+    - MYSQL_PASSWORD=some_password
+    ports:
+    - 8090:8080
+  mysql:
+    image: mysql:5.7@sha256:4bc6bc963e6d8443453676cae56536f4b8156d78bae03c0145cbe47c2aad73bb
+    restart: always
+    environment:
+    - MYSQL_ROOT_PASSWORD=my-secret-pw
+    - MYSQL_DATABASE=guacamole_db
+    - MYSQL_USER=guacamole_user
+    - MYSQL_PASSWORD=some_password
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+x-casaos:
+  id: com.bigbeartechworld.guacamole
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.guacamole/assets/icon.png
+  title:
+    en_US: Guacamole
+  port_map: '8090'

@@ -1,0 +1,23 @@
+name: big-bear-discopanel
+services:
+  big-bear-discopanel:
+    container_name: big-bear-discopanel
+    image: nickheyer/discopanel:v2.0.15@sha256:4b8bd7d13bceaa4fbb06846760814fcaecf29a4383dbb3b8563b5df23efde192
+    restart: unless-stopped
+    network_mode: host
+    environment:
+    - DISCOPANEL_DATA_DIR=/app/data
+    - DISCOPANEL_HOST_DATA_PATH=/DATA/AppData/discopanel/data
+    - TZ=UTC
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /DATA/AppData/discopanel/data:/app/data
+    - /DATA/AppData/discopanel/backups:/app/backups
+    - /DATA/AppData/discopanel/tmp:/app/tmp
+x-casaos:
+  id: com.bigbeartechworld.discopanel
+  main: big-bear-discopanel
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.discopanel/assets/icon.png
+  title:
+    en_US: DiscoPanel
+  port_map: '8080'

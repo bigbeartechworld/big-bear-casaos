@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges",
+  "tagline": "Zigbee to MQTT bridge",
+  "developer": "koenkk",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-zigbee2mqtt-to-bigbearcasaos/1337#documentation-3\n"
+  },
+  "category": "Home",
+  "title": "Zigbee to MQTT bridge",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.zigbee2mqtt",
+  "version": "",
+  "categories": [
+    "home"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

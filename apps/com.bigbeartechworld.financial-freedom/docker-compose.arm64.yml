@@ -1,0 +1,75 @@
+name: big-bear-financial-freedom
+services:
+  app:
+    container_name: big-bear-financial-freedom
+    image: serversideup/financial-freedom:v0.2.0-alpha1@sha256:e36fc6e42b8fd41f9f715b2a26461f1c2365355ff139b8d5d2cfdc60593ccdf2
+    restart: unless-stopped
+    networks:
+    - financial-freedom-network
+    volumes:
+    - /DATA/AppData/$AppID/logs:/var/www/html/storage/logs
+    - /DATA/AppData/$AppID/sessions:/var/www/html/storage/framework/sessions
+    ports:
+    - 8080:80
+    - 8443:443
+    environment:
+    - APP_NAME="Financial Freedom"
+    - APP_ENV=production
+    - APP_DEBUG=false
+    - APP_URL=http://[CASAOS_IP]:8080
+    - APP_KEY=base64:1234567890abcdefghijklmnopqrstuvwxyz
+    - DB_ROOT_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+    - DB_HOST=mariadb
+    - DB_DATABASE=financialfreedom
+    - DB_USERNAME=bigbear
+    - DB_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+    - MAIL_MAILER=smtp
+    - MAIL_HOST=mailpit
+    - MAIL_PORT=1025
+    - MAIL_USERNAME=null
+    - MAIL_PASSWORD=null
+    - MAIL_ENCRYPTION=null
+    - MAIL_FROM_ADDRESS=noreply@financialfreedom.dev.test
+    - MAIL_FROM_NAME="Financial Freedom"
+    - SSL_MODE=mixed
+    - AUTORUN_ENABLED=true
+    - AUTORUN_LARAVEL_EVENT_CACHE=false
+    - AUTORUN_LARAVEL_ROUTE_CACHE=false
+    - AUTORUN_LARAVEL_STORAGE_LINK=false
+    - AUTORUN_LARAVEL_VIEW_CACHE=false
+    - FINANCIAL_FREEDOM_ALLOW_REGISTRATION=false
+    - LOG_CHANNEL=stack
+    - BROADCAST_DRIVER=log
+    - CACHE_DRIVER=file
+    - QUEUE_CONNECTION=sync
+    - SESSION_LIFETIME=120
+    - SESSION_DRIVER=cookie
+    - MYSQL_ROOT_PASSWORD="cd876479-f30b-43f2-8714-e52e040c657a"
+    - MYSQL_DATABASE="financialfreedom"
+    - MYSQL_USER="bigbear"
+    - MYSQL_PASSWORD="cd876479-f30b-43f2-8714-e52e040c657a"
+  mariadb:
+    image: mariadb:10.11@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    volumes:
+    - /DATA/AppData/$AppID/mariadb:/var/lib/mysql
+    networks:
+    - financial-freedom-network
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    - MYSQL_ROOT_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+    - MYSQL_DATABASE=financialfreedom
+    - MYSQL_USER=bigbear
+    - MYSQL_PASSWORD=cd876479-f30b-43f2-8714-e52e040c657a
+    - REMOTE_SQL=
+networks:
+  financial-freedom-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.financial-freedom
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.financial-freedom/assets/icon.png
+  title:
+    en_US: Financial Freedom
+  port_map: '8443'

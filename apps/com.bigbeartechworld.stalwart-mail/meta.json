@@ -1,0 +1,30 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.stalwart-mail/assets/thumbnail.gif"
+  ],
+  "tagline": "Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) 🛡️",
+  "developer": "stalwartlabs",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.stalwart-mail/assets/thumbnail.gif",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-stalwart-to-bigbearcasaos/3342#p-5723-documentation-3\n"
+  },
+  "category": "Others",
+  "title": "Stalwart Mail",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.stalwart-mail",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

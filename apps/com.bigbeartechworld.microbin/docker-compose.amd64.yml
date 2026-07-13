@@ -1,0 +1,58 @@
+name: big-bear-microbin
+services:
+  big-bear-microbin:
+    environment:
+      MICROBIN_ADMIN_USERNAME: admin
+      MICROBIN_ADMIN_PASSWORD: password
+      MICROBIN_EDITABLE: 'true'
+      MICROBIN_FOOTER_TEXT: ''
+      MICROBIN_HIDE_HEADER: 'false'
+      MICROBIN_HIDE_FOOTER: 'false'
+      MICROBIN_HIDE_LOGO: 'false'
+      MICROBIN_NO_LISTING: 'false'
+      MICROBIN_HIGHLIGHTSYNTAX: 'true'
+      MICROBIN_PORT: '8080'
+      MICROBIN_BIND: 0.0.0.0
+      MICROBIN_PRIVATE: 'true'
+      MICROBIN_PURE_HTML: 'false'
+      MICROBIN_DATA_DIR: microbin_data
+      MICROBIN_JSON_DB: 'false'
+      MICROBIN_PUBLIC_PATH: ''
+      MICROBIN_SHORT_PATH: ''
+      MICROBIN_UPLOADER_PASSWORD: ''
+      MICROBIN_READONLY: 'false'
+      MICROBIN_SHOW_READ_STATS: 'true'
+      MICROBIN_TITLE: ''
+      MICROBIN_THREADS: '1'
+      MICROBIN_GC_DAYS: '90'
+      MICROBIN_ENABLE_BURN_AFTER: 'true'
+      MICROBIN_DEFAULT_BURN_AFTER: '0'
+      MICROBIN_WIDE: 'false'
+      MICROBIN_QR: 'true'
+      MICROBIN_ETERNAL_PASTA: 'false'
+      MICROBIN_ENABLE_READONLY: 'true'
+      MICROBIN_DEFAULT_EXPIRY: 24hour
+      MICROBIN_NO_FILE_UPLOAD: 'false'
+      MICROBIN_CUSTOM_CSS: ''
+      MICROBIN_HASH_IDS: 'false'
+      MICROBIN_ENCRYPTION_CLIENT_SIDE: 'true'
+      MICROBIN_ENCRYPTION_SERVER_SIDE: 'true'
+      MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB: '256'
+      MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB: '2048'
+      MICROBIN_DISABLE_UPDATE_CHECKING: 'false'
+      MICROBIN_DISABLE_TELEMETRY: 'false'
+      MICROBIN_LIST_SERVER: 'false'
+    image: danielszabo99/microbin:2.1.4@sha256:6660e5ccad0d764fa3c0032464ffb8f4b4f28c92a2eb9e39202b94cdc5b68909
+    ports:
+    - 8888:8080
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/microbin_data
+    container_name: big-bear-microbin
+x-casaos:
+  id: com.bigbeartechworld.microbin
+  main: big-bear-microbin
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.microbin/assets/icon.png
+  title:
+    en_US: Microbin
+  port_map: '8888'

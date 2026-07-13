@@ -1,0 +1,23 @@
+name: big-bear-stalwart-mail
+services:
+  big-bear-stalwart-mail:
+    container_name: big-bear-stalwart-mail
+    image: stalwartlabs/stalwart:v0.16.12@sha256:b30c99ed8240ea42612f784babe0388318d5c3668a77873efe7e3b1147e2226e
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/opt/stalwart
+    ports:
+    - 8080:8080
+    - 25:25/tcp
+    - 143:143/tcp
+    - 465:465/tcp
+    - 587:587/tcp
+    - 993:993/tcp
+    - 4190:4190/tcp
+x-casaos:
+  id: com.bigbeartechworld.stalwart-mail
+  main: big-bear-stalwart-mail
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.stalwart-mail/assets/icon.png
+  title:
+    en_US: Stalwart Mail
+  port_map: '8080'

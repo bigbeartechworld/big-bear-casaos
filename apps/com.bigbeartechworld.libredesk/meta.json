@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Open source, self-hosted customer support desk. Single binary app.",
+  "tagline": "Open source, self-hosted customer support desk. Single binary app.",
+  "developer": "libredesk",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-libredesk-to-bigbearcasaos/2993#p-5277-documentation-4\n"
+  },
+  "category": "Others",
+  "title": "Libredesk",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.libredesk",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Full stack mail server solution with SSL TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with easy installation and web administration.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.poste-io/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.poste-io/assets/screenshot-2.webp"
+  ],
+  "tagline": "Free version of full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin",
+  "developer": "analogic",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.poste-io/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-poste-io-to-bigbearcasaos/3344\n"
+  },
+  "category": "Others",
+  "title": "Poste.io",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.poste-io",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

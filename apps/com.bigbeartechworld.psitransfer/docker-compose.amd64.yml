@@ -1,0 +1,26 @@
+name: big-bear-psitransfer
+services:
+  app:
+    image: psitrax/psitransfer:v2.4.4@sha256:312d060e0e2934ff618b3e361d766872b89892dc33c5456858b4aa04dc17a18d
+    container_name: big-bear-psitransfer
+    user: 1000:1000
+    environment:
+      PSITRANSFER_ADMIN_PASS: ''
+      PSITRANSFER_UPLOAD_PASS: ''
+      PSITRANSFER_REQUIRE_BUCKET_PASSWORD: 'false'
+      PSITRANSFER_MAX_FILE_SIZE: ''
+      PSITRANSFER_MAX_BUCKET_SIZE: ''
+      PSITRANSFER_DEFAULT_RETENTION: '604800'
+      PSITRANSFER_MAX_AGE: '6480000'
+    ports:
+    - 3000:3000
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    restart: unless-stopped
+x-casaos:
+  id: com.bigbeartechworld.psitransfer
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.psitransfer/assets/icon.png
+  title:
+    en_US: PsiTransfer
+  port_map: '3000'

@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Umami is a simple, fast, privacy-focused alternative to Google Analytics.",
+  "tagline": "Umami is a simple, fast, privacy-focused alternative to Google Analytics.",
+  "developer": "umami-software",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Others",
+  "title": "Umami",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.umami",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 294496074,
+    "arm64": 295233235
+  }
+}

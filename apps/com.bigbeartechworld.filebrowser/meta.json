@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Reliable and Performant File Management Desktop Sync and File Sharing Tool.",
+  "tagline": "Access your homeserver files from your browser",
+  "developer": "filebrowser",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-filebrowser-to-bigbearcasaos/1934#p-3590-documentation-4\n"
+  },
+  "category": "Others",
+  "title": "Filebrowser",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.filebrowser",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

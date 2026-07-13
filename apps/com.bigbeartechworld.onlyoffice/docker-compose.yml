@@ -1,0 +1,21 @@
+name: big-bear-onlyoffice
+services:
+  app:
+    image: onlyoffice/documentserver:9.1.0@sha256:34b92f4a67bfd939bd6b75893e8217556e3b977f81e49472f7e28737b741ba1d
+    container_name: documentserver
+    ports:
+    - 7400:80
+    volumes:
+    - /DATA/AppData/$AppID/onlyoffice/logs:/var/log/onlyoffice
+    - /DATA/AppData/$AppID/onlyoffice/data:/var/www/onlyoffice/Data
+    - /DATA/AppData/$AppID/onlyoffice/lib:/var/lib/onlyoffice
+    - /DATA/AppData/$AppID/onlyoffice/rabbitmq:/var/lib/rabbitmq
+    - /DATA/AppData/$AppID/onlyoffice/redis:/var/lib/redis
+    - /DATA/AppData/$AppID/onlyoffice/db:/var/lib/postgresql
+x-casaos:
+  id: com.bigbeartechworld.onlyoffice
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.onlyoffice/assets/icon.png
+  title:
+    en_US: OnlyOffice
+  port_map: '7400'

@@ -1,0 +1,39 @@
+name: big-bear-linkwarden
+services:
+  linkwarden:
+    container_name: big-bear-linkwarden
+    image: ghcr.io/linkwarden/linkwarden:v2.14.1@sha256:31cf4bd2a2e111991fa5c9de03174c8698869c83722105c6ce529e4c911e6861
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data/linkwarden:/data/data
+    environment:
+    - DATABASE_URL=postgresql://casaos:casaospassword@big-bear-linkwarden-db:5432/big-bear-linkwarden
+    - NEXTAUTH_SECRET=7e2d8797-dc20-422a-9a68-44b958bd33c0
+    - NEXTAUTH_URL=http://localhost/api/v1/auth
+    - NEXT_PUBLIC_DISABLE_REGISTRATION=
+    ports:
+    - 3000:3000
+    networks:
+    - linkwarden_network
+  linkwarden-db:
+    container_name: big-bear-linkwarden-db
+    image: postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
+    restart: unless-stopped
+    environment:
+    - POSTGRES_USER=casaos
+    - POSTGRES_PASSWORD=casaospassword
+    - POSTGRES_DB=big-bear-linkwarden
+    volumes:
+    - /DATA/AppData/$AppID/data/postgres:/var/lib/postgresql/data
+    networks:
+    - linkwarden_network
+networks:
+  linkwarden_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.linkwarden
+  main: linkwarden
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.linkwarden/assets/icon.png
+  title:
+    en_US: Linkwarden
+  port_map: '3000'

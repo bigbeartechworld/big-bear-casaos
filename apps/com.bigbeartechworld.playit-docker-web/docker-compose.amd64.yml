@@ -1,0 +1,18 @@
+name: big-bear-playit-docker-web
+services:
+  big-bear-playit-docker-web:
+    container_name: big-bear-playit-docker-web
+    image: wisdomsky/playit-docker-web:1.0.10@sha256:1198f2246a1d91b4a24b6b3d7874030a354292f402d51435a7d71ea65a2b9984
+    restart: unless-stopped
+    network_mode: host
+    environment:
+    - WEBUI_PORT=8008
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+x-casaos:
+  id: com.bigbeartechworld.playit-docker-web
+  main: big-bear-playit-docker-web
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.playit-docker-web/assets/icon.png
+  title:
+    en_US: Playit Docker Web
+  port_map: '8008'

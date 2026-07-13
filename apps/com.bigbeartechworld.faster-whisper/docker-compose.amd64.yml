@@ -1,0 +1,24 @@
+name: big-bear-faster-whisper
+services:
+  big-bear-faster-whisper:
+    container_name: big-bear-faster-whisper
+    image: linuxserver/faster-whisper:3.3.1@sha256:69462a9da4ed3da7fb5e19264b290d9420943d9264ca5fc81b52a51b0dc71fd5
+    restart: unless-stopped
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    - WHISPER_MODEL=tiny-int8
+    - WHISPER_BEAM=1
+    - WHISPER_LANG=en
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    ports:
+    - 10300:10300
+x-casaos:
+  id: com.bigbeartechworld.faster-whisper
+  main: big-bear-faster-whisper
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.faster-whisper/assets/icon.png
+  title:
+    en_US: Faster-whisper
+  port_map: '7575'

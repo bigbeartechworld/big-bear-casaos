@@ -1,0 +1,40 @@
+name: big-bear-jellystat
+services:
+  big-bear-jellystat:
+    container_name: big-bear-jellystat
+    image: cyfershepard/jellystat:1.1.11@sha256:c4e2dfa8bddf8d5ac3a675d7202f71a54dcfe3540cc186899d9201e0fe701fa5
+    restart: unless-stopped
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=8a23ad09-61cf-4178-a783-6d4586496e3a
+    - POSTGRES_IP=big-bear-jellystat-db
+    - POSTGRES_PORT=5432
+    - JWT_SECRET="my-secret-jwt-key"
+    volumes:
+    - /DATA/AppData/$AppID/backup-data:/app/backend/backup-data
+    ports:
+    - 3000:3000
+    networks:
+    - big-bear-jellystat-network
+  big-bear-jellystat-db:
+    container_name: big-bear-jellystat-db
+    image: postgres:15.2@sha256:78a275d4c891f7b3a33d3f1a78eda9f1d744954d9e20122bfdc97cdda25cddaf
+    environment:
+      POSTGRES_DB: jfstat
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 8a23ad09-61cf-4178-a783-6d4586496e3a
+    volumes:
+    - /DATA/AppData/$AppID/postgres-data:/var/lib/postgresql/data
+    networks:
+    - big-bear-jellystat-network
+networks:
+  big-bear-jellystat-network:
+    name: big-bear-jellystat-network
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.jellystat
+  main: big-bear-jellystat
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.jellystat/assets/icon.png
+  title:
+    en_US: Jellystat
+  port_map: '3000'

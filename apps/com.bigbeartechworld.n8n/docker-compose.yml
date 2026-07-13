@@ -1,0 +1,47 @@
+name: big-bear-n8n
+services:
+  app:
+    container_name: n8n
+    image: n8nio/n8n:2.29.2@sha256:1357982c594730263f0dedf9e1770075b78cac9417775d30531a3c00a72b2a58
+    restart: unless-stopped
+    ports:
+    - 5678:5678
+    links:
+    - db-n8n
+    volumes:
+    - /DATA/AppData/$AppID/.n8n:/home/node/.n8n
+    environment:
+    - DB_TYPE=postgresdb
+    - DB_POSTGRESDB_DATABASE=n8n
+    - DB_POSTGRESDB_HOST=db-n8n
+    - DB_POSTGRESDB_PORT=5432
+    - DB_POSTGRESDB_USER=bigbearcasaos
+    - DB_POSTGRESDB_PASSWORD=bigbearcasaos
+    depends_on:
+      db-n8n:
+        condition: service_healthy
+  db-n8n:
+    container_name: db-n8n
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd
+    restart: on-failure
+    volumes:
+    - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    - /DATA/AppData/$AppID/db/init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
+    environment:
+    - POSTGRES_PASSWORD=bigbearcasaos
+    - POSTGRES_USER=bigbearcasaos
+    - POSTGRES_DB=n8n
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -h localhost -U bigbearcasaos -d n8n
+      interval: 5s
+      timeout: 5s
+      retries: 10
+x-casaos:
+  id: com.bigbeartechworld.n8n
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.n8n/assets/icon.png
+  title:
+    en_US: n8n
+  port_map: '5678'

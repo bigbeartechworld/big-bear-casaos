@@ -1,0 +1,31 @@
+name: big-bear-tailscale
+services:
+  big-bear-tailscale:
+    container_name: big-bear-tailscale
+    image: tailscale/tailscale:v1.98.8@sha256:d54b2e6a9c09f0e5ec52e82b9ad4af3d446b54a7c08075e92f11c39dd410105f
+    restart: unless-stopped
+    environment:
+    - TS_SERVE_CONFIG=/config/serve-config.json
+    - TS_ACCEPT_DNS=false
+    - TS_AUTH_ONCE=false
+    - TS_AUTHKEY=""
+    - TS_HOSTNAME=""
+    - TS_ROUTES=""
+    - TS_EXTRA_ARGS=""
+    - TS_USERSPACE=true
+    - TS_STATE_DIR=/var/lib/tailscale
+    volumes:
+    - /DATA/AppData/$AppID/state:/var/lib/tailscale
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/shared:/shared
+    - /dev/net/tun:/dev/net/tun
+    cap_add:
+    - net_admin
+    - sys_module
+x-casaos:
+  id: com.bigbeartechworld.tailscale
+  main: big-bear-tailscale
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.tailscale/assets/icon.png
+  title:
+    en_US: Tailscale
+  port_map: ''

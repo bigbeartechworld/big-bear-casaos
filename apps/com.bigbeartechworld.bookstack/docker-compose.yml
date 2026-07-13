@@ -1,0 +1,44 @@
+name: big-bear-bookstack
+services:
+  big-bear-bookstack:
+    container_name: big-bear-bookstack
+    image: linuxserver/bookstack:26.05.20260608@sha256:e3c387ac44a20fa29abcae8426e3e0d8c88b4ccf95d3c091fd9d96c8d0edcd8e
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    environment:
+    - APP_KEY=base64:3w/hRS2HYVFH5tJqD9AFlyurTh8mBByMKeMRyH9kEEQ=
+    - APP_URL=http://[change to your IP]:8080
+    - DB_HOST=big-bear-bookstack-db
+    - DB_USERNAME=bigbear
+    - DB_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6
+    - DB_DATABASE=bookstackapp
+    ports:
+    - 8080:80
+    depends_on:
+    - big-bear-bookstack-db
+    networks:
+    - big_bear_bookstack_network
+  big-bear-bookstack-db:
+    image: linuxserver/mariadb:10.11.6@sha256:7e34d92147dd7e1b63f43b3e76af73c273d7c3677786c32164a485f2a04964d8
+    container_name: big-bear-bookstack-db
+    environment:
+    - MYSQL_ROOT_PASSWORD=793e92b7-58d2-47b9-aae5-b8c7d58bd699
+    - MYSQL_DATABASE=bookstackapp
+    - MYSQL_USER=bigbear
+    - MYSQL_PASSWORD=a3e8949f-484c-4877-afdb-391f892f9bb6
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/config
+    restart: unless-stopped
+    networks:
+    - big_bear_bookstack_network
+networks:
+  big_bear_bookstack_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.bookstack
+  main: big-bear-bookstack
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.bookstack/assets/icon.png
+  title:
+    en_US: bookstack
+  port_map: '8080'

@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "RustFS is a high-performance, distributed object storage system built in Rust. It combines the simplicity of MinIO with the memory safety and raw performance of Rust. It offers full S3 compatibility, is completely open-source under Apache 2.0 license, and is optimized for data lakes, AI, and big data workloads.",
+  "tagline": "High-performance S3-compatible object storage built in Rust",
+  "developer": "rustfs",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "The container runs as non-root user (UID 10001). Ensure your data directories have correct ownership: chown -R 10001:10001 /path/to/data"
+  },
+  "category": "AI",
+  "title": "RustFS",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.rustfs",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

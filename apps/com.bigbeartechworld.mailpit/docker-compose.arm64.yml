@@ -1,0 +1,20 @@
+name: big-bear-mailpit
+services:
+  app:
+    image: axllent/mailpit:v1.30@sha256:5a49a77c5bdbe7c5474450b4f46348d09949df3695257729c93a30369382d4f6
+    container_name: mailpit
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    environment:
+    - TZ=UTC
+    ports:
+    - 8025:8025
+    - 1025:1025
+x-casaos:
+  id: com.bigbeartechworld.mailpit
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.mailpit/assets/icon.png
+  title:
+    en_US: Mailpit
+  port_map: '8025'

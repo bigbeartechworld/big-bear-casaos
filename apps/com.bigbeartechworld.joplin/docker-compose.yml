@@ -1,0 +1,44 @@
+name: big-bear-joplin
+services:
+  big-bear-joplin:
+    container_name: big-bear-joplin
+    image: joplin/server:3.7.1@sha256:0877bfba41a943017c42c58e90db9d8d548bfe699b5e410248b5b879371734f9
+    restart: unless-stopped
+    environment:
+    - APP_PORT=22300
+    - APP_BASE_URL=http://localhost:22300
+    - DB_CLIENT=pg
+    - POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe
+    - POSTGRES_USER=bigbear
+    - POSTGRES_DATABASE=joplin
+    - POSTGRES_PORT=5432
+    - POSTGRES_HOST=big-bear-joplin-db
+    - MAX_TIME_DRIFT=0
+    ports:
+    - 22300:22300
+    networks:
+    - big_bear_joplin_network
+    depends_on:
+    - big-bear-joplin-db
+  big-bear-joplin-db:
+    container_name: big-bear-joplin-db
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd
+    volumes:
+    - /DATA/AppData/$AppID/postgresql/data:/var/lib/postgresql/data
+    restart: unless-stopped
+    environment:
+    - POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe
+    - POSTGRES_USER=bigbear
+    - POSTGRES_DB=joplin
+    networks:
+    - big_bear_joplin_network
+networks:
+  big_bear_joplin_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.joplin
+  main: big-bear-joplin
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.joplin/assets/icon.png
+  title:
+    en_US: joplin
+  port_map: '22300'

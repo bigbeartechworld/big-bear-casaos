@@ -1,0 +1,30 @@
+name: big-bear-pterodactyl-wings
+services:
+  app:
+    container_name: pterodactyl-wings
+    image: ghcr.io/pterodactyl/wings:v1.12.1@sha256:85d92f778d47cbc255f559a476d82915c4c5cb2973c3e6d44c82046513d53365
+    restart: always
+    ports:
+    - 8080:8080
+    - 2022:2022
+    tty: true
+    environment:
+      TZ: UTC
+      WINGS_UID: 988
+      WINGS_GID: 988
+      WINGS_USERNAME: pterodactyl
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /var/lib/docker/containers/:/var/lib/docker/containers/
+    - /etc/ssl/certs:/etc/ssl/certs:ro
+    - /tmp/pterodactyl:/tmp/pterodactyl/
+    - /etc/pterodactyl:/etc/pterodactyl/
+    - /var/log/pterodactyl:/var/log/pterodactyl/
+    - /var/lib/pterodactyl:/var/lib/pterodactyl/
+x-casaos:
+  id: com.bigbeartechworld.pterodactyl-wings
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pterodactyl-wings/assets/icon.png
+  title:
+    en_US: Pterodactyl Wings
+  port_map: '2022'

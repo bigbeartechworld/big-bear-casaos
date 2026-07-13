@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Crafty 4 is the next iteration of our Minecraft Server Wrapper / Controller / Launcher.",
+  "tagline": "Crafty Controller",
+  "developer": "crafty-controller",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install Crafty Controller, you need to read the https://community.bigbeartechworld.com/t/added-crafty-controller-to-bigbearcasaos/1013#instructions-3.\n"
+  },
+  "category": "Media",
+  "title": "Crafty Controller",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.crafty",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 675118278,
+    "arm64": 660231142
+  }
+}

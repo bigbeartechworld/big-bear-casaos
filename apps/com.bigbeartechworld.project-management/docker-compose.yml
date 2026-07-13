@@ -1,0 +1,61 @@
+name: big-bear-project-management
+services:
+  big-bear-project-management:
+    container_name: big-bear-project-management
+    image: eloufirhatim/helper:1.2.3@sha256:200b25415273529ca5c6513b5ce99931e46bee17e2c730c4d3c2cbc53992fd2e
+    restart: unless-stopped
+    environment:
+    - DB_CONNECTION=mysql
+    - DB_HOST=big-bear-project-management-db
+    - DB_PORT=3306
+    - DB_DATABASE=project_management
+    - DB_USERNAME=project_management
+    - DB_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
+    - MAIL_MAILER=smtp
+    - MAIL_HOST=mailpit
+    - MAIL_PORT=1025
+    - MAIL_USERNAME=
+    - MAIL_PASSWORD=
+    - MAIL_ENCRYPTION=null
+    volumes:
+    - /etc/localtime:/etc/localtime
+    ports:
+    - 8000:8000
+    networks:
+    - big_bear_project_management_network
+    depends_on:
+    - big-bear-project-management-db
+  big-bear-project-management-db:
+    image: mysql:5.7@sha256:4bc6bc963e6d8443453676cae56536f4b8156d78bae03c0145cbe47c2aad73bb
+    container_name: big-bear-project-management-db
+    environment:
+    - MYSQL_DATABASE=project_management
+    - MYSQL_USER=project_management
+    - MYSQL_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
+    - MYSQL_ROOT_PASSWORD=ed3f3aa2-9d2e-45e3-b20f-6c4c70f7382a
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+    - big_bear_project_management_network
+    healthcheck:
+      test:
+      - CMD
+      - mysqladmin
+      - ping
+      - -h
+      - localhost
+      - -p${MYSQL_ROOT_PASSWORD}
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+networks:
+  big_bear_project_management_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.project-management
+  main: big-bear-project-management
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.project-management/assets/icon.png
+  title:
+    en_US: Project Management
+  port_map: '8000'

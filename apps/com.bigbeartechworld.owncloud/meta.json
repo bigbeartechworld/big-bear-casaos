@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "ownCloud offers file sharing and collaboration trusted by 200+ million users worldwide regardless of device or location.",
+  "tagline": "ownCloud",
+  "developer": "owncloud",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-owncloud-to-bigbearcasaos/1874#p-3512-documentation-4\n"
+  },
+  "category": "Others",
+  "title": "ownCloud",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.owncloud",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,78 @@
+name: big-bear-ayon
+services:
+  big-bear-ayon:
+    container_name: big-bear-ayon
+    image: ynput/ayon:1.3.6-20240823@sha256:def63d3138061857115faf7de0950bb01d4f116272c03a0d3f0d28fcf7e6fc21
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:5000/api/info
+      interval: 10s
+      timeout: 2s
+      retries: '3'
+    volumes:
+    - /DATA/AppData/$AppID/addons:/addons
+    - /DATA/AppData/$AppID/storage:/storage
+    - /etc/localtime:/etc/localtime:ro
+    ports:
+    - 5000:5000
+    expose:
+    - '5000'
+    networks:
+    - big-bear-ayon-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+  postgres:
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+    - POSTGRES_USER=ayon
+    - POSTGRES_PASSWORD=ayon
+    - POSTGRES_DB=ayon
+    volumes:
+    - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U ayon
+      interval: 10s
+      timeout: 5s
+      retries: '5'
+    expose:
+    - '5432'
+    networks:
+    - big-bear-ayon-network
+  redis:
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
+    container_name: redis
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/redis:/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli ping | grep PONG
+      interval: 5s
+      timeout: 5s
+      retries: '5'
+    expose:
+    - '6379'
+    networks:
+    - big-bear-ayon-network
+networks:
+  big-bear-ayon-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.ayon
+  main: big-bear-ayon
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ayon/assets/icon.png
+  title:
+    en_US: Ayon
+  port_map: '5000'

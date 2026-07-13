@@ -1,0 +1,21 @@
+name: big-bear-traccar
+services:
+  app:
+    image: traccar/traccar:6.14-ubuntu@sha256:629cf4b4e90a432c5c02726c9e393f6badae84f7c561f05dbe7c8a8be7e03f6b
+    container_name: traccar
+    hostname: traccar
+    restart: unless-stopped
+    ports:
+    - 8080:8082
+    - 5000-5150:5000-5150
+    - 5000-5150:5000-5150/udp
+    volumes:
+    - /DATA/AppData/$AppID/logs:/opt/traccar/logs
+    - /DATA/AppData/$AppID/traccar.xml:/opt/traccar/conf/traccar.xml
+x-casaos:
+  id: com.bigbeartechworld.traccar
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.traccar/assets/icon.png
+  title:
+    en_US: Traccar
+  port_map: '8080'

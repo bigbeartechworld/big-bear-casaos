@@ -1,0 +1,17 @@
+name: big-bear-adguard-home-host
+services:
+  big-bear-adguard-home-host:
+    container_name: big-bear-adguard-home-host
+    image: adguard/adguardhome:v0.107.77@sha256:e6f2b8bcda06064ab055b44933a4f0e983c35558b9cdb8d2e7ab1efcee36d890
+    volumes:
+    - /DATA/AppData/$AppID/data/work:/opt/adguardhome/work
+    - /DATA/AppData/$AppID/data/conf:/opt/adguardhome/conf
+    restart: unless-stopped
+    network_mode: host
+x-casaos:
+  id: com.bigbeartechworld.adguard-home-host
+  main: big-bear-adguard-home-host
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.adguard-home-host/assets/icon.png
+  title:
+    en_US: AdGuard Home (HOST)
+  port_map: '80'

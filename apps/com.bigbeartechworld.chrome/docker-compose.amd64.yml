@@ -1,0 +1,20 @@
+name: big-bear-chrome
+services:
+  chrome:
+    container_name: big-bear-chrome
+    image: kasmweb/chrome:1.15.0-rolling@sha256:ae404814331aa0259bfc71cfb3a07e5aca4b147595b833c0552288305f273e1a
+    ports:
+    - 6902:6901
+    environment:
+    - VNC_PW=casaos
+    - LAUNCH_URL=https://community.bigbeartechworld.com/
+    shm_size: 512m
+    volumes:
+    - /DATA/AppData/$AppID/Downloads:/home/kasm-user/Downloads
+x-casaos:
+  id: com.bigbeartechworld.chrome
+  main: chrome
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.chrome/assets/icon.png
+  title:
+    en_US: chrome
+  port_map: '6902'

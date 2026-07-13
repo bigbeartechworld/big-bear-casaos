@@ -1,0 +1,22 @@
+name: big-bear-dockpeek
+services:
+  big-bear-dockpeek:
+    container_name: big-bear-dockpeek
+    image: ghcr.io/dockpeek/dockpeek:v1.7.2@sha256:87654d0104eacff48a70c7c1eea6126f19f5803b21bfdace842ae765351593b4
+    environment:
+      SECRET_KEY: change_this_secret_key
+      USERNAME: bigbear
+      PASSWORD: casaos
+      DOCKER_HOST: unix:///var/run/docker.sock
+    restart: unless-stopped
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+    - 3420:8000
+x-casaos:
+  id: com.bigbeartechworld.dockpeek
+  main: big-bear-dockpeek
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.dockpeek/assets/icon.png
+  title:
+    en_US: Dockpeek
+  port_map: '3420'

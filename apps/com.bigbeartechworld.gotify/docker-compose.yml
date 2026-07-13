@@ -1,0 +1,19 @@
+name: big-bear-gotify
+services:
+  app:
+    image: gotify/server:2.9.1@sha256:a3af47067ce6aad76aadf5ba32d6ddfecd1ae576a961359f039fd1831e8b7652
+    ports:
+    - 8091:80
+    environment:
+    - GOTIFY_DEFAULTUSER_NAME=admin
+    - GOTIFY_DEFAULTUSER_PASS=custom
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    network_mode: bridge
+x-casaos:
+  id: com.bigbeartechworld.gotify
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.gotify/assets/icon.png
+  title:
+    en_US: Gotify
+  port_map: '8091'

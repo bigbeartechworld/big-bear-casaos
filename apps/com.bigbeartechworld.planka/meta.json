@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The realtime kanban board for workgroups built with React and Redux.",
+  "tagline": "Legacy v1 - Use Planka v2 for new installs.",
+  "developer": "plankanban",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "📌 Planka v1 Maintenance Mode\n\nThis is the stable v1.26.3 release. For new deployments, consider 'planka-v2' which includes:\n- Enhanced security (SSRF protection)\n- New features (user mentions, task linking)\n- UI-based webhooks and SMTP configuration\n\nExisting v1 users: Stay on v1 until ready to migrate. Migration requires manual data migration with no rollback.\n\nMigration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
+  },
+  "category": "Productivity",
+  "title": "Planka (Legacy)",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.planka",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 89669884,
+    "arm64": 90310383
+  }
+}

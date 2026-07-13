@@ -1,0 +1,19 @@
+name: big-bear-python-matter-server
+services:
+  app:
+    image: ghcr.io/home-assistant-libs/python-matter-server:8.1.0@sha256:170aa093ce91c76cde4cc390918307590f0f5558fcec93f913af3cb019e6562a
+    container_name: matter-server
+    restart: unless-stopped
+    network_mode: host
+    security_opt:
+    - apparmor:unconfined
+    volumes:
+    - /DATA/AppData/$AppID/data:/data/
+    - /run/dbus:/run/dbus:ro
+x-casaos:
+  id: com.bigbeartechworld.python-matter-server
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.python-matter-server/assets/icon.png
+  title:
+    en_US: Python Matter Server
+  port_map: '5580'

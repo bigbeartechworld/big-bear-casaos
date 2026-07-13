@@ -1,0 +1,18 @@
+name: big-bear-npmplus
+services:
+  big-bear-npmplus:
+    container_name: big-bear-npmplus
+    image: zoeyvid/npmplus:449@sha256:2d950075a98c3aece33e3f771abc0ecabfba4e428fad6f55db7f75c7c637ed81
+    restart: unless-stopped
+    network_mode: host
+    environment:
+    - TZ=America/Chicago
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+x-casaos:
+  id: com.bigbeartechworld.npmplus
+  main: big-bear-npmplus
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.npmplus/assets/icon.png
+  title:
+    en_US: NPMPlus
+  port_map: '81'

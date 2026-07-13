@@ -1,0 +1,27 @@
+name: big-bear-stirling-pdf
+services:
+  big-bear-stirling-pdf:
+    container_name: big-bear-stirling-pdf
+    image: stirlingtools/stirling-pdf:2.14.2@sha256:7ed4d9681d18e4fbc3aa6a63647c4b5c2bcc4b75841df7c05d7e3d2320f5c9a1
+    restart: unless-stopped
+    environment:
+    - DOCKER_ENABLE_SECURITY=false
+    - SECURITY_ENABLE_LOGIN=true
+    - SECURITY_INITIALLOGIN_USERNAME=bigbear
+    - SECURITY_INITIALLOGIN_PASSWORD=4500733e-a0f8-4605-a712-fd267404956a
+    - CSRF_DISABLED=false
+    - DEFAULT_LOCALE=en-US
+    - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
+    - LANGS=en_US
+    volumes:
+    - /DATA/AppData/$AppID/tessdata:/usr/share/tessdata
+    - /DATA/AppData/$AppID/configs:/configs
+    ports:
+    - 8080:8080
+x-casaos:
+  id: com.bigbeartechworld.stirling-pdf
+  main: big-bear-stirling-pdf
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.stirling-pdf/assets/icon.png
+  title:
+    en_US: Stirling-PDF
+  port_map: '8080'

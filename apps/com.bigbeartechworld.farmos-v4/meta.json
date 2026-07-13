@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "farmOS is a web-based application for farm management, planning, and record keeping. It is developed by a community of volunteers and aims to provide a standard platform for farmers, developers, and researchers to build upon.",
+  "tagline": "A web-based farm record keeping application.",
+  "developer": "farmOS",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "NEW APP - FARMOS V4\n\nThis is a SEPARATE app from 'FarmOS (Legacy)' (v3.x). Both can run simultaneously.\n\nFarmOS v4 requires:\n- PHP 8.4 (Drupal 11)\n- MariaDB 10.6+ (this app uses MariaDB 10.6)\n\nFOR MIGRATION FROM V3:\n- You MUST be on the latest farmOS 3.x before upgrading\n- Do NOT uninstall your existing FarmOS (Legacy) app\n- Create backups before migrating\n- See: https://farmos.org/hosting/install/"
+  },
+  "category": "Social",
+  "title": "FarmOS v4",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.farmos-v4",
+  "version": "",
+  "categories": [
+    "social"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

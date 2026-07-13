@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Audiobookshelf is a self-hosted audiobook server for managing and playing your audiobooks. Audiobookshelf has a clean, accessible design that's loaded with features but not overly complicated.",
+  "tagline": "Audiobookshelf is a self-hosted audiobook and podcast server.",
+  "developer": "ajnart",
+  "author": "advplyr",
+  "thumbnail": "",
+  "category": "Media",
+  "title": "Audiobookshelf",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.audiobookshelf",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 115805351,
+    "arm64": 112935472
+  }
+}

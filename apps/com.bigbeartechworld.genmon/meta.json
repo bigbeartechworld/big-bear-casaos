@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Generac (and other models) Generator Monitoring using a Raspberry Pi and WiFi",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.genmon/assets/screenshot1.webp"
+  ],
+  "tagline": "Genmon",
+  "developer": "bigbeartechworld",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.genmon/assets/screenshot1.webp",
+  "category": "Others",
+  "title": "Genmon",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.genmon",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

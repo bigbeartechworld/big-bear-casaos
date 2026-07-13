@@ -1,0 +1,21 @@
+name: big-bear-music-assistant
+services:
+  big-bear-music-assistant-server:
+    container_name: big-bear-music-assistant-server
+    image: ghcr.io/music-assistant/server:2.8.7@sha256:eef3ee7810d0e4702afa4a0ff55b10bbbfcaa16c98a277fe1b7f4cb6d5d426b4
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    network_mode: host
+    security_opt:
+    - apparmor:unconfined
+    cap_add:
+    - SYS_ADMIN
+    - DAC_READ_SEARCH
+x-casaos:
+  id: com.bigbeartechworld.music-assistant
+  main: big-bear-music-assistant-server
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.music-assistant/assets/icon.png
+  title:
+    en_US: Music Assistant
+  port_map: '8095'

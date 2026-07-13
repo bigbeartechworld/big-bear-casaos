@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a fork of Overseerr built to bring support for Jellyfin & Emby media servers! Note: Jellyseerr is no longer actively maintained. New users should use Seerr instead.",
+  "tagline": "Legacy media request manager - new users should use Seerr instead",
+  "developer": "Fallenbagel",
+  "author": "BigBearCommunity",
+  "thumbnail": "/apps/com.bigbeartechworld.jellyseerr/assets/preview.webp",
+  "tips": {
+    "before_install": "Jellyseerr is no longer actively maintained. Consider installing Seerr instead, which is the official successor with automatic migration support."
+  },
+  "category": "Media",
+  "title": "Jellyseerr (Legacy)",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.jellyseerr",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

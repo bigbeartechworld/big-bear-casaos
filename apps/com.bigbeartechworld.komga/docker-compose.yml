@@ -1,0 +1,20 @@
+name: big-bear-komga
+services:
+  big-bear-komga:
+    container_name: big-bear-komga
+    image: ghcr.io/gotson/komga:1.24.4@sha256:dae630271561b642d47c9723803ec77900d1f0a803fbe6a42da69db5b21ebaeb
+    restart: unless-stopped
+    environment:
+    - TZ=UTC
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/data:/data
+    ports:
+    - 25600:25600
+x-casaos:
+  id: com.bigbeartechworld.komga
+  main: big-bear-komga
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.komga/assets/icon.png
+  title:
+    en_US: Komga
+  port_map: '25600'

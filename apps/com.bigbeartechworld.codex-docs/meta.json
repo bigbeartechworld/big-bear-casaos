@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content.",
+  "tagline": "CodeX Docs",
+  "developer": "codex-team",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Developer",
+  "title": "CodeX Docs",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.codex-docs",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 53566758,
+    "arm64": 53566758
+  }
+}

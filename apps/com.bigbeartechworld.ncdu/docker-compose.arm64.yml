@@ -1,0 +1,24 @@
+name: big-bear-ncdu
+services:
+  big-bear-ncdu:
+    container_name: big-bear-ncdu
+    image: bigbeartechworld/big-bear-ncdu:0.0.9@sha256:d48a75e108f9387393265eefc2e99564e4b717a78f5207d000ebe619e8ff05b3
+    restart: unless-stopped
+    privileged: true
+    volumes:
+    - /proc:/proc
+    - /sys:/sys
+    - /dev:/dev
+    - /etc/localtime:/etc/localtime:ro
+    - /:/casaos
+    ports:
+    - 7681:7681
+    environment:
+    - NCDU_PATH=/
+x-casaos:
+  id: com.bigbeartechworld.ncdu
+  main: big-bear-ncdu
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ncdu/assets/icon.png
+  title:
+    en_US: Ncdu
+  port_map: '7681'

@@ -1,0 +1,88 @@
+name: big-bear-nextcloud-smb
+services:
+  big-bear-nextcloud-smb:
+    container_name: big-bear-nextcloud-smb
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:33.0.5@sha256:c74370fa69284a8f2243cc3ee07d429ef81d089c746f71771d2b9ade4b5625b2
+    restart: unless-stopped
+    ports:
+    - 7580:80
+    volumes:
+    - /DATA/AppData/$AppID/html:/var/www/html
+    environment:
+    - POSTGRES_HOST=big-bear-nextcloud-smb-db
+    - REDIS_HOST=big-bear-nextcloud-smb-redis
+    - POSTGRES_PASSWORD=casaos
+    - POSTGRES_USER=casaos
+    - POSTGRES_DB=nextcloud
+    - NEXTCLOUD_ADMIN_USER=casaos
+    - NEXTCLOUD_ADMIN_PASSWORD=casaos
+    - TRUSTED_PROXIES=
+    - OVERWRITEPROTOCOL=http
+    - PHP_MEMORY_LIMIT=1024M
+    - PHP_UPLOAD_LIMIT=1024M
+    depends_on:
+      big-bear-nextcloud-smb-db:
+        condition: service_healthy
+      big-bear-nextcloud-smb-redis:
+        condition: service_healthy
+    networks:
+    - big_bear_nextcloud_network
+  big-bear-nextcloud-smb-db:
+    container_name: big-bear-nextcloud-smb-db
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PASSWORD=casaos
+    - POSTGRES_USER=casaos
+    - POSTGRES_DB=nextcloud
+    networks:
+    - big_bear_nextcloud_network
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U casaos -d nextcloud
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  big-bear-nextcloud-smb-redis:
+    container_name: big-bear-nextcloud-smb-redis
+    user: 1000:1000
+    image: redis:6.2.20@sha256:d06ff6ec778c7f2a5c0dfaf58141d598efaa50a89d0e966faedfdf122cef451b
+    restart: on-failure
+    volumes:
+    - /DATA/AppData/$AppID/redis:/data
+    networks:
+    - big_bear_nextcloud_network
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli ping || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  big-bear-nextcloud-smb-cron:
+    container_name: big-bear-nextcloud-smb-cron
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:33.0.5@sha256:c74370fa69284a8f2243cc3ee07d429ef81d089c746f71771d2b9ade4b5625b2
+    restart: on-failure
+    volumes:
+    - /DATA/AppData/$AppID/html:/var/www/html
+    entrypoint: /cron.sh
+    depends_on:
+      big-bear-nextcloud-smb-db:
+        condition: service_healthy
+      big-bear-nextcloud-smb-redis:
+        condition: service_healthy
+    networks:
+    - big_bear_nextcloud_network
+networks:
+  big_bear_nextcloud_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.nextcloud-with-smbclient
+  main: big-bear-nextcloud-smb
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.nextcloud-with-smbclient/assets/icon.png
+  title:
+    en_US: Nextcloud with SMB (Legacy)
+  port_map: '7580'

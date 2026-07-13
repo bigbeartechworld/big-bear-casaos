@@ -1,0 +1,25 @@
+name: big-bear-kasm
+services:
+  app:
+    container_name: big-bear-kasm
+    image: linuxserver/kasm:1.120.20221218@sha256:6f40f6c999fa626b8e68371298d0a7870b8bbd1696df4cbcb87352e681f7f7cd
+    restart: unless-stopped
+    privileged: true
+    network_mode: bridge
+    volumes:
+    - /DATA/AppData/$AppID/opt:/opt
+    - /DATA/AppData/$AppID/profiles:/profiles
+    - /dev/input:/dev/input
+    - /run/udev/data:/run/udev/data
+    ports:
+    - 3000:3000
+    - 443:443
+    environment:
+    - KASM_PORT=443
+x-casaos:
+  id: com.bigbeartechworld.kasm
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.kasm/assets/icon
+  title:
+    en_US: Kasm
+  port_map: '3000'

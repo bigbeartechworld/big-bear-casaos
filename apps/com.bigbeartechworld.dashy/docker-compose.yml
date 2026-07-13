@@ -1,0 +1,28 @@
+name: big-bear-dashy
+services:
+  big-bear-dashy:
+    image: lissy93/dashy:3.3.1@sha256:8c04ab116bb52bd784137d3922acaa945b5559de49a14f163dbbcf0605adf3e6
+    container_name: big-bear-dashy
+    volumes:
+    - /DATA/AppData/$AppID/public:/app/public
+    ports:
+    - 4000:8080
+    environment:
+    - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD
+      - node
+      - /app/services/healthcheck
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+x-casaos:
+  id: com.bigbeartechworld.dashy
+  main: big-bear-dashy
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.dashy/assets/icon.png
+  title:
+    en_US: Dashy (Legacy)
+  port_map: '4000'

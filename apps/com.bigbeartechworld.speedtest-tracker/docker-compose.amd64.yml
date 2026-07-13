@@ -1,0 +1,50 @@
+name: big-bear-speedtest-tracker
+services:
+  big-bear-speedtest-tracker:
+    container_name: big-bear-speedtest-tracker
+    ports:
+    - 8080:80
+    - 8443:443
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - DB_CONNECTION=mysql
+    - DB_HOST=big-bear-speedtest-tracker-db
+    - DB_PORT=3306
+    - DB_DATABASE=speedtest_tracker
+    - DB_USERNAME=casaos
+    - DB_PASSWORD=casaos
+    - TZ=America/Chicago
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /DATA/AppData/$AppID/config:/config
+    - /DATA/AppData/$AppID/web:/etc/ssl/web
+    image: linuxserver/speedtest-tracker:1.14.5@sha256:e4732e8e9073bdd5b419959c1151b761afa591166328d2ab751adc1e3d070563
+    restart: unless-stopped
+    depends_on:
+    - big-bear-speedtest-tracker-db
+    networks:
+    - big_bear_speedtest_tracker_network
+  big-bear-speedtest-tracker-db:
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    container_name: big-bear-speedtest-tracker-db
+    restart: always
+    environment:
+    - MARIADB_DATABASE=speedtest_tracker
+    - MARIADB_USER=casaos
+    - MARIADB_PASSWORD=casaos
+    - MARIADB_RANDOM_ROOT_PASSWORD=true
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    networks:
+    - big_bear_speedtest_tracker_network
+networks:
+  big_bear_speedtest_tracker_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.speedtest-tracker
+  main: big-bear-speedtest-tracker
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.speedtest-tracker/assets/icon.png
+  title:
+    en_US: Speedtest Tracker
+  port_map: '8080'

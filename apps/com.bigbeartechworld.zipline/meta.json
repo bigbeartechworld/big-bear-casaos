@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!",
+  "tagline": "zipline",
+  "developer": "zipline",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-zipline-to-bigbearcasaos/629?u=dragonfire1119\n"
+  },
+  "category": "Others",
+  "title": "zipline",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.zipline",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 678381781,
+    "arm64": 660008712
+  }
+}

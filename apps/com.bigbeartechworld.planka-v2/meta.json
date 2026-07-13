@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The realtime kanban board for workgroups built with React and Redux.",
+  "tagline": "Free open source kanban board for workgroups.",
+  "developer": "plankanban",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "🆕 PLANKA V2 - SEPARATE APP\n\nThis is a NEW app, separate from 'planka' (v1). Both can run simultaneously.\n\nFOR NEW USERS:\n✅ Install this app for new Planka deployments\n✅ Modern v2 architecture with unified data directory\n✅ Enhanced security (SSRF protection)\n✅ New features: user mentions, task linking, webhooks UI, SMTP UI\n\nFOR V1 USERS:\n⚠️  Do NOT uninstall your 'planka' v1 app\n⚠️  Deploy this as a NEW app alongside v1\n⚠️  Migration is ONE-WAY with NO ROLLBACK\n⚠️  Requires manual data migration: https://docs.planka.cloud/docs/upgrade-to-v2/docker/\n⚠️  Must be on v1 >= 1.26.2, subdomain hosting required\n\nDetailed migration guide: https://community.bigbeartechworld.com/t/added-planka-to-bigbearcasaos/924"
+  },
+  "category": "Productivity",
+  "title": "Planka v2",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.planka-v2",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 131559088,
+    "arm64": 132902918
+  }
+}

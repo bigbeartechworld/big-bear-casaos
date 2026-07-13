@@ -1,0 +1,50 @@
+name: big-bear-farmos-v4
+services:
+  big-bear-farmos-v4:
+    container_name: big-bear-farmos-v4
+    image: farmos/farmos:4.0.3@sha256:e297af5d4c9f8313efa4de0450c2750d7f44e2c605c0fe14dda10eb7a86c69c6
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/sites:/opt/drupal/web/sites
+    ports:
+    - 8083:80
+    depends_on:
+    - big-bear-farmos-v4-db
+    networks:
+    - big-bear-farmos-v4-network
+  big-bear-farmos-v4-db:
+    container_name: big-bear-farmos-v4-db
+    image: mariadb:10.6@sha256:114d40be36852d0a019afd8458f7e1cc63fd300403b115b1f32e31130d5f671b
+    volumes:
+    - /DATA/AppData/$AppID/db:/var/lib/mysql
+    ports:
+    - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 037ed96f-5f27-4fa8-bd7f-49b4a804a05c
+      MYSQL_DATABASE: big_bear_farmos
+      MYSQL_USER: farmos
+      MYSQL_PASSWORD: 037ed96f-5f27-4fa8-bd7f-49b4a804a05c
+    healthcheck:
+      test:
+      - CMD
+      - healthcheck.sh
+      - --connect
+      - --innodb_initialized
+      start_period: 1m
+      start_interval: 10s
+      interval: 1m
+      timeout: 5s
+      retries: 3
+    networks:
+    - big-bear-farmos-v4-network
+networks:
+  big-bear-farmos-v4-network:
+    name: big-bear-farmos-v4-network
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.farmos-v4
+  main: big-bear-farmos-v4
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.farmos-v4/assets/icon.jpeg
+  title:
+    en_US: FarmOS v4
+  port_map: '8083'

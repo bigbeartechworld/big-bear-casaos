@@ -1,0 +1,19 @@
+name: big-bear-spacedrive
+services:
+  big-bear-spacedrive:
+    container_name: big-bear-spacedrive
+    image: ghcr.io/spacedriveapp/spacedrive/server:0.4.2@sha256:fd3bc896f3a5b8e429e008cedde361d6b9468c48d8c81996fdb1d99e90e0837b
+    restart: unless-stopped
+    environment:
+    - SD_AUTH=bigbear:casaos
+    volumes:
+    - /DATA/AppData/$AppID/data/spacedrive:/var/spacedrive
+    ports:
+    - 8080:8080
+x-casaos:
+  id: com.bigbeartechworld.spacedrive
+  main: big-bear-spacedrive
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.spacedrive/assets/icon.png
+  title:
+    en_US: Spacedrive
+  port_map: '8080'

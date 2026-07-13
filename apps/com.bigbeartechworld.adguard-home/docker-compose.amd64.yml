@@ -1,0 +1,29 @@
+name: big-bear-adguard-home
+services:
+  app:
+    container_name: adguard-home
+    image: adguard/adguardhome:v0.107.77@sha256:e6f2b8bcda06064ab055b44933a4f0e983c35558b9cdb8d2e7ab1efcee36d890
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    volumes:
+    - /DATA/AppData/$AppID/data/work:/opt/adguardhome/work
+    - /DATA/AppData/$AppID/data/conf:/opt/adguardhome/conf
+    restart: unless-stopped
+    ports:
+    - 53:53/tcp
+    - 53:53/udp
+    - 8080:80
+    networks:
+    - adguard-home-network
+networks:
+  adguard-home-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.adguard-home
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.adguard-home/assets/icon.png
+  title:
+    en_US: AdGuard Home
+  port_map: '8080'

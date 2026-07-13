@@ -1,0 +1,26 @@
+name: big-bear-gladys
+services:
+  app:
+    image: gladysassistant/gladys:v4.81.0@sha256:3a5fe199cc0c316866ccb93722c3bb673c6f1ab75db2002f6dd5d19c3e089d28
+    restart: always
+    privileged: true
+    network_mode: host
+    container_name: gladys
+    cgroup: host
+    environment:
+      NODE_ENV: production
+      SQLITE_FILE_PATH: /var/lib/gladysassistant/gladys-production.db
+      TZ: Europe/Paris
+      SERVER_PORT: '1080'
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /DATA/AppData/$AppID/data:/var/lib/gladysassistant
+    - /dev:/dev
+    - /run/udev:/run/udev
+x-casaos:
+  id: com.bigbeartechworld.gladys
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.gladys/assets/icon.png
+  title:
+    en_US: Gladys Assistant
+  port_map: '1080'

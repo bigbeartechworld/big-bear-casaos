@@ -1,0 +1,32 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Wishlist is a self-hosted wishlist application that you can share with your friends and family. You no longer have to wonder what to get your family for the holidays, simply check their wishlist and claim any available item!",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.wishlist/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.wishlist/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.wishlist/assets/screenshot-3.webp"
+  ],
+  "tagline": "Wishlist is a self-hosted wishlist application that you can share with your friends and family.",
+  "developer": "cmintey",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.wishlist/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-wishlist-to-bigbearcasaos/3555?u=dragonfire1119\n"
+  },
+  "category": "Others",
+  "title": "Wishlist",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.wishlist",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 279414064,
+    "arm64": 277123910
+  }
+}

@@ -1,0 +1,19 @@
+name: big-bear-homebridge
+services:
+  big-bear-homebridge:
+    container_name: big-bear-homebridge
+    image: homebridge/homebridge:2024-05-02@sha256:ecdcb11b69a3c73e5c8e638a5f06ecd16d5212d8bdb52b58f1759f1fdcac6c9e
+    restart: unless-stopped
+    environment:
+    - TZ=UTC
+    privileged: true
+    network_mode: host
+    volumes:
+    - /DATA/AppData/$AppID/data:/homebridge
+x-casaos:
+  id: com.bigbeartechworld.homebridge
+  main: big-bear-homebridge
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.homebridge/assets/icon.png
+  title:
+    en_US: HomeBridge
+  port_map: '8581'

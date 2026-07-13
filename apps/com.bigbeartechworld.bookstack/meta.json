@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login admin@admin.com password password",
+  "tagline": "BookStack",
+  "developer": "Dan Brown",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-bookstack-to-bigbearcasaos/1262#p-2263-documentation-3\n"
+  },
+  "category": "Others",
+  "title": "bookstack",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.bookstack",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

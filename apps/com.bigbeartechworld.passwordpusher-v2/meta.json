@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Password Pusher is an open source application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",
+  "tagline": "Give your users the tools to be secure by default.",
+  "developer": "pglombardo",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "NEW APP - PASSWORD PUSHER V2\n\nThis is a SEPARATE app from 'Password Pusher (Legacy)' (v1.x). Both can run simultaneously.\n\nPassword Pusher v2 breaking changes:\n- MySQL/MariaDB dropped entirely; now uses PostgreSQL\n- 'enable_logins' removed; use 'allow_anonymous', 'disable_signups', 'disable_logins'\n- URL/file/QR pushes now enabled by default\n\nFOR MIGRATION FROM V1:\n- Do NOT uninstall your existing Password Pusher (Legacy) app\n- Data migration from MariaDB to PostgreSQL is required\n- See: https://docs.pwpush.com/docs/upgrading/"
+  },
+  "category": "Others",
+  "title": "Password Pusher v2",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.passwordpusher-v2",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

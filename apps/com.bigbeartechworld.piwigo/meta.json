@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Piwigo is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.",
+  "tagline": "Piwigo",
+  "developer": "piwigo",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-piwigo-to-bigbearcasaos/1133#documentation-3\n"
+  },
+  "category": "Media",
+  "title": "Piwigo",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.piwigo",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

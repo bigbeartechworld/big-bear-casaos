@@ -1,0 +1,26 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "tududi is a task and project management web application built with Sinatra. It allows users to efficiently manage their tasks and projects, categorize them into different areas, and track due dates. tududi is designed to be intuitive and easy to use, providing a seamless experience for personal productivity.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.tududi/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.tududi/assets/screenshot-2.webp"
+  ],
+  "tagline": "tududi is a task and project management web application built with Sinatra",
+  "developer": "chrisvel",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.tududi/assets/screenshot-1.webp",
+  "category": "Productivity",
+  "title": "Tududi",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.tududi",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

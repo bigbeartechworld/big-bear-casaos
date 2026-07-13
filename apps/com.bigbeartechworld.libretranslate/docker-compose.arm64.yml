@@ -1,0 +1,28 @@
+name: big-bear-libretranslate
+services:
+  big-bear-libretranslate:
+    container_name: big-bear-libretranslate
+    image: libretranslate/libretranslate:v1.9.6@sha256:1de2d7056bb8ad607a412f4563d9abe324ff632b43b5be9428bcc8e213aebb32
+    restart: unless-stopped
+    environment:
+    - LT_API_KEYS=true
+    - LT_API_KEYS_DB_PATH=/app/db/api_keys.db
+    - LT_UPDATE_MODELS=true
+    - LT_LOAD_ONLY=en,fr,es,de,it,pt,ru,ja,zh
+    volumes:
+    - /DATA/AppData/$AppID/db:/app/db
+    - /DATA/AppData/$AppID/.local:/home/libretranslate/.local
+    ports:
+    - 5000:5000
+    tty: true
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - ./venv/bin/python scripts/healthcheck.py
+x-casaos:
+  id: com.bigbeartechworld.libretranslate
+  main: big-bear-libretranslate
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.libretranslate/assets/icon.png
+  title:
+    en_US: LibreTranslate
+  port_map: '5000'

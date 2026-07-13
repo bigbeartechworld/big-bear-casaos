@@ -1,0 +1,33 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A self-hosted, real-time port monitoring and discovery tool that automatically discovers and maps network services across systems.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.portracker/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.portracker/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.portracker/assets/screenshot-3.webp",
+    "/apps/com.bigbeartechworld.portracker/assets/screenshot-4.webp"
+  ],
+  "tagline": "Real-time Port Monitoring Tool",
+  "developer": "Mostafa-Wahied",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Portracker is a self-hosted port monitoring tool that automatically discovers network services.\n                \nRead this before installing: https://community.bigbeartechworld.com/t/added-portracker-to-bigbearcasaos/5003?u=dragonfire1119"
+  },
+  "category": "Networking",
+  "title": "Portracker",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.portracker",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,32 @@
+name: big-bear-flowise
+services:
+  big-bear-flowise:
+    container_name: big-bear-flowise
+    image: flowiseai/flowise:3.1.3@sha256:fa39f54c82ebecabb817cbd2d01fc9fa7bb26d58a7e818c36bb6c2bad44b366a
+    restart: unless-stopped
+    entrypoint: /bin/sh -c "sleep 3; flowise start"
+    environment:
+    - PORT=8009
+    - FLOWISE_USERNAME=bigbear
+    - FLOWISE_PASSWORD=b0f91e4c-9d4b-4375-bc9b-9b57667ce7ab
+    - FLOWISE_SECRETKEY_OVERWRITE="true"
+    - LANGCHAIN_ENDPOINT=""
+    - LANGCHAIN_API_KEY=""
+    - LANGCHAIN_PROJECT=""
+    - LANGCHAIN_TRACING_V2=""
+    - DISABLE_FLOWISE_TELEMETRY="true"
+    - DATABASE_PATH=/root/.flowise
+    - APIKEY_PATH=/root/.flowise
+    - SECRETKEY_PATH=/root/.flowise/logs
+    - LOG_PATH=/root/.flowise
+    ports:
+    - 8009:8009
+    volumes:
+    - /DATA/AppData/$AppID/data:/root/.flowise
+x-casaos:
+  id: com.bigbeartechworld.flowise
+  main: big-bear-flowise
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.flowise/assets/icon.png
+  title:
+    en_US: Flowise AI
+  port_map: '8009'

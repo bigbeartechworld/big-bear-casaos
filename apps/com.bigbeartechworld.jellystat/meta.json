@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Jellystat is a free and open source Statistics App for Jellyfin! (This project is still in development - expect some weirdness)",
+  "tagline": "Jellystat",
+  "developer": "cyfershepard",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Media",
+  "title": "Jellystat",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.jellystat",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

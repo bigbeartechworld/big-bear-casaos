@@ -1,0 +1,41 @@
+name: big-bear-odoo
+services:
+  big-bear-odoo:
+    container_name: big-bear-odoo
+    image: odoo:19@sha256:f54272f31d5f77e4146b887efb3761c98480317daf687e4b4b5e76ed8bcc08c5
+    restart: unless-stopped
+    user: root
+    volumes:
+    - /DATA/AppData/$AppID/data/etc:/etc/odoo
+    - /DATA/AppData/$AppID/data/addons:/mnt/extra-addons
+    ports:
+    - 8069:8069
+    environment:
+    - HOST=big-bear-odoo-db
+    - USER=odoo
+    - PASSWORD=a8d785b6-bc00-49cc-8675-d404093d1507
+    networks:
+    - big_bear_odoo_network
+  big-bear-odoo-db:
+    container_name: big-bear-odoo-db
+    image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba
+    user: root
+    environment:
+    - POSTGRES_USER=odoo
+    - POSTGRES_PASSWORD=a8d785b6-bc00-49cc-8675-d404093d1507
+    - POSTGRES_DB=postgres
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data/postgresql:/var/lib/postgresql/data
+    networks:
+    - big_bear_odoo_network
+networks:
+  big_bear_odoo_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.odoo
+  main: big-bear-odoo
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.odoo/assets/icon.jpg
+  title:
+    en_US: Odoo
+  port_map: '8069'

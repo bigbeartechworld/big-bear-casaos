@@ -1,0 +1,37 @@
+name: big-bear-nightscout
+services:
+  big-bear-nightscout:
+    container_name: big-bear-nightscout
+    image: nightscout/cgm-remote-monitor:15.0.7@sha256:4399411fad4014352832865266207eb1ba4e3ec4129e4776ae3142a4e9abe913
+    restart: unless-stopped
+    ports:
+    - 1337:1337
+    environment:
+      NODE_ENV: production
+      TZ: Etc/UTC
+      INSECURE_USE_HTTP: 'true'
+      MONGO_CONNECTION: mongodb://big-bear-nightscout-mongo:27017/nightscout
+      API_SECRET: 48f875fa-0e03-416f-b9d6-19c9afc4e194
+      ENABLE: careportal rawbg iob
+      AUTH_DEFAULT_ROLES: denied
+    depends_on:
+    - big-bear-nightscout-mongo
+    networks:
+    - big-bear-nightscout-network
+  big-bear-nightscout-mongo:
+    container_name: big-bear-nightscout-mongo
+    image: mongo:4.4@sha256:4be76f674fc4b27859816811b8baa3c51830eb1dbf4ca81a51e26b79edd662ef
+    networks:
+    - big-bear-nightscout-network
+    volumes:
+    - /DATA/AppData/$AppID/mongo-data:/data/db
+networks:
+  big-bear-nightscout-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.nightscout
+  main: big-bear-nightscout
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.nightscout/assets/icon.png
+  title:
+    en_US: nightscout
+  port_map: '1337'

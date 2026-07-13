@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Nova DSO Tracker is a tool for astrophotographers to track Deep Space Objects, check observability, and manage imaging sessions.",
+  "tagline": "Real-time tracking and planning for Deep Space Objects.",
+  "developer": "mrantonSG",
+  "author": "mrantonSG",
+  "thumbnail": "",
+  "category": "Media",
+  "title": "Nova DSO Tracker",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.nova-dso-tracker",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "The all-in-one no-code platform for interactive storytelling and Voltask automation engine. Paid license required, no free tier available. Purchase a license at https://celestory.io/pricing",
+  "tagline": "No-code interactive storytelling & automation",
+  "developer": "celestory",
+  "author": "Celestory",
+  "thumbnail": "/apps/com.bigbeartechworld.celestory/assets/celestory.webp",
+  "category": "Developer",
+  "title": "Celestory & Voltask",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.celestory",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

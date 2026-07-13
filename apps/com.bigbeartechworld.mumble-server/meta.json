@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "Mumble is a free, open source, low latency, high quality voice chat application.",
+  "tagline": "Mumble Server",
+  "developer": "mumblevoip",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Social",
+  "title": "Mumble Server",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.mumble-server",
+  "version": "",
+  "categories": [
+    "social"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

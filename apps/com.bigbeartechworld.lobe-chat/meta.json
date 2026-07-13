@@ -1,0 +1,30 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "LobeChat is a open-source, extensible (Function Calling), high-performance chatbot framework. It supports one-click free deployment of your private ChatGPT/LLM web application.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.lobe-chat/assets/screenshot-1.webp"
+  ],
+  "tagline": "LobeChat",
+  "developer": "lobehub",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.lobe-chat/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-lobe-chat-to-bigbearcasaos/2453?u=dragonfire1119\n"
+  },
+  "category": "AI",
+  "title": "LobeChat",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.lobe-chat",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,20 @@
+name: big-bear-open-webui
+services:
+  big-bear-open-webui:
+    container_name: big-bear-open-webui
+    image: ghcr.io/open-webui/open-webui:git-33e54a9@sha256:b1f3fdcbe97af8b282cecbc550339e55e032d37f6c5aeb1635457a209ec5d42f
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/backend/data
+    environment:
+    - OLLAMA_BASE_URL=
+    - OPENAI_API_KEY=
+    ports:
+    - 8080:8080
+x-casaos:
+  id: com.bigbeartechworld.open-webui
+  main: big-bear-open-webui
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.open-webui/assets/icon.png
+  title:
+    en_US: Open WebUI
+  port_map: '8080'

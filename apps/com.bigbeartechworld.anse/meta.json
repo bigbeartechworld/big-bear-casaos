@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Anse is a fully optimized UI for AI Chats. Supercharged experience for multiple models such as ChatGPT, DALL-E and Stable Diffusion.",
+  "tagline": "Fully optimized UI for AI Chats.",
+  "developer": "ddiu8081",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "AI",
+  "title": "Anse",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.anse",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

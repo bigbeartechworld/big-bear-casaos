@@ -1,0 +1,62 @@
+name: big-bear-romm
+services:
+  big-bear-romm:
+    image: rommapp/romm:4.9.2@sha256:c81778afcafe7c865bdf156d1c62349aec3dfca3aca5ec0d6c2c2e8bfa9fb071
+    container_name: big-bear-romm
+    environment:
+    - DB_HOST=big-bear-rommdb
+    - DB_PORT=3306
+    - DB_USER=romm-user
+    - DB_NAME=romm
+    - DB_PASSWD=casaos
+    - ROMM_AUTH_SECRET_KEY=<secret key>
+    - IGDB_CLIENT_ID=<igdb client id>
+    - IGDB_CLIENT_SECRET=<igdb client secret>
+    - MOBYGAMES_API_KEY=<moby api key>
+    - STEAMGRIDDB_API_KEY=<sgdb api key>
+    - SCREENSCRAPER_USER=<screenscraper user>
+    - SCREENSCRAPER_PASSWORD=<screenscraper password>
+    - RETROACHIEVEMENTS_API_KEY=<retroachievements api key>
+    - HASHEOUS_API_ENABLED=true
+    - ENABLE_RESCAN_ON_FILESYSTEM_CHANGE=true
+    - ENABLE_SCHEDULED_RESCAN=true
+    - ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB=true
+    volumes:
+    - /DATA/AppData/$AppID/resources:/romm/resources
+    - /DATA/AppData/$AppID/redis-data:/redis-data
+    - /DATA/AppData/$AppID/library:/romm/library
+    - /DATA/AppData/$AppID/assets:/romm/assets
+    - /DATA/AppData/$AppID/config:/romm/config
+    - /DATA/AppData/$AppID/logs:/romm/logs
+    ports:
+    - 1080:8080
+    depends_on:
+    - big-bear-rommdb
+    restart: unless-stopped
+    networks:
+    - big-bear-romm-network
+  big-bear-rommdb:
+    image: mariadb:latest@sha256:628f228f0fd5913a220438693576b29b6fe4dc1fa0a1298c0e98579fae28635f
+    container_name: big-bear-rommdb
+    environment:
+    - MYSQL_ROOT_PASSWORD=casaos
+    - MYSQL_DATABASE=romm
+    - MYSQL_USER=romm-user
+    - MYSQL_PASSWORD=casaos
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    ports:
+    - 3306:3306
+    restart: unless-stopped
+    networks:
+    - big-bear-romm-network
+networks:
+  big-bear-romm-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.romm
+  main: big-bear-romm
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.romm/assets/icon.png
+  title:
+    en_US: RomM
+  port_map: '1080'

@@ -1,0 +1,41 @@
+name: big-bear-healthchecks
+services:
+  big-bear-healthchecks:
+    container_name: big-bear-healthchecks
+    image: linuxserver/healthchecks:4.2.20260708@sha256:4cb0891d82d4a085eaeedd09f06ad9063e078587afdcfef0ad7ea61d53a97664
+    restart: unless-stopped
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=Etc/UTC
+    - SITE_ROOT=http://[YOUR_CASAOS_IP]
+    - SITE_NAME="Big Bear HealthChecks"
+    - SUPERUSER_EMAIL=user@example.com
+    - SUPERUSER_PASSWORD=8a4c087a-2652-4d12-a6cc-feeb60e59dd4
+    - ALLOWED_HOSTS=
+    - APPRISE_ENABLED=False
+    - CSRF_TRUSTED_ORIGINS=
+    - DEBUG=True
+    - DEFAULT_FROM_EMAIL=
+    - EMAIL_HOST=
+    - EMAIL_PORT=
+    - EMAIL_HOST_USER=
+    - EMAIL_HOST_PASSWORD=
+    - EMAIL_USE_TLS=
+    - INTEGRATIONS_ALLOW_PRIVATE_IPS=
+    - PING_EMAIL_DOMAIN=
+    - RP_ID=
+    - SECRET_KEY="b2ea4094-c950-4890-b85f-301d8a777af2"
+    - SITE_LOGO_URL=
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    ports:
+    - 8000:8000
+    - 2525:2525
+x-casaos:
+  id: com.bigbeartechworld.healthchecks
+  main: big-bear-healthchecks
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.healthchecks/assets/icon.png
+  title:
+    en_US: Healthchecks
+  port_map: '8000'

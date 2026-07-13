@@ -1,0 +1,25 @@
+{
+  "architectures": [
+    "amd64"
+  ],
+  "description": "This Docker image is designed to automatically restart specified Docker containers and send notifications to a Discord channel upon each restart. It's particularly useful for maintaining long-running services, ensuring they're periodically refreshed and stakeholders are informed of these actions.",
+  "tagline": "Automatically restart specified Docker containers and send notifications to a Discord channel",
+  "developer": "activecs",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "You must add a Discord webhook URL to the `DISCORD_WEBHOOK_URL` environment variable.\n"
+  },
+  "category": "Developer",
+  "title": "Docker Cron Restart Notifier",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.docker-cron-restart-notifier",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0
+  }
+}

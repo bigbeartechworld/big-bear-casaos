@@ -1,0 +1,44 @@
+name: big-bear-send-visee
+services:
+  big-bear-send-visee:
+    container_name: big-bear-send-visee
+    image: registry.gitlab.com/timvisee/send:v3.4.27@sha256:b950a557f0f4eb7d2114a9126aea5df984ffe868385a3fb6b327d9f770bec0ae
+    restart: unless-stopped
+    environment:
+    - NODE_ENV=production
+    - BASE_URL=http://${APP_DOMAIN}
+    - REDIS_HOST=big-bear-send-visee-redis
+    - MAX_FILE_SIZE=2147483648
+    - FILE_DIR=/uploads
+    volumes:
+    - /DATA/AppData/$AppID/uploads:/uploads
+    ports:
+    - 1443:1443
+    networks:
+    - big_bear_send_visee_network
+  big-bear-send-visee-redis:
+    container_name: big-bear-send-visee-redis
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/redis:/data
+    healthcheck:
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    networks:
+    - big_bear_send_visee_network
+networks:
+  big_bear_send_visee_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.send-visee
+  main: big-bear-send-visee
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.send-visee/assets/icon.png
+  title:
+    en_US: Send Visee
+  port_map: '1443'

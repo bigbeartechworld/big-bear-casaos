@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A self-hosted web file manager forked from FileBrowser with advanced features including OIDC authentication, indexed search, office document previews, and multi-source support.",
+  "tagline": "Advanced self-hosted web file manager",
+  "developer": "gtsteffaniak",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "**Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld\n**Community Forum**: https://community.bigbeartechworld.com/t/added-filebrowser-quantum-to-bigbearuniversal-apps/5209?u=dragonfire1119\n\nDefault credentials are **admin / admin**. Please change the password after your first login."
+  },
+  "category": "Productivity",
+  "title": "FileBrowser Quantum",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.filebrowser-quantum",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

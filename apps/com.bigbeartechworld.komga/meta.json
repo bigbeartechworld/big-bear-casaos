@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A media server for your comics, mangas, BDs, magazines and eBooks.",
+  "tagline": "A media server for your comics, mangas, BDs, magazines and eBooks.",
+  "developer": "gotson",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-komga-to-bigbearcasaos/1916#p-3567-documentation-4\n"
+  },
+  "category": "Media",
+  "title": "Komga",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.komga",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 256068835,
+    "arm64": 252265132
+  }
+}

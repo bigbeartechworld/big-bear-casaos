@@ -1,0 +1,17 @@
+name: big-bear-codex-docs
+services:
+  app:
+    image: ghcr.io/codex-team/codex.docs:v2.2@sha256:c25f47c7f5af84206cef1fcedb2debcd25ba9ce1d4c6e5a33a0f273faff5a41f
+    ports:
+    - 3000:3000
+    volumes:
+    - /DATA/AppData/$AppID/uploads:/usr/src/app/uploads
+    - /DATA/AppData/$AppID/db:/usr/src/app/db
+    - /DATA/AppData/$AppID/codex-docs-config.local.yaml:/usr/src/app/docs-config.yaml
+x-casaos:
+  id: com.bigbeartechworld.codex-docs
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.codex-docs/assets/icon.jpg
+  title:
+    en_US: CodeX Docs
+  port_map: '3000'

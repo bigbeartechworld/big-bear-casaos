@@ -1,0 +1,19 @@
+name: big-bear-nexterm
+services:
+  big-bear-nexterm:
+    container_name: big-bear-nexterm
+    image: nexterm/aio:1.2.1-BETA@sha256:9760eaa844e679e595e1ca53ef667fa5e478e1bb2cc9a7b862aa446dc692385e
+    restart: unless-stopped
+    environment:
+    - ENCRYPTION_KEY=
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    ports:
+    - 6989:6989
+x-casaos:
+  id: com.bigbeartechworld.nexterm
+  main: big-bear-nexterm
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.nexterm/assets/icon.png
+  title:
+    en_US: Nexterm
+  port_map: '6989'

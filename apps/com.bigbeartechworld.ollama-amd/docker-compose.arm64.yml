@@ -1,0 +1,22 @@
+name: big-bear-ollama-amd
+services:
+  big-bear-ollama-amd:
+    container_name: big-bear-ollama-amd
+    image: ollama/ollama:0.31.2-rocm@sha256:b718f6b4f86fe27ac36791af72edce3cc2b5b5ada5089b78efd715bd2d8851f8
+    restart: unless-stopped
+    environment:
+    - PORT=11434
+    volumes:
+    - /DATA/AppData/$AppID/.ollama:/root/.ollama
+    ports:
+    - 11434:11434
+    devices:
+    - /dev/kfd
+    - /dev/dri
+x-casaos:
+  id: com.bigbeartechworld.ollama-amd
+  main: big-bear-ollama-amd
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ollama-amd/assets/icon.png
+  title:
+    en_US: Ollama - AMD
+  port_map: '11434'

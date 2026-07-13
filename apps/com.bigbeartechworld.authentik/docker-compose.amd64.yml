@@ -1,0 +1,98 @@
+name: big-bear-authentik
+services:
+  big-bear-authentik:
+    container_name: big-bear-authentik
+    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
+    command: server
+    environment:
+      AUTHENTIK_REDIS__HOST: big-bear-authentik-redis
+      AUTHENTIK_POSTGRESQL__HOST: big-bear-authentik-db
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: authentik-password
+      AUTHENTIK_SECRET_KEY: changeme
+    volumes:
+    - /DATA/AppData/$AppID/data/authentik-media:/media
+    - /DATA/AppData/$AppID/data/authentik-custom-templates:/templates
+    ports:
+    - 9443:9443
+    depends_on:
+    - big-bear-authentik-db
+    - big-bear-authentik-redis
+    networks:
+    - big_bear_authentik_network
+  big-bear-authentik-worker:
+    image: ghcr.io/goauthentik/server:2026.2.2@sha256:40f0df709957c11324420fa387f1135c427f16086f12ca266b2d883d39c71fe3
+    restart: unless-stopped
+    command: worker
+    container_name: big-bear-authentik-worker
+    environment:
+      AUTHENTIK_REDIS__HOST: big-bear-authentik-redis
+      AUTHENTIK_POSTGRESQL__HOST: big-bear-authentik-db
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: authentik-password
+      AUTHENTIK_SECRET_KEY: changeme
+    user: root
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /DATA/AppData/$AppID/data/authentik-media:/media
+    - /DATA/AppData/$AppID/data/authentik-certs:/certs
+    - /DATA/AppData/$AppID/data/authentik-custom-templates:/templates
+    depends_on:
+    - big-bear-authentik-db
+    - big-bear-authentik-redis
+    networks:
+    - big_bear_authentik_network
+  big-bear-authentik-db:
+    container_name: big-bear-authentik-db
+    image: postgres:14-alpine@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 5s
+    volumes:
+    - /DATA/AppData/$AppID/data/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: authentik-password
+      POSTGRES_USER: authentik
+      POSTGRES_DB: authentik
+    networks:
+    - big_bear_authentik_network
+  big-bear-authentik-redis:
+    image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
+    command:
+    - --save
+    - '60'
+    - '1'
+    - --loglevel
+    - warning
+    container_name: big-bear-authentik-redis
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli ping | grep PONG
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 3s
+    volumes:
+    - /DATA/AppData/$AppID/data/redis:/data
+    networks:
+    - big_bear_authentik_network
+networks:
+  big_bear_authentik_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.authentik
+  main: big-bear-authentik
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.authentik/assets/icon.png
+  title:
+    en_US: Authentik
+  port_map: '9443'

@@ -1,0 +1,21 @@
+name: big-bear-home-assistant
+services:
+  app:
+    container_name: big-bear-home-assistant
+    image: ghcr.io/home-assistant/home-assistant:2026.5.1@sha256:d4fbec16196d5c8bedf32647f0ca7165f654d92a2e81f35a373508d3226cb867
+    restart: unless-stopped
+    cap_add:
+    - NET_ADMIN
+    - NET_RAW
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    - /etc/localtime:/etc/localtime:ro
+    - /run/dbus:/run/dbus:ro
+    network_mode: host
+x-casaos:
+  id: com.bigbeartechworld.home-assistant
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.home-assistant/assets/icon.png
+  title:
+    en_US: Home Assistant
+  port_map: '8123'

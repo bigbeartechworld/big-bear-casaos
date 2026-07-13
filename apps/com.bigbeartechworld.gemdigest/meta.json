@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Simplify your reads, amplify your time! 📚✨ GemDigest is a Telegram bot that summarizes articles from any website into bite-sized nuggets, saving you time and energy for what matters most. 📱👋",
+  "tagline": "Your personal article summarizer",
+  "developer": "Armaggheddon",
+  "author": "BigBearCommunity",
+  "thumbnail": "",
+  "category": "Others",
+  "title": "GemDigest Bot",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.gemdigest",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

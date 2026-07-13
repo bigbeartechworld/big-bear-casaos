@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found. WARNING: v26 has breaking changes from previous versions — volume paths changed from /app/config and /app/db to /data/config and /data/db. Existing data will NOT be migrated automatically. See the migration docs before upgrading.",
+  "tagline": "NetAlertX v26 (Latest)",
+  "developer": "jokobsk",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "v26 has breaking volume path changes. If migrating from the legacy version, see https://docs.netalertx.com for migration instructions.\n"
+  },
+  "category": "Networking",
+  "title": "NetAlertX v26",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.netalertx-v26",
+  "version": "",
+  "categories": [
+    "networking"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

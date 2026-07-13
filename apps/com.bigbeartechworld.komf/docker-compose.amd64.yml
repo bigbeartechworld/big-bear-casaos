@@ -1,0 +1,30 @@
+name: big-bear-komf
+services:
+  big-bear-komf:
+    container_name: big-bear-komf
+    image: sndxr/komf:1.7.1@sha256:4a6971a76abc30869f6d0555a7328ff8cd879f3016a7378395df331c1245cbb2
+    restart: unless-stopped
+    environment:
+    - KOMF_KOMGA_BASE_URI=http://komga:25600
+    - KOMF_KOMGA_USER=admin@example.org
+    - KOMF_KOMGA_PASSWORD=admin
+    - KOMF_KAVITA_BASE_URI=http://kavita:5000
+    - KOMF_KAVITA_API_KEY=cd1edcc1-6010-41a8-a82b-73f501dc2760
+    - KOMF_LOG_LEVEL=INFO
+    volumes:
+    - /DATA/AppData/$AppID/config:/config
+    user: 1000:1000
+    ports:
+    - 8085:8085
+    networks:
+    - big_bear_komf_network
+networks:
+  big_bear_komf_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.komf
+  main: big-bear-komf
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.komf/assets/icon.png
+  title:
+    en_US: Komf
+  port_map: '8085'

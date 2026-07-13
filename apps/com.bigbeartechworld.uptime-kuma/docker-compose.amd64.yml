@@ -1,0 +1,17 @@
+name: big-bear-uptime-kuma
+services:
+  app:
+    image: louislam/uptime-kuma:2@sha256:91e963bfda569ba115206e843febb446f473ab525add4e08b2b9e3beffa16985
+    container_name: uptime-kuma
+    volumes:
+    - /DATA/AppData/$AppID/data:/app/data
+    ports:
+    - 3001:3001
+    restart: always
+x-casaos:
+  id: com.bigbeartechworld.uptime-kuma
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.uptime-kuma/assets/icon.png
+  title:
+    en_US: Uptime Kuma
+  port_map: '3001'

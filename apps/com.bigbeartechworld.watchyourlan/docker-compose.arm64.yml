@@ -1,0 +1,19 @@
+name: big-bear-watchyourlan
+services:
+  big-bear-watchyourlan:
+    container_name: big-bear-watchyourlan
+    image: aceberg/watchyourlan:2.1.4@sha256:f77532ca7c3c9a4398cb094df7674013a3d7fcf4699386f1e456c24df6fef00e
+    environment:
+    - IFACES="eth0"
+    - TZ="UTC"
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data/WatchYourLAN
+    network_mode: host
+x-casaos:
+  id: com.bigbeartechworld.watchyourlan
+  main: big-bear-watchyourlan
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.watchyourlan/assets/icon.png
+  title:
+    en_US: WatchYourLAN
+  port_map: '8840'

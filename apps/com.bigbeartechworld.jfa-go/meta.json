@@ -1,0 +1,33 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "jfa-go is a user management app for Jellyfin (and Emby as 2nd class) that provides invite-based account creation as well as other features that make one's instance much easier to manage.",
+  "screenshot_link": [
+    "/apps/com.bigbeartechworld.jfa-go/assets/screenshot-1.webp",
+    "/apps/com.bigbeartechworld.jfa-go/assets/screenshot-2.webp",
+    "/apps/com.bigbeartechworld.jfa-go/assets/screenshot-3.webp",
+    "/apps/com.bigbeartechworld.jfa-go/assets/screenshot-4.webp"
+  ],
+  "tagline": "Manage users in Jellyfin",
+  "developer": "hrfee",
+  "author": "BigBearTechWorld",
+  "thumbnail": "/apps/com.bigbeartechworld.jfa-go/assets/thumbnail.webp",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-jfa-go-to-bigbearcasaos/3364?u=dragonfire1119\n"
+  },
+  "category": "Media",
+  "title": "jfa-go",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.jfa-go",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

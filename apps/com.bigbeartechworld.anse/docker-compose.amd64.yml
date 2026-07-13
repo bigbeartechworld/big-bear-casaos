@@ -1,0 +1,17 @@
+name: big-bear-anse
+services:
+  big-bear-anse:
+    container_name: big-bear-anse
+    image: ddiu8081/anse:v1.1.11@sha256:fd9afc84b9e1df02ca065170e72994b787e7d2ea881f22eda2fcd2c58e717164
+    restart: unless-stopped
+    environment:
+    - PORT=8014
+    ports:
+    - 8014:8014
+x-casaos:
+  id: com.bigbeartechworld.anse
+  main: big-bear-anse
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.anse/assets/icon.jpg
+  title:
+    en_US: Anse
+  port_map: '8014'

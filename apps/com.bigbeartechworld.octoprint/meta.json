@@ -1,0 +1,24 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "OctoPrint is the snappy web interface for your 3D printer!",
+  "tagline": "OctoPrint",
+  "developer": "octoprint",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "category": "Home",
+  "title": "OctoPrint",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.octoprint",
+  "version": "",
+  "categories": [
+    "home"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

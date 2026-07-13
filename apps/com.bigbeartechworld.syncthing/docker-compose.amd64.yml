@@ -1,0 +1,25 @@
+name: big-bear-syncthing
+services:
+  big-bear-syncthing:
+    container_name: big-bear-syncthing
+    image: syncthing/syncthing:2.1@sha256:4464f4161dd0251e20d46bb3aec83363db75d80cef1abdd5d5fd4054b04a004d
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/var/syncthing
+    - /DATA/AppData/$AppID/media/data/syncthing:/media/data/syncthing
+    ports:
+    - 8384:8384
+    - 22000:22000/tcp
+    - 22000:22000/udp
+    - 21027:21027/udp
+    environment:
+    - PUID=1000
+    - PGID=1000
+    stop_grace_period: 1m
+x-casaos:
+  id: com.bigbeartechworld.syncthing
+  main: big-bear-syncthing
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.syncthing/assets/icon.png
+  title:
+    en_US: Syncthing
+  port_map: '8384'

@@ -1,0 +1,20 @@
+name: big-bear-audiobookshelf
+services:
+  big-bear-audiobookshelf:
+    container_name: big-bear-audiobookshelf
+    image: ghcr.io/advplyr/audiobookshelf:2.34.0@sha256:4143292c530f6ac6700afd13360c04f477e4f1a81c1c97c4224b1c7e4330c5c4
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/media/data/books/spoken:/audiobooks
+    - /DATA/AppData/$AppID/media/data/podcasts:/podcasts
+    - /DATA/AppData/$AppID/data/config:/config
+    - /DATA/AppData/$AppID/data/metadata:/metadata
+    ports:
+    - 8080:80
+x-casaos:
+  id: com.bigbeartechworld.audiobookshelf
+  main: big-bear-audiobookshelf
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.audiobookshelf/assets/icon.png
+  title:
+    en_US: Audiobookshelf
+  port_map: '8080'

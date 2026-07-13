@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Authentik is a self-hosted identity and access management platform that provides a secure and scalable solution for managing user accounts, authentication, and authorization. It offers a range of features, including user management, role-based access control, and multi-factor authentication. Authentik is designed to be easy to use and integrate with your existing systems, making it a great choice for organizations looking to improve their security and compliance.",
+  "tagline": "Authentik",
+  "developer": "authentik",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-authentik-to-bigbearcasaos/1196#instructions-3\n"
+  },
+  "category": "Others",
+  "title": "Authentik",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.authentik",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 352555211,
+    "arm64": 348854913
+  }
+}

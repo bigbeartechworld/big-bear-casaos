@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "A lightweight, self-hosted Docker dashboard that provides quick access to all running containers and their exposed ports with one-click access to web apps.",
+  "tagline": "Docker Dashboard",
+  "developer": "dockpeek",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "**Support BigBearTechWorld**: https://ko-fi.com/bigbeartechworld\n**Community Forum**: https://community.bigbeartechworld.com\n**Read this before installing**: https://community.bigbeartechworld.com/t/added-dockpeek-to-bigbearcasaos/4136?u=dragonfire1119\n\nBefore you install, make sure to change the default credentials (SECRET_KEY, USERNAME, PASSWORD) for security."
+  },
+  "category": "Developer",
+  "title": "Dockpeek",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.dockpeek",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 58396661,
+    "arm64": 58337261
+  }
+}

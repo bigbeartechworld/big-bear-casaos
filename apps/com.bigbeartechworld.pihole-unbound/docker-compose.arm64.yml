@@ -1,0 +1,31 @@
+name: big-bear-pihole-unbound
+services:
+  app:
+    container_name: big-bear-pihole-unbound
+    image: bigbeartechworld/big-bear-pihole-unbound:2026.06.0@sha256:462ed84e3f4d8c2fb4749114ff37fcd7817221b3be867da75848d2b1736573eb
+    restart: unless-stopped
+    environment:
+      TZ: America/Chicago
+      FTLCONF_webserver_api_password: your_password
+      FTLCONF_dns_upstreams: 127.0.0.1#5353
+    volumes:
+    - /DATA/AppData/$AppID/etc:/etc/pihole/
+    - /DATA/AppData/$AppID/dnsmasq.d:/etc/dnsmasq.d/
+    ports:
+    - 53:53/tcp
+    - 53:53/udp
+    - 67:67/udp
+    - 8080:80/tcp
+    - 10443:443/tcp
+    networks:
+    - pihole-unbound-network
+networks:
+  pihole-unbound-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.pihole-unbound
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.pihole-unbound/assets/icon.png
+  title:
+    en_US: Pi-hole and Unbound
+  port_map: '8080'

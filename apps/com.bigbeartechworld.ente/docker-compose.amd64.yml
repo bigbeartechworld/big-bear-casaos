@@ -1,0 +1,114 @@
+name: big-bear-ente
+services:
+  museum:
+    image: ghcr.io/ente/server:latest@sha256:276523f99187c7a396948ae433d64832221a7591c824cd854a92d52d51e935b1
+    container_name: ente-museum
+    ports:
+    - 8080:8080
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+      minio-init:
+        condition: service_completed_successfully
+    environment:
+      ENTE_DB_HOST: postgres
+      ENTE_DB_PORT: '5432'
+      ENTE_DB_NAME: ente_db
+      ENTE_DB_USER: pguser
+      ENTE_DB_PASSWORD: change-me-qE7Yb2sN4wR9tK1
+      ENTE_DB_SSLMODE: disable
+      ENTE_S3_ARE_LOCAL_BUCKETS: 'true'
+      ENTE_S3_USE_PATH_STYLE_URLS: 'true'
+      ENTE_S3_B2_EU_CEN_KEY: ente-minio-access
+      ENTE_S3_B2_EU_CEN_SECRET: change-me-minio-vH3pL8xC0zN5
+      ENTE_S3_B2_EU_CEN_ENDPOINT: localhost:3200
+      ENTE_S3_B2_EU_CEN_REGION: eu-central-2
+      ENTE_S3_B2_EU_CEN_BUCKET: b2-eu-cen
+      ENTE_KEY_ENCRYPTION: yvmG/RnzKrbCb9L3mgsmoxXr9H7i2Z4qlbT0mL3ln4w=
+      ENTE_KEY_HASH: KXYiG07wC7GIgvCSdg+WmyWdXDAn6XKYJtp/wkEU7x573+byBRAYtpTP0wwvi8i/4l37uicX1dVTUzwH3sLZyw==
+      ENTE_JWT_SECRET: i2DecQmfGreG6q1vBj5tCokhlN41gcfS2cjOs9Po-u8=
+      ENTE_APPS_PUBLIC_ALBUMS: http://localhost:3002
+    restart: unless-stopped
+    networks:
+    - ente_network
+  socat:
+    image: alpine/socat@sha256:d85531a29ef5ba99dfb4717485c239307e2902d522a1bc010992a2728c92cfad
+    container_name: ente-socat
+    network_mode: service:museum
+    depends_on:
+    - museum
+    - minio
+    command: TCP-LISTEN:3200,fork,reuseaddr TCP:minio:3200
+    restart: unless-stopped
+  web:
+    image: ghcr.io/ente/web:latest@sha256:77f2a5244e8e515e66c3d737ed2ed89907e440d51d22435d7cf55e9c33623632
+    container_name: ente-web
+    ports:
+    - 3000:3000
+    - 3002:3002
+    depends_on:
+    - museum
+    environment:
+      ENTE_API_ORIGIN: http://localhost:8080
+    restart: unless-stopped
+    networks:
+    - ente_network
+  postgres:
+    image: postgres:15@sha256:bcab099bfaab33333a73a2ebe8c1d615c9f4c2402dd43452f989a36c6da9a5ba
+    container_name: ente-postgres
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: change-me-qE7Yb2sN4wR9tK1
+      POSTGRES_DB: ente_db
+    volumes:
+    - /DATA/AppData/$AppID/postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U pguser -d ente_db
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+    - ente_network
+  minio:
+    image: minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
+    container_name: ente-minio
+    ports:
+    - 3200:3200
+    environment:
+      MINIO_ROOT_USER: ente-minio-access
+      MINIO_ROOT_PASSWORD: change-me-minio-vH3pL8xC0zN5
+    command: server /data --address ":3200" --console-address ":3201"
+    volumes:
+    - /DATA/AppData/$AppID/minio_data:/data
+    restart: unless-stopped
+    networks:
+    - ente_network
+  minio-init:
+    image: minio/mc@sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727
+    container_name: ente-minio-init
+    depends_on:
+    - minio
+    entrypoint: '/bin/sh -c " until mc alias set ente http://minio:3200 ente-minio-access
+      change-me-minio-vH3pL8xC0zN5; do sleep 1; done; mc mb --ignore-existing ente/b2-eu-cen;
+      mc mb --ignore-existing ente/wasabi-eu-central-2-v3; mc mb --ignore-existing
+      ente/scw-eu-fr-v3; exit 0; "
+
+      '
+    networks:
+    - ente_network
+networks:
+  ente_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.ente
+  main: web
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ente/assets/icon.png
+  title:
+    en_US: Ente Photos
+  port_map: '3000'

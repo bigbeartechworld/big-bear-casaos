@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.",
+  "tagline": "Passkey-based OIDC authentication",
+  "developer": "pocket-id",
+  "author": "techieanant",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Before you install read this: https://community.bigbeartechworld.com/t/added-pocket-id-to-bigbearcasaos/3552#p-6013-documentation-4\n"
+  },
+  "category": "Others",
+  "title": "Pocket ID",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.pocketid",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 30055233,
+    "arm64": 28380367
+  }
+}

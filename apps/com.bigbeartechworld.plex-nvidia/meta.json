@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Stream Movies & TV Shows with NVIDIA GPU",
+  "tagline": "Stream Movies & TV Shows with NVIDIA GPU",
+  "developer": "plexinc",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this before installing: https://community.bigbeartechworld.com/t/added-plex-with-nvidia-gpu-to-bigbearcasaos/3447?u=dragonfire1119\n"
+  },
+  "category": "Media",
+  "title": "Plex with NVIDIA GPU",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.plex-nvidia",
+  "version": "",
+  "categories": [
+    "media"
+  ],
+  "min_memory": 268435456,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

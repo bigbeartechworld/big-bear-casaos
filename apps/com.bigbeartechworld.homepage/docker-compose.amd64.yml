@@ -1,0 +1,17 @@
+name: big-bear-homepage
+services:
+  app:
+    image: ghcr.io/gethomepage/homepage:v1.13.1@sha256:d8d784e5090111b6e4c56dfd90e272d2953a2094e87349f647165df0fa6c4401
+    container_name: homepage
+    ports:
+    - 3000:3000
+    volumes:
+    - /DATA/AppData/$AppID/config:/app/config
+    - /var/run/docker.sock:/var/run/docker.sock
+x-casaos:
+  id: com.bigbeartechworld.homepage
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.homepage/assets/icon.png
+  title:
+    en_US: Homepage
+  port_map: '3000'

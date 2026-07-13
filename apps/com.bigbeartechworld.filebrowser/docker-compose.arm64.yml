@@ -1,0 +1,26 @@
+name: big-bear-filebrowser
+services:
+  big-bear-filebrowser:
+    container_name: big-bear-filebrowser
+    image: filebrowser/filebrowser:v2.63.18-s6@sha256:6b41f1f8f12bc5359d825bf4096c17ef53d2c962a076361ea1b9b1923db7b422
+    restart: unless-stopped
+    environment:
+    - PUID=0
+    - PGID=0
+    volumes:
+    - /DATA/AppData:/srv/app-data
+    - /DATA/Documents:/srv/documents
+    - /DATA/Downloads:/srv/downloads
+    - /DATA/Gallery:/srv/gallery
+    - /DATA/media:/srv/media
+    - /DATA/AppData/$AppID/data/db:/database
+    - /DATA/AppData/$AppID/data/config:/config
+    ports:
+    - 8080:80
+x-casaos:
+  id: com.bigbeartechworld.filebrowser
+  main: big-bear-filebrowser
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.filebrowser/assets/icon.png
+  title:
+    en_US: Filebrowser
+  port_map: '8080'

@@ -1,0 +1,21 @@
+name: big-bear-eufy-security-ws
+services:
+  big-bear-eufy-security-ws:
+    container_name: big-bear-eufy-security-ws
+    image: bropat/eufy-security-ws:3.1.0@sha256:d41169205f4e20e1e7e173283aaf8bb2d68e2abecb42bc1500a5fac5bb7a8750
+    environment:
+      USERNAME: '[EUFY_USERNAME]'
+      PASSWORD: '[EUFY_PASSWORD]'
+      COUNTRY: US
+      LANGUAGE: en
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    network_mode: host
+x-casaos:
+  id: com.bigbeartechworld.eufy-security-ws
+  main: big-bear-eufy-security-ws
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.eufy-security-ws/assets/icon.jpg
+  title:
+    en_US: Eufy Security WS
+  port_map: '3000'

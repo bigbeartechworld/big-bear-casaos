@@ -1,0 +1,44 @@
+name: big-bear-ghost
+services:
+  app:
+    container_name: big-bear-ghost
+    image: ghost:6.49.0-alpine@sha256:8d9be08b52c8bacdf1b3d752beb53748e8d5674a733a6994be2b40c37791e8d6
+    restart: on-failure
+    networks:
+    - ghost-network
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: ghost
+      database__connection__password: casaos
+      database__connection__database: ghost
+      url: http://localhost:2368
+    volumes:
+    - /DATA/AppData/$AppID/content:/var/lib/ghost/content
+    ports:
+    - 2368:2368
+    depends_on:
+    - db
+  db:
+    container_name: big-bear-ghost-db
+    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    restart: on-failure
+    volumes:
+    - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    environment:
+      MYSQL_USER: ghost
+      MYSQL_DATABASE: ghost
+      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: casaos
+    networks:
+    - ghost-network
+networks:
+  ghost-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.ghost
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.ghost/assets/icon.png
+  title:
+    en_US: Ghost
+  port_map: '2368'

@@ -1,0 +1,15 @@
+name: big-bear-playitgg
+services:
+  app:
+    container_name: playitgg
+    image: dysta/playitgg:1.2.0@sha256:d26d21c5fca76253dbc45715f1556cdc29945648a11e0f63b01fb6a1c9b4a96a
+    restart: unless-stopped
+    volumes:
+    - /DATA/AppData/$AppID/secrets:/secrets
+x-casaos:
+  id: com.bigbeartechworld.playitgg
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.playitgg/assets/icon.png
+  title:
+    en_US: playit.gg
+  port_map: ''

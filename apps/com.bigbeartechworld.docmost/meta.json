@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Docmost is an open-source alternative to the likes of Notion and Confluence. Whether you're managing a wiki, a knowledge base, or extensive project documentation, Docmost provides the tools you need to create, collaborate, and share knowledge effortlessly.",
+  "tagline": "Docmost",
+  "developer": "docmost",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "Read this: https://community.bigbeartechworld.com/t/added-docmost-to-bigbearcasaos/1724#p-3266-documentation-3\n"
+  },
+  "category": "Productivity",
+  "title": "Docmost",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.docmost",
+  "version": "",
+  "categories": [
+    "productivity"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -1,0 +1,19 @@
+name: big-bear-umbrel
+services:
+  big-bear-umbrel:
+    container_name: big-bear-umbrel
+    image: dockurr/umbrel:1.7.3@sha256:cd461d81df2b3393ddb780eb975738ed2f7d2f5755a2673e488b1a2ce9f0d22d
+    restart: unless-stopped
+    ports:
+    - 8080:80
+    volumes:
+    - /DATA/AppData/$AppID/data:/data
+    - /var/run/docker.sock:/var/run/docker.sock
+    stop_grace_period: 1m
+x-casaos:
+  id: com.bigbeartechworld.umbrel-os
+  main: big-bear-umbrel
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.umbrel-os/assets/icon.png
+  title:
+    en_US: Umbrel OS
+  port_map: '8080'
