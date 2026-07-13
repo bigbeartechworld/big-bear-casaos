@@ -52,7 +52,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/mailpit/logo.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://github.com/axllent/mailpit/blob/develop/docs/screenshot.png
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/mailpit/logo.png
   # Title for the application
   title:
     en_US: Mailpit
