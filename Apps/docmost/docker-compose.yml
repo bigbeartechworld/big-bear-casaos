@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-docmost
     # Image to be used for the container
-    image: docmost/docmost:0.90.1
+    image: docmost/docmost:0.90.1@sha256:665d9a522e10b6e919188ffa8d3baf6572f064569dbd5630fbe0605d5b91916f
     # Container restart policy
     restart: unless-stopped
     environment:
@@ -54,7 +54,7 @@ services:
             en_US: 'Container Port: 3000'
   big-bear-docmost-db:
     container_name: big-bear-docmost-db
-    image: postgres:16-alpine
+    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
     environment:
       - POSTGRES_DB=docmost
       - POSTGRES_USER=docmost

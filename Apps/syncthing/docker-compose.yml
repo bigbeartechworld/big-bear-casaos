@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-syncthing
     # Image to be used for the container
-    image: syncthing/syncthing:2.1
+    image: syncthing/syncthing:2.1@sha256:4464f4161dd0251e20d46bb3aec83363db75d80cef1abdd5d5fd4054b04a004d
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

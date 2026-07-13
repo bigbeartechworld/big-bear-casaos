@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-ayon
     # Image to be used for the container
-    image: ynput/ayon:1.3.6-20240823
+    image: ynput/ayon:1.3.6-20240823@sha256:def63d3138061857115faf7de0950bb01d4f116272c03a0d3f0d28fcf7e6fc21
     # Container restart policy
     restart: unless-stopped
     # Healthcheck configuration to ensure the service is running properly
@@ -54,7 +54,7 @@ services:
             en_US: 'Container Port: 5000'
   # Service definition for the PostgreSQL database
   postgres:
-    image: postgres:15-alpine
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
     container_name: postgres
     restart: unless-stopped
     environment:

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-fastfetch
     # Image to be used for the container specifies the fastfetch version and source
-    image: bigbeartechworld/big-bear-fastfetch:0.0.5
+    image: bigbeartechworld/big-bear-fastfetch:0.0.5@sha256:fa84a845c95fdc1b9ee427786e7467c3909fbadfd98c4b32e0cf4a2f2a227751
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Run the container in privileged mode to allow access to system metrics

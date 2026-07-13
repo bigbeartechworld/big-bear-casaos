@@ -3,7 +3,7 @@ name: big-bear-mind
 # Service definitions for the big-bear-mind application
 services:
   app:
-    image: "mrcas/mind:v1.4.1"
+    image: "mrcas/mind:v1.4.1@sha256:152f824d093f2e8772af0d209afc710b9e79edf3e6286d7c3eccb0509dafffd4"
     container_name: mind
     environment:
       - TZ=UTC

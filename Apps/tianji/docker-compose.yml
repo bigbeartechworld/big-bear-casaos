@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-tianji
     # Image to be used for the container
-    image: moonrailgun/tianji:1.32.16
+    image: moonrailgun/tianji:1.32.16@sha256:5722eba3ae9baf18100f8ae7c3b71b2cbd553fb3c4845eb84d340a8e06d4027a
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container
@@ -48,7 +48,7 @@ services:
   # Postgres database
   big-bear-tianji-db:
     container_name: big-bear-tianji-db
-    image: postgres:15.4-alpine
+    image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
     environment:
       POSTGRES_DB: tianji
       POSTGRES_USER: tianji-user

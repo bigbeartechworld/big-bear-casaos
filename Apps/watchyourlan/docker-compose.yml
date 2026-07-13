@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-watchyourlan
     # Image to be used for the container
-    image: aceberg/watchyourlan:2.1.4
+    image: aceberg/watchyourlan:2.1.4@sha256:f77532ca7c3c9a4398cb094df7674013a3d7fcf4699386f1e456c24df6fef00e
     # Environment variables to be used for the container
     environment:
       - IFACES="eth0"

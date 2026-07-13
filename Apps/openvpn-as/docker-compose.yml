@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-openvpn-as
     # Image to be used for the container
-    image: openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22
+    image: openvpn/openvpn-as:2.13.1-d8cdeb9c-Ubuntu22@sha256:609aa2238acef1cb3b277c1e7f293e21da1033fb2eb1b52f51e8b22d6ee7227c
     # Container restart policy
     restart: unless-stopped
     # Privileged mode for the container

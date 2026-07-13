@@ -7,7 +7,7 @@ services:
   # Service definition for the Ghostfolio application
   big-bear-ghostfolio:
     container_name: big-bear-ghostfolio # Unique name for the container instance
-    image: ghostfolio/ghostfolio:3.18.0 # Docker image to use
+    image: ghostfolio/ghostfolio:3.18.0@sha256:f661cdba75921ce1b8d97b8b7b311f23edb8bdb16e1d0589498dc09afa7b7558 # Docker image to use
     restart: unless-stopped # Policy to restart the container unless manually stopped
     environment: # Environment variables for configuration
       NODE_ENV: production # Node environment setting (production, development, etc.)
@@ -77,7 +77,7 @@ services:
   # PostgreSQL database service for Ghostfolio
   big-bear-ghostfolio-db:
     container_name: big-bear-ghostfolio-db
-    image: postgres:15.4-alpine # Using PostgreSQL 15.4 on Alpine Linux
+    image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5 # Using PostgreSQL 15.4 on Alpine Linux
     restart: unless-stopped
     environment: # Database configuration settings
       POSTGRES_DB: ghostfolio

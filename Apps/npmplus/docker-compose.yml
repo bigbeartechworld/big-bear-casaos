@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-npmplus
     # Image to be used for the container
-    image: zoeyvid/npmplus:449
+    image: zoeyvid/npmplus:449@sha256:2d950075a98c3aece33e3f771abc0ecabfba4e428fad6f55db7f75c7c637ed81
     # Container restart policy
     restart: unless-stopped
     # Network mode for the container

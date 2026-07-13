@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-kasm
     # Image to be used for the container
-    image: linuxserver/kasm:1.120.20221218
+    image: linuxserver/kasm:1.120.20221218@sha256:6f40f6c999fa626b8e68371298d0a7870b8bbd1696df4cbcb87352e681f7f7cd
     # Container restart policy
     restart: unless-stopped
     # Privilege of the container

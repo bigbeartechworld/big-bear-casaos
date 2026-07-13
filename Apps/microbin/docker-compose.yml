@@ -90,7 +90,7 @@ services:
       # List server publicly (default: false)
       MICROBIN_LIST_SERVER: "false"
     # Image to be used for the container
-    image: danielszabo99/microbin:2.1.4
+    image: danielszabo99/microbin:2.1.4@sha256:6660e5ccad0d764fa3c0032464ffb8f4b4f28c92a2eb9e39202b94cdc5b68909
     # Ports mapping between host and container
     ports:
       - "8888:8080"

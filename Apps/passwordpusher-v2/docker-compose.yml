@@ -29,7 +29,7 @@ services:
     # Name of the container
     container_name: big-bear-pwpush-v2
     # Image to be used for the container
-    image: pglombardo/pwpush:2.8.1
+    image: pglombardo/pwpush:2.8.1@sha256:2d92b5b62bcbc0e5cf6092e3828354a66dc784eda6de2171792a62cbfc7c4ea7
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container
@@ -82,7 +82,7 @@ services:
   big-bear-pwpush-v2-db:
     container_name: big-bear-pwpush-v2-db
     # PostgreSQL required for v2 (MySQL/MariaDB no longer supported)
-    image: postgres:16-alpine
+    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
     environment:
       POSTGRES_USER: "pwpusher"
       POSTGRES_PASSWORD: "6280144a-56af-486f-9088-ac7301399328"

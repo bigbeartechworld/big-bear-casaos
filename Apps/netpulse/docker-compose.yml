@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-netpulse
     # Image to be used for the container
-    image: ghcr.io/bentfender/netpulse:sha-8922b29
+    image: ghcr.io/bentfender/netpulse:sha-8922b29@sha256:14a442573fe53e0e812d2d3e5d84f0ecc11646578372f55ff98ffc07d5288624
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

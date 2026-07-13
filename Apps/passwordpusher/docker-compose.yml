@@ -10,7 +10,7 @@ services:
     # Name of the container (Docker does not have to generate a random name)
     container_name: big-bear-pwpush
     # Image to be used for the container
-    image: pglombardo/pwpush:1.69.3
+    image: pglombardo/pwpush:1.69.3@sha256:7bf7f919b87d818a9cafa2a5c53e2565a577a7b90983b3cd55de90d6de71cf07
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container
@@ -55,7 +55,7 @@ services:
             en_US: 'Container Port: 5100'
   big-bear-pwpush-db:
     container_name: big-bear-pwpush-db
-    image: mariadb:10.6.5
+    image: mariadb:10.6.5@sha256:ca31f38b6e325ece985d857db7eba1fe59928b4fd83ff8a55cb912c9684b9e43
     ports:
       - "3306:3306"
     environment:

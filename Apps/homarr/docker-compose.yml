@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: homarr
     # Image to be used for the container
-    image: ghcr.io/ajnart/homarr:0.16.1
+    image: ghcr.io/ajnart/homarr:0.16.1@sha256:e103abadfb527186af5b4bd43df4eff7c67afa5cd4df8e65fa97910c8840b2a9
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

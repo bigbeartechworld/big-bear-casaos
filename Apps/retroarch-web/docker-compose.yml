@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-retroarch-web
     # Image to be used for the container
-    image: inglebard/retroarch-web:latest
+    image: inglebard/retroarch-web:latest@sha256:bf03014db81776a715b6289f017be2fc988688f9302590413cd6dcb615f07393
     # Container restart policy
     restart: unless-stopped
     # Environment variables

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-farmos
     # Image to be used for the container
-    image: farmos/farmos:3.5.1
+    image: farmos/farmos:3.5.1@sha256:7eca19088bcfc290d9811cf013ded4b4c1552f5cc65d9fc8766c532351748626
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -37,7 +37,7 @@ services:
     # Specify the container name
     container_name: big-bear-farmos-db
     # Use MariaDB version 10 image
-    image: mariadb:10
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
     # Mount the database files to persist data
     volumes:
       - "/DATA/AppData/$AppID/db:/var/lib/mysql"

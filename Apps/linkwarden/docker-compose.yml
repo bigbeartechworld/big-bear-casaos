@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-linkwarden
     # Image to be used for the container
-    image: ghcr.io/linkwarden/linkwarden:v2.14.1
+    image: ghcr.io/linkwarden/linkwarden:v2.14.1@sha256:31cf4bd2a2e111991fa5c9de03174c8698869c83722105c6ce529e4c911e6861
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -56,7 +56,7 @@ services:
     # Name of the container
     container_name: big-bear-linkwarden-db
     # Image to be used
-    image: postgres:16
+    image: postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
     # Container restart policy
     restart: unless-stopped
     # Environment variables

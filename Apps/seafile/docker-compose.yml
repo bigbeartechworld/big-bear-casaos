@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-seafile
     # Image to be used for the container
-    image: seafileltd/seafile-mc:11.0.13
+    image: seafileltd/seafile-mc:11.0.13@sha256:1239b087aa4bdf1b60a3802e80855f230736ac5d5fa3325a40b15d4c598f422c
     # Container restart policy
     restart: unless-stopped
     # Service dependencies
@@ -70,7 +70,7 @@ services:
             en_US: 'Container Port: 80'
   # Database service for seafile
   big-bear-seafile-db:
-    image: mariadb:10.11
+    image: mariadb:10.11@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
     container_name: big-bear-seafile-db
     environment:
       - MYSQL_ROOT_PASSWORD=seafilepassword # Requested, set the root's password of MySQL service.
@@ -106,7 +106,7 @@ services:
   # Memcached service for seafile
   big-bear-seafile-memcached:
     container_name: big-bear-seafile-memcached
-    image: memcached:1.6.39
+    image: memcached:1.6.39@sha256:462fa779babc9b64a235a69dd843cb79fb3591f229ee1f3ff6cb2ca058d8a759
     entrypoint: memcached -m 256
     networks:
       - big_bear_seafile_network

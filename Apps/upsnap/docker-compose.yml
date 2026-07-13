@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-upsnap
     # Image to be used for the container
-    image: ghcr.io/seriousm4x/upsnap:5.3.4
+    image: ghcr.io/seriousm4x/upsnap:5.3.4@sha256:f7edc52fe03f5d424182b06faa72962c625f5e78ff3c9e8457e9617f20d0e611
     # Container restart policy
     restart: unless-stopped
     # Network mode

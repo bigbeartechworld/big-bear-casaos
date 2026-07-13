@@ -7,7 +7,7 @@ services:
   # Service name: big-bear-nocodb
   # This section configures the NocoDB application itself
   big-bear-nocodb:
-    image: nocodb/nocodb:0.301.5 # Specifies the Docker image to use for NocoDB
+    image: nocodb/nocodb:0.301.5@sha256:d9516f0bf546fd6c78a382ab0657626c683fca7aaafdbbe53c66baf15df7fc0d # Specifies the Docker image to use for NocoDB
     container_name: big-bear-nocodb # Sets a custom name for the container
     restart: unless-stopped # Container restart policy to ensure availability
     environment: # Environment variables for configuring NocoDB
@@ -42,7 +42,7 @@ services:
   # Database service configuration
   big-bear-nocodb-db:
     container_name: big-bear-nocodb-db
-    image: postgres:13 # Specifies the PostgreSQL Docker image to use
+    image: postgres:13@sha256:4689940c683801b4ab839ab3b0a0a3555a5fe425371422310944e89eca7d8068 # Specifies the PostgreSQL Docker image to use
     restart: always # Ensures the database container is always running
     environment: # Database credentials and configurations
       POSTGRES_DB: nocodb # Database name

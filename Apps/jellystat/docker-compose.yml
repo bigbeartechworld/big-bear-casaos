@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-jellystat
     # Image to be used for the container
-    image: cyfershepard/jellystat:1.1.11
+    image: cyfershepard/jellystat:1.1.11@sha256:c4e2dfa8bddf8d5ac3a675d7202f71a54dcfe3540cc186899d9201e0fe701fa5
     # Container restart policy
     restart: unless-stopped
     environment:
@@ -55,7 +55,7 @@ services:
             en_US: 'Container Port: 3000'
   big-bear-jellystat-db:
     container_name: big-bear-jellystat-db
-    image: postgres:15.2
+    image: postgres:15.2@sha256:78a275d4c891f7b3a33d3f1a78eda9f1d744954d9e20122bfdc97cdda25cddaf
     environment:
       POSTGRES_DB: "jfstat"
       POSTGRES_USER: postgres

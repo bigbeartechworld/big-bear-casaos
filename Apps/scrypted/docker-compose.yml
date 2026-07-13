@@ -5,7 +5,7 @@ services:
   # This is the main app service for Scrypted
   scrypted:
     container_name: scrypted
-    image: koush/scrypted:v0.144.1-noble-full # Docker image for Scrypted
+    image: koush/scrypted:v0.144.1-noble-full@sha256:25440767192b0d4a0709f50388d14cdf365ba6bff59d04e40a41ca2b7b9a6b70 # Docker image for Scrypted
     network_mode: host # Use host networking mode
     environment:
       # These environment variables are for Scrypted webhook configuration
@@ -45,7 +45,7 @@ services:
       - WATCHTOWER_SCOPE=scrypted
       # Allows periodic auto-updates, can be removed if not desired
       - WATCHTOWER_HTTP_API_PERIODIC_POLLS=true
-    image: containrrr/watchtower # Docker image for Watchtower
+    image: containrrr/watchtower@sha256:6dd50763bbd632a83cb154d5451700530d1e44200b268a4e9488fefdfcf2b038 # Docker image for Watchtower
     container_name: watchtower
     restart: unless-stopped
     volumes:

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-penpot-frontend
     # Image to be used for the container
-    image: penpotapp/frontend:2.16.2
+    image: penpotapp/frontend:2.16.2@sha256:4725b4698d8d1bd25ee1666e0d900d20da8937fea845c6a088f76cd69293560b
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -40,7 +40,7 @@ services:
   # Definition for penpot-backend service
   penpot-backend:
     # Docker image for the service
-    image: penpotapp/backend:2.16.2
+    image: penpotapp/backend:2.16.2@sha256:6c8e3851f3734e98e48d5a4a68e2c64485f6bd67a1ffec809aa9f1847d90a646
     # Name of the container
     container_name: big-bear-penpot-backend
     # Restart policy for the container
@@ -106,7 +106,7 @@ services:
   # Define the penpot-exporter service
   penpot-exporter:
     # Use the penpotapp/exporter:1.19.3 Docker image
-    image: penpotapp/exporter:2.16.2
+    image: penpotapp/exporter:2.16.2@sha256:b370f14927050fb05ac646441b5993d9337dda7eec60d944aa112819c88207bc
     # Set the container name to big-bear-penpot-exporter
     container_name: big-bear-penpot-exporter
     # Automatically restart the container unless stopped
@@ -130,7 +130,7 @@ services:
             en_US: 'Container Variable: PENPOT_REDIS_URI'
   # Define the PostgreSQL service for Penpot
   penpot-postgres:
-    image: postgres:14
+    image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
     restart: unless-stopped
     container_name: big-bear-penpot-postgres
     stop_signal: SIGINT
@@ -171,7 +171,7 @@ services:
       - big-bear-penpot-network
   # Define the penpot-mailcatch service
   penpot-mailcatch:
-    image: sj26/mailcatcher:latest
+    image: sj26/mailcatcher:latest@sha256:5d153a4daadf0c266f29c3856085741f06ca1e3768671f4267622d3e3ffe5564
     restart: always
     expose:
       - "1025" # Expose port 1025 for SMTP

@@ -1,7 +1,7 @@
 name: big-bear-storyteller
 services:
   app:
-    image: registry.gitlab.com/storyteller-platform/storyteller:web-v2.6.0-experimental.14
+    image: registry.gitlab.com/storyteller-platform/storyteller:web-v2.6.0-experimental.14@sha256:876ca77416c1e262faf871ad9f4558339fc3d8858a3fac49610ec5cb69b14957
     container_name: big-bear-storyteller
     ports:
       - "8015:8001"

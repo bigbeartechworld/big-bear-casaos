@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-nexterm
     # Image to be used for the container
-    image: nexterm/aio:1.2.1-BETA
+    image: nexterm/aio:1.2.1-BETA@sha256:9760eaa844e679e595e1ca53ef667fa5e478e1bb2cc9a7b862aa446dc692385e
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the big-bear-nexterm container

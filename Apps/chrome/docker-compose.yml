@@ -2,7 +2,7 @@ name: big-bear-chrome # Name of the CasaOS application
 services:
   chrome:
     container_name: big-bear-chrome # Name of the Docker container
-    image: kasmweb/chrome:1.15.0-rolling # Docker image for the chrome browser
+    image: kasmweb/chrome:1.15.0-rolling@sha256:ae404814331aa0259bfc71cfb3a07e5aca4b147595b833c0552288305f273e1a # Docker image for the chrome browser
     ports:
       - "6902:6901" # Expose port 6901 for VNC access
     environment:

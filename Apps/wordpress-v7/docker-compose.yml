@@ -31,7 +31,7 @@ services:
   # Service definition for the main application
   app:
     # Docker image to use for the application
-    image: wordpress:7.0.1
+    image: wordpress:7.0.1@sha256:e36cd332ae0de78f3c3691e468c54c5540c0a74286b51eb9b5964fa1e9c916cd
     # Port mapping for the application
     ports:
       - 8084:80
@@ -72,7 +72,7 @@ services:
   # Service definition for the database
   db:
     # Docker image to use for the database
-    image: mysql:8.0
+    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
     # Environment variables for the database
     environment:
       MYSQL_DATABASE: wordpress

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-umbrel
     # Image to be used for the container
-    image: dockurr/umbrel:1.7.3
+    image: dockurr/umbrel:1.7.3@sha256:cd461d81df2b3393ddb780eb975738ed2f7d2f5755a2673e488b1a2ce9f0d22d
     # Container restart policy
     restart: unless-stopped
     # Ports mapping between host and container

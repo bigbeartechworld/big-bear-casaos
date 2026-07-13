@@ -81,7 +81,7 @@ services:
     # Container name
     container_name: big-bear-warrackerdb
     # Container image
-    image: postgres:15-alpine
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
     # Container volumes
     volumes:
       - /DATA/AppData/$AppID/warrackerdb:/var/lib/postgresql/data

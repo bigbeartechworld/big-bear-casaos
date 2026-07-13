@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-wallabag
     # Image to be used for the container
-    image: wallabag/wallabag:2.6.14
+    image: wallabag/wallabag:2.6.14@sha256:4a527e027e0d59e87c14225ef11e005af3d4890374202ad319ce5e63dfc66709
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Environment variables for Wallabag configuration
@@ -100,7 +100,7 @@ services:
     # Name of the container
     container_name: big-bear-wallabag-db
     # Image to be used for the database container
-    image: mariadb:10.11.10
+    image: mariadb:10.11.10@sha256:41d89394db8e777d96058d4cf5cf4daf1ed87f76192154f3d89572676f1e2327
     # Container restart policy
     restart: unless-stopped
     # Environment variables for MariaDB configuration

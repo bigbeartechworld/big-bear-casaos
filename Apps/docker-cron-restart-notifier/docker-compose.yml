@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-docker-cron-restart-notifier
     # Image to be used for the container
-    image: deduard/tools:restart-notifier-latest
+    image: deduard/tools:restart-notifier-latest@sha256:8299b18aaff643879f94193b23615cb794e3828b165f2da3847c24470f3ebb02
     # Container restart policy
     restart: unless-stopped
     # Environment variables

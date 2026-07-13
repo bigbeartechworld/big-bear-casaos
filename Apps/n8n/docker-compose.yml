@@ -5,7 +5,7 @@ services:
   # Service configuration for the n8n application
   app:
     container_name: n8n # Name of the n8n container
-    image: n8nio/n8n:2.29.2 # Docker image and version to use for n8n
+    image: n8nio/n8n:2.29.2@sha256:1357982c594730263f0dedf9e1770075b78cac9417775d30531a3c00a72b2a58 # Docker image and version to use for n8n
     restart: unless-stopped # Restart policy: Restart unless manually stopped
     ports:
       - 5678:5678 # Port mapping between host and container
@@ -55,7 +55,7 @@ services:
   # Database service configuration
   db-n8n:
     container_name: db-n8n # Name of the database container
-    image: postgres:14.2 # Docker image and version for PostgreSQL
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd # Docker image and version for PostgreSQL
     restart: on-failure # Restart policy: Restart on failure
     volumes:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Persistent DB data

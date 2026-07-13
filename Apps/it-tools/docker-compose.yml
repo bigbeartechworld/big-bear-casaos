@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-it-tools
     # Image to be used for the container
-    image: corentinth/it-tools:2023.11.2-7d94e11
+    image: corentinth/it-tools:2023.11.2-7d94e11@sha256:30b032f2175e9c4dc5c795cfa44354ce7fe76d9768caee0f24a9a7371948ac0d
     # Container restart policy
     restart: unless-stopped
     # Ports mapping between host and container

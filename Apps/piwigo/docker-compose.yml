@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-piwigo
     # Image to be used for the container
-    image: linuxserver/piwigo:16.4.0
+    image: linuxserver/piwigo:16.4.0@sha256:97a159850563dd7c5e4cedb7a30801f467963c3e910e7ecc07f04cb53b11e5f0
     # Container restart policy
     restart: unless-stopped
     # Environment variables
@@ -50,7 +50,7 @@ services:
           description:
             en_US: 'Container Port: 80'
   big-bear-piwigo-db:
-    image: mariadb:10.6
+    image: mariadb:10.6@sha256:114d40be36852d0a019afd8458f7e1cc63fd300403b115b1f32e31130d5f671b
     container_name: big-bear-piwigo-db
     environment:
       - MYSQL_ROOT_PASSWORD=3cf3f2c4-3415-4efe-b478-db7b6f0b9934 # Root password for MySQL

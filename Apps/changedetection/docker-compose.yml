@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-changedetection
     # Image to be used for the container
-    image: ghcr.io/dgtlmoon/changedetection.io:0.55.3
+    image: ghcr.io/dgtlmoon/changedetection.io:0.55.3@sha256:2d0030e12494be9ebf6a6ebbbad46afe5763f498bbfefe9ebb7f0bf6be3ca5dc
     # Container restart policy
     restart: unless-stopped
     # Ports mapping between host and container

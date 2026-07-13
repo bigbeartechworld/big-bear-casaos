@@ -10,7 +10,7 @@ services:
     # Define the container name
     container_name: big-bear-nextcloud-smb
     # Use the nextcloud image from the official Docker Hub
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:33.0.5
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:33.0.5@sha256:c74370fa69284a8f2243cc3ee07d429ef81d089c746f71771d2b9ade4b5625b2
     # Restart the container unless stopped
     restart: unless-stopped
     # Map port 7580 on the host to port 80 on the container
@@ -87,7 +87,7 @@ services:
   # Define the database container for Nextcloud
   big-bear-nextcloud-smb-db:
     container_name: big-bear-nextcloud-smb-db
-    image: postgres:14.2
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data # Mount the PostgreSQL data directory
@@ -141,7 +141,7 @@ services:
             en_US: 'Container Path: /data'
   big-bear-nextcloud-smb-cron:
     container_name: big-bear-nextcloud-smb-cron
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:33.0.5
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:33.0.5@sha256:c74370fa69284a8f2243cc3ee07d429ef81d089c746f71771d2b9ade4b5625b2
     restart: on-failure
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html

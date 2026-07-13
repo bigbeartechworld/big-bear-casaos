@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-music-assistant-server
     # Image to be used for the container
-    image: ghcr.io/music-assistant/server:2.8.7
+    image: ghcr.io/music-assistant/server:2.8.7@sha256:eef3ee7810d0e4702afa4a0ff55b10bbbfcaa16c98a277fe1b7f4cb6d5d426b4
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

@@ -7,7 +7,7 @@ services:
   # Main application
   app:
     container_name: big-bear-reactive-resume
-    image: amruthpillai/reactive-resume:v5.1.9
+    image: amruthpillai/reactive-resume:v5.2.3@sha256:bfacee69faad04a8b785854d02cb078fb223824e8b07a07ff21fa39ebfa9fe8c
     restart: unless-stopped
     ports:
       - 3000:3000
@@ -130,7 +130,7 @@ services:
   # Database (Postgres)
   postgres:
     container_name: big-bear-reactive-resume-db
-    image: postgres:15-alpine
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/pg/data:/var/lib/postgresql/data
@@ -163,7 +163,7 @@ services:
   # Storage (for image uploads)
   minio:
     container_name: big-bear-reactive-resume-minio
-    image: minio/minio:RELEASE.2024-09-13T20-26-02Z-cpuv1
+    image: minio/minio:RELEASE.2024-09-13T20-26-02Z-cpuv1@sha256:a34ac7cbc53154bef4804b1f9d83a555f944d8c26e6466cef7e782fdb5ec40c4
     command: ["server", "/data"]
     restart: unless-stopped
     ports:
@@ -194,7 +194,7 @@ services:
   # Chrome Browser (for printing and previews)
   chrome:
     container_name: big-bear-reactive-resume-chrome
-    image: browserless/chrome:1.61.1-puppeteer-21.4.1
+    image: browserless/chrome:1.61.1-puppeteer-21.4.1@sha256:b6acad3ef2e1e0e3c2eb018add533570db2b34f5304682bad58c803b23ef7bd2
     restart: unless-stopped
     environment:
       TOKEN: "chrome_token"

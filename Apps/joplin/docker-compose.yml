@@ -7,7 +7,7 @@ services:
   # Configuration for the Joplin server service
   big-bear-joplin:
     container_name: big-bear-joplin # The name of the Docker container for easy reference.
-    image: joplin/server:3.7.1 # Docker image to use, specifying version.
+    image: joplin/server:3.7.1@sha256:0877bfba41a943017c42c58e90db9d8d548bfe699b5e410248b5b879371734f9 # Docker image to use, specifying version.
     restart: unless-stopped # Policy to automatically restart the container unless manually stopped.
     # Environment variables for the Joplin server, configuring database connection and application settings.
     environment:
@@ -63,7 +63,7 @@ services:
   # Configuration for the PostgreSQL database service used by Joplin
   big-bear-joplin-db:
     container_name: big-bear-joplin-db # Name of the database container.
-    image: postgres:14.2 # Docker image for PostgreSQL, specifying version.
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd # Docker image for PostgreSQL, specifying version.
     volumes:
       - /DATA/AppData/$AppID/postgresql/data:/var/lib/postgresql/data # Maps data directory to host for persistence.
     restart: unless-stopped # Restart policy similar to the Joplin server container.

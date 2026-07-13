@@ -9,7 +9,7 @@ services:
     # Name of the container
     container_name: big-bear-matterbridge
     # Docker image to be used
-    image: luligu/matterbridge:3.9.3
+    image: luligu/matterbridge:3.9.3@sha256:32d33714771e2b0396cf239de7318e52666267418c39ae7aaf6fbfb96f56d3e4
     # Restart policy for the service
     restart: unless-stopped
     # Network mode set to host for Matter mdns support

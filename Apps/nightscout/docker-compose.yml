@@ -8,7 +8,7 @@ services:
     # Name of the container
     container_name: big-bear-nightscout
     # Image to be used for the container
-    image: nightscout/cgm-remote-monitor:15.0.7
+    image: nightscout/cgm-remote-monitor:15.0.7@sha256:4399411fad4014352832865266207eb1ba4e3ec4129e4776ae3142a4e9abe913
     # Container restart policy
     restart: unless-stopped
     # Port mappings for the container
@@ -81,7 +81,7 @@ services:
     # Name of the MongoDB container
     container_name: big-bear-nightscout-mongo
     # Image to be used for the MongoDB container
-    image: mongo:4.4
+    image: mongo:4.4@sha256:4be76f674fc4b27859816811b8baa3c51830eb1dbf4ca81a51e26b79edd662ef
     # Networks for the MongoDB container
     networks:
       - big-bear-nightscout-network

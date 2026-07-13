@@ -1,7 +1,7 @@
 name: big-bear-rustfs
 services:
   app:
-    image: rustfs/rustfs:1.0.0-alpha.71
+    image: rustfs/rustfs:1.0.0-alpha.71@sha256:5ed6b4845ff98d44d42f733324761dc1379a8c36b7ee66c25e2dc3e8cbe0280d
     container_name: rustfs
     ports:
       - "9000:9000"

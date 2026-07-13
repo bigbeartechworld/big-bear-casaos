@@ -7,7 +7,7 @@ services:
   # Service name: big-bear-romm
   # The `big-bear-romm` service definition
   big-bear-romm:
-    image: rommapp/romm:4.9.2 # Docker image for the application
+    image: rommapp/romm:4.9.2@sha256:c81778afcafe7c865bdf156d1c62349aec3dfca3aca5ec0d6c2c2e8bfa9fb071 # Docker image for the application
     container_name: big-bear-romm
     environment:
       - DB_HOST=big-bear-rommdb # Hostname of the MariaDB container
@@ -121,7 +121,7 @@ services:
             en_US: 'Container Port: 8080'
   # MariaDB service for rommdb
   big-bear-rommdb:
-    image: mariadb:latest
+    image: mariadb:latest@sha256:628f228f0fd5913a220438693576b29b6fe4dc1fa0a1298c0e98579fae28635f
     container_name: big-bear-rommdb
     environment:
       - MYSQL_ROOT_PASSWORD=casaos # MariaDB root password

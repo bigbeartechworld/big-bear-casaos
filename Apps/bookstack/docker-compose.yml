@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-bookstack
     # Image to be used for the container
-    image: linuxserver/bookstack:26.05.20260608
+    image: linuxserver/bookstack:26.05.20260608@sha256:e3c387ac44a20fa29abcae8426e3e0d8c88b4ccf95d3c091fd9d96c8d0edcd8e
     # Container restart policy
     restart: unless-stopped
     volumes:
@@ -61,7 +61,7 @@ services:
             en_US: 'Container Port: 80'
   # Service definition for the database (MariaDB)
   big-bear-bookstack-db:
-    image: linuxserver/mariadb:10.11.6 # The Docker image for MariaDB
+    image: linuxserver/mariadb:10.11.6@sha256:7e34d92147dd7e1b63f43b3e76af73c273d7c3677786c32164a485f2a04964d8 # The Docker image for MariaDB
     container_name: big-bear-bookstack-db # Name of the container
     environment: # Environment variables for the MariaDB service
       - MYSQL_ROOT_PASSWORD=793e92b7-58d2-47b9-aae5-b8c7d58bd699 # Root password for MariaDB

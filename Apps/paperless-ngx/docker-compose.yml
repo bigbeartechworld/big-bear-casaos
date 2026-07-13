@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-paperless-ngx
     # Image to be used for the container
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.15
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.15@sha256:6c86cad803970ea782683a8e80e7403444c5bf3cf70de63b4d3c8e87500db92f
     # Container restart policy
     restart: unless-stopped
     # environment variables
@@ -103,7 +103,7 @@ services:
             en_US: 'Container Port: 8000'
   big-bear-paperless-ngx-broker:
     container_name: big-bear-paperless-ngx-broker
-    image: docker.io/library/redis:8.8.0
+    image: docker.io/library/redis:8.8.0@sha256:2838d5524559494f6f1cd66e97e76b200d64a633a8614200620755ed395daf32
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/redis:/data
@@ -119,7 +119,7 @@ services:
     # Container name
     container_name: big-bear-paperless-ngx-db
     # Image to be used for the container
-    image: library/postgres:16
+    image: library/postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -156,7 +156,7 @@ services:
   # /tmp directory to prevent potential security issues.
   big-bear-paperless-ngx-gotenberg:
     container_name: big-bear-paperless-ngx-gotenberg
-    image: gotenberg/gotenberg:8.34
+    image: gotenberg/gotenberg:8.34@sha256:67097317623a503ba2a6a7e9ae8db6929a1f7e1bbd88077bacf2d325fbdab923
     restart: unless-stopped
     # The gotenberg chromium route is used to convert .eml files. We do not
     # want to allow external content like tracking pixels or even javascript.
@@ -172,7 +172,7 @@ services:
   # Apache Tika project and is configured to use the minimal image.
   big-bear-paperless-ngx-tika:
     container_name: big-bear-paperless-ngx-tika
-    image: apache/tika:3.3.1.0
+    image: apache/tika:3.3.1.0@sha256:90b7fa1dc018434075fce9e1d9b88b1e3d0ea6979d0cf86e116c79a8073ae973
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:

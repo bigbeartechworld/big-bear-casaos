@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-plant-it
     # Image to be used for the container
-    image: msdeluise/plant-it-server:0.10.0
+    image: msdeluise/plant-it-server:0.10.0@sha256:23ddf8660087d6b9f5dbdca2ca09817b84db45cb2d9d6e2e0176e70f514629e7
     # Container restart policy
     restart: unless-stopped
     environment:
@@ -145,7 +145,7 @@ services:
     # Name of the database container
     container_name: big-bear-plant-it-db
     # Image for the database
-    image: mysql:8.0
+    image: mysql:8.0@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
     # Restart policy for the database container
     restart: always
     environment:

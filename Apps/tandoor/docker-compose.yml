@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-tandoor
     # Image to be used for the container
-    image: ghcr.io/tandoorrecipes/recipes:2.6.9
+    image: ghcr.io/tandoorrecipes/recipes:2.6.9@sha256:969c5b3552ffbf18a6f82b3ad5babbae89bfbd30ab6e3195fd3c158bcf3062ed
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -72,7 +72,7 @@ services:
           description:
             en_US: 'Container Port: 8080'
   big-bear-tandoor-db:
-    image: postgres:15-alpine
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
     container_name: big-bear-tandoor-db
     volumes:
       - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data

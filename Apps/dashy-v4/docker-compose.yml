@@ -26,7 +26,7 @@ services:
   # Service name: big-bear-dashy-v4
   big-bear-dashy-v4:
     # Image to be used for the app service
-    image: lissy93/dashy:4.0.8
+    image: lissy93/dashy:4.0.8@sha256:1b3de6159d93e1a75f0b808e74d8cb5100c06251b120abd2d68e557ec7544ab6
     # Name of the container
     container_name: big-bear-dashy-v4
     volumes:
