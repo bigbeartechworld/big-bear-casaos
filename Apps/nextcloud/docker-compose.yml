@@ -189,7 +189,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nextcloud.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/thumbnail.jpg
+  thumbnail: https://cdn.jsdelivr.net/gh/nextcloud/screenshots@master/nextcloud-hub-25-files.png
   # Installation tips
   tips:
     before_install:
