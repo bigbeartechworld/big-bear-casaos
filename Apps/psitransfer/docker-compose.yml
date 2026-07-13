@@ -90,7 +90,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/psitransfer.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://cdn.jsdelivr.net/gh/psi-4ward/psitransfer@master/docs/psitransfer.gif
+  thumbnail: https://cdn.jsdelivr.net/gh/psi-4ward/psitransfer@e1040f23d985810e6965a54dcb77e4f86542216f/docs/psitransfer.gif
   # Installation tips
   tips:
     before_install:

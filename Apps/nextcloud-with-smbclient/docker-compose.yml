@@ -177,9 +177,9 @@ x-casaos:
     en_US: This is legacy and you should use the BigBearCasaOS Nextcloud instead. Nextcloud puts your data at your fingertips, under your control. Store your documents, calendar, contacts and photos on a server at home, at one of our providers or in a data center you trust.
   # Screenshot links for the application
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@f2eaaebe9b6d487a2b594a716fc5bbcf8e80ac0d/Apps/Nextcloud/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@f2eaaebe9b6d487a2b594a716fc5bbcf8e80ac0d/Apps/Nextcloud/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@f2eaaebe9b6d487a2b594a716fc5bbcf8e80ac0d/Apps/Nextcloud/screenshot-3.png
   # Brief tagline for the application
   tagline:
     en_US: The productivity platform that keeps you in control
@@ -190,7 +190,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nextcloud.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://cdn.jsdelivr.net/gh/nextcloud/screenshots@master/nextcloud-hub-25-files.png
+  thumbnail: https://cdn.jsdelivr.net/gh/nextcloud/screenshots@328f3616f78906ecb405bdcc00481bfbbeb59278/nextcloud-hub-25-files.png
   # Installation tips
   tips:
     before_install:
