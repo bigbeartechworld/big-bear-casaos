@@ -2,7 +2,7 @@ name: big-bear-odysseus
 services:
   big-bear-odysseus:
     container_name: big-bear-odysseus
-    image: bigbeartechworld/big-bear-odysseus:2026.06.29@sha256:64ec6fadda7de876097878d4ec32b1dce8c7f6c00d9ae4de8620037d009bac2d
+    image: bigbeartechworld/big-bear-odysseus:2026.07.06@sha256:920c84bd54fc3d95fdbc678dd33e13ebdfce4684f33d6d217d25a8fc933e066f
     restart: unless-stopped
     ports:
     - 7000:7000

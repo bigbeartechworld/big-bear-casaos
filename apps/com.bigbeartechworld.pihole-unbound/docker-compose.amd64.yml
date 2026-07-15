@@ -2,7 +2,7 @@ name: big-bear-pihole-unbound
 services:
   app:
     container_name: big-bear-pihole-unbound
-    image: bigbeartechworld/big-bear-pihole-unbound:2026.06.0@sha256:462ed84e3f4d8c2fb4749114ff37fcd7817221b3be867da75848d2b1736573eb
+    image: bigbeartechworld/big-bear-pihole-unbound:2026.07.2@sha256:7db29f755beeda43d9e1565399c0b77916533c51ea9e6c05c48e7b0f5675c57f
     restart: unless-stopped
     environment:
       TZ: America/Chicago

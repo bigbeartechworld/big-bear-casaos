@@ -2,7 +2,7 @@ name: big-bear-matterbridge
 services:
   big-bear-matterbridge:
     container_name: big-bear-matterbridge
-    image: luligu/matterbridge:3.9.3@sha256:32d33714771e2b0396cf239de7318e52666267418c39ae7aaf6fbfb96f56d3e4
+    image: luligu/matterbridge:3.9.4@sha256:6e2a0bcc14613842cc77fa697827bb280b68f23f51e26f467bb3f8cf768b6df5
     restart: unless-stopped
     network_mode: host
     volumes:
