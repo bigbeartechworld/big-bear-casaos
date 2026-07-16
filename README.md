@@ -251,7 +251,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.3 |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 7db29f755beeda43d9e1565399c0b77916533c51ea9e6c05c48e7b0f5675c57f | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
-| pihole-updatelists | jacklul/pihole | 2026.06.0 |  |  |
+| pihole-updatelists | jacklul/pihole | 2026.07.2 |  |  |
 | pihole | pihole/pihole | 2026.06.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | v1.13.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piwigo | linuxserver/piwigo | 16.4.0 |  |  |
@@ -285,14 +285,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrypted | koush/scrypted | v0.144.1-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | seerr | seerr/seerr | v3.3.0 |  | [Docs](https://docs.seerr.dev) |
-| semaphore | semaphoreui/semaphore | v2.18.25 |  |  |
+| semaphore | semaphoreui/semaphore | v2.18.26 |  |  |
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | snapotter | snapotter/snapotter | 2.0.0 |  | [Docs](https://docs.snapotter.com/guide/getting-started) |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.14.5 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
-| stalwart-mail | stalwartlabs/stalwart | v0.16.12 |  |  |
+| stalwart-mail | stalwartlabs/stalwart | v0.16.13 |  |  |
 | stirling-pdf | stirlingtools/stirling-pdf | 2.14.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.1 |  |  |
