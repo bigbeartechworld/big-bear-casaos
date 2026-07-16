@@ -1,6 +1,6 @@
 {
   "id": "pihole-updatelists",
-  "version": "2026.06.0",
+  "version": "2026.07.2",
   "image": "jacklul/pihole",
   "youtube": "",
   "docs_link": ""

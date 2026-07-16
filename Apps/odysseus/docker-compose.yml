@@ -188,7 +188,7 @@ services:
     # Name of the container
     container_name: big-bear-odysseus-ntfy
     # Image to be used for the container
-    image: binwiederhier/ntfy:v2.25.0@sha256:cfbbb1bac9196cb711e29ef0ac4adaeb033be6235f1df857705dc39c14384a1d
+    image: binwiederhier/ntfy:v2.26.0@sha256:a6d335064ae927c4dbef118e1fa39656b3d2e01472b2a82af5915d5cebfe815f
     # Container restart policy
     restart: unless-stopped
     # Run the ntfy server
