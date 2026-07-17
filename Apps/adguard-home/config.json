@@ -1,6 +1,6 @@
 {
   "id": "adguard-home",
-  "version": "v0.107.77",
+  "version": "v0.107.78",
   "image": "adguard/adguardhome",
   "youtube": "https://youtu.be/7NGnCbxBf_U",
   "docs_link": "https://github.com/AdguardTeam/AdGuardHome/wiki"

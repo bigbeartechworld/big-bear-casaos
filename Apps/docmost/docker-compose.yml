@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-docmost
     # Image to be used for the container
-    image: docmost/docmost:0.90.1@sha256:665d9a522e10b6e919188ffa8d3baf6572f064569dbd5630fbe0605d5b91916f
+    image: docmost/docmost:0.95.0@sha256:41c8d777cf23c74e78f94e676aec328b7d7856f48df5e573543dac68d371e37c
     # Container restart policy
     restart: unless-stopped
     environment:
