@@ -155,7 +155,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.52.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.25.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.26.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 1.26.4 |  | [Docs](https://docs.gitea.com/) |
 | gladys | gladysassistant/gladys | v4.82.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
@@ -182,7 +182,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | jellystat | cyfershepard/jellystat | 1.1.11 |  |  |
 | jfa-go | hrfee/jfa-go | latest |  |  |
 | jlesage-firefox | jlesage/firefox | v26.07.2 | [YouTube Video](https://youtu.be/JWhR8RKGh9Y) | [Docs](https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-4) |
-| jlesage-handbrake | jlesage/handbrake | v26.07.1 |  |  |
+| jlesage-handbrake | jlesage/handbrake | v26.07.2 |  |  |
 | joplin | joplin/server | 3.7.1 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
 | kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
 | kavita | jvmilazz0/kavita | 0.9.0 |  |  |
@@ -235,7 +235,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.31.2-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.31.2 |  |  |
 | ollama-nvidia | ollama/ollama | 0.31.2 |  |  |
-| onedev | 1dev/server | 16.0.5 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 16.0.8 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
@@ -260,8 +260,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plant-it | msdeluise/plant-it-server | 0.10.0 | [YouTube Video](https://youtu.be/mUOAQRa17T4) |  |
 | playit-docker-web | wisdomsky/playit-docker-web | 1.0.10 |  |  |
 | playitgg | dysta/playitgg | 1.2.0 |  |  |
-| plex-nvidia | linuxserver/plex | 1.43.2 |  |  |
-| plex | linuxserver/plex | 1.43.2 |  |  |
+| plex-nvidia | linuxserver/plex | 1.43.3 |  |  |
+| plex | linuxserver/plex | 1.43.3 |  |  |
 | pocketid | ghcr.io/pocket-id/pocket-id | v2.7 |  | [Docs](https://pocket-id.org/docs/introduction) |
 | portainer-agent | portainer/agent | 2.43.0 |  |  |
 | portainer | portainer/portainer-ce | 2.43.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
@@ -285,7 +285,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrypted | koush/scrypted | v0.144.1-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | seerr | seerr/seerr | v3.3.0 |  | [Docs](https://docs.seerr.dev) |
-| semaphore | semaphoreui/semaphore | v2.18.26 |  |  |
+| semaphore | semaphoreui/semaphore | v2.18.27 |  |  |
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | snapotter | snapotter/snapotter | 2.0.0 |  | [Docs](https://docs.snapotter.com/guide/getting-started) |
