@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-semaphore
     # Image to be used for the container
-    image: semaphoreui/semaphore:v2.18.26@sha256:702eb4e48c1343a8c1bfce022c02b5db68437239d0e83d7b5e94b2165d33fdf9
+    image: semaphoreui/semaphore:v2.18.27@sha256:1c9b9837a5f2b031639949988218a0b3894b85f6b50e7f3ddb6b12486dbe5658
     # Container restart policy
     restart: unless-stopped
     # Environment variables for configuration
