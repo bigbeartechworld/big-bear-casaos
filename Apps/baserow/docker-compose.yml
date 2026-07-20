@@ -7,7 +7,7 @@ services:
     # Set the name of the Docker container.
     container_name: baserow
     # Use the specified Docker image for Baserow and specify its version.
-    image: baserow/baserow:2.3.1@sha256:496889c4fe22ee6b632698c3c74f7ccaee734c8002b5ebc8d194c5fcacffc98a
+    image: baserow/baserow:2.3.2@sha256:bb2b366268e799aae84c98065ae984f18694940bcfa729eea51699fa621067ec
     # Set environment variables for Baserow.
     environment:
       # Set the your CASA OS IP for Baserow to use.

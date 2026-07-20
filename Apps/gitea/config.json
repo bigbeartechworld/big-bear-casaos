@@ -1,6 +1,6 @@
 {
   "id": "gitea",
-  "version": "1.26.4",
+  "version": "1.27.0",
   "image": "gitea/gitea",
   "youtube": "",
   "docs_link": "https://docs.gitea.com/"
