@@ -2,7 +2,7 @@ name: big-bear-semaphore
 services:
   big-bear-semaphore:
     container_name: big-bear-semaphore
-    image: semaphoreui/semaphore:v2.18.25@sha256:9d2ca34eb47675397fb1939365a66b7c24899a57ee7654c8adc0fd1c0d9c5d57
+    image: semaphoreui/semaphore:v2.18.27@sha256:1c9b9837a5f2b031639949988218a0b3894b85f6b50e7f3ddb6b12486dbe5658
     restart: unless-stopped
     environment:
       SEMAPHORE_DB_USER: semaphore

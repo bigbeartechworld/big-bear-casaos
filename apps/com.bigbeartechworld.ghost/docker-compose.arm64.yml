@@ -2,7 +2,7 @@ name: big-bear-ghost
 services:
   app:
     container_name: big-bear-ghost
-    image: ghost:6.49.0-alpine@sha256:8d9be08b52c8bacdf1b3d752beb53748e8d5674a733a6994be2b40c37791e8d6
+    image: ghost:6.52.1-alpine@sha256:471756274a224437d983ba0abd882d9bd735de33a3a44a9338596ebb2f206f6b
     restart: on-failure
     networks:
     - ghost-network

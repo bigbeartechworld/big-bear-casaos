@@ -2,7 +2,7 @@ name: big-bear-jlesage-firefox
 services:
   big-bear-jlesage-firefox:
     container_name: big-bear-jlesage-firefox
-    image: jlesage/firefox:v26.03.1@sha256:a68749c6696c857d992c5b750c234ab86f184bcac92d6c080bab7679c759f845
+    image: jlesage/firefox:v26.07.2@sha256:2bdbe30e355028eabb8a3a6f50a35a5d729e1de2376bc9c3c27c55fd2a7443d9
     ports:
     - 5800:5800
     environment:

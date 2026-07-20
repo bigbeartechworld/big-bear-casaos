@@ -2,7 +2,7 @@ name: big-bear-odysseus
 services:
   big-bear-odysseus:
     container_name: big-bear-odysseus
-    image: bigbeartechworld/big-bear-odysseus:2026.07.06@sha256:920c84bd54fc3d95fdbc678dd33e13ebdfce4684f33d6d217d25a8fc933e066f
+    image: bigbeartechworld/big-bear-odysseus:2026.07.13@sha256:ce30b8a2d72cd9b7c4ee1dbea0fedbde44b980c50fe43b17b714169428c57a62
     restart: unless-stopped
     ports:
     - 7000:7000
@@ -81,7 +81,7 @@ services:
     - big_bear_odysseus_network
   ntfy:
     container_name: big-bear-odysseus-ntfy
-    image: binwiederhier/ntfy:v2.25.0@sha256:cfbbb1bac9196cb711e29ef0ac4adaeb033be6235f1df857705dc39c14384a1d
+    image: binwiederhier/ntfy:v2.26.0@sha256:a6d335064ae927c4dbef118e1fa39656b3d2e01472b2a82af5915d5cebfe815f
     restart: unless-stopped
     command: serve
     ports:

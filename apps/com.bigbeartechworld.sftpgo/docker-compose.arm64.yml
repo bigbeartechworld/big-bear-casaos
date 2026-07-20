@@ -2,7 +2,7 @@ name: big-bear-sftpgo
 services:
   big-bear-sftpgo:
     container_name: big-bear-sftpgo
-    image: drakkan/sftpgo:v2.7@sha256:6cb60f08fede46c5dc49a0c1d2994287ca440a63a3bd75b7f37ab2c0b24bbd06
+    image: drakkan/sftpgo:v2.7@sha256:9011fe608d336d3daf6ed6224b16fd40443aab8f3335e0b20853d6a539c58738
     restart: unless-stopped
     volumes:
     - /DATA/AppData/$AppID/srv:/srv/sftpgo

@@ -2,7 +2,7 @@ name: big-bear-onedev
 services:
   big-bear-onedev:
     container_name: big-bear-onedev
-    image: 1dev/server:16.0.5@sha256:327030763933d36d0aa39a94b76128fb95d6dd1ca5c7595d57d9ba2ae0963169
+    image: 1dev/server:16.1.0@sha256:dde1f05e3e764478bd85d4fd9f0dd873553e158d1a7eb629e8b255d195f89250
     restart: unless-stopped
     volumes:
     - /DATA/AppData/$AppID/data:/opt/onedev

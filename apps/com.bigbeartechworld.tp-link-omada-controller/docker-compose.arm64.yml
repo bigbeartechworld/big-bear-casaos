@@ -2,7 +2,7 @@ name: big-bear-omada-controller
 services:
   app:
     container_name: big-bear-omada-controller
-    image: mbentley/omada-controller:6.2@sha256:5313703d10e58aa8cf15a5fae6cc781b89b6157ac02d6873ee83c0df51c5f1d3
+    image: mbentley/omada-controller:6.2@sha256:03f19ddfddcb8415cca85dbc9a2506fd534c9127c94be2b19ba3a16b12899366
     restart: unless-stopped
     ulimits:
       nofile:

@@ -2,7 +2,7 @@ name: big-bear-write-freely
 services:
   big-bear-write-freely:
     container_name: big-bear-write-freely
-    image: nephatrine/write-freely:0.16@sha256:cfac7d4ec0c367905ed4189a3b3930bcbb69e2c7f1cdafa4c02d69a8a5abf61c
+    image: nephatrine/write-freely:0.16@sha256:5824e4c1ea8f227a00f79de535f36454b30872b495e1e7a4eee3eac94477a748
     restart: unless-stopped
     environment:
       TZ: UTC
