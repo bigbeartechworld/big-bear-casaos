@@ -1,6 +1,6 @@
 {
   "id": "pihole",
-  "version": "2026.06.0",
+  "version": "2026.07.2",
   "image": "pihole/pihole",
   "youtube": "https://youtu.be/FcMF1sYacqk",
   "docs_link": ""
