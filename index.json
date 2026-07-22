@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-22T08:03:53Z",
+  "updated_at": "2026-07-22T08:05:35Z",
   "app_count": 239,
   "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
   "apps": [
@@ -1714,7 +1714,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.immich-without-machine-learning/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.immich-without-machine-learning/meta.json",
-      "content_hash": "deacb1f6"
+      "content_hash": "d7f6b04a"
     },
     {
       "id": "com.bigbeartechworld.invoice-ninja",
@@ -4524,7 +4524,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.wallos/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.wallos/meta.json",
-      "content_hash": "2fda01c5"
+      "content_hash": "69c399e3"
     },
     {
       "id": "com.bigbeartechworld.warracker",

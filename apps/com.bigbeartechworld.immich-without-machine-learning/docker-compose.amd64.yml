@@ -2,7 +2,7 @@ name: big-bear-immich-without-machine-learning
 services:
   immich-server:
     container_name: immich-server
-    image: ghcr.io/immich-app/immich-server:v3.0.3@sha256:c716dc20f957aafd89fa9d284a2ec63e25c9e2d8d8e87c6197d540a3dce237db
+    image: ghcr.io/immich-app/immich-server:v2.7.5@sha256:c15bff75068effb03f4355997d03dc7e0fc58720c2b54ad6f7f10d1bc57efaa5
     ports:
     - 2283:2283
     volumes:
