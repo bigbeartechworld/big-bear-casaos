@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-20T02:43:26Z",
+  "updated_at": "2026-07-22T08:01:58Z",
   "app_count": 239,
   "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
   "apps": [
@@ -501,7 +501,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.cloudflared-web/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.cloudflared-web/meta.json",
-      "content_hash": "7898701a"
+      "content_hash": "406b7be6"
     },
     {
       "id": "com.bigbeartechworld.code-server",
@@ -521,7 +521,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.code-server/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.code-server/meta.json",
-      "content_hash": "090a5ed4"
+      "content_hash": "9b94e16f"
     },
     {
       "id": "com.bigbeartechworld.codex-docs",
@@ -721,7 +721,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.davis/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.davis/meta.json",
-      "content_hash": "e4657330"
+      "content_hash": "33086fe3"
     },
     {
       "id": "com.bigbeartechworld.dbgate",
@@ -1157,7 +1157,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.firefox/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.firefox/meta.json",
-      "content_hash": "eb9297c7"
+      "content_hash": "f9776dd6"
     },
     {
       "id": "com.bigbeartechworld.flame",
@@ -1296,7 +1296,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.ghost/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.ghost/meta.json",
-      "content_hash": "f7726891"
+      "content_hash": "c69a85ea"
     },
     {
       "id": "com.bigbeartechworld.ghostfolio",
@@ -1316,7 +1316,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.ghostfolio/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.ghostfolio/meta.json",
-      "content_hash": "b2fc4a2d"
+      "content_hash": "6ff0a6e4"
     },
     {
       "id": "com.bigbeartechworld.gitea",
@@ -1376,7 +1376,7 @@
       "thumbnail": "/apps/com.bigbeartechworld.gladys/assets/main_screenshot_en_j5czyj_c_scale,w_2526.webp",
       "compose_url": "/apps/com.bigbeartechworld.gladys/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.gladys/meta.json",
-      "content_hash": "ff008f52"
+      "content_hash": "e8944d14"
     },
     {
       "id": "com.bigbeartechworld.glances",
@@ -2173,7 +2173,7 @@
       "thumbnail": "/apps/com.bigbeartechworld.mailpit/assets/logo.webp",
       "compose_url": "/apps/com.bigbeartechworld.mailpit/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.mailpit/meta.json",
-      "content_hash": "97c8a065"
+      "content_hash": "9710f83f"
     },
     {
       "id": "com.bigbeartechworld.matterbridge",
@@ -2193,7 +2193,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.matterbridge/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.matterbridge/meta.json",
-      "content_hash": "7235d23e"
+      "content_hash": "8eb23d5b"
     },
     {
       "id": "com.bigbeartechworld.maybe-finance",
@@ -2412,7 +2412,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.n8n/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.n8n/meta.json",
-      "content_hash": "7b5061dc"
+      "content_hash": "0bb65e73"
     },
     {
       "id": "com.bigbeartechworld.ncdu",
@@ -2451,7 +2451,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.neko-firefox/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.neko-firefox/meta.json",
-      "content_hash": "1fdc47f0"
+      "content_hash": "dc44c944"
     },
     {
       "id": "com.bigbeartechworld.netalertx",
@@ -2551,7 +2551,7 @@
       "thumbnail": "/apps/com.bigbeartechworld.nextcloud-ls/assets/nextcloud-hub-25-files.webp",
       "compose_url": "/apps/com.bigbeartechworld.nextcloud-ls/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.nextcloud-ls/meta.json",
-      "content_hash": "764a7463"
+      "content_hash": "c6de8285"
     },
     {
       "id": "com.bigbeartechworld.nextcloud-with-smbclient",
@@ -2851,7 +2851,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.ollama-amd/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.ollama-amd/meta.json",
-      "content_hash": "c038c24e"
+      "content_hash": "f9a6900a"
     },
     {
       "id": "com.bigbeartechworld.ollama-cpu",
@@ -2871,7 +2871,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.ollama-cpu/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.ollama-cpu/meta.json",
-      "content_hash": "4ac86ac1"
+      "content_hash": "aed8701a"
     },
     {
       "id": "com.bigbeartechworld.ollama-nvidia",
@@ -2891,7 +2891,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.ollama-nvidia/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.ollama-nvidia/meta.json",
-      "content_hash": "570eb833"
+      "content_hash": "3ee8345b"
     },
     {
       "id": "com.bigbeartechworld.onedev",
@@ -2911,7 +2911,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.onedev/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.onedev/meta.json",
-      "content_hash": "c8d1005e"
+      "content_hash": "7602e7f2"
     },
     {
       "id": "com.bigbeartechworld.onlyoffice",
@@ -3010,7 +3010,7 @@
       "thumbnail": "/apps/com.bigbeartechworld.otel-lgtm/assets/overview.webp",
       "compose_url": "/apps/com.bigbeartechworld.otel-lgtm/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.otel-lgtm/meta.json",
-      "content_hash": "3427ccc6"
+      "content_hash": "8a5f6201"
     },
     {
       "id": "com.bigbeartechworld.owncloud",
@@ -3030,7 +3030,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.owncloud/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.owncloud/meta.json",
-      "content_hash": "c7db522b"
+      "content_hash": "0974ff22"
     },
     {
       "id": "com.bigbeartechworld.paperless-ngx",
@@ -3090,7 +3090,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.passwordpusher-v2/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.passwordpusher-v2/meta.json",
-      "content_hash": "0c79ddf1"
+      "content_hash": "c7a0c428"
     },
     {
       "id": "com.bigbeartechworld.pd3f",
@@ -3209,7 +3209,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.pihole/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.pihole/meta.json",
-      "content_hash": "108d5cfe"
+      "content_hash": "aa57eb15"
     },
     {
       "id": "com.bigbeartechworld.pihole-unbound",
@@ -3708,7 +3708,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.readeck/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.readeck/meta.json",
-      "content_hash": "bda181ae"
+      "content_hash": "8f168f85"
     },
     {
       "id": "com.bigbeartechworld.retroarch-web",
@@ -3786,7 +3786,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.romm/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.romm/meta.json",
-      "content_hash": "4e0f046b"
+      "content_hash": "cd9226e1"
     },
     {
       "id": "com.bigbeartechworld.rustfs",
@@ -3966,7 +3966,7 @@
       "thumbnail": "/apps/com.bigbeartechworld.snapotter/assets/thumbnail.webp",
       "compose_url": "/apps/com.bigbeartechworld.snapotter/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.snapotter/meta.json",
-      "content_hash": "c1c8b6b3"
+      "content_hash": "0163e7ab"
     },
     {
       "id": "com.bigbeartechworld.spacedrive",
@@ -4186,7 +4186,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.tp-link-omada-controller/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.tp-link-omada-controller/meta.json",
-      "content_hash": "7a36ab5e"
+      "content_hash": "917b84c8"
     },
     {
       "id": "com.bigbeartechworld.traccar",
@@ -4226,7 +4226,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.trilium/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.trilium/meta.json",
-      "content_hash": "52b32b40"
+      "content_hash": "cb83d8e0"
     },
     {
       "id": "com.bigbeartechworld.tududi",
@@ -4344,7 +4344,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.unifi-network-application/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.unifi-network-application/meta.json",
-      "content_hash": "4a6b28dd"
+      "content_hash": "dc5bb6fe"
     },
     {
       "id": "com.bigbeartechworld.unifi-network-application-mongo-4",
@@ -4364,7 +4364,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.unifi-network-application-mongo-4/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.unifi-network-application-mongo-4/meta.json",
-      "content_hash": "bf944824"
+      "content_hash": "1b740eac"
     },
     {
       "id": "com.bigbeartechworld.upsnap",

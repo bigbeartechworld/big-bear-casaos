@@ -21,7 +21,7 @@
   ],
   "min_memory": 0,
   "min_image_size": {
-    "amd64": 0,
-    "arm64": 0
+    "amd64": 28623202,
+    "arm64": 26928499
   }
 }

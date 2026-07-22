@@ -1,7 +1,7 @@
 name: big-bear-gladys
 services:
   app:
-    image: gladysassistant/gladys:v4.82.0@sha256:92f93f5a5792f11e32564cd574b8e7a9cb6d6891c7852d3ada1e6973f53aa9af
+    image: gladysassistant/gladys:v4.83.0@sha256:92e700688a85627c4985241de52bd2b7ac09ac3dbf7cde6d3c5278ccefabeb29
     restart: always
     privileged: true
     network_mode: host

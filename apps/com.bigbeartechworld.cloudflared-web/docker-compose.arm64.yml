@@ -2,7 +2,7 @@ name: big-bear-cloudflared-web
 services:
   big-bear-cloudflared-web:
     container_name: big-bear-cloudflared-web
-    image: wisdomsky/cloudflared-web:2026.6.1@sha256:3552fa87c10f2ec6a854c0c09209753957e909eca6194499194cedbb8c817db9
+    image: wisdomsky/cloudflared-web:2026.7.2@sha256:2a2c72c7e39ce6d9e295b823c57d6a80ed879d93c8980b5fe3a1af40da6d117e
     restart: unless-stopped
     network_mode: host
     environment:
