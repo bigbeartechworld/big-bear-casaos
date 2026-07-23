@@ -1,6 +1,6 @@
 {
   "id": "vikunja-v2",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "image": "vikunja/vikunja",
   "youtube": "https://youtu.be/T-dNbdIttoI",
   "docs_link": "https://vikunja.io/docs/api-login-session-migration/"
