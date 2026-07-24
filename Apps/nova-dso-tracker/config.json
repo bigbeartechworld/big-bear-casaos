@@ -1,6 +1,6 @@
 {
   "id": "nova-dso-tracker",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "image": "mrantonsg/nova-dso-tracker:5.9.0",
   "youtube": "",
   "docs_link": "https://nova-tracker.com"
