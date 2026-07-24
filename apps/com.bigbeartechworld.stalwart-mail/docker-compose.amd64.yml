@@ -2,7 +2,7 @@ name: big-bear-stalwart-mail
 services:
   big-bear-stalwart-mail:
     container_name: big-bear-stalwart-mail
-    image: stalwartlabs/stalwart:v0.16.13@sha256:254320d6d9af6bafce85fcf301aaa29fa0a4a07e2b91e19fe97588ecfb230fab
+    image: stalwartlabs/stalwart:v0.16.14@sha256:25001929f36a62521cedc50f12527080dac4cf6a0cc31b617b669d921cafc36a
     restart: unless-stopped
     volumes:
     - /DATA/AppData/$AppID/data:/opt/stalwart

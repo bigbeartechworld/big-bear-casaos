@@ -2,7 +2,7 @@ name: big-bear-healthchecks
 services:
   big-bear-healthchecks:
     container_name: big-bear-healthchecks
-    image: linuxserver/healthchecks:4.3.20260714@sha256:7dcbc0c471f3c4ae053a7c2cc4f9bd6fafe8cfe31ecfbf0408edaac58c7ecf6b
+    image: linuxserver/healthchecks:4.3.20260720@sha256:7328e46d5bb7a0f8e9e1e73dd46fdc8bef605fb995bb8f8bdcf8a9e84aab5ac1
     restart: unless-stopped
     environment:
     - PUID=1000
