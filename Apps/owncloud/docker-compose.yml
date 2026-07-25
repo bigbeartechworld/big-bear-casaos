@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-owncloud
     # Image to be used for the container
-    image: owncloud/server:10.16.3@sha256:c2ab7775b5d28d52eb26a66059ef4d5dc7c8fb85aac718c471a2b4bba1047ec1
+    image: owncloud/server:10.16.3@sha256:43c4275940fdfe8c36d307b5c7e3610ff7482d6d846e5fb2a71c1c4a5287aea3
     # Container restart policy
     restart: unless-stopped
     # Environment variables
