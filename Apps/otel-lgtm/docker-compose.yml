@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-otel-lgtm
     # Image to be used for the container
-    image: grafana/otel-lgtm:0.29.1@sha256:b4da8bf6b1b44f6f683883869619eb9781465c642ce5f2d70591fb27094ddb1c
+    image: grafana/otel-lgtm:0.29.2@sha256:af7242c1a9608faf6d26e6f235392fd0c32b67258228f9a3cfc96e724974930c
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
