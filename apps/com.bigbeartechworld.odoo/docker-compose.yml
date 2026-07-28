@@ -2,7 +2,7 @@ name: big-bear-odoo
 services:
   big-bear-odoo:
     container_name: big-bear-odoo
-    image: odoo:19@sha256:f54272f31d5f77e4146b887efb3761c98480317daf687e4b4b5e76ed8bcc08c5
+    image: odoo:19@sha256:e415f9924395e7521245813135112f264b9222bcde3b1d3c2ee9ff073081540a
     restart: unless-stopped
     user: root
     volumes:

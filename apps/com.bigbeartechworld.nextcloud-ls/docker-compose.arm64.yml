@@ -2,7 +2,7 @@ name: big-bear-nextcloud-ls
 services:
   big-bear-nextcloud-ls:
     container_name: big-bear-nextcloud-ls
-    image: linuxserver/nextcloud:34.0.1@sha256:b19c0359b47fe57f1694c5b1fdeaf2758b82f0b2df4575caf5bb81c5d084e9bb
+    image: linuxserver/nextcloud:34.0.2@sha256:ddd8115a43a94147780a8413009b18d418869f24d37c436e47471335399a4c7d
     restart: unless-stopped
     ports:
     - 10443:443

@@ -2,7 +2,7 @@ name: big-bear-owncloud
 services:
   big-bear-owncloud:
     container_name: big-bear-owncloud
-    image: owncloud/server:10.16.3@sha256:c2ab7775b5d28d52eb26a66059ef4d5dc7c8fb85aac718c471a2b4bba1047ec1
+    image: owncloud/server:10.16.3@sha256:f184a7b7ceeee843250ceb3a4a9a5426a3e86022b7b254ac157f7c3c88497266
     restart: unless-stopped
     environment:
     - OWNCLOUD_DOMAIN=http://[YOUR_CASAOS_IP]:8080

@@ -1,7 +1,7 @@
 name: big-bear-wordpress-v7
 services:
   app:
-    image: wordpress:7.0.1@sha256:d40b86dbdfcfad808a2029acf6543c670c4a61c29f70b9d24605e7d0b31ab83d
+    image: wordpress:7.0.2@sha256:9fac4d47b61186131ffefb5d966f0045d0eea94bfd7bd40cafae29b78a709d1b
     ports:
     - 8084:80
     environment:

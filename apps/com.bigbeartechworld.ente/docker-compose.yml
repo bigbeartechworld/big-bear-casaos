@@ -34,7 +34,7 @@ services:
     networks:
     - ente_network
   socat:
-    image: alpine/socat@sha256:4e625a62c9ea40ccbce93b9a4fcc6b41740a9f308389c216f34c88ce3abb275b
+    image: alpine/socat@sha256:f134cb7ebb983f971f5deb44e92bc62c1385b0a3b525393f32dd0722acc30315
     container_name: ente-socat
     network_mode: service:museum
     depends_on:

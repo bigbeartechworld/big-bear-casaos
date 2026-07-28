@@ -2,7 +2,7 @@ name: big-bear-obsidian
 services:
   big-bear-obsidian:
     container_name: big-bear-obsidian
-    image: linuxserver/obsidian:1.12.7@sha256:27a2cd169c640367eb2af384d3a49906f0f72e7d449fdc0b18a26e103f4f73ae
+    image: linuxserver/obsidian:1.12.7@sha256:2702b0b8ad57c0288201ce428ded643a44692abef5b9daf1a693d9f745b48fed
     restart: unless-stopped
     environment:
     - PUID=1000

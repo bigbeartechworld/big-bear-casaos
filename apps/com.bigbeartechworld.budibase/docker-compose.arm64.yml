@@ -2,7 +2,7 @@ name: big-bear-budibase
 services:
   big-bear-budibase:
     container_name: big-bear-budibase
-    image: budibase/budibase:3.39.31@sha256:527cecf4d71767e29e7d7bcc385b6a6a361204cceb217de1917c2c88531fe025
+    image: budibase/budibase:3.40.1@sha256:43e1e58ea0bfd3d346a63cb33fa239a23ba8b625c0b65541e2ac82f540572720
     restart: unless-stopped
     volumes:
     - /DATA/AppData/$AppID/data:/data
