@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-dozzle
     # Image to be used for the container
-    image: amir20/dozzle:v10.6.11@sha256:bc1ee4ba8d66c7fc0d03823a78486165fb219809f79eaf54cecf3114d647ab14
+    image: amir20/dozzle:v10.6.12@sha256:e4a8955e22dd02b7329df66354d6ffcb5010d3e1dc850e99ea8f39122daf3cbd
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

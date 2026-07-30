@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-filebrowser
     # Image to be used for the container
-    image: filebrowser/filebrowser:v2.63.19-s6@sha256:6fa8667f538f7bdc6e17a1dc8a50e65a44275eae081d2c69b6ffa2b25dccc482
+    image: filebrowser/filebrowser:v2.63.21-s6@sha256:dd087be7b280da6013739efd88195da3b25f9da5b83beef18f9e5612cd65dd5d
     # Container restart policy
     restart: unless-stopped
     # Environment variables
