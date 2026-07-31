@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-onedev
     # Image to be used for the container
-    image: 1dev/server:16.3.1@sha256:59bac90a0e1ede359661f81ea3e1af433b264846c9ed04caba89d3358cf6c84e
+    image: 1dev/server:16.3.3@sha256:f5899647b929af95e11dc869c9681fd3b1b4a7b95950c1a4ec12bae2240cd1bc
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
