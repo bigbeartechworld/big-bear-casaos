@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-beaverhabits
     # Image to be used for the container specifies the btop version and source
-    image: daya0576/beaverhabits:0.9.1@sha256:6cd7e464207369785c88cfd59f99c6cc44ec57f3a8d90c3439908da42271d69f
+    image: daya0576/beaverhabits:0.10.0@sha256:d39bea489faedfbc55a29bb73bd8bd1845f52e406dd77ba264bd20ba1439e1e8
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     user: "1000:1000"
