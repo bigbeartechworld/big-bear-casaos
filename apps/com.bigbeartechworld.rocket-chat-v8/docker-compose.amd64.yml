@@ -2,7 +2,7 @@ name: big-bear-rocket-chat-v8
 services:
   app:
     container_name: big-bear-rocket-chat-v8
-    image: rocket.chat:8.5.1@sha256:978b4b40c0b3adfc56c13a5eb18a3c722c692074e7fa07a0ef2da06a5b4a2313
+    image: rocket.chat:8.5.1@sha256:de6ce347eed91ce4979ccb454cec83cce463017790f4d7093e0d20221baa17a6
     restart: unless-stopped
     environment:
       MONGO_OPLOG_URL: mongodb://db:27017/local

@@ -2,7 +2,7 @@ name: big-bear-ollama-amd
 services:
   big-bear-ollama-amd:
     container_name: big-bear-ollama-amd
-    image: ollama/ollama:0.32.3-rocm@sha256:f613b270ae25c15359712a0a5bf3f749a67c792d113fc1e712fcbf969028d5bc
+    image: ollama/ollama:0.32.5-rocm@sha256:f5d30b387649cf60baa2678a88240eb5c9a5f43382a1c965b18c798deebee4d1
     restart: unless-stopped
     environment:
     - PORT=11434

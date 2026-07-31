@@ -2,7 +2,7 @@ name: big-bear-filebrowser
 services:
   big-bear-filebrowser:
     container_name: big-bear-filebrowser
-    image: filebrowser/filebrowser:v2.63.18-s6@sha256:6b41f1f8f12bc5359d825bf4096c17ef53d2c962a076361ea1b9b1923db7b422
+    image: filebrowser/filebrowser:v2.63.23-s6@sha256:ee4ac79e52966a5f6247f99c7d667c1debfb277a3a61ab829f505aa8f4c74b21
     restart: unless-stopped
     environment:
     - PUID=0

@@ -1,7 +1,7 @@
 name: big-bear-lancache
 services:
   app:
-    image: lancachenet/monolithic:latest@sha256:a5f93cef3a4c48c63e9f09883ac7a3961621db56974427110d9aeb4f36af9360
+    image: lancachenet/monolithic:latest@sha256:851cfdae998754b6160394d4cfc88d76302199cfc21b2066ef838b66279aea59
     environment:
     - USE_GENERIC_CACHE=true
     - LANCACHE_IP=10.0.39.1
@@ -20,7 +20,7 @@ services:
     - /DATA/AppData/$AppID/cache:/data/cache
     - /DATA/AppData/$AppID/logs:/data/logs
   dns:
-    image: lancachenet/lancache-dns:latest@sha256:3f37998a643435c2a9d1226a64ff13ea073f588031f6e3a92648b80d8281f20f
+    image: lancachenet/lancache-dns:latest@sha256:36f54a53dceeeb68de2a679f101a02614edb0ac7f649750c46cd3c05be71b7d2
     environment:
     - USE_GENERIC_CACHE=true
     - LANCACHE_IP=10.0.39.1

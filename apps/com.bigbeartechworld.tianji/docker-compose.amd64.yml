@@ -2,7 +2,7 @@ name: big-bear-tianji
 services:
   big-bear-tianji:
     container_name: big-bear-tianji
-    image: moonrailgun/tianji:1.32.16@sha256:5722eba3ae9baf18100f8ae7c3b71b2cbd553fb3c4845eb84d340a8e06d4027a
+    image: moonrailgun/tianji:1.32.17@sha256:54939ef10c90b2541cef87302350e89ca16dee6113dd6097c1f0250a258f322c
     restart: unless-stopped
     environment:
       DATABASE_URL: postgresql://tianji-user:227453b7-1286-48cc-b471-1c269495c5fc@big-bear-tianji-db:5432/tianji
