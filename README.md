@@ -224,7 +224,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nocodb | nocodb/nocodb | 0.301.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 5.0.1 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
-| nova-dso-tracker | mrantonsg/nova-dso-tracker:5.9.0 | 6.2.1 |  | [Docs](https://nova-tracker.com) |
+| nova-dso-tracker | mrantonsg/nova-dso-tracker:5.9.0 | 6.2.2 |  | [Docs](https://nova-tracker.com) |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
 | ntfysh | binwiederhier/ntfy | v2.26.3 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
@@ -235,7 +235,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.32.5-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.32.5 |  |  |
 | ollama-nvidia | ollama/ollama | 0.32.5 |  |  |
-| onedev | 1dev/server | 16.3.3 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 16.3.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
@@ -274,7 +274,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rackpeek | aptacode/rackpeek | v2.0.0 |  | [Docs](https://timmoth.github.io/RackPeek/docs/overview) |
 | rallly | lukevella/rallly | 4.11.1 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | v5.2.3 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v5.2.4 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.3 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat-v8 | rocket.chat | 8.5.1 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
@@ -285,7 +285,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrypted | koush/scrypted | v0.144.1-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | seerr | seerr/seerr | v3.3.0 |  | [Docs](https://docs.seerr.dev) |
-| semaphore | semaphoreui/semaphore | v2.18.28 |  |  |
+| semaphore | semaphoreui/semaphore | v2.18.29 |  |  |
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | snapotter | snapotter/snapotter | 2.1.0 |  | [Docs](https://docs.snapotter.com/guide/getting-started) |
@@ -296,7 +296,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | stirling-pdf | stirlingtools/stirling-pdf | 2.14.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.1 |  |  |
-| tailscale | tailscale/tailscale | v1.98.9 |  |  |
+| tailscale | tailscale/tailscale | v1.98.10 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.9 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
 | tianji | moonrailgun/tianji | 1.32.17 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.2 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
