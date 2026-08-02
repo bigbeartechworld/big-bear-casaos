@@ -1,6 +1,6 @@
 {
   "id": "node-red",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "image": "nodered/node-red",
   "youtube": "",
   "docs_link": ""
