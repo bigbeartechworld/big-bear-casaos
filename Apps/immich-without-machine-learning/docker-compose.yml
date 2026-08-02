@@ -5,7 +5,7 @@ services:
   # Main Immich Server service configuration
   immich-server:
     container_name: immich-server # Name of the running container
-    image: ghcr.io/immich-app/immich-server:v3.0.3@sha256:c716dc20f957aafd89fa9d284a2ec63e25c9e2d8d8e87c6197d540a3dce237db # Image to be used
+    image: ghcr.io/immich-app/immich-server:v3.1.0@sha256:b434cb9287eea1471c9974845914d4dd328c9c2d652e446ed4930f99944f0ceb # Image to be used
     # extends:
     #   file: hwaccel.transcoding.yml
     #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding

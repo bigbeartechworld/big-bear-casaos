@@ -31,7 +31,7 @@ services:
   # Service definition for the main application
   app:
     # Docker image to use for the application
-    image: wordpress:7.0.2@sha256:fe04ca18a5897be659e0d48686467dc939409b6ee53394507d0d08396595be67
+    image: wordpress:7.0.2@sha256:7f1f307f9b651246d4084ff8978ecf4515ebcc9106c62e2fa364c76f8ab7ee56
     # Port mapping for the application
     ports:
       - 8084:80
