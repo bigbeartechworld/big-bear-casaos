@@ -1,0 +1,88 @@
+name: big-bear-podfetch
+services:
+  app:
+    image: samuel19982/podfetch:v5.2.2@sha256:b6473cc2fef5a3f1cbebab18ba56e198ee95fe8b3524e57c54d1d1e012c4045f
+    container_name: podfetch
+    ports:
+      - "8000:8000"
+    volumes:
+      - /DATA/AppData/$AppID/podcasts:/app/podcasts
+      - /DATA/AppData/$AppID/db:/app/db
+    environment:
+      - DATABASE_URL=sqlite:///app/db/podcast.db
+      - POLLING_INTERVAL=300
+      - BASIC_AUTH=false
+      - USERNAME=bigbear
+      - PASSWORD=15c40698-3cd9-40ce-8039-e8d80fc1a030
+      - GPODDER_INTEGRATION_ENABLED=false
+    restart: unless-stopped
+    networks:
+      - podfetch-network
+    x-casaos:
+      envs:
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: POLLING_INTERVAL
+          description:
+            en_US: 'Container Variable: POLLING_INTERVAL'
+        - container: BASIC_AUTH
+          description:
+            en_US: 'Container Variable: BASIC_AUTH'
+        - container: USERNAME
+          description:
+            en_US: 'Container Variable: USERNAME'
+        - container: PASSWORD
+          description:
+            en_US: 'Container Variable: PASSWORD'
+        - container: GPODDER_INTEGRATION_ENABLED
+          description:
+            en_US: 'Container Variable: GPODDER_INTEGRATION_ENABLED'
+      volumes:
+        - container: /app/podcasts
+          description:
+            en_US: 'Container Path: /app/podcasts'
+        - container: /app/db
+          description:
+            en_US: 'Container Path: /app/db'
+      ports:
+        - container: "8000"
+          description:
+            en_US: 'Container Port: 8000'
+networks:
+  podfetch-network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.podfetch
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: PodFetch is a sleek and efficient self-hosted podcast manager written in Rust. It automatically downloads new episodes, offers a web UI for listening and managing podcasts, and provides a GPodder-compatible sync API so you can keep using podcast apps like AntennaPod.
+  # Brief tagline for the application
+  tagline:
+    en_US: Sleek podcast downloader with GPodder sync
+  # Developer's information
+  developer: SamTV12345
+  # Author of this particular configuration
+  author: SamTV12345
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/podfetch.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Before installing, change the default PASSWORD in the app settings to a secure password.
+  # Title for the application
+  title:
+    en_US: PodFetch
+  # Category under which the application falls
+  category: Media
+  # Default port mapping for the application
+  port_map: "8000"
