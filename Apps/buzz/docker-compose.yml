@@ -1,0 +1,366 @@
+name: big-bear-buzz
+services:
+  relay:
+    image: ghcr.io/block/buzz:main@sha256:ac050947da4e474dda3b10850eb249cb1ee735ceb4544213c2017650c0226c49
+    container_name: buzz-relay
+    ports:
+      - "3000:3000"
+    environment:
+      BUZZ_BIND_ADDR: 0.0.0.0:3000
+      BUZZ_HEALTH_PORT: "8080"
+      BUZZ_METRICS_PORT: "9102"
+      DATABASE_URL: postgres://buzz:change-me-pg-7Kd2mQ9xR4vT@postgres:5432/buzz
+      REDIS_URL: redis://:change-me-redis-3Fn8pL5wZ6yB@redis:6379
+      BUZZ_S3_ENDPOINT: http://minio:9000
+      BUZZ_S3_ADDRESSING_STYLE: path
+      BUZZ_S3_ACCESS_KEY: change-me-s3-access-J4hN7qX2
+      BUZZ_S3_SECRET_KEY: change-me-s3-secret-W9cR3tY6uM8k
+      BUZZ_S3_BUCKET: buzz-media
+      BUZZ_GIT_REPO_PATH: /data/git
+      BUZZ_AUTO_MIGRATE: "true"
+      BUZZ_GIT_CONFORMANCE_PROBE: "true"
+      BUZZ_REQUIRE_AUTH_TOKEN: "true"
+      BUZZ_REQUIRE_RELAY_MEMBERSHIP: "false"
+      BUZZ_RELAY_PRIVATE_KEY: 7c0d0f000f4cdafc380ab93c413d97deceff42e273c97200d3fb35ad74e29231
+      BUZZ_SERVE_GIT_WEB_GUI: "true"
+      RELAY_URL: ws://localhost:3000
+      BUZZ_MEDIA_BASE_URL: http://localhost:3000/media
+    volumes:
+      - /DATA/AppData/$AppID/git_data:/data/git
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD-SHELL", "bash -ec 'exec 3<>/dev/tcp/127.0.0.1/8080; printf \"GET /_readiness HTTP/1.1\\r\\nHost: 127.0.0.1\\r\\nConnection: close\\r\\n\\r\\n\" >&3; grep -q \"200 OK\" <&3'"]
+      interval: 10s
+      timeout: 3s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+    networks:
+      - buzz_network
+    x-casaos:
+      envs:
+        - container: BUZZ_BIND_ADDR
+          description:
+            en_US: 'Container Variable: BUZZ_BIND_ADDR'
+        - container: BUZZ_HEALTH_PORT
+          description:
+            en_US: 'Container Variable: BUZZ_HEALTH_PORT'
+        - container: BUZZ_METRICS_PORT
+          description:
+            en_US: 'Container Variable: BUZZ_METRICS_PORT'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: REDIS_URL
+          description:
+            en_US: 'Container Variable: REDIS_URL'
+        - container: BUZZ_S3_ENDPOINT
+          description:
+            en_US: 'Container Variable: BUZZ_S3_ENDPOINT'
+        - container: BUZZ_S3_ADDRESSING_STYLE
+          description:
+            en_US: 'Container Variable: BUZZ_S3_ADDRESSING_STYLE'
+        - container: BUZZ_S3_ACCESS_KEY
+          description:
+            en_US: 'Container Variable: BUZZ_S3_ACCESS_KEY'
+        - container: BUZZ_S3_SECRET_KEY
+          description:
+            en_US: 'Container Variable: BUZZ_S3_SECRET_KEY'
+        - container: BUZZ_S3_BUCKET
+          description:
+            en_US: 'Container Variable: BUZZ_S3_BUCKET'
+        - container: BUZZ_GIT_REPO_PATH
+          description:
+            en_US: 'Container Variable: BUZZ_GIT_REPO_PATH'
+        - container: BUZZ_AUTO_MIGRATE
+          description:
+            en_US: 'Container Variable: BUZZ_AUTO_MIGRATE'
+        - container: BUZZ_GIT_CONFORMANCE_PROBE
+          description:
+            en_US: 'Container Variable: BUZZ_GIT_CONFORMANCE_PROBE'
+        - container: BUZZ_REQUIRE_AUTH_TOKEN
+          description:
+            en_US: 'Container Variable: BUZZ_REQUIRE_AUTH_TOKEN'
+        - container: BUZZ_REQUIRE_RELAY_MEMBERSHIP
+          description:
+            en_US: 'Container Variable: BUZZ_REQUIRE_RELAY_MEMBERSHIP'
+        - container: BUZZ_RELAY_PRIVATE_KEY
+          description:
+            en_US: 'Container Variable: BUZZ_RELAY_PRIVATE_KEY'
+        - container: BUZZ_SERVE_GIT_WEB_GUI
+          description:
+            en_US: 'Container Variable: BUZZ_SERVE_GIT_WEB_GUI'
+        - container: RELAY_URL
+          description:
+            en_US: 'Container Variable: RELAY_URL'
+        - container: BUZZ_MEDIA_BASE_URL
+          description:
+            en_US: 'Container Variable: BUZZ_MEDIA_BASE_URL'
+      volumes:
+        - container: /data/git
+          description:
+            en_US: 'Container Path: /data/git'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+  postgres:
+    image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
+    container_name: buzz-postgres
+    environment:
+      POSTGRES_DB: buzz
+      POSTGRES_USER: buzz
+      POSTGRES_PASSWORD: change-me-pg-7Kd2mQ9xR4vT
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /DATA/AppData/$AppID/postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - buzz_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: PGDATA
+          description:
+            en_US: 'Container Variable: PGDATA'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+  redis:
+    image: redis:7-alpine@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2
+    container_name: buzz-redis
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "change-me-redis-3Fn8pL5wZ6yB"]
+    environment:
+      REDIS_PASSWORD: change-me-redis-3Fn8pL5wZ6yB
+    volumes:
+      - /DATA/AppData/$AppID/redis_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$${REDIS_PASSWORD}\" ping | grep -q PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 5s
+    restart: unless-stopped
+    networks:
+      - buzz_network
+    x-casaos:
+      envs:
+        - container: REDIS_PASSWORD
+          description:
+            en_US: 'Container Variable: REDIS_PASSWORD'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
+    container_name: buzz-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: change-me-s3-access-J4hN7qX2
+      MINIO_ROOT_PASSWORD: change-me-s3-secret-W9cR3tY6uM8k
+    volumes:
+      - /DATA/AppData/$AppID/minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:9000/minio/health/live"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - buzz_network
+    x-casaos:
+      envs:
+        - container: MINIO_ROOT_USER
+          description:
+            en_US: 'Container Variable: MINIO_ROOT_USER'
+        - container: MINIO_ROOT_PASSWORD
+          description:
+            en_US: 'Container Variable: MINIO_ROOT_PASSWORD'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+  minio-init:
+    image: minio/mc:RELEASE.2025-08-13T08-35-41Z@sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727
+    container_name: buzz-minio-init
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      BUZZ_S3_ACCESS_KEY: change-me-s3-access-J4hN7qX2
+      BUZZ_S3_SECRET_KEY: change-me-s3-secret-W9cR3tY6uM8k
+      BUZZ_S3_BUCKET: buzz-media
+    entrypoint: >
+      /bin/sh -euc '
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        mc alias set local http://minio:9000 "$${BUZZ_S3_ACCESS_KEY}" "$${BUZZ_S3_SECRET_KEY}"
+        mc mb --ignore-existing "local/$${BUZZ_S3_BUCKET}"
+        mc anonymous set none "local/$${BUZZ_S3_BUCKET}"
+      '
+
+    restart: "no"
+    networks:
+      - buzz_network
+    x-casaos:
+      envs:
+        - container: BUZZ_S3_ACCESS_KEY
+          description:
+            en_US: 'Container Variable: BUZZ_S3_ACCESS_KEY'
+        - container: BUZZ_S3_SECRET_KEY
+          description:
+            en_US: 'Container Variable: BUZZ_S3_SECRET_KEY'
+        - container: BUZZ_S3_BUCKET
+          description:
+            en_US: 'Container Variable: BUZZ_S3_BUCKET'
+networks:
+  buzz_network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.buzz
+  # Main service for this application
+  main: relay
+  # Detailed description for the application
+  description:
+    en_US: Buzz is a self-hostable workspace for humans and agents from Block. It runs a Nostr relay, a REST bridge, git-over-object-storage, and a web interface from a single Rust binary, so you can host your own community and agent infrastructure.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted workspace and Nostr relay for humans and agents
+  # Developer's information
+  developer: block
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/block/buzz@main/desktop/public/app-icon@2x.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: This app ships with placeholder secrets so it starts without configuration. Rotate BUZZ_RELAY_PRIVATE_KEY and the change-me database, Redis, and S3 passwords before using it for anything real. See the app README.
+  # Title for the application
+  title:
+    en_US: Buzz
+  # Category under which the application falls
+  category: Developer
+  # Default port mapping for the application
+  port_map: "3000"
