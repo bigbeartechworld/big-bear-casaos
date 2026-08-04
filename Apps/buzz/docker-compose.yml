@@ -1,7 +1,7 @@
 name: big-bear-buzz
 services:
   relay:
-    image: ghcr.io/block/buzz:main@sha256:ac050947da4e474dda3b10850eb249cb1ee735ceb4544213c2017650c0226c49
+    image: ghcr.io/block/buzz:main@sha256:fc2f87e3ee167478895c03bbd01124b2c3405bdc77cbdbdfe3ed042d811933be
     container_name: buzz-relay
     ports:
       - "3000:3000"
