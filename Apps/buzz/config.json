@@ -1,0 +1,7 @@
+{
+  "id": "buzz",
+  "version": "latest",
+  "image": "ghcr.io/block/buzz",
+  "youtube": "",
+  "docs_link": "https://engineering.block.xyz/blog/run-your-own-buzz-relay"
+}
