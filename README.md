@@ -107,6 +107,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.10 | [YouTube Video](https://youtu.be/chaRoQV1V2I) |  |
 | budibase | budibase/budibase | 3.41.1 |  |  |
+| buzz | ghcr.io/block/buzz | latest |  | [Docs](https://engineering.block.xyz/blog/run-your-own-buzz-relay) |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | celestory | celestory/gateway | 1.1.2 |  |  |
@@ -154,7 +155,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
-| ghost | ghost | 6.54.1-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
+| ghost | ghost | 6.55.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
 | ghostfolio | ghostfolio/ghostfolio | 3.36.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 1.27.1 |  | [Docs](https://docs.gitea.com/) |
@@ -199,7 +200,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.9.2 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.2.0 |  |  |
 | mailpit | axllent/mailpit | v1.30 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
-| matterbridge | luligu/matterbridge | 3.10.2 |  |  |
+| matterbridge | luligu/matterbridge | 3.10.3 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
 | mealie | hkotel/mealie | v3.22.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
@@ -210,7 +211,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mumble-server | mumblevoip/mumble-server | v1.4.230-6 |  |  |
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
-| n8n | n8nio/n8n | 2.33.2 |  |  |
+| n8n | n8nio/n8n | 2.33.3 |  |  |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.9 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
 | netalertx-v26 | jokobsk/netalertx | 26.7.1 |  | [Docs](https://docs.netalertx.com) |
@@ -222,7 +223,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nexterm | nexterm/aio | 1.2.2-BETA | [YouTube Video](https://youtu.be/RQPz4892npo) | [Docs](https://community.bigbeartechworld.com/t/added-nexterm-to-bigbearcasaos/1835#p-3452-documentation-3) |
 | nightscout | nightscout/cgm-remote-monitor | 15.0.7 | [YouTube Video](https://youtu.be/ty0F0lo9kSo) |  |
 | nocodb | nocodb/nocodb | 0.301.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
-| node-red | nodered/node-red | 5.0.2 |  |  |
+| node-red | nodered/node-red | 5.0.4 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
 | nova-dso-tracker | mrantonsg/nova-dso-tracker:5.9.0 | 6.2.2 |  | [Docs](https://nova-tracker.com) |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
@@ -263,6 +264,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | plex-nvidia | linuxserver/plex | 1.43.3 |  |  |
 | plex | linuxserver/plex | 1.43.3 |  |  |
 | pocketid | ghcr.io/pocket-id/pocket-id | v2.7 |  | [Docs](https://pocket-id.org/docs/introduction) |
+| podfetch | samuel19982/podfetch | v5.2.2 |  | [Docs](https://samtv12345.github.io/PodFetch/) |
 | portainer-agent | portainer/agent | 2.44.0 |  |  |
 | portainer | portainer/portainer-ce | 2.44.0-alpine | [YouTube Video](https://youtu.be/GW4_OALLI_s) |  |
 | portracker | mostafawahied/portracker | 1.3 |  |  |
@@ -274,7 +276,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | rackpeek | aptacode/rackpeek | v2.0.0 |  | [Docs](https://timmoth.github.io/RackPeek/docs/overview) |
 | rallly | lukevella/rallly | 4.11.1 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
-| reactive-resume | amruthpillai/reactive-resume | v5.2.4 |  |  |
+| reactive-resume | amruthpillai/reactive-resume | v5.2.5 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.3 |  |  |
 | retroarch-web | inglebard/retroarch-web | latest |  |  |
 | rocket-chat-v8 | rocket.chat | 8.5.1 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
