@@ -2,7 +2,7 @@ name: big-bear-plex
 services:
   big-bear-plex:
     container_name: big-bear-plex
-    image: linuxserver/plex:1.43.3@sha256:507713a14f9586f827d00c81381ecdcd438009172342b322b62a0e2b65081fdf
+    image: linuxserver/plex:1.43.3@sha256:d8b3417b9173bab8bb79b167119b6b69a85558f2127e7fa810a045654e3dbe7f
     environment:
     - PUID=1000
     - PGID=1000

@@ -2,7 +2,7 @@ name: big-bear-immich
 services:
   immich-server:
     container_name: immich-server
-    image: ghcr.io/immich-app/immich-server:v3.0.0@sha256:685ba5c93337058ff8a189d3ed89f0ba470ef966b1c94d2eace1a3d991f9816e
+    image: ghcr.io/immich-app/immich-server:v3.1.0@sha256:b434cb9287eea1471c9974845914d4dd328c9c2d652e446ed4930f99944f0ceb
     ports:
     - 2283:2283
     volumes:
@@ -23,7 +23,7 @@ services:
     - big_bear_immich_network
   immich-machine-learning:
     container_name: immich-machine-learning
-    image: ghcr.io/immich-app/immich-machine-learning:v3.0.0@sha256:5b480e92a2b77618d9ccae8c8110b0eae144ec9daf86715d246ec6d39cb7a553
+    image: ghcr.io/immich-app/immich-machine-learning:v3.1.0@sha256:5a0839dc5303cd7215bcd2180a26aed3af41675aefb3e75e5157e9f10ad16e6e
     volumes:
     - /DATA/AppData/$AppID/model-cache:/cache
     environment:

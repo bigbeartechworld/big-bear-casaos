@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Buzz is a self-hostable workspace for humans and agents from Block. It runs a Nostr relay, a REST bridge, git-over-object-storage, and a web interface from a single Rust binary, so you can host your own community and agent infrastructure.",
+  "tagline": "Self-hosted workspace and Nostr relay for humans and agents",
+  "developer": "block",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "This app ships with placeholder secrets so it starts without configuration. Rotate BUZZ_RELAY_PRIVATE_KEY and the change-me database, Redis, and S3 passwords before using it for anything real. See the app README."
+  },
+  "category": "Developer",
+  "title": "Buzz",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.buzz",
+  "version": "",
+  "categories": [
+    "developer"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 88813613,
+    "arm64": 87727245
+  }
+}

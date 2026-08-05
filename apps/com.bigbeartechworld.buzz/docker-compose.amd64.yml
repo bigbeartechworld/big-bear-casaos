@@ -1,0 +1,146 @@
+name: big-bear-buzz
+services:
+  relay:
+    image: ghcr.io/block/buzz:main@sha256:b58c0b1a7f65d00a087ddecfce7a754405db947484936a3c6b90b822a8c592d0
+    container_name: buzz-relay
+    ports:
+    - 3000:3000
+    environment:
+      BUZZ_BIND_ADDR: 0.0.0.0:3000
+      BUZZ_HEALTH_PORT: '8080'
+      BUZZ_METRICS_PORT: '9102'
+      DATABASE_URL: postgres://buzz:change-me-pg-7Kd2mQ9xR4vT@postgres:5432/buzz
+      REDIS_URL: redis://:change-me-redis-3Fn8pL5wZ6yB@redis:6379
+      BUZZ_S3_ENDPOINT: http://minio:9000
+      BUZZ_S3_ADDRESSING_STYLE: path
+      BUZZ_S3_ACCESS_KEY: change-me-s3-access-J4hN7qX2
+      BUZZ_S3_SECRET_KEY: change-me-s3-secret-W9cR3tY6uM8k
+      BUZZ_S3_BUCKET: buzz-media
+      BUZZ_GIT_REPO_PATH: /data/git
+      BUZZ_AUTO_MIGRATE: 'true'
+      BUZZ_GIT_CONFORMANCE_PROBE: 'true'
+      BUZZ_REQUIRE_AUTH_TOKEN: 'true'
+      BUZZ_REQUIRE_RELAY_MEMBERSHIP: 'false'
+      BUZZ_RELAY_PRIVATE_KEY: 7c0d0f000f4cdafc380ab93c413d97deceff42e273c97200d3fb35ad74e29231
+      BUZZ_SERVE_GIT_WEB_GUI: 'true'
+      RELAY_URL: ws://localhost:3000
+      BUZZ_MEDIA_BASE_URL: http://localhost:3000/media
+    volumes:
+    - /DATA/AppData/$AppID/git_data:/data/git
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - 'bash -ec ''exec 3<>/dev/tcp/127.0.0.1/8080; printf "GET /_readiness HTTP/1.1\r\nHost:
+        127.0.0.1\r\nConnection: close\r\n\r\n" >&3; grep -q "200 OK" <&3'''
+      interval: 10s
+      timeout: 3s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+    networks:
+    - buzz_network
+  postgres:
+    image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
+    container_name: buzz-postgres
+    environment:
+      POSTGRES_DB: buzz
+      POSTGRES_USER: buzz
+      POSTGRES_PASSWORD: change-me-pg-7Kd2mQ9xR4vT
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+    - /DATA/AppData/$AppID/postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+    - buzz_network
+  redis:
+    image: redis:7-alpine@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2
+    container_name: buzz-redis
+    command:
+    - redis-server
+    - --appendonly
+    - 'yes'
+    - --requirepass
+    - change-me-redis-3Fn8pL5wZ6yB
+    environment:
+      REDIS_PASSWORD: change-me-redis-3Fn8pL5wZ6yB
+    volumes:
+    - /DATA/AppData/$AppID/redis_data:/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli -a "$${REDIS_PASSWORD}" ping | grep -q PONG
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 5s
+    restart: unless-stopped
+    networks:
+    - buzz_network
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
+    container_name: buzz-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: change-me-s3-access-J4hN7qX2
+      MINIO_ROOT_PASSWORD: change-me-s3-secret-W9cR3tY6uM8k
+    volumes:
+    - /DATA/AppData/$AppID/minio_data:/data
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://127.0.0.1:9000/minio/health/live
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+    - buzz_network
+  minio-init:
+    image: minio/mc:RELEASE.2025-08-13T08-35-41Z@sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727
+    container_name: buzz-minio-init
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      BUZZ_S3_ACCESS_KEY: change-me-s3-access-J4hN7qX2
+      BUZZ_S3_SECRET_KEY: change-me-s3-secret-W9cR3tY6uM8k
+      BUZZ_S3_BUCKET: buzz-media
+    entrypoint: "/bin/sh -euc '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
+      \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
+      \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  mc alias set local\
+      \ http://minio:9000 \"$${BUZZ_S3_ACCESS_KEY}\" \"$${BUZZ_S3_SECRET_KEY}\"\n\
+      \  mc mb --ignore-existing \"local/$${BUZZ_S3_BUCKET}\"\n  mc anonymous set\
+      \ none \"local/$${BUZZ_S3_BUCKET}\"\n'\n"
+    restart: 'no'
+    networks:
+    - buzz_network
+networks:
+  buzz_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.buzz
+  main: relay
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.buzz/assets/icon.png
+  title:
+    en_US: Buzz
+  port_map: '3000'

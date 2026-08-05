@@ -1,0 +1,30 @@
+name: big-bear-podfetch
+services:
+  app:
+    image: samuel19982/podfetch:v5.2.2@sha256:6c145cc5427d7fb042016a7e4d42d2218acfc84f809b6a25680866cb97b8e852
+    container_name: podfetch
+    ports:
+    - 8000:8000
+    volumes:
+    - /DATA/AppData/$AppID/podcasts:/app/podcasts
+    - /DATA/AppData/$AppID/db:/app/db
+    environment:
+    - DATABASE_URL=sqlite:///app/db/podcast.db
+    - POLLING_INTERVAL=300
+    - BASIC_AUTH=false
+    - USERNAME=bigbear
+    - PASSWORD=15c40698-3cd9-40ce-8039-e8d80fc1a030
+    - GPODDER_INTEGRATION_ENABLED=false
+    restart: unless-stopped
+    networks:
+    - podfetch-network
+networks:
+  podfetch-network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.podfetch
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.podfetch/assets/icon.png
+  title:
+    en_US: PodFetch
+  port_map: '8000'

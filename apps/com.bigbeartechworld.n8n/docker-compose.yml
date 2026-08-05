@@ -2,7 +2,7 @@ name: big-bear-n8n
 services:
   app:
     container_name: n8n
-    image: n8nio/n8n:2.32.5@sha256:3647d2b986f03174a7c0c6a0cd57bc870a769ea7a5538838b94d9714b57e9057
+    image: n8nio/n8n:2.33.3@sha256:769d3a624534ff8b5f3316ef71d4653f48794c47e4339436be7a308d6d6a1cc9
     restart: unless-stopped
     ports:
     - 5678:5678

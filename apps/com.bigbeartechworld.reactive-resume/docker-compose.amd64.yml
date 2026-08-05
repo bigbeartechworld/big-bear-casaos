@@ -2,7 +2,7 @@ name: big-bear-reactive-resume
 services:
   app:
     container_name: big-bear-reactive-resume
-    image: amruthpillai/reactive-resume:v5.2.3@sha256:bfacee69faad04a8b785854d02cb078fb223824e8b07a07ff21fa39ebfa9fe8c
+    image: amruthpillai/reactive-resume:v5.2.5@sha256:ff5d74fed8f8611b3e3182b9420b6b6ed7020aa39db9b5f8e9d8fb090a9374e9
     restart: unless-stopped
     ports:
     - 3000:3000

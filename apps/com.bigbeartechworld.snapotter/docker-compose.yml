@@ -2,7 +2,7 @@ name: big-bear-snapotter
 services:
   snapotter:
     container_name: snapotter
-    image: snapotter/snapotter:2.1.0@sha256:d2cfc667e6b51b098c484eda39c14a6fd205409769f6e55800b59853791734d1
+    image: snapotter/snapotter:2.2.0@sha256:2e11b4fa9138fa93e0fdfde5da3a2d042eebcfa81dd51286488872a3eb8086c8
     restart: unless-stopped
     ports:
     - 1349:1349

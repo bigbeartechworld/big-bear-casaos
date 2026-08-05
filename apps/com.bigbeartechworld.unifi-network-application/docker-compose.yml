@@ -1,7 +1,7 @@
 name: big-bear-unifi-network-application
 services:
   app:
-    image: linuxserver/unifi-network-application:10.4.57@sha256:cebacc22bd529909a85efd91003c20c1d77bab7d79850689e2c0da720677bf4c
+    image: linuxserver/unifi-network-application:10.4.57@sha256:3b3780b99ab811ebedb4c83604e0f08b6e1ac2a4fb99bfa9893539dae8c650fa
     container_name: big-bear-unifi-network-application
     environment:
     - PUID=1000

@@ -2,7 +2,7 @@ name: big-bear-neko-firefox
 services:
   big-bear-neko-firefox:
     container_name: neko-firefox
-    image: m1k1o/neko:firefox@sha256:8cf3206b62d15ccd8a210e7ae28340a412b8ccce31b67e8965692730ea6c4736
+    image: m1k1o/neko:firefox@sha256:737b72d19d729a80a69bcb173e5587403539e01d369b6d687f0de2b6d4b21c45
     restart: unless-stopped
     shm_size: 2gb
     ports:

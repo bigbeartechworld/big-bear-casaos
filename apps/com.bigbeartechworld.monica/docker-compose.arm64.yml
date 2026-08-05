@@ -2,7 +2,7 @@ name: big-bear-monica
 services:
   big-bear-monica:
     container_name: big-bear-monica
-    image: monica:4.1.2@sha256:84c6703c05bf92562a91b9a282245a0d66ae5e032d63e8e61b3b3ce556a7d02d
+    image: monica:4.1.2@sha256:13d1d6a029d56f73680ca11e08f644515b9de00476ddfc3e1f87a1a65c0972f1
     restart: unless-stopped
     environment:
     - APP_KEY=80356f7073c4f7834187b25a9d32cd2a

@@ -2,7 +2,7 @@ name: big-bear-portainer
 services:
   app:
     container_name: big-bear-portainer
-    image: portainer/portainer-ce:2.43.0-alpine@sha256:b39d73976b94d945f6e62ac727ca65d1cf9b46dc9d2c3c0e833ef0422469f09e
+    image: portainer/portainer-ce:2.44.0-alpine@sha256:5376fd96f0bae14be7285ceb24c5cf9470dc23f19cdde74ff4c65d11cbe96eb2
     network_mode: bridge
     ports:
     - 8000:8000

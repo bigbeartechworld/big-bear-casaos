@@ -2,7 +2,7 @@ name: big-bear-flowise
 services:
   big-bear-flowise:
     container_name: big-bear-flowise
-    image: flowiseai/flowise:3.1.3@sha256:fa39f54c82ebecabb817cbd2d01fc9fa7bb26d58a7e818c36bb6c2bad44b366a
+    image: flowiseai/flowise:3.1.4@sha256:3922767afb52a5777759fd8b28a3c9eee864daea96018a791f2429eae2a76571
     restart: unless-stopped
     entrypoint: /bin/sh -c "sleep 3; flowise start"
     environment:
