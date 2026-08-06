@@ -103,7 +103,7 @@ services:
             en_US: 'Container Port: 8000'
   big-bear-paperless-ngx-broker:
     container_name: big-bear-paperless-ngx-broker
-    image: docker.io/library/redis:8.10.0@sha256:a7efd4ed5037dcfe1543c0e50b9f06293d3e88827005544bf37f381eea5f01cf
+    image: docker.io/library/redis:8.10.0@sha256:39353c6a2f310da333374e1290c91805d15a85def073b5090f58e4ac646d284c
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/redis:/data
