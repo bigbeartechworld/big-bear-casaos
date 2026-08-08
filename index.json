@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-08-05T02:12:51Z",
+  "updated_at": "2026-08-08T01:22:10Z",
   "app_count": 241,
   "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
   "apps": [
@@ -341,7 +341,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.budibase/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.budibase/meta.json",
-      "content_hash": "756ef470"
+      "content_hash": "7bfe2a69"
     },
     {
       "id": "com.bigbeartechworld.buzz",
@@ -361,7 +361,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.buzz/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.buzz/meta.json",
-      "content_hash": "5009a695"
+      "content_hash": "e4beecae"
     },
     {
       "id": "com.bigbeartechworld.cadvisor",
@@ -761,7 +761,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.dbgate/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.dbgate/meta.json",
-      "content_hash": "f6832568"
+      "content_hash": "1e1613b0"
     },
     {
       "id": "com.bigbeartechworld.discopanel",
@@ -959,7 +959,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.ente/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.ente/meta.json",
-      "content_hash": "8977da92"
+      "content_hash": "324632cc"
     },
     {
       "id": "com.bigbeartechworld.erugo",
@@ -1514,7 +1514,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.healthchecks/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.healthchecks/meta.json",
-      "content_hash": "a08baa22"
+      "content_hash": "ab2be165"
     },
     {
       "id": "com.bigbeartechworld.homarr",
@@ -1754,7 +1754,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.invoice-ninja/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.invoice-ninja/meta.json",
-      "content_hash": "be21510d"
+      "content_hash": "742acb47"
     },
     {
       "id": "com.bigbeartechworld.it-tools",
@@ -2153,7 +2153,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.ls-adguardhome-sync/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.ls-adguardhome-sync/meta.json",
-      "content_hash": "168a7212"
+      "content_hash": "11fe1ea2"
     },
     {
       "id": "com.bigbeartechworld.lyrionmusicserver",
@@ -2173,7 +2173,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.lyrionmusicserver/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.lyrionmusicserver/meta.json",
-      "content_hash": "3cd05bae"
+      "content_hash": "2586e110"
     },
     {
       "id": "com.bigbeartechworld.mailpit",
@@ -2333,7 +2333,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.monica/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.monica/meta.json",
-      "content_hash": "8376b7f4"
+      "content_hash": "752a51e1"
     },
     {
       "id": "com.bigbeartechworld.morphos",
@@ -2471,7 +2471,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.neko-firefox/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.neko-firefox/meta.json",
-      "content_hash": "c6a1141f"
+      "content_hash": "575f7160"
     },
     {
       "id": "com.bigbeartechworld.netalertx",
@@ -2831,7 +2831,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.odoo/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.odoo/meta.json",
-      "content_hash": "20a1e9e6"
+      "content_hash": "59ac7936"
     },
     {
       "id": "com.bigbeartechworld.odysseus",
@@ -2931,7 +2931,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.onedev/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.onedev/meta.json",
-      "content_hash": "3ad7a94d"
+      "content_hash": "ad3b5465"
     },
     {
       "id": "com.bigbeartechworld.onlyoffice",
@@ -3050,7 +3050,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.owncloud/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.owncloud/meta.json",
-      "content_hash": "f4fce1e3"
+      "content_hash": "8ec9a669"
     },
     {
       "id": "com.bigbeartechworld.paperless-ngx",
@@ -3070,7 +3070,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.paperless-ngx/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.paperless-ngx/meta.json",
-      "content_hash": "a26c8cc9"
+      "content_hash": "3fde0807"
     },
     {
       "id": "com.bigbeartechworld.passwordpusher",
@@ -3110,7 +3110,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.passwordpusher-v2/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.passwordpusher-v2/meta.json",
-      "content_hash": "6d0d348a"
+      "content_hash": "654cdeec"
     },
     {
       "id": "com.bigbeartechworld.pd3f",
@@ -3488,7 +3488,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.podfetch/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.podfetch/meta.json",
-      "content_hash": "0df2c50f"
+      "content_hash": "0643c650"
     },
     {
       "id": "com.bigbeartechworld.portainer",
@@ -3806,7 +3806,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.rocket-chat-v8/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.rocket-chat-v8/meta.json",
-      "content_hash": "e4cd3535"
+      "content_hash": "42beffb0"
     },
     {
       "id": "com.bigbeartechworld.romm",
@@ -4046,7 +4046,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.speedtest-tracker/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.speedtest-tracker/meta.json",
-      "content_hash": "8a0f26f2"
+      "content_hash": "368c3441"
     },
     {
       "id": "com.bigbeartechworld.spoolman",
@@ -4086,7 +4086,7 @@
       "thumbnail": "/apps/com.bigbeartechworld.stalwart-mail/assets/thumbnail.gif",
       "compose_url": "/apps/com.bigbeartechworld.stalwart-mail/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.stalwart-mail/meta.json",
-      "content_hash": "f727de29"
+      "content_hash": "5f661393"
     },
     {
       "id": "com.bigbeartechworld.stirling-pdf",
@@ -4146,7 +4146,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.syncthing/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.syncthing/meta.json",
-      "content_hash": "04c1590c"
+      "content_hash": "04cd820e"
     },
     {
       "id": "com.bigbeartechworld.tailscale",
@@ -4206,7 +4206,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.tianji/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.tianji/meta.json",
-      "content_hash": "f0689230"
+      "content_hash": "897e43d0"
     },
     {
       "id": "com.bigbeartechworld.tp-link-omada-controller",
@@ -4724,7 +4724,7 @@
       "thumbnail": "",
       "compose_url": "/apps/com.bigbeartechworld.wordpress-v7/docker-compose.yml",
       "meta_url": "/apps/com.bigbeartechworld.wordpress-v7/meta.json",
-      "content_hash": "cdaf40d4"
+      "content_hash": "c5b6a362"
     },
     {
       "id": "com.bigbeartechworld.write-freely",
