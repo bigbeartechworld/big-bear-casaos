@@ -106,7 +106,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | bookstack | lscr.io/linuxserver/bookstack | 26.05.20260608 | [YouTube Video](https://youtu.be/_jW4RjJm-6A) |  |
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.10 | [YouTube Video](https://youtu.be/chaRoQV1V2I) |  |
-| budibase | budibase/budibase | 3.41.1 |  |  |
+| budibase | budibase/budibase | 3.41.3 |  |  |
 | buzz | ghcr.io/block/buzz | latest |  | [Docs](https://engineering.block.xyz/blog/run-your-own-buzz-relay) |
 | cadvisor | gcr.io/cadvisor/cadvisor | v0.55.1 |  |  |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
@@ -127,7 +127,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dashy-v4 | lissy93/dashy | 4.0.8 |  | [Docs](https://github.com/Lissy93/dashy/blob/master/docs/changelog.md) |
 | dashy | lissy93/dashy | 3.3.1 |  |  |
 | davis | ghcr.io/tchapi/davis-standalone | 5.4.1 |  |  |
-| dbgate | dbgate/dbgate | 7.2.3-alpine |  |  |
+| dbgate | dbgate/dbgate | 7.2.4-alpine |  |  |
 | discopanel | nickheyer/discopanel | v2.0.15 |  | [Docs](https://docs.discopanel.app) |
 | diun | crazymax/diun | 4.33.0 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
@@ -165,7 +165,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | goaway | pommee/goaway | 0.63.17 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 3.0.0 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
-| healthchecks | linuxserver/healthchecks | 4.3.20260720 |  |  |
+| healthchecks | linuxserver/healthchecks | 4.3.20260803 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.63.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
 | home-assistant | ghcr.io/home-assistant/home-assistant | 2026.5.1 | [YouTube Video](https://youtu.be/YnCpj5sND_A) |  |
@@ -177,7 +177,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | immich-kiosk | ghcr.io/damongolding/immich-kiosk | 0.38.1 |  |  |
 | immich-without-machine-learning | ghcr.io/immich-app/immich-server | v3.1.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
 | immich | ghcr.io/immich-app/immich-server | v3.1.0 | [YouTube Video](https://youtu.be/ZIx2jDHYjjE) |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.13.26 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.13.27 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
 | jellystat | cyfershepard/jellystat | 1.1.11 |  |  |
@@ -236,15 +236,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.32.5-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.32.5 |  |  |
 | ollama-nvidia | ollama/ollama | 0.32.5 |  |  |
-| onedev | 1dev/server | 16.3.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 16.4.1 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | otel-lgtm | grafana/otel-lgtm | 0.29.2 |  |  |
-| owncloud | owncloud/server | 10.16.3 |  |  |
+| owncloud | owncloud/server | 10.16.4 |  |  |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 2.20.15 |  |  |
-| passwordpusher-v2 | pglombardo/pwpush | 2.9.4 | [YouTube Video](https://youtu.be/7Ej56MDo95g) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
+| passwordpusher-v2 | pglombardo/pwpush | 2.9.7 | [YouTube Video](https://youtu.be/7Ej56MDo95g) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
 | passwordpusher | pglombardo/pwpush | 1.69.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | penpot | penpotapp/frontend | 2.17.0 |  |  |
@@ -292,15 +292,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | snapotter | snapotter/snapotter | 2.2.0 |  | [Docs](https://docs.snapotter.com/guide/getting-started) |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.14.6 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.14.7 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
-| stalwart-mail | stalwartlabs/stalwart | v0.16.15 |  |  |
+| stalwart-mail | stalwartlabs/stalwart | v0.16.16 |  |  |
 | stirling-pdf | stirlingtools/stirling-pdf | 2.14.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | syncthing | syncthing/syncthing | 2.1 |  |  |
 | tailscale | tailscale/tailscale | v1.98.10 |  |  |
 | tandoor | ghcr.io/tandoorrecipes/recipes | 2.6.9 | [YouTube Video](https://youtu.be/f4-op1UOaWc) |  |
-| tianji | moonrailgun/tianji | 1.32.17 |  |  |
+| tianji | moonrailgun/tianji | 1.32.20 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.2 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.14-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trilium | triliumnext/trilium | v0.104.1 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
