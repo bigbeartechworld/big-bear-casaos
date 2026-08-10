@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-ihatemoney
     # Image to be used for the container
-    image: ihatemoney/ihatemoney:7.1.1@sha256:cfd8a44362458559f0b9a216e4f878eb2542ae383cceb1e074bcf8f59d91bb71
+    image: ihatemoney/ihatemoney:7.2.0@sha256:94a809cb2e7605848db2b7f6a8149e96d5f235ebb97b9a4e4e9c2815fbf946cb
     # Container restart policy
     restart: unless-stopped
     environment:

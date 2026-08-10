@@ -7,7 +7,7 @@ services:
   # Service definition for the Ghostfolio application
   big-bear-ghostfolio:
     container_name: big-bear-ghostfolio # Unique name for the container instance
-    image: ghostfolio/ghostfolio:3.36.0@sha256:b53ebfe00de1510decbed4ca3310b3d6292d419bb906a7d749ec7e8bcc48cdce # Docker image to use
+    image: ghostfolio/ghostfolio:3.43.0@sha256:b69435754aaec58b000d4086a068882b1a8ca597b2ae9994d4da4291d6b79eff # Docker image to use
     restart: unless-stopped # Policy to restart the container unless manually stopped
     environment: # Environment variables for configuration
       NODE_ENV: production # Node environment setting (production, development, etc.)
