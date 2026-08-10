@@ -2,7 +2,7 @@ name: big-bear-stirling-pdf
 services:
   big-bear-stirling-pdf:
     container_name: big-bear-stirling-pdf
-    image: stirlingtools/stirling-pdf:2.14.2@sha256:7ed4d9681d18e4fbc3aa6a63647c4b5c2bcc4b75841df7c05d7e3d2320f5c9a1
+    image: stirlingtools/stirling-pdf:2.14.3@sha256:3b3670fce70b396ec56ba380a3cc7858e0abf83fe13f31c88f7737847763a396
     restart: unless-stopped
     environment:
     - DOCKER_ENABLE_SECURITY=false

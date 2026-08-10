@@ -2,7 +2,7 @@ name: big-bear-rallly
 services:
   big-bear-rallly:
     container_name: big-bear-rallly
-    image: lukevella/rallly:4.11.1@sha256:b2acb78afb1e2e88445e78cec4393cd8b8cc63f9268cf1defe19f96d0db945b0
+    image: lukevella/rallly:4.12.1@sha256:6049260ff6d3accd86730372a650b5e8063c373a09f253c45f7e4a8dc9202752
     restart: unless-stopped
     environment:
     - DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@big-bear-rallly-db/big-bear-rallly

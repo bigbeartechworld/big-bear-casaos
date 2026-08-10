@@ -1,7 +1,7 @@
 name: big-bear-invoice-ninja
 services:
   big-bear-invoice-ninja:
-    image: invoiceninja/invoiceninja:5.13.27@sha256:9790c141c6de90bcca211e217a2a80c4b4f353f61ad4654fe899e305f38e4ce1
+    image: invoiceninja/invoiceninja:5.13.30@sha256:6795b279ec0d55e2588ed95429ccfda2b00099b4b3fd75eb355f08f805590efc
     container_name: big-bear-invoice-ninja
     restart: unless-stopped
     user: 1500:1500

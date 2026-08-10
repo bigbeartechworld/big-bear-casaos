@@ -30,7 +30,7 @@ services:
     - big-bear-davis-mailpit
   big-bear-davis-mailpit:
     container_name: big-bear-davis-mailpit
-    image: axllent/mailpit:v1.30@sha256:7f33095f80e901f6ad08028f06ca284aa58fe84942be5496008d041d3b9f4d4d
+    image: axllent/mailpit:v1.30@sha256:d5ecbb067db3705fa953d79e1b7f81ef84038df67aba6c52825d8c02a1ea748a
     restart: unless-stopped
     volumes:
     - /DATA/AppData/$AppID/mailpit/data:/data

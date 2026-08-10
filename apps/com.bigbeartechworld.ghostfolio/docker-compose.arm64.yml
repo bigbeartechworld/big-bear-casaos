@@ -2,7 +2,7 @@ name: big-bear-ghostfolio
 services:
   big-bear-ghostfolio:
     container_name: big-bear-ghostfolio
-    image: ghostfolio/ghostfolio:3.36.0@sha256:b53ebfe00de1510decbed4ca3310b3d6292d419bb906a7d749ec7e8bcc48cdce
+    image: ghostfolio/ghostfolio:3.43.0@sha256:b69435754aaec58b000d4086a068882b1a8ca597b2ae9994d4da4291d6b79eff
     restart: unless-stopped
     environment:
       NODE_ENV: production

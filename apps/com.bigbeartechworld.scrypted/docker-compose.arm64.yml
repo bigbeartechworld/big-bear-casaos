@@ -2,7 +2,7 @@ name: big-bear-scrypted
 services:
   scrypted:
     container_name: scrypted
-    image: koush/scrypted:v0.144.1-noble-full@sha256:25440767192b0d4a0709f50388d14cdf365ba6bff59d04e40a41ca2b7b9a6b70
+    image: koush/scrypted:v0.144.1-noble-full@sha256:8bb29091d17b141ed6c2ae3d5cfaafbbb91420ff77e5bafd341518e205c91731
     network_mode: host
     environment:
     - SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer SET_THIS_TO_SOME_RANDOM_TEXT

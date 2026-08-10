@@ -2,7 +2,7 @@ name: big-bear-tugtainer
 services:
   big-bear-tugtainer:
     container_name: big-bear-tugtainer
-    image: quenary/tugtainer:v1.30.9@sha256:bfecbbbb478dcdd0156324bf547bce1d0d0ec70b019167ea14b19f41c6214f5f
+    image: quenary/tugtainer:v1.31.3@sha256:f59fb94e8cd0af67ada7d98a65feb78e3e78aabb0cadab66ac205f95f87530af
     restart: unless-stopped
     ports:
     - 9412:80

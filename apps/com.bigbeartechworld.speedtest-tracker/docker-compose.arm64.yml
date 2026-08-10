@@ -19,7 +19,7 @@ services:
     - /etc/localtime:/etc/localtime:ro
     - /DATA/AppData/$AppID/config:/config
     - /DATA/AppData/$AppID/web:/etc/ssl/web
-    image: linuxserver/speedtest-tracker:1.14.7@sha256:10a08318f473e65d29c21326387b127ac4bb2abf6574187541f5422ce333c399
+    image: linuxserver/speedtest-tracker:1.14.7@sha256:e095f60b019819ea5a265e220bfb16d4e620c767f25005a065d73cab7c187c49
     restart: unless-stopped
     depends_on:
     - big-bear-speedtest-tracker-db
