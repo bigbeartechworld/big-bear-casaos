@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-obsidian
     # Image to be used for the container
-    image: linuxserver/obsidian:1.12.7@sha256:2702b0b8ad57c0288201ce428ded643a44692abef5b9daf1a693d9f745b48fed
+    image: linuxserver/obsidian:1.13.4@sha256:93c8f571dc165a1cdb17ce7d1f6d4679b3af786af01e26c29a439fb34c4c6b76
     # Container restart policy
     restart: unless-stopped
     # Environment variables

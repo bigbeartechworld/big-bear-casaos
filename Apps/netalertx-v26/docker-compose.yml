@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-netalertx-v26
     # Image to be used for the container
-    image: jokobsk/netalertx:26.7.1@sha256:ffab3346b7a924b47bf6b992f369241801b736e54087011047e227937969532f
+    image: jokobsk/netalertx:26.8.5@sha256:e8d800176d35a2fcc856ddc68c354a6b472e535c6ed42c52d040b715ca9bb127
     # Container restart policy
     restart: unless-stopped
     # Drop all capabilities and add only what's needed

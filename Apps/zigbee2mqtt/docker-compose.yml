@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-zigbee2mqtt
     # Image to be used for the container
-    image: koenkk/zigbee2mqtt:2.12.1@sha256:80f7f04f72a99e4c4ef51ef7e98ee736edba6db0ecbb7abc626d0c4b0f1871f1
+    image: koenkk/zigbee2mqtt:2.13.0@sha256:4fb4db4d49a217bed6d0204f454ce809febc565bbe051b85c556ee2bcef73d8c
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
