@@ -1,0 +1,7 @@
+{
+  "id": "paperclip",
+  "version": "latest",
+  "image": "ghcr.io/paperclipai/paperclip",
+  "youtube": "",
+  "docs_link": "https://github.com/paperclipai/paperclip/blob/master/doc/DOCKER.md"
+}
