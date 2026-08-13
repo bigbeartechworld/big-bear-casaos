@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-lyrionmusicserver
     # Image to be used for the container
-    image: lmscommunity/lyrionmusicserver:9.2.0@sha256:b7589857de3e881595a539c77d70e323c2cb4b57de18b5c5805cad6dacbcd116
+    image: lmscommunity/lyrionmusicserver:9.2.0@sha256:5eab96ddd4c7563a7e0b4265cc85945ca9ebee50654854466b837fd624925eb3
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container
