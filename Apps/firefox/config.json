@@ -1,7 +1,7 @@
 {
   "id": "firefox",
   "version": "1152.0.6",
-  "image": "lscr.io/linuxserver/firefox",
+  "image": "linuxserver/firefox",
   "youtube": "https://youtu.be/RPBshN5hGWQ",
   "docs_link": ""
 }
