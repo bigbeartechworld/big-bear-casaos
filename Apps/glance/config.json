@@ -1,0 +1,7 @@
+{
+  "id": "glance",
+  "version": "v0.8.5",
+  "image": "glanceapp/glance",
+  "youtube": "",
+  "docs_link": "https://github.com/glanceapp/glance/blob/main/docs/configuration.md"
+}

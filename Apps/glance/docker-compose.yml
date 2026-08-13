@@ -1,0 +1,131 @@
+# Configuration for glance setup
+
+# Name of the big-bear-glance application
+name: big-bear-glance
+# Service definitions for the big-bear-glance application
+services:
+  # Service name: app
+  # The `app` service definition
+  app:
+    # Name of the container
+    container_name: big-bear-glance
+    # Image to be used for the container
+    image: glanceapp/glance:v0.8.5@sha256:32ab73d80f2b8b5fb0735b0431deb36b93fbb6b2fb43592449b0178c8b83e350
+    # Container restart policy
+    restart: unless-stopped
+    # Glance exits unless /app/config/glance.yml exists, so a starter config is
+    # seeded into the volume on first run. The guard keeps user edits intact.
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -eu
+        if [ ! -s /app/config/glance.yml ]; then
+          mkdir -p /app/config
+          cat > /app/config/glance.yml <<EOF
+        pages:
+          - name: Home
+            columns:
+              - size: small
+                widgets:
+                  - type: calendar
+                    first-day-of-week: monday
+
+                  - type: rss
+                    limit: 10
+                    collapse-after: 3
+                    cache: 12h
+                    feeds:
+                      - url: https://selfh.st/rss/
+                        title: selfh.st
+                        limit: 4
+                      - url: https://ciechanow.ski/atom.xml
+                      - url: https://samwho.dev/rss.xml
+
+              - size: full
+                widgets:
+                  - type: group
+                    widgets:
+                      - type: hacker-news
+                      - type: lobsters
+
+                  - type: docker-containers
+                    hide-by-default: false
+
+              - size: small
+                widgets:
+                  - type: weather
+                    location: New York, United States
+                    units: imperial
+                    hour-format: 12h
+
+                  - type: releases
+                    cache: 1d
+                    repositories:
+                      - glanceapp/glance
+        EOF
+        fi
+        exec /app/glance --config /app/config/glance.yml
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 8280 of the host to port 8080 of the container
+      - "8280:8080"
+    # Volumes to be mounted to the container
+    volumes:
+      # Dashboard configuration
+      - /DATA/AppData/$AppID/config:/app/config
+      # Docker socket for the docker-containers widget
+      # (ro mount protects the socket file, not the Docker API behind it)
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - big_bear_glance_network
+    x-casaos:
+      volumes:
+        - container: /app/config
+          description:
+            en_US: 'Container Path: /app/config'
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+# Network configuration
+networks:
+  big_bear_glance_network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.glance
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Glance is a self-hosted dashboard that puts all your feeds in one place.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted dashboard for your feeds
+  # Developer's information
+  developer: glanceapp
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/glance/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: A starter glance.yml is created on first run. Edit it to customize your dashboard; if it is ever left invalid or half-written, delete it and restart to get a fresh starter config. The Docker socket is mounted for the containers widget - this grants Glance root-equivalent access to Docker regardless of the read-only flag, so delete the docker-containers widget from glance.yml after install, or remove the socket volume from the compose file before deploying, if you do not want the widget.
+  # Title for the application
+  title:
+    en_US: Glance
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8280"
