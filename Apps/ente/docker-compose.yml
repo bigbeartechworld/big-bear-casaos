@@ -97,7 +97,7 @@ services:
     depends_on:
       - museum
       - minio
-    command: TCP-LISTEN:3200,fork,reuseaddr TCP:minio:3200
+    command: TCP6-LISTEN:3200,fork,reuseaddr,ipv6only=0 TCP:minio:3200
     restart: unless-stopped
   web:
     image: ghcr.io/ente/web:latest@sha256:3f4864eb7f11e592d20fbc09e988e7507ebf380cbfc4e12eef05d6f6cc41291a
