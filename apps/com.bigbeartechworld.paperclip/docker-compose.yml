@@ -1,0 +1,46 @@
+name: big-bear-paperclip
+services:
+  paperclip:
+    image: ghcr.io/paperclipai/paperclip:latest@sha256:66056e8c979bc2f8ef35083ebd333b7c83224fe3234bd92d251b0bbce1054317
+    container_name: paperclip
+    ports:
+    - 3101:3100
+    environment:
+      PORT: '3100'
+      HOST: 0.0.0.0
+      SERVE_UI: 'true'
+      PAPERCLIP_HOME: /paperclip
+      PAPERCLIP_PUBLIC_URL: http://localhost:3101
+      PAPERCLIP_DEPLOYMENT_MODE: authenticated
+      PAPERCLIP_DEPLOYMENT_EXPOSURE: private
+      BETTER_AUTH_SECRET: change-this-run-openssl-rand-hex-32
+      PAPERCLIP_TOOL_ACTION_SIGNING_SECRET: change-this-run-openssl-rand-hex-32
+      ANTHROPIC_API_KEY: ''
+      OPENAI_API_KEY: ''
+      GEMINI_API_KEY: ''
+      GITHUB_TOKEN: ''
+    volumes:
+    - /DATA/AppData/$AppID/data:/paperclip
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -fsS
+      - http://localhost:3100/api/health
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
+    restart: unless-stopped
+    networks:
+    - paperclip_network
+networks:
+  paperclip_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.paperclip
+  main: paperclip
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.paperclip/assets/icon.png
+  title:
+    en_US: Paperclip
+  port_map: '3101'

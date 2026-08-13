@@ -1,0 +1,41 @@
+name: big-bear-glance
+services:
+  app:
+    container_name: big-bear-glance
+    image: glanceapp/glance:v0.8.5@sha256:32ab73d80f2b8b5fb0735b0431deb36b93fbb6b2fb43592449b0178c8b83e350
+    restart: unless-stopped
+    entrypoint:
+    - /bin/sh
+    - -c
+    - "set -eu\nif [ ! -s /app/config/glance.yml ]; then\n  mkdir -p /app/config\n\
+      \  cat > /app/config/glance.yml <<EOF\npages:\n  - name: Home\n    columns:\n\
+      \      - size: small\n        widgets:\n          - type: calendar\n       \
+      \     first-day-of-week: monday\n\n          - type: rss\n            limit:\
+      \ 10\n            collapse-after: 3\n            cache: 12h\n            feeds:\n\
+      \              - url: https://selfh.st/rss/\n                title: selfh.st\n\
+      \                limit: 4\n              - url: https://ciechanow.ski/atom.xml\n\
+      \              - url: https://samwho.dev/rss.xml\n\n      - size: full\n   \
+      \     widgets:\n          - type: group\n            widgets:\n            \
+      \  - type: hacker-news\n              - type: lobsters\n\n          - type:\
+      \ docker-containers\n            hide-by-default: false\n\n      - size: small\n\
+      \        widgets:\n          - type: weather\n            location: New York,\
+      \ United States\n            units: imperial\n            hour-format: 12h\n\
+      \n          - type: releases\n            cache: 1d\n            repositories:\n\
+      \              - glanceapp/glance\nEOF\nfi\nexec /app/glance --config /app/config/glance.yml\n"
+    ports:
+    - 8280:8080
+    volumes:
+    - /DATA/AppData/$AppID/config:/app/config
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+    - big_bear_glance_network
+networks:
+  big_bear_glance_network:
+    driver: bridge
+x-casaos:
+  id: com.bigbeartechworld.glance
+  main: app
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages/apps/com.bigbeartechworld.glance/assets/icon.png
+  title:
+    en_US: Glance
+  port_map: '8280'

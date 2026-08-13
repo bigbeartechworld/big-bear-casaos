@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Glance is a self-hosted dashboard that puts all your feeds in one place.",
+  "tagline": "Self-hosted dashboard for your feeds",
+  "developer": "glanceapp",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "A starter glance.yml is created on first run. Edit it to customize your dashboard; if it is ever left invalid or half-written, delete it and restart to get a fresh starter config. The Docker socket is mounted for the containers widget - this grants Glance root-equivalent access to Docker regardless of the read-only flag, so delete the docker-containers widget from glance.yml after install, or remove the socket volume from the compose file before deploying, if you do not want the widget."
+  },
+  "category": "Others",
+  "title": "Glance",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.glance",
+  "version": "",
+  "categories": [
+    "others"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 0,
+    "arm64": 0
+  }
+}

@@ -2,7 +2,7 @@ name: big-bear-ihatemoney
 services:
   big-bear-ihatemoney:
     container_name: big-bear-ihatemoney
-    image: ihatemoney/ihatemoney:7.2.0@sha256:94a809cb2e7605848db2b7f6a8149e96d5f235ebb97b9a4e4e9c2815fbf946cb
+    image: ihatemoney/ihatemoney:7.2.1@sha256:009d1520552782765c8c41750262cc69410be7ac616f93a9f371556e472f23c6
     restart: unless-stopped
     environment:
       SECRET_KEY: 1d58bc34-e7ff-4f6d-a1e4-f319262ed9b8

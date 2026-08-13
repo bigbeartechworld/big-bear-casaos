@@ -1,7 +1,7 @@
 name: big-bear-unifi-network-application-mongo-4
 services:
   app:
-    image: linuxserver/unifi-network-application:10.4.57@sha256:3b3780b99ab811ebedb4c83604e0f08b6e1ac2a4fb99bfa9893539dae8c650fa
+    image: linuxserver/unifi-network-application:10.5.67@sha256:cb452744be875e091bad374999e90b08f34813d5bee03de814188de3d6eb5e99
     container_name: big-bear-unifi-network-application
     environment:
     - PUID=1000

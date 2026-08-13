@@ -2,7 +2,7 @@ name: big-bear-dozzle
 services:
   app:
     container_name: big-bear-dozzle
-    image: amir20/dozzle:v10.6.14@sha256:1c1060cfb5402093c4e0f03f3534d7deaffeb0a6f6dd034e7c5f244603f35fb3
+    image: amir20/dozzle:v10.7.1@sha256:a8441e9d2928cc7b30d0023f5eedbb87ef6e234d87f3be02662bd8f417955b8b
     restart: unless-stopped
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock

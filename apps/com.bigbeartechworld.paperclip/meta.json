@@ -1,0 +1,27 @@
+{
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "description": "Paperclip is an open-source self-hosted board for managing AI coding agents such as Claude Code, Codex, OpenCode, and Gemini CLI. Assign work to agents, run them, and track cost and output from a single dashboard.",
+  "tagline": "Self-hosted board for managing AI coding agents",
+  "developer": "paperclipai",
+  "author": "BigBearTechWorld",
+  "thumbnail": "",
+  "tips": {
+    "before_install": "This app ships with placeholder secrets so it starts without configuration. They are the same for every install and are not secret. Replace BETTER_AUTH_SECRET and PAPERCLIP_TOOL_ACTION_SIGNING_SECRET with 'openssl rand -hex 32' before using it for anything real. Also change PAPERCLIP_PUBLIC_URL from localhost to the exact address and port you browse to, for example http://192.168.1.50:3101: the port is 3101 on most platforms but 10201 on Umbrel, and sign-in callbacks fail while it is wrong. See the app README."
+  },
+  "category": "AI",
+  "title": "Paperclip",
+  "base_url": "https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-casaos@gh-pages",
+  "id": "com.bigbeartechworld.paperclip",
+  "version": "",
+  "categories": [
+    "ai"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 1506164652,
+    "arm64": 1357462335
+  }
+}
