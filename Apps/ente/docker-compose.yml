@@ -1,7 +1,7 @@
 name: big-bear-ente
 services:
   museum:
-    image: ghcr.io/ente/server:latest@sha256:d179c008bbe8154f8072dbed50fc5a40121e5f12a8803d6b4db29379c631f923
+    image: ghcr.io/ente/server:latest@sha256:f646b68a1b8d27e3375a67e3719ed6af97e9501a81e0af9a2ec7f57ce2b3264e
     container_name: ente-museum
     ports:
       - "8080:8080"
@@ -91,7 +91,7 @@ services:
           description:
             en_US: 'Container Port: 8080'
   socat:
-    image: alpine/socat@sha256:68b28fed1e6f5dc5cc7574315284573d89a655b0bc528720be4164f36b998680
+    image: alpine/socat@sha256:3ed1cd38741bd445ebffa3aecb9d80c46a83db45f5b5ef03332976c7ca9814af
     container_name: ente-socat
     network_mode: service:museum
     depends_on:
