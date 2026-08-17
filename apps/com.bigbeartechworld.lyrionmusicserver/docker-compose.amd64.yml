@@ -2,7 +2,7 @@ name: big-bear-lyrionmusicserver
 services:
   big-bear-lyrionmusicserver:
     container_name: big-bear-lyrionmusicserver
-    image: lmscommunity/lyrionmusicserver:9.2.0@sha256:5eab96ddd4c7563a7e0b4265cc85945ca9ebee50654854466b837fd624925eb3
+    image: lmscommunity/lyrionmusicserver:9.2.0@sha256:1e4556c44882e6070b4275d402b14a78702177b9b0d8567001f7c06da4d71ca1
     restart: unless-stopped
     environment:
     - HTTP_PORT=9000
