@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-budge
+services:
+  app:
+    image: linuxserver/budge:0.0.9@sha256:187a8087588bd1d8dc6601a81a771549fcfe3cb72388633acb5e19dea11f338e
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/budge/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.budge
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Budge is an open source 'budgeting with envelopes' personal finance app.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open source 'budgeting with envelopes' personal finance app.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: Budge
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

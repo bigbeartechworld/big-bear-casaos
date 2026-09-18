@@ -1,0 +1,94 @@
+name: big-bear-linuxserver-ubooquity
+services:
+  app:
+    image: linuxserver/ubooquity:3.1.0@sha256:90d10883d503bcd53bcdaa790f91772c856e0a0c42d9efaa2ab8546b6c6b1e45
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      MAXMEM: ''
+    ports:
+      - target: 2202
+        published: 2202
+        protocol: tcp
+      - target: 2203
+        published: 2203
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ubooquity/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/ubooquity/books
+        target: /books
+      - type: bind
+        source: /DATA/AppData/ubooquity/comics
+        target: /comics
+      - type: bind
+        source: /DATA/AppData/ubooquity/files
+        target: /files
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: MAXMEM
+          description:
+            en_US: 'Container Variable: MAXMEM'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /books
+          description:
+            en_US: 'Container Path: /books'
+        - container: /comics
+          description:
+            en_US: 'Container Path: /comics'
+        - container: /files
+          description:
+            en_US: 'Container Path: /files'
+      ports:
+        - container: "2202"
+          description:
+            en_US: 'Container Port: 2202'
+        - container: "2203"
+          description:
+            en_US: 'Container Port: 2203'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ubooquity
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Ubooquity is a free, lightweight and easy-to-use home server for your comics and ebooks. Use it to access your files from anywhere, with a tablet, an e-reader, a phone or a computer.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free, lightweight and easy-to-use home server for your comics and ebooks. Use it to access your files from anywhere, with a tablet, an e-reader, a phone or a computer.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ubooquity-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ubooquity-banner.png
+  # Title for the application
+  title:
+    en_US: Ubooquity
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "2202"

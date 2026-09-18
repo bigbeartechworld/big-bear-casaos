@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-azahar
+services:
+  app:
+    image: linuxserver/azahar:12125.1.3@sha256:4bc384663b37a8156ead374a3dde70a69b913e8fd791ab02e0951c6e1f1a979e
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/azahar/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.azahar
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Azahar is an open-source 3DS emulator based on Citra.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open-source 3DS emulator based on Citra.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/azahar-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/azahar-logo.png
+  # Title for the application
+  title:
+    en_US: Azahar
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

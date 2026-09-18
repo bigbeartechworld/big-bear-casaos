@@ -1,0 +1,7 @@
+{
+  "id": "steam",
+  "version": "0.0.0",
+  "image": "linuxserver/steam",
+  "youtube": "",
+  "docs_link": ""
+}

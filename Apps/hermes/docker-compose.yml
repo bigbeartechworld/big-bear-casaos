@@ -1,0 +1,83 @@
+name: big-bear-hermes
+services:
+  hermes:
+    image: nousresearch/hermes-agent:v2026.9.14@sha256:99641e57ec762c59e54cb44aa6746b7fc68c18b3c5ddb088af54234c613d9294
+    container_name: hermes
+    restart: unless-stopped
+    command:
+      - gateway
+      - run
+    ports:
+      - "9119:9119"
+      - "8642:8642"
+    volumes:
+      - /DATA/AppData/$AppID/:/opt/data
+    environment:
+      HERMES_DASHBOARD: "1"
+      HERMES_DASHBOARD_BASIC_AUTH_USERNAME: zimaos
+      HERMES_DASHBOARD_BASIC_AUTH_PASSWORD: ""
+    deploy:
+      resources:
+        reservations:
+          memory: 1G
+    x-casaos:
+      envs:
+        - container: HERMES_DASHBOARD
+          description:
+            en_US: 'Container Variable: HERMES_DASHBOARD'
+        - container: HERMES_DASHBOARD_BASIC_AUTH_USERNAME
+          description:
+            en_US: 'Container Variable: HERMES_DASHBOARD_BASIC_AUTH_USERNAME'
+        - container: HERMES_DASHBOARD_BASIC_AUTH_PASSWORD
+          description:
+            en_US: 'Container Variable: HERMES_DASHBOARD_BASIC_AUTH_PASSWORD'
+      volumes:
+        - container: /opt/data
+          description:
+            en_US: 'Container Path: /opt/data'
+      ports:
+        - container: "9119"
+          description:
+            en_US: 'Container Port: 9119'
+        - container: "8642"
+          description:
+            en_US: 'Container Port: 8642'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.hermes
+  # Main service for this application
+  main: hermes
+  # Detailed description for the application
+  description:
+    en_US: Hermes Agent 0.21.3 is a self-hosted AI agent with a gateway API and an authenticated web dashboard.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hermes/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hermes/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hermes/screenshot-3.png
+  # Brief tagline for the application
+  tagline:
+    en_US: ""
+  # Developer's information
+  developer: Nous Research
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hermes/icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hermes/thumbnail.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Set a private HERMES_DASHBOARD_BASIC_AUTH_PASSWORD before startup. The dashboard refuses an empty password. The default username is zimaos.
+  # Title for the application
+  title:
+    en_US: Hermes Agent
+  # Category under which the application falls
+  category: AI
+  # Default port mapping for the application
+  port_map: "9119"

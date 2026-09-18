@@ -1,0 +1,59 @@
+name: big-bear-kitchenowl
+services:
+  app:
+    container_name: big-bear-kitchenowl
+    image: tombursch/kitchenowl:v0.7.10@sha256:bd821a41b8cb27fd7fcf429acd1fc67e9f889485a2cd1193d68c2d804a8e1bef
+    restart: unless-stopped
+    ports:
+      - "9287:8080"
+    environment:
+      - JWT_SECRET_KEY=7c7884a9-f13a-4e01-a2f0-310add0acf60
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    x-casaos:
+      envs:
+        - container: JWT_SECRET_KEY
+          description:
+            en_US: 'Container Variable: JWT_SECRET_KEY'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kitchenowl
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: KitchenOwl is a self-hosted grocery list and recipe manager. Track what you need to buy, add recipes, plan meals, and sync your household shopping lists across all your devices in real time.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted grocery list and recipe manager
+  # Developer's information
+  developer: TomBursch
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/kitchenowl.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Create your account on first launch, then share the household list by inviting members from the settings.
+  # Title for the application
+  title:
+    en_US: KitchenOwl
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "9287"

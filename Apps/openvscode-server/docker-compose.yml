@@ -1,0 +1,88 @@
+name: big-bear-linuxserver-openvscode-server
+services:
+  app:
+    image: linuxserver/openvscode-server:1.109.5@sha256:3a8bef142c1bd8e6b937ca56b3eb145f22632bd01d4ca0021f37e2e79eb15bb1
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CONNECTION_TOKEN: ''
+      CONNECTION_SECRET: ''
+      SUDO_PASSWORD: ''
+      SUDO_PASSWORD_HASH: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/openvscode-server/config
+        target: /config
+      - type: bind
+        source: /
+        target: /casaos
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: CONNECTION_TOKEN
+          description:
+            en_US: 'Container Variable: CONNECTION_TOKEN'
+        - container: CONNECTION_SECRET
+          description:
+            en_US: 'Container Variable: CONNECTION_SECRET'
+        - container: SUDO_PASSWORD
+          description:
+            en_US: 'Container Variable: SUDO_PASSWORD'
+        - container: SUDO_PASSWORD_HASH
+          description:
+            en_US: 'Container Variable: SUDO_PASSWORD_HASH'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /casaos
+          description:
+            en_US: 'Container Path: /casaos'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.openvscode-server
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Openvscode-server provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.
+  # Brief tagline for the application
+  tagline:
+    en_US: Provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/openvscode-server-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/openvscode-server-logo.png
+  # Title for the application
+  title:
+    en_US: Openvscode-server
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3000"

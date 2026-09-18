@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-warracker
     # Image to be used for the container specifies the btop version and source
-    image: ghcr.io/sassanix/warracker/main:9.9.3
+    image: ghcr.io/sassanix/warracker/main:1.0.2@sha256:9a0aa0e57a4635e0955cea4d13abe89fd65d10625ee95836ec14ae0789884f22
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Run the container in privileged mode to allow access to system metrics

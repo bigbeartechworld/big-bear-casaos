@@ -1,0 +1,104 @@
+name: big-bear-linuxserver-wireguard
+services:
+  app:
+    image: linuxserver/wireguard:1.0.20260223@sha256:dca67384e3e9a5bcc288461fa983e6fcb0e248e5a2d8e5b3e5d3f753bfac3e35
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SERVERURL: ''
+      SERVERPORT: ''
+      PEERS: ''
+      PEERDNS: ''
+      INTERNAL_SUBNET: ''
+      ALLOWEDIPS: ''
+      PERSISTENTKEEPALIVE_PEERS: ''
+      LOG_CONFS: ''
+    ports:
+      - target: 51820
+        published: 51820
+        protocol: udp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/wireguard/config
+        target: /config
+      - type: bind
+        source: /lib/modules
+        target: /lib/modules
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: SERVERURL
+          description:
+            en_US: 'Container Variable: SERVERURL'
+        - container: SERVERPORT
+          description:
+            en_US: 'Container Variable: SERVERPORT'
+        - container: PEERS
+          description:
+            en_US: 'Container Variable: PEERS'
+        - container: PEERDNS
+          description:
+            en_US: 'Container Variable: PEERDNS'
+        - container: INTERNAL_SUBNET
+          description:
+            en_US: 'Container Variable: INTERNAL_SUBNET'
+        - container: ALLOWEDIPS
+          description:
+            en_US: 'Container Variable: ALLOWEDIPS'
+        - container: PERSISTENTKEEPALIVE_PEERS
+          description:
+            en_US: 'Container Variable: PERSISTENTKEEPALIVE_PEERS'
+        - container: LOG_CONFS
+          description:
+            en_US: 'Container Variable: LOG_CONFS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /lib/modules
+          description:
+            en_US: 'Container Path: /lib/modules'
+      ports:
+        - container: "51820"
+          description:
+            en_US: 'Container Port: 51820'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.wireguard
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
+  # Brief tagline for the application
+  tagline:
+    en_US: An extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wireguard.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wireguard.png
+  # Title for the application
+  title:
+    en_US: Wireguard
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "51820"

@@ -1,0 +1,106 @@
+name: big-bear-linuxserver-openssh-server
+services:
+  app:
+    image: linuxserver/openssh-server:version-10.3_p1-r1@sha256:39ba37d50fdd6be1bf70644c871e5dcb9234ee79ac56424ea03ca08cadf1e7b0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PUBLIC_KEY: ''
+      PUBLIC_KEY_FILE: ''
+      PUBLIC_KEY_DIR: ''
+      PUBLIC_KEY_URL: ''
+      SUDO_ACCESS: ''
+      PASSWORD_ACCESS: ''
+      USER_PASSWORD: ''
+      USER_PASSWORD_FILE: ''
+      USER_NAME: ''
+      LOG_STDOUT: ''
+    ports:
+      - target: 2222
+        published: 2222
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/openssh-server/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: PUBLIC_KEY
+          description:
+            en_US: 'Container Variable: PUBLIC_KEY'
+        - container: PUBLIC_KEY_FILE
+          description:
+            en_US: 'Container Variable: PUBLIC_KEY_FILE'
+        - container: PUBLIC_KEY_DIR
+          description:
+            en_US: 'Container Variable: PUBLIC_KEY_DIR'
+        - container: PUBLIC_KEY_URL
+          description:
+            en_US: 'Container Variable: PUBLIC_KEY_URL'
+        - container: SUDO_ACCESS
+          description:
+            en_US: 'Container Variable: SUDO_ACCESS'
+        - container: PASSWORD_ACCESS
+          description:
+            en_US: 'Container Variable: PASSWORD_ACCESS'
+        - container: USER_PASSWORD
+          description:
+            en_US: 'Container Variable: USER_PASSWORD'
+        - container: USER_PASSWORD_FILE
+          description:
+            en_US: 'Container Variable: USER_PASSWORD_FILE'
+        - container: USER_NAME
+          description:
+            en_US: 'Container Variable: USER_NAME'
+        - container: LOG_STDOUT
+          description:
+            en_US: 'Container Variable: LOG_STDOUT'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "2222"
+          description:
+            en_US: 'Container Port: 2222'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.openssh-server
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Openssh-server is a sandboxed environment that allows ssh access without giving keys to the entire server. Giving ssh access via private key often means giving full access to the server. This container creates a limited and sandboxed environment that others can ssh into. The users only have access to the folders mapped and the processes running inside this container.
+  # Brief tagline for the application
+  tagline:
+    en_US: A sandboxed environment that allows ssh access without giving keys to the entire server. Giving ssh access via private key often means giving full access to the server. This container creates a limited and sandboxed environment that others can ssh into. The users only have access to the folders mapped and the processes running inside this container.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/openssh-server-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/openssh-server-logo.png
+  # Title for the application
+  title:
+    en_US: Openssh-server
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "2222"

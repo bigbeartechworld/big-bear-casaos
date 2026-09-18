@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-grav
+services:
+  app:
+    image: linuxserver/grav:2.1.6@sha256:b2a49695938cdb572827416e5bfbe7f1647d99f72f6f73ca5e5a6278ee474a11
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/grav/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.grav
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Grav is a Fast, Simple, and Flexible, file-based Web-platform.
+  # Brief tagline for the application
+  tagline:
+    en_US: A Fast, Simple, and Flexible, file-based Web-platform.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/grav-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/grav-logo.png
+  # Title for the application
+  title:
+    en_US: Grav
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

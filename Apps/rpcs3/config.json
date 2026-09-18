@@ -1,0 +1,7 @@
+{
+  "id": "rpcs3",
+  "version": "0.0.0",
+  "image": "linuxserver/rpcs3",
+  "youtube": "",
+  "docs_link": ""
+}

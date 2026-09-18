@@ -1,0 +1,7 @@
+{
+  "id": "bitcoin-knots",
+  "version": "0.0.0",
+  "image": "linuxserver/bitcoin-knots",
+  "youtube": "",
+  "docs_link": ""
+}

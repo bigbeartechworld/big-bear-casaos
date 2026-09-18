@@ -1,0 +1,142 @@
+name: big-bear-linuxserver-snipe-it
+services:
+  app:
+    image: linuxserver/snipe-it:7.1.17@sha256:d75283795506f371fe5059f13312c84de01225de373ef3aec154d562bbed9dd4
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      APP_KEY: $APP_KEY
+      APP_URL: $APP_URL
+      MYSQL_PORT_3306_TCP_ADDR: $MYSQL_PORT_3306_TCP_ADDR
+      MYSQL_PORT_3306_TCP_PORT: $MYSQL_PORT_3306_TCP_PORT
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      APP_DEBUG: $APP_DEBUG
+      APP_ENV: $APP_ENV
+      APP_FORCE_TLS: $APP_FORCE_TLS
+      APP_LOCALE: $APP_LOCALE
+      MAIL_PORT_587_TCP_ADDR: $MAIL_PORT_587_TCP_ADDR
+      MAIL_PORT_587_TCP_PORT: $MAIL_PORT_587_TCP_PORT
+      MAIL_ENV_FROM_ADDR: $MAIL_ENV_FROM_ADDR
+      MAIL_ENV_FROM_NAME: $MAIL_ENV_FROM_NAME
+      MAIL_ENV_ENCRYPTION: $MAIL_ENV_ENCRYPTION
+      MAIL_ENV_USERNAME: $MAIL_ENV_USERNAME
+      MAIL_ENV_PASSWORD: $MAIL_ENV_PASSWORD
+    ports:
+      - target: 8080
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/snipe-it/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: APP_KEY
+          description:
+            en_US: 'Container Variable: APP_KEY'
+        - container: APP_URL
+          description:
+            en_US: 'Container Variable: APP_URL'
+        - container: MYSQL_PORT_3306_TCP_ADDR
+          description:
+            en_US: 'Container Variable: MYSQL_PORT_3306_TCP_ADDR'
+        - container: MYSQL_PORT_3306_TCP_PORT
+          description:
+            en_US: 'Container Variable: MYSQL_PORT_3306_TCP_PORT'
+        - container: MYSQL_DATABASE
+          description:
+            en_US: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_USER
+          description:
+            en_US: 'Container Variable: MYSQL_USER'
+        - container: MYSQL_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_PASSWORD'
+        - container: APP_DEBUG
+          description:
+            en_US: 'Container Variable: APP_DEBUG'
+        - container: APP_ENV
+          description:
+            en_US: 'Container Variable: APP_ENV'
+        - container: APP_FORCE_TLS
+          description:
+            en_US: 'Container Variable: APP_FORCE_TLS'
+        - container: APP_LOCALE
+          description:
+            en_US: 'Container Variable: APP_LOCALE'
+        - container: MAIL_PORT_587_TCP_ADDR
+          description:
+            en_US: 'Container Variable: MAIL_PORT_587_TCP_ADDR'
+        - container: MAIL_PORT_587_TCP_PORT
+          description:
+            en_US: 'Container Variable: MAIL_PORT_587_TCP_PORT'
+        - container: MAIL_ENV_FROM_ADDR
+          description:
+            en_US: 'Container Variable: MAIL_ENV_FROM_ADDR'
+        - container: MAIL_ENV_FROM_NAME
+          description:
+            en_US: 'Container Variable: MAIL_ENV_FROM_NAME'
+        - container: MAIL_ENV_ENCRYPTION
+          description:
+            en_US: 'Container Variable: MAIL_ENV_ENCRYPTION'
+        - container: MAIL_ENV_USERNAME
+          description:
+            en_US: 'Container Variable: MAIL_ENV_USERNAME'
+        - container: MAIL_ENV_PASSWORD
+          description:
+            en_US: 'Container Variable: MAIL_ENV_PASSWORD'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.snipe-it
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/snipe-it/'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'Makes asset management easy. It was built by people solving real-world IT and asset management problems, and a solid UX has always been a top priority. Straightforward design and bulk actions mean getting things done faster. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/snipe-it-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/snipe-it-logo.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Configure the required application and database settings before installing. This app requires an external MySQL service and will not start with empty defaults.
+  # Title for the application
+  title:
+    en_US: Snipe-it
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8080"

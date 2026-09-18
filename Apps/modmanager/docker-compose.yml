@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-modmanager
+services:
+  app:
+    image: linuxserver/modmanager:version-7dc8618e@sha256:742583b32a779fbcbe7d0a8915bd4c6d4a9d7170e802cc576364b1cd3b971d1f
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/modmanager/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.modmanager
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: This container needs special attention. Please check https://hub.docker.com/r/linuxserver/modmanager for details.
+  # Brief tagline for the application
+  tagline:
+    en_US: This container needs special attention. Please check https://hub. Docker. Com/r/linuxserver/modmanager for details.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/linuxserver-ls-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/linuxserver-ls-logo.png
+  # Title for the application
+  title:
+    en_US: Modmanager
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

@@ -1,0 +1,7 @@
+{
+  "id": "changedetection-io",
+  "version": "0.60.6",
+  "image": "linuxserver/changedetection.io",
+  "youtube": "",
+  "docs_link": ""
+}

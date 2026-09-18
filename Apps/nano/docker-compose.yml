@@ -1,0 +1,107 @@
+name: big-bear-linuxserver-nano
+services:
+  app:
+    image: linuxserver/nano:21.2.20220522@sha256:abba1dc5b14d99b1996a52b51d51f9247deea6f2c540d030c02060ea46491843
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PEER_HOST: ''
+      LIVE_GENESIS_PUB: ''
+      LIVE_GENESIS_ACCOUNT: ''
+      LIVE_GENESIS_WORK: ''
+      LIVE_GENESIS_SIG: ''
+      CLI_OPTIONS: ''
+      LMDB_BOOTSTRAP_URL: ''
+    ports:
+      - target: 8075
+        published: 8075
+        protocol: tcp
+      - target: 7076
+        published: 3000
+        protocol: tcp
+      - target: 7077
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/nano/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: PEER_HOST
+          description:
+            en_US: 'Container Variable: PEER_HOST'
+        - container: LIVE_GENESIS_PUB
+          description:
+            en_US: 'Container Variable: LIVE_GENESIS_PUB'
+        - container: LIVE_GENESIS_ACCOUNT
+          description:
+            en_US: 'Container Variable: LIVE_GENESIS_ACCOUNT'
+        - container: LIVE_GENESIS_WORK
+          description:
+            en_US: 'Container Variable: LIVE_GENESIS_WORK'
+        - container: LIVE_GENESIS_SIG
+          description:
+            en_US: 'Container Variable: LIVE_GENESIS_SIG'
+        - container: CLI_OPTIONS
+          description:
+            en_US: 'Container Variable: CLI_OPTIONS'
+        - container: LMDB_BOOTSTRAP_URL
+          description:
+            en_US: 'Container Variable: LMDB_BOOTSTRAP_URL'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8075"
+          description:
+            en_US: 'Container Port: 8075'
+        - container: "7076"
+          description:
+            en_US: 'Container Port: 7076'
+        - container: "7077"
+          description:
+            en_US: 'Container Port: 7077'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nano
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Nano is a digital payment protocol designed to be accessible and lightweight, with a focus on removing inefficiencies present in other cryptocurrencies. With ultrafast transactions and zero fees on a secure, green and decentralized network, this makes Nano ideal for everyday transactions.
+  # Brief tagline for the application
+  tagline:
+    en_US: A digital payment protocol designed to be accessible and lightweight, with a focus on removing inefficiencies present in other cryptocurrencies. With ultrafast transactions and zero fees on a secure, green and decentralized network, this makes Nano ideal for everyday transactions.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: Nano
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8075"

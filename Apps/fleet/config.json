@@ -1,0 +1,7 @@
+{
+  "id": "fleet",
+  "version": "2.3.3",
+  "image": "linuxserver/fleet",
+  "youtube": "",
+  "docs_link": ""
+}

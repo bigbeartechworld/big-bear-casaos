@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-calligra
+services:
+  app:
+    image: linuxserver/calligra:3.2.1@sha256:7d3f17b566db8ce2fcaf163da9e7df40379668199417f13be904f1ed3fb3dc49
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/calligra/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.calligra
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Calligra is an office and graphic art suite by KDE. It is available for desktop PCs, tablet computers, and smartphones. It contains applications for word processing, spreadsheets, presentation, vector graphics, and editing databases.
+  # Brief tagline for the application
+  tagline:
+    en_US: An office and graphic art suite by KDE. It is available for desktop PCs, tablet computers, and smartphones. It contains applications for word processing, spreadsheets, presentation, vector graphics, and editing databases.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/calligra-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/calligra-logo.png
+  # Title for the application
+  title:
+    en_US: Calligra
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

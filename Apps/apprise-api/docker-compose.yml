@@ -1,0 +1,76 @@
+name: big-bear-linuxserver-apprise-api
+services:
+  app:
+    image: linuxserver/apprise-api:1.5.4@sha256:499e551ec5f7711356df5f9ffb5a262eab4a926fee38fb944fd01a0cf5d70e52
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      APPRISE_ATTACH_SIZE: ''
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/apprise-api/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/apprise-api/attachments
+        target: /attachments
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: APPRISE_ATTACH_SIZE
+          description:
+            en_US: 'Container Variable: APPRISE_ATTACH_SIZE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /attachments
+          description:
+            en_US: 'Container Path: /attachments'
+      ports:
+        - container: "8000"
+          description:
+            en_US: 'Container Port: 8000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.apprise-api
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Apprise-api Takes advantage of Apprise through your network with a user-friendly API. * Send notifications to more than 100 services. * An incredibly lightweight gateway to Apprise. * A production ready micro-service at your disposal. * A Simple Website to verify and test your configuration with. Apprise API was designed to easily fit into existing (and new) eco-systems that are looking for a simple notification solution.
+  # Brief tagline for the application
+  tagline:
+    en_US: Takes advantage of Apprise through your network with a user-friendly API. * Send notifications to more than 100 services. * An incredibly lightweight gateway to Apprise. * A production ready micro-service at your disposal. * A Simple Website to verify and test your configuration with. Apprise API was designed to easily fit into existing (and new) eco-systems that are looking for a simple notification solution.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/caronc/apprise-api@master/apprise_api/static/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/caronc/apprise-api@master/apprise_api/static/logo.png
+  # Title for the application
+  title:
+    en_US: Apprise-api
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8000"

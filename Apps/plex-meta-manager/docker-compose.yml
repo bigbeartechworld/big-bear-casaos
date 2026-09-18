@@ -1,0 +1,78 @@
+name: big-bear-linuxserver-plex-meta-manager
+services:
+  app:
+    image: linuxserver/plex-meta-manager:1.21.1@sha256:7703177e6f29ac7bbe555a7f6c21dd05e59af3bd885582933059ce660ae5536f
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PMM_CONFIG: ''
+      PMM_TIME: ''
+      PMM_RUN: ''
+      PMM_TEST: ''
+      PMM_NO_MISSING: ''
+    volumes:
+      - type: bind
+        source: /DATA/AppData/plex-meta-manager/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: PMM_CONFIG
+          description:
+            en_US: 'Container Variable: PMM_CONFIG'
+        - container: PMM_TIME
+          description:
+            en_US: 'Container Variable: PMM_TIME'
+        - container: PMM_RUN
+          description:
+            en_US: 'Container Variable: PMM_RUN'
+        - container: PMM_TEST
+          description:
+            en_US: 'Container Variable: PMM_TEST'
+        - container: PMM_NO_MISSING
+          description:
+            en_US: 'Container Variable: PMM_NO_MISSING'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.plex-meta-manager
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Plex-meta-manager is a Python 3 script that can be continuously run using YAML configuration files to update on a schedule the metadata of the movies, shows, and collections in your libraries as well as automatically build collections based on various methods all detailed in the wiki.
+  # Brief tagline for the application
+  tagline:
+    en_US: A Python 3 script that can be continuously run using YAML configuration files to update on a schedule the metadata of the movies, shows, and collections in your libraries as well as automatically build collections based on various methods all detailed in the wiki.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/plex-meta-manager-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/plex-meta-manager-banner.png
+  # Title for the application
+  title:
+    en_US: Plex-meta-manager
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8080"

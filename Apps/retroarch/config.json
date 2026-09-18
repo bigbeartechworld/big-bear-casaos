@@ -1,0 +1,7 @@
+{
+  "id": "retroarch",
+  "version": "1.22.2",
+  "image": "linuxserver/retroarch",
+  "youtube": "",
+  "docs_link": ""
+}

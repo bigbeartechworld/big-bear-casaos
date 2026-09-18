@@ -1,0 +1,7 @@
+{
+  "id": "znc",
+  "version": "1.10.3",
+  "image": "linuxserver/znc",
+  "youtube": "",
+  "docs_link": ""
+}

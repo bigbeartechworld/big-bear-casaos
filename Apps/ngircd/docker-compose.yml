@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-ngircd
+services:
+  app:
+    image: linuxserver/ngircd:version-27-r1@sha256:25a924851122b34d933404e4a942e68835e4a1dc182f12d28461c4490476e265
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 6667
+        published: 6667
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ngircd/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "6667"
+          description:
+            en_US: 'Container Port: 6667'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ngircd
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Ngircd is a free, portable and lightweight Internet Relay Chat server for small or private networks, developed under the GNU General Public License (GPL). It is easy to configure, can cope with dynamic IP addresses, and supports IPv6, SSL-protected connections as well as PAM for authentication. It is written from scratch and not based on the original IRCd.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free, portable and lightweight Internet Relay Chat server for small or private networks, developed under the GNU General Public License (GPL). It is easy to configure, can cope with dynamic IP addresses, and supports IPv6, SSL-protected connections as well as PAM for authentication. It is written from scratch and not based on the original IRCd.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ngircd-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ngircd-logo.png
+  # Title for the application
+  title:
+    en_US: Ngircd
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "6667"

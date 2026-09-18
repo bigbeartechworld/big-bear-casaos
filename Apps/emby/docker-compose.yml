@@ -1,0 +1,90 @@
+name: big-bear-linuxserver-emby
+services:
+  app:
+    image: linuxserver/emby:4.10.0@sha256:2b5be3e424c095722f1d8eeac86d74d8e5b5b5323bcfdb68da45c688b5b1a477
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 8096
+        published: 8096
+        protocol: tcp
+      - target: 8920
+        published: 8920
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/emby/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/emby/data/tvshows
+        target: /data/tvshows
+      - type: bind
+        source: /DATA/AppData/emby/data/movies
+        target: /data/movies
+      - type: bind
+        source: /opt/vc/lib
+        target: /opt/vc/lib
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data/tvshows
+          description:
+            en_US: 'Container Path: /data/tvshows'
+        - container: /data/movies
+          description:
+            en_US: 'Container Path: /data/movies'
+        - container: /opt/vc/lib
+          description:
+            en_US: 'Container Path: /opt/vc/lib'
+      ports:
+        - container: "8096"
+          description:
+            en_US: 'Container Port: 8096'
+        - container: "8920"
+          description:
+            en_US: 'Container Port: 8920'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.emby
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Emby organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.
+  # Brief tagline for the application
+  tagline:
+    en_US: Organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/emby-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/emby-logo.png
+  # Title for the application
+  title:
+    en_US: Emby
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8096"

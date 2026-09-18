@@ -1,0 +1,7 @@
+{
+  "id": "jenkins-builder",
+  "version": "0.0.0",
+  "image": "linuxserver/jenkins-builder",
+  "youtube": "",
+  "docs_link": ""
+}

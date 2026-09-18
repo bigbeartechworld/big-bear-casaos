@@ -1,0 +1,76 @@
+name: big-bear-linuxserver-habridge
+services:
+  app:
+    image: linuxserver/habridge:5.4.1@sha256:e1b479165a5b32b0a072e8d3cdd3750266a2860ac304bbdb448635a4e1336e69
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SEC_KEY: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+      - target: 50000
+        published: 50000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/habridge/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: SEC_KEY
+          description:
+            en_US: 'Container Variable: SEC_KEY'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+        - container: "50000"
+          description:
+            en_US: 'Container Port: 50000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.habridge
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Habridge emulates Philips Hue API to other home automation gateways such as an Amazon Echo/Dot Gen 1 (gen 2 has issues discovering ha-bridge) or other systems that support Philips Hue. The Bridge handles basic commands such as On, Off and brightness commands of the hue protocol. This bridge can control most devices that have a distinct API.
+  # Brief tagline for the application
+  tagline:
+    en_US: Emulates Philips Hue API to other home automation gateways such as an Amazon Echo/Dot Gen 1 (gen 2 has issues discovering ha-bridge) or other systems that support Philips Hue. The Bridge handles basic commands such as On, Off and brightness commands of the hue protocol. This bridge can control most devices that have a distinct API.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/habridge-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/habridge-logo.png
+  # Title for the application
+  title:
+    en_US: Habridge
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8080"

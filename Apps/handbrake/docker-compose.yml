@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-handbrake
+services:
+  app:
+    image: linuxserver/handbrake:1.11.2@sha256:3529715c666cc7775ae7642eb07baeca9acbbe285bb35d0bcebbbbc18ce17263
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/handbrake/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.handbrake
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: HandBrake is an open-source tool, built by volunteers, for converting video from nearly any format to a selection of modern, widely supported codecs.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open-source tool, built by volunteers, for converting video from nearly any format to a selection of modern, widely supported codecs.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/handbrake-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/handbrake-logo.png
+  # Title for the application
+  title:
+    en_US: Handbrake
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

@@ -7,7 +7,7 @@ services:
   # Service name: app
   # The `app` service definition
   app:
-    image: gladysassistant/gladys:v4.85.0@sha256:ef200b1ef265206b31fc1b37777c4176a4298c7d03e5458467e31dd98e3c1fa0 # Docker image to use for the 'app' service
+    image: gladysassistant/gladys:v4.86.1@sha256:e22372c9c028e44a9826d967d8ec76701f3f543943a1d443c1b9f375ad28b7d2 # Docker image to use for the 'app' service
     restart: always # Container should always restart
     privileged: true # Grants additional privileges to this container
     network_mode: host
@@ -73,9 +73,9 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://gladysassistant.com/img/external/github-gladys-logo.png
+  icon: https://images.weserv.nl/?url=https%3A%2F%2Fgladysassistant.com%2Fimg%2Fexternal%2Fgithub-gladys-logo.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://gladysassistant.com/img/home/main_screenshot/main_screenshot_en_j5czyj_c_scale,w_2526.png
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fgladysassistant.com%2Fimg%2Fhome%2Fmain_screenshot%2Fmain_screenshot_en_j5czyj_c_scale%2Cw_2526.png
   # Title for the application
   title:
     en_US: Gladys Assistant

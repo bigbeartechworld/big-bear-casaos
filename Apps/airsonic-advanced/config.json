@@ -1,0 +1,7 @@
+{
+  "id": "airsonic-advanced",
+  "version": "11.1.4",
+  "image": "linuxserver/airsonic-advanced",
+  "youtube": "",
+  "docs_link": ""
+}

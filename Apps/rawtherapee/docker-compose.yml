@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-rawtherapee
+services:
+  app:
+    image: linuxserver/rawtherapee:5.13.20260913@sha256:7844c0ba8a6cf27ba045a1c80fdfb5b06425709f009602024e50d348b77bbc17
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/rawtherapee/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rawtherapee
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: RawTherapee is a free, cross-platform raw image processing program!
+  # Brief tagline for the application
+  tagline:
+    en_US: A free, cross-platform raw image processing program.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rawtherapee-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rawtherapee-logo.png
+  # Title for the application
+  title:
+    en_US: Rawtherapee
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

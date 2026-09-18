@@ -1,0 +1,114 @@
+name: big-bear-linuxserver-hedgedoc
+services:
+  app:
+    image: linuxserver/hedgedoc:1.12.0@sha256:8f0e4c57941a9cff0387d5b3c9f1f40facce1e948ca28261e42c5251eca21a19
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DB_HOST: $DB_HOST
+      DB_PORT: $DB_PORT
+      DB_USER: $DB_USER
+      DB_PASS: $DB_PASS
+      DB_NAME: $DB_NAME
+      CMD_DOMAIN: $CMD_DOMAIN
+      CMD_URL_ADDPORT: $CMD_URL_ADDPORT
+      CMD_PROTOCOL_USESSL: $CMD_PROTOCOL_USESSL
+      CMD_PORT: $CMD_PORT
+      CMD_ALLOW_ORIGIN: $CMD_ALLOW_ORIGIN
+      CMD_DB_DIALECT: $CMD_DB_DIALECT
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/hedgedoc/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: DB_USER
+          description:
+            en_US: 'Container Variable: DB_USER'
+        - container: DB_PASS
+          description:
+            en_US: 'Container Variable: DB_PASS'
+        - container: DB_NAME
+          description:
+            en_US: 'Container Variable: DB_NAME'
+        - container: CMD_DOMAIN
+          description:
+            en_US: 'Container Variable: CMD_DOMAIN'
+        - container: CMD_URL_ADDPORT
+          description:
+            en_US: 'Container Variable: CMD_URL_ADDPORT'
+        - container: CMD_PROTOCOL_USESSL
+          description:
+            en_US: 'Container Variable: CMD_PROTOCOL_USESSL'
+        - container: CMD_PORT
+          description:
+            en_US: 'Container Variable: CMD_PORT'
+        - container: CMD_ALLOW_ORIGIN
+          description:
+            en_US: 'Container Variable: CMD_ALLOW_ORIGIN'
+        - container: CMD_DB_DIALECT
+          description:
+            en_US: 'Container Variable: CMD_DB_DIALECT'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.hedgedoc
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: HedgeDoc gives you access to all your files wherever you are. HedgeDoc is a real-time, multi-platform collaborative markdown note editor. This means that you can write notes with other people on your desktop, tablet or even on the phone. You can sign-in via multiple auth providers like Facebook, Twitter, GitHub and many more on the homepage.
+  # Brief tagline for the application
+  tagline:
+    en_US: Gives you access to all your files wherever you are. HedgeDoc is a real-time, multi-platform collaborative markdown note editor. This means that you can write notes with other people on your desktop, tablet or even on the phone. You can sign-in via multiple auth providers like Facebook, Twitter, GitHub and many more on the homepage.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/hedgedoc-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/hedgedoc-banner.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Configure the required database and domain settings before installing. This app requires an external database and will not start with empty defaults.
+  # Title for the application
+  title:
+    en_US: Hedgedoc
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

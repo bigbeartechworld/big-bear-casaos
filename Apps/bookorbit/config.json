@@ -1,0 +1,7 @@
+{
+  "id": "bookorbit",
+  "version": "2.7.0",
+  "image": "ghcr.io/bookorbit/bookorbit",
+  "youtube": "",
+  "docs_link": "https://bookorbit.app/installation"
+}

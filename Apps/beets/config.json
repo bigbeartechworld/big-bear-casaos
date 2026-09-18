@@ -1,0 +1,7 @@
+{
+  "id": "beets",
+  "version": "2.14.0",
+  "image": "linuxserver/beets",
+  "youtube": "",
+  "docs_link": ""
+}

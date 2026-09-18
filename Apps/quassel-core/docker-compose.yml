@@ -1,0 +1,76 @@
+name: big-bear-linuxserver-quassel-core
+services:
+  app:
+    image: linuxserver/quassel-core:0.14.0@sha256:cefb9aa752d4db099d98be5966432e9dcd298695571c8eedc84ffc298f3258e0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      RUN_OPTS: ''
+    ports:
+      - target: 4242
+        published: 4242
+        protocol: tcp
+      - target: 113
+        published: 10113
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/quassel-core/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: RUN_OPTS
+          description:
+            en_US: 'Container Variable: RUN_OPTS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "4242"
+          description:
+            en_US: 'Container Port: 4242'
+        - container: "113"
+          description:
+            en_US: 'Container Port: 113'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.quassel-core
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/quassel-core/'
+  # Brief tagline for the application
+  tagline:
+    en_US: A modern, cross-platform, distributed IRC client, meaning that one (or multiple) client(s) can attach to and detach from a central core. This container handles the IRC connection (quasselcore) and requires a desktop client (quasselclient) to be used and configured. It is designed to be always on and will keep your identity present in IRC even when your clients cannot be online. Backlog (history) is downloaded by your client upon reconnection allowing infinite scrollback through time.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/quassel-core-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/quassel-core-icon.png
+  # Title for the application
+  title:
+    en_US: Quassel-core
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "4242"

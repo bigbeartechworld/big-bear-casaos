@@ -1,0 +1,7 @@
+{
+  "id": "smokeping",
+  "version": "2.9.0",
+  "image": "linuxserver/smokeping",
+  "youtube": "",
+  "docs_link": ""
+}

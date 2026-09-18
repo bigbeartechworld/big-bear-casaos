@@ -1,0 +1,88 @@
+name: big-bear-linuxserver-syslog-ng
+services:
+  app:
+    image: linuxserver/syslog-ng:4.11.0@sha256:52a7114037bd85cf8acc757a89c331f34a50c18999dfd562dae4a9ab9a402031
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      LOG_TO_STDOUT: ''
+    ports:
+      - target: 514
+        published: 5514
+        protocol: udp
+      - target: 601
+        published: 6601
+        protocol: tcp
+      - target: 6514
+        published: 6514
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/syslog-ng/config
+        target: /config
+      - type: bind
+        source: /var/log
+        target: /var/log
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: LOG_TO_STDOUT
+          description:
+            en_US: 'Container Variable: LOG_TO_STDOUT'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /var/log
+          description:
+            en_US: 'Container Path: /var/log'
+      ports:
+        - container: "514"
+          description:
+            en_US: 'Container Port: 514'
+        - container: "601"
+          description:
+            en_US: 'Container Port: 601'
+        - container: "6514"
+          description:
+            en_US: 'Container Port: 6514'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.syslog-ng
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: syslog-ng allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.
+  # Brief tagline for the application
+  tagline:
+    en_US: Allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/syslog-ng-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/syslog-ng-logo.png
+  # Title for the application
+  title:
+    en_US: Syslog-ng
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "514"

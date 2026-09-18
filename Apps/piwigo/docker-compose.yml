@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-piwigo
     # Image to be used for the container
-    image: linuxserver/piwigo:16.4.0@sha256:26c4a6964f51d116211ecfd01f20d5c1fd0a7ea276cb7511bef92d91ca076d4d
+    image: linuxserver/piwigo:16.4.0@sha256:a64c3a58a9d4ba0664b4f8af2e3abeeae5a91635a34070c410e88e80ebf5ee23
     # Container restart policy
     restart: unless-stopped
     # Environment variables

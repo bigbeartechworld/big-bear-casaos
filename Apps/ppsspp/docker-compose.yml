@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-ppsspp
+services:
+  app:
+    image: linuxserver/ppsspp:1.20.4@sha256:606f11c4694ef0c85e5d33d3f77e8101c071d8c2fc2506838ba8f68362986a8d
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ppsspp/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ppsspp
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: PPSSPP is a free and open-source PSP emulator for Windows, macOS, Linux, iOS, Android, Nintendo Wii U, Nintendo Switch, BlackBerry 10, MeeGo, Pandora, Xbox Series and Symbian with a focus on speed and portability.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free and open-source PSP emulator for Windows, macOS, Linux, iOS, Android, Nintendo Wii U, Nintendo Switch, BlackBerry 10, MeeGo, Pandora, Xbox Series and Symbian with a focus on speed and portability.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ppsspp-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ppsspp-logo.png
+  # Title for the application
+  title:
+    en_US: Ppsspp
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

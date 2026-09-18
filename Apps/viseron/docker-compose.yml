@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-viseron
     # Image to be used for the container
-    image: roflcoopter/viseron:3.5.3@sha256:2ed603e5a3ae02eefbb8a17736b1fb40ed071fc65e8e16918ab4cfeebce834b4
+    image: roflcoopter/viseron:3.6.2@sha256:8e0414acd31d811fe2adc36a97fb2326ba4da2245ea5efb28d9e6a97ac4825e6
     # Container restart policy
     restart: unless-stopped
     # Shared memory size

@@ -1,0 +1,76 @@
+name: big-bear-linuxserver-heimdall
+services:
+  app:
+    image: linuxserver/heimdall:2.8.3@sha256:f9b43b696fcbf52f3b20a0121efd3e895543dd085ed13edb54593d614e65eb7a
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      ALLOW_INTERNAL_REQUESTS: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/heimdall/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: ALLOW_INTERNAL_REQUESTS
+          description:
+            en_US: 'Container Variable: ALLOW_INTERNAL_REQUESTS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.heimdall
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way. Simplicity is the key to Heimdall. Why not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.
+  # Brief tagline for the application
+  tagline:
+    en_US: A way to organise all those links to your most used web sites and web applications in a simple way. Simplicity is the key to Heimdall. Why not use it as your browser start page. It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/heimdall-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/heimdall-banner.png
+  # Title for the application
+  title:
+    en_US: Heimdall
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

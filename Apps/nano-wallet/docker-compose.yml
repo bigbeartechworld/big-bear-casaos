@@ -1,0 +1,46 @@
+name: big-bear-linuxserver-nano-wallet
+services:
+  app:
+    image: linuxserver/nano-wallet:1.3.2@sha256:ad03cd3bcd43db7fd18bf15283c2c77550affc2650acd9c27d529e81bb6b703f
+    restart: unless-stopped
+    environment: {}
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    x-casaos:
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nano-wallet
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Nano-wallet is a digital payment protocol designed to be accessible and lightweight, with a focus on removing inefficiencies present in other cryptocurrencies. With ultrafast transactions and zero fees on a secure, green and decentralized network, this makes Nano ideal for everyday transactions. This container is a simple nginx wrapper for the light wallet located here. You will need to pass a valid RPC host when accessing this container.
+  # Brief tagline for the application
+  tagline:
+    en_US: A digital payment protocol designed to be accessible and lightweight, with a focus on removing inefficiencies present in other cryptocurrencies. With ultrafast transactions and zero fees on a secure, green and decentralized network, this makes Nano ideal for everyday transactions. This container is a simple nginx wrapper for the light wallet located here. You will need to pass a valid RPC host when accessing this container.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: Nano-wallet
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "80"

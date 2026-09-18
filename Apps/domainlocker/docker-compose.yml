@@ -1,0 +1,135 @@
+# Configuration for big-bear-domainlocker setup
+name: big-bear-domainlocker
+services:
+  postgres:
+    container_name: domain-locker-db
+    image: postgres:15-alpine@sha256:fe0737ba566a2c5b2a28f34433c0a423261900ec17b9bf7ad115e1aae7e57f1b
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: domain_locker
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changeme2420
+    volumes:
+      - /DATA/AppData/$AppID/postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d domain_locker"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - big_bear_domainlocker_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+  app:
+    container_name: domain-locker-app
+    image: ghcr.io/lissy93/domain-locker:0.2.4@sha256:883716e301b7353327cc82d6bd8e4c5f5d2a93d7f8175e0c10e1d0855f5c4094
+    restart: unless-stopped
+    environment:
+      DL_ENV_TYPE: selfHosted
+      DL_PG_HOST: postgres
+      DL_PG_PORT: 5432
+      DL_PG_USER: postgres
+      DL_PG_PASSWORD: changeme2420
+      DL_PG_NAME: domain_locker
+    ports:
+      - 8180:3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000/api/health"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 30s
+    networks:
+      - big_bear_domainlocker_network
+    x-casaos:
+      envs:
+        - container: DL_ENV_TYPE
+          description:
+            en_US: 'Container Variable: DL_ENV_TYPE'
+        - container: DL_PG_HOST
+          description:
+            en_US: 'Container Variable: DL_PG_HOST'
+        - container: DL_PG_PORT
+          description:
+            en_US: 'Container Variable: DL_PG_PORT'
+        - container: DL_PG_USER
+          description:
+            en_US: 'Container Variable: DL_PG_USER'
+        - container: DL_PG_PASSWORD
+          description:
+            en_US: 'Container Variable: DL_PG_PASSWORD'
+        - container: DL_PG_NAME
+          description:
+            en_US: 'Container Variable: DL_PG_NAME'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+  updater:
+    container_name: domain-locker-updater
+    image: alpine:3.24@sha256:5b02b42e375f7426f8d65c3af331ca05d9878f9989230354504e0b9dfd431f60
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    networks:
+      - big_bear_domainlocker_network
+    command:
+      - /bin/sh
+      - -c
+      - |
+        apk add --no-cache curl &&
+        echo '0 3 * * * /usr/bin/curl -f -X POST http://app:3000/api/domain-updater || echo "ERROR: domain-updater failed at $(date)" >&2' > /etc/crontabs/root &&
+        echo '0 4 * * * /usr/bin/curl -f -X POST http://app:3000/api/expiration-reminders || echo "ERROR: expiration-reminders failed at $(date)" >&2' >> /etc/crontabs/root &&
+        echo '*/15 * * * * /usr/bin/curl -f -X POST http://app:3000/api/domain-monitor || echo "ERROR: domain-monitor failed at $(date)" >&2' >> /etc/crontabs/root &&
+        echo '0 2 * * 0 /usr/bin/curl -f -X POST http://app:3000/api/cleanup-monitor-data || echo "ERROR: cleanup-monitor-data failed at $(date)" >&2' >> /etc/crontabs/root &&
+        crond -f -L /dev/stdout
+networks:
+  big_bear_domainlocker_network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.domainlocker
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: "\U0001F310 The all-in-one tool, for keeping track of your domain name portfolio. Got domain names? Get Domain Locker!"
+  # Brief tagline for the application
+  tagline:
+    en_US: Domain Locker
+  # Developer's information
+  developer: lissy93
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/domain-locker.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_US: Domain Locker
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8180"

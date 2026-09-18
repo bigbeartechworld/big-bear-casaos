@@ -1,0 +1,86 @@
+name: big-bear-linuxserver-kometa
+services:
+  app:
+    image: linuxserver/kometa:2.4.8@sha256:218708a27eb2327c58f2dc560e19b405d1258c371ea4f60e3f9ad992e0587dea
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      KOMETA_CONFIG: ''
+      KOMETA_TIMES: ''
+      KOMETA_RUN: ''
+      KOMETA_TESTS: ''
+      KOMETA_NO_MISSING: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/kometa/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: KOMETA_CONFIG
+          description:
+            en_US: 'Container Variable: KOMETA_CONFIG'
+        - container: KOMETA_TIMES
+          description:
+            en_US: 'Container Variable: KOMETA_TIMES'
+        - container: KOMETA_RUN
+          description:
+            en_US: 'Container Variable: KOMETA_RUN'
+        - container: KOMETA_TESTS
+          description:
+            en_US: 'Container Variable: KOMETA_TESTS'
+        - container: KOMETA_NO_MISSING
+          description:
+            en_US: 'Container Variable: KOMETA_NO_MISSING'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kometa
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Kometa is a powerful tool designed to give you complete control over your media libraries. With Kometa, you can take your customization to the next level, with granular control over metadata, collections, overlays, and much more.
+  # Brief tagline for the application
+  tagline:
+    en_US: A powerful tool designed to give you complete control over your media libraries. With Kometa, you can take your customization to the next level, with granular control over metadata, collections, overlays, and much more.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kometa-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kometa-banner.png
+  # Title for the application
+  title:
+    en_US: Kometa
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

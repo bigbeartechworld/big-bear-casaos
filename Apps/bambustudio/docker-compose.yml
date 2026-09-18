@@ -1,0 +1,75 @@
+name: big-bear-linuxserver-bambustudio
+services:
+  app:
+    image: linuxserver/bambustudio:02.08.02@sha256:7f31ec3fecb07338eb391674f4a4436fed4c5ceab238e5bbc31c330cbf4196ff
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DARK_MODE: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/bambustudio/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: DARK_MODE
+          description:
+            en_US: 'Container Variable: DARK_MODE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.bambustudio
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Bambu Studio is an open-source, cutting-edge, feature-rich slicing software. It contains project-based workflows, systematically optimized slicing algorithms, and an easy-to-use graphical interface, bringing users an incredibly smooth printing experience.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open-source, cutting-edge, feature-rich slicing software. It contains project-based workflows, systematically optimized slicing algorithms, and an easy-to-use graphical interface, bringing users an incredibly smooth printing experience.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/bambustudio-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/bambustudio-logo.png
+  # Title for the application
+  title:
+    en_US: Bambustudio
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

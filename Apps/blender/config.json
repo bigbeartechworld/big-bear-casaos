@@ -1,0 +1,7 @@
+{
+  "id": "blender",
+  "version": "5.2.2",
+  "image": "linuxserver/blender",
+  "youtube": "",
+  "docs_link": ""
+}

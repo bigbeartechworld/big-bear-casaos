@@ -1,0 +1,94 @@
+name: big-bear-linuxserver-piper
+services:
+  app:
+    image: linuxserver/piper:2.5.2@sha256:82ea64e64668fdde85073f40719d0a9e13ff0ecfb7b89202f661b32d46c1a644
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PIPER_VOICE: ''
+      LOCAL_ONLY: ''
+      PIPER_LENGTH: ''
+      PIPER_NOISE: ''
+      PIPER_NOISEW: ''
+      PIPER_SPEAKER: ''
+      NO_STREAMING: ''
+    ports:
+      - target: 10200
+        published: 10200
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/piper/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: PIPER_VOICE
+          description:
+            en_US: 'Container Variable: PIPER_VOICE'
+        - container: LOCAL_ONLY
+          description:
+            en_US: 'Container Variable: LOCAL_ONLY'
+        - container: PIPER_LENGTH
+          description:
+            en_US: 'Container Variable: PIPER_LENGTH'
+        - container: PIPER_NOISE
+          description:
+            en_US: 'Container Variable: PIPER_NOISE'
+        - container: PIPER_NOISEW
+          description:
+            en_US: 'Container Variable: PIPER_NOISEW'
+        - container: PIPER_SPEAKER
+          description:
+            en_US: 'Container Variable: PIPER_SPEAKER'
+        - container: NO_STREAMING
+          description:
+            en_US: 'Container Variable: NO_STREAMING'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "10200"
+          description:
+            en_US: 'Container Port: 10200'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.piper
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Piper is a fast, local neural text to speech system that sounds great and is optimized for the Raspberry Pi 4. This container provides a Wyoming protocol server for Piper.
+  # Brief tagline for the application
+  tagline:
+    en_US: A fast, local neural text to speech system that sounds great and is optimized for the Raspberry Pi 4. This container provides a Wyoming protocol server for Piper.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/piper-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/piper-logo.png
+  # Title for the application
+  title:
+    en_US: Piper
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "10200"

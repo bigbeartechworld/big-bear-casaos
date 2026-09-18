@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-projectsend
+services:
+  app:
+    image: linuxserver/projectsend:version-r2098@sha256:f9a3ef120901e5322c8c0e1261f7b8f10723eaa8a5036510d37e776cefda2e2a
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/projectsend/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/projectsend/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.projectsend
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Projectsend is a self-hosted application that lets you upload files and assign them to specific clients that you create yourself. Secure, private and easy. No more depending on external services or e-mail to send those files.
+  # Brief tagline for the application
+  tagline:
+    en_US: A self-hosted application that lets you upload files and assign them to specific clients that you create yourself. Secure, private and easy. No more depending on external services or e-mail to send those files.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/projectsend-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/projectsend-logo.png
+  # Title for the application
+  title:
+    en_US: Projectsend
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

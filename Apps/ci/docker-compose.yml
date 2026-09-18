@@ -1,0 +1,65 @@
+name: big-bear-linuxserver-ci
+services:
+  app:
+    image: linuxserver/ci:b1ca9f98-ls65@sha256:f0c0d03f3a0da803d3a0a55c30ed722d4df25d37b12489c45149e99df8e0e491
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ci/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ci
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ci for details.
+  # Brief tagline for the application
+  tagline:
+    en_US: 'This container needs special attention. Please check https://hub. Docker. Com/r/linuxserver/ci for details. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: Ci
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "80"

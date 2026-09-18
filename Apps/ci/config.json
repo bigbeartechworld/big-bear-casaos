@@ -1,0 +1,7 @@
+{
+  "id": "ci",
+  "version": "0.0.0",
+  "image": "linuxserver/ci",
+  "youtube": "",
+  "docs_link": ""
+}

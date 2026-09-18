@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-webstation
+services:
+  app:
+    image: linuxserver/webstation:0.8.4-romm@sha256:e5f8e2a2af05b8035c05db8e8713629722313ef819ef660523685b15bf76a2db
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/webstation/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.webstation
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Webstation is a web native emulation focused LXQt desktop based on Ubuntu.
+  # Brief tagline for the application
+  tagline:
+    en_US: A web native emulation focused LXQt desktop based on Ubuntu.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/webstation-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/webstation-logo.png
+  # Title for the application
+  title:
+    en_US: Webstation
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

@@ -1,7 +1,7 @@
 name: big-bear-podfetch
 services:
   app:
-    image: samuel19982/podfetch:v5.2.3@sha256:30dde81c92ec60450da08dee9f13723c0d8586e3ee4b3d7933b1fb221e051c28
+    image: samuel19982/podfetch:v5.2.3@sha256:a9705ffb906c020740b1e1aae4b38a0ea966d7190d47ee7956b4d573a48c16f9
     container_name: podfetch
     ports:
       - "8000:8000"

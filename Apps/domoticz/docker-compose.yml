@@ -1,0 +1,86 @@
+name: big-bear-linuxserver-domoticz
+services:
+  app:
+    image: linuxserver/domoticz:2023.2.20231129@sha256:db5939da7ee7979a2a29ac455f5bee6646d59ef32f3ea20a3be0d77667ef8428
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      WEBROOT: ''
+      DBASE: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+      - target: 6144
+        published: 6144
+        protocol: tcp
+      - target: 1443
+        published: 1443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/domoticz/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: WEBROOT
+          description:
+            en_US: 'Container Variable: WEBROOT'
+        - container: DBASE
+          description:
+            en_US: 'Container Variable: DBASE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+        - container: "6144"
+          description:
+            en_US: 'Container Port: 6144'
+        - container: "1443"
+          description:
+            en_US: 'Container Port: 1443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.domoticz
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/domoticz/'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'A Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device.'
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/domoticz-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/domoticz-logo.png
+  # Title for the application
+  title:
+    en_US: Domoticz
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8080"

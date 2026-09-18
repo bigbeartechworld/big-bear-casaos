@@ -5,7 +5,7 @@ name: big-bear-invoice-ninja
 # Service definitions for the big-bear-invoice-ninja application
 services:
   big-bear-invoice-ninja:
-    image: invoiceninja/invoiceninja:5.13.31@sha256:c0526fc0242f4bd145d0d225bb40e174841f67597a57215723f20f2c00c0698f
+    image: invoiceninja/invoiceninja:5.13.40@sha256:043ccaafd3e7970c2ffc45a89b4e032566e4a7b50f264c24f49cabfae18598fa
     container_name: big-bear-invoice-ninja
     restart: unless-stopped
     user: 1500:1500

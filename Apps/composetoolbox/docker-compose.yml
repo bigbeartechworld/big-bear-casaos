@@ -12,7 +12,7 @@ services:
       # Node environment
       NODE_ENV: production
     # Image to be used for the container
-    image: ghcr.io/bluegoosemedia/composetoolbox:latest@sha256:61e8a6f0a00583f145e83018ce0954089f5bd89157dc39ef7459043643ca17f6
+    image: ghcr.io/bluegoosemedia/composetoolbox:latest@sha256:1cb6f19f3ea5ef08467870f542155619f9389bcf0dc68499e2c57a7c540f39b2
     pull_policy: always
     # Ports mapping between host and container
     ports:

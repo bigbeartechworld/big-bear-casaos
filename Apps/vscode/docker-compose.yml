@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-vscode
+services:
+  app:
+    image: linuxserver/vscode:1.137.0@sha256:f7a5c7f1d8462219ad30f4d7a2ae821a305d298f53402d054af7ed03d718c69f
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/vscode/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.vscode
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: VS Code is an integrated development environment developed by Microsoft. This container runs the full desktop application, for a web native version see Code Server.
+  # Brief tagline for the application
+  tagline:
+    en_US: An integrated development environment developed by Microsoft. This container runs the full desktop application, for a web native version see Code Server.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/vscode-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/vscode-logo.png
+  # Title for the application
+  title:
+    en_US: Vscode
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

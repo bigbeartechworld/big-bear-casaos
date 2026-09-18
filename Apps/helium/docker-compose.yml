@@ -1,0 +1,76 @@
+name: big-bear-linuxserver-helium
+services:
+  app:
+    image: linuxserver/helium:0.17.1@sha256:841ea4d56f71a279c70a010d68e60ccd82c04f7ffc5c8306df8eded2b8b28084
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      HELIUM_CLI: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/helium/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: HELIUM_CLI
+          description:
+            en_US: 'Container Variable: HELIUM_CLI'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.helium
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Helium is a Chromium-based web browser made for people, with love. Privacy-first with unbiased ad-blocking.
+  # Brief tagline for the application
+  tagline:
+    en_US: A Chromium-based web browser made for people, with love. Privacy-first with unbiased ad-blocking.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/helium-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/helium-logo.png
+  # Title for the application
+  title:
+    en_US: Helium
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

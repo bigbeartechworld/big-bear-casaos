@@ -1,0 +1,7 @@
+{
+  "id": "dokuwiki",
+  "version": "0.0.0",
+  "image": "linuxserver/dokuwiki",
+  "youtube": "",
+  "docs_link": ""
+}

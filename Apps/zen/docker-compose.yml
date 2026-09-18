@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-zen
+services:
+  app:
+    image: linuxserver/zen:1.22.2@sha256:4f8572c3cff3591fe622d2ba69f319e493af6301760c1c1208bc4232d7e01da0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/zen/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.zen
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Zen Browser is a free and open-source fork of Mozilla Firefox with a focus on privacy, customizability and design.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free and open-source fork of Mozilla Firefox with a focus on privacy, customizability and design.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/zen-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/zen-logo.png
+  # Title for the application
+  title:
+    en_US: Zen
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

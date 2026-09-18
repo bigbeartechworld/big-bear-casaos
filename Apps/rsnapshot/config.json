@@ -1,0 +1,7 @@
+{
+  "id": "rsnapshot",
+  "version": "1.4.5",
+  "image": "linuxserver/rsnapshot",
+  "youtube": "",
+  "docs_link": ""
+}

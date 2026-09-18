@@ -1,0 +1,84 @@
+name: big-bear-linuxserver-pylon
+services:
+  app:
+    image: linuxserver/pylon:2.10.0@sha256:5552a0c4b42f1e09a1146d2265c790fb2833128ec3ea9ebf1b0c634d40784e01
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      GITURL: ''
+      PYUSER: ''
+      PYPASS: ''
+    ports:
+      - target: 3131
+        published: 3131
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pylon/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/pylon/code
+        target: /code
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: GITURL
+          description:
+            en_US: 'Container Variable: GITURL'
+        - container: PYUSER
+          description:
+            en_US: 'Container Variable: PYUSER'
+        - container: PYPASS
+          description:
+            en_US: 'Container Variable: PYPASS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /code
+          description:
+            en_US: 'Container Path: /code'
+      ports:
+        - container: "3131"
+          description:
+            en_US: 'Container Port: 3131'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pylon
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/pylon/'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'A web based integrated development environment built with Node. Js as a backend and with a supercharged JavaScript/HTML5 frontend, licensed under GPL version 3. This project originates from Cloud9 v2 project. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/cloud9-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/pylonide/pylon@master/doc/screenshot02.png
+  # Title for the application
+  title:
+    en_US: Pylon
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3131"

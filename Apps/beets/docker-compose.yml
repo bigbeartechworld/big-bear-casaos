@@ -1,0 +1,78 @@
+name: big-bear-linuxserver-beets
+services:
+  app:
+    image: linuxserver/beets:2.14.0@sha256:748b6fcdece5f3142cb555a4219b52ad9b9352763db02329ebe4dc3e21bce74d
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 8337
+        published: 8337
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/beets/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/beets/music
+        target: /music
+      - type: bind
+        source: /DATA/AppData/beets/downloads
+        target: /downloads
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /music
+          description:
+            en_US: 'Container Path: /music'
+        - container: /downloads
+          description:
+            en_US: 'Container Path: /downloads'
+      ports:
+        - container: "8337"
+          description:
+            en_US: 'Container Port: 8337'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.beets
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Beets is a music library manager and not, for the most part, a music player. It does include a simple player plugin and an experimental Web-based player, but it generally leaves actual sound-reproduction to specialized tools.
+  # Brief tagline for the application
+  tagline:
+    en_US: A music library manager and not, for the most part, a music player. It does include a simple player plugin and an experimental Web-based player, but it generally leaves actual sound-reproduction to specialized tools.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/beets-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/beets-icon.png
+  # Title for the application
+  title:
+    en_US: Beets
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8337"

@@ -1,0 +1,74 @@
+name: big-bear-linuxserver-hishtory-server
+services:
+  app:
+    image: linuxserver/hishtory-server:0.335.20260911@sha256:ec2d85af066a68227b7b837d34132764e435399c24d06b3c05191040f26c4e99
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      HISHTORY_POSTGRES_DB: ''
+      HISHTORY_SQLITE_DB: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/hishtory-server/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: HISHTORY_POSTGRES_DB
+          description:
+            en_US: 'Container Variable: HISHTORY_POSTGRES_DB'
+        - container: HISHTORY_SQLITE_DB
+          description:
+            en_US: 'Container Variable: HISHTORY_SQLITE_DB'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.hishtory-server
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: hiSHtory is a better shell history. It stores your shell history in context (what directory you ran the command in, whether it succeeded or failed, how long it took, etc). This is all stored locally and end-to-end encrypted for syncing to to all your other computers.
+  # Brief tagline for the application
+  tagline:
+    en_US: A better shell history. It stores your shell history in context (what directory you ran the command in, whether it succeeded or failed, how long it took, etc). This is all stored locally and end-to-end encrypted for syncing to to all your other computers.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/hishtory-server-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/hishtory-server-icon.png
+  # Title for the application
+  title:
+    en_US: Hishtory-server
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8080"

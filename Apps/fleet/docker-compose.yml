@@ -1,0 +1,86 @@
+name: big-bear-linuxserver-fleet
+services:
+  app:
+    image: linuxserver/fleet:2.3.3@sha256:6a0c946a9339b848a5f31d06ff45876dd94fee8cc19b1f8b6a8b0b60e3bbff24
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      fleet_admin_authentication_type: ''
+      fleet_database_url: ''
+      fleet_database_username: ''
+      fleet_database_password: ''
+      fleet_admin_secret: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/fleet/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: fleet_admin_authentication_type
+          description:
+            en_US: 'Container Variable: fleet_admin_authentication_type'
+        - container: fleet_database_url
+          description:
+            en_US: 'Container Variable: fleet_database_url'
+        - container: fleet_database_username
+          description:
+            en_US: 'Container Variable: fleet_database_username'
+        - container: fleet_database_password
+          description:
+            en_US: 'Container Variable: fleet_database_password'
+        - container: fleet_admin_secret
+          description:
+            en_US: 'Container Variable: fleet_admin_secret'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.fleet
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Fleet provides an online web interface which displays a set of maintained images from one or more owned repositories.
+  # Brief tagline for the application
+  tagline:
+    en_US: 'Provides an online web interface which displays a set of maintained images from one or more owned repositories. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: Fleet
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8080"

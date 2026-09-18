@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-shadps4
+services:
+  app:
+    image: linuxserver/shadps4:version-shadPS4QtLauncher-2026-09-12-864dc30bc5372d7ad95ef609188942ecd77bf6f4@sha256:c15058c8d9ce5b5a0e1cd0b570296b3696f85d5e92274e9a0ef1e4da369b0560
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/shadps4/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.shadps4
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: shadPS4 is an early PlayStation 4 emulator for Windows, Linux and macOS written in C++.
+  # Brief tagline for the application
+  tagline:
+    en_US: An early PlayStation 4 emulator for Windows, Linux and macOS written in C++.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/shadps4-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/shadps4-logo.png
+  # Title for the application
+  title:
+    en_US: Shadps4
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

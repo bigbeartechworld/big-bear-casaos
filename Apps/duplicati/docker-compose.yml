@@ -1,0 +1,90 @@
+name: big-bear-linuxserver-duplicati
+services:
+  app:
+    image: linuxserver/duplicati:2.4.0@sha256:5c65d960f4885579096979cb791cb379835872b1b125768deaf342ea1ff2f247
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SETTINGS_ENCRYPTION_KEY: ''
+      CLI_ARGS: ''
+      DUPLICATI__WEBSERVICE_PASSWORD: ''
+    ports:
+      - target: 8200
+        published: 8200
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/duplicati/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/duplicati/backups
+        target: /backups
+      - type: bind
+        source: /DATA/AppData/duplicati/source
+        target: /source
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: SETTINGS_ENCRYPTION_KEY
+          description:
+            en_US: 'Container Variable: SETTINGS_ENCRYPTION_KEY'
+        - container: CLI_ARGS
+          description:
+            en_US: 'Container Variable: CLI_ARGS'
+        - container: DUPLICATI__WEBSERVICE_PASSWORD
+          description:
+            en_US: 'Container Variable: DUPLICATI__WEBSERVICE_PASSWORD'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /backups
+          description:
+            en_US: 'Container Path: /backups'
+        - container: /source
+          description:
+            en_US: 'Container Path: /source'
+      ports:
+        - container: "8200"
+          description:
+            en_US: 'Container Port: 8200'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.duplicati
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Duplicati is a backup client that securely stores encrypted, incremental, compressed backups on local storage, cloud storage services and remote file servers. It works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon S3, Google Drive, box.com, Mega, B2, and many others.
+  # Brief tagline for the application
+  tagline:
+    en_US: A backup client that securely stores encrypted, incremental, compressed backups on local storage, cloud storage services and remote file servers. It works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon S3, Google Drive, box. Com, Mega, B2, and many others.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/duplicati-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/duplicati-icon.png
+  # Title for the application
+  title:
+    en_US: Duplicati
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8200"

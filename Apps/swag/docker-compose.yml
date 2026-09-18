@@ -1,0 +1,134 @@
+name: big-bear-linuxserver-swag
+services:
+  app:
+    image: linuxserver/swag:5.8.0@sha256:7f4646e77ff362efb506a313a504e866d53a3d5c071175dbf4024acb18f795d3
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      URL: ''
+      VALIDATION: ''
+      SUBDOMAINS: ''
+      CERTPROVIDER: ''
+      CERT_PROFILE: ''
+      DNSPLUGIN: ''
+      PROPAGATION: ''
+      EMAIL: ''
+      ONLY_SUBDOMAINS: ''
+      EXTRA_DOMAINS: ''
+      STAGING: ''
+      DISABLE_F2B: ''
+      SWAG_AUTORELOAD: ''
+      SWAG_AUTORELOAD_WATCHLIST: ''
+    ports:
+      - target: 443
+        published: 443
+        protocol: tcp
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: udp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/swag/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: URL
+          description:
+            en_US: 'Container Variable: URL'
+        - container: VALIDATION
+          description:
+            en_US: 'Container Variable: VALIDATION'
+        - container: SUBDOMAINS
+          description:
+            en_US: 'Container Variable: SUBDOMAINS'
+        - container: CERTPROVIDER
+          description:
+            en_US: 'Container Variable: CERTPROVIDER'
+        - container: CERT_PROFILE
+          description:
+            en_US: 'Container Variable: CERT_PROFILE'
+        - container: DNSPLUGIN
+          description:
+            en_US: 'Container Variable: DNSPLUGIN'
+        - container: PROPAGATION
+          description:
+            en_US: 'Container Variable: PROPAGATION'
+        - container: EMAIL
+          description:
+            en_US: 'Container Variable: EMAIL'
+        - container: ONLY_SUBDOMAINS
+          description:
+            en_US: 'Container Variable: ONLY_SUBDOMAINS'
+        - container: EXTRA_DOMAINS
+          description:
+            en_US: 'Container Variable: EXTRA_DOMAINS'
+        - container: STAGING
+          description:
+            en_US: 'Container Variable: STAGING'
+        - container: DISABLE_F2B
+          description:
+            en_US: 'Container Variable: DISABLE_F2B'
+        - container: SWAG_AUTORELOAD
+          description:
+            en_US: 'Container Variable: SWAG_AUTORELOAD'
+        - container: SWAG_AUTORELOAD_WATCHLIST
+          description:
+            en_US: 'Container Variable: SWAG_AUTORELOAD_WATCHLIST'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.swag
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: SWAG - Secure Web Application Gateway (formerly known as letsencrypt, no relation to Let's Encrypt™) sets up an Nginx webserver and reverse proxy with php support and a built-in certbot client that automates free SSL server certificate generation and renewal processes (Let's Encrypt and ZeroSSL). It also contains fail2ban for intrusion prevention.
+  # Brief tagline for the application
+  tagline:
+    en_US: SWAG - Secure Web Application Gateway (formerly known as letsencrypt, no relation to Let's Encrypt™) sets up an Nginx webserver and reverse proxy with php support and a built-in certbot client that automates free SSL server certificate generation and renewal processes (Let's Encrypt and ZeroSSL). It also contains fail2ban for intrusion prevention.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/swag.gif
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/swag.gif
+  # Title for the application
+  title:
+    en_US: Swag
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "443"

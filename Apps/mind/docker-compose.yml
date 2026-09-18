@@ -44,9 +44,9 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://i.imgur.com/UgjalkK.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/docker.png
   # Thumbnail image for the application (if any)
-  thumbnail: ""
+  thumbnail: https://cdn.jsdelivr.net/gh/selfhst/icons/png/docker.png
   # Title for the application
   title:
     en_US: MIND

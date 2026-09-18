@@ -1,0 +1,74 @@
+name: big-bear-linuxserver-pydio-cells
+services:
+  app:
+    image: linuxserver/pydio-cells:5.0.2@sha256:64dfe2e5cdb5d1db16c6ffa02877072cc6b426068929b84a5fe6c2decfca17c6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      EXTERNALURL: ''
+      SERVER_IP: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pydio-cells/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: EXTERNALURL
+          description:
+            en_US: 'Container Variable: EXTERNALURL'
+        - container: SERVER_IP
+          description:
+            en_US: 'Container Variable: SERVER_IP'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pydio-cells
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Pydio-cells is the nextgen file sharing platform for organizations. It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.
+  # Brief tagline for the application
+  tagline:
+    en_US: The nextgen file sharing platform for organizations. It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/pydio-cells-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/pydio-cells-icon.png
+  # Title for the application
+  title:
+    en_US: Pydio-cells
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8080"

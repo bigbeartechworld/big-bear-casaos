@@ -1,0 +1,100 @@
+name: big-bear-linuxserver-jellyfin
+services:
+  app:
+    image: linuxserver/jellyfin:12.1ubu2604-ls50@sha256:51252e7a416e703cdc3cd91e8a54673a2430cc80409be8a38abe511411577b95
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      JELLYFIN_PublishedServerUrl: ''
+    ports:
+      - target: 8096
+        published: 8096
+        protocol: tcp
+      - target: 8920
+        published: 8920
+        protocol: tcp
+      - target: 7359
+        published: 7359
+        protocol: udp
+      - target: 1900
+        published: 1900
+        protocol: udp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/jellyfin/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/jellyfin/data/tvshows
+        target: /data/tvshows
+      - type: bind
+        source: /DATA/AppData/jellyfin/data/movies
+        target: /data/movies
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: JELLYFIN_PublishedServerUrl
+          description:
+            en_US: 'Container Variable: JELLYFIN_PublishedServerUrl'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data/tvshows
+          description:
+            en_US: 'Container Path: /data/tvshows'
+        - container: /data/movies
+          description:
+            en_US: 'Container Path: /data/movies'
+      ports:
+        - container: "8096"
+          description:
+            en_US: 'Container Port: 8096'
+        - container: "8920"
+          description:
+            en_US: 'Container Port: 8920'
+        - container: "7359"
+          description:
+            en_US: 'Container Port: 7359'
+        - container: "1900"
+          description:
+            en_US: 'Container Port: 1900'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.jellyfin
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby''s 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it.'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'A Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby''s 3. 5. 2 release and ported to the. NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it.'
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/jellyfin-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/jellyfin-logo.png
+  # Title for the application
+  title:
+    en_US: Jellyfin
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8096"

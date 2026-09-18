@@ -1,0 +1,86 @@
+name: big-bear-linuxserver-vscodium-web
+services:
+  app:
+    image: linuxserver/vscodium-web:1.135.06055@sha256:8d2cc3e425c15274f79cac90222e1a39c19ec866bbffd9ecc65d2f74fbc4fd8e
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CONNECTION_TOKEN: ''
+      CONNECTION_TOKEN_FILE: ''
+      SUDO_PASSWORD: ''
+      SUDO_PASSWORD_HASH: ''
+      CODE_ARGS: ''
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/vscodium-web/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: CONNECTION_TOKEN
+          description:
+            en_US: 'Container Variable: CONNECTION_TOKEN'
+        - container: CONNECTION_TOKEN_FILE
+          description:
+            en_US: 'Container Variable: CONNECTION_TOKEN_FILE'
+        - container: SUDO_PASSWORD
+          description:
+            en_US: 'Container Variable: SUDO_PASSWORD'
+        - container: SUDO_PASSWORD_HASH
+          description:
+            en_US: 'Container Variable: SUDO_PASSWORD_HASH'
+        - container: CODE_ARGS
+          description:
+            en_US: 'Container Variable: CODE_ARGS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8000"
+          description:
+            en_US: 'Container Port: 8000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.vscodium-web
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Vscodium-web is a community-driven, freely-licensed binary distribution of the remote host web component of Microsoft's editor VS Code.
+  # Brief tagline for the application
+  tagline:
+    en_US: A community-driven, freely-licensed binary distribution of the remote host web component of Microsoft's editor VS Code.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/vscodium-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/vscodium-icon.png
+  # Title for the application
+  title:
+    en_US: Vscodium-web
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8000"

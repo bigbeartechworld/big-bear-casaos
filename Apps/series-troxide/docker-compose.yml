@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-series-troxide
+services:
+  app:
+    image: linuxserver/series-troxide:0.5.1@sha256:a86c0f9b6500be2596e3fdf12bf3b341f6b842c1b1fc88d44b6ef3362f9b58df
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/series-troxide/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.series-troxide
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Series Troxide a Simple and Modern Series Tracker
+  # Brief tagline for the application
+  tagline:
+    en_US: A Simple and Modern Series Tracker
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/series-troxide-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/series-troxide-logo.png
+  # Title for the application
+  title:
+    en_US: Series-troxide
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3000"

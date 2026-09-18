@@ -1,0 +1,80 @@
+name: big-bear-linuxserver-nginx
+services:
+  app:
+    image: linuxserver/nginx:1.30.4@sha256:34e67960f3f818f3d87fdd773e328b53b24c91c64b4c1e4f6d7b22bc175ee174
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      NGINX_AUTORELOAD: ''
+      NGINX_AUTORELOAD_WATCHLIST: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/nginx/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: NGINX_AUTORELOAD
+          description:
+            en_US: 'Container Variable: NGINX_AUTORELOAD'
+        - container: NGINX_AUTORELOAD_WATCHLIST
+          description:
+            en_US: 'Container Variable: NGINX_AUTORELOAD_WATCHLIST'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nginx
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Nginx is an HTTP web server, reverse proxy, content cache, load balancer, TCP/UDP proxy server, and mail proxy server.
+  # Brief tagline for the application
+  tagline:
+    en_US: An HTTP web server, reverse proxy, content cache, load balancer, TCP/UDP proxy server, and mail proxy server.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/nginx-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/nginx-banner.png
+  # Title for the application
+  title:
+    en_US: Nginx
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

@@ -1,0 +1,88 @@
+name: big-bear-linuxserver-duckdns
+services:
+  app:
+    image: linuxserver/duckdns:version-73f1bc7d@sha256:7edcc8555ecbca2ea6e441290a09d172bc531debce7c6771c14551838a3f67f2
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SUBDOMAINS: ''
+      TOKEN: ''
+      UPDATE_IP: ''
+      LOG_FILE: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/duckdns/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/duckdns/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: SUBDOMAINS
+          description:
+            en_US: 'Container Variable: SUBDOMAINS'
+        - container: TOKEN
+          description:
+            en_US: 'Container Variable: TOKEN'
+        - container: UPDATE_IP
+          description:
+            en_US: 'Container Variable: UPDATE_IP'
+        - container: LOG_FILE
+          description:
+            en_US: 'Container Variable: LOG_FILE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.duckdns
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Duckdns is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free service which will point a DNS (sub domains of duckdns. Org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/duckdns.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/duckdns.png
+  # Title for the application
+  title:
+    en_US: Duckdns
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

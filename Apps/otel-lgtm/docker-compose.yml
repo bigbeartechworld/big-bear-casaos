@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-otel-lgtm
     # Image to be used for the container
-    image: grafana/otel-lgtm:0.30.1@sha256:bb182ac3174a20923fa58f00d1790fa71eb06cc0150078c0b0e8feb9e6611492
+    image: grafana/otel-lgtm:0.33.0@sha256:475319e883b66594d1a2f22ef168c2459802bb94548e6f25d9782bd5f5c19a3a
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -75,9 +75,9 @@ x-casaos:
   # Author of this particular configuration
   author: Konrad Botor (Forinil)
   # Icon URL for the application
-  icon: https://www.gravatar.com/avatar/31cea69afa424609b2d83621b4d47f1d?s=120&r=g&d=404
+  icon: https://images.weserv.nl/?url=https%3A%2F%2Fwww.gravatar.com%2Favatar%2F31cea69afa424609b2d83621b4d47f1d%3Fs%3D120%26r%3Dg%26d%3D404
   # Thumbnail image for the application (if any)
-  thumbnail: https://raw.githubusercontent.com/grafana/docker-otel-lgtm/main/img/overview.png
+  thumbnail: https://cdn.jsdelivr.net/gh/grafana/docker-otel-lgtm@main/img/overview.png
   # Installation tips
   tips:
     before_install:

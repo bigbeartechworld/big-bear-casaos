@@ -1,0 +1,103 @@
+name: big-bear-nightlio
+services:
+  big-bear-nightlio-api:
+    container_name: big-bear-nightlio-api
+    image: ghcr.io/shirsakm/nightlio-api:0.1.7@sha256:4f9b88a3eba36b67457052d08b0a71bb3210b72276da0b6432235ce5372e3cb4
+    restart: unless-stopped
+    environment:
+      - SECRET_KEY=changeme
+      - JWT_SECRET=changeme-too
+      - CORS_ORIGINS=http://localhost:5173
+      - ENABLE_GOOGLE_OAUTH=0
+      - ENABLE_MOOD_MUSIC=0
+      - DEFAULT_SELF_HOST_ID=selfhost_default_user
+      - DATABASE_PATH=/app/data/nightlio.db
+      - PORT=5000
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+    networks:
+      - big_bear_nightlio_network
+    x-casaos:
+      envs:
+        - container: SECRET_KEY
+          description:
+            en_US: 'Container Variable: SECRET_KEY'
+        - container: JWT_SECRET
+          description:
+            en_US: 'Container Variable: JWT_SECRET'
+        - container: CORS_ORIGINS
+          description:
+            en_US: 'Container Variable: CORS_ORIGINS'
+        - container: ENABLE_GOOGLE_OAUTH
+          description:
+            en_US: 'Container Variable: ENABLE_GOOGLE_OAUTH'
+        - container: ENABLE_MOOD_MUSIC
+          description:
+            en_US: 'Container Variable: ENABLE_MOOD_MUSIC'
+        - container: DEFAULT_SELF_HOST_ID
+          description:
+            en_US: 'Container Variable: DEFAULT_SELF_HOST_ID'
+        - container: DATABASE_PATH
+          description:
+            en_US: 'Container Variable: DATABASE_PATH'
+        - container: PORT
+          description:
+            en_US: 'Container Variable: PORT'
+      volumes:
+        - container: /app/data
+          description:
+            en_US: 'Container Path: /app/data'
+  big-bear-nightlio-frontend:
+    container_name: big-bear-nightlio-frontend
+    image: ghcr.io/shirsakm/nightlio-frontend:0.1.7@sha256:0a2bd8ec3eefe6adfa79f4809bc57c9ef2d3094dcece13f7d3c5309bacfcc117
+    restart: unless-stopped
+    environment:
+      - API_URL=http://big-bear-nightlio-api:5000
+    ports:
+      - "5173:80"
+    depends_on:
+      - big-bear-nightlio-api
+    networks:
+      - big_bear_nightlio_network
+    x-casaos:
+      envs:
+        - container: API_URL
+          description:
+            en_US: 'Container Variable: API_URL'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+networks:
+  big_bear_nightlio_network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.nightlio
+  # Main service for this application
+  main: big-bear-nightlio-frontend
+  # Detailed description for the application
+  description:
+    en_US: Nightlio is a privacy-first mood tracker and daily journal designed for effortless self-hosting. Log your daily mood on a simple five-point scale, write rich Markdown journal entries with customizable tags, and view insightful analytics including mood history calendars, average mood trends, and journaling streaks. All data is stored in a local SQLite database on your own server with no telemetry, ads, or subscriptions.
+  # Brief tagline for the application
+  tagline:
+    en_US: Privacy-first mood tracker and daily journal
+  # Developer's information
+  developer: shirsakm
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nightlio.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_US: Nightlio
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "5173"

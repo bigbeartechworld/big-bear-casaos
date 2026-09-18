@@ -204,7 +204,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearCommunity
   # Icon URL for the application
-  icon: https://raw.githubusercontent.com/maybe-finance/maybe/refs/heads/main/app/assets/images/logo-color.png
+  icon: https://cdn.jsdelivr.net/gh/maybe-finance/maybe@refs/heads/main/app/assets/images/logo-color.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Installation tips

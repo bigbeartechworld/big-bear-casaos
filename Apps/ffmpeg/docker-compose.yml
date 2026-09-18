@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-ffmpeg
+services:
+  app:
+    image: linuxserver/ffmpeg:8.1.2@sha256:2e7000921be8de2704a4f27dfd3d988562697a346eaabb937a81046c306f0af7
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ffmpeg/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ffmpeg
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.
+  # Brief tagline for the application
+  tagline:
+    en_US: This container needs special attention. Please check https://hub. Docker. Com/r/linuxserver/ffmpeg for details.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ffmpeg.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ffmpeg.png
+  # Title for the application
+  title:
+    en_US: Ffmpeg
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

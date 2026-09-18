@@ -1,0 +1,7 @@
+{
+  "id": "duckdns",
+  "version": "0.0.0",
+  "image": "linuxserver/duckdns",
+  "youtube": "",
+  "docs_link": ""
+}

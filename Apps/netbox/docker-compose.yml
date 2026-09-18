@@ -1,0 +1,158 @@
+name: big-bear-linuxserver-netbox
+services:
+  app:
+    image: linuxserver/netbox:4.7.1@sha256:30f062595c99deafabfc272a23d2337049db18a2ce09bd7c2a5e5399491bd77c
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SUPERUSER_EMAIL: $SUPERUSER_EMAIL
+      SUPERUSER_PASSWORD: $SUPERUSER_PASSWORD
+      ALLOWED_HOST: $ALLOWED_HOST
+      DB_NAME: $DB_NAME
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+      DB_HOST: $DB_HOST
+      DB_PORT: $DB_PORT
+      REDIS_HOST: $REDIS_HOST
+      REDIS_PORT: $REDIS_PORT
+      REDIS_USERNAME: $REDIS_USERNAME
+      REDIS_PASSWORD: $REDIS_PASSWORD
+      REDIS_DB_TASK: $REDIS_DB_TASK
+      REDIS_DB_CACHE: $REDIS_DB_CACHE
+      BASE_PATH: $BASE_PATH
+      CSRF_TRUSTED_ORIGINS: $CSRF_TRUSTED_ORIGINS
+      REMOTE_AUTH_ENABLED: $REMOTE_AUTH_ENABLED
+      REMOTE_AUTH_BACKEND: $REMOTE_AUTH_BACKEND
+      REMOTE_AUTH_HEADER: $REMOTE_AUTH_HEADER
+      REMOTE_AUTH_AUTO_CREATE_USER: $REMOTE_AUTH_AUTO_CREATE_USER
+      REMOTE_AUTH_DEFAULT_GROUPS: $REMOTE_AUTH_DEFAULT_GROUPS
+      REMOTE_AUTH_DEFAULT_PERMISSIONS: $REMOTE_AUTH_DEFAULT_PERMISSIONS
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/netbox/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: SUPERUSER_EMAIL
+          description:
+            en_US: 'Container Variable: SUPERUSER_EMAIL'
+        - container: SUPERUSER_PASSWORD
+          description:
+            en_US: 'Container Variable: SUPERUSER_PASSWORD'
+        - container: ALLOWED_HOST
+          description:
+            en_US: 'Container Variable: ALLOWED_HOST'
+        - container: DB_NAME
+          description:
+            en_US: 'Container Variable: DB_NAME'
+        - container: DB_USER
+          description:
+            en_US: 'Container Variable: DB_USER'
+        - container: DB_PASSWORD
+          description:
+            en_US: 'Container Variable: DB_PASSWORD'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: REDIS_HOST
+          description:
+            en_US: 'Container Variable: REDIS_HOST'
+        - container: REDIS_PORT
+          description:
+            en_US: 'Container Variable: REDIS_PORT'
+        - container: REDIS_USERNAME
+          description:
+            en_US: 'Container Variable: REDIS_USERNAME'
+        - container: REDIS_PASSWORD
+          description:
+            en_US: 'Container Variable: REDIS_PASSWORD'
+        - container: REDIS_DB_TASK
+          description:
+            en_US: 'Container Variable: REDIS_DB_TASK'
+        - container: REDIS_DB_CACHE
+          description:
+            en_US: 'Container Variable: REDIS_DB_CACHE'
+        - container: BASE_PATH
+          description:
+            en_US: 'Container Variable: BASE_PATH'
+        - container: CSRF_TRUSTED_ORIGINS
+          description:
+            en_US: 'Container Variable: CSRF_TRUSTED_ORIGINS'
+        - container: REMOTE_AUTH_ENABLED
+          description:
+            en_US: 'Container Variable: REMOTE_AUTH_ENABLED'
+        - container: REMOTE_AUTH_BACKEND
+          description:
+            en_US: 'Container Variable: REMOTE_AUTH_BACKEND'
+        - container: REMOTE_AUTH_HEADER
+          description:
+            en_US: 'Container Variable: REMOTE_AUTH_HEADER'
+        - container: REMOTE_AUTH_AUTO_CREATE_USER
+          description:
+            en_US: 'Container Variable: REMOTE_AUTH_AUTO_CREATE_USER'
+        - container: REMOTE_AUTH_DEFAULT_GROUPS
+          description:
+            en_US: 'Container Variable: REMOTE_AUTH_DEFAULT_GROUPS'
+        - container: REMOTE_AUTH_DEFAULT_PERMISSIONS
+          description:
+            en_US: 'Container Variable: REMOTE_AUTH_DEFAULT_PERMISSIONS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8000"
+          description:
+            en_US: 'Container Port: 8000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.netbox
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Netbox is an IP address management (IPAM) and data center infrastructure management (DCIM) tool. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers. It is intended to function as a domain-specific source of truth for network operations.
+  # Brief tagline for the application
+  tagline:
+    en_US: An IP address management (IPAM) and data center infrastructure management (DCIM) tool. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers. It is intended to function as a domain-specific source of truth for network operations.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/netbox-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/netbox-logo.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Configure the required administrator, database, and Redis settings before installing. This app requires external services and will not start with empty defaults.
+  # Title for the application
+  title:
+    en_US: Netbox
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8000"

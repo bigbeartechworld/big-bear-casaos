@@ -1,0 +1,90 @@
+name: big-bear-linuxserver-mariadb
+services:
+  app:
+    image: linuxserver/mariadb:11.8.8@sha256:75ffa39d652653e73848328a667d169a20a1e084fd51a66c4be3eb754a2492c9
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_DATABASE: ''
+      MYSQL_USER: ''
+      MYSQL_PASSWORD: ''
+      REMOTE_SQL: ''
+      CLI_OPTS: ''
+    ports:
+      - target: 3306
+        published: 3306
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/mariadb/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
+        - container: MYSQL_DATABASE
+          description:
+            en_US: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_USER
+          description:
+            en_US: 'Container Variable: MYSQL_USER'
+        - container: MYSQL_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_PASSWORD'
+        - container: REMOTE_SQL
+          description:
+            en_US: 'Container Variable: REMOTE_SQL'
+        - container: CLI_OPTS
+          description:
+            en_US: 'Container Variable: CLI_OPTS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3306"
+          description:
+            en_US: 'Container Port: 3306'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.mariadb
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Mariadb is one of the most popular database servers. Made by the original developers of MySQL.
+  # Brief tagline for the application
+  tagline:
+    en_US: One of the most popular database servers. Made by the original developers of MySQL.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mariadb-git.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mariadb-git.png
+  # Title for the application
+  title:
+    en_US: Mariadb
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3306"

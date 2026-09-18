@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-blade-of-agony
+services:
+  app:
+    image: linuxserver/blade-of-agony:3.1.20260910@sha256:94847e367511092748d764e6a83a72e9d7f7bfa3fc9da5ac7172c46eed5b28f6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/blade-of-agony/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.blade-of-agony
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Wolfenstein: Blade of Agony is a story-driven WWII shooter inspired by Wolfenstein and Doom.'
+  # Brief tagline for the application
+  tagline:
+    en_US: A story-driven WWII shooter inspired by Wolfenstein and Doom.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/boa-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/boa-logo.png
+  # Title for the application
+  title:
+    en_US: Blade-of-agony
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

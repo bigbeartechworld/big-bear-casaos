@@ -1,0 +1,7 @@
+{
+  "id": "audacity",
+  "version": "4.0.0",
+  "image": "linuxserver/audacity",
+  "youtube": "",
+  "docs_link": ""
+}

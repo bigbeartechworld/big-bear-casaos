@@ -1,0 +1,88 @@
+name: big-bear-linuxserver-quassel-web
+services:
+  app:
+    image: linuxserver/quassel-web:version-019bfdc1@sha256:15453e655257907853d02a41903c255f0fd4da8a759f13f73b2573dca2d981ba
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      QUASSEL_CORE: ''
+      QUASSEL_PORT: ''
+      QUASSEL_HTTPS: ''
+      URL_BASE: ''
+    ports:
+      - target: 64080
+        published: 64080
+        protocol: tcp
+      - target: 64443
+        published: 64443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/quassel-web/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: QUASSEL_CORE
+          description:
+            en_US: 'Container Variable: QUASSEL_CORE'
+        - container: QUASSEL_PORT
+          description:
+            en_US: 'Container Variable: QUASSEL_PORT'
+        - container: QUASSEL_HTTPS
+          description:
+            en_US: 'Container Variable: QUASSEL_HTTPS'
+        - container: URL_BASE
+          description:
+            en_US: 'Container Variable: URL_BASE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "64080"
+          description:
+            en_US: 'Container Port: 64080'
+        - container: "64443"
+          description:
+            en_US: 'Container Port: 64443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.quassel-web
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/quassel-web/'
+  # Brief tagline for the application
+  tagline:
+    en_US: A web client for Quassel. Note that a Quassel-Core instance is required, we have a container available here.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/quassel-web-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/quassel-web-banner.png
+  # Title for the application
+  title:
+    en_US: Quassel-web
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "64080"

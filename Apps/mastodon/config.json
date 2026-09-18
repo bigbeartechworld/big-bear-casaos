@@ -1,0 +1,7 @@
+{
+  "id": "mastodon",
+  "version": "4.7.2",
+  "image": "linuxserver/mastodon",
+  "youtube": "",
+  "docs_link": ""
+}

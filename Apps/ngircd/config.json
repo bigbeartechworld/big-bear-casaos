@@ -1,0 +1,7 @@
+{
+  "id": "ngircd",
+  "version": "0.0.0",
+  "image": "linuxserver/ngircd",
+  "youtube": "",
+  "docs_link": ""
+}

@@ -1,0 +1,7 @@
+{
+  "id": "kicad",
+  "version": "10.0.3",
+  "image": "linuxserver/kicad",
+  "youtube": "",
+  "docs_link": ""
+}

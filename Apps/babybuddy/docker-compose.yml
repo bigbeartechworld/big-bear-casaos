@@ -1,0 +1,70 @@
+name: big-bear-linuxserver-babybuddy
+services:
+  app:
+    image: linuxserver/babybuddy:2.10.1@sha256:985a2adc74c431271d0273db9d14196cd28a50aadc943fe3b36af3c45f7030a0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CSRF_TRUSTED_ORIGINS: ''
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/babybuddy/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: CSRF_TRUSTED_ORIGINS
+          description:
+            en_US: 'Container Variable: CSRF_TRUSTED_ORIGINS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8000"
+          description:
+            en_US: 'Container Port: 8000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.babybuddy
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Babybuddy is a buddy for babies! Helps caregivers track sleep, feedings, diaper changes, tummy time and more to learn about and predict baby's needs without (as much) guess work.
+  # Brief tagline for the application
+  tagline:
+    en_US: A buddy for babies. Helps caregivers track sleep, feedings, diaper changes, tummy time and more to learn about and predict baby's needs without (as much) guess work.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/babybuddy-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/babybuddy-logo.png
+  # Title for the application
+  title:
+    en_US: Babybuddy
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8000"

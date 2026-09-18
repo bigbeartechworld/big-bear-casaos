@@ -1,0 +1,7 @@
+{
+  "id": "weixin",
+  "version": "0.0.0",
+  "image": "linuxserver/weixin",
+  "youtube": "",
+  "docs_link": ""
+}
