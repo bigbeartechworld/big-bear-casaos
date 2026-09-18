@@ -1,0 +1,7 @@
+{
+  "id": "nightlio",
+  "version": "0.1.7",
+  "image": "ghcr.io/shirsakm/nightlio-frontend",
+  "youtube": "",
+  "docs_link": "https://github.com/shirsakm/nightlio#readme"
+}

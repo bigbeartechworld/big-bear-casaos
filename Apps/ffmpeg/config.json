@@ -1,0 +1,7 @@
+{
+  "id": "ffmpeg",
+  "version": "8.1.2",
+  "image": "linuxserver/ffmpeg",
+  "youtube": "",
+  "docs_link": ""
+}

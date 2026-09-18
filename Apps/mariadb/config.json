@@ -1,0 +1,7 @@
+{
+  "id": "mariadb",
+  "version": "11.8.8",
+  "image": "linuxserver/mariadb",
+  "youtube": "",
+  "docs_link": ""
+}

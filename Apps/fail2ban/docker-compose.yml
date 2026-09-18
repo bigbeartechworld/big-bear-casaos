@@ -1,0 +1,148 @@
+name: big-bear-linuxserver-fail2ban
+services:
+  app:
+    image: linuxserver/fail2ban:1.1.0@sha256:82ca532863046968e06525539a771aa0db9598df5f8e495383c279e3d2491ddf
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      VERBOSITY: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/fail2ban/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/fail2ban/var/log:ro
+        target: /var/log:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/airsonic:ro
+        target: /remotelogs/airsonic:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/apache2:ro
+        target: /remotelogs/apache2:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/authelia:ro
+        target: /remotelogs/authelia:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/emby:ro
+        target: /remotelogs/emby:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/filebrowser:ro
+        target: /remotelogs/filebrowser:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/homeassistant:ro
+        target: /remotelogs/homeassistant:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/lighttpd:ro
+        target: /remotelogs/lighttpd:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/nextcloud:ro
+        target: /remotelogs/nextcloud:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/nginx:ro
+        target: /remotelogs/nginx:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/overseerr:ro
+        target: /remotelogs/overseerr:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/unificontroller:ro
+        target: /remotelogs/unificontroller:ro
+      - type: bind
+        source: /DATA/AppData/fail2ban/remotelogs/vaultwarden:ro
+        target: /remotelogs/vaultwarden:ro
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: VERBOSITY
+          description:
+            en_US: 'Container Variable: VERBOSITY'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /var/log:ro
+          description:
+            en_US: 'Container Path: /var/log:ro'
+        - container: /remotelogs/airsonic:ro
+          description:
+            en_US: 'Container Path: /remotelogs/airsonic:ro'
+        - container: /remotelogs/apache2:ro
+          description:
+            en_US: 'Container Path: /remotelogs/apache2:ro'
+        - container: /remotelogs/authelia:ro
+          description:
+            en_US: 'Container Path: /remotelogs/authelia:ro'
+        - container: /remotelogs/emby:ro
+          description:
+            en_US: 'Container Path: /remotelogs/emby:ro'
+        - container: /remotelogs/filebrowser:ro
+          description:
+            en_US: 'Container Path: /remotelogs/filebrowser:ro'
+        - container: /remotelogs/homeassistant:ro
+          description:
+            en_US: 'Container Path: /remotelogs/homeassistant:ro'
+        - container: /remotelogs/lighttpd:ro
+          description:
+            en_US: 'Container Path: /remotelogs/lighttpd:ro'
+        - container: /remotelogs/nextcloud:ro
+          description:
+            en_US: 'Container Path: /remotelogs/nextcloud:ro'
+        - container: /remotelogs/nginx:ro
+          description:
+            en_US: 'Container Path: /remotelogs/nginx:ro'
+        - container: /remotelogs/overseerr:ro
+          description:
+            en_US: 'Container Path: /remotelogs/overseerr:ro'
+        - container: /remotelogs/unificontroller:ro
+          description:
+            en_US: 'Container Path: /remotelogs/unificontroller:ro'
+        - container: /remotelogs/vaultwarden:ro
+          description:
+            en_US: 'Container Path: /remotelogs/vaultwarden:ro'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.fail2ban
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Fail2ban is a daemon to ban hosts that cause multiple authentication errors.
+  # Brief tagline for the application
+  tagline:
+    en_US: A daemon to ban hosts that cause multiple authentication errors.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/fail2ban-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/fail2ban-logo.png
+  # Title for the application
+  title:
+    en_US: Fail2ban
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

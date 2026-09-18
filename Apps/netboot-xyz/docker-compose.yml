@@ -1,0 +1,85 @@
+name: big-bear-netboot-xyz
+services:
+  app:
+    image: ghcr.io/netbootxyz/netbootxyz:0.7.6-nbxyz24@sha256:7bd0964fd3648cd3323772ad6ad8b0a507afe797385e4c0f587a8c23972ee4e3
+    container_name: netboot-xyz
+    ports:
+      - "3000:3000"
+      - "69:69/udp"
+      - "8080:80"
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/assets:/assets
+    environment:
+      - NGINX_PORT=80
+      - WEB_APP_PORT=3000
+      - TZ=UTC
+    restart: unless-stopped
+    x-casaos:
+      envs:
+        - container: NGINX_PORT
+          description:
+            en_US: 'Container Variable: NGINX_PORT'
+        - container: WEB_APP_PORT
+          description:
+            en_US: 'Container Variable: WEB_APP_PORT'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /assets
+          description:
+            en_US: 'Container Path: /assets'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "69"
+          description:
+            en_US: 'Container Port: 69'
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.netboot-xyz
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'netboot.xyz is a PXE app: an iPXE menu that boots OS installers and utilities over the network. This Universal App wraps the official container (web UI, TFTP, local asset HTTP). It does not run DHCP; point the LAN DHCP next-server and bootfile at this host.'
+  # Brief tagline for the application
+  tagline:
+    en_US: Network boot menu (iPXE) with TFTP and a web UI
+  # Developer's information
+  developer: netbootxyz
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/netboot-xyz.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        This app does not run DHCP. Point the LAN's existing DHCP server at this host:
+
+        - next-server / TFTP server name (option 66): this host's LAN IP
+        - bootfile (option 67): netboot.xyz.kpxe (BIOS), netboot.xyz.efi (x86_64 UEFI), or netboot.xyz-arm64.efi (ARM64 UEFI)
+
+        These boot filenames are baked into the image. Host UDP 69 must stay mapped to container 69; PXE firmware requires port 69. If another process already bound host UDP 69, TCP 3000, or TCP 8080, the container will fail to start.
+  # Title for the application
+  title:
+    en_US: netboot.xyz
+  # Category under which the application falls
+  category: Networking
+  # Default port mapping for the application
+  port_map: "3000"

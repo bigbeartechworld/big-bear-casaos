@@ -1,0 +1,234 @@
+name: big-bear-linuxserver-mastodon
+services:
+  app:
+    image: linuxserver/mastodon:4.7.2@sha256:1a6db728094ad3940da36690d8f4ee2c41124fae653fdda3758e33776d7af41a
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      LOCAL_DOMAIN: $LOCAL_DOMAIN
+      REDIS_HOST: $REDIS_HOST
+      REDIS_PORT: $REDIS_PORT
+      DB_HOST: $DB_HOST
+      DB_USER: $DB_USER
+      DB_NAME: $DB_NAME
+      DB_PASS: $DB_PASS
+      DB_PORT: $DB_PORT
+      ES_ENABLED: $ES_ENABLED
+      ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY: $ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY
+      ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY: $ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY
+      ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT: $ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT
+      SECRET_KEY_BASE: $SECRET_KEY_BASE
+      OTP_SECRET: $OTP_SECRET
+      VAPID_PRIVATE_KEY: $VAPID_PRIVATE_KEY
+      VAPID_PUBLIC_KEY: $VAPID_PUBLIC_KEY
+      SMTP_SERVER: $SMTP_SERVER
+      SMTP_PORT: $SMTP_PORT
+      SMTP_LOGIN: $SMTP_LOGIN
+      SMTP_PASSWORD: $SMTP_PASSWORD
+      SMTP_FROM_ADDRESS: $SMTP_FROM_ADDRESS
+      S3_ENABLED: $S3_ENABLED
+      WEB_DOMAIN: $WEB_DOMAIN
+      ES_HOST: $ES_HOST
+      ES_PORT: $ES_PORT
+      ES_USER: $ES_USER
+      ES_PASS: $ES_PASS
+      S3_BUCKET: $S3_BUCKET
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+      S3_ALIAS_HOST: $S3_ALIAS_HOST
+      SIDEKIQ_ONLY: $SIDEKIQ_ONLY
+      SIDEKIQ_QUEUE: $SIDEKIQ_QUEUE
+      SIDEKIQ_DEFAULT: $SIDEKIQ_DEFAULT
+      SIDEKIQ_THREADS: $SIDEKIQ_THREADS
+      DB_POOL: $DB_POOL
+      NO_CHOWN: $NO_CHOWN
+      MASTODON_PROMETHEUS_EXPORTER_ENABLED: $MASTODON_PROMETHEUS_EXPORTER_ENABLED
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+      - target: 9394
+        published: 9394
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/mastodon/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: LOCAL_DOMAIN
+          description:
+            en_US: 'Container Variable: LOCAL_DOMAIN'
+        - container: REDIS_HOST
+          description:
+            en_US: 'Container Variable: REDIS_HOST'
+        - container: REDIS_PORT
+          description:
+            en_US: 'Container Variable: REDIS_PORT'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_USER
+          description:
+            en_US: 'Container Variable: DB_USER'
+        - container: DB_NAME
+          description:
+            en_US: 'Container Variable: DB_NAME'
+        - container: DB_PASS
+          description:
+            en_US: 'Container Variable: DB_PASS'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: ES_ENABLED
+          description:
+            en_US: 'Container Variable: ES_ENABLED'
+        - container: ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY
+          description:
+            en_US: 'Container Variable: ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY'
+        - container: ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY
+          description:
+            en_US: 'Container Variable: ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY'
+        - container: ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT
+          description:
+            en_US: 'Container Variable: ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT'
+        - container: SECRET_KEY_BASE
+          description:
+            en_US: 'Container Variable: SECRET_KEY_BASE'
+        - container: OTP_SECRET
+          description:
+            en_US: 'Container Variable: OTP_SECRET'
+        - container: VAPID_PRIVATE_KEY
+          description:
+            en_US: 'Container Variable: VAPID_PRIVATE_KEY'
+        - container: VAPID_PUBLIC_KEY
+          description:
+            en_US: 'Container Variable: VAPID_PUBLIC_KEY'
+        - container: SMTP_SERVER
+          description:
+            en_US: 'Container Variable: SMTP_SERVER'
+        - container: SMTP_PORT
+          description:
+            en_US: 'Container Variable: SMTP_PORT'
+        - container: SMTP_LOGIN
+          description:
+            en_US: 'Container Variable: SMTP_LOGIN'
+        - container: SMTP_PASSWORD
+          description:
+            en_US: 'Container Variable: SMTP_PASSWORD'
+        - container: SMTP_FROM_ADDRESS
+          description:
+            en_US: 'Container Variable: SMTP_FROM_ADDRESS'
+        - container: S3_ENABLED
+          description:
+            en_US: 'Container Variable: S3_ENABLED'
+        - container: WEB_DOMAIN
+          description:
+            en_US: 'Container Variable: WEB_DOMAIN'
+        - container: ES_HOST
+          description:
+            en_US: 'Container Variable: ES_HOST'
+        - container: ES_PORT
+          description:
+            en_US: 'Container Variable: ES_PORT'
+        - container: ES_USER
+          description:
+            en_US: 'Container Variable: ES_USER'
+        - container: ES_PASS
+          description:
+            en_US: 'Container Variable: ES_PASS'
+        - container: S3_BUCKET
+          description:
+            en_US: 'Container Variable: S3_BUCKET'
+        - container: AWS_ACCESS_KEY_ID
+          description:
+            en_US: 'Container Variable: AWS_ACCESS_KEY_ID'
+        - container: AWS_SECRET_ACCESS_KEY
+          description:
+            en_US: 'Container Variable: AWS_SECRET_ACCESS_KEY'
+        - container: S3_ALIAS_HOST
+          description:
+            en_US: 'Container Variable: S3_ALIAS_HOST'
+        - container: SIDEKIQ_ONLY
+          description:
+            en_US: 'Container Variable: SIDEKIQ_ONLY'
+        - container: SIDEKIQ_QUEUE
+          description:
+            en_US: 'Container Variable: SIDEKIQ_QUEUE'
+        - container: SIDEKIQ_DEFAULT
+          description:
+            en_US: 'Container Variable: SIDEKIQ_DEFAULT'
+        - container: SIDEKIQ_THREADS
+          description:
+            en_US: 'Container Variable: SIDEKIQ_THREADS'
+        - container: DB_POOL
+          description:
+            en_US: 'Container Variable: DB_POOL'
+        - container: NO_CHOWN
+          description:
+            en_US: 'Container Variable: NO_CHOWN'
+        - container: MASTODON_PROMETHEUS_EXPORTER_ENABLED
+          description:
+            en_US: 'Container Variable: MASTODON_PROMETHEUS_EXPORTER_ENABLED'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+        - container: "9394"
+          description:
+            en_US: 'Container Port: 9394'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.mastodon
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Mastodon is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones..
+  # Brief tagline for the application
+  tagline:
+    en_US: A free, open-source social network server based on ActivityPub where users can follow friends and discover new ones. .
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mastodon-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mastodon-banner.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Configure the required database, Redis, domain, and encryption settings before installing. This app requires external services and will not start with empty defaults.
+  # Title for the application
+  title:
+    en_US: Mastodon
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

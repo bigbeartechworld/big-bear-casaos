@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-pcsx2
+services:
+  app:
+    image: linuxserver/pcsx2:2.8.2@sha256:adad5a2ca1d2fa58cc39fd4212ae20e7fcc730045e67f271a1ea491e442d30f9
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pcsx2/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pcsx2
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: PCSX2 is an open source PS2 Emulator.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open source PS2 Emulator.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/pcsx2-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/pcsx2-logo.png
+  # Title for the application
+  title:
+    en_US: Pcsx2
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

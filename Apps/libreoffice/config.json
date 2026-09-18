@@ -1,0 +1,7 @@
+{
+  "id": "libreoffice",
+  "version": "25.8.7",
+  "image": "linuxserver/libreoffice",
+  "youtube": "",
+  "docs_link": ""
+}

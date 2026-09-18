@@ -1,0 +1,94 @@
+name: big-bear-linuxserver-calibre
+services:
+  app:
+    image: linuxserver/calibre:9.14.0@sha256:63631e9a99f6cbf532759b096d9b51dde8659deb7950ee7d2ee17af0d025c07e
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CUSTOM_USER: $CUSTOM_USER
+      PASSWORD: $PASSWORD
+      CLI_ARGS: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+      - target: 8181
+        published: 8181
+        protocol: tcp
+      - target: 8081
+        published: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/calibre/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: CUSTOM_USER
+          description:
+            en_US: 'Container Variable: CUSTOM_USER'
+        - container: PASSWORD
+          description:
+            en_US: 'Container Variable: PASSWORD'
+        - container: CLI_ARGS
+          description:
+            en_US: 'Container Variable: CLI_ARGS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+        - container: "8181"
+          description:
+            en_US: 'Container Port: 8181'
+        - container: "8081"
+          description:
+            en_US: 'Container Port: 8081'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.calibre
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Calibre is a powerful and easy to use e-book manager. Users say it's outstanding and a must-have. It'll allow you to do nearly everything and it takes things a step beyond normal e-book software. It's also completely free and open source and great for both casual users and computer experts.
+  # Brief tagline for the application
+  tagline:
+    en_US: A powerful and easy to use e-book manager. Users say it's outstanding and a must-have. It'll allow you to do nearly everything and it takes things a step beyond normal e-book software. It's also completely free and open source and great for both casual users and computer experts.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/calibre-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/calibre-logo.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: The default username is admin and the password is a UUID. Change the password after installation.
+  # Title for the application
+  title:
+    en_US: Calibre
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8080"

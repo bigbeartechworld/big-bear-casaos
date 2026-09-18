@@ -1,0 +1,49 @@
+name: big-bear-linuxserver-tester
+services:
+  app:
+    image: linuxserver/tester:version-66f677b0@sha256:976ed6115060a646cf9e427b003d048d1a5aecfa4ded89b9bb7a2d5a5db9e839
+    restart: unless-stopped
+    environment:
+      URL: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+    x-casaos:
+      envs:
+        - container: URL
+          description:
+            en_US: 'Container Variable: URL'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.tester
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: This internal tool is used as a desktop sandbox in our CI process to grab a screenshot of a hopefully functional endpoint
+  # Brief tagline for the application
+  tagline:
+    en_US: This internal tool is used as a desktop sandbox in our CI process to grab a screenshot of a hopefully functional endpoint
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://images.weserv.nl/?url=https%3A%2F%2Favatars3.githubusercontent.com%2Fu%2F12324908%3Fs%3D200%26v%3D4
+  # Thumbnail image for the application (if any)
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Favatars3.githubusercontent.com%2Fu%2F12324908%3Fs%3D200%26v%3D4
+  # Title for the application
+  title:
+    en_US: Tester
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3000"

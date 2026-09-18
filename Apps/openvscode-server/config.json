@@ -1,0 +1,7 @@
+{
+  "id": "openvscode-server",
+  "version": "1.109.5",
+  "image": "linuxserver/openvscode-server",
+  "youtube": "",
+  "docs_link": ""
+}

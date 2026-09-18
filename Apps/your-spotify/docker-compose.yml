@@ -1,0 +1,96 @@
+name: big-bear-linuxserver-your_spotify
+services:
+  app:
+    image: linuxserver/your_spotify:1.20.0@sha256:34f592ef352cce88db8f64ca502d646b17aa2ecd6076df47e053241b0dbef2da
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      APP_URL: ''
+      SPOTIFY_PUBLIC: ''
+      SPOTIFY_SECRET: ''
+      SPOTIFY_API_DELAY_MS: ''
+      CORS: ''
+      MONGO_ENDPOINT: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/your_spotify/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: APP_URL
+          description:
+            en_US: 'Container Variable: APP_URL'
+        - container: SPOTIFY_PUBLIC
+          description:
+            en_US: 'Container Variable: SPOTIFY_PUBLIC'
+        - container: SPOTIFY_SECRET
+          description:
+            en_US: 'Container Variable: SPOTIFY_SECRET'
+        - container: SPOTIFY_API_DELAY_MS
+          description:
+            en_US: 'Container Variable: SPOTIFY_API_DELAY_MS'
+        - container: CORS
+          description:
+            en_US: 'Container Variable: CORS'
+        - container: MONGO_ENDPOINT
+          description:
+            en_US: 'Container Variable: MONGO_ENDPOINT'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.your-spotify
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Your_spotify is a self-hosted application that tracks what you listen and offers you a dashboard to explore statistics about it! It's composed of a web server which polls the Spotify API every now and then and a web application on which you can explore your statistics.
+  # Brief tagline for the application
+  tagline:
+    en_US: A self-hosted application that tracks what you listen and offers you a dashboard to explore statistics about it. It's composed of a web server which polls the Spotify API every now and then and a web application on which you can explore your statistics.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/your_spotify-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/your_spotify-logo.png
+  # Title for the application
+  title:
+    en_US: Your_spotify
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

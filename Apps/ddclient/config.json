@@ -1,0 +1,7 @@
+{
+  "id": "ddclient",
+  "version": "4.0.0",
+  "image": "linuxserver/ddclient",
+  "youtube": "",
+  "docs_link": ""
+}

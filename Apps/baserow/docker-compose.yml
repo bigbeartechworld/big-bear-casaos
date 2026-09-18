@@ -57,7 +57,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/baserow.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://github.com/bram2w/baserow/raw/master/docs/assets/screenshot.png
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fgithub.com%2Fbram2w%2Fbaserow%2Fraw%2Fmaster%2Fdocs%2Fassets%2Fscreenshot.png
   # Title for the application
   title:
     en_US: Baserow

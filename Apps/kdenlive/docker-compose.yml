@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-kdenlive
+services:
+  app:
+    image: linuxserver/kdenlive:423.08.5@sha256:4c908a8d2e43d788e37f7f1193014f5303b81f452942f26c46cb2a99d7db2d3b
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/kdenlive/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kdenlive
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Kdenlive is a powerful free and open source cross-platform video editing program made by the KDE community. Feature rich and production ready.
+  # Brief tagline for the application
+  tagline:
+    en_US: A powerful free and open source cross-platform video editing program made by the KDE community. Feature rich and production ready.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kdenlive-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kdenlive-logo.png
+  # Title for the application
+  title:
+    en_US: Kdenlive
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

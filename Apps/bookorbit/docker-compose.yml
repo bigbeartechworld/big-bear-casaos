@@ -1,0 +1,174 @@
+name: big-bear-bookorbit
+services:
+  app:
+    container_name: big-bear-bookorbit
+    image: ghcr.io/bookorbit/bookorbit:2.7.0@sha256:0f46241c54ba7cd07ddf7dc519386a29c98dd0f3679cebc9ca35f3305dc79e69
+    restart: unless-stopped
+    init: true
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      APP_URL: http://[YOUR_CASAOS_LAN_IP]:3000
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: bookorbit
+      POSTGRES_PASSWORD: 7b0aee8dc43c518eef646e2d
+      POSTGRES_DB: bookorbit
+      JWT_SECRET: cd94b64e8c98c7e5cab21ebc9c1e82e739c770d0f00f2626def2987942167c4e
+      SETUP_BOOTSTRAP_TOKEN: 1ba75f44baee64b32d1af876cc38e2b6
+      PUID: "1000"
+      PGID: "1000"
+      LIBRARY_BROWSE_ROOT: /books
+      BOOK_DOCK_PATH: ""
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./books:/books
+      - /DATA/AppData/$AppID/data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+    healthcheck:
+      test: ["CMD", "node", "-e", "const p=process.env.PORT||3000;fetch('http://127.0.0.1:'+p+'/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_US: 'Container Variable: NODE_ENV'
+        - container: PORT
+          description:
+            en_US: 'Container Variable: PORT'
+        - container: APP_URL
+          description:
+            en_US: 'Container Variable: APP_URL'
+        - container: POSTGRES_HOST
+          description:
+            en_US: 'Container Variable: POSTGRES_HOST'
+        - container: POSTGRES_PORT
+          description:
+            en_US: 'Container Variable: POSTGRES_PORT'
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+        - container: JWT_SECRET
+          description:
+            en_US: 'Container Variable: JWT_SECRET'
+        - container: SETUP_BOOTSTRAP_TOKEN
+          description:
+            en_US: 'Container Variable: SETUP_BOOTSTRAP_TOKEN'
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: LIBRARY_BROWSE_ROOT
+          description:
+            en_US: 'Container Variable: LIBRARY_BROWSE_ROOT'
+        - container: BOOK_DOCK_PATH
+          description:
+            en_US: 'Container Variable: BOOK_DOCK_PATH'
+      volumes:
+        - container: /books
+          description:
+            en_US: 'Container Path: /books'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+  postgres:
+    container_name: big-bear-bookorbit-postgres
+    image: pgvector/pgvector:pg18@sha256:2ba9ca5f2e7daa0f0e7723cba1ee9167bab54efd3640516a44ac1a928dd67e7a
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bookorbit
+      POSTGRES_PASSWORD: 7b0aee8dc43c518eef646e2d
+      POSTGRES_DB: bookorbit
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bookorbit -d bookorbit"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+        - container: PGDATA
+          description:
+            en_US: 'Container Variable: PGDATA'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.bookorbit
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: BookOrbit is a self-hosted library and reading platform for ebooks, PDFs, audiobooks, and comics. It syncs progress and highlights across the web reader, Kobo, and KOReader, with metadata lookup, reading stats, OPDS, and multi-user OIDC support.
+  # Brief tagline for the application
+  tagline:
+    en_US: Your self-hosted reading space for books, audiobooks, and comics
+  # Developer's information
+  developer: bookorbit
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/bookorbit.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: "\U0001F4DA BOOKORBIT SETUP\n\n1. Place your book files in the ./books folder next to the compose file, or point the bind mount at an existing library path.\n2. Update APP_URL to your server's actual address after install so Kobo sync and emails work.\n3. After starting, open http://your-server-ip:3000 and complete setup using SETUP_BOOTSTRAP_TOKEN from docker-compose.yml.\n\nThe app container runs read-only with dropped capabilities for security."
+  # Title for the application
+  title:
+    en_US: BookOrbit
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3000"

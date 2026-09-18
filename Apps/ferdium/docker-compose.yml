@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-ferdium
+services:
+  app:
+    image: linuxserver/ferdium:7.2.3@sha256:91d0b770d951cc23ad3666308708082d80bf95b32270dbf03ae3fe7f94065471
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/ferdium/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.ferdium
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application.
+  # Brief tagline for the application
+  tagline:
+    en_US: A desktop app that helps you organize how you use your favourite apps by combining them into one application.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ferdium-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/ferdium-logo.png
+  # Title for the application
+  title:
+    en_US: Ferdium
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

@@ -1,0 +1,82 @@
+name: big-bear-linuxserver-pairdrop
+services:
+  app:
+    image: linuxserver/pairdrop:1.11.2@sha256:15b6792fcd486d8ebd1853dbfb0419188ca92035da2f29f75eb18b5390fa25d1
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      RATE_LIMIT: ''
+      WS_FALLBACK: ''
+      RTC_CONFIG: ''
+      DEBUG_MODE: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pairdrop/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: RATE_LIMIT
+          description:
+            en_US: 'Container Variable: RATE_LIMIT'
+        - container: WS_FALLBACK
+          description:
+            en_US: 'Container Variable: WS_FALLBACK'
+        - container: RTC_CONFIG
+          description:
+            en_US: 'Container Variable: RTC_CONFIG'
+        - container: DEBUG_MODE
+          description:
+            en_US: 'Container Variable: DEBUG_MODE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pairdrop
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: PairDrop is a sublime alternative to AirDrop that works on all platforms. Send images, documents or text via peer to peer connection to devices in the same local network/Wi-Fi or to paired devices.
+  # Brief tagline for the application
+  tagline:
+    en_US: A sublime alternative to AirDrop that works on all platforms. Send images, documents or text via peer to peer connection to devices in the same local network/Wi-Fi or to paired devices.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/schlagmichdoch/PairDrop@master/public/images/android-chrome-512x512.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/schlagmichdoch/PairDrop@master/public/images/android-chrome-512x512.png
+  # Title for the application
+  title:
+    en_US: Pairdrop
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

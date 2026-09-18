@@ -1,0 +1,78 @@
+name: big-bear-linuxserver-doublecommander
+services:
+  app:
+    image: linuxserver/doublecommander:version-8143f818@sha256:efd6e23446d4eca9a29e3ff81b1209e18a13465fa50073d4de4fb51e233a98ac
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/doublecommander/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/doublecommander/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.doublecommander
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Double Commander is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/doublecommander-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/doublecommander-icon.png
+  # Title for the application
+  title:
+    en_US: Doublecommander
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

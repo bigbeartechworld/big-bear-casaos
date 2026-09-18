@@ -1,0 +1,7 @@
+{
+  "id": "embystat",
+  "version": "0.2.0",
+  "image": "linuxserver/embystat",
+  "youtube": "",
+  "docs_link": ""
+}

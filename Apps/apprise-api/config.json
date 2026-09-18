@@ -1,0 +1,7 @@
+{
+  "id": "apprise-api",
+  "version": "1.5.4",
+  "image": "linuxserver/apprise-api",
+  "youtube": "",
+  "docs_link": ""
+}

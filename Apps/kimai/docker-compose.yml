@@ -1,0 +1,88 @@
+name: big-bear-linuxserver-kimai
+services:
+  app:
+    image: linuxserver/kimai:2.67.0@sha256:fb8f8d1b6f984ceffbe4945ba22ee69d7ad8b86f81333b78a1d715aac61c8f1a
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      APP_SECRET: ''
+      DATABASE_URL: ''
+      TRUSTED_HOSTS: ''
+      TRUSTED_PROXIES: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/kimai/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: APP_SECRET
+          description:
+            en_US: 'Container Variable: APP_SECRET'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: TRUSTED_HOSTS
+          description:
+            en_US: 'Container Variable: TRUSTED_HOSTS'
+        - container: TRUSTED_PROXIES
+          description:
+            en_US: 'Container Variable: TRUSTED_PROXIES'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kimai
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Kimai is a professional grade time-tracking application, free and open-source. It handles use-cases of freelancers as well as companies with dozens or hundreds of users. Kimai was build to track your project times and ships with many advanced features, including but not limited to: JSON API, invoicing, data exports, multi-timer and punch-in punch-out mode, tagging, multi-user - multi-timezones - multi-language (over 30 translations existing!), authentication via SAML/LDAP/Database, two-factor authentication (2FA) with TOTP, customizable role and team permissions, responsive design, user/customer/project specific rates, advanced search & filtering, money and time budgets, advanced reporting, support for plugins and so much more.'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'A professional grade time-tracking application, free and open-source. It handles use-cases of freelancers as well as companies with dozens or hundreds of users. Kimai was build to track your project times and ships with many advanced features, including but not limited to: JSON API, invoicing, data exports, multi-timer and punch-in punch-out mode, tagging, multi-user - multi-timezones - multi-language (over 30 translations existing. ), authentication via SAML/LDAP/Database, two-factor authentication (2FA) with TOTP, customizable role and team permissions, responsive design, user/customer/project specific rates, advanced search & filtering, money and time budgets, advanced reporting, support for plugins and so much more.'
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kimai-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kimai-logo.png
+  # Title for the application
+  title:
+    en_US: Kimai
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

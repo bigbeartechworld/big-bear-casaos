@@ -1,0 +1,122 @@
+name: big-bear-linuxserver-unifi-controller
+services:
+  app:
+    image: linuxserver/unifi-controller:8.0.24@sha256:0ae315a3a45635e443899e30e86bd507c2c48922cb27f4bc7241777885f4650e
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      MEM_LIMIT: ''
+      MEM_STARTUP: ''
+    ports:
+      - target: 8443
+        published: 8443
+        protocol: tcp
+      - target: 3478
+        published: 3478
+        protocol: udp
+      - target: 10001
+        published: 10001
+        protocol: udp
+      - target: 8080
+        published: 8080
+        protocol: tcp
+      - target: 1900
+        published: 1900
+        protocol: udp
+      - target: 8843
+        published: 8843
+        protocol: tcp
+      - target: 8880
+        published: 8880
+        protocol: tcp
+      - target: 6789
+        published: 6789
+        protocol: tcp
+      - target: 5514
+        published: 5514
+        protocol: udp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/unifi-controller/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: MEM_LIMIT
+          description:
+            en_US: 'Container Variable: MEM_LIMIT'
+        - container: MEM_STARTUP
+          description:
+            en_US: 'Container Variable: MEM_STARTUP'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8443"
+          description:
+            en_US: 'Container Port: 8443'
+        - container: "3478"
+          description:
+            en_US: 'Container Port: 3478'
+        - container: "10001"
+          description:
+            en_US: 'Container Port: 10001'
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+        - container: "1900"
+          description:
+            en_US: 'Container Port: 1900'
+        - container: "8843"
+          description:
+            en_US: 'Container Port: 8843'
+        - container: "8880"
+          description:
+            en_US: 'Container Port: 8880'
+        - container: "6789"
+          description:
+            en_US: 'Container Port: 6789'
+        - container: "5514"
+          description:
+            en_US: 'Container Port: 5514'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.unifi-controller
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/unifi-controller/'
+  # Brief tagline for the application
+  tagline:
+    en_US: The Unifi-controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/unifi-controller-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/unifi-banner.png
+  # Title for the application
+  title:
+    en_US: Unifi-controller
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8443"

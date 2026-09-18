@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-d2-builder
+services:
+  app:
+    image: linuxserver/d2-builder:0.9.0@sha256:7f1a533650c6edb3a135fc54abda14384c0d4475b4e67e17a29d532d6620f03b
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/d2-builder/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.d2-builder
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: This container needs special attention. Please check https://hub.docker.com/r/linuxserver/d2-builder for details.
+  # Brief tagline for the application
+  tagline:
+    en_US: 'This container needs special attention. Please check https://hub. Docker. Com/r/linuxserver/d2-builder for details. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: D2-builder
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "80"

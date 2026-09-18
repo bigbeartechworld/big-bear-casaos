@@ -1,0 +1,7 @@
+{
+  "id": "thelounge",
+  "version": "4.5.2",
+  "image": "linuxserver/thelounge",
+  "youtube": "",
+  "docs_link": ""
+}

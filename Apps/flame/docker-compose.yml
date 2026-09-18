@@ -64,7 +64,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/flame.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://github.com/pawelmalak/flame/raw/master/.github/home.png
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fgithub.com%2Fpawelmalak%2Fflame%2Fraw%2Fmaster%2F.github%2Fhome.png
   # Title for the application
   title:
     en_US: Flame

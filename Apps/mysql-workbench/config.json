@@ -1,0 +1,7 @@
+{
+  "id": "mysql-workbench",
+  "version": "8.0.47",
+  "image": "linuxserver/mysql-workbench",
+  "youtube": "",
+  "docs_link": ""
+}

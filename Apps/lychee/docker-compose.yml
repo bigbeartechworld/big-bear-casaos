@@ -1,0 +1,112 @@
+name: big-bear-linuxserver-lychee
+services:
+  app:
+    image: linuxserver/lychee:7.8.3@sha256:97438577ac51fa79382ec4cfaac3c43f890c2cc219b655b980702c6af2921c66
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DB_CONNECTION: $DB_CONNECTION
+      DB_HOST: $DB_HOST
+      DB_PORT: $DB_PORT
+      DB_USERNAME: $DB_USERNAME
+      DB_PASSWORD: $DB_PASSWORD
+      DB_DATABASE: $DB_DATABASE
+      APP_NAME: $APP_NAME
+      APP_URL: $APP_URL
+      TRUSTED_PROXIES: $TRUSTED_PROXIES
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/lychee/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/lychee/pictures
+        target: /pictures
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: DB_CONNECTION
+          description:
+            en_US: 'Container Variable: DB_CONNECTION'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: DB_USERNAME
+          description:
+            en_US: 'Container Variable: DB_USERNAME'
+        - container: DB_PASSWORD
+          description:
+            en_US: 'Container Variable: DB_PASSWORD'
+        - container: DB_DATABASE
+          description:
+            en_US: 'Container Variable: DB_DATABASE'
+        - container: APP_NAME
+          description:
+            en_US: 'Container Variable: APP_NAME'
+        - container: APP_URL
+          description:
+            en_US: 'Container Variable: APP_URL'
+        - container: TRUSTED_PROXIES
+          description:
+            en_US: 'Container Variable: TRUSTED_PROXIES'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /pictures
+          description:
+            en_US: 'Container Path: /pictures'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.lychee
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Lychee is a free photo-management tool, which runs on your server or web-space. Installing is a matter of seconds. Upload, manage and share photos like from a native application. Lychee comes with everything you need and all your photos are stored securely.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free photo-management tool, which runs on your server or web-space. Installing is a matter of seconds. Upload, manage and share photos like from a native application. Lychee comes with everything you need and all your photos are stored securely.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lychee-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lychee-icon.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Configure the required database, application name, and URL settings before installing. This app requires an external database and will not start with empty defaults.
+  # Title for the application
+  title:
+    en_US: Lychee
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

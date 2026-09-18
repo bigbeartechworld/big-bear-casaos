@@ -1,0 +1,7 @@
+{
+  "id": "kali-linux",
+  "version": "0.0.0",
+  "image": "linuxserver/kali-linux",
+  "youtube": "",
+  "docs_link": ""
+}

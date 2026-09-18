@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-plex-nvidia
     # Image to be used for the container
-    image: linuxserver/plex:1.43.3@sha256:d5ee6068a20ae57f95060038eaef292cdfd4285efb213ea4daaccdc184e45d1b
+    image: linuxserver/plex:1.43.4@sha256:1f6f97d76e7bdb013789e94c838f2d9133b01ee4b2d4194148e492c4e4f12d90
     # Environment variables for the container
     environment:
       - PUID=1000 # specify the user id

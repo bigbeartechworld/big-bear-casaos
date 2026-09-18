@@ -1,0 +1,62 @@
+name: big-bear-linuxserver-feed2toot
+services:
+  app:
+    image: linuxserver/feed2toot:0.17.20251115@sha256:59e3ea300189052aba25c527a3501ade5c3a57466761c8a1e0ab1c8bdf90170d
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      FEED_LIMIT: ''
+    volumes:
+      - type: bind
+        source: /DATA/AppData/feed2toot/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: FEED_LIMIT
+          description:
+            en_US: 'Container Variable: FEED_LIMIT'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.feed2toot
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Feed2toot automatically parses rss feeds, identifies new posts and posts them on the Mastodon social network.
+  # Brief tagline for the application
+  tagline:
+    en_US: 'Automatically parses rss feeds, identifies new posts and posts them on the Mastodon social network. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: Feed2toot
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8080"

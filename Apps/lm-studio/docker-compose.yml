@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-lm-studio
+services:
+  app:
+    image: linuxserver/lm-studio:version-2026-09-12@sha256:29d2149a8046d54be16a9a3ae60568f63e6e886bed453d5884f8cfa93a3ac389
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/lm-studio/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.lm-studio
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: LM Studio can run local AI models like gpt-oss, Llama, Gemma, Qwen, and DeepSeek privately on your computer.
+  # Brief tagline for the application
+  tagline:
+    en_US: Can run local AI models like gpt-oss, Llama, Gemma, Qwen, and DeepSeek privately on your computer.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lmstudio-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lmstudio-logo.png
+  # Title for the application
+  title:
+    en_US: Lm-studio
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

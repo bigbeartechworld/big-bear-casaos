@@ -1,0 +1,70 @@
+name: big-bear-linuxserver-pwndrop
+services:
+  app:
+    image: linuxserver/pwndrop:1.0.1@sha256:c81021c92464579cdfc9fa686ffa44f81a132b679fc8f3b6fbe3cfbeec423582
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      SECRET_PATH: ''
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/pwndrop/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: SECRET_PATH
+          description:
+            en_US: 'Container Variable: SECRET_PATH'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pwndrop
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Pwndrop is a self-deployable file hosting service for sending out red teaming payloads or securely sharing your private files over HTTP and WebDAV.
+  # Brief tagline for the application
+  tagline:
+    en_US: A self-deployable file hosting service for sending out red teaming payloads or securely sharing your private files over HTTP and WebDAV.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/kgretzky/pwndrop@master/media/pwndrop-logo-512.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/kgretzky/pwndrop@master/media/pwndrop-logo-512.png
+  # Title for the application
+  title:
+    en_US: Pwndrop
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8080"

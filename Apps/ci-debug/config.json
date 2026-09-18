@@ -1,0 +1,7 @@
+{
+  "id": "ci-debug",
+  "version": "0.0.0",
+  "image": "linuxserver/ci-debug",
+  "youtube": "",
+  "docs_link": ""
+}

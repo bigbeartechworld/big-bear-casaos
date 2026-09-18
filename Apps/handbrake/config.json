@@ -1,0 +1,7 @@
+{
+  "id": "handbrake",
+  "version": "1.11.2",
+  "image": "linuxserver/handbrake",
+  "youtube": "",
+  "docs_link": ""
+}

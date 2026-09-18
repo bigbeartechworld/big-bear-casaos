@@ -1,0 +1,7 @@
+{
+  "id": "qemu-static",
+  "version": "10.0.2",
+  "image": "linuxserver/qemu-static",
+  "youtube": "",
+  "docs_link": ""
+}

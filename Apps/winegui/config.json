@@ -1,0 +1,7 @@
+{
+  "id": "winegui",
+  "version": "4.4.0",
+  "image": "linuxserver/winegui",
+  "youtube": "",
+  "docs_link": ""
+}

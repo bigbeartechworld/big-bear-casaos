@@ -1,0 +1,99 @@
+name: big-bear-linuxserver-steamos
+services:
+  app:
+    image: linuxserver/steamos:version-2024-12-20@sha256:04adf2c7af1c97c7cf9d8949aebeeaa8ccfc672e24e6bbebe72a95b06013f5af
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DRINODE: ''
+      HOST_IP: ''
+      STARTUP: ''
+      RESOLUTION: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/steamos/config
+        target: /config
+      - type: bind
+        source: /dev/input
+        target: /dev/input
+      - type: bind
+        source: /run/udev/data
+        target: /run/udev/data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: DRINODE
+          description:
+            en_US: 'Container Variable: DRINODE'
+        - container: HOST_IP
+          description:
+            en_US: 'Container Variable: HOST_IP'
+        - container: STARTUP
+          description:
+            en_US: 'Container Variable: STARTUP'
+        - container: RESOLUTION
+          description:
+            en_US: 'Container Variable: RESOLUTION'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /dev/input
+          description:
+            en_US: 'Container Path: /dev/input'
+        - container: /run/udev/data
+          description:
+            en_US: 'Container Path: /run/udev/data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.steamos
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: SteamOS is an Arch based Linux distribution made by Valve Software. This container is a vanilla Arch install with Steam repositories added for software support. This container will only work with modern AMD/Intel GPUs on a real Linux Host
+  # Brief tagline for the application
+  tagline:
+    en_US: An Arch based Linux distribution made by Valve Software. This container is a vanilla Arch install with Steam repositories added for software support. This container will only work with modern AMD/Intel GPUs on a real Linux Host
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/steamos-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/steamos-logo.png
+  # Title for the application
+  title:
+    en_US: Steamos
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3000"

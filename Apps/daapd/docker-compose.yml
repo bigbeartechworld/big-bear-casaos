@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-daapd
+services:
+  app:
+    image: linuxserver/daapd:28.10.20250118@sha256:c26717699965381d1ca009b60b4f6bb280c4b812b7693d2b4cd99686c2e1e02e
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/daapd/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/daapd/music
+        target: /music
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /music
+          description:
+            en_US: 'Container Path: /music'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.daapd
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/daapd/'
+  # Brief tagline for the application
+  tagline:
+    en_US: '(iTunes) media server with support for AirPlay devices, Apple Remote (and compatibles), Chromecast, MPD and internet radio. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/daapd-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/daapd-icon.png
+  # Title for the application
+  title:
+    en_US: Daapd
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "80"

@@ -1,0 +1,7 @@
+{
+  "id": "habridge",
+  "version": "5.4.1",
+  "image": "linuxserver/habridge",
+  "youtube": "",
+  "docs_link": ""
+}

@@ -1,0 +1,7 @@
+{
+  "id": "quassel-web",
+  "version": "0.0.0",
+  "image": "linuxserver/quassel-web",
+  "youtube": "",
+  "docs_link": ""
+}

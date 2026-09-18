@@ -1,0 +1,80 @@
+name: big-bear-linuxserver-diskover
+services:
+  app:
+    image: linuxserver/diskover:2.3.5@sha256:7cef36aff4aa3b664fc58c8a71021453a0b22bc156cb47b7fac3a601c78de880
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      ES_HOST: ''
+      ES_PORT: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/diskover/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/diskover/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: ES_HOST
+          description:
+            en_US: 'Container Variable: ES_HOST'
+        - container: ES_PORT
+          description:
+            en_US: 'Container Variable: ES_PORT'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.diskover
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Diskover is an open source file system indexer that uses Elasticsearch to index and manage data across heterogeneous storage systems.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open source file system indexer that uses Elasticsearch to index and manage data across heterogeneous storage systems.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/diskoverdata/diskover-community@master/diskover-web/public/images/diskover.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/diskoverdata/diskover-community@master/diskover-web/public/images/diskover.png
+  # Title for the application
+  title:
+    en_US: Diskover
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

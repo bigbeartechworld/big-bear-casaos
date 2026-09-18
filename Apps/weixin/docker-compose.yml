@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-weixin
+services:
+  app:
+    image: linuxserver/weixin:version-f1376de7@sha256:200f4b7ed2bb29c6d366e804b8cbea5f7030d7a20f38e11cfeb03e23a6ad79d5
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/weixin/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.weixin
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Weixin (WeChat) is an instant messaging, social media, and mobile payment app developed by Tencent.
+  # Brief tagline for the application
+  tagline:
+    en_US: (WeChat) is an instant messaging, social media, and mobile payment app developed by Tencent.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/weixin-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/weixin-logo.png
+  # Title for the application
+  title:
+    en_US: Weixin
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

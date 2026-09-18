@@ -1,0 +1,7 @@
+{
+  "id": "mullvad-browser",
+  "version": "15.0.20251116",
+  "image": "linuxserver/mullvad-browser",
+  "youtube": "",
+  "docs_link": ""
+}

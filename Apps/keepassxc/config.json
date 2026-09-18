@@ -1,0 +1,7 @@
+{
+  "id": "keepassxc",
+  "version": "2.7.12",
+  "image": "linuxserver/keepassxc",
+  "youtube": "",
+  "docs_link": ""
+}

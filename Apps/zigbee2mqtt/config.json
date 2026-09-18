@@ -1,6 +1,6 @@
 {
   "id": "zigbee2mqtt",
-  "version": "2.13.0",
+  "version": "2.14.1",
   "image": "koenkk/zigbee2mqtt",
   "youtube": "",
   "docs_link": ""

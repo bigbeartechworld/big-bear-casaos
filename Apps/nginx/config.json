@@ -1,0 +1,7 @@
+{
+  "id": "nginx",
+  "version": "1.30.4",
+  "image": "linuxserver/nginx",
+  "youtube": "",
+  "docs_link": ""
+}

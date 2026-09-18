@@ -1,0 +1,102 @@
+name: big-bear-linuxserver-librespeed
+services:
+  app:
+    image: linuxserver/librespeed:6.3.0@sha256:5e7ba354832be35ed2638f58ff035e101c6494d7282a2cf88aa180545d7fd58c
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PASSWORD: ''
+      CUSTOM_RESULTS: ''
+      DB_TYPE: ''
+      DB_NAME: ''
+      DB_HOSTNAME: ''
+      DB_USERNAME: ''
+      DB_PASSWORD: ''
+      DB_PORT: ''
+      IPINFO_APIKEY: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/librespeed/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: PASSWORD
+          description:
+            en_US: 'Container Variable: PASSWORD'
+        - container: CUSTOM_RESULTS
+          description:
+            en_US: 'Container Variable: CUSTOM_RESULTS'
+        - container: DB_TYPE
+          description:
+            en_US: 'Container Variable: DB_TYPE'
+        - container: DB_NAME
+          description:
+            en_US: 'Container Variable: DB_NAME'
+        - container: DB_HOSTNAME
+          description:
+            en_US: 'Container Variable: DB_HOSTNAME'
+        - container: DB_USERNAME
+          description:
+            en_US: 'Container Variable: DB_USERNAME'
+        - container: DB_PASSWORD
+          description:
+            en_US: 'Container Variable: DB_PASSWORD'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: IPINFO_APIKEY
+          description:
+            en_US: 'Container Variable: IPINFO_APIKEY'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.librespeed
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Librespeed is a very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. No Flash, No Java, No Websocket, No Bullshit.
+  # Brief tagline for the application
+  tagline:
+    en_US: A very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. No Flash, No Java, No Websocket, No Bullshit.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/librespeed/speedtest@master/.logo/logo3.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/librespeed/speedtest@master/.logo/logo3.png
+  # Title for the application
+  title:
+    en_US: Librespeed
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

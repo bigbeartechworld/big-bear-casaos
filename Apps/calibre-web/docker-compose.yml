@@ -1,0 +1,80 @@
+name: big-bear-linuxserver-calibre-web
+services:
+  app:
+    image: linuxserver/calibre-web:0.6.27@sha256:0767226fcf209d12d93ef1d29711ebc22c1c9db2c8a4b0e4469a8771fe269a52
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DOCKER_MODS: ''
+      OAUTHLIB_RELAX_TOKEN_SCOPE: ''
+    ports:
+      - target: 8083
+        published: 8083
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/calibre-web/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/calibre-web/books
+        target: /books
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: DOCKER_MODS
+          description:
+            en_US: 'Container Variable: DOCKER_MODS'
+        - container: OAUTHLIB_RELAX_TOKEN_SCOPE
+          description:
+            en_US: 'Container Variable: OAUTHLIB_RELAX_TOKEN_SCOPE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /books
+          description:
+            en_US: 'Container Path: /books'
+      ports:
+        - container: "8083"
+          description:
+            en_US: 'Container Port: 8083'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.calibre-web
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Calibre-web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database. It is also possible to integrate google drive and edit metadata and your calibre library through the app itself. This software is a fork of library and licensed under the GPL v3 License.
+  # Brief tagline for the application
+  tagline:
+    en_US: A web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database. It is also possible to integrate google drive and edit metadata and your calibre library through the app itself. This software is a fork of library and licensed under the GPL v3 License.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/calibre-web-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/calibre-web-icon.png
+  # Title for the application
+  title:
+    en_US: Calibre-web
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8083"

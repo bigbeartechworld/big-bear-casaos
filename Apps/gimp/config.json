@@ -1,0 +1,7 @@
+{
+  "id": "gimp",
+  "version": "0.0.0",
+  "image": "linuxserver/gimp",
+  "youtube": "",
+  "docs_link": ""
+}

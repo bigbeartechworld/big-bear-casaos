@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-tautulli
+services:
+  app:
+    image: linuxserver/tautulli:2.18.1@sha256:e35570d636471f8aabfac7044057712679f954844a763ba735baa9659ea142b5
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 8181
+        published: 8181
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/tautulli/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8181"
+          description:
+            en_US: 'Container Port: 8181'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.tautulli
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Tautulli is a python based web application for monitoring, analytics and notifications for Plex Media Server.
+  # Brief tagline for the application
+  tagline:
+    en_US: A python based web application for monitoring, analytics and notifications for Plex Media Server.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/tautulli-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/tautulli-icon.png
+  # Title for the application
+  title:
+    en_US: Tautulli
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8181"

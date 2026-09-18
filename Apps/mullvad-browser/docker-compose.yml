@@ -1,0 +1,84 @@
+name: big-bear-linuxserver-mullvad-browser
+services:
+  app:
+    image: linuxserver/mullvad-browser:15.0.20251116@sha256:2bb0a028813463e3e7d2dbdbfb5727d7928fb7e8a17e206435ba27e61836d586
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      LOCAL_NET: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/mullvad-browser/config
+        target: /config
+      - type: bind
+        source: /DATA/Downloads
+        target: /config/Downloads
+    cap_add:
+      - NET_ADMIN
+    shm_size: 1gb
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: LOCAL_NET
+          description:
+            en_US: 'Container Variable: LOCAL_NET'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /config/Downloads
+          description:
+            en_US: 'Container Path: /config/Downloads'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.mullvad-browser
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: The Mullvad Browser is a privacy-focused web browser developed in a collaboration between Mullvad VPN and the Tor Project. It’s designed to minimize tracking and fingerprinting. You could say it’s a Tor Browser to use without the Tor Network. Instead, you can use it with a trustworthy VPN.
+  # Brief tagline for the application
+  tagline:
+    en_US: The Mullvad Browser is a privacy-focused web browser developed in a collaboration between Mullvad VPN and the Tor Project. It’s designed to minimize tracking and fingerprinting. You could say it’s a Tor Browser to use without the Tor Network. Instead, you can use it with a trustworthy VPN.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mullvad-browser-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/mullvad-browser-logo.png
+  # Title for the application
+  title:
+    en_US: Mullvad-browser
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

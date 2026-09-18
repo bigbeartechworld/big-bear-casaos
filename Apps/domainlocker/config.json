@@ -1,0 +1,7 @@
+{
+  "id": "domainlocker",
+  "version": "0.2.4",
+  "image": "ghcr.io/lissy93/domain-locker",
+  "youtube": "",
+  "docs_link": "https://github.com/Lissy93/domain-locker"
+}

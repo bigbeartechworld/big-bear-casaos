@@ -1,0 +1,110 @@
+name: big-bear-arma3-server
+services:
+  app:
+    image: ghcr.io/brettmayson/arma3server/arma3server:latest@sha256:951fb164243d35d815259a9ddd2f9ce7b5375d366c665ee7c78e752717fde815
+    container_name: arma3-server
+    ports:
+      - "2302-2306:2302-2306/udp"
+    volumes:
+      - /DATA/AppData/$AppID/mpmissions:/arma3/mpmissions
+      - /DATA/AppData/$AppID/configs:/arma3/configs
+      - /DATA/AppData/$AppID/mods:/arma3/mods
+      - /DATA/AppData/$AppID/servermods:/arma3/servermods
+      - /DATA/AppData/$AppID/addons:/arma3/addons
+      - /DATA/AppData/$AppID/steamcmd:/steamcmd
+    environment:
+      - STEAM_USER=${STEAM_USER:-}
+      - STEAM_PASSWORD=${STEAM_PASSWORD:-}
+      - PORT=2302
+      - ARMA_CONFIG=main.cfg
+      - ARMA_PROFILE=main
+      - ARMA_WORLD=empty
+      - ARMA_LIMITFPS=100
+      - ARMA_BINARY=./arma3server_x64
+      - ARMA_PARAMS=
+      - TZ=UTC
+    restart: unless-stopped
+    x-casaos:
+      envs:
+        - container: STEAM_USER
+          description:
+            en_US: 'Container Variable: STEAM_USER'
+        - container: STEAM_PASSWORD
+          description:
+            en_US: 'Container Variable: STEAM_PASSWORD'
+        - container: PORT
+          description:
+            en_US: 'Container Variable: PORT'
+        - container: ARMA_CONFIG
+          description:
+            en_US: 'Container Variable: ARMA_CONFIG'
+        - container: ARMA_PROFILE
+          description:
+            en_US: 'Container Variable: ARMA_PROFILE'
+        - container: ARMA_WORLD
+          description:
+            en_US: 'Container Variable: ARMA_WORLD'
+        - container: ARMA_LIMITFPS
+          description:
+            en_US: 'Container Variable: ARMA_LIMITFPS'
+        - container: ARMA_BINARY
+          description:
+            en_US: 'Container Variable: ARMA_BINARY'
+        - container: ARMA_PARAMS
+          description:
+            en_US: 'Container Variable: ARMA_PARAMS'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /arma3/mpmissions
+          description:
+            en_US: 'Container Path: /arma3/mpmissions'
+        - container: /arma3/configs
+          description:
+            en_US: 'Container Path: /arma3/configs'
+        - container: /arma3/mods
+          description:
+            en_US: 'Container Path: /arma3/mods'
+        - container: /arma3/servermods
+          description:
+            en_US: 'Container Path: /arma3/servermods'
+        - container: /arma3/addons
+          description:
+            en_US: 'Container Path: /arma3/addons'
+        - container: /steamcmd
+          description:
+            en_US: 'Container Path: /steamcmd'
+      ports:
+        - container: 2302-2306
+          description:
+            en_US: 'Container Port: 2302-2306'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.arma3-server
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Arma 3 Dedicated Server. Updates to the latest version every time it is restarted. Supports mission configs mods and headless clients.
+  # Brief tagline for the application
+  tagline:
+    en_US: Arma 3 Dedicated Server
+  # Developer's information
+  developer: BrettMayson
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/steam.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Title for the application
+  title:
+    en_US: Arma 3 Server
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "2302"

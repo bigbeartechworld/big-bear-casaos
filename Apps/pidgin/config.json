@@ -1,0 +1,7 @@
+{
+  "id": "pidgin",
+  "version": "2.14.14",
+  "image": "linuxserver/pidgin",
+  "youtube": "",
+  "docs_link": ""
+}

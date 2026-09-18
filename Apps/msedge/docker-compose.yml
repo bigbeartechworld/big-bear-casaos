@@ -1,0 +1,75 @@
+name: big-bear-linuxserver-msedge
+services:
+  app:
+    image: linuxserver/msedge:153.0.4234@sha256:71a209e720aef2dfa5601dc3004c9c3ba4bbfb7e143e8289919735f776cafa9a
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      EDGE_CLI: ''
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/msedge/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: EDGE_CLI
+          description:
+            en_US: 'Container Variable: EDGE_CLI'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.msedge
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Microsoft Edge is a cross-platform web browser developed by Microsoft and based on Chromium.
+  # Brief tagline for the application
+  tagline:
+    en_US: A cross-platform web browser developed by Microsoft and based on Chromium.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/edge-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/edge-logo.png
+  # Title for the application
+  title:
+    en_US: Msedge
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

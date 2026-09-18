@@ -1,0 +1,7 @@
+{
+  "id": "mediaelch",
+  "version": "2.12.0",
+  "image": "linuxserver/mediaelch",
+  "youtube": "",
+  "docs_link": ""
+}

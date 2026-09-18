@@ -1,0 +1,74 @@
+name: big-bear-linuxserver-changedetection.io
+services:
+  app:
+    image: linuxserver/changedetection.io:0.60.6@sha256:7deab325d9046bc1155c1598d5d65202950d96c7e4b337fc1fdf89eaca0be039
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      BASE_URL: ''
+      PLAYWRIGHT_DRIVER_URL: ''
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/changedetection.io/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: BASE_URL
+          description:
+            en_US: 'Container Variable: BASE_URL'
+        - container: PLAYWRIGHT_DRIVER_URL
+          description:
+            en_US: 'Container Variable: PLAYWRIGHT_DRIVER_URL'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "5000"
+          description:
+            en_US: 'Container Port: 5000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.changedetection-io
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Changedetection.io provides free, open-source web page monitoring, notification and change detection.
+  # Brief tagline for the application
+  tagline:
+    en_US: Provides free, open-source web page monitoring, notification and change detection.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/changedetection-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/changedetection-icon.png
+  # Title for the application
+  title:
+    en_US: Changedetection.io
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "5000"

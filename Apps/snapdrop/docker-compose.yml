@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-snapdrop
+services:
+  app:
+    image: linuxserver/snapdrop:version-f88d46ed@sha256:3a1423028607899c0bdb62fb3c7a02d43862bb24098cb13a78d91a795a7340d5
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/snapdrop/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.snapdrop
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Visit homepage: https://hub.docker.com/r/linuxserver/snapdrop/'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'A local file sharing in your browser. Inspired by Apple''s Airdrop. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/snapdrop-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/snapdrop/snapdrop@master/client/images/logo_transparent_512x512.png
+  # Title for the application
+  title:
+    en_US: Snapdrop
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "80"

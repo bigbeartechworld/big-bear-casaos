@@ -5,7 +5,7 @@ services:
   # Main Portainer service configuration
   app:
     container_name: big-bear-portainer # Name of the running container
-    image: portainer/portainer-ce:2.44.0-alpine@sha256:5376fd96f0bae14be7285ceb24c5cf9470dc23f19cdde74ff4c65d11cbe96eb2 # Image to be used
+    image: portainer/portainer-ce:2.45.0-alpine@sha256:e6b0225f4bbc989e398c85062f7426f8cf4b61f8aca6f40bf44789d1dada1949 # Image to be used
     network_mode: bridge # Network mode to be used
     ports: # Port mapping between host and container
       - 8000:8000

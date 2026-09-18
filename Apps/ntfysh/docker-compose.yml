@@ -5,7 +5,7 @@ services:
   # Main application service configuration
   app:
     # Docker image to be used for the service
-    image: binwiederhier/ntfy:v2.27.0@sha256:f2419f405127afa868f10985c1a41449e673477cee1eb19994339a5ae8b592e7
+    image: binwiederhier/ntfy:v2.28.0@sha256:6ef4b819f722fccdc036af611c4774cfdc2de821ab74fdd48bbf4c9d6f8973da
     # Command to run inside the container
     command:
       - serve
@@ -61,7 +61,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ntfy.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://ntfy.sh/_next/static/media/screenshot-web-3.de6f19af.png
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fntfy.sh%2F_next%2Fstatic%2Fmedia%2Fscreenshot-web-3.de6f19af.png
   # Title for the application
   title:
     en_US: Ntfy.sh

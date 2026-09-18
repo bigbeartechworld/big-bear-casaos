@@ -1,0 +1,84 @@
+name: big-bear-linuxserver-foldingathome
+services:
+  app:
+    image: linuxserver/foldingathome:8.5.6@sha256:ebb32940e4bba0910efaf13dcb4aadc6da9281e81012e6644641c9042ffeb3a1
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      ACCOUNT_TOKEN: ''
+      MACHINE_NAME: ''
+      CLI_ARGS: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 7396
+        published: 7396
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/foldingathome/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: ACCOUNT_TOKEN
+          description:
+            en_US: 'Container Variable: ACCOUNT_TOKEN'
+        - container: MACHINE_NAME
+          description:
+            en_US: 'Container Variable: MACHINE_NAME'
+        - container: CLI_ARGS
+          description:
+            en_US: 'Container Variable: CLI_ARGS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "7396"
+          description:
+            en_US: 'Container Port: 7396'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.foldingathome
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Folding@home is a distributed computing project for simulating protein dynamics, including the process of protein folding and the movements of proteins implicated in a variety of diseases. It brings together citizen scientists who volunteer to run simulations of protein dynamics on their personal computers. Insights from this data are helping scientists to better understand biology, and providing new opportunities for developing therapeutics.
+  # Brief tagline for the application
+  tagline:
+    en_US: A distributed computing project for simulating protein dynamics, including the process of protein folding and the movements of proteins implicated in a variety of diseases. It brings together citizen scientists who volunteer to run simulations of protein dynamics on their personal computers. Insights from this data are helping scientists to better understand biology, and providing new opportunities for developing therapeutics.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/foldingathome-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/foldingathome-logo.png
+  # Title for the application
+  title:
+    en_US: Foldingathome
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

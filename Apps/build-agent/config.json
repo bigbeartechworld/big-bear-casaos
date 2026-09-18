@@ -1,0 +1,7 @@
+{
+  "id": "build-agent",
+  "version": "0.0.0",
+  "image": "linuxserver/build-agent",
+  "youtube": "",
+  "docs_link": ""
+}

@@ -1,0 +1,7 @@
+{
+  "id": "librewolf",
+  "version": "155.0.1",
+  "image": "linuxserver/librewolf",
+  "youtube": "",
+  "docs_link": ""
+}

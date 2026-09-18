@@ -1,0 +1,78 @@
+name: big-bear-linuxserver-bitcoin-knots
+services:
+  app:
+    image: linuxserver/bitcoin-knots:version-29.4.knots20260508.1-noble1@sha256:c5f17ac3492af411bf83e2a62c1640be1b53b551570d3d39876c1b18bec82879
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+      - target: 8333
+        published: 8333
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/bitcoin-knots/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+        - container: "8333"
+          description:
+            en_US: 'Container Port: 8333'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.bitcoin-knots
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Bitcoin Knots can be used as a desktop client for regular payments or as a full node server utility for merchants and other payment services.
+  # Brief tagline for the application
+  tagline:
+    en_US: Can be used as a desktop client for regular payments or as a full node server utility for merchants and other payment services.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/bitcoin-knots-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/bitcoin-knots-logo.png
+  # Title for the application
+  title:
+    en_US: Bitcoin-knots
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

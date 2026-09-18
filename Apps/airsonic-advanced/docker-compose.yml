@@ -1,0 +1,98 @@
+name: big-bear-linuxserver-airsonic-advanced
+services:
+  app:
+    image: linuxserver/airsonic-advanced:11.1.4@sha256:e9272f1fb326c25ebb41c8b26441edd15b51985a375711cb338556c14d3d6d5d
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CONTEXT_PATH: ''
+      JAVA_OPTS: ''
+    ports:
+      - target: 4040
+        published: 4040
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/airsonic-advanced/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/airsonic-advanced/music
+        target: /music
+      - type: bind
+        source: /DATA/AppData/airsonic-advanced/playlists
+        target: /playlists
+      - type: bind
+        source: /DATA/AppData/airsonic-advanced/podcasts
+        target: /podcasts
+      - type: bind
+        source: /DATA/AppData/airsonic-advanced/media
+        target: /media
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: CONTEXT_PATH
+          description:
+            en_US: 'Container Variable: CONTEXT_PATH'
+        - container: JAVA_OPTS
+          description:
+            en_US: 'Container Variable: JAVA_OPTS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /music
+          description:
+            en_US: 'Container Path: /music'
+        - container: /playlists
+          description:
+            en_US: 'Container Path: /playlists'
+        - container: /podcasts
+          description:
+            en_US: 'Container Path: /podcasts'
+        - container: /media
+          description:
+            en_US: 'Container Path: /media'
+      ports:
+        - container: "4040"
+          description:
+            en_US: 'Container Port: 4040'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.airsonic-advanced
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Airsonic-advanced is a free, web-based media streamer, providing ubiquitious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.
+  # Brief tagline for the application
+  tagline:
+    en_US: A free, web-based media streamer, providing ubiquitious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/airsonic-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/airsonic-banner.png
+  # Title for the application
+  title:
+    en_US: Airsonic-advanced
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "4040"

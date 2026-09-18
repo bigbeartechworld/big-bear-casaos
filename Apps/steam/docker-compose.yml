@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-steam
+services:
+  app:
+    image: linuxserver/steam:version-0779c5e2@sha256:ed97628a6943b103e3f2ff617c6ceb9062db16cebab6cf71e42a1ceb5ea0cff5
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/steam/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.steam
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Steam is the ultimate destination for playing, discussing, and creating games.
+  # Brief tagline for the application
+  tagline:
+    en_US: The ultimate destination for playing, discussing, and creating games.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/steam-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/steam-logo.png
+  # Title for the application
+  title:
+    en_US: Steam
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-audacity
+services:
+  app:
+    image: linuxserver/audacity:4.0.0@sha256:a33f2a0d30b3aea62eb5402df1c4d7721c3af21ae4d92643dfa1badfaa7f9591
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/audacity/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.audacity
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Audacity is an easy-to-use, multi-track audio editor and recorder. Developed by a group of volunteers as open source.
+  # Brief tagline for the application
+  tagline:
+    en_US: An easy-to-use, multi-track audio editor and recorder. Developed by a group of volunteers as open source.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/audacity-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/audacity-logo.png
+  # Title for the application
+  title:
+    en_US: Audacity
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

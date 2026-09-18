@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-kicad
+services:
+  app:
+    image: linuxserver/kicad:10.0.3@sha256:c0da5a64426bbee5d0e95d325959518b7851f7a86ed89c35bc831fb7cc6996ae
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/kicad/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.kicad
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: KiCad - A Cross Platform and Open Source Electronics Design Automation Suite.
+  # Brief tagline for the application
+  tagline:
+    en_US: A Cross Platform and Open Source Electronics Design Automation Suite.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kicad-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/kicad-logo.png
+  # Title for the application
+  title:
+    en_US: Kicad
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

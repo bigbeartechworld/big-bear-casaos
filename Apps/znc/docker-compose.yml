@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-znc
+services:
+  app:
+    image: linuxserver/znc:1.10.3@sha256:d2bceb0d55c84bb053039724787297b9a8ba4f532182d27eabd47d6e88a5a268
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 6501
+        published: 6501
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/znc/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "6501"
+          description:
+            en_US: 'Container Port: 6501'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.znc
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Znc is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels. Multiple clients from different locations can connect to a single ZNC account simultaneously and therefore appear under the same nickname on IRC.
+  # Brief tagline for the application
+  tagline:
+    en_US: An IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels. Multiple clients from different locations can connect to a single ZNC account simultaneously and therefore appear under the same nickname on IRC.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/znc-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/znc-logo.png
+  # Title for the application
+  title:
+    en_US: Znc
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "6501"

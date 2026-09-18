@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-lollypop
+services:
+  app:
+    image: linuxserver/lollypop:1.4.45@sha256:d74da4821ac555698d60a783e1d81f36741a13e777e5c6997b836d81839b0c91
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/lollypop/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.lollypop
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Lollypop is a lightweight modern music player designed to work excellently on the GNOME desktop environment.
+  # Brief tagline for the application
+  tagline:
+    en_US: A lightweight modern music player designed to work excellently on the GNOME desktop environment.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lollypop-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/lollypop-icon.png
+  # Title for the application
+  title:
+    en_US: Lollypop
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

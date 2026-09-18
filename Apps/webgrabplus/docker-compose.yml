@@ -1,0 +1,72 @@
+name: big-bear-linuxserver-webgrabplus
+services:
+  app:
+    image: linuxserver/webgrabplus:5.6.1@sha256:ddf2b93738df3cad8b927f686c8d60db389d1326679a3987739f394f4d6ce2fb
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/webgrabplus/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/webgrabplus/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.webgrabplus
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Webgrabplus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.
+  # Brief tagline for the application
+  tagline:
+    en_US: A multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://images.weserv.nl/?url=https%3A%2F%2Fwww.webgrabplus.com%2Fsites%2Fdefault%2Fthemes%2FWgTheme%2Fimages%2Fslideshows%2FEPG_fading.jpg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fwww.webgrabplus.com%2Fsites%2Fdefault%2Fthemes%2FWgTheme%2Fimages%2Fslideshows%2FEPG_fading.jpg
+  # Title for the application
+  title:
+    en_US: Webgrabplus
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

@@ -1,0 +1,58 @@
+name: big-bear-linuxserver-synclounge
+services:
+  app:
+    image: linuxserver/synclounge:5.2.35@sha256:e2121f13cd6514394bdc82a4a3df8c66b169d3a2cfae960a2f3bf9b15594e20c
+    restart: unless-stopped
+    environment:
+      AUTH_LIST: ''
+    ports:
+      - target: 8088
+        published: 8088
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/synclounge/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: AUTH_LIST
+          description:
+            en_US: 'Container Variable: AUTH_LIST'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8088"
+          description:
+            en_US: 'Container Port: 8088'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.synclounge
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Synclounge is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are.
+  # Brief tagline for the application
+  tagline:
+    en_US: A third party tool that allows you to watch Plex in sync with your friends/family, wherever you are.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/synclounge-banner.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/synclounge-banner.png
+  # Title for the application
+  title:
+    en_US: Synclounge
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8088"

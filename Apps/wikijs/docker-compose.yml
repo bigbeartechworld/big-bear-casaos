@@ -1,0 +1,100 @@
+name: big-bear-linuxserver-wikijs
+services:
+  app:
+    image: linuxserver/wikijs:2.5.314@sha256:b8bcc7c1662ac19d8448627e6179950ce01838bb9e12177b5396d70d6be64c8b
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DB_TYPE: $DB_TYPE
+      DB_HOST: $DB_HOST
+      DB_PORT: $DB_PORT
+      DB_NAME: $DB_NAME
+      DB_USER: $DB_USER
+      DB_PASS: $DB_PASS
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/wikijs/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/wikijs/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: DB_TYPE
+          description:
+            en_US: 'Container Variable: DB_TYPE'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: DB_NAME
+          description:
+            en_US: 'Container Variable: DB_NAME'
+        - container: DB_USER
+          description:
+            en_US: 'Container Variable: DB_USER'
+        - container: DB_PASS
+          description:
+            en_US: 'Container Variable: DB_PASS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.wikijs
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Wikijs A modern, lightweight and powerful wiki app built on NodeJS.
+  # Brief tagline for the application
+  tagline:
+    en_US: A modern, lightweight and powerful wiki app built on NodeJS.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://images.weserv.nl/?url=https%3A%2F%2Fstatic.requarks.io%2Flogo%2Fwikijs-full.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fstatic.requarks.io%2Flogo%2Fwikijs-full.svg
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Configure the required database settings before installing. This app requires an external database and will not start with empty defaults.
+  # Title for the application
+  title:
+    en_US: Wikijs
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

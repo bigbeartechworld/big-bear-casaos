@@ -1,0 +1,7 @@
+{
+  "id": "socket-proxy",
+  "version": "3.4.4",
+  "image": "linuxserver/socket-proxy",
+  "youtube": "",
+  "docs_link": ""
+}

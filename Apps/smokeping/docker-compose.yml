@@ -1,0 +1,84 @@
+name: big-bear-linuxserver-smokeping
+services:
+  app:
+    image: linuxserver/smokeping:2.9.0@sha256:0c8b547eda8812e16f9888eccd0e08af211431f16e7e0d4d233cb699e8883394
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      MASTER_URL: ''
+      SHARED_SECRET: ''
+      CACHE_DIR: ''
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/smokeping/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/smokeping/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: MASTER_URL
+          description:
+            en_US: 'Container Variable: MASTER_URL'
+        - container: SHARED_SECRET
+          description:
+            en_US: 'Container Variable: SHARED_SECRET'
+        - container: CACHE_DIR
+          description:
+            en_US: 'Container Variable: CACHE_DIR'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.smokeping
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Smokeping keeps track of your network latency. For a full example of what this application is capable of visit UCDavis.
+  # Brief tagline for the application
+  tagline:
+    en_US: Keeps track of your network latency. For a full example of what this application is capable of visit UCDavis.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/smokeping-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/smokeping-logo.png
+  # Title for the application
+  title:
+    en_US: Smokeping
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

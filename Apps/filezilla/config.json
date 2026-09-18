@@ -1,0 +1,7 @@
+{
+  "id": "filezilla",
+  "version": "3.69.6",
+  "image": "linuxserver/filezilla",
+  "youtube": "",
+  "docs_link": ""
+}

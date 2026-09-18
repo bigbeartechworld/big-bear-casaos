@@ -1,0 +1,84 @@
+name: big-bear-linuxserver-manyfold
+services:
+  app:
+    image: linuxserver/manyfold:0.149.0@sha256:1e3260d3bba74790dc00c57ae8a8ddb8f7aa5cf0f97000d265f8d30dc931f792
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      DATABASE_URL: ''
+      REDIS_URL: ''
+      SECRET_KEY_BASE: ''
+    ports:
+      - target: 3214
+        published: 3214
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/manyfold/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/manyfold/libraries
+        target: /libraries
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: REDIS_URL
+          description:
+            en_US: 'Container Variable: REDIS_URL'
+        - container: SECRET_KEY_BASE
+          description:
+            en_US: 'Container Variable: SECRET_KEY_BASE'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /libraries
+          description:
+            en_US: 'Container Path: /libraries'
+      ports:
+        - container: "3214"
+          description:
+            en_US: 'Container Port: 3214'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.manyfold
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Manyfold is an open source, self-hosted web application for managing a collection of 3D models, particularly focused on 3D printing.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open source, self-hosted web application for managing a collection of 3D models, particularly focused on 3D printing.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/manyfold.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/selfhst/icons/png/manyfold.png
+  # Title for the application
+  title:
+    en_US: Manyfold
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3214"

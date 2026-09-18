@@ -1,0 +1,82 @@
+name: big-bear-linuxserver-minisatip
+services:
+  app:
+    image: linuxserver/minisatip:2.0.103@sha256:3ff7892f3cdf3fa3dd0f90f526fb345837febf86b8f11d8f680ec09612fbc6f2
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      RUN_OPTS: ''
+    ports:
+      - target: 8875
+        published: 8875
+        protocol: tcp
+      - target: 554
+        published: 554
+        protocol: tcp
+      - target: 1900
+        published: 1900
+        protocol: udp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/minisatip/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: RUN_OPTS
+          description:
+            en_US: 'Container Variable: RUN_OPTS'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8875"
+          description:
+            en_US: 'Container Port: 8875'
+        - container: "554"
+          description:
+            en_US: 'Container Port: 554'
+        - container: "1900"
+          description:
+            en_US: 'Container Port: 1900'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.minisatip
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Minisatip is a multi-threaded satip server version 1.2 that runs under Linux and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards.
+  # Brief tagline for the application
+  tagline:
+    en_US: A multi-threaded satip server version 1. 2 that runs under Linux and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/minisatip-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/minisatip-icon.png
+  # Title for the application
+  title:
+    en_US: Minisatip
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "8875"

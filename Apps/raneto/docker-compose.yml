@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-raneto
+services:
+  app:
+    image: linuxserver/raneto:0.18.1@sha256:b42adb6267d22bde31295995ed151ba23f6ca01c6da2d5d2562ca46cce859bec
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/raneto/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.raneto
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Raneto - is an open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase.
+  # Brief tagline for the application
+  tagline:
+    en_US: is an open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/raneto-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/raneto-logo.png
+  # Title for the application
+  title:
+    en_US: Raneto
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

@@ -1,0 +1,7 @@
+{
+  "id": "openshot",
+  "version": "4.0.0",
+  "image": "linuxserver/openshot",
+  "youtube": "",
+  "docs_link": ""
+}

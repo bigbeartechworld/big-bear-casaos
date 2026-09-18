@@ -1,0 +1,78 @@
+name: big-bear-linuxserver-cops
+services:
+  app:
+    image: linuxserver/cops:4.5.2@sha256:56ea339f9f9f885dd1105396e69705e84d6334c2e187bd6be98b212453d3a7cc
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 443
+        published: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/cops/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/cops/books
+        target: /books
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /books
+          description:
+            en_US: 'Container Path: /books'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.cops
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'Cops by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server. COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices. Changes in your Calibre library are reflected immediately in your COPS pages. See : COPS''s home for more details. Don''t forget to check the Wiki. ## Why? (taken from the author''s site) In my opinion Calibre is a marvelous tool but is too big and has too much dependencies to be used for its content server. That''s the main reason why I coded this OPDS server. I needed a simple tool to be installed on a small server (Seagate Dockstar in my case). I initially thought of Calibre2OPDS but as it generate static file no search was possible. Later I added an simple HTML catalog that should be usable on my Kobo. So COPS''s main advantages are : * No need for many dependencies. * No need for a lot of CPU or RAM. * Not much code. * Search is available. * With Dropbox / owncloud it''s very easy to have an up to date OPDS server. * It was fun to code. If you want to use the OPDS feed don''t forget to specify /feed at the end of your URL.'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'By Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server. COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices. Changes in your Calibre library are reflected immediately in your COPS pages. See : COPS''s home for more details. Don''t forget to check the Wiki. ## Why. (taken from the author''s site) In my opinion Calibre is a marvelous tool but is too big and has too much dependencies to be used for its content server. That''s the main reason why I coded this OPDS server. I needed a simple tool to be installed on a small server (Seagate Dockstar in my case). I initially thought of Calibre2OPDS but as it generate static file no search was possible. Later I added an simple HTML catalog that should be usable on my Kobo. So COPS''s main advantages are : * No need for many dependencies. * No need for a lot of CPU or RAM. * Not much code. * Search is available. * With Dropbox / owncloud it''s very easy to have an up to date OPDS server. * It was fun to code. If you want to use the OPDS feed don''t forget to specify /feed at the end of your URL.'
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/cops-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/cops-icon.png
+  # Title for the application
+  title:
+    en_US: Cops
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

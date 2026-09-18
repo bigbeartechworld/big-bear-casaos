@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-jenkins-builder
+services:
+  app:
+    image: linuxserver/jenkins-builder:version-4f81ddbe@sha256:dd7cfe3b09302fafc36be18dd4e3030c6318a1f750324e420b16319d4d67d579
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/jenkins-builder/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.jenkins-builder
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: This container needs special attention. Please check https://hub.docker.com/r/linuxserver/jenkins-builder for details.
+  # Brief tagline for the application
+  tagline:
+    en_US: 'This container needs special attention. Please check https://hub. Docker. Com/r/linuxserver/jenkins-builder for details. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/WisdomSky/CasaOS-LinuxServer-AppStore@main/default-icon.svg
+  # Title for the application
+  title:
+    en_US: Jenkins-builder
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "80"

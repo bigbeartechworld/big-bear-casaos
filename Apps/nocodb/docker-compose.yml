@@ -113,7 +113,7 @@ x-casaos:
   # Icon URL for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/nocodb.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://user-images.githubusercontent.com/86527202/277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fuser-images.githubusercontent.com%2F86527202%2F277104231-e2fad786-f211-4dcb-9bd3-aaece83a6783.gif
   # Title for the application
   title:
     en_US: NocoDB

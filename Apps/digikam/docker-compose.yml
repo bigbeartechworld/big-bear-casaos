@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-digikam
+services:
+  app:
+    image: linuxserver/digikam:9.1.0@sha256:cc7c9a87b40d05996fe026a5ff206df1f9c89cdde3f11dc838c44df29aea56b0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/digikam/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.digikam
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'digiKam: Professional Photo Management with the Power of Open Source'
+  # Brief tagline for the application
+  tagline:
+    en_US: 'digiKam: Professional Photo Management with the Power of Open Source'
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/digikam.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/digikam.png
+  # Title for the application
+  title:
+    en_US: Digikam
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "3000"

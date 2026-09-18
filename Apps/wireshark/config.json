@@ -1,0 +1,7 @@
+{
+  "id": "wireshark",
+  "version": "4.6.6",
+  "image": "linuxserver/wireshark",
+  "youtube": "",
+  "docs_link": ""
+}

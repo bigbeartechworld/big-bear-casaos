@@ -1,0 +1,71 @@
+name: big-bear-linuxserver-citron
+services:
+  app:
+    image: linuxserver/citron:2026.02.1@sha256:6d955bd6dce826c40f3ffdb793c4711826179cf411c2f72c4c27358413195ddb
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+      - target: 3001
+        published: 3001
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /srv/lsio/citron/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+        - container: "3001"
+          description:
+            en_US: 'Container Port: 3001'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.citron
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Citron is a feature rich Switch 1 emulator for homebrew.
+  # Brief tagline for the application
+  tagline:
+    en_US: A feature rich Switch 1 emulator for homebrew.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/citron-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/citron-logo.png
+  # Title for the application
+  title:
+    en_US: Citron
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3000"

@@ -1,0 +1,78 @@
+name: big-bear-linuxserver-rdesktop
+services:
+  app:
+    image: linuxserver/rdesktop:arch-kde-version-arch-2025-01-10@sha256:c779495feea3bbfbac0fcd239c5be5981a8744df97646236c685357f90fb5565
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 3389
+        published: 3389
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/rdesktop/config
+        target: /config
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+      - type: bind
+        source: /DATA/AppData/rdesktop/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "3389"
+          description:
+            en_US: 'Container Port: 3389'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rdesktop
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Rdesktop - Containers containing full desktop environments in many popular flavors for Alpine, Ubuntu, Arch, and Fedora accessible via RDP.
+  # Brief tagline for the application
+  tagline:
+    en_US: 'Containers containing full desktop environments in many popular flavors for Alpine, Ubuntu, Arch, and Fedora accessible via RDP. '
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rdesktop.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rdesktop.png
+  # Title for the application
+  title:
+    en_US: Rdesktop
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3389"

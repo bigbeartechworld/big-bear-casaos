@@ -1,0 +1,78 @@
+name: big-bear-linuxserver-rsnapshot
+services:
+  app:
+    image: linuxserver/rsnapshot:1.4.5@sha256:db8b82bf8cdb8020b0c6b65abc94001c622d8c5aadc56e46edd2c5589a565730
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/rsnapshot/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/rsnapshot/.snapshots
+        target: /.snapshots
+      - type: bind
+        source: /DATA/AppData/rsnapshot/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /.snapshots
+          description:
+            en_US: 'Container Path: /.snapshots'
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rsnapshot
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Rsnapshot is a filesystem snapshot utility based on rsync. rsnapshot makes it easy to make periodic snapshots of local machines, and remote machines over ssh. The code makes extensive use of hard links whenever possible, to greatly reduce the disk space required.
+  # Brief tagline for the application
+  tagline:
+    en_US: A filesystem snapshot utility based on rsync. Rsnapshot makes it easy to make periodic snapshots of local machines, and remote machines over ssh. The code makes extensive use of hard links whenever possible, to greatly reduce the disk space required.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rsnapshot.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/rsnapshot.png
+  # Title for the application
+  title:
+    en_US: Rsnapshot
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "80"

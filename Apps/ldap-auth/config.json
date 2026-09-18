@@ -1,0 +1,7 @@
+{
+  "id": "ldap-auth",
+  "version": "3.4.8",
+  "image": "linuxserver/ldap-auth",
+  "youtube": "",
+  "docs_link": ""
+}

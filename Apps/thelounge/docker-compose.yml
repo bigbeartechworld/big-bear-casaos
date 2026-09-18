@@ -1,0 +1,66 @@
+name: big-bear-linuxserver-thelounge
+services:
+  app:
+    image: linuxserver/thelounge:4.5.2@sha256:276a04a7b203ff121c2440f3f4bdcea2f9a865ba8971b6b2f372e848c789a0f8
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 9000
+        published: 9000
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/thelounge/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "9000"
+          description:
+            en_US: 'Container Port: 9000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.thelounge
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Thelounge (a fork of shoutIRC) is a web IRC client that you host on your own server.
+  # Brief tagline for the application
+  tagline:
+    en_US: (a fork of shoutIRC) is a web IRC client that you host on your own server.
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/thelounge/thelounge@master/client/public/img/logo-vertical-transparent-bg.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/thelounge/thelounge@master/client/public/img/logo-vertical-transparent-bg.svg
+  # Title for the application
+  title:
+    en_US: Thelounge
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "9000"

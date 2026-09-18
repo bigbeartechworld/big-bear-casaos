@@ -1,0 +1,7 @@
+{
+  "id": "calibre-web",
+  "version": "0.6.27",
+  "image": "linuxserver/calibre-web",
+  "youtube": "",
+  "docs_link": ""
+}

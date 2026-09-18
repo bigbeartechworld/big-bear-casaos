@@ -1,0 +1,70 @@
+name: big-bear-linuxserver-luanti
+services:
+  app:
+    image: linuxserver/luanti:5.17.0@sha256:9411293fa6a84767923d1b310ada55eedfefd883b8093f3f7d64f3726d354e01
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      CLI_ARGS: ''
+    ports:
+      - target: 30000
+        published: 30000
+        protocol: udp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/luanti/config/.minetest
+        target: /config/.minetest
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: CLI_ARGS
+          description:
+            en_US: 'Container Variable: CLI_ARGS'
+      volumes:
+        - container: /config/.minetest
+          description:
+            en_US: 'Container Path: /config/.minetest'
+      ports:
+        - container: "30000"
+          description:
+            en_US: 'Container Port: 30000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.luanti
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Luanti (formerly Minetest) is an open source voxel game-creation platform with easy modding and game creation
+  # Brief tagline for the application
+  tagline:
+    en_US: (formerly Minetest) is an open source voxel game-creation platform with easy modding and game creation
+  # Developer's information
+  developer: LinuxServer.io
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/minetest-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/linuxserver/docker-templates@master/linuxserver.io/img/minetest-icon.png
+  # Title for the application
+  title:
+    en_US: Luanti
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "30000"

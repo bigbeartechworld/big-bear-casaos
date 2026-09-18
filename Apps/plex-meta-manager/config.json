@@ -1,0 +1,7 @@
+{
+  "id": "plex-meta-manager",
+  "version": "1.21.1",
+  "image": "linuxserver/plex-meta-manager",
+  "youtube": "",
+  "docs_link": ""
+}

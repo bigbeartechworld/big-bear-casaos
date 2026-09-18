@@ -526,9 +526,9 @@ x-casaos:
   # Author of this particular configuration
   author: Celestory
   # Icon URL for the application
-  icon: https://storage.googleapis.com/voltask-assets/celestory.png
+  icon: https://images.weserv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fvoltask-assets%2Fcelestory.png
   # Thumbnail image for the application (if any)
-  thumbnail: https://storage.googleapis.com/voltask-assets/celestory.png
+  thumbnail: https://images.weserv.nl/?url=https%3A%2F%2Fstorage.googleapis.com%2Fvoltask-assets%2Fcelestory.png
   # Title for the application
   title:
     en_US: Celestory & Voltask

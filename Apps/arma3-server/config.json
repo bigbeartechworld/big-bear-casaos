@@ -1,0 +1,7 @@
+{
+  "id": "arma3-server",
+  "version": "1.0.0",
+  "image": "ghcr.io/brettmayson/arma3server/arma3server",
+  "youtube": "",
+  "docs_link": "https://community.bistudio.com/wiki/Arma_3_Dedicated_Server"
+}

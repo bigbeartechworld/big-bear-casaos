@@ -1,0 +1,7 @@
+{
+  "id": "sqlitebrowser",
+  "version": "18.04.1",
+  "image": "linuxserver/sqlitebrowser",
+  "youtube": "",
+  "docs_link": ""
+}
