@@ -5,7 +5,7 @@ services:
   # Main Immich Server service configuration
   big-bear-immich-aio-alpine:
     container_name: big-bear-immich-aio-alpine # Name of the running container
-    image: ghcr.io/imagegenius/immich:2.7.5@sha256:4012699ba6c1b2c2ec4f4b50eb8e50b1c3af040d1ae2fb5dedcabebe055776ad # Image to be used
+    image: ghcr.io/imagegenius/immich:3.2.2@sha256:cf3cf9a3d66befd6989dfa5739b9923f718ae22fabe3d6665f87d37d369f462f # Image to be used
     ports: # Mapping ports from the host OS to the container
       - 2283:8080
     volumes: # Mounting directories for persistent data storage
@@ -99,7 +99,7 @@ services:
   # Configuration for Database service
   big-bear-immich-db:
     container_name: big-bear-immich-db # Name of the running container
-    image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:739cdd626151ff1f796dc95a6591b55a714f341c737e27f045019ceabf8e8c52 # Image to be used
+    image: ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:bcf63357191b76a916ae5eb93464d65c07511da41e3bf7a8416db519b40b1c23 # Image to be used
     environment: # Setting environment variables
       POSTGRES_PASSWORD: casaos
       POSTGRES_USER: casaos
@@ -155,6 +155,10 @@ x-casaos:
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/immich.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Immich AIO Alpine v3 changes the PostgreSQL vector extension from pgvecto.rs to VectorChord. Back up the database before upgrading and allow the migration and reindex to finish before using the app. Do not downgrade after the database migration completes. See https://docs.immich.app/install/upgrading/.
   # Title for the application
   title:
     en_US: Immich AIO Alpine

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-dbgate
     # Image to be used for the container
-    image: dbgate/dbgate:7.2.6-alpine@sha256:1568cca2807d17d270287f05832fe362ff02e4a2cae615e466c954cc59fe7fb4
+    image: dbgate/dbgate:7.3.0-alpine@sha256:6686e4839af324a5f21f6703ce21505bbecb12e9a5e72670de18dd5e8486b50a
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
