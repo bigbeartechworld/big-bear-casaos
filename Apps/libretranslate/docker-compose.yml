@@ -22,7 +22,7 @@ services:
       - LT_LOAD_ONLY=en,fr,es,de,it,pt,ru,ja,zh # Restricts the languages loaded by LibreTranslate to these language codes.
     volumes:
       - /DATA/AppData/$AppID/db:/app/db # Mounts a volume at /app/db within the container for persistent API key storage.
-      - /DATA/AppData/$AppID/.local:/home/libretranslate/.local # Mounts a volume for storing and updating translation models.
+      - /DATA/AppData/$AppID/.local:/home/libretranslate/.local:rw # Mounts a volume for storing and updating translation models.
     # Ports mapping between host and container
     ports:
       # Mapping port 5000 of the host to port 5000 of the container

@@ -19,11 +19,11 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local big-bear-lyrionmusicserver/config directory to /config inside the container
-      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/config:/config:rw
       # Mounting the local big-bear-lyrionmusicserver/music directory to /music inside the container
-      - /DATA/AppData/$AppID/music:/music
+      - /DATA/AppData/$AppID/music:/music:ro
       # Mounting the local big-bear-lyrionmusicserver/playlists directory to /playlist inside the container
-      - /DATA/AppData/$AppID/playlists:/playlist
+      - /DATA/AppData/$AppID/playlists:/playlist:rw
       # Mounting the local /etc/localtime directory to /etc/localtime inside the container
       - /etc/localtime:/etc/localtime:ro
       # Mounting the local /etc/timezone directory to /etc/timezone inside the container

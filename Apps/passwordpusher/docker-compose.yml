@@ -24,7 +24,7 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Storage volume
-      - /DATA/AppData/$AppID/storage:/opt/PasswordPusher/storage
+      - /DATA/AppData/$AppID/storage:/opt/PasswordPusher/storage:rw
     # Ports mapping between host and container
     ports:
       # Mapping port 5100 of the host to port 5100 of the container

@@ -19,9 +19,9 @@ services:
     # Volumes to be mounted to the container
     volumes:
       # Mounting the local libredesk/uploads directory to /libredesk/uploads inside the container
-      - /DATA/AppData/$AppID/uploads:/libredesk/uploads
+      - /DATA/AppData/$AppID/uploads:/libredesk/uploads:rw
       # Mounting the local libredesk/config.toml directory to /libredesk/config.toml inside the container
-      - /DATA/AppData/$AppID/config:/libredesk/config
+      - /DATA/AppData/$AppID/config:/libredesk/config:rw
     # Ports mapping between host and container
     ports:
       # Mapping port 9000 of the host to port 9000 of the container
