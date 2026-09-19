@@ -1,6 +1,6 @@
 {
   "id": "owncloud",
-  "version": "11.0.0",
+  "version": "10.16.4",
   "image": "owncloud/server",
   "youtube": "",
   "docs_link": ""
