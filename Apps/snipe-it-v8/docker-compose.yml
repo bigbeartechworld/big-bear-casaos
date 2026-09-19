@@ -1,0 +1,139 @@
+name: big-bear-snipe-it-v8
+services:
+  app:
+    image: snipe/snipe-it:v8.7.2@sha256:18cc45da877ec5509e1fdb17b492db42e37d3ca3bc89d885d82e9c0ecdae1253
+    restart: unless-stopped
+    ports:
+      - 8086:80
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_KEY: $APP_KEY
+      APP_URL: $APP_URL
+      APP_TIMEZONE: UTC
+      APP_LOCALE: en-US
+      DB_CONNECTION: mariadb
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: snipeit
+      DB_USERNAME: snipeit
+      DB_PASSWORD: $DB_PASSWORD
+    volumes:
+      - /DATA/AppData/$AppID/storage:/var/lib/snipeit
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    x-casaos:
+      envs:
+        - container: APP_ENV
+          description:
+            en_US: 'Container Variable: APP_ENV'
+        - container: APP_DEBUG
+          description:
+            en_US: 'Container Variable: APP_DEBUG'
+        - container: APP_KEY
+          description:
+            en_US: 'Container Variable: APP_KEY'
+        - container: APP_URL
+          description:
+            en_US: 'Container Variable: APP_URL'
+        - container: APP_TIMEZONE
+          description:
+            en_US: 'Container Variable: APP_TIMEZONE'
+        - container: APP_LOCALE
+          description:
+            en_US: 'Container Variable: APP_LOCALE'
+        - container: DB_CONNECTION
+          description:
+            en_US: 'Container Variable: DB_CONNECTION'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: DB_DATABASE
+          description:
+            en_US: 'Container Variable: DB_DATABASE'
+        - container: DB_USERNAME
+          description:
+            en_US: 'Container Variable: DB_USERNAME'
+        - container: DB_PASSWORD
+          description:
+            en_US: 'Container Variable: DB_PASSWORD'
+      volumes:
+        - container: /var/lib/snipeit
+          description:
+            en_US: 'Container Path: /var/lib/snipeit'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+  db:
+    image: mariadb:11.4.7@sha256:39596f079862334be04f4231664862e55d4febe54309cc62f750f2297de85b06
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: snipeit
+      MYSQL_USER: snipeit
+      MYSQL_PASSWORD: $DB_PASSWORD
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+    volumes:
+      - /DATA/AppData/$AppID/db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 1s
+      retries: 5
+    x-casaos:
+      envs:
+        - container: MYSQL_DATABASE
+          description:
+            en_US: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_USER
+          description:
+            en_US: 'Container Variable: MYSQL_USER'
+        - container: MYSQL_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_PASSWORD'
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_US: 'Container Path: /var/lib/mysql'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.snipe-it-v8
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Snipe-IT is a free, open source IT asset management system.
+  # Brief tagline for the application
+  tagline:
+    en_US: Open source IT asset management
+  # Developer's information
+  developer: Grokability
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/snipe-it.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: This is a separate Snipe-IT v8 app. Migration from the legacy Snipe-IT app is manual; configure APP_KEY, APP_URL, DB_PASSWORD, and MYSQL_ROOT_PASSWORD before installing.
+  # Title for the application
+  title:
+    en_US: Snipe-IT v8
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8086"

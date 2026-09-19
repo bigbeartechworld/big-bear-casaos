@@ -10,11 +10,13 @@ services:
     # Name of the container
     container_name: big-bear-paperless-ngx
     # Image to be used for the container
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.15@sha256:6c86cad803970ea782683a8e80e7403444c5bf3cf70de63b4d3c8e87500db92f
+    image: ghcr.io/paperless-ngx/paperless-ngx:3.2.0@sha256:22dc423ff48ac1629977dbf0c9625ba9f60d3bd1291a2ff173c65351984a14c2
     # Container restart policy
     restart: unless-stopped
     # environment variables
     environment:
+      PAPERLESS_DBENGINE: postgresql
+      PAPERLESS_SECRET_KEY: $PAPERLESS_SECRET_KEY
       PAPERLESS_REDIS: redis://big-bear-paperless-ngx-broker:6379
       PAPERLESS_DBHOST: big-bear-paperless-ngx-db
       PAPERLESS_DBUSER: bigbear
@@ -45,6 +47,12 @@ services:
       - big-bear-paperless-ngx-network
     x-casaos:
       envs:
+        - container: PAPERLESS_DBENGINE
+          description:
+            en_US: 'Container Variable: PAPERLESS_DBENGINE'
+        - container: PAPERLESS_SECRET_KEY
+          description:
+            en_US: 'Container Variable: PAPERLESS_SECRET_KEY'
         - container: PAPERLESS_REDIS
           description:
             en_US: 'Container Variable: PAPERLESS_REDIS'
@@ -218,8 +226,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_US: |
-        Read this before installing: https://community.bigbeartechworld.com/t/added-paperlessngx-to-bigbearcasaos/1954#p-3625-documentation-4
+      en_US: Paperless-ngx v3 requires PAPERLESS_SECRET_KEY and PAPERLESS_DBENGINE=postgresql. Back up the database and media before upgrading from v2.20.15. Decrypt encrypted documents before the upgrade because v3 does not support encrypted documents. Keep the same PAPERLESS_SECRET_KEY for the lifetime of this installation. See https://docs.paperless-ngx.com/migration-v3/.
   # Title for the application
   title:
     en_US: Paperless-ngx
