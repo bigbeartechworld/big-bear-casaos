@@ -26,8 +26,8 @@ services:
     volumes:
       - /DATA/AppData/$AppID/data/public:/var/www/app/public
       - /DATA/AppData/$AppID/data/storage:/var/www/app/storage
-      - /DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini
-      - /DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini
+      - /DATA/AppData/$AppID/data/php/php.ini:/usr/local/etc/php/php.ini:ro
+      - /DATA/AppData/$AppID/data/php/php-cli.ini:/usr/local/etc/php/php-cli.ini:ro
     depends_on:
       - big-bear-invoice-ninja-db
     networks:
@@ -95,8 +95,8 @@ services:
     restart: unless-stopped
     # Volumes to be mounted to the container
     volumes:
-      - /DATA/AppData/$AppID/data/nginx/invoice-ninja.conf:/etc/nginx/conf.d/default.conf
-      - /DATA/AppData/$AppID/data/public:/var/www/app/public
+      - /DATA/AppData/$AppID/data/nginx/invoice-ninja.conf:/etc/nginx/conf.d/default.conf:ro
+      - /DATA/AppData/$AppID/data/public:/var/www/app/public:ro
     # Ports mapping between host and container
     ports:
       # Mapping port 8080 of the host to port 80 of the container

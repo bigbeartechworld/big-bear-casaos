@@ -25,7 +25,7 @@ services:
       - REFRESH_INTERVAL= # Optional
     volumes:
       - /DATA/AppData/$AppID/config:/config
-      - /DATA/AppData/$AppID/home:/backups/home # Optional
+      - /DATA/AppData/$AppID/home:/backups/home:ro # Optional
       - /var/lib/docker/volumes:/backups/docker:ro # Optional
       - /DATA/AppData/$AppID/repository:/repository # Optional
       - /tmp:/tmp:shared # Optional

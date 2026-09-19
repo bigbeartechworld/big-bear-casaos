@@ -1,0 +1,57 @@
+name: big-bear-navidrome
+services:
+  app:
+    image: deluan/navidrome:0.61.2@sha256:9fa40b3d8dec43ceb2213d1fa551da3dcfef6ac6d19c2e534efb92527c2bafd2
+    container_name: navidrome
+    ports:
+      - "4533:4533"
+    volumes:
+      - ./data:/data
+      - /DATA/Media/Music:/music:ro
+    restart: unless-stopped
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+        - container: /music
+          description:
+            en_US: 'Container Path: /music'
+      ports:
+        - container: "4533"
+          description:
+            en_US: 'Container Port: 4533'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.navidrome
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Modern web-based music server and streamer for your personal music collection.
+  # Brief tagline for the application
+  tagline:
+    en_US: Modern music server and streamer
+  # Developer's information
+  developer: Navidrome
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/navidrome.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/selfhst/icons/png/navidrome.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Point the /music volume at your existing music library before starting the app. CasaOS defaults to /DATA/Media/Music and lets you change the host path in app settings.
+  # Title for the application
+  title:
+    en_US: Navidrome
+  # Category under which the application falls
+  category: Media
+  # Default port mapping for the application
+  port_map: "4533"

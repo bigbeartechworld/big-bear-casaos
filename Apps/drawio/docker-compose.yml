@@ -1,0 +1,43 @@
+name: big-bear-drawio
+services:
+  app:
+    image: jgraph/drawio:31.4.6@sha256:4bd19d4bc36b65cabf1ae9c5d234597e564416b6c67f7d4db296c2df758fcb52
+    container_name: drawio
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    x-casaos:
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.drawio
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Draw.io is a structured diagram editor for creating flowcharts, network diagrams, and other visual documentation.
+  # Brief tagline for the application
+  tagline:
+    en_US: Structured diagram editor
+  # Developer's information
+  developer: JGraph
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/drawio.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/selfhst/icons/png/drawio.png
+  # Title for the application
+  title:
+    en_US: Draw.io
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "8080"
