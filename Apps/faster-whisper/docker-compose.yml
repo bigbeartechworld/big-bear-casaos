@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-faster-whisper
     # Image to be used for the container
-    image: linuxserver/faster-whisper:3.8.1@sha256:d91a0a0aca09564d4d4786e1af42f2ded24d65832e16aef03423c9b89c2ed7d3
+    image: linuxserver/faster-whisper:3.8.1@sha256:f2d7ad2b2322c70b984ed859985fc4dfb27cbd09868984d05355c7183f2518e1
     # Container restart policy
     restart: unless-stopped
     # Environment variables

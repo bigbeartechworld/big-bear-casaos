@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-openssh-server
 services:
   app:
-    image: linuxserver/openssh-server:version-10.3_p1-r1@sha256:39ba37d50fdd6be1bf70644c871e5dcb9234ee79ac56424ea03ca08cadf1e7b0
+    image: linuxserver/openssh-server:version-10.3_p1-r1@sha256:946fa26105e0ec212fdf821b9ddc59aab65f2c2d07c02b25ff0f5001fc332ff0
     restart: unless-stopped
     environment:
       PUID: $PUID

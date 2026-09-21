@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-raneto
 services:
   app:
-    image: linuxserver/raneto:0.18.1@sha256:b42adb6267d22bde31295995ed151ba23f6ca01c6da2d5d2562ca46cce859bec
+    image: linuxserver/raneto:0.18.1@sha256:67ad914a21192ddf9c3e0cce5fb0a5d65c272f00bf04ed2f59e73cb060b64767
     restart: unless-stopped
     environment:
       PUID: $PUID
