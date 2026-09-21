@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-signal
 services:
   app:
-    image: linuxserver/signal:8.27.0@sha256:cdb4247d5773b5fb85a86cd713f9708c2b2d56eda56170ca3ff38615d48da8e8
+    image: linuxserver/signal:8.27.0@sha256:bf95b267690bb692a9a5db8c7cea02caddbea330da45a776838ce1c39f63990c
     restart: unless-stopped
     environment:
       PUID: $PUID
