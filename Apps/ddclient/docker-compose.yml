@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ddclient
 services:
   app:
-    image: linuxserver/ddclient:4.0.0@sha256:7fbf1f5ab2b3511b18a21ce5fd49fb48f37ca5c91dad83c25bfbaf8b63b19e06
+    image: linuxserver/ddclient:4.0.0@sha256:61de8a998f00bcf468a361f0df6007fb6ee8b2c6e89ed1c431145a98caeb7755
     restart: unless-stopped
     environment:
       PUID: $PUID
