@@ -96,6 +96,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | filebrowser |  |
 | filezilla |  |
 | financial-freedom |  |
+| fireshare |  |
 | flcontainers-guacamole |  |
 | fleet |  |
 | flowise |  |
