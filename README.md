@@ -204,6 +204,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | filezilla | linuxserver/filezilla | 3.69.6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | linuxserver/firefox | 1155.0.1 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
+| fireshare | shaneisrael/fireshare | 1.7.1 |  | [Docs](https://github.com/ShaneIsrael/fireshare#readme) |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.6.0 |  |  |
 | fleet | linuxserver/fleet | 2.3.3 |  |  |
