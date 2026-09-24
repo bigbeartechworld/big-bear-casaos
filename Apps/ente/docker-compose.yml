@@ -100,7 +100,7 @@ services:
     command: TCP6-LISTEN:3200,fork,reuseaddr,ipv6only=0 TCP:minio:3200
     restart: unless-stopped
   web:
-    image: ghcr.io/ente/web:latest@sha256:3fc9b2a59ace953b62767aae11ce9064ed483722f78ce51632f2dc2a45a086b0
+    image: ghcr.io/ente/web:latest@sha256:200a1d33e369459662177ec601f8b267e088f4966f7124562aa81cd0528cea52
     container_name: ente-web
     ports:
       - "3000:3000"
