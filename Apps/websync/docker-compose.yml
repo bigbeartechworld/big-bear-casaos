@@ -1,0 +1,59 @@
+name: big-bear-websync
+services:
+  app:
+    image: furier/websync:latest
+    restart: unless-stopped
+    working_dir: /src
+    command:
+      - node
+      - server.js
+    ports:
+      - target: 3000
+        published: 48109
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/websync/data
+        target: /data
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.websync
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Websync is intended to be an rsync task manager, where rsync tasks can be added, scheduled and maintained in a sane manner.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/websync/screenshots/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/websync/screenshots/screenshot-2.png
+  # Brief tagline for the application
+  tagline:
+    en_US: Websync is intended to be an rsync task manager, where rsync tasks can be added, scheduled and maintained in a sane manner.
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn0.iconfinder.com/data/icons/octicons/1024/sync-1024.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn0.iconfinder.com/data/icons/octicons/1024/sync-1024.png
+  # Title for the application
+  title:
+    en_US: Web Sync (RSync)
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48109"

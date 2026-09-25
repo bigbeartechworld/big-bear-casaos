@@ -1,0 +1,77 @@
+name: big-bear-caddy
+services:
+  app:
+    image: caddy:2.11.4
+    restart: unless-stopped
+    ports:
+      - target: 80
+        published: 48100
+        protocol: tcp
+      - target: 443
+        published: 48101
+        protocol: tcp
+      - target: 2019
+        published: 2019
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/caddy/data
+        target: /data
+      - type: bind
+        source: /DATA/AppData/caddy/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/caddy/caddyfile
+        target: /etc/caddy/caddyfile
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /etc/caddy/caddyfile
+          description:
+            en_US: 'Container Path: /etc/caddy/caddyfile'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+        - container: "2019"
+          description:
+            en_US: 'Container Port: 2019'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.caddy
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Caddy - The Ultimate Server with Automatic HTTPS.
+  # Brief tagline for the application
+  tagline:
+    en_US: Caddy - The Ultimate Server With Automatic Https.
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/caddy.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/caddy.png
+  # Title for the application
+  title:
+    en_US: Caddy
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48100"

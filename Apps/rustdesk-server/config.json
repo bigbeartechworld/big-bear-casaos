@@ -1,0 +1,7 @@
+{
+  "id": "rustdesk-server",
+  "version": "1",
+  "image": "rustdesk/rustdesk-server",
+  "youtube": "",
+  "docs_link": ""
+}

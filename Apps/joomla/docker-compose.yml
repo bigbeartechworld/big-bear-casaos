@@ -1,0 +1,86 @@
+name: big-bear-joomla
+services:
+  app:
+    image: joomla:6.1.3-apache
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: 15311349-803b-40a2-9153-5b13f8d4022e
+    depends_on:
+      - joomladb
+    ports:
+      - target: 80
+        published: 48105
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/www
+        target: /var/www/html
+    x-casaos:
+      envs:
+        - container: JOOMLA_DB_HOST
+          description:
+            en_US: 'Container Variable: JOOMLA_DB_HOST'
+        - container: JOOMLA_DB_PASSWORD
+          description:
+            en_US: 'Container Variable: JOOMLA_DB_PASSWORD'
+      volumes:
+        - container: /var/www/html
+          description:
+            en_US: 'Container Path: /var/www/html'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+  joomladb:
+    image: mysql:9.7.2
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 15311349-803b-40a2-9153-5b13f8d4022e
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/mysql
+        target: /var/lib/mysql
+    x-casaos:
+      envs:
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_US: 'Container Path: /var/lib/mysql'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.joomla
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Another free and open-source CMS
+  # Brief tagline for the application
+  tagline:
+    en_US: Another Free And Open-source Cms
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/joomla.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/joomla.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: For database connection, select `MySQL` then on the `database host` field put `joomladb`, for `database user` put `root` and for `database password` put `15311349-803b-40a2-9153-5b13f8d4022e`
+  # Title for the application
+  title:
+    en_US: Joomla
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48105"

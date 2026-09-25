@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-fail2ban
 services:
   app:
-    image: linuxserver/fail2ban:1.1.0@sha256:82ca532863046968e06525539a771aa0db9598df5f8e495383c279e3d2491ddf
+    image: linuxserver/fail2ban:1.1.0@sha256:96ec272e28c2c4b8504845c9bac171c6ddc9d01e397cb0ee9e601195bbdb62d0
     restart: unless-stopped
     environment:
       PUID: $PUID

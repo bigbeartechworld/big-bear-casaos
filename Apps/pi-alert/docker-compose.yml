@@ -1,0 +1,82 @@
+name: big-bear-pi-alert
+services:
+  app:
+    image: jokobsk/pi.alert:25
+    restart: always
+    network_mode: host
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      HOST_USER_ID: $PUID
+      HOST_USER_GID: $PGID
+      TZ: $TZ
+    ports:
+      - target: 20211
+        published: 20211
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /home/pi/pialert/config
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /home/pi/pialert/db
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: HOST_USER_ID
+          description:
+            en_US: 'Container Variable: HOST_USER_ID'
+        - container: HOST_USER_GID
+          description:
+            en_US: 'Container Variable: HOST_USER_GID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /home/pi/pialert/config
+          description:
+            en_US: 'Container Path: /home/pi/pialert/config'
+        - container: /home/pi/pialert/db
+          description:
+            en_US: 'Container Path: /home/pi/pialert/db'
+      ports:
+        - container: "20211"
+          description:
+            en_US: 'Container Port: 20211'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.pi-alert
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: WIFI / LAN intruder detector
+  # Brief tagline for the application
+  tagline:
+    en_US: Wifi / Lan Intruder Detector
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/pucherot/Pi.Alert/main/docs/img/1_devices.jpg
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/pucherot/Pi.Alert/main/docs/img/1_devices.jpg
+  # Title for the application
+  title:
+    en_US: Pi.alert
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "20211"

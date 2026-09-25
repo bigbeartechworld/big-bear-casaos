@@ -1,0 +1,77 @@
+name: big-bear-portainer-tools
+services:
+  app:
+    image: technorabilia/portainer-tools
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      PORTAINER_USERNAME: ''
+      PORTAINER_PASSWORD: ''
+      PORTAINER_URL: 0.0.0.0:9000
+      SERVER_URL: http://0.0.0.0:9999
+    ports:
+      - target: 9999
+        published: 9999
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/portainer-tools/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: PORTAINER_USERNAME
+          description:
+            en_US: 'Container Variable: PORTAINER_USERNAME'
+        - container: PORTAINER_PASSWORD
+          description:
+            en_US: 'Container Variable: PORTAINER_PASSWORD'
+        - container: PORTAINER_URL
+          description:
+            en_US: 'Container Variable: PORTAINER_URL'
+        - container: SERVER_URL
+          description:
+            en_US: 'Container Variable: SERVER_URL'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "9999"
+          description:
+            en_US: 'Container Port: 9999'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.portainer-tools
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Portainer Tools allows you to add your own Portainer App Template definitions, merge them with existing ones and host them on your own server. You can set the Portainer App Templates URL from within the application to easily switch App Template definitions. Detailed information about installing and using the application and more can be found on https://www.technorabilia.com/portainer-tools-merge-and-host-app-template-definitions.
+  # Brief tagline for the application
+  tagline:
+    en_US: Portainer Tools allows you to add your own Portainer App Template definitions, merge them with existing ones and host them on your own server.
+  # Developer's information
+  developer: Technorabilia
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/icon.png
+  # Title for the application
+  title:
+    en_US: Portainer Tools
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "9999"

@@ -1,0 +1,58 @@
+name: big-bear-minecraft
+services:
+  app:
+    image: itzg/minecraft-server:2026.9.1
+    environment:
+      EULA: true
+    ports:
+      - target: 25565
+        published: 25565
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: EULA
+          description:
+            en_US: 'Container Variable: EULA'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "25565"
+          description:
+            en_US: 'Container Port: 25565'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.minecraft
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: This docker image provides a Minecraft Server that will automatically download the latest stable version at startup. You can also run/upgrade to any specific version or the latest snapshot. See the Versions section below for more information.
+  # Brief tagline for the application
+  tagline:
+    en_US: This Docker Image Provides A Minecraft Server That Will Automatically Download The Latest Stable Version At Startup. You Can Also Run/upgrade To Any Specific Version Or The Latest Snapshot. See The Versions Section Below For More Information.
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/minecraft.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/minecraft.png
+  # Title for the application
+  title:
+    en_US: Minecraft Server
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "25565"

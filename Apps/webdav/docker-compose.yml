@@ -1,0 +1,75 @@
+name: big-bear-webdav
+services:
+  app:
+    image: bytemark/webdav:latest
+    restart: unless-stopped
+    environment:
+      AUTH_TYPE: Digest
+      USERNAME: bigbear
+      PASSWORD: 437830b0-693e-47c3-863c-465522d720db
+    ports:
+      - target: 80
+        published: 48108
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/Documents
+        target: /var/lib/dav
+    x-casaos:
+      envs:
+        - container: AUTH_TYPE
+          description:
+            en_US: 'Container Variable: AUTH_TYPE'
+        - container: USERNAME
+          description:
+            en_US: 'Container Variable: USERNAME'
+        - container: PASSWORD
+          description:
+            en_US: 'Container Variable: PASSWORD'
+      volumes:
+        - container: /var/lib/dav
+          description:
+            en_US: 'Container Path: /var/lib/dav'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.webdav
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Web-based distributed authoring and versioning (WebDAV) is a set of extensions to the HTTP protocol that allows WebDAV clients (such as Microsoft Web Folders) to collaboratively edit and manage files on remote Web servers.
+  # Brief tagline for the application
+  tagline:
+    en_US: Web-based distributed authoring and versioning (WebDAV) is a set of extensions to the HTTP protocol that allows WebDAV clients (such as Microsoft Web Folders) to collaboratively edit and manage files on remote Web servers.
+  # Developer's information
+  developer: Bytemark
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://debrid-link.com/screen/webdav_logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://debrid-link.com/screen/webdav_logo.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        | Label | Value |
+        | --- | --- |
+        | Username | `bigbear` |
+        | Password | `437830b0-693e-47c3-863c-465522d720db` |
+        | Port | `48108` |
+        | Files Path | `/DATA/Documents` |
+  # Title for the application
+  title:
+    en_US: WebDAV
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48108"

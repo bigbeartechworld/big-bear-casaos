@@ -1,0 +1,69 @@
+name: big-bear-privatebin
+services:
+  app:
+    image: privatebin/nginx-fpm-alpine:2.0.6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+    ports:
+      - target: 8080
+        published: 48106
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /srv/data
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /srv/cfg
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+      volumes:
+        - container: /srv/data
+          description:
+            en_US: 'Container Path: /srv/data'
+        - container: /srv/cfg
+          description:
+            en_US: 'Container Path: /srv/cfg'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.privatebin
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data!
+  # Brief tagline for the application
+  tagline:
+    en_US: Privatebin Is A Minimalist, Open Source Online Pastebin Where The Server Has Zero Knowledge Of Pasted Data!
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/privatebin.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/privatebin.png
+  # Title for the application
+  title:
+    en_US: Privatebin
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48106"
