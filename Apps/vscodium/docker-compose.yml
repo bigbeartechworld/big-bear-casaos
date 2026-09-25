@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-vscodium
 services:
   app:
-    image: linuxserver/vscodium:1.135.06055@sha256:3a7e2ab355c744bcac49457fa01e184e35336eccdcf6192538a4b4d7c611c730
+    image: linuxserver/vscodium:1.135.06055@sha256:6d299002029dc6fa2aa3cbc5ee0fcd295fe17d2d805cf1e6ede70d2eaeef4798
     restart: unless-stopped
     environment:
       PUID: $PUID

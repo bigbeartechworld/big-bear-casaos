@@ -16,7 +16,7 @@ services:
     container_name: big-bear-rocket-chat-v8
     # Docker Image
     # Specifies the Docker image to use for Rocket.Chat v8.
-    image: rocket.chat:8.8.1@sha256:7703ce8608852a5e82649ceaf32cd2d5f82cf6630f629e29f574557e409315d5
+    image: rocket.chat:8.8.1@sha256:616a30e265c981afa108cf3492264374fb179301d2795589e892e6ce1130d4df
     # Restart Policy
     # Determines how the container should be handled if it stops.
     restart: unless-stopped

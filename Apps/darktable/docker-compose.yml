@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-darktable
 services:
   app:
-    image: linuxserver/darktable:25.6.1@sha256:00ddd5b849bc499a73a5b40326a40eb444cb2d0ea17c86aff529779e7a5b5b70
+    image: linuxserver/darktable:25.6.1@sha256:197c931960bcc8786bc0523ae749654927d89e56e43a6b09cfbf6b3fb3c9bfcb
     restart: unless-stopped
     environment:
       PUID: $PUID

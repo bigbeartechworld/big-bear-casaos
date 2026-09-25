@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-retroarch
 services:
   app:
-    image: linuxserver/retroarch:1.22.2@sha256:2440c95f043100d8c1bdd31fcf7f5a44427ae2395f0fd9a0d087cdb9ef04041c
+    image: linuxserver/retroarch:1.22.2@sha256:d5b49482a1ba902c3448efc7c6961c574c10e37d1cdfc5273d1230b98dd1562c
     restart: unless-stopped
     environment:
       PUID: $PUID

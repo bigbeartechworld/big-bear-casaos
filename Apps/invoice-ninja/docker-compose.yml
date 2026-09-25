@@ -5,7 +5,7 @@ name: big-bear-invoice-ninja
 # Service definitions for the big-bear-invoice-ninja application
 services:
   big-bear-invoice-ninja:
-    image: invoiceninja/invoiceninja:5.13.40@sha256:043ccaafd3e7970c2ffc45a89b4e032566e4a7b50f264c24f49cabfae18598fa
+    image: invoiceninja/invoiceninja:5.13.43@sha256:8917b50fccd22d77ceda53b2b0dc7b7466a0d72e93fffa8aeeb868dcdb2c3915
     container_name: big-bear-invoice-ninja
     restart: unless-stopped
     user: 1500:1500
@@ -151,7 +151,7 @@ services:
           description:
             en_US: 'Container Path: /var/lib/mysql'
   big-bear-invoice-ninja-init:
-    image: bash:5.3.15@sha256:a19c811ee9e97fa8a080001d82b8e0ded303f0795cffdb1cbd162731bc8ce208
+    image: bash:5.3.20@sha256:61962062d969cb46dfc2bad061d36342406fa485f64f246aa7e95693ca07df1f
     container_name: big-bear-invoice-ninja-init
     volumes:
       - /DATA/AppData/$AppID/data:/tmp/data

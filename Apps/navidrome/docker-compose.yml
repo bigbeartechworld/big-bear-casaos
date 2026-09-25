@@ -1,7 +1,7 @@
 name: big-bear-navidrome
 services:
   app:
-    image: deluan/navidrome:0.61.2@sha256:9fa40b3d8dec43ceb2213d1fa551da3dcfef6ac6d19c2e534efb92527c2bafd2
+    image: deluan/navidrome:0.64.0@sha256:a384948b81bd1529986c5960169e7fc4fa00f46bde6bd517971a4c36671db2af
     container_name: navidrome
     ports:
       - "4533:4533"

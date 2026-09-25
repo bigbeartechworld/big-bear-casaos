@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-babybuddy
 services:
   app:
-    image: linuxserver/babybuddy:2.10.1@sha256:985a2adc74c431271d0273db9d14196cd28a50aadc943fe3b36af3c45f7030a0
+    image: linuxserver/babybuddy:2.11.0@sha256:b19394db47554ab385e5513dcb4aed253f551a19ac89576a9df191ed59b683de
     restart: unless-stopped
     environment:
       PUID: $PUID

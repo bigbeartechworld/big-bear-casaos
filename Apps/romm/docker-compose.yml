@@ -7,7 +7,7 @@ services:
   # Service name: big-bear-romm
   # The `big-bear-romm` service definition
   big-bear-romm:
-    image: rommapp/romm:5.2.0@sha256:3512f2ca455782f90247271bed23116e6bc675bc74e379be2c41696e607ab11e # Docker image for the application
+    image: rommapp/romm:5.3.0@sha256:dc586cb3a2c7316fcffb3dc273171b1964523f0f409e989295d26d2199df1d4e # Docker image for the application
     container_name: big-bear-romm
     environment:
       - DB_HOST=big-bear-rommdb # Hostname of the MariaDB container

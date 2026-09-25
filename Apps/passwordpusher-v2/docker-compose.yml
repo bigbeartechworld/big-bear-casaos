@@ -29,7 +29,7 @@ services:
     # Name of the container
     container_name: big-bear-pwpush-v2
     # Image to be used for the container
-    image: pglombardo/pwpush:2.12.0@sha256:db601aa82699cce269b2e92f3f8b23cee5e43309779aea3f6a498290c449f1c3
+    image: pglombardo/pwpush:2.14.0@sha256:6865d759358cbd3cb4e3132c0ef5a58b09d9ff29726693595d5923ce82eee8a5
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container

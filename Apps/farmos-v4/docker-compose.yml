@@ -29,7 +29,7 @@ services:
     # Name of the container
     container_name: big-bear-farmos-v4
     # Image to be used for the container
-    image: farmos/farmos:4.0.5@sha256:62ddce7ce4c46b7d0f10425afe5de8f92a17c59c9e764cf8df885fe82c927379
+    image: farmos/farmos:4.0.6@sha256:500843a3ed35d837d6f3c50a744444f61ce7b3b25bca55375d20f62f0f6a861b
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
