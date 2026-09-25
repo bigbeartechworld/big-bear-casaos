@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-eden
 services:
   app:
-    image: linuxserver/eden:0.2.1@sha256:91f5be6bb28b220661c194f7858559f47e3f412e4501d6b3e2814b803b0dee70
+    image: linuxserver/eden:0.2.1@sha256:8b8610d6cfce8eaaf53622d17e15ad9846cc72e8aab125c50cccc0cabea01475
     restart: unless-stopped
     environment:
       PUID: $PUID

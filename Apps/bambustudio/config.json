@@ -1,6 +1,6 @@
 {
   "id": "bambustudio",
-  "version": "02.08.02",
+  "version": "02.08.03",
   "image": "linuxserver/bambustudio",
   "youtube": "",
   "docs_link": ""

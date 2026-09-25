@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-scummvm
 services:
   app:
-    image: linuxserver/scummvm:2026.3.0@sha256:29555e536d0ff5defb1166a8b17c23a1a6e5d206233410b167d36c0f791fd2b5
+    image: linuxserver/scummvm:2026.3.0@sha256:418ff00e4f4a331117783978e906b852c6df6bc458d5b5c919c31bad4f0a0fdc
     restart: unless-stopped
     environment:
       PUID: $PUID

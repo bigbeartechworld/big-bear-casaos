@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-tailscale
     # Image to be used for the container
-    image: tailscale/tailscale:v1.102.3@sha256:8c42c4574ab066384fcb72f69e086a2ff1dd3652eb6f56856cee34bcf0d2f680
+    image: tailscale/tailscale:v1.102.4@sha256:2667499ed87ae29218f292556ba062918402dd5e92e93637af14867e4df12dd3
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container

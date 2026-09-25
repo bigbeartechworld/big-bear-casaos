@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-bambustudio
 services:
   app:
-    image: linuxserver/bambustudio:02.08.02@sha256:7f31ec3fecb07338eb391674f4a4436fed4c5ceab238e5bbc31c330cbf4196ff
+    image: linuxserver/bambustudio:02.08.03@sha256:f6b7d67685a933d799e97872f72366a9250de068a73e2cc81d1d130f5e5ae348
     restart: unless-stopped
     environment:
       PUID: $PUID

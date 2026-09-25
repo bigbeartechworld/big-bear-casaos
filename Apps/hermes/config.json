@@ -1,6 +1,6 @@
 {
   "id": "hermes",
-  "version": "2026.9.14",
+  "version": "v2026.9.21",
   "image": "nousresearch/hermes-agent",
   "youtube": "",
   "docs_link": "https://hermes-agent.nousresearch.com/docs/"

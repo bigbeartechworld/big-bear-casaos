@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-dosbox-staging
 services:
   app:
-    image: linuxserver/dosbox-staging:0.83.0@sha256:9b47af7cb6c5e51faaef40460816a0e1ffd24fad4beaac67418236085646b183
+    image: linuxserver/dosbox-staging:0.83.0@sha256:7e2b4e639da689c3a005250ad9067e1beaa7c8c493a95a4034e58705bfe29bd4
     restart: unless-stopped
     environment:
       PUID: $PUID

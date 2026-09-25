@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-synclounge
 services:
   app:
-    image: linuxserver/synclounge:5.2.35@sha256:e2121f13cd6514394bdc82a4a3df8c66b169d3a2cfae960a2f3bf9b15594e20c
+    image: linuxserver/synclounge:5.2.35@sha256:aae78ae2936b214d6733d56cbf3dd42fd9c79bcdf4655c00403b704dff9a9a69
     restart: unless-stopped
     environment:
       AUTH_LIST: ''

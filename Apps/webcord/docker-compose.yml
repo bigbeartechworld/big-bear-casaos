@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-webcord
 services:
   app:
-    image: linuxserver/webcord:4.14.0@sha256:33f4850371fdc2a01bee9afa7ef2399d8f4c6acbab131a1ccc506fa5eea2d115
+    image: linuxserver/webcord:4.14.0@sha256:8de4b17b439fedf53ef929646099812fb5506fc17a01222bd93858b3c6c1f056
     restart: unless-stopped
     environment:
       PUID: $PUID

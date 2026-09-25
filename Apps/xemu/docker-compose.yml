@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-xemu
 services:
   app:
-    image: linuxserver/xemu:0.8.134@sha256:eb5da0c57b28a9dddcc93e6cb6c7399c3c179d6943582d68926512abfaa1e14e
+    image: linuxserver/xemu:0.8.134@sha256:58479147a958912ed943857edf95f54e7b57f4cedff6b2863b30349ce36bcd85
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-tianji
     # Image to be used for the container
-    image: moonrailgun/tianji:1.32.37@sha256:f2f16480b34304a2c6f9fc8d7150dde4f07c2a0a0606c8470cff1b430c1352d0
+    image: moonrailgun/tianji:1.33.3@sha256:621b38888ce16e6371d65753761825ac2947d17c0dcd6d66efca30a466b0d0ac
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container

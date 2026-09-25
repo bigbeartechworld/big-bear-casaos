@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-orcaslicer
 services:
   app:
-    image: linuxserver/orcaslicer:2.4.2@sha256:636971671567f995a9f77b2b4681ec744a92136f744866a2b0b75cf04d434c30
+    image: linuxserver/orcaslicer:2.4.2@sha256:14f79f464648f80cdbfb392746b1dcc782d5d80ac40ee4557ab87426012568bd
     restart: unless-stopped
     environment:
       PUID: $PUID
