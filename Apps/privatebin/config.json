@@ -1,0 +1,7 @@
+{
+  "id": "privatebin",
+  "version": "2.0.6",
+  "image": "privatebin/nginx-fpm-alpine",
+  "youtube": "",
+  "docs_link": ""
+}

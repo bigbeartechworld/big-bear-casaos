@@ -1,0 +1,127 @@
+name: big-bear-statping
+services:
+  app:
+    image: statping/statping:v0.90.74
+    restart: always
+    depends_on:
+      - db
+    environment:
+      VIRTUAL_PORT: 8080
+      DB_CONN: postgres
+      DB_HOST: db
+      DB_USER: bigbear
+      DB_PASS: dc640cd4-0450-4a94-aedb-ee5b43b32a45
+      DB_DATABASE: casaos
+      NAME: ''
+      DESCRIPTION: ''
+    ports:
+      - target: 8080
+        published: 48107
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/app
+        target: /app
+    x-casaos:
+      envs:
+        - container: VIRTUAL_PORT
+          description:
+            en_US: 'Container Variable: VIRTUAL_PORT'
+        - container: DB_CONN
+          description:
+            en_US: 'Container Variable: DB_CONN'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_USER
+          description:
+            en_US: 'Container Variable: DB_USER'
+        - container: DB_PASS
+          description:
+            en_US: 'Container Variable: DB_PASS'
+        - container: DB_DATABASE
+          description:
+            en_US: 'Container Variable: DB_DATABASE'
+        - container: NAME
+          description:
+            en_US: 'Container Variable: NAME'
+        - container: DESCRIPTION
+          description:
+            en_US: 'Container Variable: DESCRIPTION'
+      volumes:
+        - container: /app
+          description:
+            en_US: 'Container Path: /app'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+  db:
+    image: postgres:18.6
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      POSTGRES_USER: bigbear
+      POSTGRES_PASSWORD: dc640cd4-0450-4a94-aedb-ee5b43b32a45
+      POSTGRES_DB: casaos
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/postgres/data
+        target: /var/lib/postgresql/data
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.statping
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: An easy to use Status Page for your websites and applications. Statping will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page.
+  # Brief tagline for the application
+  tagline:
+    en_US: An Easy To Use Status Page For Your Websites And Applications. Statping Will Automatically Fetch The Application And Render A Beautiful Status Page With Tons Of Features For You To Build An Even Better Status Page.
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/statping.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/statping.png
+  # Title for the application
+  title:
+    en_US: Statping
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48107"

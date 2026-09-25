@@ -1,0 +1,92 @@
+name: big-bear-hestiacp
+services:
+  app:
+    image: artsemkniazeu/hestiacp
+    restart: unless-stopped
+    environment:
+      TZ: $TZ
+    networks:
+      docnet:
+        ipv4_address: 10.1.1.0
+    ports:
+      - target: 8083
+        published: 48112
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /hestia
+      - type: bind
+        source: /DATA/AppData/$AppID/home
+        target: /home
+      - type: bind
+        source: /DATA/AppData/$AppID/backup
+        target: /backup
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_NICE
+      - DAC_READ_SEARCH
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /hestia
+          description:
+            en_US: 'Container Path: /hestia'
+        - container: /home
+          description:
+            en_US: 'Container Path: /home'
+        - container: /backup
+          description:
+            en_US: 'Container Path: /backup'
+      ports:
+        - container: "8083"
+          description:
+            en_US: 'Container Port: 8083'
+networks:
+  docnet:
+    name: docnet
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+          ip_range: 10.1.1.0/24
+          gateway: 10.1.0.1
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.hestiacp
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Hestia Control Panel (HestiaCP) is an open-source web hosting control panel that allows users to manage their websites, domains, email accounts, databases, and more. It provides a user-friendly interface for managing web hosting environments and simplifies various administrative tasks.
+  # Brief tagline for the application
+  tagline:
+    en_US: An open-source web hosting control panel that allows users to manage their websites, domains, email accounts, databases, and more. It provides a user-friendly interface for managing web hosting environments and simplifies various administrative tasks.
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/hestiacp/hestiacp/main/web/images/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/hestiacp/hestiacp/main/web/images/logo.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Default `username` is `admin` and the default password can be found inside the `/DATA/AppData/hestiacp/config/root/password.txt` file.
+  # Title for the application
+  title:
+    en_US: Hestia CP
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48112"

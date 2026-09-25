@@ -1,0 +1,7 @@
+{
+  "id": "traefik",
+  "version": "v3.7.13",
+  "image": "traefik",
+  "youtube": "",
+  "docs_link": ""
+}

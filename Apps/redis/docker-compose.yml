@@ -1,0 +1,60 @@
+name: big-bear-redis
+services:
+  app:
+    image: redis:8.8.3
+    restart: unless-stopped
+    ports:
+      - target: 6379
+        published: '48110'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/redis/data
+        target: /data
+      - type: bind
+        source: /DATA/AppData/redis/config
+        target: /usr/local/etc/redis
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+        - container: /usr/local/etc/redis
+          description:
+            en_US: 'Container Path: /usr/local/etc/redis'
+      ports:
+        - container: "6379"
+          description:
+            en_US: 'Container Port: 6379'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+    - i386
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.redis
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine. Redis provides data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
+  # Brief tagline for the application
+  tagline:
+    en_US: Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker.
+  # Developer's information
+  developer: Redis
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png
+  # Title for the application
+  title:
+    en_US: Redis
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48110"

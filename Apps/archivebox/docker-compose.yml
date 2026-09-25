@@ -1,0 +1,75 @@
+name: big-bear-archivebox
+services:
+  app:
+    image: archivebox/archivebox:0.9.51
+    restart: unless-stopped
+    environment:
+      ALLOWED_HOSTS: '*'
+      MEDIA_MAX_SIZE: 500m
+      PUBLIC_INDEX: true
+      PUBLIC_SNAPSHOTS: true
+      PUBLIC_ADD_VIEW: true
+    ports:
+      - target: 8000
+        published: 8002
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+    x-casaos:
+      envs:
+        - container: ALLOWED_HOSTS
+          description:
+            en_US: 'Container Variable: ALLOWED_HOSTS'
+        - container: MEDIA_MAX_SIZE
+          description:
+            en_US: 'Container Variable: MEDIA_MAX_SIZE'
+        - container: PUBLIC_INDEX
+          description:
+            en_US: 'Container Variable: PUBLIC_INDEX'
+        - container: PUBLIC_SNAPSHOTS
+          description:
+            en_US: 'Container Variable: PUBLIC_SNAPSHOTS'
+        - container: PUBLIC_ADD_VIEW
+          description:
+            en_US: 'Container Variable: PUBLIC_ADD_VIEW'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "8000"
+          description:
+            en_US: 'Container Port: 8000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.archivebox
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view sites you want to preserve offline.
+  # Brief tagline for the application
+  tagline:
+    en_US: Archivebox Is A Powerful, Self-hosted Internet Archiving Solution To Collect, Save, And View Sites You Want To Preserve Offline.
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/archivebox.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/archivebox.png
+  # Title for the application
+  title:
+    en_US: Archivebox
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8002"

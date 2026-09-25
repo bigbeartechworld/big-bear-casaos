@@ -1,0 +1,63 @@
+name: big-bear-airvideohd
+services:
+  app:
+    image: dmaxwell/airvideohd:latest
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - type: bind
+        source: /DATA/AppData/airvideohd/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/airvideohd/conversionPath
+        target: /conversionPath
+      - type: bind
+        source: /DATA/Media/Movies
+        target: /videos
+    x-casaos:
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /conversionPath
+          description:
+            en_US: 'Container Path: /conversionPath'
+        - container: /videos
+          description:
+            en_US: 'Container Path: /videos'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.airvideohd
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Watch videos streamed instantly from your computer on your iPhone, iPad, iPod touch or Apple TV.
+  # Brief tagline for the application
+  tagline:
+    en_US: Watch videos streamed instantly from your computer on your iPhone, iPad, iPod touch or Apple TV.
+  # Developer's information
+  developer: InMethod
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://airvideo.app/images/icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://airvideo.app/images/icon.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        ### Note
+
+        To find your `Server PIN`, look in the `network.log` file in `/DATA/AppData/airvideohd/config/logs` after the server has started.
+  # Title for the application
+  title:
+    en_US: Air Video HD
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8080"

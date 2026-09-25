@@ -1,0 +1,59 @@
+name: big-bear-rustdesk-server
+services:
+  hbbs:
+    image: rustdesk/rustdesk-server:1
+    command: hbbs
+    volumes:
+      - /DATA/AppData/rustdesk/data:/root
+    network_mode: host
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+    x-casaos:
+      volumes:
+        - container: /root
+          description:
+            en_US: 'Container Path: /root'
+  hbbr:
+    image: rustdesk/rustdesk-server:1
+    command: hbbr
+    volumes:
+      - /DATA/AppData/rustdesk/data:/root
+    network_mode: host
+    restart: unless-stopped
+    x-casaos:
+      volumes:
+        - container: /root
+          description:
+            en_US: 'Container Path: /root'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rustdesk-server
+  # Main service for this application
+  main: hbbs
+  # Detailed description for the application
+  description:
+    en_US: RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration. You have full control of your data, with no concerns about security.
+  # Brief tagline for the application
+  tagline:
+    en_US: RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration. You have full control of your data, with no concerns about security.
+  # Developer's information
+  developer: RustDesk
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rustdesk.svg/48px-Rustdesk.svg.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rustdesk.svg/48px-Rustdesk.svg.png
+  # Title for the application
+  title:
+    en_US: Rustdesk Server
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8080"

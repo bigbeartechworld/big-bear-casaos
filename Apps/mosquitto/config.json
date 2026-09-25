@@ -1,0 +1,7 @@
+{
+  "id": "mosquitto",
+  "version": "2",
+  "image": "eclipse-mosquitto",
+  "youtube": "",
+  "docs_link": ""
+}

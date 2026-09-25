@@ -1,0 +1,127 @@
+name: big-bear-casaos-toolbox
+services:
+  app:
+    image: wisdomsky/casaos-toolbox:0.2
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      FORCE_HTTPS: false
+      WEBUI_PORT: 8088
+      DB_HOST: 0.0.0.0
+      DB_PORT: 33066
+      DB_DATABASE: casaos
+      DB_USERNAME: bigbear
+      DB_PASSWORD: fe8a627d-d00f-4486-9bb4-20d58b8b6d3e
+    volumes:
+      - /usr/bin/casaos-cli:/usr/bin/casaos-cli
+      - /etc/casaos/gateway.ini:/casaos/gateway.ini
+      - /var/lib/casaos/apps:/casaos/apps
+      - /var/lib/casaos/www:/casaos/www
+    x-casaos:
+      envs:
+        - container: FORCE_HTTPS
+          description:
+            en_US: 'Container Variable: FORCE_HTTPS'
+        - container: WEBUI_PORT
+          description:
+            en_US: 'Container Variable: WEBUI_PORT'
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_PORT
+          description:
+            en_US: 'Container Variable: DB_PORT'
+        - container: DB_DATABASE
+          description:
+            en_US: 'Container Variable: DB_DATABASE'
+        - container: DB_USERNAME
+          description:
+            en_US: 'Container Variable: DB_USERNAME'
+        - container: DB_PASSWORD
+          description:
+            en_US: 'Container Variable: DB_PASSWORD'
+      volumes:
+        - container: /usr/bin/casaos-cli
+          description:
+            en_US: 'Container Path: /usr/bin/casaos-cli'
+        - container: /casaos/gateway.ini
+          description:
+            en_US: 'Container Path: /casaos/gateway.ini'
+        - container: /casaos/apps
+          description:
+            en_US: 'Container Path: /casaos/apps'
+        - container: /casaos/www
+          description:
+            en_US: 'Container Path: /casaos/www'
+  db:
+    image: mariadb:13.0.2
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 05e5827c-ff33-4a7d-9b95-fddbf290b839
+      MYSQL_DATABASE: casaos
+      MYSQL_USER: bigbear
+      MYSQL_PASSWORD: fe8a627d-d00f-4486-9bb4-20d58b8b6d3e
+    ports:
+      - target: 3306
+        published: '33066'
+        protocol: tcp
+    volumes:
+      - /DATA/AppData/casaos-toolbox/mysql:/var/lib/mysql
+    x-casaos:
+      envs:
+        - container: MYSQL_ROOT_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_ROOT_PASSWORD'
+        - container: MYSQL_DATABASE
+          description:
+            en_US: 'Container Variable: MYSQL_DATABASE'
+        - container: MYSQL_USER
+          description:
+            en_US: 'Container Variable: MYSQL_USER'
+        - container: MYSQL_PASSWORD
+          description:
+            en_US: 'Container Variable: MYSQL_PASSWORD'
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_US: 'Container Path: /var/lib/mysql'
+      ports:
+        - container: "3306"
+          description:
+            en_US: 'Container Port: 3306'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.casaos-toolbox
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: CasaOS Toolbox is an extension application that provides additional features to CasaOS.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/casaos-toolbox/screenshots/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/casaos-toolbox/screenshots/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/casaos-toolbox/screenshots/screenshot-3.png
+  # Brief tagline for the application
+  tagline:
+    en_US: Provides additional features to CasaOS.
+  # Developer's information
+  developer: WisdomSky
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/casaos-toolbox/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps@main/apps/casaos-toolbox/logo.png
+  # Title for the application
+  title:
+    en_US: CasaOS Toolbox
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8088"

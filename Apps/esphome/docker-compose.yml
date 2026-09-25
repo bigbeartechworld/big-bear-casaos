@@ -1,0 +1,72 @@
+name: big-bear-esphome
+services:
+  app:
+    image: esphome/esphome:2026.9
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    environment:
+      USERNAME: bigbear
+      PASSWORD: f87989f5-0dd4-44af-a286-6c6a325001cc
+    volumes:
+      - type: bind
+        source: /DATA/AppData/esphome/config
+        target: /config
+      - type: bind
+        source: /etc/localtime
+        target: /etc/localtime
+        read_only: true
+    x-casaos:
+      envs:
+        - container: USERNAME
+          description:
+            en_US: 'Container Variable: USERNAME'
+        - container: PASSWORD
+          description:
+            en_US: 'Container Variable: PASSWORD'
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+        - container: /etc/localtime
+          description:
+            en_US: 'Container Path: /etc/localtime'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.esphome
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
+  # Brief tagline for the application
+  tagline:
+    en_US: ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
+  # Developer's information
+  developer: ESPHome
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://avatars.githubusercontent.com/u/45919759
+  # Thumbnail image for the application (if any)
+  thumbnail: https://avatars.githubusercontent.com/u/45919759
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        | Label | Value |
+        | --- | --- |
+        | Username | `bigbear` |
+        | Password | `f87989f5-0dd4-44af-a286-6c6a325001cc` |
+  # Title for the application
+  title:
+    en_US: ESPHome
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "6052"

@@ -1,0 +1,7 @@
+{
+  "id": "portainer-tools",
+  "version": "latest",
+  "image": "technorabilia/portainer-tools",
+  "youtube": "",
+  "docs_link": ""
+}

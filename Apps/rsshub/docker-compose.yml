@@ -1,0 +1,84 @@
+name: big-bear-rsshub
+services:
+  app:
+    image: diygod/rsshub:2026-09-24
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      CACHE_TYPE: redis
+      REDIS_URL: redis://redis:6379/
+      PUPPETEER_WS_ENDPOINT: ws://browserless:3000
+    ports:
+      - target: 1200
+        published: 1200
+        protocol: tcp
+    depends_on:
+      - redis
+      - browserless
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_US: 'Container Variable: NODE_ENV'
+        - container: CACHE_TYPE
+          description:
+            en_US: 'Container Variable: CACHE_TYPE'
+        - container: REDIS_URL
+          description:
+            en_US: 'Container Variable: REDIS_URL'
+        - container: PUPPETEER_WS_ENDPOINT
+          description:
+            en_US: 'Container Variable: PUPPETEER_WS_ENDPOINT'
+      ports:
+        - container: "1200"
+          description:
+            en_US: 'Container Port: 1200'
+  browserless:
+    image: browserless/chrome:1-puppeteer-10.4.0
+    restart: unless-stopped
+    ulimits:
+      core:
+        hard: 0
+        soft: 0
+  redis:
+    image: redis:8.8.3-alpine
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/rsshub/redis
+        target: /data
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.rsshub
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: RSSHub is an open source, easy to use, and extensible RSS feed generator. It's capable of generating RSS feeds from pretty much everything. RSSHub delivers millions of contents aggregated from all kinds of sources, our vibrant open source community is ensuring the deliver of RSSHub's new routes, new features and bug fixes. RSSHub can be used with browser extension RSSHub Radar and mobile auxiliary app RSSBud (iOS) and RSSAid (Android)
+  # Brief tagline for the application
+  tagline:
+    en_US: RSSHub is an open source, easy to use, and extensible RSS feed generator. It's capable of generating RSS feeds from pretty much everything.
+  # Developer's information
+  developer: DIYgod
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://docs.rsshub.app/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://docs.rsshub.app/logo.png
+  # Title for the application
+  title:
+    en_US: RSShub
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "1200"

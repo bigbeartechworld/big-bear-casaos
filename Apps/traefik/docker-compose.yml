@@ -1,0 +1,115 @@
+name: big-bear-traefik
+services:
+  app:
+    image: traefik:v3.7.13
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      TRAEFIK_API: false
+      TRAEFIK_API_DASHBOARD: true
+      TRAEFIK_API_INSECURE: false
+    ports:
+      - target: 80
+        published: 48102
+        protocol: tcp
+      - target: 443
+        published: 48103
+        protocol: tcp
+      - target: 8080
+        published: 48104
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/traefik.toml
+        target: /etc/traefik/traefik.toml
+      - type: bind
+        source: /DATA/AppData/$AppID/traefik.yml
+        target: /etc/traefik/traefik.yml
+      - type: bind
+        source: /DATA/AppData/$AppID/config.yml
+        target: /etc/traefik/config.yml
+      - type: bind
+        source: /DATA/AppData/$AppID/acme.json
+        target: /etc/traefik/acme.json
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: 'Container Variable: PUID'
+        - container: PGID
+          description:
+            en_US: 'Container Variable: PGID'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: TRAEFIK_API
+          description:
+            en_US: 'Container Variable: TRAEFIK_API'
+        - container: TRAEFIK_API_DASHBOARD
+          description:
+            en_US: 'Container Variable: TRAEFIK_API_DASHBOARD'
+        - container: TRAEFIK_API_INSECURE
+          description:
+            en_US: 'Container Variable: TRAEFIK_API_INSECURE'
+      volumes:
+        - container: /etc/traefik/traefik.toml
+          description:
+            en_US: 'Container Path: /etc/traefik/traefik.toml'
+        - container: /etc/traefik/traefik.yml
+          description:
+            en_US: 'Container Path: /etc/traefik/traefik.yml'
+        - container: /etc/traefik/config.yml
+          description:
+            en_US: 'Container Path: /etc/traefik/config.yml'
+        - container: /etc/traefik/acme.json
+          description:
+            en_US: 'Container Path: /etc/traefik/acme.json'
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - armv7
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.traefik
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: Cloud-Native Networking Stack That Just Works.
+  # Brief tagline for the application
+  tagline:
+    en_US: Cloud-native Networking Stack That Just Works.
+  # Developer's information
+  developer: ""
+  # Author of this particular configuration
+  author: WisdomSky
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/traefik.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/traefik.png
+  # Title for the application
+  title:
+    en_US: Traefik
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "48104"
