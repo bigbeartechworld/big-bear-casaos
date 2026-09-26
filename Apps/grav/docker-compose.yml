@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-grav
 services:
   app:
-    image: linuxserver/grav:2.1.8@sha256:20c3eb58ad9e2250cb0f836e202ff7e4b01efca97f4f344baa2a50c87ac4dc81
+    image: linuxserver/grav:2.1.10@sha256:a2adc1b3aaeb5b01518d50e07a7851be4add1e2a2cb0eb289acc3ead4370fe02
     restart: unless-stopped
     environment:
       PUID: $PUID
