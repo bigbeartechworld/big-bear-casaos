@@ -6,10 +6,12 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | --- | --- |
 | adguard-home-host |  |
 | airsonic-advanced |  |
+| airvideohd |  |
 | altus |  |
 | anse |  |
 | apprise-api |  |
 | appsmith |  |
+| archivebox |  |
 | ardour |  |
 | arma3-server |  |
 | audacity |  |
@@ -31,11 +33,13 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | budibase |  |
 | build-agent |  |
 | buzz |  |
+| caddy |  |
 | cadvisor |  |
 | calcom |  |
 | calibre-web |  |
 | calibre |  |
 | calligra |  |
+| casaos-toolbox |  |
 | celestory |  |
 | changedetection-io |  |
 | changedetection |  |
@@ -84,6 +88,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | endlessh |  |
 | ente |  |
 | erugo |  |
+| esphome |  |
 | eufy-security-ws |  |
 | fail2ban |  |
 | farmos-v4 |  |
@@ -124,11 +129,13 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | heimdall |  |
 | helium |  |
 | hermes |  |
+| hestiacp |  |
 | hishtory-server |  |
 | homarr-v1 |  |
 | homebridge |  |
 | homepage |  |
 | homer |  |
+| hrconvert2 |  |
 | immich-aio-alpine |  |
 | immich-kiosk |  |
 | inkscape |  |
@@ -140,6 +147,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | jenkins-builder |  |
 | jfa-go |  |
 | jlesage-handbrake |  |
+| joomla |  |
 | kali-linux |  |
 | kavita |  |
 | kdenlive |  |
@@ -178,12 +186,14 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | melonds |  |
 | microbin |  |
 | mind |  |
+| minecraft |  |
 | minetest |  |
 | minio |  |
 | minisatip |  |
 | modmanager |  |
 | modrinth |  |
 | monica |  |
+| mosquitto |  |
 | msedge |  |
 | mstream |  |
 | mullvad-browser |  |
@@ -236,6 +246,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | peppermint |  |
 | photoprism |  |
 | phpmyadmin |  |
+| pi-alert |  |
 | pidgin |  |
 | pihole-updatelists |  |
 | piper |  |
@@ -248,9 +259,11 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | pocketid |  |
 | podfetch |  |
 | portainer-agent |  |
+| portainer-tools |  |
 | portracker |  |
 | poste-io |  |
 | ppsspp |  |
+| privatebin |  |
 | project-management |  |
 | projectsend |  |
 | psitransfer |  |
@@ -271,6 +284,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | reactive-resume |  |
 | readeck |  |
 | readme-sync |  |
+| redis |  |
 | remmina |  |
 | retroarch-web |  |
 | retroarch |  |
@@ -279,6 +293,8 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | romm |  |
 | rpcs3 |  |
 | rsnapshot |  |
+| rsshub |  |
+| rustdesk-server |  |
 | rustdesk |  |
 | rustfs |  |
 | scrutiny |  |
@@ -303,6 +319,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | spoolman |  |
 | sqlitebrowser |  |
 | stalwart-mail |  |
+| statping |  |
 | steam |  |
 | steamos |  |
 | storyteller |  |
@@ -317,6 +334,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | thelounge |  |
 | thunderbird |  |
 | tianji |  |
+| traefik |  |
 | tududi |  |
 | tugtainer |  |
 | ubooquity |  |
@@ -335,8 +353,10 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | wallabag |  |
 | warracker |  |
 | webcord |  |
+| webdav |  |
 | webgrabplus |  |
 | webstation |  |
+| websync |  |
 | webtop |  |
 | weixin |  |
 | wg-easy-v15 |  |
