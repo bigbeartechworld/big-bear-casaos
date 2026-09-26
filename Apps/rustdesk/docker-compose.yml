@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-rustdesk
 services:
   app:
-    image: linuxserver/rustdesk:1.4.9@sha256:5637ecd8ff5b1fcaa8efbe63a272219ba2c5281bc28d22bc4fd24b9755cecbad
+    image: linuxserver/rustdesk:1.4.9@sha256:4e4d01107dcb3256ddf34b68f4f946171fa154352b433b454f77b95815d97216
     restart: unless-stopped
     environment:
       PUID: $PUID
