@@ -1,6 +1,6 @@
 {
   "id": "intellij-idea",
-  "version": "42026.2.2",
+  "version": "42026.2.3",
   "image": "linuxserver/intellij-idea",
   "youtube": "",
   "docs_link": ""

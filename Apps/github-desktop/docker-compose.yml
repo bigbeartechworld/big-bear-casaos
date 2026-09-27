@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-github-desktop
 services:
   app:
-    image: linuxserver/github-desktop:3.4.13@sha256:a663ba5d99d5c6c2b1f55ba9a5e8a198bc1a957bd910922c85e15aa29645ab0e
+    image: linuxserver/github-desktop:3.4.13@sha256:2af67286e1c584956103af417d9593272f130de8bc6aa4e218efc0c4912bd86b
     restart: unless-stopped
     environment:
       PUID: $PUID
