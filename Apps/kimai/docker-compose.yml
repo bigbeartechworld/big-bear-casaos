@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-kimai
 services:
   app:
-    image: linuxserver/kimai:2.67.0@sha256:fb8f8d1b6f984ceffbe4945ba22ee69d7ad8b86f81333b78a1d715aac61c8f1a
+    image: linuxserver/kimai:2.67.0@sha256:450d39ae0d98925c13ba7870193d6344cdbb761fc32aa134be4252f69d1b5714
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-mysql-workbench
 services:
   app:
-    image: linuxserver/mysql-workbench:8.0.47@sha256:af86f67fcbf7d1e0da9610fb2bf05eda77228ca4995df58976b6f35e42ebd1ac
+    image: linuxserver/mysql-workbench:8.0.47@sha256:ce3265f003ac8daacba066d394e21c3f7b8604a0fab0df15172bdcff5061b11c
     restart: unless-stopped
     environment:
       PUID: $PUID

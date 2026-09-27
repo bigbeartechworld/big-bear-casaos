@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-mediaelch
 services:
   app:
-    image: linuxserver/mediaelch:2.12.0@sha256:34f164fb5422b96e4c8f2f6759f8b10872f160d5342c19fc9f11b53cc561ecf2
+    image: linuxserver/mediaelch:2.12.0@sha256:fe36b6b5d089e7f40d938dbb204fb2aae74589329efd3dd985178744ae3495f2
     restart: unless-stopped
     environment:
       PUID: $PUID
