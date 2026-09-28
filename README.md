@@ -108,7 +108,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | authentik | ghcr.io/goauthentik/server | 2026.2.2 |  |  |
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | azahar | linuxserver/azahar | 12125.1.3 |  |  |
-| babybuddy | linuxserver/babybuddy | 2.10.1 |  |  |
+| babybuddy | linuxserver/babybuddy | 2.11.0 |  |  |
 | bambustudio | linuxserver/bambustudio | 02.08.03 |  |  |
 | baserow | baserow/baserow | 2.3.4 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beaverhabits | daya0576/beaverhabits | 0.10.0 |  |  |
