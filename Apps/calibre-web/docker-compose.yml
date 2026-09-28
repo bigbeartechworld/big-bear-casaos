@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-calibre-web
 services:
   app:
-    image: linuxserver/calibre-web:0.6.27@sha256:802729966faed5e32d671cd4f92ba6196e9e754a6c0f740ce1ee9acd86b10e55
+    image: linuxserver/calibre-web:0.6.27@sha256:e7debaaec01a02a9e524d888209c590ab5c77a25546723f9b73a3bd32d946cfc
     restart: unless-stopped
     environment:
       PUID: $PUID
