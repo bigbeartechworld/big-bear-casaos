@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-cura
 services:
   app:
-    image: linuxserver/cura:5.13.0@sha256:1b111783e5bd9e7cc495a9a1f942f73f525730b2f8c59d72b9181bca7d1c3074
+    image: linuxserver/cura:5.13.0@sha256:fd98df9f9ac514f63e900dafb38d165b22d3c2918d61e72bb9526f9d676c59d7
     restart: unless-stopped
     environment:
       PUID: $PUID
