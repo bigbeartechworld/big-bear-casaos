@@ -6,7 +6,7 @@ name: big-bear-unifi-network-application
 services:
   # Main application service
   app: # Name of the service
-    image: linuxserver/unifi-network-application:10.6.106@sha256:5f5e76c95b5bd4becb0cdb1b96ef53a468e75ca0f7a096ca5c24fc30998b382a # Docker image to use
+    image: linuxserver/unifi-network-application:10.6.106@sha256:5d288401f8bce9561caa64939ef4188bbb5a3e0f5bc159a833fdabd9afbc531a # Docker image to use
     container_name: big-bear-unifi-network-application # Name for the created container
     environment: # Environmental variables for the container
       - PUID=1000 # User ID

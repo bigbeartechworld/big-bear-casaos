@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-rawtherapee
 services:
   app:
-    image: linuxserver/rawtherapee:5.13.20260913@sha256:7844c0ba8a6cf27ba045a1c80fdfb5b06425709f009602024e50d348b77bbc17
+    image: linuxserver/rawtherapee:5.13.20260927@sha256:3cbe79409125024131a8875d7ab1bb63810daa9b294cd7fbb1511a70b3aade8e
     restart: unless-stopped
     environment:
       PUID: $PUID

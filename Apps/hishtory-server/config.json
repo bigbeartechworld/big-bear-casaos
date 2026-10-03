@@ -1,6 +1,6 @@
 {
   "id": "hishtory-server",
-  "version": "0.335.20260911",
+  "version": "0.335.20260925",
   "image": "linuxserver/hishtory-server",
   "youtube": "",
   "docs_link": ""

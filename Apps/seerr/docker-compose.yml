@@ -1,7 +1,7 @@
 name: big-bear-seerr # Name of the compose project
 services:
   app:
-    image: seerr/seerr:v3.4.1@sha256:f4768de5f616248d723e05891f3345a1402123775d03bf0890dbfedc0831bda1 # Image to use for the seerr service
+    image: seerr/seerr:v3.5.0@sha256:27602401178d54f1964442287b9f23f67a3fa2252645ee8065839ea1c3f69e45 # Image to use for the seerr service
     init: true # Enable init process
     container_name: big-bear-seerr
     ports:

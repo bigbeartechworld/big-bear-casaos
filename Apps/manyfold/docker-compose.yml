@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-manyfold
 services:
   app:
-    image: linuxserver/manyfold:0.149.0@sha256:1e3260d3bba74790dc00c57ae8a8ddb8f7aa5cf0f97000d265f8d30dc931f792
+    image: linuxserver/manyfold:0.150.0@sha256:57193ffbbf8968af410f6fffe95f43de66977324066103a988a0568910ff3eb7
     restart: unless-stopped
     environment:
       PUID: $PUID
