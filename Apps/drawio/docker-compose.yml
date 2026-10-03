@@ -1,7 +1,7 @@
 name: big-bear-drawio
 services:
   app:
-    image: jgraph/drawio:31.5.3@sha256:03df6174f15aaad2df7f8465720860e3930a658a8790bdb0d131606dc6acb32a
+    image: jgraph/drawio:32.0.1@sha256:a9900b0797a594b1a7096953651c1449352aec0713d0d89fae1ce24fe9ae70f0
     container_name: drawio
     ports:
       - "8080:8080"
