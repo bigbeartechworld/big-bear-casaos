@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-pcsx2
 services:
   app:
-    image: linuxserver/pcsx2:2.8.2@sha256:7013027e52f2536ea453f9f960eef40d0b493ab6865c4106ad25c49298b4241b
+    image: linuxserver/pcsx2:2.8.2@sha256:4e7e61591f06b4f7ba94065888e70093f99b04644b0460baaa262ef896f2077c
     restart: unless-stopped
     environment:
       PUID: $PUID

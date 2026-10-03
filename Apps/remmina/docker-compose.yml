@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-remmina
 services:
   app:
-    image: linuxserver/remmina:1.4.43@sha256:fa8e87a89b127e8619d091d0a0cdb4fbcba2d706a95fd68403544e97e9631f8c
+    image: linuxserver/remmina:1.4.43@sha256:99a10c613e87f8f31acb1f25565b4c7c8d96b8fbe2c6528897b03d179a8918a6
     restart: unless-stopped
     environment:
       PUID: $PUID

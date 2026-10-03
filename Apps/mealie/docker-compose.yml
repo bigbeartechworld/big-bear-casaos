@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-mealie
     # Image to be used for the container
-    image: hkotel/mealie:v3.27.0@sha256:ba24b88462380fb59a6c7d04c6d9e607e0b6b04e31306592181186bcdab1952b
+    image: hkotel/mealie:v3.28.0@sha256:8b02290f4d1806f02acac6f25f6d48a3c965612fda1f8e914d5af533276f8688
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

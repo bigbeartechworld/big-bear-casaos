@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-yaak
 services:
   app:
-    image: linuxserver/yaak:2026.8.0@sha256:89af05e2a1558004a76e48d62377c021cb67acc7520950976d6b367ace8c411f
+    image: linuxserver/yaak:2026.8.1@sha256:552e20ac2a89c871b0ea5e48cdda6c5f8961b07f2f1d6947b786df084ea0ce14
     restart: unless-stopped
     environment:
       PUID: $PUID

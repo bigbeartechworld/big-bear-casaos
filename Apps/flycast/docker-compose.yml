@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-flycast
 services:
   app:
-    image: linuxserver/flycast:2.7.20260913@sha256:74a090d9b743d09d95dfc546064980ea9ded0d1e701de89b11672ce2d1431202
+    image: linuxserver/flycast:2.7.20260927@sha256:a433230c52bd6c0f6f7102aaf05355b01c745aca0f167b3bd80338c290c603e8
     restart: unless-stopped
     environment:
       PUID: $PUID

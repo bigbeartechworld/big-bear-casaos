@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-webtop
 services:
   app:
-    image: linuxserver/webtop:arch-kde-version-2025-07-12@sha256:d55dd7f34fe70e9e39fb004e3f7ef5eb0fd74b24a771ba972a25a24ce24f65a6
+    image: linuxserver/webtop:arch-kde-version-2025-07-12@sha256:e38f6e952db39f1b498f22b74d7c4ed9241b95b6cc3c8baf55140d4ad9823f6a
     restart: unless-stopped
     environment:
       PUID: $PUID

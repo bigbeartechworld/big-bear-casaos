@@ -1,7 +1,7 @@
 name: big-bear-nova-dso-tracker
 services:
   nova:
-    image: mrantonsg/nova-dso-tracker:6.6.0@sha256:92edd37285ee07cb0e10104d8ab2eae95735b11e5b9b640e12c5ca7eb9d674e2
+    image: mrantonsg/nova-dso-tracker:6.7.1@sha256:33b20216f6050c4dfbf6b933dc98e0c95f86c60b529189d394c8ef312da22052
     container_name: big-bear-nova-dso-tracker
     ports:
       - "5001:5001"
