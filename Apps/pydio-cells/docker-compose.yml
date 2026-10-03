@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-pydio-cells
 services:
   app:
-    image: linuxserver/pydio-cells:5.0.3@sha256:d549b020fbd759170d39580a66e31d807b06d0e3f885206ee1ee1ec546a426ce
+    image: linuxserver/pydio-cells:5.1.0@sha256:f3142b40fec79996f065ffb5d9ab25bc293dc18d88c0e75658465e23dcabbcce
     restart: unless-stopped
     environment:
       PUID: $PUID

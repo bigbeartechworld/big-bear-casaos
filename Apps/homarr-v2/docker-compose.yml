@@ -1,0 +1,111 @@
+# HOMARR V2 - NEW DEPLOYMENT
+# ===========================
+# This is a SEPARATE app from 'homarr-v1' (Homarr 1.63.0) and from 'homarr' (v0.16).
+# Separate databases can coexist. Host port 7576 avoids the v1 app on 7575.
+# Do not point both apps at one PostgreSQL database.
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Homarr 2 instances
+# - Generate SECRET_ENCRYPTION_KEY with: openssl rand -hex 32
+# - Data is stored at /appdata (SQLite by default)
+#
+# FOR MIGRATION FROM HOMARR V1:
+# - Do NOT uninstall the existing 'homarr-v1' app until the new one works
+# - SQLite (the default) lives in /appdata. Copy that directory into this app's appdata volume
+# - Set SECRET_ENCRYPTION_KEY to the v1 key. A new key makes encrypted secrets unrecoverable
+# - An external PostgreSQL database is not inside /appdata. Stop v1 and back up that database first
+# - Then set DB_DIALECT=postgresql and the same DB_URL. Leave v1 stopped while v2 migrates it
+# - You do not need to uninstall v1
+# - MySQL is not supported. Convert MySQL data to SQLite before starting v2
+#
+# Migration: https://homarr.dev/blog/2026/09/03/homarr-2.0/
+
+name: big-bear-homarr-v2
+services:
+  big-bear-homarr-v2:
+    container_name: big-bear-homarr-v2
+    image: ghcr.io/homarr-labs/homarr:v2.0.0@sha256:3eeef80bfc58f6588844e9405da47550f681006d3019005a34f9388b5c00eb73
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /DATA/AppData/$AppID/appdata:/appdata
+    environment:
+      - SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}
+      - DB_DIALECT=${DB_DIALECT:-sqlite}
+      - DB_URL=${DB_URL:-/appdata/db/db.sqlite}
+    ports:
+      - "7576:7575"
+    x-casaos:
+      envs:
+        - container: SECRET_ENCRYPTION_KEY
+          description:
+            en_US: 'Container Variable: SECRET_ENCRYPTION_KEY'
+        - container: DB_DIALECT
+          description:
+            en_US: 'Container Variable: DB_DIALECT'
+        - container: DB_URL
+          description:
+            en_US: 'Container Variable: DB_URL'
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+        - container: /appdata
+          description:
+            en_US: 'Container Path: /appdata'
+      ports:
+        - container: "7575"
+          description:
+            en_US: 'Container Port: 7575'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.homarr-v2
+  # Main service for this application
+  main: big-bear-homarr-v2
+  # Detailed description for the application
+  description:
+    en_US: Homarr v2 dashboard. This is a new app, separate from Homarr v1. The default SQLite database moves by copying /appdata and keeping the same SECRET_ENCRYPTION_KEY. An external PostgreSQL database is not in /appdata. Stop v1, back up that database, then set the same DB_DIALECT and DB_URL and leave v1 stopped while v2 migrates it. MySQL is no longer supported; convert existing MySQL data to SQLite before starting v2. Not compatible with legacy Homarr (v0.x) data without migration.
+  # Brief tagline for the application
+  tagline:
+    en_US: Homarr v2
+  # Developer's information
+  developer: homarr-labs
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/homarr.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        NEW APP - HOMARR V2
+
+        This is a NEW app, separate from 'homarr-v1' (v1.63.0) and from 'homarr' (v0.16). Separate databases can run at the same time. Do not point both apps at one PostgreSQL database.
+
+        FOR NEW USERS:
+        - Install this app for new Homarr 2 deployments
+        - Set SECRET_ENCRYPTION_KEY to a 64 character hex string from: openssl rand -hex 32
+        - The Compose file reads that variable. An empty value in the file does not count as a key
+        - Web UI is on host port 7576
+
+        FOR HOMARR V1 USERS:
+        - Do NOT uninstall your existing 'homarr-v1' app until this one works
+        - SQLite (the default) lives in /appdata. Copy that directory into this app's appdata volume
+        - Set SECRET_ENCRYPTION_KEY to the v1 key. A new key makes encrypted secrets unrecoverable
+        - An external PostgreSQL database is not inside /appdata. Stop the v1 app and back up that database before starting v2. Then set DB_DIALECT=postgresql and the same DB_URL. Homarr v2 migrates the schema on startup. Leave v1 stopped while v2 uses that database. You do not need to uninstall v1
+        - MySQL is not supported. Convert MySQL data to SQLite before starting v2
+
+        Migration: https://homarr.dev/blog/2026/09/03/homarr-2.0/
+  # Title for the application
+  title:
+    en_US: Homarr v2
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "7576"

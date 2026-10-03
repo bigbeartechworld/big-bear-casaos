@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-homarr-v1
     # Image to be used for the container
-    image: ghcr.io/homarr-labs/homarr:v2.0.0@sha256:3eeef80bfc58f6588844e9405da47550f681006d3019005a34f9388b5c00eb73
+    image: ghcr.io/homarr-labs/homarr:v1.63.0@sha256:6daf640531c1c114ccce15775185b3fb8958365a62c2fabc559d9cc5ae064326
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -55,10 +55,10 @@ x-casaos:
   main: big-bear-homarr-v1
   # Detailed description for the application
   description:
-    en_US: 'Homarr v1 - A sleek, modern dashboard for your server. This is the latest major version (v1.x) from homarr-labs with improved architecture and features. Note: This version uses a different data structure and requires SECRET_ENCRYPTION_KEY. Not compatible with legacy Homarr (v0.x) data without migration.'
+    en_US: Homarr v1 dashboard, pinned at v1.63.0. Use Homarr v2 for new installs. This version uses a different data structure from Homarr v0 and requires SECRET_ENCRYPTION_KEY. Not compatible with legacy Homarr (v0.x) data without migration.
   # Brief tagline for the application
   tagline:
-    en_US: Homarr v1 (Latest)
+    en_US: Homarr v1
   # Developer's information
   developer: homarr-labs
   # Author of this particular configuration
@@ -73,7 +73,7 @@ x-casaos:
       en_US: 'Read this before installing: https://community.bigbeartechworld.com/t/added-homarr-v1-to-bigbearcasaos/5074#p-7710-documentation-2'
   # Title for the application
   title:
-    en_US: Homarr v1
+    en_US: Homarr v1 (Legacy)
   # Category under which the application falls
   category: Productivity
   # Default port mapping for the application

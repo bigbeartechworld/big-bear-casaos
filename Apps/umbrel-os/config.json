@@ -1,6 +1,6 @@
 {
   "id": "umbrel-os",
-  "version": "1.7.4",
+  "version": "2.0.0",
   "image": "dockurr/umbrel",
   "youtube": "https://youtu.be/O03CH-YLdk0",
   "docs_link": ""

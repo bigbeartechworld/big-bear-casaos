@@ -115,7 +115,7 @@ x-casaos:
         Documentation: https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119
   # Title for the application
   title:
-    en_US: Odoo
+    en_US: Odoo (Legacy)
   # Category under which the application falls
   category: Finance
   # Default port mapping for the application
