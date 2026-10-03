@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-gzdoom
 services:
   app:
-    image: linuxserver/gzdoom:4.14.2@sha256:af1bb7dc68f7f4959f03feca7730265921713feff613d3dd4bdb7f4d5b44de64
+    image: linuxserver/gzdoom:4.14.2@sha256:dc74ced86ff8625f16c95875b6d4db4efee64789b1a5a4fe7c145ca05b0d7b14
     restart: unless-stopped
     environment:
       PUID: $PUID

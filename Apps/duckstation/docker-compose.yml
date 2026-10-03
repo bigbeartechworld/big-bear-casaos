@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-duckstation
 services:
   app:
-    image: linuxserver/duckstation:version-latest@sha256:764fe1e10a888ee70bfa36cead6a4c4088479b99d57ab7fc7a246c4a74ef0bfa
+    image: linuxserver/duckstation:version-latest@sha256:b272b36098bd40328e2496a616f49e47360ee5550e46aa2ffd7cbc8d232d5c50
     restart: unless-stopped
     environment:
       PUID: $PUID
