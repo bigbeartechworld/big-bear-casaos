@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-beets
 services:
   app:
-    image: linuxserver/beets:2.14.1@sha256:99582f104d04241b46a4a7071d424d0529800f9e3d04baa36db47b5e8cda6e96
+    image: linuxserver/beets:2.14.1@sha256:e5a4b1292c58bf67fc941002dff363254426e846af7fa9d875789310c0a2c5ce
     restart: unless-stopped
     environment:
       PUID: $PUID
