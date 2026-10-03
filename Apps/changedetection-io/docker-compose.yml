@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-changedetection.io
 services:
   app:
-    image: linuxserver/changedetection.io:0.60.7@sha256:5a8cd61666feac9f91292e1f7a9dfa37f6e35674367b2e20252f9a126e2c8994
+    image: linuxserver/changedetection.io:0.60.8@sha256:91a1670814112dfe910bd2dbf33fc92b856978e077024fd378923b0bf5b29343
     restart: unless-stopped
     environment:
       PUID: $PUID

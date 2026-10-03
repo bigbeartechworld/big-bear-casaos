@@ -10,7 +10,7 @@ services:
     # Define the container name
     container_name: big-bear-nextcloud-smb
     # Use the nextcloud image from the official Docker Hub
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:34.0.3@sha256:f63ad45456667eebd02892033be4c4a5c836a809db30b9b06dab8bbf6994b50a
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:35.0.1@sha256:ddaca2031622188e1cf789ea785a5f9ee7caedb9cdc01518d554089a498d2a12
     # Restart the container unless stopped
     restart: unless-stopped
     # Map port 7580 on the host to port 80 on the container
@@ -141,7 +141,7 @@ services:
             en_US: 'Container Path: /data'
   big-bear-nextcloud-smb-cron:
     container_name: big-bear-nextcloud-smb-cron
-    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:34.0.3@sha256:f63ad45456667eebd02892033be4c4a5c836a809db30b9b06dab8bbf6994b50a
+    image: bigbeartechworld/big-bear-nextcloud-with-smbclient:35.0.1@sha256:ddaca2031622188e1cf789ea785a5f9ee7caedb9cdc01518d554089a498d2a12
     restart: on-failure
     volumes:
       - /DATA/AppData/$AppID/html:/var/www/html

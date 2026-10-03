@@ -1,0 +1,141 @@
+# ODOO 20 - NEW DEPLOYMENT
+# ========================
+# This is a SEPARATE app from 'odoo' (Odoo 19 on PostgreSQL 15). They can coexist.
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Odoo 20 instances
+# - Bundles PostgreSQL 16, the minimum Odoo 20 accepts
+# - Host port 8070 so it does not collide with the legacy app on 8069
+#
+# FOR MIGRATION FROM ODOO 19:
+# - Do NOT uninstall the existing 'odoo' app
+# - Do NOT attach this app to the Odoo 19 database or PostgreSQL volume
+# - Major upgrades require Odoo's migration tooling, not an image swap
+# - A PostgreSQL 15 data directory cannot be started with the PostgreSQL 16 image
+# - Upgrade guide: https://www.odoo.com/documentation/master/administration/upgrade.html
+
+name: big-bear-odoo-v20
+services:
+  big-bear-odoo-v20:
+    container_name: big-bear-odoo-v20
+    image: odoo:20@sha256:cdd83e8359b3e8c357895d476396c05021fed9975bf420f353bab25fcaed1533
+    restart: unless-stopped
+    user: root
+    volumes:
+      - /DATA/AppData/$AppID/data/etc:/etc/odoo
+      - /DATA/AppData/$AppID/data/addons:/mnt/extra-addons
+      - /DATA/AppData/$AppID/data/filestore:/var/lib/odoo
+    ports:
+      - "8070:8069"
+    environment:
+      - HOST=big-bear-odoo-v20-db
+      - USER=odoo
+      - PASSWORD=c9983a93-bf4f-491a-bfef-c42eca42f04d
+    networks:
+      - big-bear-odoo-v20-network
+    x-casaos:
+      envs:
+        - container: HOST
+          description:
+            en_US: 'Container Variable: HOST'
+        - container: USER
+          description:
+            en_US: 'Container Variable: USER'
+        - container: PASSWORD
+          description:
+            en_US: 'Container Variable: PASSWORD'
+      volumes:
+        - container: /etc/odoo
+          description:
+            en_US: 'Container Path: /etc/odoo'
+        - container: /mnt/extra-addons
+          description:
+            en_US: 'Container Path: /mnt/extra-addons'
+        - container: /var/lib/odoo
+          description:
+            en_US: 'Container Path: /var/lib/odoo'
+      ports:
+        - container: "8069"
+          description:
+            en_US: 'Container Port: 8069'
+  big-bear-odoo-v20-db:
+    container_name: big-bear-odoo-v20-db
+    image: postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
+    user: root
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=c9983a93-bf4f-491a-bfef-c42eca42f04d
+      - POSTGRES_DB=postgres
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/data/postgresql:/var/lib/postgresql/data
+    networks:
+      - big-bear-odoo-v20-network
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+networks:
+  big-bear-odoo-v20-network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.odoo-v20
+  # Main service for this application
+  main: big-bear-odoo-v20
+  # Detailed description for the application
+  description:
+    en_US: Open-source business management software suite designed to streamline various aspects of business operations. With its modular structure, users can choose and integrate specific applications such as accounting, inventory, and sales. Odoo provides a user-friendly interface, scalability for businesses of all sizes, and is available in both community (free) and enterprise editions. Its integrated approach and customization options make it a popular choice for comprehensive ERP (Enterprise Resource Planning) solutions.
+  # Brief tagline for the application
+  tagline:
+    en_US: Odoo 20 with PostgreSQL 16
+  # Developer's information
+  developer: odoo
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/odoo-v20/logo.jpg
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        NEW APP - ODOO V20
+
+        This is a NEW app, separate from 'odoo' (Odoo 19 on PostgreSQL 15). Both can run at the same time.
+
+        FOR NEW USERS:
+        - Install this app for new Odoo 20 deployments
+        - Bundles PostgreSQL 16, which Odoo 20 requires
+        - Web UI is on host port 8070
+
+        FOR ODOO 19 USERS:
+        - Do NOT uninstall your existing 'odoo' app
+        - Do NOT point this app at the Odoo 19 database
+        - Major upgrades need Odoo's upgrade service; swapping the image will not migrate the database
+        - The PostgreSQL 15 data directory cannot be reused with PostgreSQL 16
+
+        Upgrade guide: https://www.odoo.com/documentation/master/administration/upgrade.html
+  # Title for the application
+  title:
+    en_US: Odoo v20
+  # Category under which the application falls
+  category: Finance
+  # Default port mapping for the application
+  port_map: "8070"

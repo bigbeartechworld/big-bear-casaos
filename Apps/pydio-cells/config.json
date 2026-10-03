@@ -1,6 +1,6 @@
 {
   "id": "pydio-cells",
-  "version": "5.0.3",
+  "version": "5.1.0",
   "image": "linuxserver/pydio-cells",
   "youtube": "",
   "docs_link": ""
