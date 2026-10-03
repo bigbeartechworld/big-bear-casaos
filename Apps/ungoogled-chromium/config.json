@@ -1,6 +1,6 @@
 {
   "id": "ungoogled-chromium",
-  "version": "153.0.8010",
+  "version": "154.0.8037",
   "image": "linuxserver/ungoogled-chromium",
   "youtube": "",
   "docs_link": ""
