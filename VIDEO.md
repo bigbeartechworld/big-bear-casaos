@@ -39,6 +39,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | calibre-web |  |
 | calibre |  |
 | calligra |  |
+| cantinarr |  |
 | casaos-toolbox |  |
 | celestory |  |
 | changedetection-io |  |
@@ -132,6 +133,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | hestiacp |  |
 | hishtory-server |  |
 | homarr-v1 |  |
+| homarr-v2 |  |
 | homebridge |  |
 | homepage |  |
 | homer |  |
@@ -220,6 +222,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | nova-dso-tracker |  |
 | npmplus |  |
 | obsidian |  |
+| odoo-v20 |  |
 | odoo |  |
 | odysseus |  |
 | ollama-amd |  |
