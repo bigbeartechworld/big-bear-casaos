@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-blade-of-agony
 services:
   app:
-    image: linuxserver/blade-of-agony:3.1.20260924@sha256:72eedff1839fe51fd0a237dcefe292fab56ec91143069cbae68bbf8f10b5f0ea
+    image: linuxserver/blade-of-agony:3.1.20261001@sha256:72d61ee18b609935c632df57cfbd420b62cc7ffc93c4ef4d83c81c841a0e5ebd
     restart: unless-stopped
     environment:
       PUID: $PUID

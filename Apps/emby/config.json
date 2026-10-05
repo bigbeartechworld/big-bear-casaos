@@ -1,6 +1,6 @@
 {
   "id": "emby",
-  "version": "4.10.0",
+  "version": "4.10.1",
   "image": "linuxserver/emby",
   "youtube": "",
   "docs_link": ""
