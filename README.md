@@ -116,7 +116,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | beszel | henrygd/beszel | 0.20.0 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
 | big-bear-casaos-user-management | bigbeartechworld/big-bear-casaos-user-management | 0.1.1 | [YouTube Video](https://youtu.be/-a9k8fLAbRE) |  |
 | bitcoin-knots | linuxserver/bitcoin-knots | 0.0.0 |  |  |
-| blade-of-agony | linuxserver/blade-of-agony | 3.1.20260924 |  |  |
+| blade-of-agony | linuxserver/blade-of-agony | 3.1.20261001 |  |  |
 | blender | linuxserver/blender | 5.2.2 |  |  |
 | boinc | linuxserver/boinc | 18.04.1 |  |  |
 | bookorbit | ghcr.io/bookorbit/bookorbit | 3.2.0 |  | [Docs](https://bookorbit.app/installation) |
@@ -146,7 +146,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ci | linuxserver/ci | 0.0.0 |  |  |
 | citron | linuxserver/citron | 2026.02.1 |  |  |
 | cloudflared-web | wisdomsky/cloudflared-web | 2026.9.3 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) | [Docs](https://github.com/wisdomsky/cloudflared-web) |
-| code-server | linuxserver/code-server | 4.138.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.140.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | codex-docs | ghcr.io/codex-team/codex.docs | v2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | composetoolbox | ghcr.io/bluegoosemedia/composetoolbox | latest |  | [Docs](https://github.com/bluegoosemedia/composetoolbox) |
 | convertx | ghcr.io/c4illin/convertx | v0.17.0 |  |  |
@@ -188,7 +188,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | duplicati | linuxserver/duplicati | 2.4.0 |  |  |
 | eden | linuxserver/eden | 0.2.1 |  |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.6.3 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
-| emby | linuxserver/emby | 4.10.0 |  |  |
+| emby | linuxserver/emby | 4.10.1 |  |  |
 | embystat | linuxserver/embystat | 0.2.0 |  |  |
 | emulatorjs | linuxserver/emulatorjs | 1.9.2 |  |  |
 | endlessh | linuxserver/endlessh | 0.0.0 |  |  |
@@ -210,7 +210,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | filezilla | linuxserver/filezilla | 3.69.6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | linuxserver/firefox | 1155.0.1 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
-| fireshare | shaneisrael/fireshare | 1.8.4 |  | [Docs](https://github.com/ShaneIsrael/fireshare#readme) |
+| fireshare | shaneisrael/fireshare | 1.8.5 |  | [Docs](https://github.com/ShaneIsrael/fireshare#readme) |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.6.0 |  |  |
 | fleet | linuxserver/fleet | 2.3.3 |  |  |
@@ -304,7 +304,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.9.3 |  |  |
 | lsio-api | linuxserver/lsio-api | 0.0.0 |  |  |
 | luanti | linuxserver/luanti | 5.17.0 |  |  |
-| lychee | linuxserver/lychee | 7.9.0 |  |  |
+| lychee | linuxserver/lychee | 7.10.0 |  |  |
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.2.0 |  |  |
 | mailpit | axllent/mailpit | v1.31 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mame | linuxserver/mame | 0.0.0 |  |  |
@@ -340,7 +340,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | navidrome | deluan/navidrome | 0.64.2 |  | [Docs](https://www.navidrome.org/docs/) |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.10 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
-| netalertx-v26 | jokobsk/netalertx | 26.9.0 |  | [Docs](https://docs.netalertx.com) |
+| netalertx-v26 | jokobsk/netalertx | 26.10.0 |  | [Docs](https://docs.netalertx.com) |
 | netalertx | jokobsk/netalertx | 25.11.29 |  |  |
 | netboot-xyz | ghcr.io/netbootxyz/netbootxyz | 0.7.6-nbxyz24 |  | [Docs](https://netboot.xyz/docs/docker/) |
 | netbox | linuxserver/netbox | 4.7.1 |  |  |
