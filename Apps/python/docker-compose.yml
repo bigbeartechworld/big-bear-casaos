@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-python
 services:
   app:
-    image: linuxserver/python:3.14.7@sha256:a8c71ea50391142aad8e20e6b9bdb764b808ddb55b4fbe2abeb8a9ac150ee4d7
+    image: linuxserver/python:3.14.8@sha256:f4ed298459c1d851c245f7cbfc97fdd7ea675d1ea0e11c922f83df29208be365
     restart: unless-stopped
     environment:
       PUID: $PUID

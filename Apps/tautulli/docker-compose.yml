@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-tautulli
 services:
   app:
-    image: linuxserver/tautulli:2.18.1@sha256:c66d3afa8f7a701a48dd1b1f57b22eca0483d895d670fe11ecff783f6a9bbd73
+    image: linuxserver/tautulli:2.18.2@sha256:bfcd2f3f6f89d2171d161ac1780723d1633f8de3c4c993d0dc52aa9edb729e16
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-write-freely
     # Image to be used for the container specifies the write-freely version and source
-    image: nephatrine/write-freely:0.17@sha256:d8092e6a64601822907c6b2a2c93c4ba26a27ea1a36dbd28f5f2ba7a8adc347e
+    image: nephatrine/write-freely:0.17@sha256:0766f5e01a5aec7687ce638aa7ba451e5ad76ceed81cd93e323909af90b62f94
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Environment variables for service configuration

@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-mastodon
 services:
   app:
-    image: linuxserver/mastodon:4.7.2@sha256:31f5644fd9505a907f289a39ded5343c6a97548b3bb47ae63868b54425f62553
+    image: linuxserver/mastodon:4.7.3@sha256:b4e6b0b8378e5bc2a26a593b9f32aa32c51f2e54c41e60fef0a68d7a82346424
     restart: unless-stopped
     environment:
       PUID: $PUID

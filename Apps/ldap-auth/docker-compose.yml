@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ldap-auth
 services:
   app:
-    image: linuxserver/ldap-auth:3.4.8@sha256:4f404fd3b0236e4a3c47a137a6f34d74094cde51471bce66d921f50289b6bf46
+    image: linuxserver/ldap-auth:3.4.8@sha256:516f35dccd01e8f03d4600f6e1102e3dc20666765336ce08a1b34afd1bf1ea5f
     restart: unless-stopped
     environment:
       PUID: $PUID
