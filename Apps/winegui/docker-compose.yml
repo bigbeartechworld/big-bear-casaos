@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-winegui
 services:
   app:
-    image: linuxserver/winegui:4.5.0@sha256:4307fa122059e94d3f37841b9406cfcf3c76029656411ce93487a3c0e6540360
+    image: linuxserver/winegui:4.5.1@sha256:7f052e9a577cd8bcd09b704ddbd909e85839d25507559f967ebba4c6c242b670
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-wireshark
 services:
   app:
-    image: linuxserver/wireshark:4.6.6@sha256:71f1ff10deb77110eedb651f1ec1ddd929793d371cf6550732a3f1c43ff86010
+    image: linuxserver/wireshark:4.6.6@sha256:33647c4718f21746cedd9d791e4ba9e491706435524471c6894c96a4a1018fab
     restart: unless-stopped
     environment:
       PUID: $PUID

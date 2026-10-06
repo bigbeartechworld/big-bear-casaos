@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-projectsend
 services:
   app:
-    image: linuxserver/projectsend:version-r2098@sha256:39bf1224ac7f8d9b728cd9009dae8c836bbda2ca33770e00544f3f765ec07722
+    image: linuxserver/projectsend:version-r2098@sha256:cd6011a3270c9b91e0ca83554bce43af07424750b525ea306feb7161bcd18ccb
     restart: unless-stopped
     environment:
       PUID: $PUID

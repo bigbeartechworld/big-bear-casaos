@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-luanti
 services:
   app:
-    image: linuxserver/luanti:5.17.0@sha256:5e605da9a3cc87dbcfb37a8803d8ab6b706b7798d896c1d8af509ecdeb4908ea
+    image: linuxserver/luanti:5.17.0@sha256:8088008f96480583f85570811e2d0b0e150c64a9400879378bda0182013cc4ce
     restart: unless-stopped
     environment:
       PUID: $PUID

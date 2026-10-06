@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-pwndrop
 services:
   app:
-    image: linuxserver/pwndrop:1.0.1@sha256:988739a36fac0a7264a3245ffe78c7c9277a575f204227997f1b82f32351ecd0
+    image: linuxserver/pwndrop:1.0.1@sha256:2e5428b3c612d0b8413e584539f444b59ddc388d31d71bb5cc6fd348286a5904
     restart: unless-stopped
     environment:
       PUID: $PUID

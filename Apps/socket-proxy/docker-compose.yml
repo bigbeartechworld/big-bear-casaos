@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-socket-proxy
 services:
   app:
-    image: linuxserver/socket-proxy:3.4.6@sha256:0357c479cc98e863917d1cd8b10e83d35a50ca46a0788f5a192bf792c3b7100d
+    image: linuxserver/socket-proxy:3.4.6@sha256:362cadf55b3c7920189347d0f4d60b389e2f80e929581bf10793f2371aab41e5
     restart: unless-stopped
     environment:
       PUID: $PUID
