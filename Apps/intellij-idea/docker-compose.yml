@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-intellij-idea
 services:
   app:
-    image: linuxserver/intellij-idea:42026.2.3@sha256:fd989215cf489a15237096a100df8eeeb7e3b0224c398ac76346bb35b0908da2
+    image: linuxserver/intellij-idea:42026.2.3@sha256:c8e124dec890657d5010cf07a18e8790a9e1ded61d52c45fc3418cd3a3a76d0e
     restart: unless-stopped
     environment:
       PUID: $PUID

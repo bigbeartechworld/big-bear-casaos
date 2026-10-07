@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-apprise-api
 services:
   app:
-    image: linuxserver/apprise-api:2.0.0@sha256:956446ae5c18e08dbb101f70cdb48f681f4b9db5709edcce1b45b0c6c332fdf4
+    image: linuxserver/apprise-api:2.0.1@sha256:742580f9c5e8e94e8009be3406bd557c012457d00acde7684066b3f897753d52
     restart: unless-stopped
     environment:
       PUID: $PUID
