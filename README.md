@@ -98,7 +98,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | airvideohd | dmaxwell/airvideohd | latest |  |  |
 | altus | linuxserver/altus | 5.8.1 |  |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
-| apprise-api | linuxserver/apprise-api | 2.0.0 |  |  |
+| apprise-api | linuxserver/apprise-api | 2.0.1 |  |  |
 | appsmith | appsmith/appsmith-ce | v2.4.3 |  |  |
 | archivebox | archivebox/archivebox | 0.9.71 |  |  |
 | ardour | linuxserver/ardour | 0.0.0 |  |  |
@@ -109,7 +109,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ayon | ynput/ayon | 1.3.6-20240823 |  |  |
 | azahar | linuxserver/azahar | 12126.1.2 |  |  |
 | babybuddy | linuxserver/babybuddy | 2.11.0 |  |  |
-| bambustudio | linuxserver/bambustudio | 02.08.03 |  |  |
+| bambustudio | linuxserver/bambustudio | 02.08.04 |  |  |
 | baserow | baserow/baserow | 2.4.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beaverhabits | daya0576/beaverhabits | 0.10.0 |  |  |
 | beets | linuxserver/beets | 2.14.1 |  |  |
@@ -181,7 +181,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | domoticz | linuxserver/domoticz | 2023.2.20231129 |  |  |
 | dosbox-staging | linuxserver/dosbox-staging | 0.83.0 |  |  |
 | doublecommander | linuxserver/doublecommander | 0.0.0 |  |  |
-| dozzle | amir20/dozzle | v11.1.3 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | v11.2.0 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | drawio | jgraph/drawio | 32.0.1 |  | [Docs](https://www.drawio.com/doc/) |
 | duckdns | linuxserver/duckdns | 0.0.0 |  |  |
 | duckstation | linuxserver/duckstation | 0.0.0 |  |  |
@@ -218,7 +218,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | flycast | linuxserver/flycast | 2.7.20260927 |  |  |
 | focalboard | mattermost/focalboard | 7.11.4 | [YouTube Video](https://youtu.be/fBDpqpN8sks) |  |
 | foldingathome | linuxserver/foldingathome | 8.5.6 |  |  |
-| freecad | linuxserver/freecad | 1.1.3 |  |  |
+| freecad | linuxserver/freecad | 1.1.4 |  |  |
 | freshrss | linuxserver/freshrss | 1.30.0 |  |  |
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
@@ -308,7 +308,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | lyrionmusicserver | lmscommunity/lyrionmusicserver | 9.2.0 |  |  |
 | mailpit | axllent/mailpit | v1.31 | [YouTube Video](https://youtu.be/2MY3S6csrVw) |  |
 | mame | linuxserver/mame | 0.0.0 |  |  |
-| manyfold | linuxserver/manyfold | 0.149.0 |  |  |
+| manyfold | linuxserver/manyfold | 0.150.0 |  |  |
 | mariadb | linuxserver/mariadb | 11.8.8 |  |  |
 | mastodon | linuxserver/mastodon | 4.7.3 |  |  |
 | matterbridge | luligu/matterbridge | 3.10.12 |  |  |
@@ -372,7 +372,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
-| openshot | linuxserver/openshot | 4.0.0 |  |  |
+| openshot | linuxserver/openshot | 4.0.1 |  |  |
 | openssh-server | linuxserver/openssh-server | 0.0.0 |  |  |
 | openvpn-as | openvpn/openvpn-as | 2.13.1-d8cdeb9c-Ubuntu22 |  |  |
 | openvscode-server | linuxserver/openvscode-server | 1.109.5 |  |  |
@@ -465,7 +465,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | shadps4 | linuxserver/shadps4 | 0.0.0 |  |  |
 | shotcut | linuxserver/shotcut | 26.8.1 |  |  |
-| signal | linuxserver/signal | 8.28.0 |  |  |
+| signal | linuxserver/signal | 8.29.0 |  |  |
 | smokeping | linuxserver/smokeping | 2.9.0 |  |  |
 | snapdrop | linuxserver/snapdrop | 0.0.0 |  |  |
 | snapotter | snapotter/snapotter | 2.2.0 |  | [Docs](https://docs.snapotter.com/guide/getting-started) |
