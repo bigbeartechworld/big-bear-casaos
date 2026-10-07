@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-openshot
 services:
   app:
-    image: linuxserver/openshot:4.0.0@sha256:64c44b097911fd11cd95d61653a9d3b87d1f679449afdf2e7954949a83bcb2dc
+    image: linuxserver/openshot:4.0.1@sha256:d8f4b2fb7d547c6c44cd010290086d47d307b7707212c7c42a098de321c4df74
     restart: unless-stopped
     environment:
       PUID: $PUID

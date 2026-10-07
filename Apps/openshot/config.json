@@ -1,6 +1,6 @@
 {
   "id": "openshot",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "image": "linuxserver/openshot",
   "youtube": "",
   "docs_link": ""

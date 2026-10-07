@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-smokeping
 services:
   app:
-    image: linuxserver/smokeping:2.9.0@sha256:b38cae89eb9d2ac49858533b723ea514eb0501f50d179c715d89e5e7214950da
+    image: linuxserver/smokeping:2.9.0@sha256:52ab5b6bb2cbe03e775f970ac110300964d4069917820fccdfd6db80dd5ac143
     restart: unless-stopped
     environment:
       PUID: $PUID
