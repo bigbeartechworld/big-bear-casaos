@@ -1,0 +1,147 @@
+# REACTIVE RESUME V6 - NEW DEPLOYMENT
+# ====================================
+# This is a SEPARATE app from 'reactive-resume' (v5.3.2). They can coexist.
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for new Reactive Resume v6 instances
+# - PostgreSQL 18 plus a local upload volume at /app/data
+# - PDFs render in the app. No Browserless, MinIO, or Redis
+# - APP_URL is http://localhost:3028. Change it if you open the app from another device
+# - Web UI is on host port 3028 (3001 is already used by other apps)
+#
+# FOR MIGRATION FROM V5:
+# - Do NOT uninstall the existing 'reactive-resume' app
+# - Do NOT attach this app to the v5 PostgreSQL volume or MinIO volume
+# - v6 startup drops columns v5 still reads. The migration is one-way
+# - PostgreSQL 18 cannot open the v5 data directory
+# - Uploads move only if you copy them into /app/data or an S3 bucket
+# - Upgrade guide: https://docs.rxresu.me/self-hosting/upgrading-to-v6
+
+name: big-bear-reactive-resume-v6
+services:
+  big-bear-reactive-resume-v6:
+    container_name: big-bear-reactive-resume-v6
+    image: amruthpillai/reactive-resume:v6.0.0@sha256:29f418bd46d23f1d7cd9a73ec7f6bc46681926cb1ff617ac388064f45ee790d0
+    restart: unless-stopped
+    ports:
+      - "3028:3000"
+    depends_on:
+      big-bear-reactive-resume-v6-db:
+        condition: service_healthy
+    environment:
+      APP_URL: "http://localhost:3028"
+      AUTH_SECRET: "access_token_secret"
+      DATABASE_URL: "postgresql://postgres:postgres@big-bear-reactive-resume-v6-db:5432/postgres"
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+    networks:
+      - big-bear-reactive-resume-v6-network
+    x-casaos:
+      envs:
+        - container: APP_URL
+          description:
+            en_US: 'Container Variable: APP_URL'
+        - container: AUTH_SECRET
+          description:
+            en_US: 'Container Variable: AUTH_SECRET'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+      volumes:
+        - container: /app/data
+          description:
+            en_US: 'Container Path: /app/data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+  big-bear-reactive-resume-v6-db:
+    container_name: big-bear-reactive-resume-v6-db
+    image: postgres:18@sha256:74935e72241653ca55e0414067e6d8763aceb8a810eb51b452253ec3dcfc4336
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - /DATA/AppData/$AppID/pg:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - big-bear-reactive-resume-v6-network
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+      volumes:
+        - container: /var/lib/postgresql
+          description:
+            en_US: 'Container Path: /var/lib/postgresql'
+networks:
+  big-bear-reactive-resume-v6-network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.reactive-resume-v6
+  # Main service for this application
+  main: big-bear-reactive-resume-v6
+  # Detailed description for the application
+  description:
+    en_US: Reactive Resume v6 resume builder. This is a new app, separate from Reactive Resume v5. v6 stores uploads on a local volume, renders PDFs in the app, and bundles PostgreSQL 18. It does not include MinIO, Redis, or Browserless. Do not attach it to a v5 database volume. A v5 database migration is one-way, and PostgreSQL 18 cannot open the v5 data directory.
+  # Brief tagline for the application
+  tagline:
+    en_US: Reactive Resume v6
+  # Developer's information
+  developer: AmruthPillai
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/reactive-resume-v6/logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        NEW APP - REACTIVE RESUME V6
+
+        This is a NEW app, separate from 'reactive-resume' (v5.3.2). Do not treat the install as an upgrade of an existing v5 stack.
+
+        FOR NEW USERS:
+        - Install this app for new Reactive Resume v6 deployments
+        - APP_URL is http://localhost:3028 and must match the address in the browser. From another device, change localhost to the server IP. On Umbrel the published port is 10151, so set APP_URL to that address
+        - Web UI is on host port 3028
+        - AUTH_SECRET and the database password are written in the compose file. Replace both before you expose the app past your LAN. Keep the database password and DATABASE_URL in sync
+        - Create your account, then set FLAG_DISABLE_SIGNUPS to true and restart if other people can reach the port
+        - Uploads live in the reactive-resume-v6_data volume, mounted at /app/data
+
+        FOR REACTIVE RESUME V5 USERS:
+        - Do NOT uninstall the existing 'reactive-resume' app
+        - Do NOT point this app at the v5 PostgreSQL volume or the v5 MinIO volume
+        - v6 drops database columns that v5 still reads. Starting v6 on that database is one-way
+        - This app bundles PostgreSQL 18. That image cannot open the v5 data directory
+        - v5 pictures live in MinIO. A database dump does not move them. Copy uploads into /app/data, or configure S3 yourself, after you have a backup
+        - Chrome, MinIO, and Redis are not part of this app. v6 renders PDFs itself
+
+        Upgrade guide: https://docs.rxresu.me/self-hosting/upgrading-to-v6
+  # Title for the application
+  title:
+    en_US: Reactive Resume v6
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "3028"

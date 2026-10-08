@@ -256,7 +256,7 @@ x-casaos:
         Change [CASAOS_IP] to your CasaOS IP address. In the environment variables.
   # Title for the application
   title:
-    en_US: Reactive Resume
+    en_US: Reactive Resume (Legacy)
   # Category under which the application falls
   category: Others
   # Default port mapping for the application
