@@ -1,6 +1,6 @@
 {
   "id": "webstation",
-  "version": "0.8.5-romm",
+  "version": "0.14.0-romm",
   "image": "linuxserver/webstation",
   "youtube": "",
   "docs_link": ""
