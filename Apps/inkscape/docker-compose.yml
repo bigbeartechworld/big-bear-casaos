@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-inkscape
 services:
   app:
-    image: linuxserver/inkscape:1.4.2@sha256:5f9b8b052072ec001296d1d555039da2667cc1b0fd91f14ae912f23b69a56a56
+    image: linuxserver/inkscape:1.4.2@sha256:a7d4088f251e59123595acf94d0c5502ff17fc76ee38790b7b5335bf1377d52c
     restart: unless-stopped
     environment:
       PUID: $PUID
