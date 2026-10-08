@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-kometa
 services:
   app:
-    image: linuxserver/kometa:2.5.1@sha256:ba1401d2a6a439d76baa2bfa83f8e12e99aef7c4949f386139e3a9b751a5a012
+    image: linuxserver/kometa:2.5.1@sha256:2e269f44e0e624aae9d80daed7bd5cd2d40e0eb1402f69ce1daa38a65ae5712b
     restart: unless-stopped
     environment:
       PUID: $PUID
