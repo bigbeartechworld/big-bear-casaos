@@ -1,0 +1,70 @@
+name: big-bear-solidping
+services:
+  app:
+    image: ghcr.io/fclairamb/solidping:0.37.0@sha256:b7905f7747e217c259f7442b14fcdb49b145b06dbe6791f9fc8dd4dde5e95428
+    container_name: big-bear-solidping
+    restart: unless-stopped
+    # The image runs as nonroot (uid 65532) and has no shell. Running as root
+    # lets it write to host bind mounts created by the platform as root.
+    user: "0:0"
+    # Needed for ICMP ping checks.
+    cap_add:
+      - NET_RAW
+    ports:
+      - "4000:4000"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    healthcheck:
+      test: ["CMD", "/app/solidping", "healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "4000"
+          description:
+            en_US: 'Container Port: 4000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.solidping
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: SolidPing monitors HTTP(S) endpoints, TCP/UDP ports, DNS records, SSL certificates, ICMP ping, and databases, plus scriptable browser and JavaScript checks for anything those don't cover. Alerts go out over email, Slack, Discord, Telegram, WhatsApp and generic webhooks, with escalation policies and maintenance windows. Public status pages, a multi-region distributed worker system, and multi-user organizations with role-based access are included. Existing Uptime Kuma users can import their monitors directly. Single Go binary, SQLite by default.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/fclairamb/solidping@main/deploy/casaos/solidping/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/fclairamb/solidping@main/deploy/casaos/solidping/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/fclairamb/solidping@main/deploy/casaos/solidping/screenshot-3.png
+  # Brief tagline for the application
+  tagline:
+    en_US: Uptime monitoring, alerting and status pages, self-hosted
+  # Developer's information
+  developer: Florent Clairambault
+  # Author of this particular configuration
+  author: fclairamb
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/fclairamb/solidping@main/res/favicons/favicon-512.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/fclairamb/solidping@main/deploy/casaos/solidping/thumbnail.png
+  # Installation tips
+  tips:
+    before_install:
+      en_US: 'First login: admin@solidping.io / solidpass, organization "default". You are asked to set a new password immediately.'
+  # Title for the application
+  title:
+    en_US: SolidPing
+  # Category under which the application falls
+  category: Networking
+  # Default port mapping for the application
+  port_map: "4000"

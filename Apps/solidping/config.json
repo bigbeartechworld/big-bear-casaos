@@ -1,0 +1,7 @@
+{
+  "id": "solidping",
+  "version": "0.37.0",
+  "image": "ghcr.io/fclairamb/solidping",
+  "youtube": "",
+  "docs_link": "https://solidping.io/docs"
+}
