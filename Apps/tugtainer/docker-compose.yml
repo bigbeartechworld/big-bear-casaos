@@ -21,6 +21,7 @@ services:
       TZ: "UTC"
       LOG_LEVEL: "warning"
       JWT_SECRET_KEY: "your-secret-key-here"
+      AGENT_SECRET: "your-secret-key-here"
       ACCESS_TOKEN_LIFETIME_MIN: "5"
       REFRESH_TOKEN_LIFETIME_MIN: "43200"
       HTTPS: "FALSE"
@@ -39,6 +40,9 @@ services:
         - container: JWT_SECRET_KEY
           description:
             en_US: 'Container Variable: JWT_SECRET_KEY'
+        - container: AGENT_SECRET
+          description:
+            en_US: 'Container Variable: AGENT_SECRET'
         - container: ACCESS_TOKEN_LIFETIME_MIN
           description:
             en_US: 'Container Variable: ACCESS_TOKEN_LIFETIME_MIN'
