@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-znc
 services:
   app:
-    image: linuxserver/znc:1.10.3@sha256:b144ed358744eebe779fcca8e4a646ddd8389116cd185849cb2af183d0acb7cb
+    image: linuxserver/znc:1.10.3@sha256:51e139085d594ca3b90c415ef081fee2a394387668acb54d32cc9c2852a33823
     restart: unless-stopped
     environment:
       PUID: $PUID

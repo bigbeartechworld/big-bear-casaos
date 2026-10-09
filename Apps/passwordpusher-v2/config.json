@@ -1,6 +1,6 @@
 {
   "id": "passwordpusher-v2",
-  "version": "2.14.1",
+  "version": "2.14.2",
   "image": "pglombardo/pwpush",
   "youtube": "https://youtu.be/7Ej56MDo95g",
   "docs_link": "https://docs.pwpush.com/docs/upgrading/"
