@@ -6,7 +6,7 @@ name: big-bear-lancache
 services:
   # Service name: app
   app:
-    image: lancachenet/monolithic:latest@sha256:37f28b362c939a333f3e4f12aa8ca80604cf75050b2f190d0ad972b2fedce00e # Docker image for the caching service
+    image: lancachenet/monolithic:latest@sha256:155817065b13cc427aa0014acc34bbb389591400d7639c95abcfcfb2230ad7f0 # Docker image for the caching service
     environment:
       # Toggle for load balancer usage or separate IPs for each service
       - USE_GENERIC_CACHE=true
