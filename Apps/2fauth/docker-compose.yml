@@ -56,7 +56,7 @@ x-casaos:
   # Author of this particular configuration
   author: BigBearTechWorld
   # Icon URL for the application
-  icon: https://images.weserv.nl/?url=https%3A%2F%2Fuser-images.githubusercontent.com%2F1289128%2F276442834-bdb528d0-78fa-4155-ba15-7165d88b9836.png
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/2fauth.png
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
