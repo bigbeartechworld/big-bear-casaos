@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-netbox
 services:
   app:
-    image: linuxserver/netbox:4.7.2@sha256:ebb860980d7687d7e779c3320f48fa73fbfeacf3f11945bec836310562ccdaac
+    image: linuxserver/netbox:4.7.2@sha256:74ae9cafda27c5e22ee243547f766dcf24c9521f1d8876a1507fa7ab926b7674
     restart: unless-stopped
     environment:
       PUID: $PUID
