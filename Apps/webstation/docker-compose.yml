@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-webstation
 services:
   app:
-    image: linuxserver/webstation:0.14.2-romm@sha256:3a6ddb89de3dae9865e9f3484b3e1dc0462d8d531007b5d4e93e423a368b6a89
+    image: linuxserver/webstation:0.14.2-romm@sha256:13d7c0fb09ff936e7f22120368d711e19012f869ba33fd73ceda65f13db44715
     restart: unless-stopped
     environment:
       PUID: $PUID
