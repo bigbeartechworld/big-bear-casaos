@@ -1,6 +1,6 @@
 {
   "id": "ollama-nvidia",
-  "version": "0.35.1",
+  "version": "0.40.0",
   "image": "ollama/ollama",
   "youtube": "",
   "docs_link": ""

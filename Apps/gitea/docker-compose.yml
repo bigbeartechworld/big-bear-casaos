@@ -2,7 +2,7 @@ name: big-bear-gitea
 services:
   big-bear-gitea:
     container_name: big-bear-gitea
-    image: gitea/gitea:28.0.0@sha256:a9dc25679ebdd33356242d2e0667cc220043745e8339922879f187c20329a42e
+    image: gitea/gitea:28.1.0@sha256:f505a0d3a41323b786e05942fc7a4075e07ae7c169fd9485649aa55ee543a21a
     restart: unless-stopped
     ports:
       - "3000:3000"

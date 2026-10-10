@@ -1,6 +1,6 @@
 {
   "id": "modrinth",
-  "version": "0.21.6",
+  "version": "0.21.8",
   "image": "linuxserver/modrinth",
   "youtube": "",
   "docs_link": ""

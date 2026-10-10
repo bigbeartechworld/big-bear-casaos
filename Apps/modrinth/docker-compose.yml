@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-modrinth
 services:
   app:
-    image: linuxserver/modrinth:0.21.6@sha256:16ad845643755e2fbde08fc95336478aca085481a0232181b37d87374d32b985
+    image: linuxserver/modrinth:0.21.8@sha256:bdfdca5cd36c3b4736294a91063e03fbd4d7b1fa28c64932ab5ed4fc576f1b14
     restart: unless-stopped
     environment:
       PUID: $PUID
