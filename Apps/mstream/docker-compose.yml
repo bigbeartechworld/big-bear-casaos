@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-mstream
 services:
   app:
-    image: linuxserver/mstream:6.30.0@sha256:896225514e635e6c8084ff6715f3a35f1c74b17d70cb5abbee00c47ece477ccb
+    image: linuxserver/mstream:6.31.1@sha256:ea4f5c37b94c3a3abba766177e75176f5c891945b2de5dfc917e5b2195823cea
     restart: unless-stopped
     environment:
       PUID: $PUID

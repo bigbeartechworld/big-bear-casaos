@@ -1,6 +1,6 @@
 {
   "id": "kometa",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "image": "linuxserver/kometa",
   "youtube": "",
   "docs_link": ""
