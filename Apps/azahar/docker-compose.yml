@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-azahar
 services:
   app:
-    image: linuxserver/azahar:12126.1.2@sha256:d42456be1352112b447972c97b145777fbc119d580f2612275d16e03172086d5
+    image: linuxserver/azahar:12126.1.2@sha256:31508bb1f84718378b2a48789f3bea015fc758043d4a557bdd517b0bee1a596f
     restart: unless-stopped
     environment:
       PUID: $PUID

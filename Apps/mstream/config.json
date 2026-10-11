@@ -1,6 +1,6 @@
 {
   "id": "mstream",
-  "version": "6.30.0",
+  "version": "6.31.1",
   "image": "linuxserver/mstream",
   "youtube": "",
   "docs_link": ""
