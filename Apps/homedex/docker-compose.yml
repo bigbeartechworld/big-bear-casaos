@@ -44,7 +44,7 @@ services:
           description:
             en_US: 'Container Port: 7377'
   docker-socket-proxy:
-    image: tecnativa/docker-socket-proxy:v0.4.2@sha256:1f3a6f303320723d199d2316a3e82b2e2685d86c275d5e3deeaf182573b47476
+    image: tecnativa/docker-socket-proxy:v0.5.0@sha256:1f5038b54f06c3e18422902cf00ba21803d1c97805aae032e5e6673d532d3459
     container_name: homedex-socket-proxy
     restart: unless-stopped
     environment:

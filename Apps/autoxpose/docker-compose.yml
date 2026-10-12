@@ -1,7 +1,7 @@
 name: big-bear-autoxpose
 services:
   autoxpose:
-    image: mostafawahied/autoxpose:0.5.2@sha256:5e29bc48b7b164127f1ade8f3d9be9dba06e665ed2cdeeb569173fa343eca5d3
+    image: mostafawahied/autoxpose:0.6.0@sha256:8b07a7c693c4270bb04adf4e68c16681de1336384ce70e86a507ab02ffeb09cd
     container_name: autoxpose
     restart: unless-stopped
     ports:

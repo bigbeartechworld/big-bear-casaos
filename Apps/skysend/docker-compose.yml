@@ -1,7 +1,7 @@
 name: big-bear-skysend
 services:
   skysend:
-    image: skyfay/skysend:v2.12.2@sha256:64fcc07d2dfedb15efa72badc538c452c9e889125bdd9f1e35347f14de108cc0
+    image: skyfay/skysend:v3.0.1@sha256:aa38fb1213fb564037b728c6a8a5d619a3223dfd3006509b79058384fe76d6fa
     container_name: skysend
     restart: unless-stopped
     ports:
