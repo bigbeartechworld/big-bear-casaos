@@ -1,7 +1,7 @@
 name: big-bear-traefik
 services:
   app:
-    image: traefik:v3.7.13
+    image: traefik:v3.7.14
     restart: unless-stopped
     environment:
       PUID: $PUID
