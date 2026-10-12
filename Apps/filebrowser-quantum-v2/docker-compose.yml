@@ -1,0 +1,114 @@
+# FILEBROWSER QUANTUM V2 - NEW DEPLOYMENT
+# =======================================
+# This is a SEPARATE app from 'filebrowser-quantum' (1.5.8-stable). They can coexist.
+#
+# WHY A NEW APP:
+# - v2 replaces BoltDB (database.db) with SQLite (database.sqlite)
+# - v2 refuses to start if database.db is still in the data directory
+# - Config must be converted and migrateFrom set before the first v2 start
+# - That migration is manual. An image tag change is not an upgrade
+#
+# FOR NEW INSTALLATIONS:
+# - Deploy this app for a new FileBrowser Quantum 2 instance
+# - The first start generates an admin password and prints it once in the logs
+# - Web UI is on host port 8701 (8700 stays with the 1.5.8 app)
+# - Database and config live in filebrowser-quantum-v2_data at /home/filebrowser/data
+#
+# FOR MIGRATION FROM 1.5.8:
+# - Do NOT uninstall the existing 'filebrowser-quantum' app
+# - Do NOT attach this app to the 1.5.8 data volume
+# - Stop 1.5.8, back up database.db, rename it to database.db.old, convert config.yaml,
+#   set server.database.migrateFrom, then start a v2 process against that copy
+# - Migration: https://filebrowserquantum.com/en/docs/getting-started/v2/migration/
+
+name: big-bear-filebrowser-quantum-v2
+services:
+  big-bear-filebrowser-quantum-v2:
+    container_name: big-bear-filebrowser-quantum-v2
+    image: gtstef/filebrowser:2.0.0-stable@sha256:9d42f635e32913d7daf05259428b6c70061cfdca3affc9602b4c31717e0a4bae
+    restart: unless-stopped
+    environment:
+      - TZ=UTC
+      - FILEBROWSER_DATABASE_PATH=/home/filebrowser/data/database.sqlite
+    volumes:
+      - /DATA/AppData/$AppID/data:/home/filebrowser/data
+      - /DATA/AppData/$AppID/srv:/srv
+    ports:
+      - "8701:80"
+    networks:
+      - big-bear-filebrowser-quantum-v2-network
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+        - container: FILEBROWSER_DATABASE_PATH
+          description:
+            en_US: 'Container Variable: FILEBROWSER_DATABASE_PATH'
+      volumes:
+        - container: /home/filebrowser/data
+          description:
+            en_US: 'Container Path: /home/filebrowser/data'
+        - container: /srv
+          description:
+            en_US: 'Container Path: /srv'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+networks:
+  big-bear-filebrowser-quantum-v2-network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.filebrowser-quantum-v2
+  # Main service for this application
+  main: big-bear-filebrowser-quantum-v2
+  # Detailed description for the application
+  description:
+    en_US: FileBrowser Quantum 2.0 file manager. This is a new app, separate from FileBrowser Quantum 1.5.8. v2 stores users and shares in SQLite and refuses to start while a v1 database.db file is still in the data directory. Do not attach the 1.5.8 data volume. A fresh install prints a one-time admin password in the container logs.
+  # Brief tagline for the application
+  tagline:
+    en_US: FileBrowser Quantum v2
+  # Developer's information
+  developer: gtsteffaniak
+  # Author of this particular configuration
+  author: BigBearCommunity
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/filebrowser-quantum.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        NEW APP - FILEBROWSER QUANTUM V2
+
+        This is a NEW app, separate from 'filebrowser-quantum' (1.5.8-stable). Do not treat the install as an upgrade of an existing 1.5.8 stack.
+
+        FOR NEW USERS:
+        - Install this app for a new FileBrowser Quantum 2 deployment
+        - Web UI is on host port 8701. On Umbrel the published port is 10701
+        - The first start generates an admin password and prints it once in the container logs. The username is admin. v2 does not keep the old admin/admin password
+        - Change that password at the first login
+        - Files you want to browse belong in the filebrowser-quantum-v2_srv volume, mounted at /srv
+
+        FOR FILEBROWSER QUANTUM 1.5.8 USERS:
+        - Do NOT uninstall the existing 'filebrowser-quantum' app
+        - Do NOT point this app at the 1.5.8 data volume. v2 refuses to start while database.db is still named database.db
+        - v2 replaces BoltDB with SQLite. Config keys also move, including FILEBROWSER_DATABASE to FILEBROWSER_DATABASE_PATH
+        - Stop 1.5.8, copy database.db somewhere safe, rename the copy to database.db.old, convert config.yaml, and set server.database.migrateFrom before starting v2 against that copy
+        - Keep 1.5.8 until you have logged in on v2 and checked users, shares, and sidebar links
+
+        Migration: https://filebrowserquantum.com/en/docs/getting-started/v2/migration/
+  # Title for the application
+  title:
+    en_US: FileBrowser Quantum v2
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "8701"
