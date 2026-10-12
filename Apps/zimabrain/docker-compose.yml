@@ -1,7 +1,7 @@
 name: big-bear-zimabrain
 services:
   zimabrain:
-    image: gelbuilding/zimabrain-ce:1.6.0-beta@sha256:930c689a0f4389b767d726dbc41766590ca5d58cd030f840099ec0ddf382cca5
+    image: gelbuilding/zimabrain-ce:1.6.2-beta@sha256:108ceb19c3d1948eeedb557ff013f6ec16efb145843075b66279adcd512b5be8
     container_name: zimabrain
     restart: unless-stopped
     privileged: true
