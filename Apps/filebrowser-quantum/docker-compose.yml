@@ -79,7 +79,7 @@ x-casaos:
         Default credentials are **admin / admin**. Please change the password after your first login.
   # Title for the application
   title:
-    en_US: FileBrowser Quantum
+    en_US: FileBrowser Quantum (Legacy)
   # Category under which the application falls
   category: Productivity
   # Default port mapping for the application
