@@ -1,0 +1,7 @@
+{
+  "id": "indelible",
+  "version": "0.1.1",
+  "image": "ghcr.io/useindelible/ind-api",
+  "youtube": "",
+  "docs_link": "https://useindelible.com/docs/self-hosting/install/"
+}

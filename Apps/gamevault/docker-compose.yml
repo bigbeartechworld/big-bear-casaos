@@ -1,0 +1,104 @@
+name: big-bear-gamevault
+services:
+  gamevault:
+    image: phalcode/gamevault-backend:17.0.1@sha256:f3c599d4fc7498eb2028cfd611dc27b3f707c83a7ce9a86ec3ec8256a42409ba
+    container_name: gamevault
+    restart: unless-stopped
+    depends_on:
+      gamevault-db:
+        condition: service_healthy
+    ports:
+      - "20032:8080"
+    environment:
+      DB_HOST: gamevault-db
+      DB_USERNAME: gamevault
+      DB_PASSWORD: 02386af9-382f-49ad-841b-060735fd14d7
+    volumes:
+      - /DATA/AppData/$AppID/files:/files
+      - /DATA/AppData/$AppID/media:/media
+    x-casaos:
+      envs:
+        - container: DB_HOST
+          description:
+            en_US: 'Container Variable: DB_HOST'
+        - container: DB_USERNAME
+          description:
+            en_US: 'Container Variable: DB_USERNAME'
+        - container: DB_PASSWORD
+          description:
+            en_US: 'Container Variable: DB_PASSWORD'
+      volumes:
+        - container: /files
+          description:
+            en_US: 'Container Path: /files'
+        - container: /media
+          description:
+            en_US: 'Container Path: /media'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+  gamevault-db:
+    image: postgres:18.6@sha256:5a5a84b19854a9ffaa54082c166ff4ec27473a361e496e5ea167f298f2da9722
+    container_name: gamevault-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gamevault
+      POSTGRES_PASSWORD: 02386af9-382f-49ad-841b-060735fd14d7
+      POSTGRES_DB: gamevault
+    volumes:
+      - /DATA/AppData/$AppID/database:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gamevault -d gamevault"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql
+          description:
+            en_US: 'Container Path: /var/lib/postgresql'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.gamevault
+  # Main service for this application
+  main: gamevault
+  # Detailed description for the application
+  description:
+    en_US: GameVault 17.0.1 is a self-hosted library for DRM-free games, with a web UI and PostgreSQL.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted DRM-free game library
+  # Developer's information
+  developer: Phalcode
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/gamevault.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Open http://localhost:20032. Put DRM-free game files in the gamevault_files volume, which is mounted at /files. Media is stored at /media. Host port 8080 is already used by other apps, so this listing publishes 20032. Keep DB_PASSWORD and POSTGRES_PASSWORD the same.
+  # Title for the application
+  title:
+    en_US: GameVault
+  # Category under which the application falls
+  category: Media
+  # Default port mapping for the application
+  port_map: "20032"

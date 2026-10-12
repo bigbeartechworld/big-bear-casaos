@@ -1,0 +1,343 @@
+name: big-bear-indelible
+services:
+  indelible:
+    image: ghcr.io/useindelible/ind-api:0.1.1@sha256:04604c1bd64148b1bbb4edac8d4cc395b8332de97da6e9ffedeb60faffb526ab
+    container_name: indelible
+    restart: unless-stopped
+    environment:
+      IND_ENV: development
+      DATABASE_URL: postgres://indelible:1c200d72-b081-4f40-a3c3-cb98d604ad76@postgres:5432/indelible
+      S3_ENDPOINT: http://silo:9000
+      S3_REGION: us-east-1
+      S3_BUCKET: indelible
+      S3_ACCESS_KEY: indelible
+      S3_SECRET_KEY: 2f32d346-ff03-48cb-bfed-2ead51511aa8
+      S3_FORCE_PATH_STYLE: "true"
+      AUTH_CREDENTIAL_KEY: "PFy8QhmU0ZU6H1RFu/ZiIYaEZxVBFPMs4JqHWJ840ZI="
+      EGRESS_ALLOW_PRIVATE_TARGETS: "false"
+      IND_HOST: 0.0.0.0
+      IND_PORT: "8080"
+      IND_BASE_URL: http://localhost:38473
+      FRONTEND_URL: http://localhost:38473
+      EXTENSION_REDIRECT_URIS: https://jidilhjojlgndbpeooeeceohmkedooef.chromiumapp.org/indelible,https://38bd18db5de5caccb6ab6c1271fec03ec1662d5c.extensions.allizom.org/indelible
+      CORS_ORIGINS: http://localhost:38473
+      JWT_SECRET: GuLcGAJ92GTP4Xg-iUJCs44iB6bf7vebfRVEofYB0OM
+      CSRF_SECRET: F3uBgXCtF4d79aPkxskk5aBEjTP4nhiMXe-FN2A15Co
+      ASSET_COOKIE_SECRET: 32e43181ad36e8465cb37f846b0d4117ef56402764aa5f9757055b3fac419e98
+      OIDC_ENABLED: "false"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    ports:
+      - "38473:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      silo:
+        condition: service_healthy
+      indelible-silo-init:
+        condition: service_completed_successfully
+    x-casaos:
+      envs:
+        - container: IND_ENV
+          description:
+            en_US: 'Container Variable: IND_ENV'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: S3_ENDPOINT
+          description:
+            en_US: 'Container Variable: S3_ENDPOINT'
+        - container: S3_REGION
+          description:
+            en_US: 'Container Variable: S3_REGION'
+        - container: S3_BUCKET
+          description:
+            en_US: 'Container Variable: S3_BUCKET'
+        - container: S3_ACCESS_KEY
+          description:
+            en_US: 'Container Variable: S3_ACCESS_KEY'
+        - container: S3_SECRET_KEY
+          description:
+            en_US: 'Container Variable: S3_SECRET_KEY'
+        - container: S3_FORCE_PATH_STYLE
+          description:
+            en_US: 'Container Variable: S3_FORCE_PATH_STYLE'
+        - container: AUTH_CREDENTIAL_KEY
+          description:
+            en_US: 'Container Variable: AUTH_CREDENTIAL_KEY'
+        - container: EGRESS_ALLOW_PRIVATE_TARGETS
+          description:
+            en_US: 'Container Variable: EGRESS_ALLOW_PRIVATE_TARGETS'
+        - container: IND_HOST
+          description:
+            en_US: 'Container Variable: IND_HOST'
+        - container: IND_PORT
+          description:
+            en_US: 'Container Variable: IND_PORT'
+        - container: IND_BASE_URL
+          description:
+            en_US: 'Container Variable: IND_BASE_URL'
+        - container: FRONTEND_URL
+          description:
+            en_US: 'Container Variable: FRONTEND_URL'
+        - container: EXTENSION_REDIRECT_URIS
+          description:
+            en_US: 'Container Variable: EXTENSION_REDIRECT_URIS'
+        - container: CORS_ORIGINS
+          description:
+            en_US: 'Container Variable: CORS_ORIGINS'
+        - container: JWT_SECRET
+          description:
+            en_US: 'Container Variable: JWT_SECRET'
+        - container: CSRF_SECRET
+          description:
+            en_US: 'Container Variable: CSRF_SECRET'
+        - container: ASSET_COOKIE_SECRET
+          description:
+            en_US: 'Container Variable: ASSET_COOKIE_SECRET'
+        - container: OIDC_ENABLED
+          description:
+            en_US: 'Container Variable: OIDC_ENABLED'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+  postgres:
+    image: pgvector/pgvector:pg18@sha256:2358fcba361ed2233a5ed81b5fe4ca779ccb304120ce531a3bf51c0ed7e2bc11
+    container_name: indelible-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: indelible
+      POSTGRES_PASSWORD: 1c200d72-b081-4f40-a3c3-cb98d604ad76
+      POSTGRES_DB: indelible
+    volumes:
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U indelible -d indelible"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql
+          description:
+            en_US: 'Container Path: /var/lib/postgresql'
+  silo:
+    image: docker.io/pgsty/silo:RELEASE.2026-08-06T00-00-00Z@sha256:29a498b24669cae1fed11c1a2fb2b3d73c68829a0a9c0b14e71b386671d38fac
+    container_name: indelible-silo
+    restart: unless-stopped
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER: indelible
+      MINIO_ROOT_PASSWORD: 2f32d346-ff03-48cb-bfed-2ead51511aa8
+    volumes:
+      - /DATA/AppData/$AppID/silodata:/data
+    healthcheck:
+      test: ["CMD", "silo", "healthcheck", "ready"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    x-casaos:
+      envs:
+        - container: MINIO_ROOT_USER
+          description:
+            en_US: 'Container Variable: MINIO_ROOT_USER'
+        - container: MINIO_ROOT_PASSWORD
+          description:
+            en_US: 'Container Variable: MINIO_ROOT_PASSWORD'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+  indelible-silo-init:
+    image: docker.io/pgsty/silo:RELEASE.2026-08-06T00-00-00Z@sha256:29a498b24669cae1fed11c1a2fb2b3d73c68829a0a9c0b14e71b386671d38fac
+    container_name: indelible-silo-init
+    restart: "no"
+    environment:
+      MINIO_ROOT_USER: indelible
+      MINIO_ROOT_PASSWORD: 2f32d346-ff03-48cb-bfed-2ead51511aa8
+    depends_on:
+      silo:
+        condition: service_healthy
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        mcli alias set silo http://silo:9000 "$$MINIO_ROOT_USER" "$$MINIO_ROOT_PASSWORD" && mcli mb --ignore-existing silo/indelible
+    x-casaos:
+      envs:
+        - container: MINIO_ROOT_USER
+          description:
+            en_US: 'Container Variable: MINIO_ROOT_USER'
+        - container: MINIO_ROOT_PASSWORD
+          description:
+            en_US: 'Container Variable: MINIO_ROOT_PASSWORD'
+  renderer:
+    image: ghcr.io/useindelible/ind-renderer:0.1.1@sha256:f43488ff9bc9c413b248a620ba9eed29e583699752305ed4cfbb63383e1af5cf
+    container_name: indelible-renderer
+    init: true
+    restart: unless-stopped
+    environment:
+      IND_ENV: development
+      DATABASE_URL: postgres://indelible:1c200d72-b081-4f40-a3c3-cb98d604ad76@postgres:5432/indelible
+      S3_ENDPOINT: http://silo:9000
+      S3_REGION: us-east-1
+      S3_BUCKET: indelible
+      S3_ACCESS_KEY: indelible
+      S3_SECRET_KEY: 2f32d346-ff03-48cb-bfed-2ead51511aa8
+      S3_FORCE_PATH_STYLE: "true"
+      AUTH_CREDENTIAL_KEY: "PFy8QhmU0ZU6H1RFu/ZiIYaEZxVBFPMs4JqHWJ840ZI="
+      EGRESS_ALLOW_PRIVATE_TARGETS: "false"
+      RENDERER_HOST: 0.0.0.0
+      RENDERER_PORT: "3100"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    depends_on:
+      postgres:
+        condition: service_healthy
+      silo:
+        condition: service_healthy
+    x-casaos:
+      envs:
+        - container: IND_ENV
+          description:
+            en_US: 'Container Variable: IND_ENV'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: S3_ENDPOINT
+          description:
+            en_US: 'Container Variable: S3_ENDPOINT'
+        - container: S3_REGION
+          description:
+            en_US: 'Container Variable: S3_REGION'
+        - container: S3_BUCKET
+          description:
+            en_US: 'Container Variable: S3_BUCKET'
+        - container: S3_ACCESS_KEY
+          description:
+            en_US: 'Container Variable: S3_ACCESS_KEY'
+        - container: S3_SECRET_KEY
+          description:
+            en_US: 'Container Variable: S3_SECRET_KEY'
+        - container: S3_FORCE_PATH_STYLE
+          description:
+            en_US: 'Container Variable: S3_FORCE_PATH_STYLE'
+        - container: AUTH_CREDENTIAL_KEY
+          description:
+            en_US: 'Container Variable: AUTH_CREDENTIAL_KEY'
+        - container: EGRESS_ALLOW_PRIVATE_TARGETS
+          description:
+            en_US: 'Container Variable: EGRESS_ALLOW_PRIVATE_TARGETS'
+        - container: RENDERER_HOST
+          description:
+            en_US: 'Container Variable: RENDERER_HOST'
+        - container: RENDERER_PORT
+          description:
+            en_US: 'Container Variable: RENDERER_PORT'
+  worker:
+    image: ghcr.io/useindelible/ind-worker:0.1.1@sha256:4338ce6da40d7856fc8ad4eef567cfa8b5ec5b13f63a0a7e3bcd24efc394fa28
+    container_name: indelible-worker
+    restart: unless-stopped
+    environment:
+      IND_ENV: development
+      DATABASE_URL: postgres://indelible:1c200d72-b081-4f40-a3c3-cb98d604ad76@postgres:5432/indelible
+      S3_ENDPOINT: http://silo:9000
+      S3_REGION: us-east-1
+      S3_BUCKET: indelible
+      S3_ACCESS_KEY: indelible
+      S3_SECRET_KEY: 2f32d346-ff03-48cb-bfed-2ead51511aa8
+      S3_FORCE_PATH_STYLE: "true"
+      AUTH_CREDENTIAL_KEY: "PFy8QhmU0ZU6H1RFu/ZiIYaEZxVBFPMs4JqHWJ840ZI="
+      EGRESS_ALLOW_PRIVATE_TARGETS: "false"
+      RENDERER_URL: http://renderer:3100
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    depends_on:
+      postgres:
+        condition: service_healthy
+      silo:
+        condition: service_healthy
+      renderer:
+        condition: service_started
+      indelible-silo-init:
+        condition: service_completed_successfully
+    x-casaos:
+      envs:
+        - container: IND_ENV
+          description:
+            en_US: 'Container Variable: IND_ENV'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: S3_ENDPOINT
+          description:
+            en_US: 'Container Variable: S3_ENDPOINT'
+        - container: S3_REGION
+          description:
+            en_US: 'Container Variable: S3_REGION'
+        - container: S3_BUCKET
+          description:
+            en_US: 'Container Variable: S3_BUCKET'
+        - container: S3_ACCESS_KEY
+          description:
+            en_US: 'Container Variable: S3_ACCESS_KEY'
+        - container: S3_SECRET_KEY
+          description:
+            en_US: 'Container Variable: S3_SECRET_KEY'
+        - container: S3_FORCE_PATH_STYLE
+          description:
+            en_US: 'Container Variable: S3_FORCE_PATH_STYLE'
+        - container: AUTH_CREDENTIAL_KEY
+          description:
+            en_US: 'Container Variable: AUTH_CREDENTIAL_KEY'
+        - container: EGRESS_ALLOW_PRIVATE_TARGETS
+          description:
+            en_US: 'Container Variable: EGRESS_ALLOW_PRIVATE_TARGETS'
+        - container: RENDERER_URL
+          description:
+            en_US: 'Container Variable: RENDERER_URL'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.indelible
+  # Main service for this application
+  main: indelible
+  # Detailed description for the application
+  description:
+    en_US: Indelible is a self-hosted read-it-later and knowledge library. It stores articles, newsletters, PDFs, and EPUBs in PostgreSQL and an S3-compatible object store, and the API serves the web app on the same port.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted read-it-later library
+  # Developer's information
+  developer: useindelible
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/useindelible/indelible@v0.1.1/web/static/favicon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: 'Open http://localhost:38473 and create the first account. Signups close after that account exists. This is the official localhost trial: plain HTTP, not the production compose. A public hostname needs HTTPS, and production mode refuses to boot without it. Replace JWT_SECRET, CSRF_SECRET, ASSET_COOKIE_SECRET, AUTH_CREDENTIAL_KEY, POSTGRES_PASSWORD, and MINIO_ROOT_PASSWORD before the first start. The catalog values are public. Keep the same Postgres password in DATABASE_URL, and keep S3_SECRET_KEY equal to MINIO_ROOT_PASSWORD on silo and on indelible-silo-init. The initializer reads that environment value when it creates the bucket. CasaOS and ZimaOS edit those literals; they do not substitute Compose variables.'
+  # Title for the application
+  title:
+    en_US: Indelible
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "38473"

@@ -1,6 +1,6 @@
 {
   "id": "python",
-  "version": "3.14.8",
+  "version": "3.15.0",
   "image": "linuxserver/python",
   "youtube": "",
   "docs_link": ""

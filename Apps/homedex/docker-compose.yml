@@ -1,0 +1,145 @@
+name: big-bear-homedex
+services:
+  homedex:
+    image: ghcr.io/harshshah0203/homedex:0.2.5@sha256:c896084c063a358ed19932587d98f9a54d5520e5b2f9e1672ade279f8f0dcea0
+    container_name: homedex
+    restart: unless-stopped
+    depends_on:
+      - docker-socket-proxy
+    ports:
+      - "7377:7377"
+    environment:
+      HOMEDEX_DATA_DIR: /data
+      HOMEDEX_LISTEN: ":7377"
+      HOMEDEX_ADMIN_PASSWORD: CHANGE_ME
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - app
+      - discovery
+    x-casaos:
+      envs:
+        - container: HOMEDEX_DATA_DIR
+          description:
+            en_US: 'Container Variable: HOMEDEX_DATA_DIR'
+        - container: HOMEDEX_LISTEN
+          description:
+            en_US: 'Container Variable: HOMEDEX_LISTEN'
+        - container: HOMEDEX_ADMIN_PASSWORD
+          description:
+            en_US: 'Container Variable: HOMEDEX_ADMIN_PASSWORD'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "7377"
+          description:
+            en_US: 'Container Port: 7377'
+  docker-socket-proxy:
+    image: tecnativa/docker-socket-proxy:v0.4.2@sha256:1f3a6f303320723d199d2316a3e82b2e2685d86c275d5e3deeaf182573b47476
+    container_name: homedex-socket-proxy
+    restart: unless-stopped
+    environment:
+      CONTAINERS: "1"
+      IMAGES: "1"
+      INFO: "1"
+      NETWORKS: "1"
+      VERSION: "1"
+      POST: "0"
+      ALLOW_START: "0"
+      ALLOW_STOP: "0"
+      ALLOW_RESTARTS: "0"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    read_only: true
+    tmpfs:
+      - /run
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - discovery
+    x-casaos:
+      envs:
+        - container: CONTAINERS
+          description:
+            en_US: 'Container Variable: CONTAINERS'
+        - container: IMAGES
+          description:
+            en_US: 'Container Variable: IMAGES'
+        - container: INFO
+          description:
+            en_US: 'Container Variable: INFO'
+        - container: NETWORKS
+          description:
+            en_US: 'Container Variable: NETWORKS'
+        - container: VERSION
+          description:
+            en_US: 'Container Variable: VERSION'
+        - container: POST
+          description:
+            en_US: 'Container Variable: POST'
+        - container: ALLOW_START
+          description:
+            en_US: 'Container Variable: ALLOW_START'
+        - container: ALLOW_STOP
+          description:
+            en_US: 'Container Variable: ALLOW_STOP'
+        - container: ALLOW_RESTARTS
+          description:
+            en_US: 'Container Variable: ALLOW_RESTARTS'
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+networks:
+  app:
+    driver: bridge
+  discovery:
+    driver: bridge
+    internal: true
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.homedex
+  # Main service for this application
+  main: homedex
+  # Detailed description for the application
+  description:
+    en_US: Homedex 0.2.5 is a read-only homelab inventory of services, ports, routes, and certificate expiry.
+  # Brief tagline for the application
+  tagline:
+    en_US: Read-only homelab inventory
+  # Developer's information
+  developer: Harsh Shah
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/homedex.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Replace HOMEDEX_ADMIN_PASSWORD before the first start. The shipped value is CHANGE_ME, and Homedex 0.2.5 exits until the password is at least 12 characters. Homedex hashes the replacement on first start and does not replace that hash later. CasaOS and ZimaOS edit the literal; they do not substitute Compose variables. Open http://localhost:7377 and sign in as admin. Add the prefilled Docker source tcp://docker-socket-proxy:2375. That proxy mounts the Docker socket read-only and rejects mutating API calls.
+  # Title for the application
+  title:
+    en_US: Homedex
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "7377"

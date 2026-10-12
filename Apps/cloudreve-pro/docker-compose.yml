@@ -1,0 +1,120 @@
+name: big-bear-cloudreve-pro
+services:
+  cloudreve-pro:
+    image: ghcr.io/dvorinka/cloudreve:v4.23.0@sha256:75b6e6f1781e37b47320907d6f72476e19cd85c5ef073579e441e01d0509c4c5
+    container_name: cloudreve-pro
+    restart: unless-stopped
+    depends_on:
+      postgresql:
+        condition: service_started
+      redis:
+        condition: service_started
+    ports:
+      - "20042:5212"
+    environment:
+      CR_CONF_Database.Type: postgres
+      CR_CONF_Database.Host: postgresql
+      CR_CONF_Database.User: cloudreve
+      CR_CONF_Database.Name: cloudreve
+      CR_CONF_Database.Port: "5432"
+      CR_CONF_Redis.Server: redis:6379
+    volumes:
+      - /DATA/AppData/$AppID/data:/cloudreve/data
+    x-casaos:
+      envs:
+        - container: CR_CONF_Database.Type
+          description:
+            en_US: 'Container Variable: CR_CONF_Database.Type'
+        - container: CR_CONF_Database.Host
+          description:
+            en_US: 'Container Variable: CR_CONF_Database.Host'
+        - container: CR_CONF_Database.User
+          description:
+            en_US: 'Container Variable: CR_CONF_Database.User'
+        - container: CR_CONF_Database.Name
+          description:
+            en_US: 'Container Variable: CR_CONF_Database.Name'
+        - container: CR_CONF_Database.Port
+          description:
+            en_US: 'Container Variable: CR_CONF_Database.Port'
+        - container: CR_CONF_Redis.Server
+          description:
+            en_US: 'Container Variable: CR_CONF_Redis.Server'
+      volumes:
+        - container: /cloudreve/data
+          description:
+            en_US: 'Container Path: /cloudreve/data'
+      ports:
+        - container: "5212"
+          description:
+            en_US: 'Container Port: 5212'
+  postgresql:
+    image: postgres:17@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+    container_name: cloudreve-pro-postgresql
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cloudreve
+      POSTGRES_DB: cloudreve
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+        - container: POSTGRES_HOST_AUTH_METHOD
+          description:
+            en_US: 'Container Variable: POSTGRES_HOST_AUTH_METHOD'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+  redis:
+    image: redis:8.10.2@sha256:6f81e8915c60b065a524e6967e0ad1c639ba6efa84d669f823683ea04d9150ee
+    container_name: cloudreve-pro-redis
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.cloudreve-pro
+  # Main service for this application
+  main: cloudreve-pro
+  # Detailed description for the application
+  description:
+    en_US: Cloudreve Fork v4.23.0 is the Dvorinka open-source Cloudreve server. It uses the same Postgres and Redis layout as upstream and is not the official paid Pro image.
+  # Brief tagline for the application
+  tagline:
+    en_US: ""
+  # Developer's information
+  developer: Dvorinka
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cloudreve.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: This listing runs the Dvorinka open-source fork (ghcr.io/dvorinka/cloudreve), not the official Cloudreve Pro image from release.cloudreve.org. Open http://localhost:20042 and register an account. The first account becomes the administrator. Host port 5212 is already used by the Cloudreve listing, so this app publishes 20042. Postgres uses trust authentication on the internal network.
+  # Title for the application
+  title:
+    en_US: Cloudreve Fork
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "20042"
