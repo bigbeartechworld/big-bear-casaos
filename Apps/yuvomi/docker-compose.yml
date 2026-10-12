@@ -1,0 +1,117 @@
+name: big-bear-yuvomi
+services:
+  yuvomi:
+    image: ghcr.io/ulsklyc/yuvomi:2.73.0@sha256:86b874876612aa880bc5ce18563b2cd502e2230263aa3cc3a679d9d1245de938
+    container_name: yuvomi
+    restart: unless-stopped
+    ports:
+      - "20004:3000"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /DATA/AppData/$AppID/backups:/backups
+      - /DATA/AppData/$AppID/modules:/app/modules
+      - /DATA/AppData/$AppID/documents:/documents
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      DB_PATH: /data/yuvomi.db
+      BACKUP_DIR: /backups
+      MODULES_DIR: /app/modules
+      SESSION_SECRET: REPLACE_WITH_A_LONG_RANDOM_STRING
+      DB_ENCRYPTION_KEY: 12C_F5m7nZC69qeJlJL0BqgCNd8lH3m1zqAeERMcG3g
+      SESSION_SECURE: "false"
+      TRUST_PROXY: loopback
+      DOCUMENT_STORAGE_LOCAL_ENABLED: "false"
+      DOCUMENT_STORAGE_LOCAL_PATH: /documents
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', r => process.exit(r.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_US: 'Container Variable: NODE_ENV'
+        - container: PORT
+          description:
+            en_US: 'Container Variable: PORT'
+        - container: DB_PATH
+          description:
+            en_US: 'Container Variable: DB_PATH'
+        - container: BACKUP_DIR
+          description:
+            en_US: 'Container Variable: BACKUP_DIR'
+        - container: MODULES_DIR
+          description:
+            en_US: 'Container Variable: MODULES_DIR'
+        - container: SESSION_SECRET
+          description:
+            en_US: 'Container Variable: SESSION_SECRET'
+        - container: DB_ENCRYPTION_KEY
+          description:
+            en_US: 'Container Variable: DB_ENCRYPTION_KEY'
+        - container: SESSION_SECURE
+          description:
+            en_US: 'Container Variable: SESSION_SECURE'
+        - container: TRUST_PROXY
+          description:
+            en_US: 'Container Variable: TRUST_PROXY'
+        - container: DOCUMENT_STORAGE_LOCAL_ENABLED
+          description:
+            en_US: 'Container Variable: DOCUMENT_STORAGE_LOCAL_ENABLED'
+        - container: DOCUMENT_STORAGE_LOCAL_PATH
+          description:
+            en_US: 'Container Variable: DOCUMENT_STORAGE_LOCAL_PATH'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+        - container: /backups
+          description:
+            en_US: 'Container Path: /backups'
+        - container: /app/modules
+          description:
+            en_US: 'Container Path: /app/modules'
+        - container: /documents
+          description:
+            en_US: 'Container Path: /documents'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.yuvomi
+  # Main service for this application
+  main: yuvomi
+  # Detailed description for the application
+  description:
+    en_US: Yuvomi is a self-hosted family planner for tasks, calendar, meals, shopping, budget, and documents. It stores data in one SQLite database on your server.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted family planner
+  # Developer's information
+  developer: ulsklyc
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/yuvomi.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Open host port 20004. SESSION_SECRET is shipped as REPLACE_WITH_A_LONG_RANDOM_STRING. Yuvomi 2.73.0 exits until you replace that placeholder. Also replace DB_ENCRYPTION_KEY before creating data. The shipped values are public. A lost DB_ENCRYPTION_KEY cannot reopen the database, so keep the replacement. CasaOS and ZimaOS edit those literals; they do not substitute Compose variables. Optional weather, calendar, and OIDC settings are unset.
+  # Title for the application
+  title:
+    en_US: Yuvomi
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "20004"

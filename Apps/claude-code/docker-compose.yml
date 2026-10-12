@@ -1,0 +1,129 @@
+name: big-bear-claude-code
+services:
+  claude:
+    image: ghcr.io/worph/claude-code-container:1.0.28@sha256:a73863d23af0222037a0d51cef0c350bfd86825f693cc9bbf889a6484aad2f94
+    container_name: claude-code-app
+    restart: unless-stopped
+    ports:
+      - "20041:9090"
+    environment:
+      ANTHROPIC_API_KEY: ""
+      AUTH_PASSWORD: "9c93e0aa-ebe4-4737-b222-d6445c64da29"
+      MCP_ENABLED: "true"
+      CLAUDE_SESSION_TTL: "1800"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        if [ -z "$$AUTH_PASSWORD" ] || [ "$$AUTH_PASSWORD" = "9c93e0aa-ebe4-4737-b222-d6445c64da29" ]; then
+          echo "Replace AUTH_PASSWORD before start. An empty value opens the API, and the catalog value is public. This container mounts the Docker socket." >&2
+          exit 1
+        fi
+        exec /init
+    volumes:
+      - /DATA/AppData/$AppID/workspace:/home/claude/workspace
+      - /DATA/AppData/$AppID/config:/home/claude/.claude
+      - /var/run/docker.sock:/var/run/docker.sock
+    x-casaos:
+      envs:
+        - container: ANTHROPIC_API_KEY
+          description:
+            en_US: 'Container Variable: ANTHROPIC_API_KEY'
+        - container: AUTH_PASSWORD
+          description:
+            en_US: 'Container Variable: AUTH_PASSWORD'
+        - container: MCP_ENABLED
+          description:
+            en_US: 'Container Variable: MCP_ENABLED'
+        - container: CLAUDE_SESSION_TTL
+          description:
+            en_US: 'Container Variable: CLAUDE_SESSION_TTL'
+      volumes:
+        - container: /home/claude/workspace
+          description:
+            en_US: 'Container Path: /home/claude/workspace'
+        - container: /home/claude/.claude
+          description:
+            en_US: 'Container Path: /home/claude/.claude'
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+      ports:
+        - container: "9090"
+          description:
+            en_US: 'Container Port: 9090'
+  caddy:
+    image: caddy:2.11.6@sha256:3422ce6de165df66534f9b9ba50efaf457114ec961763cc52f5dbdaac2972d73
+    container_name: claude-code-caddy
+    restart: unless-stopped
+    depends_on:
+      - claude
+    ports:
+      - "20040:8080"
+    networks:
+      default:
+        aliases:
+          - claude-code
+    configs:
+      - source: caddyfile
+        target: /etc/caddy/Caddyfile
+    x-casaos:
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+configs:
+  caddyfile:
+    content: |
+      :8080 {
+        handle /login* {
+          reverse_proxy claude:9090
+        }
+        handle /logout {
+          reverse_proxy claude:9090
+        }
+        handle {
+          forward_auth claude:9090 {
+            uri /auth
+            @unauthorized status 401
+            handle_response @unauthorized {
+              redir * /login
+            }
+          }
+          reverse_proxy claude:8080
+        }
+      }
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.claude-code
+  # Main service for this application
+  main: caddy
+  # Detailed description for the application
+  description:
+    en_US: Claude Code Container 1.0.28 runs Anthropic Claude Code in a browser terminal and an MCP API.
+  # Brief tagline for the application
+  tagline:
+    en_US: ""
+  # Developer's information
+  developer: worph
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/claude.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Replace AUTH_PASSWORD before the first start. The container exits while it is empty or still the catalog value, because an empty password opens the API and the catalog value is public. This container can control the host through the Docker socket. Open http://localhost:20040 and sign in with the password you set. CasaOS and ZimaOS edit that literal environment value; they do not substitute Compose variables. Caddy checks the password before it proxies to ttyd. ttyd itself is not published. The MCP API is http://localhost:20041/mcp with the same value as a bearer token. Leave ANTHROPIC_API_KEY empty to authenticate with OAuth in the terminal. OAuth state in /home/claude/.claude.json is lost when the container is recreated. Settings under /home/claude/.claude persist. Host ports 8080 and 9090 were already published, so this listing uses 20040 and 20041.
+  # Title for the application
+  title:
+    en_US: Claude Code Container
+  # Category under which the application falls
+  category: AI
+  # Default port mapping for the application
+  port_map: "20040"

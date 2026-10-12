@@ -1,0 +1,53 @@
+name: big-bear-docuseal
+services:
+  docuseal:
+    image: docuseal/docuseal:3.3.1@sha256:e171808ce8dabb08491a49a6d8c477670a65ddce5e3de4764904b63a4487940f
+    container_name: docuseal
+    restart: unless-stopped
+    ports:
+      - "20031:3000"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.docuseal
+  # Main service for this application
+  main: docuseal
+  # Detailed description for the application
+  description:
+    en_US: DocuSeal 3.3.1 is an open-source platform to create, fill, and sign PDF documents.
+  # Brief tagline for the application
+  tagline:
+    en_US: Open source PDF signing
+  # Developer's information
+  developer: DocuSeal
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/docuseal.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Open http://localhost:20031 and finish the first-run setup. Data stays in the SQLite database on the docuseal_data volume. Host port 3000 is already used by other apps, so this listing publishes 20031.
+  # Title for the application
+  title:
+    en_US: DocuSeal
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "20031"

@@ -1,0 +1,110 @@
+name: big-bear-omniroute
+services:
+  omniroute:
+    image: diegosouzapw/omniroute:3.8.51@sha256:8bd462c9f60d8eda79329cfbb6ea7ea723505fe7721beb944f3d43835409e218
+    container_name: omniroute
+    restart: unless-stopped
+    stop_grace_period: 40s
+    environment:
+      DATA_DIR: /app/data
+      REDIS_URL: redis://redis:6379
+      REQUIRE_API_KEY: "true"
+      INITIAL_PASSWORD: 0efefa3c-54ae-4848-b7bc-295f91483fe7
+      OMNIROUTE_MEMORY_MB: "2048"
+    ports:
+      - "20128:20128"
+      - "20129:20129"
+      - "20132:20132"
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.mjs"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    x-casaos:
+      envs:
+        - container: DATA_DIR
+          description:
+            en_US: 'Container Variable: DATA_DIR'
+        - container: REDIS_URL
+          description:
+            en_US: 'Container Variable: REDIS_URL'
+        - container: REQUIRE_API_KEY
+          description:
+            en_US: 'Container Variable: REQUIRE_API_KEY'
+        - container: INITIAL_PASSWORD
+          description:
+            en_US: 'Container Variable: INITIAL_PASSWORD'
+        - container: OMNIROUTE_MEMORY_MB
+          description:
+            en_US: 'Container Variable: OMNIROUTE_MEMORY_MB'
+      volumes:
+        - container: /app/data
+          description:
+            en_US: 'Container Path: /app/data'
+      ports:
+        - container: "20128"
+          description:
+            en_US: 'Container Port: 20128'
+        - container: "20129"
+          description:
+            en_US: 'Container Port: 20129'
+        - container: "20132"
+          description:
+            en_US: 'Container Port: 20132'
+  redis:
+    image: redis:8.6.5-alpine@sha256:cd218f4b106a332c5c992e38a9480bfb9d7e9f8f7b0ec9a0023bfa36d9a408f9
+    container_name: omniroute-redis
+    restart: unless-stopped
+    command: ["redis-server", "--save", "60", "1", "--loglevel", "warning"]
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.omniroute
+  # Main service for this application
+  main: omniroute
+  # Detailed description for the application
+  description:
+    en_US: OmniRoute is a self-hosted LLM router. The dashboard and an OpenAI-compatible endpoint on one port send requests to the provider accounts you connect, with Redis for rate limiting.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted LLM router
+  # Developer's information
+  developer: diegosouzapw
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/omniroute.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Set INITIAL_PASSWORD in the install form before the first start. The catalog value is public. CasaOS and ZimaOS edit that literal; they do not substitute Compose variables. Open http://localhost:20128 and sign in with that password. REQUIRE_API_KEY is on because the ports are published beyond loopback. Add a provider key in the dashboard. Redis is not published to the host. The base image has no Chromium, so web-cookie providers are not included.
+  # Title for the application
+  title:
+    en_US: OmniRoute
+  # Category under which the application falls
+  category: AI
+  # Default port mapping for the application
+  port_map: "20128"

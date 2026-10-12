@@ -1,0 +1,7 @@
+{
+  "id": "homelable",
+  "version": "3.5.1",
+  "image": "ghcr.io/pouzor/homelable-frontend",
+  "youtube": "",
+  "docs_link": "https://github.com/Pouzor/homelable/blob/main/INSTALLATION.md"
+}

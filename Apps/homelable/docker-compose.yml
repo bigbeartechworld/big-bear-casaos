@@ -1,0 +1,98 @@
+name: big-bear-homelable
+services:
+  homelable:
+    image: ghcr.io/pouzor/homelable-frontend:3.5.1@sha256:d307875b5afe484f5f082170af829b10259b07676e29e142c0de07ebc5cbba04
+    container_name: homelable
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "20033:80"
+    environment:
+      BACKEND_UPSTREAM: backend:8000
+    x-casaos:
+      envs:
+        - container: BACKEND_UPSTREAM
+          description:
+            en_US: 'Container Variable: BACKEND_UPSTREAM'
+      ports:
+        - container: "80"
+          description:
+            en_US: 'Container Port: 80'
+  backend:
+    image: ghcr.io/pouzor/homelable-backend:3.5.1@sha256:54dfa4b12843f0098141260e75e863a9638ced535a1618cd7b8826bf1718dd62
+    container_name: homelable-backend
+    restart: unless-stopped
+    cap_add:
+      - NET_RAW
+    environment:
+      SECRET_KEY: j1Y2R1xaVZDUSdCvOXz7dvJhkfljx1PZJyH3pjffwMA
+      SQLITE_PATH: /app/data/homelab.db
+      CORS_ORIGINS: '["http://localhost:20033"]'
+      AUTH_MODE: local
+      AUTH_USERNAME: admin
+      AUTH_PASSWORD_HASH: "$$2y$$12$$.578Mwn8ZZsSrG.o1.zDR.N3sIHeeLWcXOQsfeT1v5l9Vz2zqMJTi"
+      SCANNER_RANGES: "[]"
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+    x-casaos:
+      envs:
+        - container: SECRET_KEY
+          description:
+            en_US: 'Container Variable: SECRET_KEY'
+        - container: SQLITE_PATH
+          description:
+            en_US: 'Container Variable: SQLITE_PATH'
+        - container: CORS_ORIGINS
+          description:
+            en_US: 'Container Variable: CORS_ORIGINS'
+        - container: AUTH_MODE
+          description:
+            en_US: 'Container Variable: AUTH_MODE'
+        - container: AUTH_USERNAME
+          description:
+            en_US: 'Container Variable: AUTH_USERNAME'
+        - container: AUTH_PASSWORD_HASH
+          description:
+            en_US: 'Container Variable: AUTH_PASSWORD_HASH'
+        - container: SCANNER_RANGES
+          description:
+            en_US: 'Container Variable: SCANNER_RANGES'
+      volumes:
+        - container: /app/data
+          description:
+            en_US: 'Container Path: /app/data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.homelable
+  # Main service for this application
+  main: homelable
+  # Detailed description for the application
+  description:
+    en_US: Homelable 3.5.1 is a self-hosted homelab diagram with live status monitoring.
+  # Brief tagline for the application
+  tagline:
+    en_US: Homelab network diagram
+  # Developer's information
+  developer: Pouzor
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/homelable.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Replace AUTH_PASSWORD_HASH with a bcrypt hash of your own password before the first start. The shipped hash is public. CasaOS and ZimaOS edit that literal; they do not substitute Compose variables. Open http://localhost:20033 and sign in as admin. If you open Homelable by another hostname or IP, add that origin to CORS_ORIGINS. Set SCANNER_RANGES to your LAN CIDR before scanning. On the Docker bridge, scans do not return MAC addresses. Host networking would, and it is Linux-only, so it is not enabled here. Host port 3000 is already used, so this listing publishes 20033. The frontend proxies /api to the backend service, which must keep the name backend.
+  # Title for the application
+  title:
+    en_US: Homelable
+  # Category under which the application falls
+  category: Home
+  # Default port mapping for the application
+  port_map: "20033"

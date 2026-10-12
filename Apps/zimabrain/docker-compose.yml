@@ -1,0 +1,109 @@
+name: big-bear-zimabrain
+services:
+  zimabrain:
+    image: gelbuilding/zimabrain-ce:1.6.0-beta@sha256:930c689a0f4389b767d726dbc41766590ca5d58cd030f840099ec0ddf382cca5
+    container_name: zimabrain
+    restart: unless-stopped
+    privileged: true
+    pid: host
+    ports:
+      - "8601:8601"
+    environment:
+      ZIMABRAIN_PASSWORD: 79526452-173c-49bc-873f-956f5a9838cb
+      ZIMABRAIN_SECRET_KEY: qC57Chx7nDu_juH55MXIma7EsHMKLSwBN9CgWFESkqU
+      ZIMABRAIN_MONITOR_ENABLED: "true"
+      ZIMABRAIN_MONITOR_INTERVAL_SECONDS: "60"
+      ZIMABRAIN_MONITOR_RETENTION_DAYS: "7"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/hostname:/host/etc/hostname:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        if [ -z "$$ZIMABRAIN_PASSWORD" ] || [ "$$ZIMABRAIN_PASSWORD" = "79526452-173c-49bc-873f-956f5a9838cb" ]; then
+          echo "Set ZIMABRAIN_PASSWORD to your own value before start. The catalog value is public, and an empty value opens first-run setup on port 8601." >&2
+          exit 1
+        fi
+        exec python /app/flask_app.py
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8601/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    x-casaos:
+      envs:
+        - container: ZIMABRAIN_PASSWORD
+          description:
+            en_US: 'Container Variable: ZIMABRAIN_PASSWORD'
+        - container: ZIMABRAIN_SECRET_KEY
+          description:
+            en_US: 'Container Variable: ZIMABRAIN_SECRET_KEY'
+        - container: ZIMABRAIN_MONITOR_ENABLED
+          description:
+            en_US: 'Container Variable: ZIMABRAIN_MONITOR_ENABLED'
+        - container: ZIMABRAIN_MONITOR_INTERVAL_SECONDS
+          description:
+            en_US: 'Container Variable: ZIMABRAIN_MONITOR_INTERVAL_SECONDS'
+        - container: ZIMABRAIN_MONITOR_RETENTION_DAYS
+          description:
+            en_US: 'Container Variable: ZIMABRAIN_MONITOR_RETENTION_DAYS'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+        - container: /host/proc
+          description:
+            en_US: 'Container Path: /host/proc'
+        - container: /host/sys
+          description:
+            en_US: 'Container Path: /host/sys'
+        - container: /host/etc/hostname
+          description:
+            en_US: 'Container Path: /host/etc/hostname'
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+      ports:
+        - container: "8601"
+          description:
+            en_US: 'Container Port: 8601'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.zimabrain
+  # Main service for this application
+  main: zimabrain
+  # Detailed description for the application
+  description:
+    en_US: ZimaBrain CE is a local verifier-first diagnostic assistant for ZimaOS. It checks host evidence and keeps monitor history in a local SQLite database.
+  # Brief tagline for the application
+  tagline:
+    en_US: Local ZimaOS diagnostic assistant
+  # Developer's information
+  developer: gelbuilding
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://raw.githubusercontent.com/Jacko88888/zimabrain-ce/main/app/assets/zimabrain-ce-logo.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Replace ZIMABRAIN_PASSWORD before the first start. The container exits while it is empty or still the catalog value, so the public password cannot be used and first-run setup is not left open on port 8601. Also replace ZIMABRAIN_SECRET_KEY. The catalog values are public. CasaOS and ZimaOS edit those literals; they do not substitute Compose variables. ZIMABRAIN_SECRET_KEY is only a session key. The container is privileged and reads host proc, sysfs, hostname, and the Docker socket so it can diagnose this machine. No download or torrent sidecar is included.
+  # Title for the application
+  title:
+    en_US: ZimaBrain CE
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "8601"

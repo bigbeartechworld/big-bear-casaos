@@ -1,0 +1,147 @@
+name: big-bear-outline
+services:
+  outline:
+    image: docker.getoutline.com/outlinewiki/outline:1.10.1@sha256:832051f039b446c87aa23929cf92c00980c66aaa2d744d118c48c016ec816ad8
+    container_name: outline
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      URL: http://localhost:23000
+      PORT: "3000"
+      SECRET_KEY: 6f3cbf7b3415ec195adc0cc98a3fc7f5953de9e8b77bff78e34584867ecb60f4
+      UTILS_SECRET: X8p5_gwAyZJW_MION_hihkRrU77tZHpu_4oJvLgWY4E
+      DATABASE_URL: postgres://outline:82d982a5-0329-46f7-a098-4e4cce10f3c2@postgres:5432/outline
+      PGSSLMODE: disable
+      REDIS_URL: redis://redis:6379
+      FILE_STORAGE: local
+      FILE_STORAGE_LOCAL_ROOT_DIR: /var/lib/outline/data
+      FILE_STORAGE_UPLOAD_MAX_SIZE: "262144000"
+      FORCE_HTTPS: "false"
+    ports:
+      - "23000:3000"
+    volumes:
+      - /DATA/AppData/$AppID/storage:/var/lib/outline/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_US: 'Container Variable: NODE_ENV'
+        - container: URL
+          description:
+            en_US: 'Container Variable: URL'
+        - container: PORT
+          description:
+            en_US: 'Container Variable: PORT'
+        - container: SECRET_KEY
+          description:
+            en_US: 'Container Variable: SECRET_KEY'
+        - container: UTILS_SECRET
+          description:
+            en_US: 'Container Variable: UTILS_SECRET'
+        - container: DATABASE_URL
+          description:
+            en_US: 'Container Variable: DATABASE_URL'
+        - container: PGSSLMODE
+          description:
+            en_US: 'Container Variable: PGSSLMODE'
+        - container: REDIS_URL
+          description:
+            en_US: 'Container Variable: REDIS_URL'
+        - container: FILE_STORAGE
+          description:
+            en_US: 'Container Variable: FILE_STORAGE'
+        - container: FILE_STORAGE_LOCAL_ROOT_DIR
+          description:
+            en_US: 'Container Variable: FILE_STORAGE_LOCAL_ROOT_DIR'
+        - container: FILE_STORAGE_UPLOAD_MAX_SIZE
+          description:
+            en_US: 'Container Variable: FILE_STORAGE_UPLOAD_MAX_SIZE'
+        - container: FORCE_HTTPS
+          description:
+            en_US: 'Container Variable: FORCE_HTTPS'
+      volumes:
+        - container: /var/lib/outline/data
+          description:
+            en_US: 'Container Path: /var/lib/outline/data'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+  redis:
+    image: redis:8.6.7@sha256:a323342084bc0350cc66feb7f6e11282c8d853b5e7e729de3b0e81ed88381196
+    container_name: outline-redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+  postgres:
+    image: postgres:18.6@sha256:5a5a84b19854a9ffaa54082c166ff4ec27473a361e496e5ea167f298f2da9722
+    container_name: outline-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: outline
+      POSTGRES_PASSWORD: 82d982a5-0329-46f7-a098-4e4cce10f3c2
+      POSTGRES_DB: outline
+    volumes:
+      - /DATA/AppData/$AppID/database:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "outline", "-U", "outline"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql
+          description:
+            en_US: 'Container Path: /var/lib/postgresql'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.outline
+  # Main service for this application
+  main: outline
+  # Detailed description for the application
+  description:
+    en_US: Outline is a self-hosted team wiki and knowledge base. This stack runs the Outline server with PostgreSQL 18 and Redis, and stores uploads on a local volume.
+  # Brief tagline for the application
+  tagline:
+    en_US: Self-hosted team wiki
+  # Developer's information
+  developer: Outline
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/outline.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: 'Open http://localhost:23000. Replace SECRET_KEY and UTILS_SECRET in the install form before storing pages. The catalog values are public. CasaOS and ZimaOS edit those literals; they do not substitute Compose variables. Outline will not offer a sign-in method until you add one provider: Slack, Google, Azure, Discord, or OIDC. Put that provider''s client id and secret on the outline service, and set URL to the address you actually use. https-portal is not included.'
+  # Title for the application
+  title:
+    en_US: Outline
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "23000"

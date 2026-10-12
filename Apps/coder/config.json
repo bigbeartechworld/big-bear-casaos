@@ -1,0 +1,7 @@
+{
+  "id": "coder",
+  "version": "v2.36.7",
+  "image": "ghcr.io/coder/coder",
+  "youtube": "",
+  "docs_link": "https://coder.com/docs/install/docker"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "cloudreve",
+  "version": "4.19.1",
+  "image": "cloudreve/cloudreve",
+  "youtube": "",
+  "docs_link": "https://docs.cloudreve.org/overview/deploy/docker-compose"
+}

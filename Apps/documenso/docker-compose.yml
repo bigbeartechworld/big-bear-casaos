@@ -1,0 +1,146 @@
+name: big-bear-documenso
+services:
+  documenso:
+    image: documenso/documenso:v2.19.0@sha256:a0592ef8edbc8d74e5e236d9c2dffb3fc4f0104a3ea1c52baaae4673799d8d91
+    container_name: documenso
+    restart: unless-stopped
+    depends_on:
+      documenso-db:
+        condition: service_healthy
+    ports:
+      - "20030:3000"
+    environment:
+      PORT: "3000"
+      NEXTAUTH_SECRET: HlLbSGA2KdCiFkgFK2QCbocNRMQYCuyHcdw0HybLaks
+      NEXT_PRIVATE_ENCRYPTION_KEY: z7k14oDge1HeVUG2LlT3aQeypUTr8NH-JID_K6tYUO0
+      NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY: utotV_gd2gwCIO5BGo-E72vSqI24hOittOVkWfbqBAg
+      NEXT_PUBLIC_WEBAPP_URL: http://localhost:20030
+      NEXT_PRIVATE_INTERNAL_WEBAPP_URL: http://localhost:3000
+      NEXT_PRIVATE_DATABASE_URL: postgresql://documenso:68a9a162-7781-4a5e-be4f-3c4256932a98@documenso-db:5432/documenso
+      NEXT_PRIVATE_DIRECT_DATABASE_URL: postgresql://documenso:68a9a162-7781-4a5e-be4f-3c4256932a98@documenso-db:5432/documenso
+      NEXT_PUBLIC_UPLOAD_TRANSPORT: database
+      NEXT_PRIVATE_SMTP_TRANSPORT: smtp-auth
+      NEXT_PRIVATE_SMTP_HOST: smtp.example.com
+      NEXT_PRIVATE_SMTP_PORT: "587"
+      NEXT_PRIVATE_SMTP_USERNAME: documenso-4RI74RoG
+      NEXT_PRIVATE_SMTP_PASSWORD: 61e22c1d-6f27-4542-a49d-47f36c1b0da6
+      NEXT_PRIVATE_SMTP_FROM_NAME: Documenso
+      NEXT_PRIVATE_SMTP_FROM_ADDRESS: noreply@localhost
+    x-casaos:
+      envs:
+        - container: PORT
+          description:
+            en_US: 'Container Variable: PORT'
+        - container: NEXTAUTH_SECRET
+          description:
+            en_US: 'Container Variable: NEXTAUTH_SECRET'
+        - container: NEXT_PRIVATE_ENCRYPTION_KEY
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_ENCRYPTION_KEY'
+        - container: NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY'
+        - container: NEXT_PUBLIC_WEBAPP_URL
+          description:
+            en_US: 'Container Variable: NEXT_PUBLIC_WEBAPP_URL'
+        - container: NEXT_PRIVATE_INTERNAL_WEBAPP_URL
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_INTERNAL_WEBAPP_URL'
+        - container: NEXT_PRIVATE_DATABASE_URL
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_DATABASE_URL'
+        - container: NEXT_PRIVATE_DIRECT_DATABASE_URL
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_DIRECT_DATABASE_URL'
+        - container: NEXT_PUBLIC_UPLOAD_TRANSPORT
+          description:
+            en_US: 'Container Variable: NEXT_PUBLIC_UPLOAD_TRANSPORT'
+        - container: NEXT_PRIVATE_SMTP_TRANSPORT
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_SMTP_TRANSPORT'
+        - container: NEXT_PRIVATE_SMTP_HOST
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_SMTP_HOST'
+        - container: NEXT_PRIVATE_SMTP_PORT
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_SMTP_PORT'
+        - container: NEXT_PRIVATE_SMTP_USERNAME
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_SMTP_USERNAME'
+        - container: NEXT_PRIVATE_SMTP_PASSWORD
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_SMTP_PASSWORD'
+        - container: NEXT_PRIVATE_SMTP_FROM_NAME
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_SMTP_FROM_NAME'
+        - container: NEXT_PRIVATE_SMTP_FROM_ADDRESS
+          description:
+            en_US: 'Container Variable: NEXT_PRIVATE_SMTP_FROM_ADDRESS'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+  documenso-db:
+    image: postgres:15.19@sha256:724292da1f2e50bdccfc3302ce75bbba7f4a6076701b588cc795fcac65683550
+    container_name: documenso-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: documenso
+      POSTGRES_PASSWORD: 68a9a162-7781-4a5e-be4f-3c4256932a98
+      POSTGRES_DB: documenso
+    volumes:
+      - /DATA/AppData/$AppID/database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U documenso -d documenso"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.documenso
+  # Main service for this application
+  main: documenso
+  # Detailed description for the application
+  description:
+    en_US: Documenso v2.19.0 is an open-source document signing platform backed by PostgreSQL.
+  # Brief tagline for the application
+  tagline:
+    en_US: Open source document signing
+  # Developer's information
+  developer: Documenso
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/documenso.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Open http://localhost:20030. Set NEXT_PUBLIC_WEBAPP_URL to the URL people will use to reach this instance. Replace the shipped NEXTAUTH and encryption secrets in the install form before storing documents. The catalog values are public. CasaOS and ZimaOS edit those literals; they do not substitute Compose variables. Replace NEXT_PRIVATE_SMTP_HOST, NEXT_PRIVATE_SMTP_USERNAME, and NEXT_PRIVATE_SMTP_PASSWORD with a real mail server before sending email. The app starts without a signing certificate, but document signing fails until you add a PKCS#12 file and NEXT_PRIVATE_SIGNING_PASSPHRASE. See https://docs.documenso.com/docs/self-hosting/configuration/signing-certificate.
+  # Title for the application
+  title:
+    en_US: Documenso
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "20030"

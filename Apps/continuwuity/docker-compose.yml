@@ -1,0 +1,76 @@
+name: big-bear-continuwuity
+services:
+  continuwuity:
+    image: forgejo.ellis.link/continuwuation/continuwuity:v26.7.2@sha256:b5f5d7454a3e8dda041fc82084088409f2c34905ff51274955d52050203a87af
+    container_name: continuwuity
+    restart: unless-stopped
+    command: /sbin/conduwuit
+    ports:
+      - "20006:8008"
+    volumes:
+      - /DATA/AppData/$AppID/data:/var/lib/continuwuity
+    environment:
+      CONTINUWUITY_SERVER_NAME: matrix.localhost
+      CONTINUWUITY_DATABASE_PATH: /var/lib/continuwuity
+      CONTINUWUITY_ADDRESS: 0.0.0.0
+      CONTINUWUITY_PORT: "8008"
+      CONTINUWUITY_ALLOW_FEDERATION: "false"
+    x-casaos:
+      envs:
+        - container: CONTINUWUITY_SERVER_NAME
+          description:
+            en_US: 'Container Variable: CONTINUWUITY_SERVER_NAME'
+        - container: CONTINUWUITY_DATABASE_PATH
+          description:
+            en_US: 'Container Variable: CONTINUWUITY_DATABASE_PATH'
+        - container: CONTINUWUITY_ADDRESS
+          description:
+            en_US: 'Container Variable: CONTINUWUITY_ADDRESS'
+        - container: CONTINUWUITY_PORT
+          description:
+            en_US: 'Container Variable: CONTINUWUITY_PORT'
+        - container: CONTINUWUITY_ALLOW_FEDERATION
+          description:
+            en_US: 'Container Variable: CONTINUWUITY_ALLOW_FEDERATION'
+      volumes:
+        - container: /var/lib/continuwuity
+          description:
+            en_US: 'Container Path: /var/lib/continuwuity'
+      ports:
+        - container: "8008"
+          description:
+            en_US: 'Container Port: 8008'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.continuwuity
+  # Main service for this application
+  main: continuwuity
+  # Detailed description for the application
+  description:
+    en_US: Continuwuity v26.7.2 is a community-driven Matrix homeserver and the continuation of conduwuit.
+  # Brief tagline for the application
+  tagline:
+    en_US: Community Matrix homeserver
+  # Developer's information
+  developer: continuwuation
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/continuwuity.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Set CONTINUWUITY_SERVER_NAME to your real Matrix domain before the first start. It is a literal environment value. CasaOS and ZimaOS do not substitute Compose variables. It cannot be changed later without wiping the database. Federation is disabled. Put an HTTPS reverse proxy in front of host port 20006 before you set CONTINUWUITY_ALLOW_FEDERATION to true. Continuwuity still listens on container port 8008. The first start prints a one-time registration token in the container logs.
+  # Title for the application
+  title:
+    en_US: Continuwuity
+  # Category under which the application falls
+  category: Social
+  # Default port mapping for the application
+  port_map: "20006"

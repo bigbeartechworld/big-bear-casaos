@@ -1,0 +1,7 @@
+{
+  "id": "documenso",
+  "version": "v2.19.0",
+  "image": "documenso/documenso",
+  "youtube": "",
+  "docs_link": "https://docs.documenso.com/docs/self-hosting/deployment/docker-compose"
+}

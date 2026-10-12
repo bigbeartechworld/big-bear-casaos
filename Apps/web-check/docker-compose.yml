@@ -1,0 +1,57 @@
+name: big-bear-web-check
+services:
+  web-check:
+    image: lissy93/web-check:2.3.2@sha256:e98c0fe58157beb77ee122f4425da505527970b3961155709fb73029b1ec91e5
+    container_name: web-check
+    restart: unless-stopped
+    ports:
+      - "20003:3000"
+    environment:
+      API_BLOCKED_HOSTS: "localhost,local,metadata.google.internal,169.254.169.254,::1,0.0.0.0/8,10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.168.0.0/16"
+      API_ENABLE_RATE_LIMIT: "true"
+    x-casaos:
+      envs:
+        - container: API_BLOCKED_HOSTS
+          description:
+            en_US: 'Container Variable: API_BLOCKED_HOSTS'
+        - container: API_ENABLE_RATE_LIMIT
+          description:
+            en_US: 'Container Variable: API_ENABLE_RATE_LIMIT'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.web-check
+  # Main service for this application
+  main: web-check
+  # Detailed description for the application
+  description:
+    en_US: 'Web-Check is an on-demand OSINT tool for analysing any website: server, security headers, technologies, DNS, and related public signals.'
+  # Brief tagline for the application
+  tagline:
+    en_US: OSINT for any website
+  # Developer's information
+  developer: Alicia Sykes
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/web-check.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Open the UI on host port 20003. The container listens on 3000. API_BLOCKED_HOSTS rejects private, loopback, and link-local targets, including the headers check. The image still follows redirects, so do not expose this port to untrusted clients. Optional API keys from the project .env.sample are not set.
+  # Title for the application
+  title:
+    en_US: Web-Check
+  # Category under which the application falls
+  category: Networking
+  # Default port mapping for the application
+  port_map: "20003"

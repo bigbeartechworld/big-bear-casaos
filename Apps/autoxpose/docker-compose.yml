@@ -1,0 +1,67 @@
+name: big-bear-autoxpose
+services:
+  autoxpose:
+    image: mostafawahied/autoxpose:0.5.2@sha256:5e29bc48b7b164127f1ade8f3d9be9dba06e665ed2cdeeb569173fa343eca5d3
+    container_name: autoxpose
+    restart: unless-stopped
+    ports:
+      - "4949:3000"
+    environment:
+      SERVER_IP: ""
+      LAN_IP: ""
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/packages/backend/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    x-casaos:
+      envs:
+        - container: SERVER_IP
+          description:
+            en_US: 'Container Variable: SERVER_IP'
+        - container: LAN_IP
+          description:
+            en_US: 'Container Variable: LAN_IP'
+      volumes:
+        - container: /app/packages/backend/data
+          description:
+            en_US: 'Container Path: /app/packages/backend/data'
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.autoxpose
+  # Main service for this application
+  main: autoxpose
+  # Detailed description for the application
+  description:
+    en_US: autoxpose 0.5.2 watches Docker labels and creates DNS records plus reverse-proxy hosts.
+  # Brief tagline for the application
+  tagline:
+    en_US: ""
+  # Developer's information
+  developer: mostafa-wahied
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/mostafa-wahied/autoxpose@main/packages/frontend/public/autoxpose-logo.svg
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Set SERVER_IP to the public address used for DNS A records and LAN_IP to the address the reverse proxy should target. Those are literal environment values in the install form. CasaOS and ZimaOS do not substitute Compose variables. Open http://localhost:4949 and add a DNS provider, then Nginx Proxy Manager or Caddy. The container reads the Docker socket read-only. The image entrypoint uses that socket file to match the Docker group before it drops privileges, so this listing does not replace the mount with a proxy.
+  # Title for the application
+  title:
+    en_US: autoxpose
+  # Category under which the application falls
+  category: Networking
+  # Default port mapping for the application
+  port_map: "4949"

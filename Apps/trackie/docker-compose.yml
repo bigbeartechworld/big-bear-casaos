@@ -1,0 +1,102 @@
+name: big-bear-trackie
+services:
+  trackie:
+    image: ghcr.io/trackie-nz/trackie:26.9.0@sha256:7c13fedacc7232f10ed3ebc59374c1b2fbe42f89d04575d2838992fb9587540d
+    container_name: trackie
+    restart: unless-stopped
+    ports:
+      - "20005:5006"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    environment:
+      NODE_ENV: production
+      ACTUAL_LOGIN_METHOD: openid
+      ACTUAL_OPENID_ENFORCE: "true"
+      ACTUAL_USER_CREATION_MODE: login
+      ACTUAL_OPENID_DISCOVERY_URL: ""
+      ACTUAL_OPENID_CLIENT_ID: ""
+      ACTUAL_OPENID_CLIENT_SECRET: ""
+      ACTUAL_OPENID_SERVER_HOSTNAME: http://localhost:20005
+      ACTUAL_TOKEN_EXPIRATION: "7776000"
+      ACTUAL_IDENTITY_SECRET: v3smK3KDuHTlcUVTDXPLGCilbm3y3-0OGF6PYX-iIQ0
+      ACTUAL_AKAHU_TOKEN_SECRET: jQBA8ydLKvkPN8tc1duO2vQRY-yhpXI0fq6Xxc1sNhQ
+      TZ: Pacific/Auckland
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_US: 'Container Variable: NODE_ENV'
+        - container: ACTUAL_LOGIN_METHOD
+          description:
+            en_US: 'Container Variable: ACTUAL_LOGIN_METHOD'
+        - container: ACTUAL_OPENID_ENFORCE
+          description:
+            en_US: 'Container Variable: ACTUAL_OPENID_ENFORCE'
+        - container: ACTUAL_USER_CREATION_MODE
+          description:
+            en_US: 'Container Variable: ACTUAL_USER_CREATION_MODE'
+        - container: ACTUAL_OPENID_DISCOVERY_URL
+          description:
+            en_US: 'Container Variable: ACTUAL_OPENID_DISCOVERY_URL'
+        - container: ACTUAL_OPENID_CLIENT_ID
+          description:
+            en_US: 'Container Variable: ACTUAL_OPENID_CLIENT_ID'
+        - container: ACTUAL_OPENID_CLIENT_SECRET
+          description:
+            en_US: 'Container Variable: ACTUAL_OPENID_CLIENT_SECRET'
+        - container: ACTUAL_OPENID_SERVER_HOSTNAME
+          description:
+            en_US: 'Container Variable: ACTUAL_OPENID_SERVER_HOSTNAME'
+        - container: ACTUAL_TOKEN_EXPIRATION
+          description:
+            en_US: 'Container Variable: ACTUAL_TOKEN_EXPIRATION'
+        - container: ACTUAL_IDENTITY_SECRET
+          description:
+            en_US: 'Container Variable: ACTUAL_IDENTITY_SECRET'
+        - container: ACTUAL_AKAHU_TOKEN_SECRET
+          description:
+            en_US: 'Container Variable: ACTUAL_AKAHU_TOKEN_SECRET'
+        - container: TZ
+          description:
+            en_US: 'Container Variable: TZ'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+      ports:
+        - container: "5006"
+          description:
+            en_US: 'Container Port: 5006'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.trackie
+  # Main service for this application
+  main: trackie
+  # Detailed description for the application
+  description:
+    en_US: Trackie is a New Zealand Actual Budget server image. Sign-in is OpenID Connect, and optional per-user Akahu bank tokens are encrypted at rest.
+  # Brief tagline for the application
+  tagline:
+    en_US: New Zealand Actual Budget
+  # Developer's information
+  developer: trackie-nz
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://trackie.nz/apple-touch-icon.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Set ACTUAL_OPENID_DISCOVERY_URL, ACTUAL_OPENID_CLIENT_ID, and ACTUAL_OPENID_CLIENT_SECRET before startup. Those are literals in the install form. CasaOS and ZimaOS do not substitute Compose variables. Register the callback at ACTUAL_OPENID_SERVER_HOSTNAME/openid/callback. Replace ACTUAL_IDENTITY_SECRET and ACTUAL_AKAHU_TOKEN_SECRET before creating data, then do not rotate them. The shipped values are public.
+  # Title for the application
+  title:
+    en_US: Trackie
+  # Category under which the application falls
+  category: Finance
+  # Default port mapping for the application
+  port_map: "20005"

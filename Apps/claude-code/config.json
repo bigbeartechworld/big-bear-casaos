@@ -1,0 +1,7 @@
+{
+  "id": "claude-code",
+  "version": "1.0.28",
+  "image": "ghcr.io/worph/claude-code-container",
+  "youtube": "",
+  "docs_link": "https://github.com/worph/claude-code-container/blob/main/README.md"
+}

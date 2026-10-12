@@ -1,0 +1,7 @@
+{
+  "id": "opengym",
+  "version": "1.3.9",
+  "image": "registry.gitlab.com/duartesantos8/opengym/web",
+  "youtube": "",
+  "docs_link": "https://github.com/DuarteSantos8/openGym/blob/main/docs/SELF_HOSTING.md"
+}

@@ -1,0 +1,105 @@
+name: big-bear-coder
+services:
+  coder:
+    image: ghcr.io/coder/coder:v2.36.7@sha256:e8b2743529aea6a1e77bba764c8ec4a04dec65d27ca9caa0ec0b2dbcd3db0565
+    container_name: coder
+    restart: unless-stopped
+    ports:
+      - "7080:7080"
+    environment:
+      CODER_PG_CONNECTION_URL: postgresql://coder:918063d1-fb62-438f-8cbf-49e01f7364ff@database/coder?sslmode=disable
+      CODER_HTTP_ADDRESS: 0.0.0.0:7080
+      CODER_ACCESS_URL: http://localhost:7080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /DATA/AppData/$AppID/home:/home/coder
+    depends_on:
+      database:
+        condition: service_healthy
+    x-casaos:
+      envs:
+        - container: CODER_PG_CONNECTION_URL
+          description:
+            en_US: 'Container Variable: CODER_PG_CONNECTION_URL'
+        - container: CODER_HTTP_ADDRESS
+          description:
+            en_US: 'Container Variable: CODER_HTTP_ADDRESS'
+        - container: CODER_ACCESS_URL
+          description:
+            en_US: 'Container Variable: CODER_ACCESS_URL'
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_US: 'Container Path: /var/run/docker.sock'
+        - container: /home/coder
+          description:
+            en_US: 'Container Path: /home/coder'
+      ports:
+        - container: "7080"
+          description:
+            en_US: 'Container Port: 7080'
+  database:
+    image: postgres:17@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+    container_name: coder-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: coder
+      POSTGRES_PASSWORD: 918063d1-fb62-438f-8cbf-49e01f7364ff
+      POSTGRES_DB: coder
+    volumes:
+      - /DATA/AppData/$AppID/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U coder -d coder"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    x-casaos:
+      envs:
+        - container: POSTGRES_USER
+          description:
+            en_US: 'Container Variable: POSTGRES_USER'
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: 'Container Variable: POSTGRES_PASSWORD'
+        - container: POSTGRES_DB
+          description:
+            en_US: 'Container Variable: POSTGRES_DB'
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: 'Container Path: /var/lib/postgresql/data'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.coder
+  # Main service for this application
+  main: coder
+  # Detailed description for the application
+  description:
+    en_US: Coder v2.36.7 is a self-hosted development-platform control plane with Postgres and a Docker socket for workspace templates.
+  # Brief tagline for the application
+  tagline:
+    en_US: ""
+  # Developer's information
+  developer: Coder
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/coder.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Open http://localhost:7080 and create the first user. Set CODER_ACCESS_URL to an address workspaces can reach before using templates that are not on this Docker host. When Coder can write to the mounted Docker socket, it can control the host Docker daemon. On a rootful Docker host, users or templates that can make Coder issue Docker requests may gain host-root-equivalent access. Restrict Coder to trusted users and templates. On Linux, if Coder cannot write to the socket, add the host docker group id with group_add. The official Compose file leaves that value commented because it differs per host. The Postgres password is a catalog literal and the database port is not published. Replace it in both POSTGRES_PASSWORD and CODER_PG_CONNECTION_URL if this host is shared. CasaOS and ZimaOS edit those literals; they do not substitute Compose variables.
+  # Title for the application
+  title:
+    en_US: Coder
+  # Category under which the application falls
+  category: Developer
+  # Default port mapping for the application
+  port_map: "7080"

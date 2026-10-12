@@ -1,0 +1,7 @@
+{
+  "id": "trackie",
+  "version": "26.9.0",
+  "image": "ghcr.io/trackie-nz/trackie",
+  "youtube": "",
+  "docs_link": "https://github.com/trackie-nz/trackie/blob/main/app/compose.yml"
+}

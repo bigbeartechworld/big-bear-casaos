@@ -1,0 +1,71 @@
+name: big-bear-skysend
+services:
+  skysend:
+    image: skyfay/skysend:v2.12.2@sha256:64fcc07d2dfedb15efa72badc538c452c9e889125bdd9f1e35347f14de108cc0
+    container_name: skysend
+    restart: unless-stopped
+    ports:
+      - "23001:3000"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /DATA/AppData/$AppID/uploads:/uploads
+    environment:
+      BASE_URL: http://localhost:23001
+      DATA_DIR: /data
+      UPLOADS_DIR: /uploads
+    x-casaos:
+      envs:
+        - container: BASE_URL
+          description:
+            en_US: 'Container Variable: BASE_URL'
+        - container: DATA_DIR
+          description:
+            en_US: 'Container Variable: DATA_DIR'
+        - container: UPLOADS_DIR
+          description:
+            en_US: 'Container Variable: UPLOADS_DIR'
+      volumes:
+        - container: /data
+          description:
+            en_US: 'Container Path: /data'
+        - container: /uploads
+          description:
+            en_US: 'Container Path: /uploads'
+      ports:
+        - container: "3000"
+          description:
+            en_US: 'Container Port: 3000'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.skysend
+  # Main service for this application
+  main: skysend
+  # Detailed description for the application
+  description:
+    en_US: SkySend is a self-hosted file and note sharing service. Files and notes are encrypted in the browser before they are stored, and the server keeps only encrypted blobs.
+  # Brief tagline for the application
+  tagline:
+    en_US: Encrypted file and note sharing
+  # Developer's information
+  developer: skyfay
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/skysend.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: Open http://localhost:23001. The official compose publishes host port 3000, which is already used, so this listing publishes 23001 and sets BASE_URL to match. Set BASE_URL to the public HTTPS URL before sharing links. The port stays published so CasaOS and ZimaOS can open it on the LAN. Those platforms do not substitute Compose variables.
+  # Title for the application
+  title:
+    en_US: SkySend
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "23001"
