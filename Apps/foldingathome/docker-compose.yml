@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-foldingathome
 services:
   app:
-    image: linuxserver/foldingathome:8.5.6@sha256:f24390034073903dbd7ec724eaef27abe464cd729164338701fe3a31927d2dbc
+    image: linuxserver/foldingathome:8.5.6@sha256:abfd81b80fde1d8f659c201bfaa2c21648e9dc7f42468a700c82e0215ba763ab
     restart: unless-stopped
     environment:
       PUID: $PUID
