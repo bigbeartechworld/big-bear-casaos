@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-piper
 services:
   app:
-    image: linuxserver/piper:2.5.2@sha256:a3ed248731b22e49ecce2f4289602e8b95296e48311781fac0c7c55293ba7442
+    image: linuxserver/piper:2.5.2@sha256:46024a87839b5c3565bfe020a3a63f69d6fd715f8d20e28445792a3780b1aef4
     restart: unless-stopped
     environment:
       PUID: $PUID
