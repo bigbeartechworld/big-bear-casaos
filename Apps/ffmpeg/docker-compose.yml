@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ffmpeg
 services:
   app:
-    image: linuxserver/ffmpeg:8.1.2@sha256:2e7000921be8de2704a4f27dfd3d988562697a346eaabb937a81046c306f0af7
+    image: linuxserver/ffmpeg:9.0.2@sha256:abb675ffda7047f42dfba02adcd0886b3abfca6dec332adc4da831de943989ed
     restart: unless-stopped
     environment:
       PUID: $PUID

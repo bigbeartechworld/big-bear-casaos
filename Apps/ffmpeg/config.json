@@ -1,6 +1,6 @@
 {
   "id": "ffmpeg",
-  "version": "8.1.2",
+  "version": "9.0.2",
   "image": "linuxserver/ffmpeg",
   "youtube": "",
   "docs_link": ""

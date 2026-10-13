@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-audacity
 services:
   app:
-    image: linuxserver/audacity:4.0.1@sha256:6e0761fff5269228c515e754e6d2bef8be353f939cf2a2eca3d30af7b4a6ee0f
+    image: linuxserver/audacity:4.0.1@sha256:81a3afea2e00cb0aeb0a4a5f8aabb573775afefd1d5db69fc70116e9a1205c0f
     restart: unless-stopped
     environment:
       PUID: $PUID
