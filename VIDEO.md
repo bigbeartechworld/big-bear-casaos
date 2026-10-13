@@ -5,6 +5,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | Application | YouTube Video |
 | --- | --- |
 | adguard-home-host |  |
+| affine |  |
 | airsonic-advanced |  |
 | airvideohd |  |
 | altus |  |
@@ -17,6 +18,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | audacity |  |
 | audiobookshelf |  |
 | authentik |  |
+| autoxpose |  |
 | ayon |  |
 | azahar |  |
 | babybuddy |  |
@@ -48,7 +50,12 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | ci-debug |  |
 | ci |  |
 | citron |  |
+| claude-code |  |
+| cloudreve-pro |  |
+| cloudreve |  |
+| coder |  |
 | composetoolbox |  |
+| continuwuity |  |
 | convertx |  |
 | cops |  |
 | cura |  |
@@ -70,6 +77,8 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | dockhand |  |
 | dockpeek |  |
 | docmost |  |
+| documenso |  |
+| docuseal |  |
 | dogwalk |  |
 | dokuwiki |  |
 | dolphin |  |
@@ -98,6 +107,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | feed2toot |  |
 | ferdium |  |
 | ffmpeg |  |
+| filebrowser-quantum-v2 |  |
 | filebrowser-quantum |  |
 | filebrowser |  |
 | filezilla |  |
@@ -110,6 +120,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | foldingathome |  |
 | freecad |  |
 | freshrss |  |
+| gamevault |  |
 | gemdigest |  |
 | gimp |  |
 | gitea-mirror |  |
@@ -135,11 +146,14 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | homarr-v1 |  |
 | homarr-v2 |  |
 | homebridge |  |
+| homedex |  |
+| homelable |  |
 | homepage |  |
 | homer |  |
 | hrconvert2 |  |
 | immich-aio-alpine |  |
 | immich-kiosk |  |
+| indelible |  |
 | inkscape |  |
 | intellij-idea |  |
 | invoice-ninja |  |
@@ -228,9 +242,11 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | ollama-amd |  |
 | ollama-cpu |  |
 | ollama-nvidia |  |
+| omniroute |  |
 | onlyoffice |  |
 | open-webui |  |
 | openclaw |  |
+| opengym |  |
 | openshot |  |
 | openssh-server |  |
 | openvpn-as |  |
@@ -238,6 +254,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | opera |  |
 | orcaslicer |  |
 | otel-lgtm |  |
+| outline |  |
 | owncloud |  |
 | pairdrop |  |
 | paperclip |  |
@@ -313,6 +330,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | shadps4 |  |
 | shotcut |  |
 | signal |  |
+| skysend |  |
 | smokeping |  |
 | snapdrop |  |
 | snapotter |  |
@@ -327,6 +345,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | statping |  |
 | steam |  |
 | steamos |  |
+| stoat |  |
 | storyteller |  |
 | swag |  |
 | synclounge |  |
@@ -339,6 +358,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | thelounge |  |
 | thunderbird |  |
 | tianji |  |
+| trackie |  |
 | traefik |  |
 | tududi |  |
 | tugtainer |  |
@@ -357,6 +377,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | vscodium |  |
 | wallabag |  |
 | warracker |  |
+| web-check |  |
 | webcord |  |
 | webdav |  |
 | webgrabplus |  |
@@ -380,8 +401,10 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | yaak |  |
 | your-spotify |  |
 | yq |  |
+| yuvomi |  |
 | zen |  |
 | zigbee2mqtt |  |
+| zimabrain |  |
 | zipline |  |
 | znc |  |
 | zotero |  |
