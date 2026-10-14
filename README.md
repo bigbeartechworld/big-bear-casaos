@@ -190,7 +190,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | domoticz | linuxserver/domoticz | 2023.2.20231129 |  |  |
 | dosbox-staging | linuxserver/dosbox-staging | 0.83.0 |  |  |
 | doublecommander | linuxserver/doublecommander | 0.0.0 |  |  |
-| dozzle | amir20/dozzle | v11.3.0 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | v11.3.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | drawio | jgraph/drawio | 32.4.1 |  | [Docs](https://www.drawio.com/doc/) |
 | duckdns | linuxserver/duckdns | 0.0.0 |  |  |
 | duckstation | linuxserver/duckstation | 0.0.0 |  |  |
@@ -213,7 +213,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | fastfetch | bigbeartechworld/big-bear-fastfetch | 0.0.5 | [YouTube Video](https://youtu.be/pVBMvIMzfpw) |  |
 | feed2toot | linuxserver/feed2toot | 0.17.20251115 |  |  |
 | ferdium | linuxserver/ferdium | 7.2.3 |  |  |
-| ffmpeg | linuxserver/ffmpeg | 8.1.2 |  |  |
+| ffmpeg | linuxserver/ffmpeg | 9.0.2 |  |  |
 | filebrowser-quantum-v2 | gtstef/filebrowser | 2.0.0-stable |  | [Docs](https://filebrowserquantum.com/en/docs/getting-started/v2/migration/) |
 | filebrowser-quantum | gtstef/filebrowser | 1.5.8-stable |  |  |
 | filebrowser | filebrowser/filebrowser | v2.63.23-s6 |  |  |
@@ -234,7 +234,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.69.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.82.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.83.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gimp | linuxserver/gimp | 0.0.0 |  |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 28.1.0 |  | [Docs](https://docs.gitea.com/) |
@@ -246,7 +246,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gluetun | qmcgaw/gluetun | v3.41.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | goaway | pommee/goaway | 0.63.17 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 3.1.1 |  |  |
-| grav | linuxserver/grav | 2.2.5 |  |  |
+| grav | linuxserver/grav | 2.2.6 |  |  |
 | grocy | linuxserver/grocy | 4.7.1 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | gzdoom | linuxserver/gzdoom | 4.14.2 |  |  |
@@ -277,7 +277,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | indelible | ghcr.io/useindelible/ind-api | 0.1.1 |  | [Docs](https://useindelible.com/docs/self-hosting/install/) |
 | inkscape | linuxserver/inkscape | 1.4.2 |  |  |
 | intellij-idea | linuxserver/intellij-idea | 42026.2.3 |  |  |
-| invoice-ninja | invoiceninja/invoiceninja | 5.13.45 |  |  |
+| invoice-ninja | invoiceninja/invoiceninja | 5.13.47 |  |  |
 | it-tools | corentinth/it-tools | 2023.11.2-7d94e11 | [YouTube Video](https://youtu.be/MlGypCrUJug) |  |
 | jellyfin | linuxserver/jellyfin | 0.0.0 |  |  |
 | jellyseerr | fallenbagel/jellyseerr | 2.7.3 |  |  |
@@ -332,7 +332,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | melonds | linuxserver/melonds | 1.1.20261229 |  |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
 | mind | mrcas/mind | v1.4.1 |  |  |
-| minecraft | itzg/minecraft-server | 2026.9.2 |  |  |
+| minecraft | itzg/minecraft-server | 2026.10.0 |  |  |
 | minetest | linuxserver/minetest | 5.10.0 |  |  |
 | minio | bigbeartechworld/big-bear-minio | RELEASE.2025-10-15T17-29-55Z |  |  |
 | minisatip | linuxserver/minisatip | 2.0.103 |  |  |
@@ -464,7 +464,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | retroarch | linuxserver/retroarch | 1.22.2 |  |  |
 | rocket-chat-v8 | rocket.chat | 8.9.0 |  | [Docs](https://docs.rocket.chat/docs/rocketchat-release-notes) |
 | rocket-chat | rocket.chat | 6.13.1 |  |  |
-| romm | rommapp/romm | 5.3.1 |  | [Docs](https://github.com/rommapp/romm/wiki) |
+| romm | rommapp/romm | 5.4.0 |  | [Docs](https://github.com/rommapp/romm/wiki) |
 | rpcs3 | linuxserver/rpcs3 | 0.0.0 |  |  |
 | rsnapshot | linuxserver/rsnapshot | 1.4.5 |  |  |
 | rsshub | diygod/rsshub | 2026-09-24 |  |  |
@@ -483,7 +483,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | shadps4 | linuxserver/shadps4 | 0.0.0 |  |  |
 | shotcut | linuxserver/shotcut | 26.8.1 |  |  |
-| signal | linuxserver/signal | 8.29.0 |  |  |
+| signal | linuxserver/signal | 8.30.0 |  |  |
 | skysend | skyfay/skysend | v3.0.1 |  | [Docs](https://docs.skysend.ch/user-guide/installation) |
 | smokeping | linuxserver/smokeping | 2.9.0 |  |  |
 | snapdrop | linuxserver/snapdrop | 0.0.0 |  |  |
@@ -546,18 +546,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | wallos | bellamy/wallos | 5.8.3 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 1.0.2 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.4 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
-| web-check | lissy93/web-check | 2.3.2 |  | [Docs](https://github.com/lissy93/web-check/blob/master/README.md) |
+| web-check | lissy93/web-check | 2.3.4 |  | [Docs](https://github.com/lissy93/web-check/blob/master/README.md) |
 | webcord | linuxserver/webcord | 4.14.0 |  |  |
 | webdav | bytemark/webdav | latest |  |  |
 | webgrabplus | linuxserver/webgrabplus | 5.6.1 |  |  |
-| webstation | linuxserver/webstation | 0.14.2-romm |  |  |
+| webstation | linuxserver/webstation | 0.15.0-romm |  |  |
 | websync | furier/websync | latest |  |  |
 | webtop | linuxserver/webtop | 0.0.0 |  |  |
 | weixin | linuxserver/weixin | 0.0.0 |  |  |
 | wg-easy-v15 | ghcr.io/wg-easy/wg-easy | 15 |  |  |
 | wg-easy | ghcr.io/wg-easy/wg-easy | 15 |  |  |
 | whats-up-docker | fmartinou/whats-up-docker | 6.6.1 |  |  |
-| wikijs | linuxserver/wikijs | 2.5.315 |  |  |
+| wikijs | linuxserver/wikijs | 2.5.316 |  |  |
 | winegui | linuxserver/winegui | 4.5.1 |  |  |
 | wireguard | linuxserver/wireguard | 1.0.20260223 |  |  |
 | wireshark | linuxserver/wireshark | 4.6.6 |  |  |
@@ -569,11 +569,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | xbackbone | linuxserver/xbackbone | 3.8.2 |  |  |
 | xemu | linuxserver/xemu | 0.8.134 |  |  |
 | xvfb | linuxserver/xvfb | 0.0.0 |  |  |
-| yaak | linuxserver/yaak | 2026.8.1 |  |  |
+| yaak | linuxserver/yaak | 2026.9.0 |  |  |
 | your-spotify | linuxserver/your_spotify | 1.20.0 |  |  |
-| yq | linuxserver/yq | 4.4.0 |  |  |
+| yq | linuxserver/yq | 4.4.2 |  |  |
 | yuvomi | ghcr.io/ulsklyc/yuvomi | 2.73.0 |  | [Docs](https://github.com/ulsklyc/yuvomi/blob/main/README.md) |
-| zen | linuxserver/zen | 1.23.1 |  |  |
+| zen | linuxserver/zen | 1.23.2 |  |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 2.14.2 |  |  |
 | zimabrain | gelbuilding/zimabrain-ce | 1.6.2-beta |  | [Docs](https://github.com/Jacko88888/zimabrain-ce/blob/main/README.md) |
 | zipline | ghcr.io/diced/zipline | 3.7.13 |  |  |
