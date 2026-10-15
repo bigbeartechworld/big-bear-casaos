@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-rsnapshot
 services:
   app:
-    image: linuxserver/rsnapshot:1.4.5@sha256:92547730d7276ec5b2748bdc3f26bad6b05ba7c6413da41bf865fb931d30c2f9
+    image: linuxserver/rsnapshot:1.4.5@sha256:9f2b9c875d9b970f0078d81eec17c27b8428201c0f9defc70360c19d43ccb658
     restart: unless-stopped
     environment:
       PUID: $PUID

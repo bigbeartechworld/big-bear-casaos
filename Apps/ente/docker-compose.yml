@@ -1,7 +1,7 @@
 name: big-bear-ente
 services:
   museum:
-    image: ghcr.io/ente/server:latest@sha256:3511ff25db3bf950abeb3983928eeadeed7f53b690ee94704c14be72fa719b1d
+    image: ghcr.io/ente/server:latest@sha256:4dba9930b25f6595d17cb28c41c299a6238b803f0244f9027703436fb4fa8aff
     container_name: ente-museum
     ports:
       - "8080:8080"

@@ -144,7 +144,7 @@ x-casaos:
         Before you install read this: https://community.bigbeartechworld.com/t/added-seafile-to-bigbearcasaos/1011#instructions-3
   # Title for the application
   title:
-    en_US: seafile
+    en_US: Seafile (Legacy)
   # Category under which the application falls
   category: Productivity
   # Default port mapping for the application

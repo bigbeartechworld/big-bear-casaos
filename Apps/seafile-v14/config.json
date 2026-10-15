@@ -1,0 +1,7 @@
+{
+  "id": "seafile-v14",
+  "version": "14.0.9",
+  "image": "seafileltd/seafile-mc",
+  "youtube": "",
+  "docs_link": "https://manual.seafile.com/latest/upgrade/upgrade_docker/"
+}
