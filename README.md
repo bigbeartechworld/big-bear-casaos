@@ -234,7 +234,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.69.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.83.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.84.2 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gimp | linuxserver/gimp | 0.0.0 |  |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 28.1.0 |  | [Docs](https://docs.gitea.com/) |
@@ -370,18 +370,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | nocodb | nocodb/nocodb | 0.301.5 | [YouTube Video](https://youtu.be/mO2YzWpBu4o) | [Docs](https://community.bigbeartechworld.com/t/added-nocodb-to-big-bear-casaos/177) |
 | node-red | nodered/node-red | 5.0.8 |  |  |
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
-| nova-dso-tracker | mrantonsg/nova-dso-tracker | 6.8.0 |  | [Docs](https://nova-tracker.com) |
+| nova-dso-tracker | mrantonsg/nova-dso-tracker | 6.9.0 |  | [Docs](https://nova-tracker.com) |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
 | ntfysh | binwiederhier/ntfy | v2.29.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
-| obsidian | linuxserver/obsidian | 1.13.7 |  |  |
+| obsidian | linuxserver/obsidian | 1.14.4 |  |  |
 | octoprint | octoprint/octoprint | 1.11.8 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo-v20 | odoo | 20.0.0 |  | [Docs](https://www.odoo.com/documentation/master/administration/upgrade.html) |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
 | odysseus | bigbeartechworld/big-bear-odysseus | 2026.10.05 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
-| ollama-amd | ollama/ollama | 0.40.2-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.40.2 |  |  |
-| ollama-nvidia | ollama/ollama | 0.40.2 |  |  |
+| ollama-amd | ollama/ollama | 0.40.3-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.40.3 |  |  |
+| ollama-nvidia | ollama/ollama | 0.40.3 |  |  |
 | omniroute | diegosouzapw/omniroute | 3.8.51 |  | [Docs](https://github.com/diegosouzapw/OmniRoute/blob/main/docs/getting-started/SELF_HOST_GUIDE.md) |
 | onedev | 1dev/server | 16.8.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
@@ -452,7 +452,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | rackpeek | aptacode/rackpeek | v2.1.0 |  | [Docs](https://timmoth.github.io/RackPeek/docs/overview) |
 | rallly | lukevella/rallly | 4.15.4 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | raneto | linuxserver/raneto | 0.18.1 |  |  |
-| rawtherapee | linuxserver/rawtherapee | 5.13.20260927 |  |  |
+| rawtherapee | linuxserver/rawtherapee | 5.13.20261011 |  |  |
 | rdesktop | linuxserver/rdesktop | 0.0.0 |  |  |
 | reactive-resume-v6 | amruthpillai/reactive-resume | v6.0.2 |  | [Docs](https://docs.rxresu.me/self-hosting/upgrading-to-v6) |
 | reactive-resume | amruthpillai/reactive-resume | v5.3.2 |  |  |
@@ -482,7 +482,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | series-troxide | linuxserver/series-troxide | 0.5.1 |  |  |
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | shadps4 | linuxserver/shadps4 | 0.0.0 |  |  |
-| shotcut | linuxserver/shotcut | 26.8.1 |  |  |
+| shotcut | linuxserver/shotcut | 26.9.27 |  |  |
 | signal | linuxserver/signal | 8.30.0 |  |  |
 | skysend | skyfay/skysend | v3.0.1 |  | [Docs](https://docs.skysend.ch/user-guide/installation) |
 | smokeping | linuxserver/smokeping | 2.9.0 |  |  |
@@ -496,7 +496,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | speedtest-tracker | linuxserver/speedtest-tracker | 1.15.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
 | sqlitebrowser | linuxserver/sqlitebrowser | 18.04.1 |  |  |
-| stalwart-mail | stalwartlabs/stalwart | v0.16.25 |  |  |
+| stalwart-mail | stalwartlabs/stalwart | v0.16.26 |  |  |
 | statping | statping/statping | v0.90.74 |  |  |
 | steam | linuxserver/steam | 0.0.0 |  |  |
 | steamos | linuxserver/steamos | 0.0.0 |  |  |
@@ -571,7 +571,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | xvfb | linuxserver/xvfb | 0.0.0 |  |  |
 | yaak | linuxserver/yaak | 2026.9.0 |  |  |
 | your-spotify | linuxserver/your_spotify | 1.20.0 |  |  |
-| yq | linuxserver/yq | 4.4.2 |  |  |
+| yq | linuxserver/yq | 4.4.5 |  |  |
 | yuvomi | ghcr.io/ulsklyc/yuvomi | 2.73.0 |  | [Docs](https://github.com/ulsklyc/yuvomi/blob/main/README.md) |
 | zen | linuxserver/zen | 1.23.2 |  |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 2.14.2 |  |  |
