@@ -12,7 +12,7 @@ services:
     # Name of the container
     container_name: big-bear-stalwart-mail
     # Image to be used for the container specifies the stalwartlabs/mail-server version and source
-    image: stalwartlabs/stalwart:v0.16.25@sha256:74e5a7d55303ba525d939c6bf97ed4e010df7521f52d80afc22a815b66bd53f3
+    image: stalwartlabs/stalwart:v0.16.26@sha256:254ce5d7f3dbe4bb628ce2c7912e664ecb1c3466db79907f4a44d9a00117776b
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Volume mappings required for system integration

@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-pidgin
 services:
   app:
-    image: linuxserver/pidgin:2.14.14@sha256:12c0f4103b37b53b4e84e3c5b7cea10992ff16e6f103c652d8eedfae11ba15a4
+    image: linuxserver/pidgin:2.14.14@sha256:33d0103c4061bcd7636dc513f6222a69640e56416f5ff6e459e6c7b6ca77db1a
     restart: unless-stopped
     environment:
       PUID: $PUID
