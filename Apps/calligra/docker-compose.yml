@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-calligra
 services:
   app:
-    image: linuxserver/calligra:3.2.1@sha256:e78dbca86e4381bc9cc4ef5835d02915e944ce77fd7ae58cb2bbf6a3c42ed003
+    image: linuxserver/calligra:3.2.1@sha256:46f113c44f246afa88e6578de2b9eb769ffe5421464889733895e7d2ecb3e301
     restart: unless-stopped
     environment:
       PUID: $PUID
