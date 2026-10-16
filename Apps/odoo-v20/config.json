@@ -1,6 +1,6 @@
 {
   "id": "odoo-v20",
-  "version": "20.0.0",
+  "version": "20",
   "image": "odoo",
   "youtube": "",
   "docs_link": "https://www.odoo.com/documentation/master/administration/upgrade.html"
