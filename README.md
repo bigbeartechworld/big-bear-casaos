@@ -127,7 +127,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | brave | kasmweb/brave | 1.15.0-rolling | [YouTube Video](https://youtu.be/CJ2x-yCW-co) |  |
 | btop | bigbeartechworld/big-bear-btop | 0.1.11 | [YouTube Video](https://youtu.be/chaRoQV1V2I) |  |
 | budge | linuxserver/budge | 0.0.9 |  |  |
-| budibase | budibase/budibase | v3.48.0 |  |  |
+| budibase | budibase/budibase | v3.49.0 |  |  |
 | build-agent | linuxserver/build-agent | 0.0.0 |  |  |
 | buzz | ghcr.io/block/buzz | latest |  | [Docs](https://engineering.block.xyz/blog/run-your-own-buzz-relay) |
 | caddy | caddy | 2.11.7 |  |  |
@@ -182,7 +182,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dockpeek | ghcr.io/dockpeek/dockpeek | v1.7.2 |  |  |
 | docmost | docmost/docmost | 0.96.0 |  |  |
 | documenso | documenso/documenso | v2.20.0 |  | [Docs](https://docs.documenso.com/docs/self-hosting/deployment/docker-compose) |
-| docuseal | docuseal/docuseal | 3.3.1 |  | [Docs](https://github.com/docusealco/docuseal) |
+| docuseal | docuseal/docuseal | 3.3.2 |  | [Docs](https://github.com/docusealco/docuseal) |
 | dogwalk | linuxserver/dogwalk | 0.0.0 |  |  |
 | dokuwiki | linuxserver/dokuwiki | 0.0.0 |  |  |
 | dolphin | linuxserver/dolphin | 0.0.0 |  |  |
@@ -232,15 +232,15 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | freshrss | linuxserver/freshrss | 1.30.1 |  |  |
 | gamevault | phalcode/gamevault-backend | 17.0.1 |  | [Docs](https://gamevau.lt/docs/server-docs/setup/docker-compose/) |
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
-| genmon | bigbeartechworld/big-bear-genmon | 2.0.01 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
+| genmon | bigbeartechworld/big-bear-genmon | 2.0.03 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.69.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.84.2 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.85.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gimp | linuxserver/gimp | 0.0.0 |  |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 28.1.0 |  | [Docs](https://docs.gitea.com/) |
 | github-desktop | linuxserver/github-desktop | 3.4.13 |  |  |
 | gitqlient | linuxserver/gitqlient | 1.6.3 |  |  |
-| gladys | gladysassistant/gladys | v5.1.4 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
+| gladys | gladysassistant/gladys | v5.2.0 | [YouTube Video](https://youtu.be/l4GPomJMIT0) |  |
 | glance | glanceapp/glance | v0.8.6 |  | [Docs](https://github.com/glanceapp/glance/blob/main/docs/configuration.md) |
 | glances | nicolargo/glances | 4.5.3.2-full | [YouTube Video](https://youtu.be/nwsVJ0QB0sM) |  |
 | gluetun | qmcgaw/gluetun | v3.41.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
@@ -252,7 +252,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gzdoom | linuxserver/gzdoom | 4.14.2 |  |  |
 | habridge | linuxserver/habridge | 5.4.1 |  |  |
 | handbrake | linuxserver/handbrake | 1.11.2 |  |  |
-| healthchecks | linuxserver/healthchecks | 4.4.20261005 |  |  |
+| healthchecks | linuxserver/healthchecks | 4.4.20261012 |  |  |
 | hedgedoc | linuxserver/hedgedoc | 1.12.0 |  |  |
 | heimdall | linuxserver/heimdall | 2.8.3 |  |  |
 | helium | linuxserver/helium | 0.19.2 |  |  |
@@ -348,7 +348,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | mysql-workbench | linuxserver/mysql-workbench | 8.0.47 |  |  |
-| n8n | n8nio/n8n | 2.43.3 |  |  |
+| n8n | n8nio/n8n | 2.43.4 |  |  |
 | nano-wallet | linuxserver/nano-wallet | 1.3.2 |  |  |
 | nano | linuxserver/nano | 21.2.20220522 |  |  |
 | navidrome | deluan/navidrome | 0.64.2 |  | [Docs](https://www.navidrome.org/docs/) |
@@ -372,18 +372,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
 | nova-dso-tracker | mrantonsg/nova-dso-tracker | 6.9.0 |  | [Docs](https://nova-tracker.com) |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
-| ntfysh | binwiederhier/ntfy | v2.29.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
+| ntfysh | binwiederhier/ntfy | v2.30.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
 | obsidian | linuxserver/obsidian | 1.14.4 |  |  |
 | octoprint | octoprint/octoprint | 1.11.8 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
-| odoo-v20 | odoo | 20.0.0 |  | [Docs](https://www.odoo.com/documentation/master/administration/upgrade.html) |
+| odoo-v20 | odoo | 20 |  | [Docs](https://www.odoo.com/documentation/master/administration/upgrade.html) |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
-| odysseus | bigbeartechworld/big-bear-odysseus | 2026.10.05 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
+| odysseus | bigbeartechworld/big-bear-odysseus | 2026.10.12 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
 | ollama-amd | ollama/ollama | 0.40.3-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.40.3 |  |  |
 | ollama-nvidia | ollama/ollama | 0.40.3 |  |  |
 | omniroute | diegosouzapw/omniroute | 3.8.51 |  | [Docs](https://github.com/diegosouzapw/OmniRoute/blob/main/docs/getting-started/SELF_HOST_GUIDE.md) |
-| onedev | 1dev/server | 16.8.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 16.8.8 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
@@ -445,7 +445,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pylon | linuxserver/pylon | 2.10.0 |  |  |
 | python-matter-server | ghcr.io/home-assistant-libs/python-matter-server | 8.1.0 |  |  |
 | python | linuxserver/python | 3.15.0 |  |  |
-| qdirstat | linuxserver/qdirstat | 2.0.20260928 |  |  |
+| qdirstat | linuxserver/qdirstat | 2.0.20261012 |  |  |
 | qemu-static | linuxserver/qemu-static | 10.0.2 |  |  |
 | quassel-core | linuxserver/quassel-core | 0.14.0 |  |  |
 | quassel-web | linuxserver/quassel-web | 0.0.0 |  |  |
@@ -474,6 +474,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scrutiny | ghcr.io/analogj/scrutiny | master-omnibus |  |  |
 | scrypted | koush/scrypted | v0.147.0-noble-full | [YouTube Video](https://youtu.be/5uH0LaSyKTY) | [Docs](https://community.bigbeartechworld.com/t/how-to-install-scrypted-on-casaos-using-bigbearcasaos/155) |
 | scummvm | linuxserver/scummvm | 2026.3.0 |  |  |
+| seafile-v14 | seafileltd/seafile-mc | 14.0.9 |  | [Docs](https://manual.seafile.com/latest/upgrade/upgrade_docker/) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
 | sealskin | linuxserver/sealskin | 0.3.2 |  |  |
 | seerr | seerr/seerr | v3.4.1 |  | [Docs](https://docs.seerr.dev) |
@@ -514,7 +515,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | tester | linuxserver/tester | 0.0.0 |  |  |
 | thelounge | linuxserver/thelounge | 4.5.2 |  |  |
 | thunderbird | linuxserver/thunderbird | 1140.16.0 |  |  |
-| tianji | moonrailgun/tianji | 1.33.8 |  |  |
+| tianji | moonrailgun/tianji | 1.33.9 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.3 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.15-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trackie | ghcr.io/trackie-nz/trackie | 26.9.0 |  | [Docs](https://github.com/trackie-nz/trackie/blob/main/app/compose.yml) |
