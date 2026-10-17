@@ -1,7 +1,7 @@
 name: big-bear-fireshare
 services:
   fireshare:
-    image: shaneisrael/fireshare:1.8.5
+    image: shaneisrael/fireshare:1.9.0
     container_name: fireshare
     ports:
       - "8585:80"

@@ -25,7 +25,7 @@ name: big-bear-filebrowser-quantum-v2
 services:
   big-bear-filebrowser-quantum-v2:
     container_name: big-bear-filebrowser-quantum-v2
-    image: gtstef/filebrowser:2.0.0-stable@sha256:9d42f635e32913d7daf05259428b6c70061cfdca3affc9602b4c31717e0a4bae
+    image: gtstef/filebrowser:2.0.1-stable@sha256:2e3936caf7b12908f7d3ebb68ddfcea075cda5f732e4bd95beae6cfa529cbec7
     restart: unless-stopped
     environment:
       - TZ=UTC
