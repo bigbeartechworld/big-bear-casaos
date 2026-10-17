@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-emby
 services:
   app:
-    image: linuxserver/emby:4.10.1@sha256:435fcb7724d3d3ce15a5667075f37edee713fddff4b2854d49bd23a3a46e325d
+    image: linuxserver/emby:4.10.1@sha256:e118d2bd27c2d5b0ef3e40820270fb1dbbea91f36cfdb74327b4fcb63e30aca7
     restart: unless-stopped
     environment:
       PUID: $PUID
