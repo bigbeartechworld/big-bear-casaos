@@ -112,7 +112,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | azahar | linuxserver/azahar | 12126.1.2 |  |  |
 | babybuddy | linuxserver/babybuddy | 2.11.0 |  |  |
 | bambustudio | linuxserver/bambustudio | 02.08.04 |  |  |
-| baserow | baserow/baserow | 2.4.0 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
+| baserow | baserow/baserow | 2.4.1 | [YouTube Video](https://youtu.be/Xej7sH5bNFs) |  |
 | beaverhabits | daya0576/beaverhabits | 0.10.0 |  |  |
 | beets | linuxserver/beets | 2.14.1 |  |  |
 | beszel | henrygd/beszel | 0.21.0 | [YouTube Video](https://youtu.be/BUVVG-9RCbg) |  |
@@ -190,7 +190,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | domoticz | linuxserver/domoticz | 2023.2.20231129 |  |  |
 | dosbox-staging | linuxserver/dosbox-staging | 0.83.0 |  |  |
 | doublecommander | linuxserver/doublecommander | 0.0.0 |  |  |
-| dozzle | amir20/dozzle | v11.3.1 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | v11.3.2 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | drawio | jgraph/drawio | 32.4.1 |  | [Docs](https://www.drawio.com/doc/) |
 | duckdns | linuxserver/duckdns | 0.0.0 |  |  |
 | duckstation | linuxserver/duckstation | 0.0.0 |  |  |
@@ -214,13 +214,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | feed2toot | linuxserver/feed2toot | 0.17.20251115 |  |  |
 | ferdium | linuxserver/ferdium | 7.2.3 |  |  |
 | ffmpeg | linuxserver/ffmpeg | 9.0.2 |  |  |
-| filebrowser-quantum-v2 | gtstef/filebrowser | 2.0.0-stable |  | [Docs](https://filebrowserquantum.com/en/docs/getting-started/v2/migration/) |
+| filebrowser-quantum-v2 | gtstef/filebrowser | 2.0.1-stable |  | [Docs](https://filebrowserquantum.com/en/docs/getting-started/v2/migration/) |
 | filebrowser-quantum | gtstef/filebrowser | 1.5.8-stable |  |  |
 | filebrowser | filebrowser/filebrowser | v2.63.23-s6 |  |  |
 | filezilla | linuxserver/filezilla | 3.69.6 |  |  |
 | financial-freedom | serversideup/financial-freedom | v0.2.0-alpha1 |  |  |
 | firefox | linuxserver/firefox | 1155.0.1 | [YouTube Video](https://youtu.be/RPBshN5hGWQ) |  |
-| fireshare | shaneisrael/fireshare | 1.8.5 |  | [Docs](https://github.com/ShaneIsrael/fireshare#readme) |
+| fireshare | shaneisrael/fireshare | 1.9.0 |  | [Docs](https://github.com/ShaneIsrael/fireshare#readme) |
 | flame | pawelmalak/flame | multiarch2.3.1 | [YouTube Video](https://youtu.be/p_P_jKmJRz8) |  |
 | flcontainers-guacamole | flcontainers/guacamole | 1.6.0 |  |  |
 | fleet | linuxserver/fleet | 2.3.3 |  |  |
