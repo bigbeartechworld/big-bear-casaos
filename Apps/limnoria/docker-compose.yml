@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-limnoria
 services:
   app:
-    image: linuxserver/limnoria:2026.5.8@sha256:4b6eae67efc3799d5467268fe86cf3964bc7175f2bb5bafffd8734564cd45565
+    image: linuxserver/limnoria:2026.5.8@sha256:72171932a19ce8adb7efb7b9f963a4418da745e1bd54533f64f39d93f9aefc18
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -91,7 +91,7 @@ services:
           description:
             en_US: 'Container Port: 8080'
   socat:
-    image: alpine/socat@sha256:fb3862c949af7c79996d0e514ee96128644d840835ed5368eeecb14a869de361
+    image: alpine/socat@sha256:22d77becaeeea8ef56b8c4bb2312323acafe85354be6a85714ff5050e3537842
     container_name: ente-socat
     network_mode: service:museum
     depends_on:

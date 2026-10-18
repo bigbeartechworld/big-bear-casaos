@@ -5,7 +5,7 @@ services:
   # Service configuration for the n8n application
   app:
     container_name: n8n # Name of the n8n container
-    image: n8nio/n8n:2.43.4@sha256:c34ee9107a42b837e25cec0c8a927ab90a45b776aa2ccbf15e5b9cda466fad2c # Docker image and version to use for n8n
+    image: n8nio/n8n:2.44.1@sha256:b3cad95e5040be9e2b518ed67e4ec4684604021f96d4a7e5130e97ac4bb7225c # Docker image and version to use for n8n
     restart: unless-stopped # Restart policy: Restart unless manually stopped
     ports:
       - 5678:5678 # Port mapping between host and container

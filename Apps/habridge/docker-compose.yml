@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-habridge
 services:
   app:
-    image: linuxserver/habridge:5.4.1@sha256:e1b479165a5b32b0a072e8d3cdd3750266a2860ac304bbdb448635a4e1336e69
+    image: linuxserver/habridge:5.4.1@sha256:112fc3f5e6f223683301c4a8e638be70a64559fe1f08b3af4248487646651f21
     restart: unless-stopped
     environment:
       PUID: $PUID

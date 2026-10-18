@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-syslog-ng
 services:
   app:
-    image: linuxserver/syslog-ng:4.11.0@sha256:124b191502b82118ab3078a1dc02609517dd8fd4cb64442e14ef86c9998286f0
+    image: linuxserver/syslog-ng:4.11.0@sha256:131b5b5d5e5e002afbacf54acae70cfeec49a69e8c04dd2be3252ec0237b7177
     restart: unless-stopped
     environment:
       PUID: $PUID

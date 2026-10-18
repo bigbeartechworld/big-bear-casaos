@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-vscode
 services:
   app:
-    image: linuxserver/vscode:1.140.0@sha256:008276f42f301068df07ee08a9a271dc33c3cdddef50398c660e06859de2a55c
+    image: linuxserver/vscode:1.141.1@sha256:cdfb552dcead6dff9d644108744d4278dd8755a497c1ed172eb06481d0b63d8d
     restart: unless-stopped
     environment:
       PUID: $PUID
