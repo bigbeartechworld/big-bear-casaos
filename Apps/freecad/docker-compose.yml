@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-freecad
 services:
   app:
-    image: linuxserver/freecad:1.1.4@sha256:79e4344533aa28a03799cb1a36376f17ffee98c78890ef78d8297908eed301e8
+    image: linuxserver/freecad:1.1.4@sha256:a2687a6e8b6dec94832aa4c6e4134aa01ccc3ad80588fd2005c3faba03829bb3
     restart: unless-stopped
     environment:
       PUID: $PUID

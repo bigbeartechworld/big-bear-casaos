@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-pairdrop
 services:
   app:
-    image: linuxserver/pairdrop:1.11.2@sha256:5f4504b22a75ed20606beeb1700a9324f647c480a4ccdfce100ba033c481ac15
+    image: linuxserver/pairdrop:1.11.2@sha256:2e673eebd640beea33f131f4426b90548354e620ae593336a73be9374bb70bc2
     restart: unless-stopped
     environment:
       PUID: $PUID

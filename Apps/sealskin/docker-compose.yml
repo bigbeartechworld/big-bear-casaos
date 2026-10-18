@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-sealskin
 services:
   app:
-    image: linuxserver/sealskin:0.3.2@sha256:f3bb5d844a65a8815586ff9822a69a1d84ede54e53bc209ba11b50577d9caaa4
+    image: linuxserver/sealskin:0.3.2@sha256:3053dc71f8a5ee948ceaa912f4d8528be63ab4df0cba4653b688d35b904bf6fd
     restart: unless-stopped
     environment:
       PUID: $PUID
