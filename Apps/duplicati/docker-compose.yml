@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-duplicati
 services:
   app:
-    image: linuxserver/duplicati:2.4.0@sha256:48897c65f01c7cb34a90d6aa722fd5674f3d5b9f3d82fa2f279141836826c1e3
+    image: linuxserver/duplicati:2.4.0@sha256:c3d1bce6c698b9ed7a65e2a976d867ee1bbef104858c7440d45df4e7d213b5ba
     restart: unless-stopped
     environment:
       PUID: $PUID
