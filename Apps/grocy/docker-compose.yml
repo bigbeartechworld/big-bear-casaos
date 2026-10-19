@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-grocy
 services:
   app:
-    image: linuxserver/grocy:4.7.1@sha256:1a8996206d1e0f5aa3aa85084dde2bae170a05b29b235de58c08b161873ce9a6
+    image: linuxserver/grocy:4.7.1@sha256:cae63f6c731f6ad8a3596eef097c136934a3a076e6ae533f933182187fe85a12
     restart: unless-stopped
     environment:
       PUID: $PUID

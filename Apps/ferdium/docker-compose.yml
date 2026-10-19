@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ferdium
 services:
   app:
-    image: linuxserver/ferdium:7.2.3@sha256:dac53f9bd3a5b5d3a99c2f914ac1ca5925cf5f23c49b647768b7f454f243e62f
+    image: linuxserver/ferdium:7.2.3@sha256:ee706fb59ad2855c8b5d33aa8a07bb8079c39a8493a95cc88caaf733b8e01aa5
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-glance
     # Image to be used for the container
-    image: glanceapp/glance:v0.8.6@sha256:9dfb09470b207dcb67ac715994bdb1929374ba3f9c0d7df7462c24adf10fd073
+    image: glanceapp/glance:v0.8.7@sha256:bc5a392672c1ec8823c50b61f3bd4b7e5acc34fcbb8477862577b3af1c633875
     # Container restart policy
     restart: unless-stopped
     # Glance exits unless /app/config/glance.yml exists, so a starter config is
