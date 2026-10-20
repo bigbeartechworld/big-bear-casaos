@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-pelorus
 services:
   app:
-    image: linuxserver/pelorus:0.2.3@sha256:0e54b78e4ffc371a3f8d353e8eb5cb5104e63db3f65616ca27d7914282e7f7e8
+    image: linuxserver/pelorus:0.2.3@sha256:4f08ca20c94f78f761e6a84d38534b55960289bf104c984d850f8a2b76569e74
     restart: unless-stopped
     environment:
       PUID: $PUID

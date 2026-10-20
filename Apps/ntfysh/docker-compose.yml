@@ -5,7 +5,7 @@ services:
   # Main application service configuration
   app:
     # Docker image to be used for the service
-    image: binwiederhier/ntfy:v2.30.0@sha256:8563a39da2f5a47360618b2ab9200239c76b37f4145f6d627d9ab4368abd23f0
+    image: binwiederhier/ntfy:v2.31.0@sha256:803b2aaeb94df76c8b32ecd91039dc80b0fddb7041dcaf082b33bcdfd4ba39ad
     # Command to run inside the container
     command:
       - serve

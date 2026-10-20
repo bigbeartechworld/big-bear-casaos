@@ -1,6 +1,6 @@
 {
   "id": "netbox",
-  "version": "4.7.2",
+  "version": "4.7.3",
   "image": "linuxserver/netbox",
   "youtube": "",
   "docs_link": ""
