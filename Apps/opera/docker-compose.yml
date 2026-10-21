@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-opera
 services:
   app:
-    image: linuxserver/opera:137.0.6036@sha256:bfa40165868ece5aa623ff8f17356004d6c5854a38fbc26bb49182f64db62505
+    image: linuxserver/opera:138.0.6044@sha256:6afdd3f7e22f85578975af82cab4d230673d5c10e955a0ee8b003d2c01f46b55
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-healthchecks
     # Image to be used for the container
-    image: linuxserver/healthchecks:4.4.20261012@sha256:b7e9bf2ca1cf635fe6a9a8b52634b01f6231b30df03625b375120a37d2488365
+    image: linuxserver/healthchecks:5.0.20261020@sha256:941ef825ead30253fd0571e94d66a98a85e65f46d99cd07f117033e28863e9e2
     # Container restart policy
     restart: unless-stopped
     environment:
