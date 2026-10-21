@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-digikam
 services:
   app:
-    image: linuxserver/digikam:9.1.0@sha256:f500bfbb0e77b04beb6d4f70369954cb7e72f4961b5500b3380d0456b7a308c3
+    image: linuxserver/digikam:9.1.0@sha256:b373c7756c283886a5027060de9aef0a6b5251a300038a5e88944c628200cfd5
     restart: unless-stopped
     environment:
       PUID: $PUID

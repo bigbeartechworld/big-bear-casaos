@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-mame
 services:
   app:
-    image: linuxserver/mame:version-0.289dfsg1-0@sha256:5de23ce5dcd522563b73c7506a5b21dd438a3a544c5f94847207f55f3894cf9b
+    image: linuxserver/mame:version-0.289dfsg1-0@sha256:9f1016638565fcb920a1849344518b5d594ee55b19b9e9e2875d06606ec3dcc8
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-wps-office
 services:
   app:
-    image: linuxserver/wps-office:11.1.0@sha256:f2f8d2f4028d9cf6b4f7532b8e04ff65502d7d02d85f13d09b2eeaefa093fe0f
+    image: linuxserver/wps-office:11.1.0@sha256:72a7f80c2c45a118b2357c6c4264a738783623678697f7761d193dd45e430512
     restart: unless-stopped
     environment:
       PUID: $PUID

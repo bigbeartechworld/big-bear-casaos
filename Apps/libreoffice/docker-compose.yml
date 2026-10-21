@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-libreoffice
 services:
   app:
-    image: linuxserver/libreoffice:25.8.7@sha256:cf7f029fd003d6111afeb27be62fd6c869de79d417531d9e90a77ff647730b02
+    image: linuxserver/libreoffice:25.8.7@sha256:fdc5d5d232b265d1b920e61c1b87892ca0e2b1f96a3e74fbe42f03a018e16a5f
     restart: unless-stopped
     environment:
       PUID: $PUID

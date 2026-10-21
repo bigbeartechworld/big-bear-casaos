@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-thelounge
 services:
   app:
-    image: linuxserver/thelounge:4.5.2@sha256:8793004304efb7744792c55911fc069495ecbc04c46e6054f06c12e7a44074e0
+    image: linuxserver/thelounge:4.5.2@sha256:af421a8254f9d1228cfa96af6bdf63a8c8306dd17d017757c16c3c0a126385c6
     restart: unless-stopped
     environment:
       PUID: $PUID

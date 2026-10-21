@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-kicad
 services:
   app:
-    image: linuxserver/kicad:10.0.3@sha256:de81f2b6188f41804c2409c580cfa7f7f4b05908e0c717cc4b66cf825609407c
+    image: linuxserver/kicad:10.0.3@sha256:041619c60f795effe4b96c23788edcbd63fb12fad4b8267e6f06372671b99641
     restart: unless-stopped
     environment:
       PUID: $PUID

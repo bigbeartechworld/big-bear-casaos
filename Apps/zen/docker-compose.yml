@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-zen
 services:
   app:
-    image: linuxserver/zen:1.23.2@sha256:0b150f21b27e0644277797a3f648b038440f5e0bf5b83fb6fd70deeeb51d7c3b
+    image: linuxserver/zen:1.23.3@sha256:1b439526abf01d08b3c1803fe78aae9bbd4c81f8af4e1ef447b7a365a3ba23e7
     restart: unless-stopped
     environment:
       PUID: $PUID

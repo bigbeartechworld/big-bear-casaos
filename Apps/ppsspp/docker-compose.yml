@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ppsspp
 services:
   app:
-    image: linuxserver/ppsspp:1.20.4@sha256:4703743dacda03d1f73ca54cf1903e83f0686981aa24498bf5cfacd4201e88d4
+    image: linuxserver/ppsspp:1.20.4@sha256:5810e533a16da9a51c909c739672b0dc35bc9aef1773ebe408f85967226577ea
     restart: unless-stopped
     environment:
       PUID: $PUID
