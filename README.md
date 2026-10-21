@@ -234,7 +234,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.03 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.71.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.86.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.88.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gimp | linuxserver/gimp | 0.0.0 |  |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 28.1.0 |  | [Docs](https://docs.gitea.com/) |
@@ -246,7 +246,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gluetun | qmcgaw/gluetun | v3.41.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | goaway | pommee/goaway | 0.63.17 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 3.1.1 |  |  |
-| grav | linuxserver/grav | 2.2.9 |  |  |
+| grav | linuxserver/grav | 2.2.10 |  |  |
 | grocy | linuxserver/grocy | 4.7.1 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | gzdoom | linuxserver/gzdoom | 4.14.2 |  |  |
@@ -258,7 +258,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | helium | linuxserver/helium | 0.19.3 |  |  |
 | hermes | nousresearch/hermes-agent | v2026.9.24 |  | [Docs](https://hermes-agent.nousresearch.com/docs/) |
 | hestiacp | artsemkniazeu/hestiacp | latest |  |  |
-| hishtory-server | linuxserver/hishtory-server | 0.335.20261009 |  |  |
+| hishtory-server | linuxserver/hishtory-server | 0.335.20261016 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.63.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr-v2 | ghcr.io/homarr-labs/homarr | 2.0.0 |  | [Docs](https://homarr.dev/blog/2026/09/03/homarr-2.0/) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
@@ -327,7 +327,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mastodon | linuxserver/mastodon | 4.7.3 |  |  |
 | matterbridge | luligu/matterbridge | 3.10.13 |  |  |
 | maybe-finance | ghcr.io/maybe-finance/maybe | sha-347c0a790693031fdd3b32792b5b6792693d1805 |  |  |
-| mealie | hkotel/mealie | v3.27.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
+| mealie | hkotel/mealie | v3.29.0 | [YouTube Video](https://youtu.be/S4MfNLV2Uf4) |  |
 | mediaelch | linuxserver/mediaelch | 2.12.0 |  |  |
 | melonds | linuxserver/melonds | 1.1.20261229 |  |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
@@ -337,7 +337,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | minio | bigbeartechworld/big-bear-minio | RELEASE.2025-10-15T17-29-55Z |  |  |
 | minisatip | linuxserver/minisatip | 2.0.103 |  |  |
 | modmanager | linuxserver/modmanager | 0.0.0 |  |  |
-| modrinth | linuxserver/modrinth | 0.21.9 |  |  |
+| modrinth | linuxserver/modrinth | 0.21.10 |  |  |
 | monica | monica | 4.1.2 |  |  |
 | morphos | ghcr.io/danvergara/morphos-server | 0.6.0 | [YouTube Video](https://youtu.be/dw7AEDbGqZY) |  |
 | mosquitto | eclipse-mosquitto | 2 |  |  |
@@ -372,18 +372,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
 | nova-dso-tracker | mrantonsg/nova-dso-tracker | 6.9.0 |  | [Docs](https://nova-tracker.com) |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
-| ntfysh | binwiederhier/ntfy | v2.31.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
+| ntfysh | binwiederhier/ntfy | v2.31.1 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
 | obsidian | linuxserver/obsidian | 1.14.4 |  |  |
 | octoprint | octoprint/octoprint | 1.11.8 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo-v20 | odoo | 20 |  | [Docs](https://www.odoo.com/documentation/master/administration/upgrade.html) |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
 | odysseus | bigbeartechworld/big-bear-odysseus | 2026.10.12 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
-| ollama-amd | ollama/ollama | 0.40.5-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.40.5 |  |  |
-| ollama-nvidia | ollama/ollama | 0.40.5 |  |  |
+| ollama-amd | ollama/ollama | 0.40.6-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.40.6 |  |  |
+| ollama-nvidia | ollama/ollama | 0.40.6 |  |  |
 | omniroute | diegosouzapw/omniroute | 3.8.51 |  | [Docs](https://github.com/diegosouzapw/OmniRoute/blob/main/docs/getting-started/SELF_HOST_GUIDE.md) |
-| onedev | 1dev/server | 16.9.2 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 16.9.3 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
@@ -400,7 +400,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pairdrop | linuxserver/pairdrop | 1.11.2 |  |  |
 | paperclip | ghcr.io/paperclipai/paperclip | latest |  | [Docs](https://github.com/paperclipai/paperclip/blob/master/doc/DOCKER.md) |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 3.2.0 |  |  |
-| passwordpusher-v2 | pglombardo/pwpush | 2.14.3 | [YouTube Video](https://youtu.be/7Ej56MDo95g) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
+| passwordpusher-v2 | pglombardo/pwpush | 2.15.1 | [YouTube Video](https://youtu.be/7Ej56MDo95g) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
 | passwordpusher | pglombardo/pwpush | 1.69.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pcsx2 | linuxserver/pcsx2 | 2.8.2 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
@@ -413,7 +413,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pidgin | linuxserver/pidgin | 2.14.14 |  |  |
 | pihole-unbound | bigbeartechworld/big-bear-pihole-unbound | 7db29f755beeda43d9e1565399c0b77916533c51ea9e6c05c48e7b0f5675c57f | [YouTube Video](https://youtu.be/ByFSgnnUuBI) | [Docs](https://community.bigbeartechworld.com/t/added-pihole-and-unbound-to-bigbearcasaos/191) |
 | pihole-updatelists | jacklul/pihole | 2026.07.2 |  |  |
-| pihole | pihole/pihole | 2026.07.2 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
+| pihole | pihole/pihole | 2026.10.0 | [YouTube Video](https://youtu.be/FcMF1sYacqk) |  |
 | pingvin-share | stonith404/pingvin-share | v1.13.0 | [YouTube Video](https://youtu.be/SRJUS7h1vhU) |  |
 | piper | linuxserver/piper | 2.5.2 |  |  |
 | piwigo | linuxserver/piwigo | 16.4.0 |  |  |
@@ -484,7 +484,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | shadps4 | linuxserver/shadps4 | 0.0.0 |  |  |
 | shotcut | linuxserver/shotcut | 26.9.27 |  |  |
-| signal | linuxserver/signal | 8.30.0 |  |  |
+| signal | linuxserver/signal | 8.31.0 |  |  |
 | skysend | skyfay/skysend | v3.1.0 |  | [Docs](https://docs.skysend.ch/user-guide/installation) |
 | smokeping | linuxserver/smokeping | 2.9.0 |  |  |
 | snapdrop | linuxserver/snapdrop | 0.0.0 |  |  |
@@ -544,14 +544,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | vscodium-web | linuxserver/vscodium-web | 1.140.06880 |  |  |
 | vscodium | linuxserver/vscodium | 1.140.06880 |  |  |
 | wallabag | wallabag/wallabag | 2.6.14 |  |  |
-| wallos | bellamy/wallos | 5.8.3 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
+| wallos | bellamy/wallos | 5.10.0 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 1.0.2 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.4 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
-| web-check | lissy93/web-check | 2.3.6 |  | [Docs](https://github.com/lissy93/web-check/blob/master/README.md) |
+| web-check | lissy93/web-check | 2.3.7 |  | [Docs](https://github.com/lissy93/web-check/blob/master/README.md) |
 | webcord | linuxserver/webcord | 4.14.0 |  |  |
 | webdav | bytemark/webdav | latest |  |  |
 | webgrabplus | linuxserver/webgrabplus | 5.6.1 |  |  |
-| webstation | linuxserver/webstation | 0.15.0-romm |  |  |
+| webstation | linuxserver/webstation | 0.15.1-romm |  |  |
 | websync | furier/websync | latest |  |  |
 | webtop | linuxserver/webtop | 0.0.0 |  |  |
 | weixin | linuxserver/weixin | 0.0.0 |  |  |
@@ -574,7 +574,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | your-spotify | linuxserver/your_spotify | 1.20.0 |  |  |
 | yq | linuxserver/yq | 4.4.5 |  |  |
 | yuvomi | ghcr.io/ulsklyc/yuvomi | 2.73.0 |  | [Docs](https://github.com/ulsklyc/yuvomi/blob/main/README.md) |
-| zen | linuxserver/zen | 1.23.2 |  |  |
+| zen | linuxserver/zen | 1.23.3 |  |  |
 | zigbee2mqtt | koenkk/zigbee2mqtt | 2.14.2 |  |  |
 | zimabrain | gelbuilding/zimabrain-ce | 1.6.2-beta |  | [Docs](https://github.com/Jacko88888/zimabrain-ce/blob/main/README.md) |
 | zipline | ghcr.io/diced/zipline | 3.7.13 |  |  |
