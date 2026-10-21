@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-xbackbone
 services:
   app:
-    image: linuxserver/xbackbone:3.8.2@sha256:52e39d9b1575ddc6522569804ee155ce1316c9f7868e0e2a69a48d9ceda68bdc
+    image: linuxserver/xbackbone:3.8.2@sha256:85d35185ba8bd0a4dfd15e9ed3f0730c3499ec00364174b45bc351ca3542a63d
     restart: unless-stopped
     environment:
       PUID: $PUID

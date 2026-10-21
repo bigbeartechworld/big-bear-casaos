@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-librewolf
 services:
   app:
-    image: linuxserver/librewolf:157.0.1@sha256:489a151de407f01f0e5086166da313872aeec67e78ad096d793641531a061511
+    image: linuxserver/librewolf:158.0.1@sha256:209570e3839036c2d4d15558eac626f1f7ce521cc0141b6dba67f35d051e3210
     restart: unless-stopped
     environment:
       PUID: $PUID

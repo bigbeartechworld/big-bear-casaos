@@ -1,7 +1,7 @@
 name: big-bear-privatebin
 services:
   app:
-    image: privatebin/nginx-fpm-alpine:2.0.6
+    image: privatebin/nginx-fpm-alpine:2.1.0
     restart: unless-stopped
     environment:
       PUID: $PUID

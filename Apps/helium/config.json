@@ -1,6 +1,6 @@
 {
   "id": "helium",
-  "version": "0.19.3",
+  "version": "0.19.4",
   "image": "linuxserver/helium",
   "youtube": "",
   "docs_link": ""
