@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-gitqlient
 services:
   app:
-    image: linuxserver/gitqlient:1.6.3@sha256:5b0c580c1c772ce49b57d36c2800833215a21f3a79470179bb8480d62df74d73
+    image: linuxserver/gitqlient:1.6.3@sha256:2c69326c880942f02218715daf495978b88be8da985da42998747b439c96d644
     restart: unless-stopped
     environment:
       PUID: $PUID

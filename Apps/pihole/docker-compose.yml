@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-pihole
     # Image to be used for the container
-    image: pihole/pihole:2026.09.0@sha256:5b9c8cf51de7d6d3f2240dbe72baf5f06e1fd39cb4d77a99fab4fa13e23bd1be
+    image: pihole/pihole:2026.10.0@sha256:d34134716fc32038b052a8674c7c6879e0ff21f0e6d8af345166fffa2c27c113
     # Container restart policy
     restart: unless-stopped
     # Environment variables

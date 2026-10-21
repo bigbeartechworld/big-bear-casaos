@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-d2-builder
 services:
   app:
-    image: linuxserver/d2-builder:0.9.0@sha256:728e6ecb5270a091d768707608826735285a16ba2c4b9ce121ac2239f8fa31a0
+    image: linuxserver/d2-builder:0.9.0@sha256:990e2a8c29d49a049eda00b1cf7d4f81a33ef3497b49c9285f2699911450f508
     restart: unless-stopped
     environment:
       PUID: $PUID
