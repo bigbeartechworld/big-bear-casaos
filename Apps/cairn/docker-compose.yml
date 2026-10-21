@@ -1,0 +1,75 @@
+name: big-bear-cairn
+services:
+  app:
+    image: morgankryze/cairn:1.25.0@sha256:aa62518775284c228d4f7f20b05aef75426a3017ed1ecc74f157308e26b04c33
+    container_name: cairn
+    ports:
+      - "8080:8080"
+    # cairn only ever reads this volume. Put a services.yaml in it to list your
+    # own services; while it is empty cairn serves a getting-started page instead
+    # of failing, and an invalid file leaves the previous configuration running.
+    # Mount a host directory here instead if you would rather edit the file in
+    # place. Reference: https://github.com/MorganKryze/cairn/tree/main/docs
+    volumes:
+      - /DATA/AppData/$AppID/config:/config:ro
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "/cairn", "-healthcheck"]
+      interval: 30s
+      start_period: 5s
+    restart: unless-stopped
+    networks:
+      - cairn-network
+    x-casaos:
+      volumes:
+        - container: /config
+          description:
+            en_US: 'Container Path: /config'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+networks:
+  cairn-network:
+    driver: bridge
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.cairn
+  # Main service for this application
+  main: app
+  # Detailed description for the application
+  description:
+    en_US: 'cairn is the page you hand to the people you host services for: family, a club, whoever ends up using your server. One YAML file in, a static multilingual directory out, with no account to create, no database and no outbound requests. It shows your services and nothing else: no widgets, no Docker socket, no metrics. Each service can show a live status pill pulled from Gatus or Uptime Kuma, so visitors see what is up before they click, and cairn serves its own legal and privacy pages. It ships as a single static Go binary in a FROM scratch image, around 4 MB to pull, and it writes nothing at runtime, so it runs read-only with every Linux capability dropped.'
+  # Brief tagline for the application
+  tagline:
+    en_US: The directory page for the people you host services for
+  # Developer's information
+  developer: MorganKryze
+  # Author of this particular configuration
+  author: MorganKryze
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/png/cairn.png
+  # Thumbnail image for the application (if any)
+  thumbnail: ""
+  # Installation tips
+  tips:
+    before_install:
+      en_US: |-
+        cairn needs no environment variable and no secret to run: it reads YAML files from the folder mounted at /config, so there is nothing to fill in here.
+        The first run works with that folder empty, because cairn then serves a getting-started page instead of failing. To list your own services, put a services.yaml in the host folder mapped to /config, which on CasaOS is /DATA/AppData/cairn/config. cairn picks the file up within seconds, with no restart, and if the file is invalid it keeps the previous configuration and logs the key it did not recognise.
+        Full reference: https://github.com/MorganKryze/cairn/tree/main/docs
+  # Title for the application
+  title:
+    en_US: cairn
+  # Category under which the application falls
+  category: Productivity
+  # Default port mapping for the application
+  port_map: "8080"
