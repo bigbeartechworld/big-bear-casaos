@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-qdirstat
 services:
   app:
-    image: linuxserver/qdirstat:2.0.20261012@sha256:18b289a63ef1cf2ca088d6b887e894df627ed825a992851853edec92910f1078
+    image: linuxserver/qdirstat:2.0.20261018@sha256:3c9c3f6b1ecb173d4cbcd25bf8b87cb9fe8c1d4e6a480554afe54f43158925db
     restart: unless-stopped
     environment:
       PUID: $PUID

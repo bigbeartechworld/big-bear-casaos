@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-your_spotify
 services:
   app:
-    image: linuxserver/your_spotify:1.20.0@sha256:936dd2724ed796ee56afea7e3b888bc2194261f2f653facdaf62ed76d1e369ce
+    image: linuxserver/your_spotify:1.20.0@sha256:3eeba4189eb6a0f5926d7f5ff0b26098fca719a38d6fc1789e6add0f3d15feb6
     restart: unless-stopped
     environment:
       PUID: $PUID
