@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-hedgedoc
 services:
   app:
-    image: linuxserver/hedgedoc:1.12.0@sha256:104452bf9b2fb48ee14230377f265adde765e5d4a9542b1514ac399a560d24b0
+    image: linuxserver/hedgedoc:1.12.0@sha256:0d9fe2aefb368577c44e7cc3a3c1bb6fcf79d5b05db46b9e46309a13e1831098
     restart: unless-stopped
     environment:
       PUID: $PUID

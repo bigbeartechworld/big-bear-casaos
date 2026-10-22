@@ -1,7 +1,7 @@
 name: big-bear-documenso
 services:
   documenso:
-    image: documenso/documenso:v2.20.0@sha256:05d2ede9fb87bfd8eedc11d81b8bdee43c3e775ea46c4fb64973153ca5ef8eb8
+    image: documenso/documenso:v2.21.0@sha256:d9985f66c19c59128f64b1439f057683da0110deb0e518655b97f06e3141f173
     container_name: documenso
     restart: unless-stopped
     depends_on:

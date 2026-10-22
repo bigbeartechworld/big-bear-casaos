@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-heimdall
 services:
   app:
-    image: linuxserver/heimdall:2.8.3@sha256:8e27750132a425d2631e91e13888a2bf0c975ad5d7e6f99a2fb713b3b688a9ea
+    image: linuxserver/heimdall:2.8.3@sha256:134636c92aa9fd47291f63adb6dc71b7c4e3abdde69e382abbf4a51461f9908a
     restart: unless-stopped
     environment:
       PUID: $PUID

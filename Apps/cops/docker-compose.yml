@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-cops
 services:
   app:
-    image: linuxserver/cops:4.5.4@sha256:b70171a048f50753034760132ab2095495838da1490e90afb13de9719317523b
+    image: linuxserver/cops:4.5.4@sha256:c345c1bf03422bfc8bbcfeca77219f0358b76685cdd07d3fc949c74f84b24669
     restart: unless-stopped
     environment:
       PUID: $PUID
