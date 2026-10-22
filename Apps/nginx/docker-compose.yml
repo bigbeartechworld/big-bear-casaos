@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-nginx
 services:
   app:
-    image: linuxserver/nginx:1.30.4@sha256:34e67960f3f818f3d87fdd773e328b53b24c91c64b4c1e4f6d7b22bc175ee174
+    image: linuxserver/nginx:1.30.4@sha256:c6c300bd5959e340d8742359f59604f3ad21426ea905cc77e75b01345034c8c6
     restart: unless-stopped
     environment:
       PUID: $PUID
