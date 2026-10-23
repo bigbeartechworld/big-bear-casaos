@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-wireguard
 services:
   app:
-    image: linuxserver/wireguard:1.0.20260223@sha256:6bcf5d2f5a265c7e9835eaadd989938e681aabe8bf8bcd4556b61d463da6555c
+    image: linuxserver/wireguard:1.0.20260223@sha256:e2f655e1956a6db476bc879bf721f3f8bfed49c6d8fbcf39495d7ecb991d8228
     restart: unless-stopped
     environment:
       PUID: $PUID

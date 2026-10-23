@@ -1,6 +1,6 @@
 {
   "id": "thunderbird",
-  "version": "1140.16.0",
+  "version": "1140.17.0",
   "image": "linuxserver/thunderbird",
   "youtube": "",
   "docs_link": ""
