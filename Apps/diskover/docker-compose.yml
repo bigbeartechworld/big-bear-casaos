@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-diskover
 services:
   app:
-    image: linuxserver/diskover:2.3.5@sha256:d5ec52af88b3786365fb85d4a7dd8f8cacc7a468d361543bcb8e5e2c24c5f408
+    image: linuxserver/diskover:2.3.5@sha256:f352b7726ef85b1ea8e157d99f42c9abeed9e2e547b46ebeae19e2a7110fd8a4
     restart: unless-stopped
     environment:
       PUID: $PUID

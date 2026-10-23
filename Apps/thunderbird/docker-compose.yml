@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-thunderbird
 services:
   app:
-    image: linuxserver/thunderbird:1140.16.0@sha256:5d0ad6fe32c9b72b6eb42a049a1f76d8445612f2ad355937ea23295d8cde06ae
+    image: linuxserver/thunderbird:1140.17.0@sha256:fe03c975f7f3caad262438b7bd599ae3415c3d5cc07ef9751a3e7837e88d1192
     restart: unless-stopped
     environment:
       PUID: $PUID
