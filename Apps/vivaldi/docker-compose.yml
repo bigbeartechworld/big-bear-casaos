@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-vivaldi
 services:
   app:
-    image: linuxserver/vivaldi:8.2.4133@sha256:ca3cc3e52b9a6bf26db6bea62536335328847302a6caba9b766b7c37b207a98d
+    image: linuxserver/vivaldi:8.2.4133@sha256:66a85c75cb9709dde788b31ea2d64d48af052afb8cca28c5c4bd32bb5d845a59
     restart: unless-stopped
     environment:
       PUID: $PUID
