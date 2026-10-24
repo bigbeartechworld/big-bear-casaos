@@ -349,7 +349,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | mysql-workbench | linuxserver/mysql-workbench | 8.0.47 |  |  |
-| n8n | n8nio/n8n | 2.44.4 |  |  |
+| n8n | n8nio/n8n | 2.45.0 |  |  |
 | nano-wallet | linuxserver/nano-wallet | 1.3.2 |  |  |
 | nano | linuxserver/nano | 21.2.20220522 |  |  |
 | navidrome | deluan/navidrome | 0.64.2 |  | [Docs](https://www.navidrome.org/docs/) |
@@ -383,8 +383,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | ollama-amd | ollama/ollama | 0.40.6-rocm |  |  |
 | ollama-cpu | ollama/ollama | 0.40.6 |  |  |
 | ollama-nvidia | ollama/ollama | 0.40.6 |  |  |
-| omniroute | diegosouzapw/omniroute | 3.8.51 |  | [Docs](https://github.com/diegosouzapw/OmniRoute/blob/main/docs/getting-started/SELF_HOST_GUIDE.md) |
-| onedev | 1dev/server | 16.9.4 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| omniroute | diegosouzapw/omniroute | 3.8.52 |  | [Docs](https://github.com/diegosouzapw/OmniRoute/blob/main/docs/getting-started/SELF_HOST_GUIDE.md) |
+| onedev | 1dev/server | 16.9.5 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
@@ -424,8 +424,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | playit-docker-web | wisdomsky/playit-docker-web | 1.0.10 |  |  |
 | playitgg | dysta/playitgg | 1.2.0 |  |  |
 | plex-meta-manager | linuxserver/plex-meta-manager | 1.21.1 |  |  |
-| plex-nvidia | linuxserver/plex | 1.43.4 |  |  |
-| plex | linuxserver/plex | 1.43.4 |  |  |
+| plex-nvidia | linuxserver/plex | 1.43.5 |  |  |
+| plex | linuxserver/plex | 1.43.5 |  |  |
 | pocketid | ghcr.io/pocket-id/pocket-id | v2.7 |  | [Docs](https://pocket-id.org/docs/introduction) |
 | podfetch | samuel19982/podfetch | v5.2.3 |  | [Docs](https://samtv12345.github.io/PodFetch/) |
 | portainer-agent | portainer/agent | 2.45.2 |  |  |
@@ -451,7 +451,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | quassel-core | linuxserver/quassel-core | 0.14.0 |  |  |
 | quassel-web | linuxserver/quassel-web | 0.0.0 |  |  |
 | rackpeek | aptacode/rackpeek | v2.1.0 |  | [Docs](https://timmoth.github.io/RackPeek/docs/overview) |
-| rallly | lukevella/rallly | 4.15.5 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
+| rallly | lukevella/rallly | 4.16.0 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | raneto | linuxserver/raneto | 0.18.1 |  |  |
 | rawtherapee | linuxserver/rawtherapee | 5.13.20261018 |  |  |
 | rdesktop | linuxserver/rdesktop | 0.0.0 |  |  |
@@ -477,7 +477,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | scummvm | linuxserver/scummvm | 2026.4.0 |  |  |
 | seafile-v14 | seafileltd/seafile-mc | 14.0.9 |  | [Docs](https://manual.seafile.com/latest/upgrade/upgrade_docker/) |
 | seafile | seafileltd/seafile-mc | 11.0.13 |  |  |
-| sealskin | linuxserver/sealskin | 0.3.2 |  |  |
+| sealskin | linuxserver/sealskin | 0.4.0 |  |  |
 | seerr | seerr/seerr | v3.4.1 |  | [Docs](https://docs.seerr.dev) |
 | semaphore | semaphoreui/semaphore | v2.19.17 |  |  |
 | send-visee | registry.gitlab.com/timvisee/send | v3.4.27 |  |  |
@@ -485,12 +485,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | sftpgo | drakkan/sftpgo | v2.7 |  |  |
 | shadps4 | linuxserver/shadps4 | 0.0.0 |  |  |
 | shotcut | linuxserver/shotcut | 26.9.27 |  |  |
-| signal | linuxserver/signal | 8.31.0 |  |  |
+| signal | linuxserver/signal | 8.32.0 |  |  |
 | skysend | skyfay/skysend | v3.1.0 |  | [Docs](https://docs.skysend.ch/user-guide/installation) |
 | smokeping | linuxserver/smokeping | 2.9.0 |  |  |
 | snapdrop | linuxserver/snapdrop | 0.0.0 |  |  |
 | snapotter | snapotter/snapotter | 2.2.0 |  | [Docs](https://docs.snapotter.com/guide/getting-started) |
-| snipe-it-v8 | snipe/snipe-it | v8.8.0 |  | [Docs](https://snipe-it.readme.io/docs/docker) |
+| snipe-it-v8 | snipe/snipe-it | v8.8.1 |  | [Docs](https://snipe-it.readme.io/docs/docker) |
 | snipe-it | linuxserver/snipe-it | 7.1.17 |  |  |
 | socket-proxy | linuxserver/socket-proxy | 3.4.7 |  |  |
 | solidping | ghcr.io/fclairamb/solidping | 0.37.0 |  | [Docs](https://solidping.io/docs) |
@@ -536,19 +536,19 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | upsnap | ghcr.io/seriousm4x/upsnap | 5.3.4 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 2 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
 | vert | ghcr.io/vert-sh/vert | sha-a1b0b15 |  | [Docs](https://github.com/VERT-sh/VERT/blob/main/docs/DOCKER.md) |
-| vikunja-v2 | vikunja/vikunja | 2.7.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) | [Docs](https://vikunja.io/docs/api-login-session-migration/) |
+| vikunja-v2 | vikunja/vikunja | 2.7.1 | [YouTube Video](https://youtu.be/T-dNbdIttoI) | [Docs](https://vikunja.io/docs/api-login-session-migration/) |
 | vikunja | vikunja/vikunja | 1.1.0 | [YouTube Video](https://youtu.be/T-dNbdIttoI) |  |
 | viseron | roflcoopter/viseron | 3.7.0 |  |  |
 | vivaldi | linuxserver/vivaldi | 8.2.4133 |  |  |
 | vlc | linuxserver/vlc | 3.0.24 |  |  |
-| vscode | linuxserver/vscode | 1.141.1 |  |  |
+| vscode | linuxserver/vscode | 1.142.0 |  |  |
 | vscodium-web | linuxserver/vscodium-web | 1.140.06880 |  |  |
 | vscodium | linuxserver/vscodium | 1.140.06880 |  |  |
 | wallabag | wallabag/wallabag | 2.6.14 |  |  |
 | wallos | bellamy/wallos | 5.10.0 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 1.0.2 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.4 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
-| web-check | lissy93/web-check | 2.3.7 |  | [Docs](https://github.com/lissy93/web-check/blob/master/README.md) |
+| web-check | lissy93/web-check | 2.3.8 |  | [Docs](https://github.com/lissy93/web-check/blob/master/README.md) |
 | webcord | linuxserver/webcord | 4.14.0 |  |  |
 | webdav | bytemark/webdav | latest |  |  |
 | webgrabplus | linuxserver/webgrabplus | 5.6.1 |  |  |
