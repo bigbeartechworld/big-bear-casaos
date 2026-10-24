@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-lollypop
 services:
   app:
-    image: linuxserver/lollypop:1.4.45@sha256:d0b4550a8646313e67dd023e3e411b9bc9a0709933d3c92dfd2e2c7f11764b71
+    image: linuxserver/lollypop:1.4.45@sha256:b99556134690ce17b9fd5d29228acbec9b319aecb945748b2e96b524a2e233de
     restart: unless-stopped
     environment:
       PUID: $PUID

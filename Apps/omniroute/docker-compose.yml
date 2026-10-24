@@ -1,7 +1,7 @@
 name: big-bear-omniroute
 services:
   omniroute:
-    image: diegosouzapw/omniroute:3.8.51@sha256:8bd462c9f60d8eda79329cfbb6ea7ea723505fe7721beb944f3d43835409e218
+    image: diegosouzapw/omniroute:3.8.52@sha256:b08a12e876baa8a5ccadd1ebbe346fe7267dba3b1c9f4fd6bb02070fae41ab6c
     container_name: omniroute
     restart: unless-stopped
     stop_grace_period: 40s

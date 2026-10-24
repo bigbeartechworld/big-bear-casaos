@@ -4,7 +4,7 @@ name: big-bear-umami
 services:
   # Main service for the Umami application
   app:
-    image: ghcr.io/umami-software/umami:postgresql-latest@sha256:85909afc45bdcda1917394594a087421fdbb05610fded0fa9f6fb861abb2f367 # Docker image for the Umami app
+    image: ghcr.io/umami-software/umami:postgresql-latest@sha256:e69d1a7932e9dab0fc523edc7be1f3a53f3c261f57856fc2167ae74a8fc022e8 # Docker image for the Umami app
     ports:
       - "3000:3000" # Port mapping: host:container
     environment: # Environment variables for the service
