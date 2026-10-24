@@ -1,6 +1,6 @@
 {
   "id": "vscode",
-  "version": "1.141.1",
+  "version": "1.142.0",
   "image": "linuxserver/vscode",
   "youtube": "",
   "docs_link": ""
