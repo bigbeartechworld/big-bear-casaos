@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-wallos
     # Image to be used for the container
-    image: bellamy/wallos:5.10.0@sha256:6d67b6e21dbb978dff113d01860311221adccc53151c033120f113e11a63d1e7
+    image: bellamy/wallos:5.10.1@sha256:b12fc3f6456fa4879346d27f13c96011a1dce8d5285ef31fcec9323f2bac9854
     # Container restart policy
     restart: unless-stopped
     # Environment variables for the container

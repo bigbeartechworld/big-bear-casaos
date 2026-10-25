@@ -1,6 +1,6 @@
 {
   "id": "librespeed",
-  "version": "6.3.0",
+  "version": "6.3.1",
   "image": "linuxserver/librespeed",
   "youtube": "",
   "docs_link": ""

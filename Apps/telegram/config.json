@@ -1,6 +1,6 @@
 {
   "id": "telegram",
-  "version": "7.3.1",
+  "version": "7.3.2",
   "image": "linuxserver/telegram",
   "youtube": "",
   "docs_link": ""

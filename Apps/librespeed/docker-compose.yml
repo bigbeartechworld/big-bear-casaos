@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-librespeed
 services:
   app:
-    image: linuxserver/librespeed:6.3.0@sha256:03380ad93dea90c672036851a2697666daa0a2e68558aa84b11a679946b57a7c
+    image: linuxserver/librespeed:6.3.1@sha256:0f85aac620b60a2566049f95d085fd2b044c720abfe88d1f1e14496ea0496833
     restart: unless-stopped
     environment:
       PUID: $PUID

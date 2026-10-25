@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-altus
 services:
   app:
-    image: linuxserver/altus:5.8.1@sha256:e4df4114c1cc350bb475c4d2f6616dcf434659cf4557fa8738759c089fd51fea
+    image: linuxserver/altus:5.8.1@sha256:d25458c497a012bf22733f99bb7d54c0a08575f2760ac1adf4a4b152c74c3b43
     restart: unless-stopped
     environment:
       PUID: $PUID

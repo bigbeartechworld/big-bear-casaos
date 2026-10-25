@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-cloudflared-web
     # Image to be used for the container
-    image: wisdomsky/cloudflared-web:2026.10.1@sha256:edabb91fea4e6effb38b7cc1454557fa315113d4335571941e469d95a09a93a5
+    image: wisdomsky/cloudflared-web:2026.10.2@sha256:61251de42f58e8ab1f0caea11e27cd313f1c0dd75fc5c88a24d1fd3cea00c778
     # Container restart policy
     restart: unless-stopped
     # Network mode
