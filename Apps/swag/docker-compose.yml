@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-swag
 services:
   app:
-    image: linuxserver/swag:5.8.0@sha256:7e8cb5bf0bdf042e07da267dd1ef434cc6224f81b528d2c27a7c942f7cd65d4f
+    image: linuxserver/swag:5.8.0@sha256:705de71e24e98f3a2907664d6ae37a83d85001748abedf0d10904b928f191029
     restart: unless-stopped
     environment:
       PUID: $PUID

@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ngircd
 services:
   app:
-    image: linuxserver/ngircd:version-27-r1@sha256:25a924851122b34d933404e4a942e68835e4a1dc182f12d28461c4490476e265
+    image: linuxserver/ngircd:version-27-r1@sha256:a45daaa107b7c5d6d9d39011758f73f97cc104f377694bd6cdad308718794fab
     restart: unless-stopped
     environment:
       PUID: $PUID

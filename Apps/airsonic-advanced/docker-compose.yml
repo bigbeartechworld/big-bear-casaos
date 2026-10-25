@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-airsonic-advanced
 services:
   app:
-    image: linuxserver/airsonic-advanced:11.1.4@sha256:bae6dde843d7e207e4f97322c4e5cacf57f6ad10000a1e70a901d273cd4ff237
+    image: linuxserver/airsonic-advanced:11.1.4@sha256:a0945c317c94380f0f06abcbab36f49a13ad5c2741e26cd0fbc670a061ef5548
     restart: unless-stopped
     environment:
       PUID: $PUID

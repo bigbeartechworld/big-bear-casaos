@@ -1,7 +1,7 @@
 name: big-bear-snipe-it-v8
 services:
   app:
-    image: snipe/snipe-it:v8.8.1@sha256:4d7dd3f02fd81379ad308b40a018a09f0fc03f91d6f56bfdfe337649d8c4d96b
+    image: snipe/snipe-it:v8.8.2@sha256:321b37a65a3a9ed3cc8da9b999e1cbb60e15aef7deed47efd65c31290af6f501
     restart: unless-stopped
     ports:
       - 8086:80

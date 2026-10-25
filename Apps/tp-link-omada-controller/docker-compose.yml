@@ -7,7 +7,7 @@ services:
   app:
     container_name: big-bear-omada-controller # The name of the container.
     # The Docker image used for the service.
-    image: mbentley/omada-controller:6.3@sha256:a12520b65272fd9be14c7eb8bb0f9aa20b9f04fbc368c439d73c1f06ce8d5428
+    image: mbentley/omada-controller:6.3@sha256:21b4de89fefc1ae309ff74a01ce0562e15b16c169c7fdba56a67ea6a64b0bdde
     # Restart policy for the container. "unless-stopped" means the container will always restart unless manually stopped.
     restart: unless-stopped
     # Set limits on system-level resources for the container.
