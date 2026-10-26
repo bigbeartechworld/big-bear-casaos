@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-helium
 services:
   app:
-    image: linuxserver/helium:0.19.4@sha256:2298ac3333f7591051f37576deef4d1e6393cca1dbab032f143642fa4831aeca
+    image: linuxserver/helium:0.20.1@sha256:e1485c3408f3d41c0169eaf7f61762b238f466b64682fd5a9c071b477ccd6680
     restart: unless-stopped
     environment:
       PUID: $PUID

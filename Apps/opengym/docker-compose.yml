@@ -98,7 +98,7 @@ services:
           description:
             en_US: 'Container Path: /coach-auth'
   media:
-    image: alpine/git:2.54.0@sha256:4fac439ee3b9204bec99c712b8a15942999632458f716ae8149fbb97cb760cd4
+    image: alpine/git:2.54.0@sha256:e8ceedc73bd80992ae8d58a7d24c58b8322146c354f1d2e81a97db4452068ec0
     container_name: opengym-media
     restart: "no"
     entrypoint: ["/bin/sh", "-c"]

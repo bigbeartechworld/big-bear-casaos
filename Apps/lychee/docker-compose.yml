@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-lychee
 services:
   app:
-    image: linuxserver/lychee:7.11.1@sha256:e30ff37cd6c1fd11afa1e1e0302c36d06c36c0109be82d9c4555b5d6c2202c87
+    image: linuxserver/lychee:7.12.0@sha256:e5f34f152040a876e638b4e1a6ab1abb6bdb47984b9f87a37caa74b95e2f1645
     restart: unless-stopped
     environment:
       PUID: $PUID

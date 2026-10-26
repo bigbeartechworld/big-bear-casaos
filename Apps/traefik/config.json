@@ -1,6 +1,6 @@
 {
   "id": "traefik",
-  "version": "v3.7.15",
+  "version": "v3.7.16",
   "image": "traefik",
   "youtube": "",
   "docs_link": ""
