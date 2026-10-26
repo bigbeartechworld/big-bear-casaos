@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-odysseus
     # Image to be used for the container
-    image: bigbeartechworld/big-bear-odysseus:2026.10.19@sha256:e5c849c09838d48e6adcfb80bc23e011516c07f68f83bb3fe081e5caf74b08e9
+    image: bigbeartechworld/big-bear-odysseus:2026.10.22@sha256:5bb9e5cde7cd238e2b9ca9f9bcbc461dea9eb66524b9112c302ff0d90b6ca3ee
     # Container restart policy
     restart: unless-stopped
     # Ports mapping between host and container

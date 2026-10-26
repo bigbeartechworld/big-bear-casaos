@@ -1,7 +1,7 @@
 name: big-bear-cairn
 services:
   app:
-    image: morgankryze/cairn:1.25.0@sha256:aa62518775284c228d4f7f20b05aef75426a3017ed1ecc74f157308e26b04c33
+    image: morgankryze/cairn:1.25.1@sha256:e1b159419bc66dd950ce99e665db2bd3502c210c13542ae4f05dc9ba6e218007
     container_name: cairn
     ports:
       - "8080:8080"

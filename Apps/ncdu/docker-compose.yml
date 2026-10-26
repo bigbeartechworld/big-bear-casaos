@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-ncdu
     # Image to be used for the container specifies the ncdu version and source
-    image: bigbeartechworld/big-bear-ncdu:0.0.10@sha256:4edd3f9ff0dfc6859049ae69a9d81a05b240c05ceeb404bae253f83be34978a9
+    image: bigbeartechworld/big-bear-ncdu:0.0.11@sha256:e6d47583a59b25bbb20babe796a1753cefa92ecf3028bb5e15b75d9542cb58ac
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Run the container in privileged mode to allow access to system metrics

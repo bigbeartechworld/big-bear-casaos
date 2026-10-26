@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-btop
     # Image to be used for the container specifies the btop version and source
-    image: bigbeartechworld/big-bear-btop:0.1.11@sha256:2656811aebd8a85037927183e9008f9d6219c4182139f39555286a268f8b3b93
+    image: bigbeartechworld/big-bear-btop:0.1.12@sha256:28c5af8e88ffb7c98fa4e4133480ff09061b346746641189ca4331481b0c62cb
     # Container restart policy - restarts the container unless manually stopped
     restart: unless-stopped
     # Run the container in privileged mode to allow access to system metrics

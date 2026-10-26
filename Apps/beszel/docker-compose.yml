@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-beszel
     # Image to be used for the container
-    image: henrygd/beszel:0.21.0@sha256:6b39a8b64f9b15d00a25e7683e31a93c46161182a54f62713525107064e10599
+    image: henrygd/beszel:0.21.1@sha256:8514a69d9bbbcb74f371a3205561ee231fc0289739cea64e8131f341d695b770
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
