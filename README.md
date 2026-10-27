@@ -135,7 +135,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | cairn | morgankryze/cairn | 1.25.1 |  | [Docs](https://github.com/MorganKryze/cairn/tree/main/docs) |
 | calcom | calcom/cal.com | v6.2.0 |  |  |
 | calibre-web | linuxserver/calibre-web | 0.6.27 |  |  |
-| calibre | linuxserver/calibre | 9.16.0 |  |  |
+| calibre | linuxserver/calibre | 9.17.0 |  |  |
 | calligra | linuxserver/calligra | 3.2.1 |  |  |
 | cantinarr | ghcr.io/windoze95/cantinarr | 1.0.0 |  | [Docs](https://github.com/windoze95/cantinarr#readme) |
 | casaos-toolbox | wisdomsky/casaos-toolbox | 0.2 |  |  |
@@ -152,7 +152,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | cloudflared-web | wisdomsky/cloudflared-web | 2026.10.3 | [YouTube Video](https://youtu.be/JvyyolXJ0-A) | [Docs](https://github.com/wisdomsky/cloudflared-web) |
 | cloudreve-pro | ghcr.io/dvorinka/cloudreve | v4.23.0 |  | [Docs](https://github.com/Dvorinka/cloudreve/blob/master/README.md) |
 | cloudreve | cloudreve/cloudreve | 4.19.1 |  | [Docs](https://docs.cloudreve.org/overview/deploy/docker-compose) |
-| code-server | linuxserver/code-server | 4.141.0 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
+| code-server | linuxserver/code-server | 4.143.1 | [YouTube Video](https://youtu.be/aiYcwXDfgE8) |  |
 | coder | ghcr.io/coder/coder | v2.36.7 |  | [Docs](https://coder.com/docs/install/docker) |
 | codex-docs | ghcr.io/codex-team/codex.docs | v2.2 | [YouTube Video](https://youtu.be/dKm2VJwam24) |  |
 | composetoolbox | ghcr.io/bluegoosemedia/composetoolbox | latest |  | [Docs](https://github.com/bluegoosemedia/composetoolbox) |
@@ -198,7 +198,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | duplicati | linuxserver/duplicati | 2.4.0 |  |  |
 | eden | linuxserver/eden | 0.2.1 |  |  |
 | ejbca-ce | keyfactor/ejbca-ce | 9.6.3 |  | [Docs](https://doc.primekey.com/ejbca/ejbca-introduction) |
-| emby | linuxserver/emby | 4.10.1 |  |  |
+| emby | linuxserver/emby | 4.10.2 |  |  |
 | embystat | linuxserver/embystat | 0.2.0 |  |  |
 | emulatorjs | linuxserver/emulatorjs | 1.9.2 |  |  |
 | endlessh | linuxserver/endlessh | 0.0.0 |  |  |
@@ -215,7 +215,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | feed2toot | linuxserver/feed2toot | 0.17.20251115 |  |  |
 | ferdium | linuxserver/ferdium | 7.2.3 |  |  |
 | ffmpeg | linuxserver/ffmpeg | 9.0.2 |  |  |
-| filebrowser-quantum-v2 | gtstef/filebrowser | 2.0.1-stable |  | [Docs](https://filebrowserquantum.com/en/docs/getting-started/v2/migration/) |
+| filebrowser-quantum-v2 | gtstef/filebrowser | 2.0.2-stable |  | [Docs](https://filebrowserquantum.com/en/docs/getting-started/v2/migration/) |
 | filebrowser-quantum | gtstef/filebrowser | 1.5.8-stable |  |  |
 | filebrowser | filebrowser/filebrowser | v2.63.23-s6 |  |  |
 | filezilla | linuxserver/filezilla | 3.69.6 |  |  |
@@ -235,7 +235,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.03 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.72.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.90.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.91.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gimp | linuxserver/gimp | 0.0.0 |  |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 28.2.0 |  | [Docs](https://docs.gitea.com/) |
@@ -259,7 +259,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | helium | linuxserver/helium | 0.20.1 |  |  |
 | hermes | nousresearch/hermes-agent | v2026.9.24 |  | [Docs](https://hermes-agent.nousresearch.com/docs/) |
 | hestiacp | artsemkniazeu/hestiacp | latest |  |  |
-| hishtory-server | linuxserver/hishtory-server | 0.335.20261016 |  |  |
+| hishtory-server | linuxserver/hishtory-server | 0.335.20261023 |  |  |
 | homarr-v1 | ghcr.io/homarr-labs/homarr | v1.63.0 |  | [Docs](https://homarr.dev/docs) |
 | homarr-v2 | ghcr.io/homarr-labs/homarr | 2.0.0 |  | [Docs](https://homarr.dev/blog/2026/09/03/homarr-2.0/) |
 | homarr | ghcr.io/ajnart/homarr | 0.16.1 | [YouTube Video](https://youtu.be/H4rzZNO47Uk) |  |
@@ -287,7 +287,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | jfa-go | hrfee/jfa-go | latest |  |  |
 | jlesage-firefox | jlesage/firefox | v26.09.1 | [YouTube Video](https://youtu.be/JWhR8RKGh9Y) | [Docs](https://community.bigbeartechworld.com/t/added-jlesage-firefox-to-bigbearcasaos/2506#p-4575-documentation-4) |
 | jlesage-handbrake | jlesage/handbrake | v26.09.1 |  |  |
-| joomla | joomla | 6.1.4-apache |  |  |
+| joomla | joomla | 6.2.0-apache |  |  |
 | joplin | joplin/server | 3.7.2 | [YouTube Video](https://youtu.be/FjVyg0X-_zc) |  |
 | kali-linux | linuxserver/kali-linux | 0.0.0 |  |  |
 | kasm | linuxserver/kasm | 1.120.20221218 | [YouTube Video](https://youtu.be/Fq7PlvRSvT4) |  |
@@ -295,7 +295,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | kdenlive | linuxserver/kdenlive | 423.08.5 |  |  |
 | keepassxc | linuxserver/keepassxc | 2.7.12 |  |  |
 | kicad | linuxserver/kicad | 10.0.3 |  |  |
-| kimai | linuxserver/kimai | 2.70.1 |  |  |
+| kimai | linuxserver/kimai | 2.70.2 |  |  |
 | kitchenowl | tombursch/kitchenowl | v0.7.10 |  | [Docs](https://docs.kitchenowl.org/) |
 | kiwix-serve | ghcr.io/kiwix/kiwix-serve | 3.7.0-2 |  |  |
 | kometa | linuxserver/kometa | 2.5.3 |  |  |
@@ -332,7 +332,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | mediaelch | linuxserver/mediaelch | 2.12.0 |  |  |
 | melonds | linuxserver/melonds | 1.1.20261229 |  |  |
 | microbin | danielszabo99/microbin | 2.1.4 |  | [Docs](https://github.com/szabodanika/microbin) |
-| mind | mrcas/mind | v1.4.1 |  |  |
+| mind | mrcas/mind | v1.5.1 |  |  |
 | minecraft | itzg/minecraft-server | 2026.10.0 |  |  |
 | minetest | linuxserver/minetest | 5.10.0 |  |  |
 | minio | bigbeartechworld/big-bear-minio | RELEASE.2025-10-15T17-29-55Z |  |  |
@@ -349,13 +349,13 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | music-assistant | ghcr.io/music-assistant/server | 2.8.7 |  |  |
 | myspeed | germannewsmaker/myspeed | 1.0.9 | [YouTube Video](https://youtu.be/7roj87Fytz0) |  |
 | mysql-workbench | linuxserver/mysql-workbench | 8.0.47 |  |  |
-| n8n | n8nio/n8n | 2.45.2 |  |  |
+| n8n | n8nio/n8n | 2.45.3 |  |  |
 | nano-wallet | linuxserver/nano-wallet | 1.3.2 |  |  |
 | nano | linuxserver/nano | 21.2.20220522 |  |  |
 | navidrome | deluan/navidrome | 0.64.2 |  | [Docs](https://www.navidrome.org/docs/) |
 | ncdu | bigbeartechworld/big-bear-ncdu | 0.0.11 | [YouTube Video](https://youtu.be/5RCTglGRXss) |  |
 | neko-firefox | m1k1o/neko | firefox |  |  |
-| netalertx-v26 | jokobsk/netalertx | 26.10.0 |  | [Docs](https://docs.netalertx.com) |
+| netalertx-v26 | jokobsk/netalertx | 26.10.24 |  | [Docs](https://docs.netalertx.com) |
 | netalertx | jokobsk/netalertx | 25.11.29 |  |  |
 | netboot-xyz | ghcr.io/netbootxyz/netbootxyz | 0.7.6-nbxyz24 |  | [Docs](https://netboot.xyz/docs/docker/) |
 | netbox | linuxserver/netbox | 4.7.3 |  |  |
@@ -373,18 +373,18 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
 | nova-dso-tracker | mrantonsg/nova-dso-tracker | 7.0.0 |  | [Docs](https://nova-tracker.com) |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
-| ntfysh | binwiederhier/ntfy | v2.32.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
+| ntfysh | binwiederhier/ntfy | v2.33.1 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
 | obsidian | linuxserver/obsidian | 1.14.4 |  |  |
 | octoprint | octoprint/octoprint | 1.11.8 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo-v20 | odoo | 20 |  | [Docs](https://www.odoo.com/documentation/master/administration/upgrade.html) |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
 | odysseus | bigbeartechworld/big-bear-odysseus | 2026.10.22 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
-| ollama-amd | ollama/ollama | 0.40.8-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.40.8 |  |  |
-| ollama-nvidia | ollama/ollama | 0.40.8 |  |  |
+| ollama-amd | ollama/ollama | 0.40.10-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.40.10 |  |  |
+| ollama-nvidia | ollama/ollama | 0.40.10 |  |  |
 | omniroute | diegosouzapw/omniroute | 3.8.52 |  | [Docs](https://github.com/diegosouzapw/OmniRoute/blob/main/docs/getting-started/SELF_HOST_GUIDE.md) |
-| onedev | 1dev/server | 16.9.6 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
+| onedev | 1dev/server | 16.9.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
 | open-webui | ghcr.io/open-webui/open-webui | git-33e54a9 |  |  |
 | openclaw | ghcr.io/openclaw/openclaw | 2026.5.3-1 |  | [Docs](https://docs.openclaw.ai/install/docker) |
@@ -406,7 +406,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pcsx2 | linuxserver/pcsx2 | 2.8.2 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
 | pelorus | linuxserver/pelorus | 0.2.4 |  |  |
-| penpot | penpotapp/frontend | 2.18.3 |  |  |
+| penpot | penpotapp/frontend | 2.18.4 |  |  |
 | peppermint | pepperlabs/peppermint | latest |  |  |
 | photoprism | photoprism/photoprism | 240915 |  |  |
 | phpmyadmin | phpmyadmin/phpmyadmin | 5.2.3 |  |  |
@@ -451,11 +451,11 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | quassel-core | linuxserver/quassel-core | 0.14.0 |  |  |
 | quassel-web | linuxserver/quassel-web | 0.0.0 |  |  |
 | rackpeek | aptacode/rackpeek | v2.1.0 |  | [Docs](https://timmoth.github.io/RackPeek/docs/overview) |
-| rallly | lukevella/rallly | 4.16.1 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
+| rallly | lukevella/rallly | 4.16.2 | [YouTube Video](https://youtu.be/2MY3S6csrVw) | [Docs](https://community.bigbeartechworld.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3) |
 | raneto | linuxserver/raneto | 0.18.1 |  |  |
 | rawtherapee | linuxserver/rawtherapee | 5.13.20261018 |  |  |
 | rdesktop | linuxserver/rdesktop | 0.0.0 |  |  |
-| reactive-resume-v6 | amruthpillai/reactive-resume | v6.0.4 |  | [Docs](https://docs.rxresu.me/self-hosting/upgrading-to-v6) |
+| reactive-resume-v6 | amruthpillai/reactive-resume | v6.0.5 |  | [Docs](https://docs.rxresu.me/self-hosting/upgrading-to-v6) |
 | reactive-resume | amruthpillai/reactive-resume | v5.3.2 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.3 |  |  |
 | readme-sync | linuxserver/readme-sync | 0.0.0 |  |  |
@@ -486,7 +486,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | shadps4 | linuxserver/shadps4 | 0.0.0 |  |  |
 | shotcut | linuxserver/shotcut | 26.9.27 |  |  |
 | signal | linuxserver/signal | 8.32.0 |  |  |
-| skysend | skyfay/skysend | v3.1.0 |  | [Docs](https://docs.skysend.ch/user-guide/installation) |
+| skysend | skyfay/skysend | v3.2.0 |  | [Docs](https://docs.skysend.ch/user-guide/installation) |
 | smokeping | linuxserver/smokeping | 2.9.0 |  |  |
 | snapdrop | linuxserver/snapdrop | 0.0.0 |  |  |
 | snapotter | snapotter/snapotter | 2.2.0 |  | [Docs](https://docs.snapotter.com/guide/getting-started) |
@@ -516,12 +516,12 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | tester | linuxserver/tester | 0.0.0 |  |  |
 | thelounge | linuxserver/thelounge | 4.5.2 |  |  |
 | thunderbird | linuxserver/thunderbird | 1140.17.0 |  |  |
-| tianji | moonrailgun/tianji | 1.33.11 |  |  |
+| tianji | moonrailgun/tianji | 1.33.12 |  |  |
 | tp-link-omada-controller | mbentley/omada-controller | 6.3 | [YouTube Video](https://youtu.be/aECteVrkt6s) |  |
 | traccar | traccar/traccar | 6.15-ubuntu | [YouTube Video](https://youtu.be/zn_tu9r6g-w) |  |
 | trackie | ghcr.io/trackie-nz/trackie | 26.9.0 |  | [Docs](https://github.com/trackie-nz/trackie/blob/main/app/compose.yml) |
 | traefik | traefik | v3.7.16 |  |  |
-| trilium | triliumnext/trilium | v0.105.0 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
+| trilium | triliumnext/trilium | v0.106.1 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.87 |  |  |
 | tugtainer | quenary/tugtainer | v1.44.1 |  |  |
 | ubooquity | linuxserver/ubooquity | 3.1.0 |  |  |
@@ -530,8 +530,8 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | umbrel-os | dockurr/umbrel | 2.0.0 | [YouTube Video](https://youtu.be/O03CH-YLdk0) |  |
 | ungoogled-chromium | linuxserver/ungoogled-chromium | 155.0.8059 |  |  |
 | unifi-controller | linuxserver/unifi-controller | 8.0.24 |  |  |
-| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 10.6.106 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
-| unifi-network-application | linuxserver/unifi-network-application | 10.6.106 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| unifi-network-application-mongo-4 | linuxserver/unifi-network-application | 10.6.109 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
+| unifi-network-application | linuxserver/unifi-network-application | 10.6.109 | [YouTube Video](https://youtu.be/JCe-r_SHCe8) |  |
 | unrar | linuxserver/unrar | 7.2.7 |  |  |
 | upsnap | ghcr.io/seriousm4x/upsnap | 5.3.4 |  |  |
 | uptime-kuma | louislam/uptime-kuma | 2 | [YouTube Video](https://youtu.be/Why5NU_Wafw) |  |
@@ -545,7 +545,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | vscodium-web | linuxserver/vscodium-web | 1.140.06880 |  |  |
 | vscodium | linuxserver/vscodium | 1.140.06880 |  |  |
 | wallabag | wallabag/wallabag | 2.6.14 |  |  |
-| wallos | bellamy/wallos | 5.10.1 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
+| wallos | bellamy/wallos | 5.10.2 | [YouTube Video](https://youtu.be/feYTW02YDb8) |  |
 | warracker | ghcr.io/sassanix/warracker/main | 1.0.2 |  |  |
 | watchyourlan | aceberg/watchyourlan | 2.1.4 | [YouTube Video](https://youtu.be/LaYZjvUJ9U8) |  |
 | web-check | lissy93/web-check | 2.3.8 |  | [Docs](https://github.com/lissy93/web-check/blob/master/README.md) |
