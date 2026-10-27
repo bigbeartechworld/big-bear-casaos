@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-qemu-static
 services:
   app:
-    image: linuxserver/qemu-static:10.0.2@sha256:843aca5fb5640749693281a3bb5208e90ee7e1e9ce1486afdaed95eb500ea326
+    image: linuxserver/qemu-static:10.0.13@sha256:85959e8657d2e2ec534febf9c34fb09198557191828d7c68361094803ce23e37
     restart: unless-stopped
     environment:
       PUID: $PUID
