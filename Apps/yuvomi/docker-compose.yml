@@ -18,7 +18,7 @@ services:
       BACKUP_DIR: /backups
       MODULES_DIR: /app/modules
       SESSION_SECRET: REPLACE_WITH_A_LONG_RANDOM_STRING
-      DB_ENCRYPTION_KEY: 12C_F5m7nZC69qeJlJL0BqgCNd8lH3m1zqAeERMcG3g
+      DB_ENCRYPTION_KEY: REPLACE_WITH_A_STRONG_ENCRYPTION_KEY
       SESSION_SECURE: "false"
       TRUST_PROXY: loopback
       DOCUMENT_STORAGE_LOCAL_ENABLED: "false"
@@ -107,7 +107,7 @@ x-casaos:
   # Installation tips
   tips:
     before_install:
-      en_US: Open host port 20004. SESSION_SECRET is shipped as REPLACE_WITH_A_LONG_RANDOM_STRING. Yuvomi 2.73.0 exits until you replace that placeholder. Also replace DB_ENCRYPTION_KEY before creating data. The shipped values are public. A lost DB_ENCRYPTION_KEY cannot reopen the database, so keep the replacement. CasaOS and ZimaOS edit those literals; they do not substitute Compose variables. Optional weather, calendar, and OIDC settings are unset.
+      en_US: 'Open host port 20004. New installs: replace SESSION_SECRET and DB_ENCRYPTION_KEY before starting Yuvomi; placeholders prevent startup. Generate a separate value for each with openssl rand -hex 32 and save the database key securely. To run unencrypted, clear DB_ENCRYPTION_KEY. Stores without pre-install variable editing require manual configuration before a successful start. CasaOS and ZimaOS use literal values, not Compose variable substitution. Existing installs: keep your current DB_ENCRYPTION_KEY when updating; replacing it prevents the database from opening. To migrate, download a backup under Settings > Backup, reinstall with a new key, then restore using the old key in the Backup key field. Optional weather, calendar, and OIDC settings are unset.'
   # Title for the application
   title:
     en_US: Yuvomi
