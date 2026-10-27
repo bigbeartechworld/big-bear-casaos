@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-penpot-frontend
     # Image to be used for the container
-    image: penpotapp/frontend:2.18.3@sha256:bb8abe27d53de84c95597f2c02c0e702b2779971fb0703e543f9ecf183e999f6
+    image: penpotapp/frontend:2.18.4@sha256:e36e1e4eacd08173792dff27fefdb5427cd6938aeaeaf70585cf5cb8024d6211
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -40,7 +40,7 @@ services:
   # Definition for penpot-backend service
   penpot-backend:
     # Docker image for the service
-    image: penpotapp/backend:2.18.3@sha256:2df1b3440d2a82cc3571db211b4ffdfa2b89ccc910759e8d5e9387fb62971b5c
+    image: penpotapp/backend:2.18.4@sha256:4a3821b66d5f1c473760911c3e445ff736d9b5274376e8f6ec8d0a3944df79a1
     # Name of the container
     container_name: big-bear-penpot-backend
     # Restart policy for the container
@@ -106,7 +106,7 @@ services:
   # Define the penpot-exporter service
   penpot-exporter:
     # Use the penpotapp/exporter:1.19.3 Docker image
-    image: penpotapp/exporter:2.18.3@sha256:418232d6ca3120b1c2bfde298a56a05a1f41f567cd8494deac3fe7fbc186cfbd
+    image: penpotapp/exporter:2.18.4@sha256:3394056911fc35fd4738f21d6ffef5fbf07312418f3cb0e43dca4a3d04b9b8b2
     # Set the container name to big-bear-penpot-exporter
     container_name: big-bear-penpot-exporter
     # Automatically restart the container unless stopped

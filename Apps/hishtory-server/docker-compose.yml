@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-hishtory-server
 services:
   app:
-    image: linuxserver/hishtory-server:0.335.20261016@sha256:5cbf3c91579b4fe0fd1ae347e5855301972692d4de6a7231942315b76fe05617
+    image: linuxserver/hishtory-server:0.335.20261023@sha256:ddd9cd6fc7ba9b2c9218ad351d4c50748e12ecb2abe2d5bba4921e164e63a503
     restart: unless-stopped
     environment:
       PUID: $PUID

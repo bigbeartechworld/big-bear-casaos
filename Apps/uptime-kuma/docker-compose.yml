@@ -8,7 +8,7 @@ services:
   # The `app` service definition includes the docker image, container name, volume mappings, port configurations, restart policy, and CasaOS specific settings.
   app:
     # Docker image to use for the app service
-    image: louislam/uptime-kuma:2@sha256:4b95dbe7ac5343b768f8e04e3035ccd59997872b1a35ab9b0f082d2cc279070e
+    image: louislam/uptime-kuma:2@sha256:20abea8c48a163cf0a7a5d5936ab418e4b742d908704e1f58f6c06e56a9c6b67
     # Custom container name for identification
     container_name: uptime-kuma
     # Volume mappings: Maps host directory to container directory for persistent storage
