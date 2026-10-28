@@ -99,7 +99,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | airvideohd | dmaxwell/airvideohd | latest |  |  |
 | altus | linuxserver/altus | 5.8.1 |  |  |
 | anse | ddiu8081/anse | v1.1.11 |  |  |
-| apprise-api | linuxserver/apprise-api | 2.0.1 |  |  |
+| apprise-api | linuxserver/apprise-api | 2.0.2 |  |  |
 | appsmith | appsmith/appsmith-ce | v2.5.1 |  |  |
 | archivebox | archivebox/archivebox | 0.9.73 |  |  |
 | ardour | linuxserver/ardour | 0.0.0 |  |  |
@@ -176,7 +176,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | dillinger | linuxserver/dillinger | 3.39.1 |  |  |
 | discopanel | nickheyer/discopanel | v2.0.15 |  | [Docs](https://docs.discopanel.app) |
 | diskover | linuxserver/diskover | 2.3.5 |  |  |
-| diun | crazymax/diun | 4.33.0 |  |  |
+| diun | crazymax/diun | 4.33.1 |  |  |
 | docker-cron-restart-notifier | deduard/tools | restart-notifier-latest |  |  |
 | dockge | louislam/dockge | 1.5.0 | [YouTube Video](https://youtu.be/8Z6psh-t5iU) |  |
 | dockhand | fnsys/dockhand | latest |  | [Docs](https://dockhand.pro/manual/) |
@@ -191,7 +191,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | domoticz | linuxserver/domoticz | 2023.2.20231129 |  |  |
 | dosbox-staging | linuxserver/dosbox-staging | 0.83.0 |  |  |
 | doublecommander | linuxserver/doublecommander | 0.0.0 |  |  |
-| dozzle | amir20/dozzle | v11.3.4 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
+| dozzle | amir20/dozzle | v11.3.5 | [YouTube Video](https://youtu.be/lLLNDcHNOuM) |  |
 | drawio | jgraph/drawio | 32.5.5 |  | [Docs](https://www.drawio.com/doc/) |
 | duckdns | linuxserver/duckdns | 0.0.0 |  |  |
 | duckstation | linuxserver/duckstation | 0.0.0 |  |  |
@@ -235,7 +235,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gemdigest | piero24/gemdigest | 1.0 |  |  |
 | genmon | bigbeartechworld/big-bear-genmon | 2.0.03 | [YouTube Video](https://youtu.be/b0_zuVVeIP4) |  |
 | ghost | ghost | 6.72.0-alpine | [YouTube Video](https://youtu.be/oJZK9vH4W4Y) |  |
-| ghostfolio | ghostfolio/ghostfolio | 3.91.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
+| ghostfolio | ghostfolio/ghostfolio | 3.92.0 | [YouTube Video](https://youtu.be/CNe4-8Vyhos) |  |
 | gimp | linuxserver/gimp | 0.0.0 |  |  |
 | gitea-mirror | ghcr.io/raylabshq/gitea-mirror | v3.15.10 |  | [Docs](https://community.bigbeartechworld.com/t/added-gitea-mirror-to-bigbearcasaos/3515?u=dragonfire1119#p-5962-documentation-6) |
 | gitea | gitea/gitea | 28.2.0 |  | [Docs](https://docs.gitea.com/) |
@@ -247,7 +247,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | gluetun | qmcgaw/gluetun | v3.41.3 |  | [Docs](https://community.bigbeartechworld.com/t/added-gluetun-to-big-bear-casaos/175) |
 | goaway | pommee/goaway | 0.63.17 |  | [Docs](https://community.bigbeartechworld.com/t/added-goaway-to-bigbearcasaos/4085) |
 | gotify | gotify/server | 3.1.1 |  |  |
-| grav | linuxserver/grav | 2.2.12 |  |  |
+| grav | linuxserver/grav | 2.2.13 |  |  |
 | grocy | linuxserver/grocy | 4.7.1 |  |  |
 | guacamole | guacamole/guacamole | 1.6.0 | [YouTube Video](https://youtu.be/6cu0kfP50Jg) |  |
 | gzdoom | linuxserver/gzdoom | 4.14.2 |  |  |
@@ -316,7 +316,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | lm-studio | linuxserver/lm-studio | 0.0.0 |  |  |
 | lobe-chat | lobehub/lobe-chat | 1.143.3 |  |  |
 | lollypop | linuxserver/lollypop | 1.4.45 |  |  |
-| ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.9.4 |  |  |
+| ls-adguardhome-sync | linuxserver/adguardhome-sync | 0.9.5 |  |  |
 | lsio-api | linuxserver/lsio-api | 0.0.0 |  |  |
 | luanti | linuxserver/luanti | 5.18.0 |  |  |
 | lychee | linuxserver/lychee | 7.12.0 |  |  |
@@ -373,16 +373,16 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | note-mark-aio | ghcr.io/enchant97/note-mark-aio | 0.19.4 |  |  |
 | nova-dso-tracker | mrantonsg/nova-dso-tracker | 7.0.0 |  | [Docs](https://nova-tracker.com) |
 | npmplus | zoeyvid/npmplus | 449 |  |  |
-| ntfysh | binwiederhier/ntfy | v2.33.1 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
+| ntfysh | binwiederhier/ntfy | v2.34.0 | [YouTube Video](https://youtu.be/wSWhtSNwTd8) |  |
 | obsidian-livesync | couchdb | 3.5.0 | [YouTube Video](https://youtu.be/-n1abMPLmFg) |  |
 | obsidian | linuxserver/obsidian | 1.14.4 |  |  |
 | octoprint | octoprint/octoprint | 1.11.8 | [YouTube Video](https://youtu.be/gQ0J9y8w2wE) |  |
 | odoo-v20 | odoo | 20 |  | [Docs](https://www.odoo.com/documentation/master/administration/upgrade.html) |
 | odoo | odoo | 19 |  | [Docs](https://community.bigbeartechworld.com/t/added-odoo-to-bigbearcasaos/1115?u=dragonfire1119) |
 | odysseus | bigbeartechworld/big-bear-odysseus | 2026.10.22 |  | [Docs](https://github.com/pewdiepie-archdaemon/odysseus) |
-| ollama-amd | ollama/ollama | 0.40.10-rocm |  |  |
-| ollama-cpu | ollama/ollama | 0.40.10 |  |  |
-| ollama-nvidia | ollama/ollama | 0.40.10 |  |  |
+| ollama-amd | ollama/ollama | 0.40.11-rocm |  |  |
+| ollama-cpu | ollama/ollama | 0.40.11 |  |  |
+| ollama-nvidia | ollama/ollama | 0.40.11 |  |  |
 | omniroute | diegosouzapw/omniroute | 3.8.52 |  | [Docs](https://github.com/diegosouzapw/OmniRoute/blob/main/docs/getting-started/SELF_HOST_GUIDE.md) |
 | onedev | 1dev/server | 16.9.7 | [YouTube Video](https://youtu.be/ps3JLYRB3SA) |  |
 | onlyoffice | onlyoffice/documentserver | 9.1.0 |  |  |
@@ -401,7 +401,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | pairdrop | linuxserver/pairdrop | 1.11.2 |  |  |
 | paperclip | ghcr.io/paperclipai/paperclip | latest |  | [Docs](https://github.com/paperclipai/paperclip/blob/master/doc/DOCKER.md) |
 | paperless-ngx | ghcr.io/paperless-ngx/paperless-ngx | 3.2.0 |  |  |
-| passwordpusher-v2 | pglombardo/pwpush | 2.16.0 | [YouTube Video](https://youtu.be/7Ej56MDo95g) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
+| passwordpusher-v2 | pglombardo/pwpush | 2.16.1 | [YouTube Video](https://youtu.be/7Ej56MDo95g) | [Docs](https://docs.pwpush.com/docs/upgrading/) |
 | passwordpusher | pglombardo/pwpush | 1.69.3 | [YouTube Video](https://youtu.be/U17LWqXfOmU) |  |
 | pcsx2 | linuxserver/pcsx2 | 2.8.2 |  |  |
 | pd3f | pd3f/pd3f | latest |  |  |
@@ -437,7 +437,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | privatebin | privatebin/nginx-fpm-alpine | 2.1.0 |  |  |
 | project-management | eloufirhatim/helper | 1.2.3 |  |  |
 | projectsend | linuxserver/projectsend | 0.0.0 |  |  |
-| psitransfer | psitrax/psitransfer | v2.4.4 |  | [Docs](https://github.com/psi-4ward/psitransfer/tree/master/docs) |
+| psitransfer | psitrax/psitransfer | v2.4.5 |  | [Docs](https://github.com/psi-4ward/psitransfer/tree/master/docs) |
 | pterodactyl-panel | ghcr.io/pterodactyl/panel | v1.12.2 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pterodactyl-wings | ghcr.io/pterodactyl/wings | v1.12.1 | [YouTube Video](https://youtu.be/p_140cc6_1g) |  |
 | pwndrop | linuxserver/pwndrop | 1.0.1 |  |  |
@@ -455,7 +455,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | raneto | linuxserver/raneto | 0.18.1 |  |  |
 | rawtherapee | linuxserver/rawtherapee | 5.13.20261018 |  |  |
 | rdesktop | linuxserver/rdesktop | 0.0.0 |  |  |
-| reactive-resume-v6 | amruthpillai/reactive-resume | v6.0.5 |  | [Docs](https://docs.rxresu.me/self-hosting/upgrading-to-v6) |
+| reactive-resume-v6 | amruthpillai/reactive-resume | v6.0.6 |  | [Docs](https://docs.rxresu.me/self-hosting/upgrading-to-v6) |
 | reactive-resume | amruthpillai/reactive-resume | v5.3.2 |  |  |
 | readeck | codeberg.org/readeck/readeck | 0.22.3 |  |  |
 | readme-sync | linuxserver/readme-sync | 0.0.0 |  |  |
@@ -495,14 +495,14 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | socket-proxy | linuxserver/socket-proxy | 3.4.7 |  |  |
 | solidping | ghcr.io/fclairamb/solidping | 0.37.0 |  | [Docs](https://solidping.io/docs) |
 | spacedrive | ghcr.io/spacedriveapp/spacedrive/server | 0.4.2 |  |  |
-| speedtest-tracker | linuxserver/speedtest-tracker | 1.15.0 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
+| speedtest-tracker | linuxserver/speedtest-tracker | 1.15.1 | [YouTube Video](https://youtu.be/TLjS8xNNwis) |  |
 | spoolman | ghcr.io/donkie/spoolman | 0.23.1 |  | [Docs](https://community.bigbeartechworld.com/t/added-spoolman-to-bigbearuniversal-apps/5108#p-7792-documentation-4) |
 | sqlitebrowser | linuxserver/sqlitebrowser | 18.04.1 |  |  |
 | stalwart-mail | stalwartlabs/stalwart | v0.16.27 |  |  |
 | statping | statping/statping | v0.90.74 |  |  |
 | steam | linuxserver/steam | 0.0.0 |  |  |
 | steamos | linuxserver/steamos | 0.0.0 |  |  |
-| stirling-pdf | stirlingtools/stirling-pdf | 3.2.1 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
+| stirling-pdf | stirlingtools/stirling-pdf | 3.2.2 | [YouTube Video](https://youtu.be/ZoPSPDvOPdo) | [Docs](https://community.bigbeartechworld.com/t/added-stirling-pdf-to-bigbearcasaos/2265#p-4248-documentation-3) |
 | stoat | ghcr.io/stoatchat/for-web | 4017c18 |  | [Docs](https://github.com/stoatchat/self-hosted/blob/main/README.md) |
 | storyteller | registry.gitlab.com/storyteller-platform/storyteller | web-v2.6.0-experimental.14 |  | [Docs](https://storyteller-platform.gitlab.io/storyteller/docs/installation/self-hosting) |
 | swag | linuxserver/swag | 5.8.0 |  |  |
@@ -523,7 +523,7 @@ If you have a suggestion for an app, please post in the [BigBearCommunity](https
 | traefik | traefik | v3.7.16 |  |  |
 | trilium | triliumnext/trilium | v0.106.1 | [YouTube Video](https://youtu.be/h5ISPmUuBHs) |  |
 | tududi | chrisvel/tududi | 0.87 |  |  |
-| tugtainer | quenary/tugtainer | v1.44.1 |  |  |
+| tugtainer | quenary/tugtainer | v1.44.3 |  |  |
 | ubooquity | linuxserver/ubooquity | 3.1.0 |  |  |
 | uisp | nico640/docker-unms | 2.4.155.1 |  |  |
 | umami | ghcr.io/umami-software/umami | postgresql-latest | [YouTube Video](https://youtu.be/4DEF5fNf8hU) |  |
