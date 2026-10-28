@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-monica
     # Image to be used for the container
-    image: monica:4.1.2@sha256:16f20dcc0e8ed8d21fcd0f72358751c2603feea25ed1772aea9d5c9869b341e3
+    image: monica:4.1.2@sha256:1a8cd455114151848aaab117dd153ad0fa87c9539b3fc498380e42dae2282b83
     # Container restart policy
     restart: unless-stopped
     environment:
