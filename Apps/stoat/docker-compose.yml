@@ -20,7 +20,7 @@ services:
     image: valkey/valkey:9.1.2-alpine@sha256:48332870af354a799964c0012ae1194a0bf2bf894eb508f945810596dc2d8d11
     restart: unless-stopped
   rabbit:
-    image: rabbitmq:4.4.0@sha256:71be6ca71cd3ad92f29b354ec381b1ee587894aaaac21f185b8cf43fb50d3feb
+    image: rabbitmq:4.4.0@sha256:485319d42170eab53d8a030e1cc49d95e41f5d325479fa504736db8091981eb7
     restart: unless-stopped
     environment:
       RABBITMQ_DEFAULT_USER: rabbituser
@@ -81,7 +81,7 @@ services:
           description:
             en_US: 'Container Path: /data'
   caddy:
-    image: caddy:2.11.7@sha256:504a44d7d74bd2bc28a66afc4774912fc21223ca8a67734af1c54ab2f999b489
+    image: caddy:2.11.7@sha256:5e5286cb37d44086d651a5363f05f43a692ce4d649d88fb1bd844579f45fa9e8
     restart: unless-stopped
     environment:
       HOSTNAME: "https://stoat.localhost"

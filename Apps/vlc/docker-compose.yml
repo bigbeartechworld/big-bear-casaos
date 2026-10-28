@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-vlc
 services:
   app:
-    image: linuxserver/vlc:3.0.24@sha256:cb5a1ca8b2cc2e3b7062a9424cf00d0810d7fa615f64ff7ebcaa1821f2962b17
+    image: linuxserver/vlc:3.0.24@sha256:47fa90ac456cc9485e28ec7bccbedc56cedaab87853237461374c12fb91c588c
     restart: unless-stopped
     environment:
       PUID: $PUID

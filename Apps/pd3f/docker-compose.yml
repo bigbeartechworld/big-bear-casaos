@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-pd3f
     # Image to be used for the container
-    image: pd3f/pd3f:latest@sha256:99afad9e88517f6f69d3374e5b1e58549e8db0cf1beb8dbf601cd6410abf99b2
+    image: pd3f/pd3f:latest@sha256:b4b85a83183192158993d069751b007758ee8c85c927b1a6f69020bd249097ef
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container
@@ -55,7 +55,7 @@ services:
       - 6379
   # Service name: worker
   worker:
-    image: pd3f/pd3f:latest@sha256:99afad9e88517f6f69d3374e5b1e58549e8db0cf1beb8dbf601cd6410abf99b2
+    image: pd3f/pd3f:latest@sha256:b4b85a83183192158993d069751b007758ee8c85c927b1a6f69020bd249097ef
     depends_on:
       - parsr
       - redis

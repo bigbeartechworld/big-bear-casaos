@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ubooquity
 services:
   app:
-    image: linuxserver/ubooquity:3.1.0@sha256:d2d6fde96383b679484e111deb320d720e69b9066685c63e49b3aea63aa7a8b7
+    image: linuxserver/ubooquity:3.1.0@sha256:e484ecb4aa66fd0bde885850f48c8818ee7c7cd9cdb8cd3b279a98b0fb6ec7e0
     restart: unless-stopped
     environment:
       PUID: $PUID

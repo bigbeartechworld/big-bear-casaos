@@ -7,7 +7,7 @@ services:
   # Service name: phpmyadmin
   phpmyadmin:
     # Docker image to be used for this service
-    image: phpmyadmin/phpmyadmin:5.2.3@sha256:42a200db07b4e70fbf32c594ad4521cf16399b8e54bbb5adceae98e7566dfbeb
+    image: phpmyadmin/phpmyadmin:5.2.3@sha256:16d0f09c25a2dee07739af9dc11e72c1bf7fb776a449f6cc03ec00b33d0c6d9b
     # Name of the container once it's up and running
     container_name: big-bear-phpmyadmin
     # Environment variables passed to the service
