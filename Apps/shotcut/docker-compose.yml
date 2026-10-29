@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-shotcut
 services:
   app:
-    image: linuxserver/shotcut:26.9.27@sha256:2b408ec9f1e32a4a73f85d7ecec618bd42f1d3dd610b69614c1b0b3346a8c789
+    image: linuxserver/shotcut:26.9.27@sha256:d78247e48e8b4dab2c95c814bb4faaae38767018590d60f0d220326375ee1856
     restart: unless-stopped
     environment:
       PUID: $PUID

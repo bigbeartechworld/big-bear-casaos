@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-yq
 services:
   app:
-    image: linuxserver/yq:4.4.5@sha256:ce29775b17f0c6c3cb180d4b9fa4b6fd20860c1f77d3684f9e8998628d0e4398
+    image: linuxserver/yq:4.4.5@sha256:30dca795585e8a0f10534c3ad15ff391a7b86258d3c4c24bf165ce262349849f
     restart: unless-stopped
     environment:
       PUID: $PUID
