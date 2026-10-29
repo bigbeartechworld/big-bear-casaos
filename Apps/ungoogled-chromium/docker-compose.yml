@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-ungoogled-chromium
 services:
   app:
-    image: linuxserver/ungoogled-chromium:155.0.8059@sha256:6eb82d737db6f4d80c00aa0841f8d142280a36625e6e0c3f9dd198ef5fd7d2ed
+    image: linuxserver/ungoogled-chromium:156.0.8078@sha256:0aef995ae73843b0d70d876e3dc86505902558b715432b34037830b8e4c19c3b
     restart: unless-stopped
     environment:
       PUID: $PUID
