@@ -1,7 +1,7 @@
 {
   "id": "phpmyadmin",
   "version": "5.2.3",
-  "image": "phpmyadmin/phpmyadmin",
+  "image": "phpmyadmin",
   "youtube": "",
   "docs_link": ""
 }

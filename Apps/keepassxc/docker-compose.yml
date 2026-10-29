@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-keepassxc
 services:
   app:
-    image: linuxserver/keepassxc:2.7.12@sha256:267bc745b3cdd3d05276ad62c8e039031eec0c5d2323b3fb2f5f6df32110efdb
+    image: linuxserver/keepassxc:2.7.12@sha256:3e559db94c85c7a5566e4f470345e347bc05b563844b0fc9185c7ecd5d219123
     restart: unless-stopped
     environment:
       PUID: $PUID
