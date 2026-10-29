@@ -51,3 +51,5 @@ x-casaos:
   category: Networking
   # Default port mapping for the application
   port_map: ""
+  scheme: http
+  index: /

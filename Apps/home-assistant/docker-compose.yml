@@ -68,3 +68,5 @@ x-casaos:
   category: Home
   # Default port mapping for the application
   port_map: "8123"
+  scheme: http
+  index: /

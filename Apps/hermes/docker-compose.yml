@@ -81,3 +81,5 @@ x-casaos:
   category: AI
   # Default port mapping for the application
   port_map: "9119"
+  scheme: http
+  index: /

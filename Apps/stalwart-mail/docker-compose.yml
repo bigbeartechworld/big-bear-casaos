@@ -95,8 +95,10 @@ x-casaos:
         Read this before installing: https://community.bigbeartechworld.com/t/added-stalwart-to-bigbearcasaos/3342#p-5723-documentation-3
   # Title for the application
   title:
-    en_US: Stalwart Mail
+    en_US: Stalwart Mail (Legacy)
   # Category under which the application falls
   category: Others
   # Default port mapping for the application
   port_map: "8080"
+  scheme: http
+  index: /

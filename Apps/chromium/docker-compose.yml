@@ -74,3 +74,5 @@ x-casaos:
   category: Media
   # Default port mapping for the application
   port_map: "6902"
+  scheme: http
+  index: /

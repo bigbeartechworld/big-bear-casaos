@@ -55,3 +55,5 @@ x-casaos:
   category: Networking
   # Default port mapping for the application
   port_map: "20003"
+  scheme: http
+  index: /

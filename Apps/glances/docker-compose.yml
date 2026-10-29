@@ -68,3 +68,5 @@ x-casaos:
   category: Networking
   # Default port mapping for the application
   port_map: "61208"
+  scheme: http
+  index: /

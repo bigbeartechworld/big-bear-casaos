@@ -111,3 +111,5 @@ x-casaos:
   category: Networking
   # Default port mapping for the application
   port_map: "12345"
+  scheme: http
+  index: /

@@ -55,8 +55,10 @@ x-casaos:
         The Portainer Agent is reachable on port 9001. You will need Portainer Server running to connect to the Portainer Agent.
   # Title for the application
   title:
-    en_US: Portainer Agent
+    en_US: Portainer Agent (Legacy)
   # Category under which the application falls
   category: Productivity
   # Default port mapping for the application
   port_map: ""
+  scheme: http
+  index: /

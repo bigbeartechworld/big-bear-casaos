@@ -153,3 +153,5 @@ x-casaos:
   category: Productivity
   # Default port mapping for the application
   port_map: "3010"
+  scheme: http
+  index: /

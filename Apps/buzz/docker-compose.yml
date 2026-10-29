@@ -1,7 +1,7 @@
 name: big-bear-buzz
 services:
   relay:
-    image: ghcr.io/block/buzz:main@sha256:ccde9f4d45f98914c912b71956f1c281af7d6d68ebdb30105ea051d98e0e4513
+    image: ghcr.io/block/buzz:main@sha256:5b2b523e94d7e2863b49eb9d550a70f8d5fd9ec3fa14b97a5c2a543fc0898750
     container_name: buzz-relay
     ports:
       - "3000:3000"
@@ -308,6 +308,7 @@ services:
 
 
 
+
         mc alias set local http://minio:9000 "$${BUZZ_S3_ACCESS_KEY}" "$${BUZZ_S3_SECRET_KEY}"
         mc mb --ignore-existing "local/$${BUZZ_S3_BUCKET}"
         mc anonymous set none "local/$${BUZZ_S3_BUCKET}"
@@ -364,3 +365,5 @@ x-casaos:
   category: Developer
   # Default port mapping for the application
   port_map: "3000"
+  scheme: http
+  index: /

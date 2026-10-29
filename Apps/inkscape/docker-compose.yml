@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-inkscape
 services:
   app:
-    image: linuxserver/inkscape:1.4.2@sha256:a33e7cbd9c8039b11f681d87bc07e9916e73c4bb245fa5df16fd227afdb8cb86
+    image: linuxserver/inkscape:1.4.2@sha256:704c79928864c7e66c27a2925d5676661bdf72e0cbbb7ad37f7ed2e9d82e2e03
     restart: unless-stopped
     environment:
       PUID: $PUID
@@ -70,3 +70,5 @@ x-casaos:
   category: Home
   # Default port mapping for the application
   port_map: "3000"
+  scheme: http
+  index: /

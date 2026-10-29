@@ -127,3 +127,5 @@ x-casaos:
   category: Productivity
   # Default port mapping for the application
   port_map: "22300"
+  scheme: http
+  index: /

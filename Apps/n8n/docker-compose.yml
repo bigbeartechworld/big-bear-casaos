@@ -123,8 +123,10 @@ x-casaos:
         ```
   # Title for the application
   title:
-    en_US: n8n
+    en_US: n8n (Legacy)
   # Category under which the application falls
   category: Developer
   # Default port mapping for the application
   port_map: "5678"
+  scheme: http
+  index: /

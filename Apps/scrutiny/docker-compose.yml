@@ -110,3 +110,5 @@ x-casaos:
   category: Others
   # Default port mapping for the application
   port_map: "38080"
+  scheme: http
+  index: /

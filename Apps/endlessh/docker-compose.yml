@@ -90,3 +90,5 @@ x-casaos:
   category: Others
   # Default port mapping for the application
   port_map: "22"
+  scheme: http
+  index: /

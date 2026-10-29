@@ -146,3 +146,5 @@ x-casaos:
   category: Others
   # Default port mapping for the application
   port_map: "3000"
+  scheme: http
+  index: /
