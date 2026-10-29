@@ -1,6 +1,6 @@
 {
   "id": "flycast",
-  "version": "2.7.20261018",
+  "version": "2.7.20261025",
   "image": "linuxserver/flycast",
   "youtube": "",
   "docs_link": ""

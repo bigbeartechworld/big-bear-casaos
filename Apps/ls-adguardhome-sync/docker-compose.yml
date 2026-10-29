@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-ls-adguard-home-sync
     # Image to be used for the container
-    image: linuxserver/adguardhome-sync:0.9.5@sha256:b5408234cc8073cc0a7e38762eecb5c3a0f7c8aae8bf0db4adac36ef99258a07
+    image: linuxserver/adguardhome-sync:0.9.5@sha256:878ce49e8b41c9d52ecbf401c30094c83ff81a487465ac49e0daf515a519d8d1
     # Container restart policy
     restart: unless-stopped
     # Environment variables

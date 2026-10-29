@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-telegram
 services:
   app:
-    image: linuxserver/telegram:7.3.2@sha256:e0acac08866ee19cfc46840083fd75c5aefd19559126182c9c27702dfe66d205
+    image: linuxserver/telegram:7.3.3@sha256:eb10a5ec544d99ec6f91f08770b3571b8b55f991549b4e056be952d5c129b85e
     restart: unless-stopped
     environment:
       PUID: $PUID
