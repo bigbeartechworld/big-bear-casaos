@@ -82,3 +82,5 @@ x-casaos:
   category: Productivity
   # Default port mapping for the application
   port_map: "9292"
+  scheme: http
+  index: /

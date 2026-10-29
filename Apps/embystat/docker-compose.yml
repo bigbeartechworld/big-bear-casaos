@@ -64,3 +64,5 @@ x-casaos:
   category: Others
   # Default port mapping for the application
   port_map: "6555"
+  scheme: http
+  index: /

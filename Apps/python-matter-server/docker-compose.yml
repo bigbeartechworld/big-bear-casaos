@@ -58,3 +58,5 @@ x-casaos:
   category: Home
   # Default port mapping for the application
   port_map: "5580"
+  scheme: http
+  index: /

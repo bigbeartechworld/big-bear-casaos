@@ -100,3 +100,5 @@ x-casaos:
   category: Finance
   # Default port mapping for the application
   port_map: "20005"
+  scheme: http
+  index: /

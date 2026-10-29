@@ -102,3 +102,5 @@ x-casaos:
   category: Home
   # Default port mapping for the application
   port_map: "51820"
+  scheme: http
+  index: /

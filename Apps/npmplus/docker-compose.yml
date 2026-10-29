@@ -60,3 +60,5 @@ x-casaos:
   category: Networking
   # Default port mapping for the application
   port_map: "81"
+  scheme: http
+  index: /

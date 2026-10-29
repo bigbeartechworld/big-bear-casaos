@@ -172,3 +172,5 @@ x-casaos:
   category: Networking
   # Default port mapping for the application
   port_map: "8443"
+  scheme: http
+  index: /

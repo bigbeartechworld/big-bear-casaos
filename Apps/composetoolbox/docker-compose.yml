@@ -67,3 +67,5 @@ x-casaos:
   category: Developer
   # Default port mapping for the application
   port_map: "3002"
+  scheme: http
+  index: /

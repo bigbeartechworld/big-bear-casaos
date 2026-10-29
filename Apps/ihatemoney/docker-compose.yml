@@ -116,3 +116,5 @@ x-casaos:
   category: Finance
   # Default port mapping for the application
   port_map: "8001"
+  scheme: http
+  index: /

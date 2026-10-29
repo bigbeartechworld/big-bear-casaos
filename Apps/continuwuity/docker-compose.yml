@@ -74,3 +74,5 @@ x-casaos:
   category: Social
   # Default port mapping for the application
   port_map: "20006"
+  scheme: http
+  index: /

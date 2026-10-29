@@ -1,0 +1,91 @@
+# STALWART-MAIL-V1 - SEPARATE INSTALLATION
+# Stalwart v1 cannot open a 0.16 data store. This is a separate installation, not an automatic upgrade. Start with an empty volume. For migration, use stalwart-migrate from 0.16.27 into a new empty store, review settings with prepare, stop every 0.16 node for run --final, and verify the result before starting v1. Never attach the legacy data volume. Standard mail ports are retained; stop the legacy server before starting v1 on the same host.
+# Migration: https://stalw.art/docs/migration/upgrade-0-16/
+
+name: big-bear-stalwart-mail-v1
+services:
+  big-bear-stalwart-mail-v1:
+    container_name: big-bear-stalwart-mail-v1
+    image: stalwartlabs/stalwart:v1.0.1@sha256:b9da4df8b4efc06bc926dd6e990bdeb0ad7b9261a7c3893d74b0461a00bb389b
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/config:/etc/stalwart
+      - /DATA/AppData/$AppID/data:/var/lib/stalwart
+    ports:
+      - 127.0.0.1:8081:8080
+      - 25:25/tcp
+      - 465:465/tcp
+      - 993:993/tcp
+      - 995:995/tcp
+      - 4190:4190/tcp
+      - 443:443/tcp
+    init: true
+    x-casaos:
+      volumes:
+        - container: /etc/stalwart
+          description:
+            en_US: 'Container Path: /etc/stalwart'
+        - container: /var/lib/stalwart
+          description:
+            en_US: 'Container Path: /var/lib/stalwart'
+      ports:
+        - container: "8080"
+          description:
+            en_US: 'Container Port: 8080'
+        - container: "25"
+          description:
+            en_US: 'Container Port: 25'
+        - container: "465"
+          description:
+            en_US: 'Container Port: 465'
+        - container: "993"
+          description:
+            en_US: 'Container Port: 993'
+        - container: "995"
+          description:
+            en_US: 'Container Port: 995'
+        - container: "4190"
+          description:
+            en_US: 'Container Port: 4190'
+        - container: "443"
+          description:
+            en_US: 'Container Port: 443'
+x-casaos:
+  # Supported CPU architectures for this application
+  architectures:
+    - amd64
+    - arm64
+  # Stable reverse-domain app identifier
+  id: com.bigbeartechworld.stalwart-mail-v1
+  # Main service for this application
+  main: big-bear-stalwart-mail-v1
+  # Detailed description for the application
+  description:
+    en_US: Stalwart Mail Server is an open-source mail server solution with JMAP, IMAP4, POP3, and SMTP support and a wide range of modern features. It is written in Rust and designed to be secure, fast, robust and scalable.
+  # Screenshot links for the application
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/stalwart-mail/thumbnail.gif
+  # Brief tagline for the application
+  tagline:
+    en_US: "Secure & Modern All-in-One Mail Server (IMAP, JMAP, POP3, SMTP) \U0001F6E1️"
+  # Developer's information
+  developer: stalwartlabs
+  # Author of this particular configuration
+  author: BigBearTechWorld
+  # Icon URL for the application
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/stalwart.png
+  # Thumbnail image for the application (if any)
+  thumbnail: https://cdn.jsdelivr.net/gh/bigbeartechworld/big-bear-universal-apps/apps/stalwart-mail/thumbnail.gif
+  # Installation tips
+  tips:
+    before_install:
+      en_US: 'Stalwart v1 cannot open a 0.16 data store. This is a separate installation, not an automatic upgrade. Start with an empty volume. For migration, use stalwart-migrate from 0.16.27 into a new empty store, review settings with prepare, stop every 0.16 node for run --final, and verify the result before starting v1. Never attach the legacy data volume. Standard mail ports are retained; stop the legacy server before starting v1 on the same host. Migration: https://stalw.art/docs/migration/upgrade-0-16/ The setup wizard is loopback-only at http://127.0.0.1:8081/admin. From another machine use ssh -L 8081:127.0.0.1:8081 <host>. Retrieve the temporary admin password from container logs. In the wizard select Console logging, finish setup, restart the container, then use https://<mail-hostname>/admin on port 443. The two persistent volumes replace the old /opt/stalwart mount. Runtipi and Umbrel are unsupported because their app proxies expose the unprotected setup listener and cannot preserve its loopback-only binding. Cosmos is unsupported because its converter always adds an HTTP app route instead of preserving private bootstrap access.'
+  # Title for the application
+  title:
+    en_US: Stalwart Mail v1
+  # Category under which the application falls
+  category: Others
+  # Default port mapping for the application
+  port_map: "443"
+  scheme: https
+  index: /admin

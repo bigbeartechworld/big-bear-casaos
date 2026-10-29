@@ -67,3 +67,5 @@ x-casaos:
   category: Home
   # Default port mapping for the application
   port_map: "1080"
+  scheme: http
+  index: /
