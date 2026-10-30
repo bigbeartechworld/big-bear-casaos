@@ -343,6 +343,7 @@ This is a todo list of videos that I need to still make for the BigBearYoutube c
 | spacedrive |  |
 | spoolman |  |
 | sqlitebrowser |  |
+| stalwart-mail-v1 |  |
 | stalwart-mail |  |
 | statping |  |
 | steam |  |
