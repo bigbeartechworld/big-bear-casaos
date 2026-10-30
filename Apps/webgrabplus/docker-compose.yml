@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-webgrabplus
 services:
   app:
-    image: linuxserver/webgrabplus:5.6.1@sha256:4e4d9d00a3de6a4e7fcc461e7fc2c9d34a988ad77fa2c27a41b78c7af27f2deb
+    image: linuxserver/webgrabplus:5.6.1@sha256:d74b22735d82bc70609b1844040d57385568254a1e5c1328b14d14409284b226
     restart: unless-stopped
     environment:
       PUID: $PUID

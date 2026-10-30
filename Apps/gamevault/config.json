@@ -1,6 +1,6 @@
 {
   "id": "gamevault",
-  "version": "17.0.1",
+  "version": "17.1.0",
   "image": "phalcode/gamevault-backend",
   "youtube": "",
   "docs_link": "https://gamevau.lt/docs/server-docs/setup/docker-compose/"

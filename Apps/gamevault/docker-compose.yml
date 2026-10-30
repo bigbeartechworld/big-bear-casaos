@@ -1,7 +1,7 @@
 name: big-bear-gamevault
 services:
   gamevault:
-    image: phalcode/gamevault-backend:17.0.1@sha256:f3c599d4fc7498eb2028cfd611dc27b3f707c83a7ce9a86ec3ec8256a42409ba
+    image: phalcode/gamevault-backend:17.1.0@sha256:87999b98d686b3297ddd7abde51f42dd2fa30b987f0cf050a42403a398711199
     container_name: gamevault
     restart: unless-stopped
     depends_on:

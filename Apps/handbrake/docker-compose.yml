@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-handbrake
 services:
   app:
-    image: linuxserver/handbrake:1.11.2@sha256:a80a03a272e76b8deeec071e5b0a3c582708da5603eee354ca2cb1e72b9e01b2
+    image: linuxserver/handbrake:1.11.2@sha256:58c17f7f8b37d6cdb11ac269d927c953f0fb13cbc918372bceaa597a33d5e221
     restart: unless-stopped
     environment:
       PUID: $PUID

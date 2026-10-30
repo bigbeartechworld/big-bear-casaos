@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-blender
 services:
   app:
-    image: linuxserver/blender:5.2.3@sha256:866069a7ea0600f80bad6f4050e9933cb3eb886b0a87ea1fa890fe5167ab0fd6
+    image: linuxserver/blender:5.2.3@sha256:e5f3ea336c1ca21bc6c37045c19b10d95f3cba27fc21b85221ea1beefcfd0328
     restart: unless-stopped
     environment:
       PUID: $PUID
