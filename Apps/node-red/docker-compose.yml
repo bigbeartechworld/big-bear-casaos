@@ -9,7 +9,7 @@ services:
     # Name of the container
     container_name: node-red
     # Docker image to be used
-    image: nodered/node-red:5.0.9@sha256:e085d4a06591fd0aca2ea2a91364d27f1a0e31e885675f77935e10f95412a963
+    image: nodered/node-red:5.0.9@sha256:2ccd38b4066648bd5e17430c50a2f8102c566a82fd4f2fc5c342e61664d6896f
     # Restart policy for the service
     restart: unless-stopped
     # Port mappings for the service

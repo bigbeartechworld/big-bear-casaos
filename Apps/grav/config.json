@@ -1,6 +1,6 @@
 {
   "id": "grav",
-  "version": "2.2.13",
+  "version": "2.2.14",
   "image": "linuxserver/grav",
   "youtube": "",
   "docs_link": ""

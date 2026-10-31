@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-dokuwiki
 services:
   app:
-    image: linuxserver/dokuwiki:version-2026-07-14c@sha256:0e4263ac90c82f30b1ac114b2b4730abe443c310a875a8ec802bc6abb1321c31
+    image: linuxserver/dokuwiki:version-2026-07-14c@sha256:fac142ae9f7df5d3457037bc8bb668f8bfc6a6b9e02d5d1a5743bf1d030f9a10
     restart: unless-stopped
     environment:
       PUID: $PUID

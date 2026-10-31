@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-tugtainer
     # Image to be used for the container
-    image: quenary/tugtainer:v1.44.3@sha256:0330b152f199bea42822d489cd9eb33572c4327b624f4e8d4d1981ad3d1b16d5
+    image: quenary/tugtainer:v1.45.0@sha256:4b11c62730cfce12604e6bdfac4927fc4a82906e04cf06ac8eaded3dd1d376a0
     # Container restart policy
     restart: unless-stopped
     # Ports to expose from the container

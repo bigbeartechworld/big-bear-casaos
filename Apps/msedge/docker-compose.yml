@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-msedge
 services:
   app:
-    image: linuxserver/msedge:156.0.4314@sha256:d00157a6c27389bc68f26b87c407d98df5361ab65771bea6469682c25c254e01
+    image: linuxserver/msedge:156.0.4314@sha256:5b4c69679a25d544d41315a2fa4ba9485588aae6bfd0265e6d466b9b176b556c
     restart: unless-stopped
     environment:
       PUID: $PUID

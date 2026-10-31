@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-krita
 services:
   app:
-    image: linuxserver/krita:5.3.4@sha256:cb370716097e8648755c27a48fb5783c59ee9579f48c6dce9b412779593ff95a
+    image: linuxserver/krita:5.3.4@sha256:5c185684d783c091e558c197c74df39c1898516afec1eb12620503f841deeb61
     restart: unless-stopped
     environment:
       PUID: $PUID
