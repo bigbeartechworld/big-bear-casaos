@@ -1,7 +1,7 @@
 name: big-bear-linuxserver-wikijs
 services:
   app:
-    image: linuxserver/wikijs:2.5.317@sha256:c85bd3099014aee55bbffcf02008c11d68b9f503187b34c9eabe584bd4ff6ab0
+    image: linuxserver/wikijs:2.5.317@sha256:e5a37b0658cb3b0fdc194e2a09762f5cce3aaa00a9ca84b90c8cdf409389698d
     restart: unless-stopped
     environment:
       PUID: $PUID

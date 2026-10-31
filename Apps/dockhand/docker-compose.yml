@@ -10,7 +10,7 @@ services:
     # Name of the container
     container_name: big-bear-dockhand
     # Image to be used for the container
-    image: fnsys/dockhand:latest@sha256:039fbb65899f5ecc1d63083736d94587306b35736bca666eca623416859ddaa5
+    image: fnsys/dockhand:latest@sha256:e82db7e76024d288c40a96ed023537961cfa4e60f1a87087f1990f64bde39fac
     # Container restart policy
     restart: unless-stopped
     # Volumes to be mounted to the container

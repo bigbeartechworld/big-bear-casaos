@@ -1,7 +1,7 @@
 name: big-bear-web-check
 services:
   web-check:
-    image: lissy93/web-check:2.3.9@sha256:106965906c912b49516636f16827b5e57e2e45a2296d925ce41123580f765562
+    image: lissy93/web-check:2.3.10@sha256:c2971ab127b7a953d3c8a126bd644a521b7b14639133ce946bad910c4abebb6c
     container_name: web-check
     restart: unless-stopped
     ports:
